@@ -36,6 +36,11 @@
 	id = ACCESS_DCLASS_MEDICAL
 	desc = "D-Class Medical"
 	region = ACCESS_REGION_GENERAL
+
+/datum/access/dclassluxury
+	id = ACCESS_DCLASS_LUXURY
+	desc = "D-Class Luxury"
+	region = ACCESS_REGION_GENERAL
 // KEYCARD AUTH
 
 /datum/access/keyauth

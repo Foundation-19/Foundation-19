@@ -29,7 +29,7 @@
 	var/list/manifestation_powers     // Powers that create an item.
 	var/list/powers_by_faculty        // All powers within a given faculty.
 
-	var/obj/screen/psi/hub/ui	      // Reference to the master psi UI object.
+	var/atom/movable/screen/psi/hub/ui	      // Reference to the master psi UI object.
 	var/mob/living/owner              // Reference to our owner.
 	var/image/_aura_image             // Client image
 

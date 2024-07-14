@@ -25,6 +25,6 @@
 	if(istype(I, /obj/item/gavelhammer))
 		playsound(loc, 'sounds/items/gavel.ogg', 100, TRUE)
 		user.visible_message(SPAN_WARNING("[user] strikes \the [src] with \the [I]."))
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 	else
 		return ..()

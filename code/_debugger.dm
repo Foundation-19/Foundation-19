@@ -9,7 +9,7 @@
 /datum/debugger/proc/enable_debugger()
 	var/dll = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if(dll)
-		LIBCALL("debug_server.dll", "auxtools_init")() //! FIXME515 hacky solution till auxtools and sdmm come out with support ~Tsuru
+		LIBCALL(dll, "auxtools_init")()
 		enable_debugging()
 
 /proc/auxtools_stack_trace(msg)

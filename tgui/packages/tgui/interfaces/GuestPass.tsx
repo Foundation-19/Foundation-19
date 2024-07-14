@@ -1,7 +1,18 @@
-import { useBackend, useLocalState } from '../backend';
-import { Section, Box, Button, Stack, LabeledList, Tabs, NoticeBox, NumberInput, BlockQuote } from '../components';
-import { Window } from '../layouts';
 import { BooleanLike } from 'common/react';
+
+import { useBackend, useLocalState } from '../backend';
+import {
+  BlockQuote,
+  Box,
+  Button,
+  LabeledList,
+  NoticeBox,
+  NumberInput,
+  Section,
+  Stack,
+  Tabs,
+} from '../components';
+import { Window } from '../layouts';
 
 type Access = {
   desc: string;
@@ -37,7 +48,8 @@ export const GuestPass = (props, context) => {
           <Section
             title={
               (area_code ? area_code + ' ' : '') + 'Temporary Access Terminal'
-            }>
+            }
+          >
             <Stack vertical>
               <Stack.Item>
                 <Button
@@ -119,12 +131,14 @@ const IdEditor = (props, context) => {
             <Tabs>
               <Tabs.Tab
                 selected={tabIndex === 0}
-                onClick={() => setTabIndex(0)}>
+                onClick={() => setTabIndex(0)}
+              >
                 Area
               </Tabs.Tab>
               <Tabs.Tab
                 selected={tabIndex === 1}
-                onClick={() => setTabIndex(1)}>
+                onClick={() => setTabIndex(1)}
+              >
                 Special
               </Tabs.Tab>
             </Tabs>

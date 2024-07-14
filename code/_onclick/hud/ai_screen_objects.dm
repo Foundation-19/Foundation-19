@@ -1,4 +1,4 @@
-/obj/screen/ai_button
+/atom/movable/screen/ai_button
 	var/mob/living/silicon/ai/ai_verb
 	var/list/input_procs
 	var/list/input_args
@@ -6,7 +6,7 @@
 	var/list/template_icon = list(null, "template")
 	var/image/template_undelay
 
-/obj/screen/ai_button/Click()
+/atom/movable/screen/ai_button/Click()
 	if(!isAI(usr))
 		return TRUE
 	var/mob/living/silicon/ai/A = usr
@@ -36,7 +36,7 @@
 	call(A, ai_verb)(arglist(input_arguments))
 	return TRUE
 
-/obj/screen/ai_button/Initialize(maploading, screen_loc, name, icon_state, ai_verb, list/input_procs = null, list/input_args = null)
+/atom/movable/screen/ai_button/Initialize(maploading, screen_loc, name, icon_state, ai_verb, list/input_procs = null, list/input_args = null)
 	. = ..()
 	if(!LAZYLEN(template_icon))
 		template_icon = list(icon)

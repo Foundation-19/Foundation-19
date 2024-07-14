@@ -60,7 +60,7 @@
 	if(!iscultist(user))
 		to_chat(user, "You can't mouth the arcane scratchings without fumbling over them.")
 		return
-	if(istype(user.wear_mask, /obj/item/clothing/mask/muzzle) || user.silent)
+	if(istype(user.wear_mask, /obj/item/clothing/mask/muzzle) || HAS_TRAIT(user, TRAIT_MUTE))
 		to_chat(user, "You are unable to speak the words of the rune.")
 		return
 	if(GLOB.cult.powerless)
@@ -520,7 +520,7 @@
 	admin_attack_log(user, victim, "Used a blood drain rune.", "Was victim of a blood drain rune.", "used a blood drain rune on")
 	speak_incantation(user, "Yu[pick("'","`")]gular faras desdae. Havas mithum javara. Umathar uf'kal thenar!")
 	user.visible_message(SPAN_WARNING("Blood flows from \the [src] into \the [user]!"), SPAN_OCCULT("The blood starts flowing from \the [src] into your frail mortal body. [capitalize(english_list(heal_user(user), nothing_text = "you feel no different"))]."), "You hear liquid flow.")
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 
 /obj/effect/rune/drain/proc/heal_user(mob/living/carbon/human/user)
 	if(!istype(user))
@@ -702,7 +702,7 @@
 		affected |= M
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
-			C.eye_blurry += 50
+			C.adjust_eye_blur(30 SECONDS)
 			C.Weaken(3)
 			C.Stun(5)
 		else if(issilicon(M))

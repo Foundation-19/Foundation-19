@@ -80,7 +80,7 @@
 
 /obj/structure/grille/attack_hand(mob/user as mob)
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	playsound(loc, 'sounds/effects/grillehit.ogg', 80, 1)
 	user.do_attack_animation(src)
 

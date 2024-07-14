@@ -5,6 +5,7 @@
 	desc = "It's a hat used by chefs to keep hair out of your food. Judging by the food in the mess, they don't work."
 	icon_state = "chefhat"
 	item_state = "chefhat"
+	hidden_from_codex = FALSE
 
 //Captain
 /obj/item/clothing/head/caphat
@@ -16,6 +17,7 @@
 		slot_r_hand_str = "caphat",
 		)
 	body_parts_covered = 0
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/caphat/cap
 	name = "captain's cap"
@@ -40,6 +42,7 @@
 	icon_state = "chaplain_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
+	hidden_from_codex = FALSE
 
 //Chaplain
 /obj/item/clothing/head/nun_hood
@@ -48,33 +51,35 @@
 	icon_state = "nun_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
+	hidden_from_codex = FALSE
 
 //Medical
 /obj/item/clothing/head/surgery
 	name = "surgical cap"
-	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs."
+	desc = "A surgical cap worn by surgeons for the room to be sterile. Keeps the wearer's hair from falling into the open wounds of the patient."
 	icon_state = "surgcap"
 	flags_inv = BLOCKHEADHAIR
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"
-	color = "#7a1b3f"
+	icon_state = "surgcap_purple"
 
 /obj/item/clothing/head/surgery/blue
 	name = "blue surgical cap"
-	color = "#4891e1"
+	icon_state = "surgcap_blue"
 
 /obj/item/clothing/head/surgery/green
 	name = "green surgical cap"
-	color = "#255a3e"
+	icon_state = "surgcap_green"
 
 /obj/item/clothing/head/surgery/black
 	name = "black surgical cap"
-	color = "#242424"
+	icon_state = "surgcap_black"
 
 /obj/item/clothing/head/surgery/navyblue
 	name = "navy blue surgical cap"
-	color = "#1f3a69"
+	icon_state = "surgcap_navyblue"
 
 /obj/item/clothing/head/surgery/lilac
 	name = "lilac surgical cap"
@@ -94,6 +99,7 @@
 	desc = "A beret, an artists favorite headwear."
 	icon_state = "beret"
 	body_parts_covered = 0
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/beret/sec
 	name = "Security Officer Beret"
@@ -143,7 +149,7 @@
 	icon_state = "beret_sergeant"
 
 /obj/item/clothing/head/beret/sec/commander
-	name = "Zone Commander Beret"
+	name = "Zone Officer Beret"
 	desc = "A black beret with a golden badge in the shape of a shield, it feels durable due to the materials it's been made from."
 	icon_state = "beret_commander"
 
@@ -181,8 +187,17 @@
 	name = "'Nine Tailed Fox' tactical beret"
 	desc = "A heavy padded beret used by MTF Epsilon-11, it's quite armored, more than traditional helmets."
 	icon_state = "beret_epsilon11"
+	permeability_coefficient = 0
+	gas_transfer_coefficient = 0
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
 	armor = list(melee = 90, bullet = 90, laser = 50,energy = 25, bomb = 50, bio = 50, rad = 60)
-	body_parts_covered = HEAD
+	cold_protection = HEAD
+	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_AIRTIGHT
+	body_parts_covered = HEAD|FACE|EYES
 
 /obj/item/clothing/head/beret/mtf/alpha
 	name = "'Red Right Hand' tactical beret"
@@ -192,7 +207,7 @@
 /obj/item/clothing/head/beret/mtf/omega
 	name = "'Laws Left Hand' tactical beret"
 	desc = "A heavy padded beret used by MTF Omega-1, it's quite armored, more than traditional helmets."
-	icon_state = "beret_guardcom"
+	icon_state = "beret_omega1"
 
 /obj/item/clothing/head/beret/engineering
 	name = "corporate engineering beret"

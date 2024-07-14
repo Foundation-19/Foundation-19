@@ -47,7 +47,7 @@
 
 	UnregisterSignal(module_to_forget, COMSIG_PARENT_QDELETING)
 
-	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[target]
+	var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[target]
 	H.holding = null
 
 	hud_elements -= module_to_forget
@@ -102,7 +102,7 @@
 	hardpoints[system_hardpoint] = system
 	ME.installed(src)
 
-	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
+	var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
 	H.holding = system
 
 	system.screen_loc = H.screen_loc
@@ -140,7 +140,7 @@
 	system.layer = initial(system.layer)
 	UnregisterSignal(system, COMSIG_PARENT_QDELETING)
 
-	var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
+	var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[system_hardpoint]
 	H.holding = null
 
 	for(var/thing in pilots)

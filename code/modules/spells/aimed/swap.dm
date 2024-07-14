@@ -38,7 +38,7 @@
 	target.forceMove(user_turf)
 	user.forceMove(target_turf)
 
-	target.eye_blind += eye_blind
+	target.adjust_temp_blindness(eye_blind)
 
 /datum/spell/aimed/swap/ImproveSpellPower()
 	if(!..())

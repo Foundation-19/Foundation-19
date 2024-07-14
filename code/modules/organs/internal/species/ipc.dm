@@ -56,7 +56,7 @@
 	return ..()
 
 /obj/item/organ/internal/posibrain/attack_self(mob/user)
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		return
 	if (user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
 		if (status & ORGAN_DEAD || !brainmob)
@@ -235,18 +235,18 @@
 	if (!owner || owner.stat)
 		return
 	if (damage > min_bruised_damage)
-		if (prob(1) && owner.confused < 1)
+		if (prob(1) && !owner.has_status_effect(/datum/status_effect/confusion))
 			to_chat(owner, SPAN_WARNING("Your comprehension of spacial positioning goes temporarily awry."))
-			owner.confused += 3
-		if (prob(1) && owner.eye_blurry < 1)
+			owner.set_confusion(5 SECONDS)
+		if (prob(1) && !owner.has_status_effect(/datum/status_effect/eye_blur))
 			to_chat(owner, SPAN_WARNING("Your optical interpretations become transiently erratic."))
-			owner.eye_blurry += 6
+			owner.set_eye_blur(6 SECONDS)
 		if (prob(1) && owner.ear_deaf < 1)
 			to_chat(owner, SPAN_WARNING("Your capacity to differentiate audio signals briefly fails you."))
 			owner.ear_deaf += 6
-		if (prob(1) && owner.slurring < 1)
+		if (prob(1) && !owner.has_status_effect(/datum/status_effect/speech/slurring))
 			to_chat(owner, SPAN_WARNING("Your ability to form coherent speech struggles to keep up."))
-			owner.slurring += 6
+			owner.set_slurring(6 SECONDS)
 		if (damage > min_broken_damage)
 			if (prob(2))
 				if (prob(15) && owner.sleeping < 1)

@@ -206,11 +206,9 @@
 	if(G.special_target_functional)
 		switch(G.target_zone)
 			if(BP_MOUTH)
-				if(G.affecting.silent < 2)
-					G.affecting.silent = 2
+				G.affecting.set_silence_if_lower(2 SECONDS)
 			if(BP_EYES)
-				if(G.affecting.eye_blind < 2)
-					G.affecting.eye_blind = 2
+				G.affecting.set_temp_blindness_if_lower(2 SECONDS)
 
 // Handles when they change targeted areas and something is supposed to happen.
 /datum/grab/normal/special_target_change(obj/item/grab/G, old_zone, new_zone)
@@ -252,7 +250,8 @@
 		return 0 //unsuitable weapon
 	user.visible_message(SPAN_DANGER("\The [user] begins to slit [affecting]'s throat with \the [W]!"))
 
-	user.next_move = world.time + 20 //also should prevent user from triggering this repeatedly
+	user.setClickCooldown(2 SECONDS)
+
 	if(!do_after(user, 2 SECONDS * user.skill_delay_mult(SKILL_COMBAT), do_flags = DO_DEFAULT | DO_SHOW_TARGET))
 		return 0
 	if(!(G?.affecting == affecting)) //check that we still have a grab

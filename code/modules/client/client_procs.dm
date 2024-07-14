@@ -210,11 +210,13 @@
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
+		RegisterSignal(src, COMSIG_CLIENT_PREFS_LOADED, PROC_REF(on_prefs_loaded))
 		prefs = new /datum/preferences(src)
+	else
+		on_prefs_loaded(src, prefs)
 	prefs.macros.owner = src
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
-	apply_fps(prefs.clientfps)
 
 	. = ..()	//calls mob.Login()
 
@@ -493,6 +495,10 @@
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = client_fps
 
+/client/proc/on_prefs_loaded(client/target, datum/preferences/prefs)
+	SIGNAL_HANDLER
+	apply_fps(prefs.clientfps)
+
 /client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
 	. = ..()
 	var/mob/living/M = mob
@@ -694,9 +700,8 @@
 	new_character.dna.ready_dna(new_character)
 	new_character.dna.b_type = prefs.b_type
 	new_character.sync_organ_dna()
-	if(prefs.disabilities)
-		new_character.dna.SetSEState(GLOB.GLASSESBLOCK,1,0)
-		new_character.disabilities |= NEARSIGHTED
+	if(prefs.char_nearsighted)
+		new_character.become_nearsighted(ROUNDSTART_TRAIT)
 	new_character.force_update_limbs()
 	new_character.update_eyes()
 	new_character.regenerate_icons()

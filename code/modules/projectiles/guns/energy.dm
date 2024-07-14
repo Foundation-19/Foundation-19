@@ -21,8 +21,6 @@
 	var/recharge_time = 4
 	var/charge_tick = 0
 
-	general_codex_key = "energy weapons"		// for codex
-
 /obj/item/gun/energy/switch_firemodes()
 	. = ..()
 	if(.)
@@ -109,6 +107,8 @@
 
 GLOBAL_LIST_INIT(banned_914_energy_guns, list(
 	/obj/item/gun/energy/pulse_rifle/destroyer,
+	/obj/item/gun/energy/meteorgun,
+	/obj/item/gun/energy/meteorgun/pen
 	))
 
 // Coarse - Returns random gun with lower max_shots or damage

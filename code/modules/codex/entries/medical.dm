@@ -1,13 +1,13 @@
 /datum/codex_entry/bodyscanner
 	associated_paths = list(/obj/machinery/bodyscanner)
-	mechanics_text = "The advanced scanner detects and reports internal injuries such as bone fractures, internal bleeding, and organ damage. \
+	entry_text = "The advanced scanner detects and reports internal injuries such as bone fractures, internal bleeding, and organ damage. \
 	This is useful if you are about to perform surgery.<br>\
 	Click your target with Grab intent, then click on the scanner to place them in it. Click the red terminal to operate. \
 	Right-click the scanner and click 'Eject Occupant' to remove them. You can enter the scanner yourself in a similar way, using the 'Enter Body Scanner' verb."
 
 /datum/codex_entry/cryocell
 	associated_paths = list(/obj/machinery/atmospherics/unary/cryo_cell)
-	mechanics_text = "The cryogenic chamber, or 'cryo', treats most damage types, most notably genetic damage. It also stabilizes patients \
+	entry_text = "The cryogenic chamber, or 'cryo', treats most damage types, most notably genetic damage. It also stabilizes patients \
 	in critical condition by placing them in stasis, so they can be treated at a later time.<br>\
 	In order for it to work, it must be loaded with chemicals, and the temperature of the solution must reach a certain point. \
 	Additionally, it requires a supply of pure oxygen, provided by <span codexlink='gas canisters'>canisters</span> that are attached. \
@@ -22,24 +22,24 @@
 
 /datum/codex_entry/optable
 	associated_paths = list(/obj/machinery/optable)
-	mechanics_text = "Click your target with Grab intent, then click on the operating table with an empty hand, to place them on it.<br>\
+	entry_text = "Click your target with Grab intent, then click on the operating table with an empty hand, to place them on it.<br>\
 	Click on the table after that to enable knockout function."
 
 /datum/codex_entry/vitals_monitor
 	associated_paths = list(/obj/machinery/vitals_monitor)
-	mechanics_text = "Click and drag the vitals monitor onto your target to attach them. Doing the same action again will detatch them.<br>\
+	entry_text = "Click and drag the vitals monitor onto your target to attach them. Doing the same action again will detatch them.<br>\
 	Click and drag the vitals monitor onto an operating table to connect it to the table. \
 	This will forward all patient info from the <span codexlink='Operating Table'>OR table</span> to the vitals monitor.<br>\
 	The vitals monitor will continue reporting information as long as whatever it is attached to remains adjacent to it."
 
 /datum/codex_entry/operating
 	associated_paths = list(/obj/machinery/computer/operating)
-	mechanics_text = "This console gives information on the status of the patient on the adjacent <span codexlink='Operating Table'>operating table</span>, \
+	entry_text = "This console gives information on the status of the patient on the adjacent <span codexlink='Operating Table'>operating table</span>, \
 	notably their consciousness."
 
 /datum/codex_entry/sleeper
 	associated_paths = list(/obj/machinery/sleeper)
-	mechanics_text = "The sleeper allows you to clean the blood by means of dialysis, and to administer medication in a controlled environment.<br>\
+	entry_text = "The sleeper allows you to clean the blood by means of dialysis, and to administer medication in a controlled environment.<br>\
 	Click your target with Grab intent, then click on the sleeper to place them in it. Click the green console, with an empty hand, to open the menu. \
 	Click 'Start Dialysis' to begin filtering unwanted chemicals from the occupant's blood. \
 	The beaker contained will begin to fill with their contaminated blood, and will need to be emptied when full.<br>\
@@ -50,7 +50,7 @@
 
 /datum/codex_entry/cryobag
 	associated_paths = list(/obj/item/bodybag/cryobag, /obj/structure/closet/body_bag/cryobag)
-	mechanics_text = "This stasis bag will preserve the occupant, stopping most forms of harm from occuring, \
+	entry_text = "This stasis bag will preserve the occupant, stopping most forms of harm from occuring, \
 	such as from oxygen deprivation, irradiation, shock, and chemicals inside the occupant, at least until the bag is opened again.<br>\
 	Stasis bags can only be used once, and are rather costly, so use them well. \
 	They are ideal for situations where someone may die before being able to bring them back to safety, or if they are in a hostile enviroment, \
@@ -60,7 +60,7 @@
 
 /datum/codex_entry/autopump
 	associated_paths = list(/obj/item/auto_cpr/)
-	mechanics_text = "This automatic pump will help a patient whose heart is stopped, much like CPR, when put in the patient's suit slot.<br>\
+	entry_text = "This automatic pump will help a patient whose heart is stopped, much like CPR, when put in the patient's suit slot.<br>\
 	There are several things to keep in mind when using it. \
 	First off, you need Basic <span codexlink='medicine (skill)'>Medicine</span> AND <span codexlink='anatomy (skill)'>Anatomy</span> skills to align it properly, otherwise it'll hurt the patient. \
 	It will only provide some circulation, you need to fix blood volume and oxygen supply issues for it to be useful. \

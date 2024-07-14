@@ -42,6 +42,7 @@
 
 // Material definition and procs follow.
 /material
+	abstract_type = /material
 	var/name	                          // Unique name for use in indexing the list.
 	var/display_name                      // Prettier name for display.
 	var/adjective_name
@@ -53,9 +54,7 @@
 	var/is_fusion_fuel
 	var/list/chem_products				  //Used with the grinder to produce chemicals.
 	var/hidden_from_codex
-	var/lore_text
-	var/mechanics_text
-	var/antag_text
+	var/codex_desc
 
 	// Shards/tables/structures
 	var/shard_type = SHARD_SHRAPNEL       // Path of debris object.
@@ -211,6 +210,7 @@
 
 // Used by walls when qdel()ing to avoid neighbor merging.
 /material/placeholder
+	hidden_from_codex = TRUE
 	name = "placeholder"
 
 // Places a girder object when a wall is dismantled, also applies reinforced material.

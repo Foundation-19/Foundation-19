@@ -55,15 +55,17 @@
 
 /obj/item/gun/projectile/revolver/military/heavy
 	name = "heavy revolver"
-	desc = "A heavy revolver used mostly by military officers or special forces."
+	desc = "A heavy revolver used mostly by military officers or special forces. Chambered in .454 Casull."
 	icon_state = "tp44"
+	max_shells = 7
 	caliber = CALIBER_REVOLVER_HEAVY
 	ammo_type = /obj/item/ammo_casing/revolver/heavy
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
 
 /obj/item/gun/projectile/revolver/mateba
 	name = "mateba"
-	desc = "Standard issue Foundation revolver based off the Mateba Unica. Chambered in .44 Magnum"
+	desc = "Standard issue Foundation revolver based off the Mateba Unica. Chambered in .44 Magnum."
+	icon = 'icons/obj/guns/revolvers.dmi'
 	icon_state = "mateba"
 	fire_delay = 6
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)

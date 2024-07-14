@@ -6,17 +6,21 @@
 // SCP STAMPS
 
 /obj/item/stamp/scp/facdir
-	name = "facility director's rubber stamp"
+	name = "Site Director's rubber stamp"
 	icon_state = "stamp-cap"
 
 /obj/item/stamp/scp/o5rep
-	name = "representative's rubber stamp"
+	name = "Representative's rubber stamp"
 	icon_state = "stamp-cap"
 
 /obj/item/stamp/scp/hop
-	name = "head of personnel's rubber stamp"
+	name = "Site Manager's rubber stamp"
 	icon_state = "stamp-hop"
 
 /obj/item/stamp/scp/cmo
-	name = "chief medical officer's rubber stamp"
+	name = "Medical Director's rubber stamp"
+	icon_state = "stamp-cmo"
+
+/obj/item/stamp/scp/acmo
+	name = "Assistant Medical Director's rubber stamp"
 	icon_state = "stamp-cmo"

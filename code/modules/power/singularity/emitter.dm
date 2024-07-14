@@ -171,10 +171,6 @@
 			fire_delay = get_rand_burst_delay()
 			shot_number = 0
 
-		//need to calculate the power per shot as the emitter doesn't fire continuously.
-		var/burst_time = (min_burst_delay + max_burst_delay) / 2 + 2 * (burst_shots - 1)
-		var/power_per_shot = (active_power_usage * efficiency) * (burst_time / 10) / burst_shots
-
 		if (prob(35))
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 			s.set_up(5, 1, src)
@@ -183,7 +179,7 @@
 		var/obj/item/projectile/beam/emitter/A = get_emitter_beam()
 		playsound(loc, A.fire_sound, 25, TRUE)
 		show_sound_effect(loc)
-		A.damage = round (power_per_shot / EMITTER_DAMAGE_POWER_TRANSFER)
+		A.damage = get_emitter_damage()
 		A.launch( get_step(loc, dir) )
 
 /obj/machinery/power/emitter/attackby(obj/item/W, mob/user)
@@ -303,6 +299,12 @@
 
 /obj/machinery/power/emitter/proc/get_emitter_beam()
 	return new /obj/item/projectile/beam/emitter(get_turf(src))
+
+/obj/machinery/power/emitter/proc/get_emitter_damage()
+	//need to calculate the power per shot as the emitter doesn't fire continuously.
+	var/burst_time = (min_burst_delay + max_burst_delay) / 2 + 2 * (burst_shots - 1)
+	var/power_per_shot = (active_power_usage * efficiency) * (burst_time / 10) / burst_shots
+	return round(power_per_shot / EMITTER_DAMAGE_POWER_TRANSFER)
 
 /decl/public_access/public_method/toggle_emitter
 	name = "toggle emitter"

@@ -1501,7 +1501,7 @@
 					else
 						var/atom/O = new path(target)
 						if(O)
-							O.set_dir(obj_dir)
+							O.setDir(obj_dir)
 							if(obj_name)
 								O.SetName(obj_name)
 								if(istype(O, /mob))

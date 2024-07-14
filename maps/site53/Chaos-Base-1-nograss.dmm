@@ -1,5 +1,5 @@
 "a" = (/turf/space,/area/space)
-"d" = (/obj/structure/table/steel_reinforced,/obj/item/clothing/under/scp/utility/chaos,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
+"d" = (/obj/structure/table/steel_reinforced,/obj/item/clothing/under/syndicate/chaos,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)
 "f" = (/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos_brief)
 "g" = (/obj/machinery/door/blast/regular,/turf/space,/area/space)
 "h" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/site53/offsite/chaos)

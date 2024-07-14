@@ -336,7 +336,7 @@ var/list/turret_icons
 
 	else
 		//if the turret was attacked with the intention of harming it:
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		take_damage(I.force * 0.5)
 		if(I.force * 0.5 > 1) //if the force of impact dealt at least 1 damage, the turret gets pissed off
 			if(!attacked && !emagged)
@@ -581,7 +581,7 @@ var/list/turret_icons
 		last_target = target
 		spawn()
 			popUp()				//pop the turret up if it's not already up.
-		set_dir(get_dir(src, target))	//even if you can't shoot, follow the target
+		setDir(get_dir(src, target))	//even if you can't shoot, follow the target
 		spawn()
 			shootAt(target)
 		return 1

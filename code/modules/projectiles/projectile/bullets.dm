@@ -201,6 +201,14 @@
 /obj/item/projectile/bullet/pistol/practice
 	damage = 5
 
+/obj/item/projectile/bullet/pistol/ap
+	damage = 37
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/pistol/hp
+	damage = 47
+	armor_penetration = -10
+
 /obj/item/projectile/bullet/rifle/military/practice
 	damage = 5
 
@@ -287,6 +295,10 @@
 /obj/item/projectile/bullet/pistol/medium
 	damage = 45 //.45
 	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol/medium/ap
+	damage = 45 //.45
+	armor_penetration = 10
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sounds/weapons/gunshot/gunshot_strong.ogg'

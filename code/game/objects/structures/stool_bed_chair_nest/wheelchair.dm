@@ -11,14 +11,12 @@
 /obj/structure/bed/chair/wheelchair/on_update_icon()
 	return
 
-/obj/structure/bed/chair/wheelchair/set_dir()
+/obj/structure/bed/chair/wheelchair/setDir()
 	..()
 	cut_overlays()
 	var/image/O = image(icon = 'icons/obj/furniture.dmi', icon_state = "w_overlay", dir = src.dir)
 	O.layer = ABOVE_HUMAN_LAYER
 	add_overlay(O)
-	if(buckled_mob)
-		buckled_mob.set_dir(dir)
 
 /obj/structure/bed/chair/wheelchair/attackby(obj/item/W as obj, mob/user as mob)
 	if(isWrench(W) || istype(W,/obj/item/stack) || isWirecutter(W))
@@ -72,7 +70,7 @@
 	step(src, direction)
 	if(buckled_mob) // Make sure it stays beneath the occupant
 		Move(buckled_mob.loc)
-	set_dir(direction)
+	setDir(direction)
 	if(pulling) // Driver
 		if(pulling.loc == src.loc) // We moved onto the wheelchair? Revert!
 			pulling.forceMove(T)
@@ -81,7 +79,7 @@
 			if(get_dist(src, pulling) > 1) // We are too far away? Losing control.
 				pulling = null
 				user.pulledby = null
-			pulling.set_dir(get_dir(pulling, src)) // When everything is right, face the wheelchair
+			pulling.setDir(get_dir(pulling, src)) // When everything is right, face the wheelchair
 	if(bloodiness)
 		create_track()
 	driving = 0
@@ -124,7 +122,7 @@
 			user.pulledby = src
 			if(user.pulling)
 				user.stop_pulling()
-			user.set_dir(get_dir(user, src))
+			user.setDir(get_dir(user, src))
 			to_chat(user, "You grip \the [name]'s handles.")
 		else
 			to_chat(usr, "You let go of \the [name]'s handles.")
@@ -150,7 +148,7 @@
 		occupant.throw_at(A, 3, 3)
 		occupant.apply_effect(6, STUN, blocked)
 		occupant.apply_effect(6, WEAKEN, blocked)
-		occupant.apply_effect(6, STUTTER, blocked)
+		occupant.adjust_stutter(6 SECONDS * ((100 - blocked) / 100))
 		occupant.apply_damage(10, BRUTE, def_zone)
 		playsound(src.loc, 'sounds/weapons/punch1.ogg', 50, 1, -1)
 		if(istype(A, /mob/living))
@@ -159,7 +157,7 @@
 			blocked = 100 * victim.get_blocked_ratio(def_zone, BRUTE, damage = 10)
 			victim.apply_effect(6, STUN, blocked)
 			victim.apply_effect(6, WEAKEN, blocked)
-			victim.apply_effect(6, STUTTER, blocked)
+			victim.adjust_stutter(6 SECONDS * ((100 - blocked) / 100))
 			victim.apply_damage(10, BRUTE, def_zone)
 		if(pulling)
 			occupant.visible_message(SPAN_DANGER("[pulling] has thrusted \the [name] into \the [A], throwing \the [occupant] out of it!"))
@@ -171,14 +169,14 @@
 	var/obj/effect/decal/cleanable/blood/tracks/B = new(loc)
 	var/newdir = get_dir(get_step(loc, dir), loc)
 	if(newdir == dir)
-		B.set_dir(newdir)
+		B.setDir(newdir)
 	else
 		newdir = newdir | dir
 		if(newdir == 3)
 			newdir = 1
 		else if(newdir == 12)
 			newdir = 4
-		B.set_dir(newdir)
+		B.setDir(newdir)
 	bloodiness--
 
 /obj/structure/bed/chair/wheelchair/buckle_mob(mob/M as mob, mob/user as mob)

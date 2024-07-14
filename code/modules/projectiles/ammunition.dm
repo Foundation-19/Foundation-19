@@ -2,7 +2,7 @@
 	name = "bullet casing"
 	desc = "A bullet casing."
 	icon = 'icons/obj/ammo.dmi'
-	icon_state = "pistolcasing"
+	icon_state = "pistol-brass"
 	randpixel = 10
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT | SLOT_EARS
@@ -13,7 +13,7 @@
 	var/caliber = ""					//Which kind of guns it can be loaded into
 	var/projectile_type					//The bullet type to create when New() is called
 	var/is_spent = FALSE
-	var/spent_icon = "pistolcasing-spent"
+	var/spent_icon = "pistol-brass-empty"
 	var/fall_sounds = list('sounds/weapons/guns/casingfall1.ogg','sounds/weapons/guns/casingfall2.ogg','sounds/weapons/guns/casingfall3.ogg')
 	var/projectile_label
 
@@ -37,7 +37,7 @@
 	is_spent = TRUE
 	if(projectile_label)
 		proj.SetName("[initial(proj.name)] (\"[projectile_label]\")")
-	set_dir(pick(GLOB.alldirs)) //spin spent casings
+	setDir(pick(GLOB.alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.
 	if(leaves_residue)
@@ -67,7 +67,7 @@
 
 /obj/item/ammo_casing/proc/put_residue_on(atom/A)
 	if(A)
-		LAZYDISTINCTADD(A.gunshot_residue, caliber)
+		LAZYOR(A.gunshot_residue, caliber)
 
 /obj/item/ammo_casing/attackby(obj/item/W as obj, mob/user as mob)
 	if(!isScrewdriver(W))
@@ -275,7 +275,8 @@
 	var/max_sounds = clamp(round(length(stored_ammo) * 0.2), 1, 10)
 	for(var/obj/item/ammo_casing/C in stored_ammo)
 		C.forceMove(user.loc)
-		C.set_dir(pick(GLOB.alldirs))
+		C.setDir(pick(GLOB.alldirs))
+		C.setDir(pick(GLOB.alldirs))
 		if(LAZYLEN(C.fall_sounds) && curr_sounds < max_sounds)
 			playsound(user.loc, pick(C.fall_sounds), 20, TRUE)
 			curr_sounds += 1
