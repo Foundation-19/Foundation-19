@@ -6,6 +6,7 @@
 
 import { Button, Section, Stack } from 'tgui/components';
 import { Pane } from 'tgui/layouts';
+
 import { NowPlayingWidget, useAudio } from './audio';
 import { ChatPanel, ChatTabs } from './chat';
 import { useGame } from './game';
@@ -116,7 +117,8 @@ const HoboPanel = (props, context) => {
             'z-index': 1000,
           }}
           selected={settings.visible}
-          onClick={() => settings.toggle()}>
+          onClick={() => settings.toggle()}
+        >
           Settings
         </Button>
         {(settings.visible && <SettingsPanel />) || (

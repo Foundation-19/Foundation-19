@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(apostles)
 	id = "apostle"
 	role_text = "Apostle"
 	role_text_plural = "Apostles"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep, /datum/job/raisa)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/chief_engineer, /datum/job/achief_engineer, /datum/job/cmo, /datum/job/acmo, /datum/job/rd, /datum/job/ard, /datum/job/qm, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/guardlcz, /datum/job/guardhcz, /datum/job/guardez, /datum/job/goirep, /datum/job/raisa)
 	antaghud_indicator = "hudchangeling"
 	faction = "apostle"
 

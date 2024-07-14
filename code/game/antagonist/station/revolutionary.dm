@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(revs, /datum/antagonist/revolutionary, new)
 	id = MODE_REVOLUTIONARY
 	role_text = "Head Revolutionary"
 	role_text_plural = "Revolutionaries"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/captain, /datum/job/hop, /datum/job/commsofficer, /datum/job/chief_engineer, /datum/job/cmo, /datum/job/rd, /datum/job/hos, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/raisa)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/captain, /datum/job/hos, /datum/job/chief_engineer, /datum/job/achief_engineer, /datum/job/cmo, /datum/job/acmo, /datum/job/rd, /datum/job/ard, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/guardlcz, /datum/job/guardhcz, /datum/job/guardez, /datum/job/goirep, /datum/job/raisa)
 	feedback_tag = "rev_objective"
 	antag_indicator = "hud_rev_head"
 	welcome_text = "Down with the capitalists! Down with the Bourgeoise!"

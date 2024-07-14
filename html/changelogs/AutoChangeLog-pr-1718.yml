@@ -1,5 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Fixed runtime spam on every mob life
-  - bugfix: 106 no longer breaches immediately on grid check event
