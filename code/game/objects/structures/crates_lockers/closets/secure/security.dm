@@ -186,8 +186,8 @@
 /obj/structure/closet/secure_closet/detective/WillContain()
 	return list(
 		/obj/item/clothing/under/det,
-		/obj/item/clothing/under/det/grey,
 		/obj/item/clothing/under/det/black,
+		/obj/item/clothing/under/det/slack,
 		/obj/item/clothing/suit/storage/det_trench,
 		/obj/item/clothing/suit/storage/det_trench/grey,
 		/obj/item/clothing/suit/storage/forensics/blue,

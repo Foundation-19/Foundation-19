@@ -155,7 +155,7 @@
 
 /decl/hierarchy/outfit/job/security/ez_sergeant_investigative
 	name = OUTFIT_JOB_NAME("Investigation Officer")
-	uniform = /obj/item/clothing/under/det/grey
+	uniform = /obj/item/clothing/under/det/black
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench/grey
 	id_type = /obj/item/card/id/seclvl3ez

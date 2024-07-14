@@ -193,7 +193,7 @@
 
 /obj/effect/landmark/costume/butler/New()
 	new /obj/item/clothing/accessory/wcoat/black(src.loc)
-	new /obj/item/clothing/under/suit_jacket(src.loc)
+	new /obj/item/clothing/under/suit(src.loc)
 	new /obj/item/clothing/head/that(src.loc)
 	delete_me = 1
 

@@ -77,7 +77,7 @@
 		/obj/item/clothing/under/rank/ntwork = 400,
 		/obj/item/clothing/under/rank/guard/nanotrasen = 400,
 		/obj/item/clothing/under/rank/ntwork/nanotrasen = 400,
-		/obj/item/clothing/under/suit_jacket/corp/nanotrasen = 400,
+		/obj/item/clothing/under/suit/corp/nanotrasen = 400,
 		/obj/item/clothing/under/rank/guard/heph = 400,
 		/obj/item/clothing/under/rank/scientist/zeng = 400,
 		/obj/item/clothing/under/rank/scientist/executive/zeng = 400,

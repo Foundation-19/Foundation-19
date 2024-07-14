@@ -31,7 +31,7 @@
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Psychiatrist")
-	uniform = /obj/item/clothing/under/suit_jacket/tan
+	uniform = /obj/item/clothing/under/suit/tan
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	id_type = /obj/item/card/id/psychiatrist

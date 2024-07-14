@@ -31,32 +31,29 @@
 /datum/gear/uniform/suit/New()
 	..()
 	var/suits = list()
-	suits += /obj/item/clothing/under/sl_suit
-	suits += /obj/item/clothing/under/suit_jacket
-	suits += /obj/item/clothing/under/lawyer/blue
-	suits += /obj/item/clothing/under/suit_jacket/burgundy
-	suits += /obj/item/clothing/under/suit_jacket/charcoal
-	suits += /obj/item/clothing/under/suit_jacket/checkered
-	suits += /obj/item/clothing/under/suit_jacket/really_black
-	suits += /obj/item/clothing/under/suit_jacket/female
-	suits += /obj/item/clothing/under/gentlesuit
-	suits += /obj/item/clothing/under/suit_jacket/navy
-	suits += /obj/item/clothing/under/lawyer/oldman
+	suits += /obj/item/clothing/under/suit
+	suits += /obj/item/clothing/under/suit/skirt
+	suits += /obj/item/clothing/under/suit/burgundy
+	suits += /obj/item/clothing/under/suit/charcoal
+	suits += /obj/item/clothing/under/suit/checkered
+	suits += /obj/item/clothing/under/suit/tan
+	suits += /obj/item/clothing/under/suit/navy
+	suits += /obj/item/clothing/under/suit/red
+	suits += /obj/item/clothing/under/suit/really_black
+	suits += /obj/item/clothing/under/suit/really_black/skirt
+	suits += /obj/item/clothing/under/suit/white
+	suits += /obj/item/clothing/under/suit/white/skirt
 	suits += /obj/item/clothing/under/lawyer/purpsuit
-	suits += /obj/item/clothing/under/suit_jacket/red
+	suits += /obj/item/clothing/under/lawyer/purpsuit/skirt
 	suits += /obj/item/clothing/under/lawyer/red
+	suits += /obj/item/clothing/under/lawyer/red/skirt
 	suits += /obj/item/clothing/under/lawyer/black
-	suits += /obj/item/clothing/under/suit_jacket/tan
-	suits += /obj/item/clothing/under/scratch
-	suits += /obj/item/clothing/under/lawyer/bluesuit
-	suits += /obj/item/clothing/under/rank/internalaffairs/plain
-	suits += /obj/item/clothing/under/blazer
-	suits += /obj/item/clothing/under/blackjumpskirt
-	suits += /obj/item/clothing/under/kilt
-	suits += /obj/item/clothing/under/dress/dress_hr
+	suits += /obj/item/clothing/under/lawyer/black/skirt
+	suits += /obj/item/clothing/under/lawyer/blue
+	suits += /obj/item/clothing/under/lawyer/blue/skirt
 	suits += /obj/item/clothing/under/det
 	suits += /obj/item/clothing/under/det/black
-	suits += /obj/item/clothing/under/det/grey
+	suits += /obj/item/clothing/under/det/slack
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(suits)
 
 /datum/gear/uniform/scrubs
