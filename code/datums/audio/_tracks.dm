@@ -425,3 +425,10 @@
 	license = /decl/license/cc_by_sa_3_0
 	url = "https://www.youtube.com/watch?v=jpxIVDVoa2I"
 
+/decl/audio/track/goc_spawn_theme2
+	source = 'sounds/music/goc_spawn_theme2.ogg'
+	title = "goc spawn theme (project scp) (real("
+	author = "amperndsn"
+	license = /decl/license/cc_by_sa_3_0
+	url = "https://www.youtube.com/watch?v=dkwdgm6hk3E&list=RDNXZ4hbOl7eY&index=3"
+

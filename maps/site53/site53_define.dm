@@ -99,6 +99,7 @@
 		/decl/audio/track/purge_protocol,
 		/decl/audio/track/uiu_spawn_theme,
 		/decl/audio/track/surface_area,
+		/decl/audio/track/goc_spawn_theme2
 	)
 
 	available_cultural_info = list(
