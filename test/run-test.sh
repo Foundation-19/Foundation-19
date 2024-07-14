@@ -206,7 +206,7 @@ function run_code_tests {
     run_test "indentation check" "awk -f tools/indentation.awk **/*.dm"
     run_test "check tags" "python3 tools/TagMatcher/tag-matcher.py ."
     run_test "check punctuation" "python3 tools/PunctuationChecker/punctuation-checker.py ."
-    run_test "check icon state limit" "python3 tools/dmitool/check_icon_state_limit.py ."
+    run_test "check icon states validity" "python3 tools/dmi/test.py ."
 }
 
 function run_byond_tests {
