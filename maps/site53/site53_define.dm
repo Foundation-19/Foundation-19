@@ -34,7 +34,6 @@
 		"Foundation Central Office",
 		"UIU Central Office",
 		"GOC Central Office",
-		"Horizon Initiative Central Office ",
 		"Marshall, Carter, and Dark Central Office",
 		"Goldbaker-Reinz Central Office"
 	)
