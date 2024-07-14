@@ -30,6 +30,15 @@
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 
+=======
+	map_admin_faxes = list(
+		"Foundation Central Office",
+		"UIU Central Office",
+		"GOC Central Office",
+		"Marshall, Carter, and Dark Central Office",
+		"Goldbaker-Reinz Central Office"
+	)
+
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "The outbound train is now boarding at the Train Station. It will depart in approximately %ETD%."
 	shuttle_leaving_dock = "The outbound train for off-duty personnel is now departing, and will reach its first stop in %ETA%."

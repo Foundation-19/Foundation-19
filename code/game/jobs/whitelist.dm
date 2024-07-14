@@ -26,6 +26,7 @@ var/list/whitelist = list()
 		else
 			load_alienwhitelist()
 	return 1
+
 /proc/load_alienwhitelist()
 	var/text = file2text("config/alienwhitelist.txt")
 	if (!text)
@@ -34,6 +35,7 @@ var/list/whitelist = list()
 	else
 		alien_whitelist = splittext(text, "\n")
 		return 1
+
 /proc/load_alienwhitelistSQL()
 	var/datum/db_query/query = SSdbcore.NewQuery("SELECT * FROM whitelist")
 	if(!query.Execute())
@@ -43,11 +45,13 @@ var/list/whitelist = list()
 	else
 		while(query.NextRow())
 			var/list/row = query.item
-			if(alien_whitelist[row["ckey"]])
-				var/list/A = alien_whitelist[row["ckey"]]
-				A.Add(row["race"])
+			var/ckey = ckey(row[2])
+			var/race = lowertext(row[3])
+			if(alien_whitelist[ckey])
+				var/list/A = alien_whitelist[ckey]
+				A.Add(race)
 			else
-				alien_whitelist[row["ckey"]] = list(row["race"])
+				alien_whitelist[ckey] = list(race)
 	qdel(query)
 	return 1
 
@@ -87,6 +91,8 @@ var/list/whitelist = list()
 		if(!(ckey in alien_whitelist))
 			return 0;
 		var/list/whitelisted = alien_whitelist[ckey]
+		if("all" in whitelisted)
+			return 1
 		if(lowertext(item) in whitelisted)
 			return 1
 	else
