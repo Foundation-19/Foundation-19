@@ -229,7 +229,7 @@
 
 /decl/hierarchy/outfit/mtf/o5rep
 	name = OUTFIT_JOB_NAME("O5 Representative")
-	uniform = /obj/item/clothing/under/suit_jacket/really_black
+	uniform = /obj/item/clothing/under/suit/really_black
 	suit = /obj/item/clothing/suit/armor/overseer
 	mask = /obj/item/clothing/mask/smokable/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/sunglasses

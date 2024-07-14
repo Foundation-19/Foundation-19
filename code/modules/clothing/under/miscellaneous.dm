@@ -244,29 +244,35 @@
 	item_state = "g_suit"
 	worn_state = "teal_suit"
 
-/obj/item/clothing/under/suit_jacket
+/obj/item/clothing/under/suit
 	name = "black suit"
-	desc = "A black suit and red tie. Very formal."
+	desc = "A black suit with charcoal pants and a red tie. Very formal."
 	icon_state = "black_suit"
 	item_state = "bl_suit"
 	worn_state = "black_suit"
 
-/obj/item/clothing/under/suit_jacket/really_black
+/obj/item/clothing/under/suit/skirt
+	name = "black suitskirt"
+	desc = "A black suit with a charcoal skirt and a red tie. Very formal."
+	icon_state = "black_suit_skirt"
+	item_state = "bl_suit"
+	worn_state = "black_suit_skirt"
+
+/obj/item/clothing/under/suit/really_black
 	name = "executive suit"
-	desc = "A formal black suit and red tie, intended for the galaxy's finest."
+	desc = "A formal black suit, intended for the facility's finest."
 	icon_state = "really_black_suit"
-	item_state = "jensensuit"
+	item_state = "bl_suit"
 	worn_state = "really_black_suit"
 
-/obj/item/clothing/under/suit_jacket/female
-	name = "executive suit"
-	desc = "A formal trouser suit for women, intended for the galaxy's finest."
-	icon_state = "black_suit_fem"
-	item_state = "lawyer_black"
-	worn_state = "black_suit_fem"
-	gender_icons = 1
+/obj/item/clothing/under/suit/really_black/skirt
+	name = "executive suitskirt"
+	desc = "A formal black suitskirt, intended for the facility's finest."
+	icon_state = "really_black_suit_skirt"
+	item_state = "bl_suit"
+	worn_state = "really_black_suit_skirt"
 
-/obj/item/clothing/under/suit_jacket/red
+/obj/item/clothing/under/suit/red
 	name = "red suit"
 	desc = "A red suit and blue tie. Somewhat formal."
 	icon_state = "red_suit"
@@ -548,50 +554,54 @@
 	item_state = "gy_suit"
 	worn_state = "assistant_formal"
 
-/obj/item/clothing/under/suit_jacket/charcoal
+/obj/item/clothing/under/suit/charcoal
 	name = "charcoal suit"
 	desc = "A charcoal suit and red tie. Very professional."
 	icon_state = "charcoal_suit"
 	item_state = "bl_suit"
 	worn_state = "charcoal_suit"
-	gender_icons = 1
-	starting_accessories = list(/obj/item/clothing/accessory/navy, /obj/item/clothing/accessory/toggleable/charcoal_jacket)
 
-/obj/item/clothing/under/suit_jacket/navy
+/obj/item/clothing/under/suit/white
+	name = "white suit"
+	desc = "A white suit and jacket with a blue shirt. You wanna play rough? OKAY!"
+	icon_state = "white_suit"
+	item_state = "w_suit"
+	worn_state = "white_suit"
+
+/obj/item/clothing/under/suit/white/skirt
+	name = "white suitskirt"
+	desc = "A white suitskirt, suitable for an excellent host."
+	icon_state = "white_suit_skirt"
+	item_state = "w_suit"
+	worn_state = "white_suit_skirt"
+
+/obj/item/clothing/under/suit/navy
 	name = "navy suit"
 	desc = "A navy suit and red tie, intended for the galaxy's finest."
 	icon_state = "navy_suit"
 	item_state = "bl_suit"
 	worn_state = "navy_suit"
-	gender_icons = 1
-	starting_accessories = list(/obj/item/clothing/accessory/red, /obj/item/clothing/accessory/toggleable/navy_jacket)
 
-/obj/item/clothing/under/suit_jacket/burgundy
+/obj/item/clothing/under/suit/burgundy
 	name = "burgundy suit"
 	desc = "A burgundy suit and black tie. Somewhat formal."
 	icon_state = "burgundy_suit"
 	item_state = "r_suit"
 	worn_state = "burgundy_suit"
-	gender_icons = 1
-	starting_accessories = list(/obj/item/clothing/accessory/black, /obj/item/clothing/accessory/toggleable/burgundy_jacket)
 
-/obj/item/clothing/under/suit_jacket/checkered
+/obj/item/clothing/under/suit/checkered
 	name = "checkered suit"
 	desc = "That's a very nice suit you have there. Shame if something were to happen to it, eh?"
 	icon_state = "checkered_suit"
 	item_state = "gy_suit"
 	worn_state = "checkered_suit"
-	gender_icons = 1
-	starting_accessories = list(/obj/item/clothing/accessory/black, /obj/item/clothing/accessory/toggleable/checkered_jacket)
 
-/obj/item/clothing/under/suit_jacket/tan
+/obj/item/clothing/under/suit/tan
 	name = "tan suit"
 	desc = "A tan suit. Smart, but casual."
 	icon_state = "tan_suit"
 	item_state = "lb_suit"
 	worn_state = "tan_suit"
-	gender_icons = 1
-	starting_accessories = list(/obj/item/clothing/accessory/yellow, /obj/item/clothing/accessory/toggleable/tan_jacket)
 
 /obj/item/clothing/under/serviceoveralls
 	name = "workman outfit"

@@ -218,36 +218,33 @@
  * Detective
  */
 /obj/item/clothing/under/det
-	name = "detective's suit"
-	desc = "A rumpled white dress shirt paired with well-worn grey slacks."
+	name = "hard-worn suit"
+	desc = "Someone who wears this means business."
 	icon_state = "detective"
-	item_state = "det"
+	item_state = "bl_suit"
 	worn_state = "detective"
-	gender_icons = 1
 	armor = list(
 		melee = ARMOR_MELEE_SMALL
 		)
 	siemens_coefficient = 0.9
 	starting_accessories = list(/obj/item/clothing/accessory/blue_clip)
 
-/obj/item/clothing/under/det/grey
+/obj/item/clothing/under/det/black
+	name = "noir suit"
+	desc = "A hard-boiled private investigator's dark suit, complete with tie clip."
 	icon_state = "detective2"
 	worn_state = "detective2"
-	gender_icons = 1
-	desc = "A serious-looking tan dress shirt paired with freshly-pressed black slacks."
 	starting_accessories = list(/obj/item/clothing/accessory/red_long)
 
-/obj/item/clothing/under/det/black
+/obj/item/clothing/under/det/slack
+	name = "aerostatic suit"
+	desc = "A crisp and well-pressed suit; professional, comfortable and curiously authoritative."
 	icon_state = "detective3"
 	worn_state = "detective3"
-	item_state = "sl_suit"
-	gender_icons = 1
-	desc = "An immaculate white dress shirt, paired with a pair of dark grey dress pants, a red tie, and a charcoal vest."
-	starting_accessories = list(/obj/item/clothing/accessory/red_long, /obj/item/clothing/accessory/toggleable/vest)
 
 /obj/item/clothing/head/det
-	name = "fedora"
-	desc = "A brown fedora - either the cornerstone of a detective's style or a poor attempt at looking cool, depending on the person wearing it."
+	name = "detective's fedora"
+	desc = "There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this hat."
 	icon_state = "detective"
 	item_state_slots = list(
 		slot_l_hand_str = "det_hat",
@@ -259,18 +256,6 @@
 		energy = ARMOR_ENERGY_MINOR
 		)
 	siemens_coefficient = 0.9
-	flags_inv = BLOCKHEADHAIR
-	hidden_from_codex = FALSE
-
-/obj/item/clothing/head/det/attack_self(mob/user)
-	flags_inv ^= BLOCKHEADHAIR
-	to_chat(user, SPAN_NOTICE("[src] will now [flags_inv & BLOCKHEADHAIR ? "hide" : "show"] hair."))
-	..()
-
-/obj/item/clothing/head/det/grey
-	icon_state = "detective2"
-	desc = "A grey fedora - either the cornerstone of a detective's style or a poor attempt at looking cool, depending on the person wearing it."
-
 
 /*
  * Head of Security

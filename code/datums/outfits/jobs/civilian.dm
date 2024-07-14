@@ -47,7 +47,7 @@
 
 /decl/hierarchy/outfit/job/civ/bartender
 	name = OUTFIT_JOB_NAME("Bartender")
-	uniform = /obj/item/clothing/under/suit_jacket/tan
+	uniform = /obj/item/clothing/under/suit/tan
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/device/radio
 	id_type = /obj/item/card/id/bartender
@@ -83,7 +83,7 @@
 
 /decl/hierarchy/outfit/job/civ/MCDRep
 	name = OUTFIT_JOB_NAME("Marshall, Carter, and Dark Corporate Liaison")
-	uniform = /obj/item/clothing/under/suit_jacket/really_black
+	uniform = /obj/item/clothing/under/suit/really_black
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/monocle
 	l_pocket = /obj/item/device/radio

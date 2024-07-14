@@ -57,7 +57,7 @@
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_under_corporate.dmi')
 	gender_icons = 1
 
-/obj/item/clothing/under/suit_jacket/corp
+/obj/item/clothing/under/suit/corp
 	name = "\improper EXO executive suit"
 	desc = "A set of Expeditionary Corps Organisation-issued suit pants and shirt that particularly enthusiastic company executives tend to wear."
 	icon_state = "suit"
@@ -101,7 +101,7 @@
 	worn_state = "pilot_nt"
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_under_corporate.dmi')
 
-/obj/item/clothing/under/suit_jacket/corp/nanotrasen
+/obj/item/clothing/under/suit/corp/nanotrasen
 	name = "\improper NanoTrasen executive suit"
 	desc = "A set of NanoTrasen-issued suit pants and shirt that particularly enthusiastic company executives tend to wear."
 	icon_state = "suit_nt"
@@ -141,7 +141,7 @@
 	worn_state = "pilot_heph"
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/onmob_under_corporate.dmi')
 
-/obj/item/clothing/under/suit_jacket/corp/heph
+/obj/item/clothing/under/suit/corp/heph
 	name = "\improper Hephaestus executive suit"
 	desc = "A set of Hephaestus Industries-issued suit pants and shirt that particularly enthusiastic company executives tend to wear."
 	icon_state = "suit_heph"
@@ -168,7 +168,7 @@
 	icon_state = "work_zeng"
 	worn_state = "work_zeng"
 
-/obj/item/clothing/under/suit_jacket/corp/zeng
+/obj/item/clothing/under/suit/corp/zeng
 	name = "\improper Zeng-Hu executive suit"
 	desc = "A set of Zeng-Hu Pharmaceuticals-issued suit pants and shirt that particularly enthusiastic company executives tend to wear."
 	icon_state = "suit_zeng"
