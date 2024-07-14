@@ -163,7 +163,7 @@
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/det/grey
+	head = /obj/item/clothing/head/fedora
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
@@ -179,7 +179,7 @@
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/det
+	head = /obj/item/clothing/head/fedora/det
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton

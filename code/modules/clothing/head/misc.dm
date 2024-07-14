@@ -223,8 +223,16 @@
 /obj/item/clothing/head/fedora
 	name = "fedora"
 	icon_state = "fedora"
-	desc = "A sharp, stylish hat."
+	desc = "A really cool hat if you're a mobster. A really lame hat if you're not."
 	hidden_from_codex = FALSE
+
+/obj/item/clothing/head/fedora/white
+	name = "white fedora"
+	icon_state = "fedora_white"
+
+/obj/item/clothing/head/fedora/beige
+	name = "beige fedora"
+	icon_state = "fedora_beige"
 
 /obj/item/clothing/head/feathertrilby
 	name = "feather trilby"

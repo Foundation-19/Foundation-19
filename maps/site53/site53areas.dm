@@ -616,13 +616,13 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uez/repoffice/internaltribunal
-	name = "\improper Internal Tribunal Departments Office"
+	name = "\improper Internal Tribunal Department Officer's Office"
 	sound_env = MEDIUM_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
 /area/site53/uez/repoffice/ethics
-	name = "\improper Ethics Representative's Office"
+	name = "\improper Ethics Committee Liaison's Office"
 	sound_env = MEDIUM_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
@@ -636,6 +636,23 @@
 /area/site53/uez/commandpanicbunker
 	name = "\improper Administration Panic Bunker"
 	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
+/area/site53/uez/sitemanageroffice
+	name = "\improper Site Manager's Office"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
+/area/site53/uez/sitedirecoroffice
+	name = "\improper Site Director's Office"
+	sound_env = MEDIUM_SOFTFLOOR
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	icon_state = "head_quarters"
+
+/area/site53/uez/controlcenter
+	name = "\improper Administrative Control Center"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "head_quarters"
 
@@ -660,11 +677,19 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/site53/uez/equipmentroom
-	name = "EZ Equipment Room"
+	name = "EZ Security Center"
 	icon_state = "security"
 
 /area/site53/uez/senioragentoffice
 	name = "\improper EZ Zone Supervisor's Office"
+	icon_state = "security"
+
+/area/site53/uez/raisaoffice
+	name = "\improper RAISA's Office"
+	icon_state = "security"
+
+/area/site53/uez/guardcommanderoffice
+	name = "\improper Guard Commander's Office"
 	icon_state = "security"
 
 /area/site53/uez/armory

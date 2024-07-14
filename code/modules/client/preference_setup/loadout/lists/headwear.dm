@@ -133,8 +133,8 @@
 	formalhats["feather trilby"] = /obj/item/clothing/head/feathertrilby
 	formalhats["fez"] = /obj/item/clothing/head/fez
 	formalhats["top hat"] = /obj/item/clothing/head/that
-	formalhats["fedora, brown"] = /obj/item/clothing/head/det
-	formalhats["fedora, grey"] = /obj/item/clothing/head/det/grey
+	formalhats["fedora, brown"] = /obj/item/clothing/head/fedora/det
+	formalhats["fedora, black"] = /obj/item/clothing/head/fedora
 	gear_tweaks += new/datum/gear_tweak/path(formalhats)
 
 /datum/gear/head/informalhat
