@@ -49,14 +49,13 @@ SUBSYSTEM_DEF(overlays)
 /atom/proc/compile_overlays()
 	var/list/oo = our_overlays
 	var/list/po = priority_overlays
+	overlays.Cut()
 	if(length(po) && length(oo))
 		overlays |= oo + po
 	else if(length(oo))
 		overlays |= oo
 	else if(length(po))
 		overlays |= po
-	else
-		overlays.Cut()
 
 	overlay_queued = FALSE
 
