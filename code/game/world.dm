@@ -489,12 +489,6 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 #undef SET_THROTTLE
 
 /world/Reboot(reason)
-	/*spawn(0)
-		sound_to(world, sound(pick('sounds/AI/newroundsexy.ogg','sounds/misc/apcdestroyed.ogg','sounds/misc/bangindonk.ogg')))// random end sounds!! - LastyBatsy
-
-		*/
-	TgsReboot()
-
 	Master.Shutdown()
 
 	if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
@@ -507,6 +501,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		to_world("<span class=danger>World reboot waiting for external scripts. Please be patient.</span>")
 		return
 
+	TgsReboot()
 	..(reason)
 
 /world/Del()
