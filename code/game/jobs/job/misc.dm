@@ -11,6 +11,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/civ/classd
 	class = CLASS_D
 	hud_icon = "huddclass"
+	psi_latency_chance = 100
 	var/static/list/used_numbers = list()
 
 	max_skill = list(
