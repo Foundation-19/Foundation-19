@@ -129,12 +129,13 @@
 	var/formalhats = list()
 	formalhats["boatsman hat"] = /obj/item/clothing/head/boaterhat
 	formalhats["bowler hat"] = /obj/item/clothing/head/bowler
-	formalhats["fedora"] = /obj/item/clothing/head/fedora //m'lady
 	formalhats["feather trilby"] = /obj/item/clothing/head/feathertrilby
 	formalhats["fez"] = /obj/item/clothing/head/fez
 	formalhats["top hat"] = /obj/item/clothing/head/that
+	formalhats["fedora, black"] = /obj/item/clothing/head/fedora //m'lady
 	formalhats["fedora, brown"] = /obj/item/clothing/head/fedora/det
-	formalhats["fedora, black"] = /obj/item/clothing/head/fedora
+	formalhats["fedora, beige"] = /obj/item/clothing/head/fedora/beige
+	formalhats["fedora, white"] = /obj/item/clothing/head/fedora/white
 	gear_tweaks += new/datum/gear_tweak/path(formalhats)
 
 /datum/gear/head/informalhat
