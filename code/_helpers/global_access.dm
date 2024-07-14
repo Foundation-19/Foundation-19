@@ -69,8 +69,6 @@
 			return global.SScuisine;
 		if("SSculture")
 			return global.SSculture;
-		if("SScustomitems")
-			return global.SScustomitems;
 		if("SSdbcore")
 			return global.SSdbcore;
 		if("SSdisposals")
@@ -661,8 +659,6 @@
 			return global.responsive_carriers;
 		if("revdata")
 			return global.revdata;
-		if("robot_custom_icons")
-			return global.robot_custom_icons;
 		if("robot_hud_colours")
 			return global.robot_hud_colours;
 		if("robot_inventory")
@@ -900,8 +896,6 @@
 			global.SScuisine=newval;
 		if("SSculture")
 			global.SSculture=newval;
-		if("SScustomitems")
-			global.SScustomitems=newval;
 		if("SSdbcore")
 			global.SSdbcore=newval;
 		if("SSdisposals")
@@ -1492,8 +1486,6 @@
 			global.responsive_carriers=newval;
 		if("revdata")
 			global.revdata=newval;
-		if("robot_custom_icons")
-			global.robot_custom_icons=newval;
 		if("robot_hud_colours")
 			global.robot_hud_colours=newval;
 		if("robot_inventory")
@@ -1696,7 +1688,6 @@
 	"SScodex",
 	"SScuisine",
 	"SSculture",
-	"SScustomitems",
 	"SSdbcore",
 	"SSdisposals",
 	"SSevac",
@@ -2002,7 +1993,6 @@
 	"req_console_supplies",
 	"responsive_carriers",
 	"revdata",
-	"robot_custom_icons",
 	"robot_hud_colours",
 	"robot_inventory",
 	"round_progressing",

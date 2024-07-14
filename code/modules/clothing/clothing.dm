@@ -914,11 +914,6 @@ BLIND     // can't see anything
 	if(rolled_sleeves == -1)
 		verbs -= /obj/item/clothing/under/verb/rollsleeves
 
-/obj/item/clothing/under/inherit_custom_item_data(datum/custom_item/citem)
-	. = ..()
-	worn_state = icon_state
-	update_rolldown_status()
-
 /obj/item/clothing/under/proc/get_gender_suffix(suffix = "_s")
 	. = suffix
 	var/mob/living/carbon/human/H

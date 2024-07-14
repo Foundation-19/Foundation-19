@@ -95,14 +95,6 @@
 		else
 			activate(user)
 
-/obj/item/clothing/glasses/inherit_custom_item_data(datum/custom_item/citem)
-	. = ..()
-	if(toggleable)
-		if(citem.additional_data["icon_on"])
-			set_icon_state(citem.additional_data["icon_on"])
-		if(citem.additional_data["icon_off"])
-			off_state = citem.additional_data["icon_off"]
-
 /obj/item/clothing/glasses/meson
 	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
