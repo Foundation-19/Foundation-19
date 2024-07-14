@@ -4310,6 +4310,12 @@
 	name = "Cell 6";
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "elL" = (
@@ -4428,6 +4434,12 @@
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell7door";
 	name = "Cell 7";
+	dir = 4
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -5193,6 +5205,17 @@
 /obj/structure/coatrack,
 /obj/item/clothing/suit/storage/toggle/labcoat,
 /turf/simulated/floor/tiled/white,
+/area/site53/llcz/dclass/primaryhallway)
+"flD" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/machinery/button/blast_door{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Control";
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL1");
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
 "fmc" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -8155,6 +8178,12 @@
 	name = "Cell 3";
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "ifT" = (
@@ -10478,6 +10507,12 @@
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell8door";
 	name = "Cell 8";
+	dir = 4
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -13400,6 +13435,12 @@
 	name = "Cell 2";
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "nvj" = (
@@ -15562,6 +15603,12 @@
 	name = "Cell 5";
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "pPU" = (
@@ -15926,6 +15973,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
 "qlq" = (
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "qlx" = (
@@ -21785,6 +21838,12 @@
 	name = "Cell 1";
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/dclass/cells)
 "wFU" = (
@@ -22854,6 +22913,12 @@
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	id_tag = "cell4door";
 	name = "Cell 4";
+	dir = 4
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Shutters";
+	icon_state = "shutter0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -28403,7 +28468,7 @@ sQy
 iJx
 uIW
 nzF
-hsH
+flD
 ycT
 ycT
 ycT

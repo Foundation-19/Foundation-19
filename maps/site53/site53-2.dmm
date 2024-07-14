@@ -20060,12 +20060,10 @@
 	name = "HCZ Secure Armory";
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
-/obj/machinery/door/blast/regular/open{
-	begins_closed = 1;
-	icon_state = "pdoor0";
+/obj/machinery/door/blast/regular{
+	dir = 4;
 	id_tag = "HCZ Secure Armoury";
-	name = "HCZ Secure Armory Blast Door";
-	dir = 4
+	name = "HCZ Secure Armory Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/hczguardgear)
@@ -30477,6 +30475,13 @@
 "gLx" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/button/blast_door{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1");
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
 "gLD" = (
@@ -42471,6 +42476,12 @@
 "nkS" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "CDCZCells";
+	name = "CDCZ Cell Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/primaryhallway)
 "nlT" = (
