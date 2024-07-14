@@ -170,6 +170,11 @@
 	name = "polarized wall frame window spawner (no grille) (non reinforced)"
 	win_path = /obj/structure/window/basic/full/polarized
 
+/obj/effect/wallframe_spawn/reinforced/titanium/polarized
+	name = "polarized reinforced titanium wall frame window spawner"
+	color = "#444444"
+	win_path = /obj/structure/window/reinforced/polarized/full
+
 /obj/effect/wallframe_spawn/reinforced/polarized/handle_window_spawn(obj/structure/window/reinforced/polarized/P)
 	if(id)
 		P.id = id

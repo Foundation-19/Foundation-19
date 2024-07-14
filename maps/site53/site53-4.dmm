@@ -864,16 +864,17 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
 "cX" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ITDO Office";
-	name = "Office Privacy Shutters"
-	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZSec Lockdown";
 	name = "EZ Security Center Lockdown Blast Door";
 	icon_state = "pdoor0"
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "ITDO Office";
+	name = "Office Window Lockdown Shutters";
+	icon_state = "shutter0"
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium/polarized,
 /turf/simulated/floor,
 /area/site53/uez/repoffice/internaltribunal)
 "cY" = (
@@ -4617,8 +4618,13 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/machinery/button/blast_door{
 	id_tag = "ITDO Office";
-	name = "Privacy Shutters Control";
-	pixel_y = 2
+	name = "Lockdown Shutters Control";
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/machinery/button/windowtint{
+	pixel_y = 2;
+	pixel_x = -6
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/repoffice/internaltribunal)
@@ -5734,18 +5740,19 @@
 /turf/simulated/floor/tiled/white/small,
 /area/site53/uez/commandpanicbunker)
 "vz" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
-	id_tag = "ITDO Office";
-	name = "Office Privacy Shutters";
-	dir = 4
-	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZSec Lockdown";
 	name = "EZ Security Center Lockdown Blast Door";
 	icon_state = "pdoor0";
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "ITDO Office";
+	name = "Office Window Lockdown Shutters";
+	icon_state = "shutter0";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced/titanium/polarized,
 /turf/simulated/floor,
 /area/site53/uez/repoffice/internaltribunal)
 "vH" = (
@@ -6051,11 +6058,12 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "wU" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
+/obj/machinery/door/blast/shutters/open{
 	id_tag = "ECL Office";
-	name = "Office Privacy Shutters"
+	name = "Office Window Lockdown Shutters";
+	icon_state = "shutter0"
 	},
+/obj/effect/wallframe_spawn/reinforced/titanium/polarized,
 /turf/simulated/floor,
 /area/site53/uez/repoffice/ethics)
 "wX" = (
@@ -6205,10 +6213,11 @@
 /turf/simulated/floor,
 /area/site53/uez/hallway)
 "xP" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/shutters{
+/obj/effect/wallframe_spawn/reinforced/titanium/polarized,
+/obj/machinery/door/blast/shutters/open{
 	id_tag = "ITDO Office";
-	name = "Office Privacy Shutters"
+	name = "Office Window Lockdown Shutters";
+	icon_state = "shutter0"
 	},
 /turf/simulated/floor,
 /area/site53/uez/repoffice/internaltribunal)
@@ -6237,7 +6246,7 @@
 "ya" = (
 /obj/machinery/door/airlock/glass/command{
 	name = "Site Director's Office";
-	req_access = list("ACCESS_ADMIN_LEVEL1");
+	req_access = list("ACCESS_ADMIN_LEVEL3");
 	id_tag = "sdopen"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -7460,17 +7469,17 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green,
-/mob/living/simple_animal/friendly{
-	desc = "The ITD Officer's pet gator. Looks like nobody can detain him now.";
-	name = "Steppy";
+/obj/structure/dogbed{
+	name = "Steppy's bed"
+	},
+/mob/living/simple_animal/friendly/lizard{
+	dir = 4;
 	icon_dead = "gator_dead";
 	icon_living = "gator_cool";
 	icon_state = "gator_cool";
-	gender = "male";
-	dir = 4
-	},
-/obj/structure/dogbed{
-	name = "Steppy's bed"
+	icon = 'icons/mob/simple_animal/animal.dmi';
+	name = "Steppy";
+	desc = "The ITD Officer's pet gator. Looks like nobody can detain him now."
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/internaltribunal)
@@ -7863,6 +7872,12 @@
 	id_tag = "MD Office";
 	name = "Privacy Shutters Control";
 	pixel_y = -25;
+	dir = 1;
+	pixel_x = 6
+	},
+/obj/machinery/button/windowtint{
+	pixel_y = -25;
+	pixel_x = -6;
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue3,
@@ -9538,14 +9553,13 @@
 /obj/structure/dogbed{
 	name = "Paperwork's bed"
 	},
-/mob/living/simple_animal/friendly{
-	desc = "The EC Liaison's pet puppy. Wait.. What is that thing?!";
+/mob/living/simple_animal/friendly/corgi/puppy{
+	dir = 8;
 	name = "Paperwork";
+	desc = "The EC Liaison's pet puppy. Wait.. What is that thing?!";
 	icon_dead = "void_puppy_dead";
 	icon_living = "void_puppy";
-	icon_state = "void_puppy";
-	gender = "male";
-	dir = 8
+	icon_state = "void_puppy"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
@@ -9939,9 +9953,15 @@
 "OW" = (
 /obj/machinery/button/blast_door{
 	id_tag = "ECL Office";
-	name = "Privacy Shutters Control";
+	name = "Lockdown Shutters Control";
 	dir = 4;
-	pixel_x = -25
+	pixel_x = -25;
+	pixel_y = 6
+	},
+/obj/machinery/button/windowtint{
+	pixel_y = -6;
+	pixel_x = -25;
+	dir = 4
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
@@ -10932,6 +10952,15 @@
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_titanium,
 /area/site53/uez/hallway)
+"ST" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/obj/structure/iv_drip,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/uez/equipmentroom)
 "SU" = (
 /obj/machinery/light{
 	dir = 8
@@ -11184,13 +11213,12 @@
 /obj/structure/dogbed{
 	name = "Sam's bed"
 	},
-/mob/living/simple_animal/friendly{
-	desc = "The Research Director's pet... Ant? Wait.. What? What have they been up to?";
+/mob/living/simple_animal/friendly/crab{
 	name = "Sam";
-	icon_dead = "ant_dead";
+	desc = "The Research Director's pet... Ant? Wait.. What? What have they been up to?";
 	icon_living = "ant";
 	icon_state = "ant";
-	gender = "male"
+	icon_dead = "ant_dead"
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/hallway)
@@ -12448,6 +12476,15 @@
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"ZH" = (
+/obj/effect/wallframe_spawn/reinforced/titanium/polarized,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "ECL Office";
+	name = "Office Window Lockdown Shutters";
+	icon_state = "shutter0"
+	},
+/turf/simulated/floor,
+/area/site53/uez/repoffice/ethics)
 "ZI" = (
 /obj/machinery/camera/network/entrance{
 	dir = 4;
@@ -48555,13 +48592,13 @@ xx
 uP
 Na
 Zn
-LW
-LW
-LW
-LW
-LW
-LW
-LW
+uP
+uP
+uP
+uP
+uP
+uP
+uP
 BN
 VF
 Ah
@@ -48816,7 +48853,7 @@ uP
 gE
 sy
 Sf
-Nn
+ST
 uS
 tr
 YB
@@ -50347,7 +50384,7 @@ zf
 MQ
 zT
 uC
-wU
+ZH
 Be
 Kl
 FI

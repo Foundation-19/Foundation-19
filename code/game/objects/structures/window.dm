@@ -675,6 +675,12 @@
 	dir = 5
 	icon_state = "rwindow_full"
 
+/obj/structure/window/reinforced/polarized/titanium
+	name = "electrochromic window"
+	desc = "Adjusts its tint with voltage. Might take a few good hits to shatter it."
+	basestate = "rwindow"
+	polarized = 1
+
 /obj/structure/window/proc/toggle()
 	if(!polarized)
 		return
