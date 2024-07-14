@@ -5,4 +5,5 @@ flyway.conf @Foundation-19/maintainer-team
 sql/ @Foundation-19/maintainer-team
 LICENSE @Foundation-19/maintainer-team
 
-/maps/ @harryob
+/maps/site53/items/manuals.dm @checkraisefold
+/maps/site53/items/paperwork_dataserver.dm @checkraisefold
