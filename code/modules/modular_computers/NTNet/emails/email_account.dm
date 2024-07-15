@@ -10,10 +10,8 @@
 	var/can_login = TRUE
 	/// Whether the account is banned by the SA.
 	var/suspended = FALSE
-	var/connected_clients = list()
 
-	var/fullname	= "N/A"
-	var/assignment	= "N/A"
+	var/department_flags = null
 
 	var/notification_mute = FALSE
 
@@ -71,9 +69,11 @@
 // Address namespace (@internal-services.nt) for email addresses with special purpose only!.
 /datum/computer_file/data/email_account/service/
 	can_login = FALSE
+	var/codex_info = "No information - contact someone about the codex!"
 
 /datum/computer_file/data/email_account/service/broadcaster/
 	login = EMAIL_BROADCAST
+	codex_info = "Any E-mails sent to this address are broadcasted to relevant e-mail addresses."
 
 /datum/computer_file/data/email_account/service/broadcaster/receive_mail(datum/computer_file/data/email_message/received_message, relayed)
 	if(suspended || !istype(received_message) || relayed)
@@ -84,29 +84,59 @@
 
 	spawn(0)
 		for(var/datum/computer_file/data/email_account/email_account in ntnet_global.email_accounts)
-			var/datum/computer_file/data/email_message/new_message = received_message.clone()
-			send_mail(email_account.login, new_message, 1)
-			sleep(2)
+			if(isnull(department_flags) || (department_flags & email_account.department_flags))
+				var/datum/computer_file/data/email_message/new_message = received_message.clone()
+				send_mail(email_account.login, new_message, relayed = TRUE)
+				sleep(2)
 
 	return TRUE
+
+/datum/computer_file/data/email_account/service/broadcaster/engineering
+	login = EMAIL_BROADCAST_ENG
+	department_flags = ENG
+
+/datum/computer_file/data/email_account/service/broadcaster/security
+	login = EMAIL_BROADCAST_SEC
+	department_flags = SEC
+
+/datum/computer_file/data/email_account/service/broadcaster/medical
+	login = EMAIL_BROADCAST_MED
+	department_flags = MED
+
+/datum/computer_file/data/email_account/service/broadcaster/science
+	login = EMAIL_BROADCAST_SCI
+	department_flags = SCI
+
+/datum/computer_file/data/email_account/service/broadcaster/civilian
+	login = EMAIL_BROADCAST_CIV
+	department_flags = CIV
+
+/datum/computer_file/data/email_account/service/broadcaster/command
+	login = EMAIL_BROADCAST_COM
+	department_flags = COM
+
+/datum/computer_file/data/email_account/service/broadcaster/service
+	login = EMAIL_BROADCAST_SRV
+	department_flags = SRV
+
+/datum/computer_file/data/email_account/service/broadcaster/logistics
+	login = EMAIL_BROADCAST_SUP
+	department_flags = SUP
+
+/datum/computer_file/data/email_account/service/broadcaster/lcz
+	login = EMAIL_BROADCAST_LCZ
+	department_flags = LCZ
+
+/datum/computer_file/data/email_account/service/broadcaster/hcz
+	login = EMAIL_BROADCAST_HCZ
+	department_flags = HCZ
+
+/datum/computer_file/data/email_account/service/broadcaster/ez
+	login = EMAIL_BROADCAST_ECZ
+	department_flags = ECZ
 
 /datum/computer_file/data/email_account/service/document
 	login = EMAIL_DOCUMENTS
 
 /datum/computer_file/data/email_account/service/sysadmin
 	login = EMAIL_SYSADMIN
-
-/datum/computer_file/data/email_account/service/broadcaster/receive_mail(datum/computer_file/data/email_message/received_message, relayed)
-	if(!istype(received_message) || relayed)
-		return 0
-	// Possibly exploitable for user spamming so keep admins informed.
-	if(!received_message.spam)
-		log_and_message_staff("Broadcast email address used by [usr]. Message title: [received_message.title].")
-
-	spawn(0)
-		for(var/datum/computer_file/data/email_account/email_account in ntnet_global.email_accounts)
-			var/datum/computer_file/data/email_message/new_message = received_message.clone()
-			send_mail(email_account.login, new_message, 1)
-			sleep(2)
-
-	return 1

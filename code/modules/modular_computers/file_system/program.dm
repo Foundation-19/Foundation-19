@@ -124,18 +124,18 @@
 // User has to wear their ID or have it inhand for ID Scan to work.
 // Can also be called manually, with optional parameter being access_to_check to scan the user's ID
 /datum/computer_file/program/proc/program_has_access(mob/living/user, loud = 0, access_to_check)
-	// Defaults to required_access
-	if(!access_to_check)
-		access_to_check = required_access
-	if(!access_to_check) // No required_access, allow it.
-		return 1
-
 	// Admin override - allows operation of any computer as aghosted admin, as if you had any required access.
 	if(isghost(user) && check_rights(R_ADMIN, 0, user))
 		return 1
 
 	if(!istype(user))
 		return 0
+
+	// Defaults to required_access
+	if(!access_to_check)
+		access_to_check = required_access
+	if(!access_to_check) // No required_access, allow it.
+		return 1
 
 	var/obj/item/card/id/I = user.GetIdCard()
 	if(!I)
@@ -155,9 +155,11 @@
 		return computer.get_header_data()
 	return list()
 
-// This is performed on program startup. May be overriden to add extra logic. Remember to include ..() call. Return 1 on success, 0 on failure.
+// This is performed on program startup. May be overriden to add extra logic. Return TRUE on success, FALSE on failure.
 // When implementing new program based device, use this to run the program.
 /datum/computer_file/program/proc/run_program(mob/living/user)
+	SHOULD_CALL_PARENT(TRUE)
+
 	if(program_malicious)
 		computer.idle_threads.Add(src)
 		program_state = PROGRAM_STATE_BACKGROUND
@@ -175,10 +177,12 @@
 
 	if(requires_ntnet && network_destination)
 		generate_network_log("Connection opened to [network_destination].")
-	return 1
+	return TRUE
 
 // Use this proc to kill the program. Designed to be implemented by each program if it requires on-quit logic, such as the SCPRC client.
 /datum/computer_file/program/proc/kill_program(forced = 0)
+	SHOULD_CALL_PARENT(TRUE)
+
 	program_state = PROGRAM_STATE_KILLED
 	if(requires_ntnet && network_destination)
 		generate_network_log("Connection to [network_destination] closed.")

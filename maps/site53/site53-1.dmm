@@ -15260,6 +15260,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/lhcz/scp049containment)
+"pAG" = (
+/obj/item/modular_computer/console/preset/chatserver{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/site53/engineering/server_room)
 "pAI" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -51431,7 +51437,7 @@ vty
 xPE
 bne
 dby
-aHT
+pAG
 aHT
 xPE
 xRT
