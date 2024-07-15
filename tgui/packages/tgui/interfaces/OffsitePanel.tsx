@@ -1,11 +1,11 @@
 import { useBackend, useLocalState } from '../backend';
 import {
   BlockQuote,
-  Box,
   Button,
   Collapsible,
   Flex,
   Section,
+  Stack,
   Tabs,
 } from '../components';
 import { Window } from '../layouts';
@@ -131,67 +131,78 @@ const OffsitePage = (props, context) => {
                 {admin ? ` by ${admin}` : ''}
                 {dept ? ` to department: ${dept}` : ''} at round time{' '}
                 {time_pretty}
-                <Box ml={2}>
+                <Stack ml={2} textAlign="center">
                   {taker && (
-                    <>
-                      <br />
-                      <b>Taken by {taker}</b>
-                    </>
+                    <Stack.Item>
+                      <strong>Taken by {taker}</strong>
+                    </Stack.Item>
                   )}
-                  {type.includes('fax') ? (
-                    <ReadButton os={os_type} to={type} fax={id}>
-                      Read
-                    </ReadButton>
-                  ) : (
-                    <Collapsible title="Message Contents">
-                      <BlockQuote>{ref}</BlockQuote>
-                    </Collapsible>
-                  )}
+                  <Stack.Item>
+                    {type.includes('fax') ? (
+                      <ReadButton os={os_type} to={type} fax={id}>
+                        Read
+                      </ReadButton>
+                    ) : (
+                      <Collapsible title="Message Contents">
+                        <BlockQuote>{ref}</BlockQuote>
+                      </Collapsible>
+                    )}
+                  </Stack.Item>
                   {type.includes('Received') && (
                     <>
-                      <SendButton
-                        type="msg"
-                        os={os_type}
-                        target={user_key}
-                        id={id}
-                      >
-                        Reply (Message)
-                      </SendButton>
-                      {dept && (
+                      <Stack.Item>
                         <SendButton
-                          type="fax"
+                          type="msg"
                           os={os_type}
-                          target={dept}
+                          target={user_key}
                           id={id}
                         >
-                          Reply (Fax)
+                          Reply (Message)
                         </SendButton>
+                      </Stack.Item>
+                      {dept && (
+                        <Stack.Item>
+                          <SendButton
+                            type="fax"
+                            os={os_type}
+                            target={dept}
+                            id={id}
+                          >
+                            Reply (Fax)
+                          </SendButton>
+                        </Stack.Item>
                       )}
-                      <Button
-                        onClick={() =>
-                          act(`take`, {
-                            os: os_type,
-                            fax: id,
-                          })
-                        }
-                      >
-                        {taker === config.client.ckey ? 'Untake' : 'Take'}
-                      </Button>
+                      <Stack.Item>
+                        <Button
+                          onClick={() =>
+                            act(`take`, {
+                              os: os_type,
+                              fax: id,
+                            })
+                          }
+                        >
+                          {taker === config.client.ckey ? 'Untake' : 'Take'}
+                        </Button>
+                      </Stack.Item>
                     </>
                   )}
-                </Box>
+                </Stack>
               </Flex.Item>
             );
           })}
       </Flex>
-      <Box mt={2}>
-        <SendButton type="fax" os={os_type}>
-          Send fax
-        </SendButton>
-        <SendButton type="msg" os={os_type}>
-          Send message
-        </SendButton>
-      </Box>
+      <Stack mt={2}>
+        <Stack.Item>
+          <SendButton type="fax" os={os_type}>
+            Send fax
+          </SendButton>
+        </Stack.Item>
+        <Stack.Item>
+          <SendButton type="msg" os={os_type}>
+            Send message
+          </SendButton>
+        </Stack.Item>
+      </Stack>
     </Section>
   );
 };
