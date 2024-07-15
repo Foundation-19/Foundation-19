@@ -568,12 +568,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/infirmary)
-"bv" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/exoplanet/concrete,
-/area/site53/surface/surface/west)
 "bw" = (
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
@@ -590,13 +584,6 @@
 /obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/hall)
-"by" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/site53/surface/surface/west)
 "bz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -735,15 +722,6 @@
 "bO" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/east)
-"bP" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "bR" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -1955,17 +1933,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
-"ft" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "fv" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -2048,6 +2015,9 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface/west)
+"fO" = (
+/turf/simulated/wall/r_titanium,
+/area/site53/surface/surface/east)
 "fP" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Checkpoint Office Storage Closet";
@@ -2061,17 +2031,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/medical/equipstorage)
-"fX" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "fY" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#8bbbd5"
@@ -2813,18 +2772,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
-"iW" = (
-/obj/structure/railing/mapped{
-	dir = 6
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface/west)
-"jb" = (
-/obj/machinery/light/spot{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "jd" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
@@ -2917,10 +2864,6 @@
 /obj/effect/floor_decal/corner/lime/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/op1)
-"jD" = (
-/obj/machinery/light/spot,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "jE" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -3199,10 +3142,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/plating,
 /area/site53/surface/surface/caves)
-"kG" = (
-/obj/effect/paint_stripe/brown,
-/turf/simulated/wall/r_wall/prepainted,
-/area/quartermaster/hangar)
 "kI" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/filingcabinet/chestdrawer,
@@ -3246,6 +3185,16 @@
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/site53/surface/surface/west)
+"kV" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface/west)
 "lf" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
@@ -3275,6 +3224,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
+"lj" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface/west)
 "lk" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3575,9 +3530,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
-"mf" = (
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "mg" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
@@ -3670,12 +3622,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/infirmary)
-"mv" = (
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "mw" = (
 /obj/structure/flora/pottedplant,
 /obj/effect/floor_decal/corner/red/border{
@@ -3860,14 +3806,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
-"mW" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "mX" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#a8b2b6"
@@ -4170,17 +4108,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/scp173)
-"nO" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "nP" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -4257,11 +4184,6 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/logistics/logisticsbreak)
-"oe" = (
-/obj/structure/railing/mapped,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "of" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -4430,13 +4352,6 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface/west)
-"oz" = (
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "oB" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -4479,14 +4394,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
-"oF" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "oG" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -5080,12 +4987,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/medical/morgue)
-"qj" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 9
-	},
-/turf/simulated/floor/reinforced,
-/area/quartermaster/hangar)
 "qn" = (
 /obj/structure/table/glass,
 /obj/item/storage/pill_bottle/penicillin{
@@ -5249,17 +5150,6 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
-"qF" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
-"qG" = (
-/obj/structure/railing/mapped,
-/obj/structure/flora/tree/pine,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "qH" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -5383,24 +5273,6 @@
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall,
 /area/site53/surface/surface/caves)
-"qZ" = (
-/turf/space,
-/turf/simulated/floor/reinforced,
-/area/quartermaster/hangar)
-"ra" = (
-/obj/structure/flora/ausbushes/pointybush,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
-"rb" = (
-/obj/structure/flora/bush,
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "rc" = (
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 8
@@ -5635,13 +5507,6 @@
 /obj/item/clothing/head/bowlerhat,
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/uez/bridge)
-"rO" = (
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "rQ" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower External North";
@@ -5696,16 +5561,6 @@
 /obj/item/clothing/shoes/swimmingfins,
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/uez/bridge)
-"rY" = (
-/obj/effect/shuttle_landmark/supply/station,
-/obj/effect/floor_decal/corner/white{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/white{
-	dir = 6
-	},
-/turf/simulated/floor/reinforced,
-/area/quartermaster/hangar)
 "rZ" = (
 /obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/freezer,
@@ -5723,18 +5578,6 @@
 /obj/structure/railing/mapped,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface/west)
-"sd" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/west)
 "se" = (
 /obj/structure/cable{
@@ -6153,10 +5996,6 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled/white/small,
 /area/site53/medical/infirmreception/waiting)
-"tu" = (
-/obj/effect/floor_decal/industrial/warning/corner,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "tv" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -6376,15 +6215,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/medical/morgue)
-"ug" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface/west)
 "uh" = (
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -6821,12 +6651,6 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_titanium,
 /area/site53/uez/janitor)
-"vA" = (
-/obj/structure/railing/mapped{
-	dir = 6
-	},
-/turf/simulated/open,
-/area/site53/surface/surface/west)
 "vB" = (
 /obj/machinery/door/firedoor{
 	dir = 4
@@ -7169,6 +6993,18 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"wz" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/grass,
+/area/site53/surface/surface/west)
 "wA" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline{
@@ -7815,17 +7651,6 @@
 /obj/structure/grille,
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/surface/surface/east)
-"yw" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "yx" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -8012,6 +7837,15 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmary)
+"yX" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/surface/surface/west)
 "yY" = (
 /obj/item/storage/box/donkpockets,
 /obj/machinery/status_display{
@@ -8711,12 +8545,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/medical/mentalhealth/isolation)
-"AZ" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "Bc" = (
 /obj/machinery/contraband_detector,
 /obj/structure/cable{
@@ -9019,11 +8847,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/logistics/logisticsbreak)
-"BT" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/railing/mapped,
-/turf/simulated/floor/exoplanet/grass,
-/area/site53/surface/surface/west)
 "BU" = (
 /obj/structure/closet/crate,
 /obj/item/stack/material/wood/ten,
@@ -9393,6 +9216,9 @@
 	},
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/uez/bridge)
+"CU" = (
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
 "CV" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 8
@@ -9529,13 +9355,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/mentalhealth/isolation)
-"Du" = (
-/obj/machinery/camera/network/entrance{
-	c_tag = "Logistics Hangar"
-	},
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "Dv" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline,
@@ -9877,14 +9696,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
-"EA" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "EB" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -10549,14 +10360,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/roboticsupr)
-"GA" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "GB" = (
 /obj/effect/floor_decal/corner/green/bordercorner,
 /turf/simulated/floor/tiled/white/corner{
@@ -10671,17 +10474,6 @@
 /obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
-"GT" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "GU" = (
 /obj/structure/ladder,
 /obj/effect/floor_decal/corner/yellow/full,
@@ -11954,10 +11746,9 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
-"KO" = (
-/turf/space,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
+"KP" = (
+/turf/simulated/floor/plating,
+/area/space)
 "KR" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -12026,17 +11817,6 @@
 	dir = 1
 	},
 /area/site53/medical/infirmary)
-"KX" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "KZ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -12075,12 +11855,6 @@
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/exam_room)
-"Lf" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "Lg" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -12264,12 +12038,6 @@
 	},
 /turf/simulated/floor/tiled/white/small,
 /area/site53/medical/mentalhealth/isolation)
-"LI" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 6
-	},
-/turf/simulated/floor/reinforced,
-/area/quartermaster/hangar)
 "LJ" = (
 /obj/machinery/chem_master,
 /obj/effect/floor_decal/industrial/warning{
@@ -12361,12 +12129,6 @@
 "LU" = (
 /turf/simulated/floor/asteroid,
 /area/site53/surface/surface/caves)
-"LV" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "LY" = (
 /obj/machinery/light{
 	dir = 4
@@ -13697,16 +13459,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/medical/exam_room)
-"PK" = (
-/obj/effect/floor_decal/industrial/warning/corner,
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
-"PL" = (
-/turf/simulated/floor/reinforced,
-/area/quartermaster/hangar)
 "PM" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -13716,16 +13468,6 @@
 "PN" = (
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
-"PO" = (
-/obj/machinery/power/apc{
-	dir = 8
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "PP" = (
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 9
@@ -14599,13 +14341,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
-"Sf" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/flora/ausbushes/grassybush,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "Sg" = (
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/machinery/ai_status_display{
@@ -14932,12 +14667,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
-"Te" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "Tg" = (
 /obj/effect/paint_stripe/gray,
 /obj/effect/wallframe_spawn/reinforced,
@@ -15587,15 +15316,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmary)
-"Vp" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/white{
-	dir = 6
-	},
-/turf/simulated/floor/reinforced,
-/area/quartermaster/hangar)
 "Vq" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -15664,12 +15384,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/infirmary)
-"VC" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "VE" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -15862,13 +15576,6 @@
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall,
 /area/site53/surface/surface/caves)
-"Wh" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/space,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "Wi" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 8
@@ -15980,6 +15687,10 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/medical/infirmary)
+"WC" = (
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/surface/surface/west)
 "WD" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/yellow{
@@ -16193,13 +15904,6 @@
 "Xm" = (
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/medical/exam_room)
-"Xn" = (
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "Xq" = (
 /obj/structure/closet/secure_closet/medical3{
 	req_access = list("ACCESS_MEDICAL_LEVEL3")
@@ -16306,6 +16010,9 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
+"XG" = (
+/turf/simulated/wall/r_titanium,
+/area/space)
 "XH" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
@@ -16372,13 +16079,6 @@
 	dir = 1
 	},
 /area/site53/medical/exam_room)
-"XS" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "XT" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 6
@@ -17052,10 +16752,6 @@
 	},
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/surface/surface/west)
-"ZH" = (
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/white/monotile,
-/area/quartermaster/hangar)
 "ZI" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/floor_decal/spline/fancy/black{
@@ -17106,12 +16802,6 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
-"ZR" = (
-/obj/structure/railing/mapped{
-	dir = 5
-	},
-/turf/simulated/floor/exoplanet/snow,
-/area/site53/surface/surface/west)
 "ZT" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -43741,21 +43431,21 @@ Ni
 if
 FW
 wl
-kG
-mf
-jb
-mf
-mf
-mf
-mf
-mf
-mf
-jb
-mf
-PO
-mf
-kG
-oS
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
 sw
 nE
 nE
@@ -43998,21 +43688,21 @@ FW
 FW
 FW
 wl
-kG
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-oF
-mf
-kG
-oS
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+xO
 sw
 nE
 qH
@@ -44255,20 +43945,20 @@ wl
 wl
 wl
 wl
-kG
-PK
-qF
-qF
-qF
-qF
-qF
-qF
-qF
-qF
-qF
-KX
-mf
-kG
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+nz
+xO
 ic
 sw
 nE
@@ -44512,21 +44202,21 @@ TE
 TE
 TE
 TE
-kG
-ZH
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-nO
-jD
-kG
-iW
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+xO
+xO
 sw
 nE
 Lm
@@ -44769,21 +44459,21 @@ TE
 TE
 TE
 TE
-kG
-ZH
-PL
-PL
-PL
-LI
-LI
-LI
-PL
-PL
-PL
-yw
-mW
-jR
-jR
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
 mQ
 rQ
 Lm
@@ -45026,21 +44716,21 @@ af
 af
 af
 TE
-kG
-ZH
-PL
-PL
-PL
-PL
-rY
-PL
-PL
-PL
-PL
-VC
-mf
-nE
-nE
+hb
+hb
+hb
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 sw
 nE
 Lm
@@ -45283,21 +44973,21 @@ af
 KC
 af
 af
-kG
-rO
-PL
-PL
-PL
-qj
-qj
-qj
-PL
-PL
-PL
-VC
-mf
-bP
-GJ
+hb
+hb
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+iz
 sw
 nE
 Lm
@@ -45540,20 +45230,20 @@ XV
 vP
 EL
 af
-kG
-ZH
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-VC
-mf
-oG
+hb
+hb
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 ic
 sw
 nE
@@ -45797,20 +45487,20 @@ Af
 ai
 yI
 af
-kG
-Lf
-Te
-Te
-Te
-Te
-Te
-Te
-Te
-Te
-Te
-AZ
-mf
-qR
+hb
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+xO
 iz
 sw
 nE
@@ -46054,20 +45744,20 @@ NK
 ai
 Kx
 af
-kG
-mv
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-mf
-oG
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 iz
 sw
 nE
@@ -46311,20 +46001,20 @@ Lh
 DS
 kt
 af
-kG
-tu
-qF
-qF
-qF
-qF
-qF
-qF
-qF
-qF
-qF
-LV
-mf
-qR
+hb
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+xO
 iz
 sw
 nE
@@ -46568,20 +46258,20 @@ cQ
 DF
 cQ
 af
-kG
-ZH
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-VC
-mf
-oG
+hb
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 ic
 sw
 nE
@@ -46825,20 +46515,20 @@ VW
 VW
 Im
 af
-kG
-Xn
-PL
-PL
-PL
-LI
-LI
-LI
-PL
-PL
-PL
-VC
-mf
-qR
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+xO
 iz
 se
 gr
@@ -47082,20 +46772,20 @@ fF
 UG
 Zi
 af
-kG
-Du
-PL
-PL
-PL
-PL
-Vp
-PL
-PL
-PL
-PL
-VC
-mf
-ug
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nZ
 NB
 sm
 nE
@@ -47339,36 +47029,36 @@ Lx
 ua
 Dy
 af
-kG
-ZH
-PL
-PL
-PL
-qj
-qj
-qj
-qZ
-qZ
-qZ
-Wh
-KO
+hb
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 Eh
 Eh
 sm
 nE
 bM
 bM
-fw
-fw
-fw
-fw
-fw
-fw
-fw
-fw
-fw
-fw
-fw
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
 fw
 fw
 fw
@@ -47596,36 +47286,36 @@ Aj
 ua
 Dy
 af
-kG
-Xn
-PL
-PL
-PL
-PL
-qZ
-qZ
-qZ
-PL
-PL
-VC
-GA
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 jR
 jR
 BN
 nE
 bL
 bL
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 sE
 sE
 sE
@@ -47853,36 +47543,36 @@ WV
 qb
 aL
 af
-kG
-Lf
-Te
-Te
-Te
-Te
-Te
-Te
-Te
-fX
-ft
-GT
-EA
+hb
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 oy
 GJ
 nE
 nE
 nE
 nE
-cb
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+lj
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 sE
 sE
 sE
@@ -48110,15 +47800,15 @@ Lx
 ua
 Dy
 af
-oS
-Bn
-XS
-Bn
-Bn
-Bn
-Bn
-XS
-oz
+hb
+nz
+bI
+nz
+nz
+nz
+nz
+bI
+iz
 pq
 jg
 jg
@@ -48129,17 +47819,17 @@ nE
 nE
 nE
 nE
-cb
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
-sE
+lj
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 sE
 sE
 sE
@@ -48386,34 +48076,34 @@ ZG
 oI
 nE
 nE
-cb
+lj
+nE
+nE
+nE
+nE
+bL
+bL
+bL
+bL
+bL
+bL
 sE
 sE
 sE
 sE
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-fv
-by
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nE
 nE
 DR
@@ -48643,34 +48333,34 @@ nz
 ic
 nE
 nE
-cb
+lj
+nE
+nE
+nE
+WC
+nE
+nE
+nE
+nE
+nE
+nE
 sE
 sE
 sE
-oX
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nE
 nE
 oG
@@ -48900,34 +48590,34 @@ nz
 iz
 nE
 nE
-cb
+lj
+nE
+nE
+nE
+WC
+nE
+nE
+nE
+nE
+nE
+nE
 sE
 sE
 sE
-oX
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nE
 nE
 qR
@@ -49157,34 +48847,34 @@ xO
 ic
 nE
 nE
-cb
-sE
-sE
-sE
-oX
+lj
+nE
+nE
+nE
+WC
 nE
 nE
 qH
 fL
 fL
 fL
-fL
-Bn
-Bn
-Bn
-jg
-jg
-fL
-fL
-rb
-Bn
-Bn
-Bn
-GJ
-jg
-jg
-bP
-Bn
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 Bn
 fL
 bt
@@ -49414,34 +49104,34 @@ xO
 iz
 nE
 nE
-cb
-sE
-sE
-sE
-oX
+lj
+nE
+nE
+nE
+WC
 nE
 nE
 qR
 xO
 nz
 cZ
-nz
-nz
-xO
-xO
-jg
-jg
-xO
-xO
-nz
-nz
-ip
-nz
-iz
-jg
-jg
-Sf
-nz
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nz
 xO
 xO
@@ -49671,34 +49361,34 @@ xO
 iz
 nE
 nE
-cb
-sE
-sE
-sE
-oX
+lj
+nE
+nE
+nE
+WC
 nE
 nE
 qR
 xO
 OT
 nz
-nz
-nz
-xO
-xO
-jg
-jg
-xO
-xO
-nz
-nz
-nz
-nz
-iz
-jg
-jg
-ZR
-nz
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nz
 nz
 xO
@@ -49922,40 +49612,40 @@ pq
 jg
 nz
 nz
+bS
 nz
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+Rx
+xO
+xO
 nz
-nz
-iz
-nE
-nE
-cb
 sE
 sE
 sE
-oX
-nE
-nE
-oG
-xO
-xO
-nz
-xO
-nz
-xO
-nz
-jg
-jg
-xO
-nz
-nz
-cZ
-nz
-nz
-BT
-jg
-jg
-jg
-oG
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nz
 be
 nz
@@ -50179,40 +49869,40 @@ pq
 jg
 nz
 nz
-OT
 nz
-nz
-iz
-nE
-nE
-cb
+RG
+AT
+AT
+AT
+WG
+AT
+AT
+AT
+WG
+AT
+AT
+AT
+AT
+FZ
+xO
+xO
 sE
 sE
 sE
-oX
-nE
-nE
-ra
-ru
-xO
-xO
-xO
-xO
-xO
-nz
-jg
-jg
-nz
-nz
-nz
-nz
-nz
-nz
-iz
-jg
-jg
-bv
-oG
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nz
 nz
 nz
@@ -50408,10 +50098,10 @@ fq
 fq
 fq
 dA
-dA
-dA
-dA
-dA
+XG
+XG
+XG
+XG
 lE
 Gl
 RY
@@ -50436,40 +50126,40 @@ pq
 jg
 bS
 nz
-nz
-nz
-bI
-qD
-nE
-nE
-cb
-sE
-sE
-sE
-oX
-nE
-nE
-oG
-xO
-xO
-ip
-nz
-nz
-nz
-xO
-jg
-jg
-nz
-bS
-nz
-nz
-nz
-nz
 iz
-jg
-jg
-bv
+Yh
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+BZ
 oG
+ip
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nz
 bI
 nz
@@ -50665,10 +50355,10 @@ qV
 uQ
 fq
 dA
-dA
-dA
-dA
-dA
+XG
+KP
+KP
+KP
 lE
 cg
 RY
@@ -50693,44 +50383,44 @@ pq
 jg
 xO
 nz
+iz
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+oG
+nz
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
 nz
 nz
-bI
-qG
-nE
-nE
-cb
-sE
-sE
-sE
-oX
-nE
-nE
-qR
+nz
 xO
-xO
-nz
-nz
-nz
-nz
-cZ
-jg
-jg
-cZ
-bS
-nz
-Rx
-Rx
-Rx
-RG
-jg
-jg
-sd
-Rx
-Rx
-Rx
-Rx
-Rx
 xO
 xO
 xO
@@ -50922,10 +50612,10 @@ su
 fq
 fq
 gk
-gk
-gk
-dA
-dA
+fO
+CU
+KP
+KP
 lE
 Ia
 Rg
@@ -50950,45 +50640,45 @@ pq
 jg
 xO
 xO
-xO
-nz
-bI
 iz
-nE
-nE
-cb
+AT
+AT
+AT
+AT
+RT
+RT
+RT
+RT
+RT
+AT
+AT
+AT
+AT
+AT
+oG
+nz
 sE
 sE
 sE
-oX
-nE
-nE
-qR
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+nz
+nz
+nz
 xO
 xO
-nz
-nz
-nz
-nz
-nz
-jg
-jg
-nz
-nz
-RG
-AT
-AT
-AT
-WG
-AT
-AT
-AT
-WG
-AT
-AT
-AT
-AT
-FZ
 xO
 xO
 xO
@@ -51179,10 +50869,10 @@ ds
 uQ
 fq
 rm
-rm
-gk
-gk
-gk
+fO
+CU
+CU
+CU
 lE
 cg
 OP
@@ -51207,32 +50897,14 @@ pq
 jg
 xO
 nz
-nz
-nz
-nz
 iz
-nE
-nE
-cb
-sE
-sE
-sE
-oX
-nE
-nE
-qR
-xO
-xO
-nz
-cZ
-nz
-nz
-nz
-jg
-jg
-nz
-iz
-Yh
+AT
+AT
+AT
+AT
+AT
+UF
+RT
 AT
 AT
 AT
@@ -51240,13 +50912,31 @@ AT
 AT
 AT
 AT
-AT
-AT
-AT
-AT
-AT
-BZ
 oG
+nz
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+nz
+nz
+nz
+xO
+xO
+xO
 xO
 xO
 hb
@@ -51436,10 +51126,10 @@ su
 fq
 fq
 rm
-rm
-rm
-rm
-gk
+fO
+CU
+CU
+CU
 lE
 dg
 Ej
@@ -51464,46 +51154,46 @@ HY
 jg
 nz
 nz
-nz
-nz
-nz
-iz
-nE
-nE
-dB
-fv
-fv
-fv
-vA
-nE
-nE
-qR
-bS
-nz
-nz
-nz
-nz
-nz
-nz
-jg
-jg
-nz
 iz
 AT
 AT
 AT
 AT
-AT
-AT
-AT
-AT
-AT
+RT
+RT
+RT
+RT
+RT
 AT
 AT
 AT
 AT
 AT
 oG
+nz
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+nz
+nz
+nz
+nz
+nz
+nz
 nz
 nz
 hb
@@ -51693,10 +51383,10 @@ qV
 uQ
 fq
 rm
-rm
-rm
-rm
-rm
+fO
+fO
+fO
+fO
 lE
 MO
 RY
@@ -51721,46 +51411,46 @@ jg
 jg
 xO
 nz
-nz
-nz
-nz
-oe
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-oG
-nz
-nz
-nz
-nz
-nz
-ip
-bI
-jg
-jg
-nz
 iz
 AT
 AT
 AT
 AT
-RT
-RT
-RT
-RT
-RT
+AT
+AT
+AT
+AT
+AT
 AT
 AT
 AT
 AT
 AT
 oG
+nz
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+sE
+nz
+nz
+nz
+nz
+nz
+nz
 nz
 cZ
 hb
@@ -51978,22 +51668,22 @@ jg
 jg
 xO
 nz
-nz
-nz
-nz
 iz
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
-nE
+Yh
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+AT
+BZ
 oG
-nz
-nz
 nz
 nz
 nz
@@ -52002,22 +51692,22 @@ nz
 jg
 jg
 nz
-iz
-AT
-AT
-AT
-AT
-AT
-UF
-RT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-oG
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 nz
 nz
 hb
@@ -52236,45 +51926,45 @@ jg
 xO
 xO
 nz
+GJ
+AT
+AT
+AT
+xd
+AT
+AT
+AT
+xd
+AT
+AT
+AT
+AT
+HF
 nz
 nz
 nz
-Bn
-Bn
-Bn
-Bn
+nz
+nz
+nz
 jg
-Bn
-Bn
-Bn
-Bn
-nz
-nz
-nz
-nz
-nz
-nz
-nz
-nz
-jg
 jg
 nz
-iz
-AT
-AT
-AT
-AT
-RT
-RT
-RT
-RT
-RT
-AT
-AT
-AT
-AT
-AT
-oG
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 nz
 nz
 hb
@@ -52490,23 +52180,23 @@ xO
 xO
 jg
 jg
-xO
-xO
-nz
-nz
-nz
-nz
-nz
-nz
-bS
-bS
+nZ
+nZ
+Rx
+Rx
+yX
+yX
+yX
+kV
 jg
+jg
+wz
+yX
+yX
+yX
+yX
+yX
 nz
-nz
-nz
-nz
-nz
-cZ
 nz
 nz
 nz
@@ -52516,22 +52206,22 @@ nz
 jg
 jg
 nz
-iz
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-oG
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 nz
 hb
 hb
@@ -52773,22 +52463,22 @@ jg
 jg
 jg
 nz
-iz
-Yh
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-AT
-BZ
-oG
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+xO
+xO
+nz
+nz
+nz
+nz
+nz
+nz
+nz
 nz
 hb
 oS
@@ -53031,20 +52721,20 @@ jg
 jg
 nz
 nz
-GJ
-AT
-AT
-AT
-xd
-AT
-AT
-AT
-xd
-AT
-AT
-AT
-AT
-HF
+nz
+nz
+nz
+nz
+nz
+nz
+xO
+xO
+xO
+nz
+nz
+nz
+nz
+nz
 nz
 nz
 hb
@@ -53289,18 +52979,18 @@ nz
 cZ
 nz
 nz
-Bn
-Bn
-Bn
-Bn
-Bn
-Bn
-fL
-Bn
-Bn
-Bn
-Bn
-Bn
+nz
+nz
+nz
+nz
+nz
+xO
+xO
+xO
+nz
+nz
+nz
+nz
 nz
 nz
 nz
