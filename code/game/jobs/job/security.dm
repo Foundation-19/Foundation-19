@@ -60,6 +60,61 @@
 	mechanical_difficulty = "Easy - Medium"
 	duties = "Manage all three Security branches. Keep track of potential and on-going threats (such as containment breaches). Work with other departments to respond to said threats."
 
+// IO  && IA Moved into a singular role
+/datum/job/tribunal_agent
+	title = "Internal Affair Agent"
+	department = "Command"
+	selection_color = "#2f2f7f"
+	department_flag = COM|SEC
+	total_positions = 3 // A rough estimate of how many IA you can get if you compacted them
+	spawn_positions = 3
+	supervisors = "Internal Tribunal Department Officer & Ethic Committee Liaison"
+	economic_power = 4
+	requirements = list(EXP_TYPE_COMMAND = 720, EXP_TYPE_SECURITY = 900, EXP_TYPE_BUR = 60)
+	minimal_player_age = 10
+	ideal_character_age = 27
+	alt_titles = list("Internal Affair Operative" = /decl/hierarchy/outfit/job/security/tribunal_operative)
+	outfit_type = /decl/hierarchy/outfit/job/security/tribunal_agent
+	class = CLASS_B
+	hud_icon = "hudbridgeofficer"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_CHAPEL_OFFICE
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_HAULING     = SKILL_BASIC,
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_BASIC,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+	skill_points = 25
+
+	roleplay_difficulty = "Hard - Very Hard"
+	mechanical_difficulty = "Medium - Hard"
+	duties = "Ensure Foundation protocols are followed. Keep security in line. Protect the Ethics Committee Liaison and Tribunal Officer."
+
 //##
 //ZONE COMMANDERS
 //##
