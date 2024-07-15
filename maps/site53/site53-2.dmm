@@ -13795,7 +13795,10 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "aLW" = (
 /obj/structure/table/standard,
-/obj/item/storage/box/beakers,
+/obj/machinery/fabricator/micro{
+	pixel_x = 4;
+	pixel_y = 1
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "aLX" = (
@@ -43439,6 +43442,7 @@
 	dir = 4;
 	icon_state = "bulb1"
 	},
+/obj/item/storage/box/beakers,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
 "nLr" = (
@@ -60681,6 +60685,10 @@
 "xgm" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
+	},
+/obj/machinery/fabricator/micro/bartender{
+	pixel_x = 4;
+	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/restaurantkitchenarea)
