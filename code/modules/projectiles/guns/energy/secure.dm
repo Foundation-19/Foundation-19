@@ -73,21 +73,29 @@
 	GLOB.secure_weapons |= src
 	. = ..()
 
-/obj/item/gun/energy/gun/mounted/mk9/mounted/rubber
-	name = "MK9 Foundation Pistol"
-	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9. This one is shaped for cyborgs. Chambered in rubber bullets."
+/obj/item/gun/energy/gun/mounted/mk9
+	name = "Mounted MK9 Foundation Pistol"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9. This one is shaped for cyborgs. Chambered in lethal bullets."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "MK9"
 	modifystate = null
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/pistol
 	fire_delay = 2
 	self_recharge = 1
 	use_external_power = 0
 	has_safety = FALSE
+	firemodes = null
 
-/obj/item/gun/energy/gun/mounted/p90/mounted
-	name = "P90 SMG"
-	desc = "A submachine gun sample of the 2010s, with a scope mounted on top. This one is shaped for cyborgs."
+/obj/item/gun/energy/gun/mounted/mk9/on_update_icon()
+	..()
+
+/obj/item/gun/energy/gun/mounted/mk9/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+
+/obj/item/gun/energy/gun/mounted/p90
+	name = "Mounted FN P90"
+	desc = "The FN P90 is a submachine gun chambered in 5.7x28mm, also classified as a personal defense weapon, designed and manufactured by FN Herstal in Belgium. Created in response to NATO requests for a replacement for 9x19mm Parabellum firearms, the P90 was designed as a compact but powerful firearm for vehicle crews, operators of crew-served weapons, support personnel, special forces, and counter-terrorist groups. This one has a scope, and is issued to specifically LCZ Security, and or MTF. This one is shaped for cyborgs."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "p90"
 	modifystate = null
