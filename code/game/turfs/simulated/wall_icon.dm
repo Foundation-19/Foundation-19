@@ -115,31 +115,32 @@
 	var/list/other_dirs = list()
 
 	for(var/turf/simulated/wall/W in RANGE_TURFS(src, 1))
-		switch(can_join_with(W))
-			if(0)
-				continue
-			if(1)
-				wall_dirs += get_dir(src, W)
-			if(2)
-				wall_dirs += get_dir(src, W)
-				other_dirs += get_dir(src, W)
-		if(propagate)
-			W.update_connections()
-			W.update_icon()
 
 	for(var/turf/T as anything in RANGE_TURFS(src, 1))
+		if(istype(T, /turf/simulated/wall))
+			var/turf/simulated/wall/W = T
+			switch(can_join_with(W))
+				if(0)
+					continue
+				if(1)
+					wall_dirs += get_dir(src, W)
+				if(2)
+					wall_dirs += get_dir(src, W)
+					other_dirs += get_dir(src, W)
+			if(propagate)
+				W.update_connections()
+				W.update_icon()
+
 		var/success = 0
 		for(var/obj/O in T)
 			for(var/b_type in blend_objects)
 				if(istype(O, b_type))
-					success = 1
-				for(var/nb_type in noblend_objects)
-					if(istype(O, nb_type))
-						success = 0
-				if(success)
+					success = TRUE
 					break
-			if(success)
-				break
+			for(var/nb_type in noblend_objects)
+				if(istype(O, nb_type))
+					success = FALSE
+					break
 
 		if(success)
 			wall_dirs += get_dir(src, T)
