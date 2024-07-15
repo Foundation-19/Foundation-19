@@ -46,7 +46,7 @@
 		/obj/item/borg/sight/hud/sec,
 		/obj/item/handcuffs/cyborg,
 		/obj/item/melee/baton/robot,
-		/obj/item/gun/energy/gun/mounted/mk9/mounted/rubber,
+		/obj/item/gun/energy/gun/mounted/mk9/rubber,
 		/obj/item/taperoll/police,
 		/obj/item/device/megaphone,
 		/obj/item/device/holowarrant,

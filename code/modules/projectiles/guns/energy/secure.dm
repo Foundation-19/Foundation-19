@@ -83,7 +83,7 @@
 	projectile_type = /obj/item/projectile/bullet/pistol
 	fire_delay = 2
 	self_recharge = 1
-	use_external_power = 0
+	use_external_power = 1
 	has_safety = FALSE
 	firemodes = null
 
@@ -104,7 +104,7 @@
 	force = 10
 	one_hand_penalty = 1
 	self_recharge = 1
-	use_external_power = 0
+	use_external_power = 1
 	has_safety = FALSE
 
 	firemodes = list(
@@ -124,7 +124,7 @@
 	force = 10
 	one_hand_penalty = 1
 	self_recharge = 1
-	use_external_power = 0
+	use_external_power = 1
 	has_safety = FALSE
 
 	firemodes = list(
