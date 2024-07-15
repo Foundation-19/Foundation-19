@@ -229,7 +229,7 @@
 /area/site53/uez/bridge)
 "aF" = (
 /obj/effect/landmark/start{
-	name = "Internal Tribunal Department Agent";
+	name = "Internal Affair Agent";
 	icon_state = "comitdspawn";
 	icon = 'icons/effects/landmarks.dmi'
 	},
@@ -5327,7 +5327,7 @@
 "sM" = (
 /obj/structure/bed/chair,
 /obj/effect/landmark/start{
-	name = "Internal Tribunal Department Agent";
+	name = "Internal Affair Agent";
 	icon_state = "comitdspawn";
 	icon = 'icons/effects/landmarks.dmi'
 	},
@@ -11465,7 +11465,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start{
-	name = "Internal Tribunal Department Agent";
+	name = "Internal Affair Agent";
 	icon_state = "comitdspawn";
 	icon = 'icons/effects/landmarks.dmi'
 	},
