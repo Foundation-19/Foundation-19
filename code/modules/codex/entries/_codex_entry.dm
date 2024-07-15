@@ -10,13 +10,12 @@
 /datum/codex_entry/proc/update_links()
 	return
 
-/datum/codex_entry/New(_display_name, list/_associated_paths, list/_associated_strings, _entry_text, _mechanics_text)
+/datum/codex_entry/New(_display_name, list/_associated_paths, list/_associated_strings, _entry_text)
 
 	if(_display_name)       display_name =       _display_name
 	if(_associated_paths)   associated_paths =   _associated_paths
 	if(_associated_strings) associated_strings = _associated_strings
 	if(_entry_text)     entry_text =     _entry_text
-	if(_mechanics_text)     mechanics_text =     _mechanics_text
 
 	if(associated_paths && associated_paths.len)
 		for(var/tpath in associated_paths)
