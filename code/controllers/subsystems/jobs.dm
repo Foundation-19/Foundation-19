@@ -447,7 +447,7 @@ SUBSYSTEM_DEF(jobs)
 			if (H.client.prefs.email_pass)
 				pass = H.client.prefs.email_pass
 
-			ntnet_global.create_email(H, addr, "site53.foundation", rank, pass)
+			ntnet_global.create_email(H, addr, "site53.foundation", rank, pass, job.department_flag)
 		// END EMAIL GENERATION
 
 		job.equip(H, H.mind ? H.mind.role_alt_title : "")
