@@ -144,9 +144,11 @@
 // Blinking Mechanics
 
 /obj/item/organ/internal/eyes/proc/handle_blink()
-	for(var/blink_causer in owner.blink_causers) //Extra precaution to avoid lingering refrences
-		if(!(owner in dview(world.view, blink_causer)) && !(blink_causer in dview(world.view, owner)))
-			owner.disable_blink(blink_causer)
+	if(owner.client)
+		var/list/viewSize = getviewsize(config.default_view)
+		for(var/blink_causer in owner.blink_causers) //Extra precaution to avoid lingering refrences
+			if(!(owner in dview(viewSize[1], blink_causer)) && !(blink_causer in dview(viewSize[1], owner)))
+				owner.disable_blink(blink_causer)
 	if(!owner.is_blinking || owner.stat)
 		owner.blink_total = null
 		owner.blink_current = null

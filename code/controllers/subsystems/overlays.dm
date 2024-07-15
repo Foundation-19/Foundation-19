@@ -1,89 +1,13 @@
-SUBSYSTEM_DEF(overlays)
-	name = "Overlay"
-	wait = 1
-	priority = SS_PRIORITY_OVERLAY
-	init_order = SS_INIT_OVERLAY
-	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
-
-	var/list/processing = list()
-
-	var/idex = 1
-	var/list/overlay_icon_state_caches = list()
-	var/list/overlay_icon_cache = list()
-
-/datum/controller/subsystem/overlays/stat_entry(msg)
-	.=..("[msg] Ov:[processing.len - (idex - 1)]")
-
-/datum/controller/subsystem/overlays/Initialize()
-	Flush()
-	. = ..()
-
-/datum/controller/subsystem/overlays/Recover()
-	overlay_icon_state_caches = SSoverlays.overlay_icon_state_caches
-	overlay_icon_cache = SSoverlays.overlay_icon_cache
-	processing = SSoverlays.processing
-
-/datum/controller/subsystem/overlays/fire(resumed = FALSE, mc_check = TRUE)
-	var/list/processing = src.processing
-	while(idex <= processing.len)
-		var/atom/thing = processing[idex++]
-
-		if(!QDELETED(thing) && thing.overlay_queued)	// Don't double-process if something already forced a compile.
-			thing.compile_overlays()
-
-		if(mc_check)
-			if(MC_TICK_CHECK)
-				break
-		else
-			CHECK_TICK
-
-	if (idex > 1)
-		processing.Cut(1, idex)
-		idex = 1
-
-/datum/controller/subsystem/overlays/proc/Flush()
-	if(processing.len)
-		log_ss("overlays", "Flushing [processing.len] overlays.")
-		fire(mc_check = FALSE)
-
-/atom/proc/compile_overlays()
-	var/list/oo = our_overlays
-	var/list/po = priority_overlays
-	overlays.Cut()
-	if(length(po) && length(oo))
-		overlays |= oo + po
-	else if(length(oo))
-		overlays |= oo
-	else if(length(po))
-		overlays |= po
-
-	overlay_queued = FALSE
-
 /proc/iconstate2appearance(icon, iconstate)
 	var/static/image/stringbro = new()
-	var/list/icon_states_cache = SSoverlays.overlay_icon_state_caches
-	var/list/cached_icon = icon_states_cache[icon]
-	if (cached_icon)
-		var/cached_appearance = cached_icon["[iconstate]"]
-		if (cached_appearance)
-			return cached_appearance
 	stringbro.icon = icon
 	stringbro.icon_state = iconstate
-	if (!cached_icon) //not using the macro to save an associated lookup
-		cached_icon = list()
-		icon_states_cache[icon] = cached_icon
-	var/cached_appearance = stringbro.appearance
-	cached_icon["[iconstate]"] = cached_appearance
-	return cached_appearance
+	return stringbro.appearance
 
 /proc/icon2appearance(icon)
 	var/static/image/iconbro = new()
-	var/list/icon_cache = SSoverlays.overlay_icon_cache
-	. = icon_cache[icon]
-	if (!.)
-		iconbro.icon = icon
-		. = iconbro.appearance
-		icon_cache[icon] = .
+	iconbro.icon = icon
+	return iconbro.appearance
 
 /atom/proc/build_appearance_list(list/build_overlays)
 	if (!islist(build_overlays))
@@ -100,75 +24,24 @@ SUBSYSTEM_DEF(overlays)
 			build_overlays[index] = icon2appearance(overlay)
 	return build_overlays
 
-#define NOT_QUEUED_ALREADY (!(overlay_queued))
-#define QUEUE_FOR_COMPILE overlay_queued = TRUE; SSoverlays.processing += src;
-
 /atom/proc/cut_overlays(priority = FALSE)
-	var/list/cached_overlays = our_overlays
-	var/list/cached_priority = priority_overlays
-
-	var/need_compile = FALSE
-
-	if(LAZYLEN(cached_overlays)) //don't queue empty lists, don't cut priority overlays
-		cached_overlays.Cut()  //clear regular overlays
-		need_compile = TRUE
-
-	if(priority && LAZYLEN(cached_priority))
-		cached_priority.Cut()
-		need_compile = TRUE
-
-	if(NOT_QUEUED_ALREADY && need_compile)
-		QUEUE_FOR_COMPILE
+	overlays = null
 
 /atom/proc/cut_overlay(list/overlays_list, priority)
-	if(!overlays_list)
+	if(!overlays)
 		return
-
-	overlays_list = build_appearance_list(overlays_list)
-
-	var/list/cached_overlays = our_overlays	//sanic
-	var/list/cached_priority = priority_overlays
-	var/init_o_len = LAZYLEN(cached_overlays)
-	var/init_p_len = LAZYLEN(cached_priority)  //starter pokemon
-
-	LAZYREMOVE(cached_overlays, overlays_list)
-	if(priority)
-		LAZYREMOVE(cached_priority, overlays_list)
-
-	if(NOT_QUEUED_ALREADY && ((init_o_len != LAZYLEN(cached_priority)) || (init_p_len != LAZYLEN(cached_overlays))))
-		QUEUE_FOR_COMPILE
+	overlays -= build_appearance_list(overlays_list)
 
 /atom/proc/add_overlay(list/overlays_list, priority = FALSE)
-	if(!overlays_list)
+	if(!overlays)
 		return
-
-	overlays_list = build_appearance_list(overlays_list)
-
-	if(priority)
-		LAZYADD(priority_overlays, overlays_list)
-	else
-		LAZYADD(our_overlays, overlays_list)
-
-	if(NOT_QUEUED_ALREADY)
-		QUEUE_FOR_COMPILE
+	overlays += build_appearance_list(overlays_list)
 
 /atom/proc/set_overlays(list/overlays_list, priority = FALSE)	// Sets overlays to a list, equivalent to cut_overlays() + add_overlays().
-	if (!overlays_list)
+	if (!overlays)
 		return
-
-	overlays_list = build_appearance_list(overlays_list)
-
-	if (priority)
-		LAZYCLEARLIST(priority_overlays)
-		if (overlays_list)
-			LAZYADD(priority_overlays, overlays_list)
-	else
-		LAZYCLEARLIST(our_overlays)
-		if (overlays_list)
-			LAZYADD(our_overlays, overlays_list)
-
-	if (NOT_QUEUED_ALREADY)
-		QUEUE_FOR_COMPILE
+	overlays = null
+	overlays += build_appearance_list(overlays_list)
 
 /atom/proc/copy_overlays(atom/other, cut_old = FALSE)	//copys our_overlays from another atom
 	if(!other)
@@ -176,20 +49,14 @@ SUBSYSTEM_DEF(overlays)
 			cut_overlays()
 		return
 
-	var/list/cached_other = other.our_overlays
-	if(length(cached_other))
-		if(cut_old)
-			LAZYCLEARLIST(our_overlays)
-			LAZYADD(our_overlays, cached_other)
+	var/list/cached_other = other.overlays.Copy()
+	if(cut_old)
+		if(cached_other)
+			overlays = cached_other
 		else
-			LAZYOR(our_overlays, cached_other)
-		if(NOT_QUEUED_ALREADY)
-			QUEUE_FOR_COMPILE
-	else if(cut_old)
-		cut_overlays()
-
-#undef NOT_QUEUED_ALREADY
-#undef QUEUE_FOR_COMPILE
+			overlays = null
+	else if(cached_other)
+		overlays += cached_other
 
 //TODO: Better solution for these?
 /image/proc/add_overlay(x)
@@ -200,8 +67,3 @@ SUBSYSTEM_DEF(overlays)
 
 /image/proc/cut_overlays(x)
 	overlays.Cut()
-
-/atom
-	var/tmp/list/our_overlays	//our local copy of (non-priority) overlays without byond magic. Use procs in SSoverlays to manipulate
-	var/tmp/list/priority_overlays	//overlays that should remain on top and not normally removed when using cut_overlay functions, like c4.
-	var/tmp/overlay_queued

@@ -221,7 +221,7 @@
 		return
 
 	if(!client) return
-	if(client.view != world.view)
+	if((client.view != config.default_view) && (client.view != config.default_view_square))
 		return
 	if(hud_used.hud_shown)
 		hud_used.hud_shown = 0
