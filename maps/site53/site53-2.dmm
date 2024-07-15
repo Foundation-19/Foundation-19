@@ -56063,7 +56063,7 @@
 	name = "SCP-457 Internal Access Control";
 	pixel_y = 2;
 	dir = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	pixel_x = -5
 	},
 /obj/machinery/button/blast_door{
@@ -56071,7 +56071,7 @@
 	name = "SCP-457 External Access Control";
 	pixel_y = 2;
 	dir = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/dark/vertical,
@@ -56619,7 +56619,7 @@
 	name = "SCP-457 Lockdown Control";
 	pixel_y = 2;
 	dir = 4;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/scp457containment)
