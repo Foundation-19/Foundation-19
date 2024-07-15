@@ -3,7 +3,7 @@
 	var/list/associated_strings
 	var/list/associated_paths
 	var/entry_text
-	var/mechanics_text
+
 /datum/codex_entry/dd_SortValue()
 	return display_name
 
