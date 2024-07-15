@@ -71,3 +71,12 @@
       stacks of weakness, as well as 4 stacks of paralysis.
   - balance: 049 curing grab has a delay of 10 seconds (from 4 seconds).
   - balance: 049 now has partial flash resistance (from FULL flash resistance).
+2024-07-15:
+  cheesePizza2:
+  - rscdel: All Horizon Initiative references have been removed.
+  - rscadd: Made major changes to the relay chat program. It now works on a server-client
+      system (similar to the upload database), and has additional functionality.
+  - rscadd: Added additional broadcast e-mails (one for every department).
+  quadbium:
+  - rscadd: Added Lobby Track goc_spawn_theme2
+  - rscadd: Added Lobby Track fall_of_ganzir
