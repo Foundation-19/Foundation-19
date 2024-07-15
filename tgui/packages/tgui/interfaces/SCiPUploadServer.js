@@ -83,13 +83,13 @@ const AccessEditor = (props, context) => {
     <Section
       title={'Editing ' + editing_file}
       buttons={
-        <Button icon="sign-out" onClick={() => act('PRG_exit')}>
+        <Button icon="sign-out-alt" onClick={() => act('PRG_exit')}>
           Exit
         </Button>
       }
     >
       {region_access.map((region = [], index) => (
-        <Section title={region_names[index]} key={region_names[index]}>
+        <Section title={region_names[index]} key={index}>
           {region.map((access) => (
             <Button.Checkbox
               key={access.id}

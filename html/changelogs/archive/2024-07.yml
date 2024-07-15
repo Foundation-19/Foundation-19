@@ -47,3 +47,27 @@
 2024-07-09:
   ChromeFoxxity:
   - rscadd: More Job Blacklists.
+2024-07-10:
+  ChromeFoxxity:
+  - rscadd: MP5's in EZ Armory Dispenser, and M4's in Armory.
+  - rscadd: Other shit.
+  checkraisefold:
+  - admin: TrialGameMaster+ now get FBP whitelist bypass instead of only moderators
+  - code_imp: Major TGUI improvements and updates ported over from tgstation
+  - admin: Advanced proccall on global proc now works instead of runtiming
+  - bugfix: IsBanned query is properly garbage collected
+  - bugfix: Tear gas no longer causes infinite pain slowdown
+  quadbium:
+  - rscadd: adds a line of text to the basic weapons skill about piloting exosuits
+  - balance: gave the robotics tech and senior robotics techs the basic weapons skill
+2024-07-11:
+  checkraisefold:
+  - bugfix: Species whitelist SQL edition now actually functions
+  - bugfix: Species list does not have duplicated human
+  cheesePizza2:
+  - balance: Instead of dealing a flat 10 weakness every step, 049 curing now gradually
+      increases in power. The first step has no effect, the second gives 3 stacks
+      of weakness, the third gives 8 stacks, and the fourth and final one gives 12
+      stacks of weakness, as well as 4 stacks of paralysis.
+  - balance: 049 curing grab has a delay of 10 seconds (from 4 seconds).
+  - balance: 049 now has partial flash resistance (from FULL flash resistance).
