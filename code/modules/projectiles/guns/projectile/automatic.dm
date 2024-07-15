@@ -17,6 +17,7 @@
 	burst_delay = 2
 	mag_insert_sound = 'sounds/weapons/guns/interaction/smg_magin.ogg'
 	mag_remove_sound = 'sounds/weapons/guns/interaction/smg_magout.ogg'
+	jam_chance = GUN_JAM_AUTO
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(

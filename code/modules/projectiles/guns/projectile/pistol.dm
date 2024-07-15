@@ -14,6 +14,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/empty_icon = TRUE  //If it should change icon when empty
 	var/ammo_indicator = FALSE
+	jam_chance = GUN_JAM_MANUAL
 
 /obj/item/gun/projectile/pistol/on_update_icon()
 	..()

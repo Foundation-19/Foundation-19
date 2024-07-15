@@ -23,6 +23,7 @@
 	wielded_item_state = "heavysniper-wielded" //sort of placeholder
 	load_sound = 'sounds/weapons/guns/interaction/rifle_load.ogg'
 	fire_delay = 12
+	jam_chance = GUN_JAM_MANUAL
 
 /obj/item/gun/projectile/heavysniper/on_update_icon()
 	..()

@@ -17,6 +17,7 @@
 	max_shells = 1
 	starts_loaded = FALSE
 	load_sound = 'sounds/weapons/guns/interaction/launcher_reload.ogg'
+	jam_chance = GUN_JAM_MANUAL
 
 /obj/item/gun/projectile/rocket_launcher/handle_click_empty()
 	. = ..()

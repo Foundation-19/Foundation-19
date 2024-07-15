@@ -41,3 +41,7 @@
 #define SOUNDS_BULLET_METAL  list('sounds/effects/projectile_impact/bullet_metal1.ogg', 'sounds/effects/projectile_impact/bullet_metal2.ogg', 'sounds/effects/projectile_impact/bullet_metal3.ogg')
 #define SOUNDS_LASER_MEAT  list('sounds/effects/projectile_impact/energy_meat1.ogg','sounds/effects/projectile_impact/energy_meat2.ogg')
 #define SOUNDS_LASER_METAL  list('sounds/effects/projectile_impact/energy_metal1.ogg','sounds/effects/projectile_impact/energy_metal2.ogg')
+
+//gun jamming
+#define GUN_JAM_MANUAL  5
+#define GUN_JAM_AUTO    1

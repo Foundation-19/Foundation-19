@@ -20,6 +20,7 @@
 	wielded_item_state = "shotgun-wielded"
 	load_sound = 'sounds/weapons/guns/interaction/shotgun_instert.ogg'
 	codex_special_info = "To pump it, use it in hand."
+	jam_chance = GUN_JAM_MANUAL
 
 /obj/item/gun/projectile/shotgun/on_update_icon()
 	..()
