@@ -47,6 +47,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/scp/m16_mag
 	allowed_magazines = /obj/item/ammo_magazine/scp/m16_mag
+	jam_chance = 0
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty
 	firemodes = list(
