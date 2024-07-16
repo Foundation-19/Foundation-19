@@ -1310,6 +1310,8 @@ var/global/floorIsLava = 0
 
 	// Destination
 	var/department = tgui_input_list(owner, "Choose a destination fax", "Fax Target", GLOB.alldepartments)
+	if(!department)
+		return
 
 	// Generate the fax
 	var/obj/item/paper/admin/P = new /obj/item/paper/admin( null ) //hopefully the null loc won't cause trouble for us
