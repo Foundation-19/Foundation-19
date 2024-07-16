@@ -39,10 +39,12 @@
 
 	M.buckled = src
 	M.facing_dir = null
-	M.set_dir(buckle_dir ? buckle_dir : dir)
+	M.setDir(buckle_dir ? buckle_dir : dir)
 	M.UpdateLyingBuckledAndVerbStatus()
 	M.update_floating()
 	buckled_mob = M
+
+	M.throw_alert(ALERT_BUCKLED, /atom/movable/screen/alert/buckled)
 
 	post_buckle_mob(M)
 	return 1
@@ -112,4 +114,6 @@
 				SPAN_NOTICE("You unbuckle yourself from \the [src]."),\
 				SPAN_NOTICE("You hear metal clanking."))
 		add_fingerprint(user)
+
+	M.clear_alert(ALERT_BUCKLED)
 	return M

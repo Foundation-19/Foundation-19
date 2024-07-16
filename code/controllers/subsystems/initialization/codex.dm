@@ -77,6 +77,17 @@ SUBSYSTEM_DEF(codex)
 	return entries_by_string[lowertext(trim(string))]
 
 /datum/controller/subsystem/codex/proc/present_codex_entry(mob/presenting_to, datum/codex_entry/entry)
+	var/client/C
+
+	if (!istype(presenting_to))
+		if (istype(presenting_to, /client))
+			C = presenting_to
+			presenting_to = C.mob
+		else
+			return
+	else
+		C = presenting_to.client
+
 	if(entry && istype(presenting_to) && presenting_to.client)
 		var/datum/browser/popup = new(presenting_to, "codex", "Codex", nheight=425)
 		popup.set_content(parse_links(entry.get_text(presenting_to), presenting_to))
@@ -98,10 +109,7 @@ SUBSYSTEM_DEF(codex)
 			results = list()
 			for(var/entry_title in entries_by_string)
 				var/datum/codex_entry/entry = entries_by_string[entry_title]
-				if(findtext(entry.display_name, searching) || \
-				 findtext(entry.lore_text, searching) || \
-				 findtext(entry.mechanics_text, searching) || \
-				 findtext(entry.antag_text, searching))
+				if(findtext(entry.display_name, searching) || findtext(entry.entry_text, searching))
 					results |= entry
 		search_cache[searching] = dd_sortedObjectList(results)
 	return search_cache[searching]
@@ -109,8 +117,8 @@ SUBSYSTEM_DEF(codex)
 /datum/controller/subsystem/codex/Topic(href, href_list)
 	. = ..()
 	if(!. && href_list["show_examined_info"] && href_list["show_to"])
-		var/mob/showing_mob =   locate(href_list["show_to"])
-		if(!istype(showing_mob) || !showing_mob.can_use_codex())
+		var/mob/showing_mob = locate(href_list["show_to"])
+		if(!istype(showing_mob))
 			return
 		var/atom/showing_atom = locate(href_list["show_examined_info"])
 		var/entry

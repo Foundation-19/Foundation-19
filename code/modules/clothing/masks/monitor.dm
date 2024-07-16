@@ -44,7 +44,7 @@
 		"doom" =     "ipc_doom"
 		)
 
-/obj/item/clothing/mask/monitor/set_dir()
+/obj/item/clothing/mask/monitor/setDir()
 	dir = SOUTH
 	return
 

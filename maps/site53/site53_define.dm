@@ -19,18 +19,24 @@
 	usable_email_tlds = list("site53.foundation", "security.site53.foundation", "science.site53.foundation", "utility.site53.foundation")
 	config_path = "config/site53_config.txt"
 
-	allowed_spawns = list("Cryogenic Storage", "D-Cells", "Light Containment Zone")
+	allowed_spawns = list("Cryogenic Storage", "D-Cells")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "Foundation Site 53"
 	station_short = "Site 53"
 	dock_name     = "Central Command Depo"
-	boss_name     = "O5 Foundation Council"
-	boss_short    = "O5 Council"
+	boss_name     = "Foundation Central Office"
+	boss_short    = "Central Office"
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 
-	map_admin_faxes = list("Foundation Central Office", "UIU Central Office", "GOC Central Office", "Horizon Initiative Central Office ", "Marshall, Carter, and Dark Central Office")
+	map_admin_faxes = list(
+		"Foundation Central Office",
+		"UIU Central Office",
+		"GOC Central Office",
+		"Marshall, Carter, and Dark Central Office",
+		"Goldbaker-Reinz Central Office"
+	)
 
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "The outbound train is now boarding at the Train Station. It will depart in approximately %ETD%."
@@ -66,6 +72,8 @@
 		/area/turbolift/site53/scp106cont = NO_APC,
 		/area/turbolift/site53/robotlwr = NO_APC,
 		/area/turbolift/site53/robotupr = NO_APC,
+		/area/turbolift/site53/gatea = NO_APC,
+		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
 	)
 
@@ -91,6 +99,8 @@
 		/decl/audio/track/purge_protocol,
 		/decl/audio/track/uiu_spawn_theme,
 		/decl/audio/track/surface_area,
+		/decl/audio/track/goc_spawn_theme2,
+		/decl/audio/track/fall_of_ganzir
 	)
 
 	available_cultural_info = list(

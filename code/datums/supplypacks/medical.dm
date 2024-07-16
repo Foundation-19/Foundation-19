@@ -11,8 +11,8 @@
 /decl/hierarchy/supply_pack/medical/medical
 	name = "Refills - Medical supplies"
 	contains = list(/obj/item/storage/firstaid/regular,
-					/obj/item/storage/firstaid/trauma,
-					/obj/item/storage/firstaid/fire,
+					/obj/item/storage/firstaid/brute,
+					/obj/item/storage/firstaid/burn,
 					/obj/item/storage/firstaid/toxin,
 					/obj/item/storage/firstaid/o2,
 					/obj/item/storage/firstaid/adv,
@@ -39,13 +39,13 @@
 
 /decl/hierarchy/supply_pack/medical/trauma
 	name = "EMERGENCY - Trauma pouches"
-	contains = list(/obj/item/storage/firstaid/trauma = 3)
+	contains = list(/obj/item/storage/firstaid/brute = 3)
 	cost = 10
 	containername = "trauma pouch crate"
 
 /decl/hierarchy/supply_pack/medical/burn
 	name = "EMERGENCY - Burn pouches"
-	contains = list(/obj/item/storage/firstaid/fire = 3)
+	contains = list(/obj/item/storage/firstaid/burn = 3)
 	cost = 10
 	containername = "burn pouch crate"
 

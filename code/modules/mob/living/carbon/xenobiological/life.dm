@@ -70,13 +70,11 @@
 	if(istype(ingested)) ingested.metabolize()
 	if(bloodstr) bloodstr.metabolize()
 
-	src.updatehealth()
+	updatehealth()
 
 	return //TODO: DEFERRED
 
 /mob/living/carbon/slime/handle_regular_status_updates()
-
-	src.blinded = null
 
 	health = maxHealth - (getOxyLoss() + getToxLoss() + getFireLoss() + getBruteLoss() + getCloneLoss())
 
@@ -94,47 +92,39 @@
 		adjustCloneLoss(-1)
 		adjustBruteLoss(-1)
 
-	if (src.stat == DEAD)
-		src.lying = 1
-		src.blinded = 1
+	if (stat == DEAD)
+		lying = 1
+		become_blind(STAT_TRAIT)
 	else
-		if (src.paralysis || src.stunned || src.weakened || (status_flags && FAKEDEATH)) //Stunned etc.
-			if (src.stunned > 0)
-				src.set_stat(CONSCIOUS)
-			if (src.weakened > 0)
-				src.lying = 0
-				src.set_stat(CONSCIOUS)
-			if (src.paralysis > 0)
-				src.blinded = 0
-				src.lying = 0
-				src.set_stat(CONSCIOUS)
+		cure_blind(STAT_TRAIT)
 
+		if (paralysis || stunned || weakened || (status_flags && FAKEDEATH)) //Stunned etc.
+			if (stunned > 0)
+				set_stat(CONSCIOUS)
+			if (weakened > 0)
+				lying = 0
+				set_stat(CONSCIOUS)
+			if (paralysis > 0)
+				lying = 0
+				set_stat(CONSCIOUS)
 		else
-			src.lying = 0
-			src.set_stat(CONSCIOUS)
+			lying = 0
+			set_stat(CONSCIOUS)
 
-	if (src.stuttering) src.stuttering = 0
+	if (ear_deaf > 0)
+		ear_deaf = 0
 
-	if (src.eye_blind)
-		src.eye_blind = 0
-		src.blinded = 1
+	if (ear_damage < 25)
+		ear_damage = 0
 
-	if (src.ear_deaf > 0) src.ear_deaf = 0
-	if (src.ear_damage < 25)
-		src.ear_damage = 0
+	set_density(!lying)
 
-	src.set_density(!src.lying)
+	if (disabilities & DEAFENED)
+		ear_deaf = 1
 
-	if (src.sdisabilities & BLINDED)
-		src.blinded = 1
-	if (src.sdisabilities & DEAFENED)
-		src.ear_deaf = 1
+	set_eye_blur(0)
 
-	if (src.eye_blurry > 0)
-		src.eye_blurry = 0
-
-	if (src.druggy > 0)
-		src.druggy = 0
+	set_drugginess(0)
 
 	return 1
 

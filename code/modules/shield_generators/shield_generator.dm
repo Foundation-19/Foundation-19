@@ -127,7 +127,7 @@
 		S.gen = src
 		S.flags_updated()
 		field_segments |= S
-		S.set_dir(vessel_reverse_dir)
+		S.setDir(vessel_reverse_dir)
 	update_icon()
 
 

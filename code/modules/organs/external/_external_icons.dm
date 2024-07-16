@@ -1,6 +1,6 @@
 var/list/limb_icon_cache = list()
 
-/obj/item/organ/external/set_dir()
+/obj/item/organ/external/setDir()
 	return
 
 /obj/item/organ/external/proc/compile_icon()

@@ -20,7 +20,7 @@
 
 	admin_attack_log(user, M, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	user.do_attack_animation(M)
 	//if(user != M)
 	if(M.mind && LAZYLEN(M.mind.learned_spells))
@@ -28,11 +28,11 @@
 		to_chat(M, SPAN_DANGER("You've been silenced!"))
 		return
 
-	if (!user.IsAdvancedToolUser())
+	if (!ISADVANCEDTOOLUSER(user))
 		to_chat(user, SPAN_DANGER("You don't have the dexterity to do this!"))
 		return
 
-	if ((MUTATION_CLUMSY in user.mutations) && prob(50))
+	if (((MUTATION_CLUMSY in user.mutations) || (HAS_TRAIT(user, TRAIT_CLUMSY))) && prob(50))
 		to_chat(user, SPAN_DANGER("The rod slips out of your hand and hits your head."))
 		user.take_organ_damage(10, 0)
 		user.Paralyse(20)

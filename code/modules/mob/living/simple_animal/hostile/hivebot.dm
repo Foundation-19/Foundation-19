@@ -214,7 +214,7 @@ The megabot
 
 /mob/living/simple_animal/hostile/hivebot/mega/get_attack_speed(obj/item/W)
 	if(attack_mode == ATTACK_MODE_LASER) // For faster fire rate
-		return DEFAULT_QUICK_COOLDOWN
+		return CLICK_CD_QUICK
 	return ..(W)
 
 /mob/living/simple_animal/hostile/hivebot/mega/emp_act(severity)

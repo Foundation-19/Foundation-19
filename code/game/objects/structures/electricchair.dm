@@ -16,7 +16,7 @@
 	if(isWrench(W))
 		var/obj/structure/bed/chair/C = new /obj/structure/bed/chair(loc)
 		playsound(loc, 'sounds/items/Ratchet.ogg', 50, 1)
-		C.set_dir(dir)
+		C.setDir(dir)
 		part.dropInto(loc)
 		part.master = null
 		part = null

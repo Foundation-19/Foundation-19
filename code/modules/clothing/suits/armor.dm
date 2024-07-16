@@ -223,6 +223,11 @@
 	desc = "A synthetic armor vest with CORPORATE SECURITY printed in red lettering on the chest. This one has added webbing and ballistic plates."
 	icon_state = "ntwebvest"
 
+/obj/item/clothing/suit/storage/vest/nt/isd
+	name = "Internal Security armored vest"
+	desc = "A synthetic armor vest with \"INTERNAL SECURITY DEPARTMENT\" printed in red lettering on the chest. This one has added webbing and ballistic plates."
+	icon_state = "ntwebvest"
+
 /obj/item/clothing/suit/storage/vest/nt/warden
 	name = "warden heavy armored vest"
 	desc = "A synthetic armor vest with WARDEN printed in silver lettering on the chest. This one has added webbing and ballistic plates."
@@ -276,6 +281,7 @@
 	restricted_accessory_slots = list(ACCESSORY_SLOT_ARMOR_C, ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L, ACCESSORY_SLOT_ARMOR_S)
 	blood_overlay_type = "armor"
 	flags_inv = 0
+	codex_special_info = "Its protection is provided by the plate inside, examine it for details on armor."
 
 /obj/item/clothing/suit/armor/pcarrier/light
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate)
@@ -438,3 +444,16 @@
 	desc = "Pukish armor."
 	icon_state = "tdgreen"
 	siemens_coefficient = 1
+
+/obj/item/clothing/suit/storage/vest/scp912
+	name = "SWAT vest"
+	desc = "A rather heavy-looking, Special Weapons and Tactics standard-issue vest, or at least a slightly outdated one, given standard armor padding to stop bullets. It displays the iconic SWAT letters on the front of the vest. This one has added webbing and ballistic plates."
+	icon_state = "912_vest"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	flags_inv = CLOTHING_BULKY
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.

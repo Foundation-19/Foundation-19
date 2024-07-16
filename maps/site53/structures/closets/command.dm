@@ -68,3 +68,41 @@
 		/obj/item/clothing/shoes/jackboots,
 		/obj/item/storage/belt/utility/full,
 	)
+
+/obj/structure/closet/secure_closet/administration/internaltribunal
+	name = "internal tribunal officer's locker"
+	req_access = list(ACCESS_ADMIN_LVL5)
+	icon_state = "itdlocked"
+	icon_closed = "itdunlocked"
+	icon_locked = "itdlocked"
+	icon_opened = "itdopen"
+	icon_off = "itdoff"
+
+/obj/structure/closet/secure_closet/administration/internaltribunal/WillContain()
+	return list(
+		/obj/item/clothing/accessory/armorplate/sneaky,
+		/obj/item/clothing/shoes/laceup,
+		/obj/item/device/radio/headset/heads/hop,
+		/obj/item/clothing/under/lawyer/purpsuit,
+		/obj/item/clothing/suit/armor/itd,
+		/obj/item/clothing/under/itd,
+	)
+
+/obj/structure/closet/secure_closet/administration/ethicscommittee
+	name = "ethics committee liaison's locker"
+	req_access = list(ACCESS_ADMIN_LVL5)
+	icon_state = "ecllocked"
+	icon_closed = "eclunlocked"
+	icon_locked = "ecllocked"
+	icon_opened = "eclopen"
+	icon_off = "ecloff"
+
+/obj/structure/closet/secure_closet/administration/ethicscommittee/WillContain()
+	return list(
+		/obj/item/clothing/accessory/armorplate/sneaky,
+		/obj/item/clothing/shoes/laceup,
+		/obj/item/device/radio/headset/heads/hop,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/solgov/marine,
+		/obj/item/clothing/under/lawyer/black,
+		/obj/item/clothing/under/suit_jacket/really_black,
+	)

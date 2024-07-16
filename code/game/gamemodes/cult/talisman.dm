@@ -31,10 +31,10 @@
 
 	if(issilicon(M))
 		M.Weaken(15)
-		M.silent += 15
+		M.set_silence_if_lower(15 SECONDS)
 	else if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.silent += 15
+		C.set_silence_if_lower(15 SECONDS)
 		C.Weaken(20)
 		C.Stun(20)
 	admin_attack_log(user, M, "Used a stun talisman.", "Was victim of a stun talisman.", "used a stun talisman on")
@@ -77,17 +77,12 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		to_chat(C, SPAN_WARNING("Your eyes burn horrifically!"))
-		C.eye_blind += 20
-		C.eye_blurry += 30
-		C.disabilities |= NEARSIGHTED
-		addtimer(CALLBACK(src, PROC_REF(unblind), C), 30 SECONDS)
+		C.set_eye_blur_if_lower(30 SECONDS)
+		C.set_temp_blindness_if_lower(30 SECONDS)
+
 	admin_attack_log(user, M, "Used a blindness talisman.", "Was victim of a blindness talisman.", "used a blindness talisman on")
 	qdel(src)
 	user.unEquip(src)
-
-/obj/item/paper/talisman/blindness/proc/unblind(mob/living/carbon/human/target)
-	if(target)
-		target.disabilities &= ~NEARSIGHTED
 
 /obj/item/paper/talisman/shackles/attack_self(mob/living/user)
 	. = ..()

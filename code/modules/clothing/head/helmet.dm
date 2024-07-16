@@ -25,6 +25,7 @@
 	siemens_coefficient = 0.7
 	w_class = ITEM_SIZE_NORMAL
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_ADHERENT)
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/helmet/nt
 	name = "\improper corporate security helmet"
@@ -238,3 +239,9 @@
 	flags_inv = BLOCKHAIR
 	body_parts_covered = 0
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/head/helmet/scp912
+	name = "SWAT helmet"
+	desc = "A standard-issue helmet that has railings for attachments, the only notable thing about it is it's padding to resist bullets, and also it's iconic dark blue visor, it's in rather pristine condition, even if a little out of date."
+	icon_state = "912_helm"
+	armor = list(melee = 999, bullet = 999, laser = 999, energy = 999, bomb = 999, bio = 999, rad = 999) // DON'T ASK, IT'S UNOBTAINABLE ARMOR, AND 912 IS UNKILLABLE KEEP IT AT THAT.

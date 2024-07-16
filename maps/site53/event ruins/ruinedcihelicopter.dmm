@@ -1,0 +1,514 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/simulated/floor/beach/sand,
+/area/site53/surface/surface/east)
+"c" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/surface/east)
+"d" = (
+/obj/machinery/door/window/brigdoor/southright{
+	name = "Cockpit"
+	},
+/obj/effect/floor_decal/borderfloorblack,
+/obj/effect/floor_decal/spline/fancy/black,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/landmark/corpse/chaos/pilot,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"e" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 1
+	},
+/obj/item/material/shard,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"f" = (
+/obj/item/stack/material/plasteel,
+/turf/simulated/floor/beach/sand,
+/area/site53/surface/surface/east)
+"g" = (
+/obj/item/stack/material/plasteel,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
+"h" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/surface/east)
+"i" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/surface/east)
+"j" = (
+/obj/item/stack/material/plasteel,
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"k" = (
+/obj/structure/showcase{
+	desc = "An expensive set of avionics and controls to allow a trained pilot to fly even more effectively or allow an untrained pilot to operate the heli. Too bad this heli is broken down.";
+	icon = 'icons/obj/computer.dmi';
+	icon_state = "computer";
+	name = "alert console";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"l" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	explosion_resistance = 100;
+	id_tag = "ruincihelicopter-left";
+	name = "Military Helicopter"
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/surface/surface/east)
+"m" = (
+/obj/effect/floor_decal/borderfloorblack,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/east)
+"n" = (
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/surface/surface/east)
+"o" = (
+/obj/structure/grille/broken,
+/obj/item/stack/material/rods,
+/obj/item/material/shard,
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
+"p" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"q" = (
+/obj/effect/floor_decal/borderfloorblack,
+/obj/effect/floor_decal/spline/fancy/black,
+/obj/structure/table/reinforced,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/stack/material/rods,
+/obj/item/material/shard,
+/obj/machinery/light_construct/spot{
+	dir = 8
+	},
+/obj/item/light/tube,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"r" = (
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/east)
+"s" = (
+/obj/item/stack/material/rods,
+/obj/structure/girder/displaced,
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
+"t" = (
+/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	explosion_resistance = 100;
+	id_tag = "ruincihelicopter-right";
+	name = "Military Helicopter"
+	},
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/surface/surface/east)
+"u" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/surface/east)
+"x" = (
+/obj/item/stack/material/rods,
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/beach/sand,
+/area/site53/surface/surface/east)
+"y" = (
+/obj/effect/floor_decal/corner/safe/border,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/toolbox/emergency,
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/surface/east)
+"z" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ruincihelicopter-left";
+	name = "Military Helicopter Side Doors";
+	dir = 1;
+	pixel_y = 8
+	},
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/surface/surface/east)
+"A" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 9
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 1
+	},
+/obj/machinery/light_construct/spot{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/landmark/corpse/chaos,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/secure/briefcase/money,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/east)
+"B" = (
+/obj/item/handcuffs,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"C" = (
+/obj/structure/showcase{
+	desc = "An expensive set of avionics and controls to allow a trained pilot to fly even more effectively or allow an untrained pilot to operate the heli. Too bad this heli is broken down.";
+	icon = 'icons/obj/computer.dmi';
+	icon_state = "computer";
+	name = "crew monitoring computer";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"D" = (
+/obj/item/material/shard,
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
+"E" = (
+/obj/effect/decal/cleanable/blood/oil/streak,
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"G" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 5
+	},
+/obj/effect/floor_decal/spline/fancy/black{
+	dir = 1
+	},
+/obj/machinery/light_construct/spot{
+	dir = 4
+	},
+/obj/item/light/tube,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/east)
+"I" = (
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/molten_item,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/east)
+"J" = (
+/obj/item/stack/material/rods,
+/turf/simulated/floor/beach/sand,
+/area/site53/surface/surface/east)
+"K" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/east)
+"L" = (
+/obj/machinery/button/blast_door{
+	id_tag = "ruincihelicopter-right";
+	name = "Military Helicopter Side Doors";
+	dir = 1;
+	pixel_y = 8
+	},
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/surface/surface/east)
+"M" = (
+/obj/item/material/shard,
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"N" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	icon = 'icons/effects/blood.dmi'
+	},
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"O" = (
+/obj/item/material/shard,
+/turf/simulated/floor/beach/sand,
+/area/site53/surface/surface/east)
+"P" = (
+/obj/item/stack/material/rods,
+/obj/item/stack/cable_coil,
+/turf/simulated/floor/beach/sand,
+/area/site53/surface/surface/east)
+"R" = (
+/obj/effect/floor_decal/borderfloorblack,
+/obj/effect/floor_decal/spline/fancy/black,
+/obj/structure/table/rack/shelf,
+/obj/structure/window/reinforced,
+/obj/machinery/light_construct/spot{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/projectile/flare/loaded,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"S" = (
+/obj/structure/grille/broken,
+/obj/item/material/shard,
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
+"T" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/landmark/corpse/chaos/pilot,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/surface/surface/east)
+"U" = (
+/obj/structure/grille{
+	health_max = null;
+	health_resistances = list("stun"=0,"emp"=0,"radiation"=0,"bio"=0,"pain"=0,"toxin"=0,"genetic"=0,"oxy"=0,"brain"=0)
+	},
+/obj/effect/paint/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/surface/surface/east)
+"V" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/site53/surface/surface/east)
+"W" = (
+/obj/structure/showcase{
+	desc = "An expensive set of avionics and controls to allow a trained pilot to fly even more effectively or allow an untrained pilot to operate the heli. Too bad this heli is broken down.";
+	icon = 'icons/obj/computer.dmi';
+	icon_state = "computer";
+	name = "helicopter controls"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/shuttle/black,
+/area/site53/surface/surface/east)
+"Y" = (
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+"Z" = (
+/obj/item/stack/cable_coil,
+/turf/simulated/floor/asteroid,
+/area/site53/surface/surface/east)
+
+(1,1,1) = {"
+a
+a
+O
+a
+a
+Y
+Y
+Y
+Y
+Y
+a
+a
+a
+a
+a
+U
+Y
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+o
+V
+n
+l
+l
+z
+n
+Y
+Y
+j
+O
+a
+U
+n
+U
+Y
+Y
+a
+"}
+(3,1,1) = {"
+J
+D
+D
+C
+q
+h
+c
+A
+K
+n
+Y
+P
+a
+a
+a
+n
+Y
+Y
+J
+a
+"}
+(4,1,1) = {"
+M
+S
+W
+e
+d
+i
+y
+r
+m
+n
+n
+p
+Y
+Y
+a
+x
+a
+f
+a
+a
+"}
+(5,1,1) = {"
+Y
+V
+V
+k
+R
+u
+T
+G
+I
+g
+N
+B
+Y
+E
+Z
+j
+Y
+J
+a
+a
+"}
+(6,1,1) = {"
+j
+Y
+V
+V
+n
+t
+t
+L
+s
+Y
+j
+Y
+a
+J
+a
+a
+O
+a
+a
+a
+"}
+(7,1,1) = {"
+a
+Y
+Y
+Y
+Y
+Y
+Y
+j
+Y
+a
+a
+a
+J
+a
+a
+a
+a
+a
+a
+a
+"}

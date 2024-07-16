@@ -6,7 +6,7 @@
 	icon_state = null
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED
+	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NEED_DIRECT_ABSORB
 
 	//Config
 
@@ -45,6 +45,8 @@
 	///sound cooldown track
 	var/sound_cooldown
 
+	roundstart_traits = list()
+
 /mob/living/carbon/human/scp106/Initialize(mapload, new_species = "SCP-106")
 	. = ..()
 	SCP = new /datum/scp(
@@ -79,6 +81,8 @@
 	WallEye = new(src)
 	WallEye.visualnet.add_source(src)
 	WallEye.visualnet.add_source(WallEye)
+
+	ADD_TRAIT(src, TRAIT_DISCOORDINATED_TOOL_USER, ROUNDSTART_TRAIT)
 
 /mob/living/carbon/human/scp106/Destroy()
 	QDEL_NULL(WallEye)
@@ -186,9 +190,6 @@
 	last_z = z
 
 //Util Overrides
-
-/mob/living/carbon/human/scp106/IsAdvancedToolUser()
-	return FALSE
 
 /mob/living/carbon/human/scp106/get_pressure_weakness()
 	return 0
@@ -524,7 +525,7 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 	target.pixel_y = target.default_pixel_y
 	target.buckled = src
 	target.facing_dir = null
-	target.set_dir(buckle_dir ? buckle_dir : dir)
+	target.setDir(buckle_dir ? buckle_dir : dir)
 	target.UpdateLyingBuckledAndVerbStatus()
 	target.update_floating()
 	buckled_mob = target

@@ -54,7 +54,24 @@
 	var/decl/maneuver/leap/leapHandler = new /decl/maneuver/leap()
 	///How long 096 is staggered for
 	var/stagger_counter
+	var/seedarkness  =  1
 
+/mob/living/scp096/verb/toggle_darkness()
+	set name = "Toggle Darkness"
+	set category = "IC"
+	seedarkness = !(seedarkness)
+	set_see_invisible(SEE_INVISIBLE_NOLIGHTING)
+	to_chat(src, "You [(seedarkness?"now":"no longer")] see darkness.")
+
+/mob/living/scp096/verb/stop_screaming()
+	set name = "Stop scream"
+	set category = "IC"
+
+	target = null
+	LAZYCLEARLIST(targets)
+	current_state = STATE_096_IDLE
+	icon_state = "scp"
+	update_icon()
 /mob/living/scp096/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
@@ -62,7 +79,7 @@
 		"????", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SCP_EUCLID, //Obj Class
 		"096", //Numerical Designation
-		SCP_MEMETIC|SCP_DISABLED //096 is disabled until traits are ported in as that is neccesary for it to pathfind through doors.
+		SCP_MEMETIC
 	)
 
 	SCP.memeticFlags = MINSPECT|MPHOTO|MCAMERA
@@ -167,7 +184,58 @@
 // AI procs
 
 ///Handles 096 AI
+/mob/living/scp096/get_status_tab_items()
+	. = ..()
+	for(var/mob/living/carbon/human/Ptarget in targets)
+		if(Ptarget != null)
+			. += "Real Name: [Ptarget.real_name]"
+			. += "Job: [Ptarget.job]"
+			. += "Locate X: [Ptarget.x]"
+			. += "Locate Y: [Ptarget.y]"
+			. += "Locate Z: [Ptarget.z]"
+//
 /mob/living/scp096/proc/handle_AI()
+	switch(current_state)
+		if(STATE_096_IDLE)
+			if(prob(45) && ((world.time - emote_cooldown_track) > emote_cooldown))
+				audible_message(pick("[src] cries.", "[src] sobs.", "[src] wails."))
+				playsound(src, 'sounds/scp/096/096-idle.ogg', 80, ignore_walls = TRUE)
+				emote_cooldown_track = world.time
+		if(STATE_096_CHASING)
+			//Find path to target
+			for(var/mob/living/carbon/human/Ptarget in targets)
+				if(LAZYLEN(current_path))
+					break
+				target = Ptarget
+				lastTargetTurf = get_turf(target)
+				current_path = get_path_to(src, target, maxJPSdistance)
+			//If we have no more targets, we go back to idle
+			if(!LAZYLEN(targets))
+				current_state = STATE_096_IDLE
+				icon_state = "scp"
+				target = null
+				current_path = null
+				//This resets the screaming noise for everyone.
+				for(var/mob/living/carbon/human/hearer in hearers(world.view, src))
+					sound_to(hearer, sound(null))
+				update_icon()
+				return
+			//If we havent found a path for any of our targets, we notify admins and switch ourselves to the first target in our list. Path code will also use byond's inherent pathfinding for this life call.
+			if(!LAZYLEN(current_path))
+				log_and_message_staff("Instance of SCP-[SCP.designation] failed to find paths for targets. Switching to byond pathfinding for current life iteration.", src, loc)
+				target = targets[1]
+				lastTargetTurf = get_turf(target)
+			//If the target moved, we must regenerate the path list
+			if(get_turf(target) != lastTargetTurf)
+				current_path = get_path_to(src, target, maxJPSdistance)
+				//if we cant path to target we reset the target
+				if(!LAZYLEN(current_path))
+					target = null
+					return
+				lastTargetTurf = get_turf(target)
+		if(STATE_096_STAGGERED)
+			if(world.time > stagger_counter)
+				current_state = STATE_096_CHASING
 	switch(current_state)
 		if(STATE_096_IDLE)
 			if(prob(45) && ((world.time - emote_cooldown_track) > emote_cooldown))
@@ -363,6 +431,29 @@
 
 /mob/living/scp096/movement_delay()
 	return -2
+
+/mob/living/scp096/get_status_tab_items()
+	. = ..()
+	for(var/mob/living/carbon/human/Ptarget in targets)
+		if(Ptarget != null)
+			. += "Real Name: [Ptarget.real_name]"
+			. += "Job: [Ptarget.job]"
+			. += "Locate X: [Ptarget.x]"
+			. += "Locate Y: [Ptarget.y]"
+			. += "Locate Z: [Ptarget.z]"
+
+/obj/item/photo/scp096/scp096_photo
+	name =  "???? photo"
+
+/obj/item/photo/scp096/scp096_photo/examine(mob/living/user)
+	. = ..()
+	if(!istype(user, /mob/living/scp096))
+		var/mob/living/scp096/scp_to_trigger = locate(/mob/living/scp096) in GLOB.SCP_list
+		if(get_dist(user, src) <= 1 && isliving(user))
+			scp_to_trigger.trigger(user)
+			to_chat(user, SPAN_DANGER("You catch [scp_to_trigger]"))
+		else
+			to_chat(user, SPAN_NOTICE("It is too far away."))
 
 #undef STATE_096_IDLE
 #undef STATE_096_SCREAMING

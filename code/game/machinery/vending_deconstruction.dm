@@ -14,12 +14,6 @@
 	QDEL_NULL_LIST(product_records)
 	. = ..()
 
-/obj/structure/vending_refill/get_lore_info()
-	return "Vendor restock containers are notoriously difficult to open, representing the pinnacle of humanity's antitheft technologies."
-
-/obj/structure/vending_refill/get_mechanics_info()
-	return "Drag to a vendor to restock. Generally can not be opened."
-
 /obj/structure/vending_refill/MouseDrop(obj/machinery/vending/over)
 	if(!CanMouseDrop(over, usr))
 		return

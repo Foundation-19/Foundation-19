@@ -10,6 +10,7 @@
 	var/obj/item/storage/internal/container
 	var/max_w_class = ITEM_SIZE_SMALL
 	var/slots
+	hidden_from_codex = TRUE
 
 /obj/item/clothing/accessory/storage/Initialize()
 	. = ..()
@@ -63,6 +64,7 @@
 	icon_state = "webbing"
 	slots = 3 STORAGE_SLOTS
 	body_location = UPPER_TORSO
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/webbing_large
 	name = "large webbing"
@@ -70,6 +72,7 @@
 	icon_state = "webbing_large"
 	slots = 4 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/black_vest
 	name = "black webbing vest"
@@ -77,6 +80,7 @@
 	icon_state = "vest_black"
 	slots = 5 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/brown_vest
 	name = "brown webbing vest"
@@ -84,6 +88,7 @@
 	icon_state = "vest_brown"
 	slots = 5 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/white_vest
 	name = "white webbing vest"
@@ -91,6 +96,7 @@
 	icon_state = "vest_white"
 	slots = 5 STORAGE_FREEFORM
 	body_location = UPPER_TORSO
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/black_drop
 	name = "black drop bag"
@@ -98,6 +104,7 @@
 	icon_state = "thigh_black"
 	slots = 5 STORAGE_FREEFORM
 	body_location = LEGS
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/brown_drop
 	name = "brown drop bag"
@@ -105,6 +112,7 @@
 	icon_state = "thigh_brown"
 	slots = 5 STORAGE_FREEFORM
 	body_location = LEGS
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/white_drop
 	name = "white drop bag"
@@ -112,6 +120,7 @@
 	icon_state = "thigh_white"
 	slots = 5 STORAGE_FREEFORM
 	body_location = LEGS
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/knifeharness
 	name = "decorated harness"
@@ -119,6 +128,7 @@
 	icon_state = "unathiharness2"
 	slots = 2 STORAGE_SLOTS
 	max_w_class = ITEM_SIZE_NORMAL
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/knifeharness/Initialize()
 	. = ..()
@@ -136,6 +146,7 @@
 	icon_state = "bandolier"
 	slots = 10 STORAGE_SLOTS
 	max_w_class = ITEM_SIZE_NORMAL
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/accessory/storage/bandolier/Initialize()
 	. = ..()

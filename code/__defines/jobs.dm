@@ -56,3 +56,4 @@
 #define CLASS_C "Class-C"
 #define CLASS_D "Class-D"
 #define CLASS_E "Class-E"
+#define CLASS_CI "Class-CI" // Funnee CI edit.

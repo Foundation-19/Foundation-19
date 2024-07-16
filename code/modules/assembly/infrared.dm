@@ -60,7 +60,7 @@
 		var/obj/effect/beam/i_beam/I = new /obj/effect/beam/i_beam((holder ? holder.loc : loc) )
 		I.master = src
 		I.density = TRUE
-		I.set_dir(dir)
+		I.setDir(dir)
 		step(I, I.dir)
 		if(I)
 			I.density = FALSE
@@ -84,7 +84,7 @@
 /obj/item/device/assembly/infra/Move()
 	var/t = dir
 	. = ..()
-	set_dir(t)
+	setDir(t)
 	QDEL_NULL(first)
 	return
 
@@ -168,7 +168,7 @@
 	set category = "Object"
 	set src in usr
 
-	set_dir(turn(dir, 90))
+	setDir(turn(dir, 90))
 	return
 
 
@@ -224,7 +224,7 @@
 	var/obj/effect/beam/i_beam/I = new /obj/effect/beam/i_beam(loc)
 	I.master = master
 	I.density = TRUE
-	I.set_dir(dir)
+	I.setDir(dir)
 	step(I, I.dir)
 
 	if(I)

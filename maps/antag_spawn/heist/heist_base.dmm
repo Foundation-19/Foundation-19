@@ -1163,7 +1163,7 @@
 	dir = 8
 	},
 /obj/machinery/meter,
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -24
 	},
@@ -1257,7 +1257,7 @@
 	dir = 4
 	},
 /obj/machinery/meter,
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 24
 	},
@@ -1902,7 +1902,7 @@
 /area/map_template/skipjack_station/start)
 "eC" = (
 /obj/structure/table/standard,
-/obj/item/storage/firstaid/fire{
+/obj/item/storage/firstaid/burn{
 	pixel_x = 1
 	},
 /obj/item/storage/firstaid/o2{
@@ -1950,7 +1950,7 @@
 /area/map_template/syndicate_mothership/raider_base)
 "ho" = (
 /obj/machinery/constructable_frame/computerframe,
-/obj/item/device/radio/intercom/hailing{
+/obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -24
 	},

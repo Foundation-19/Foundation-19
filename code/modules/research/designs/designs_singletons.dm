@@ -15,6 +15,15 @@
 	build_path = /obj/item/storage/backpack/chameleon/sydie_kit
 	sort_string = "VASBA"
 
+/datum/design/item/time_rewinder
+	name = "time rewinder"
+	desc = "An experiment temporal device that loops the user through time."
+	id = "timerewinder"
+	req_tech = list(TECH_ESOTERIC = 3)
+	materials = list(MATERIAL_ALUMINIUM = 500, MATERIAL_GLASS = 500, MATERIAL_DIAMOND = 250)
+	build_path = /obj/item/device/time_rewinder
+	sort_string = "VASBB"
+
 /datum/design/item/weapon/storage/box/freezer
 	name = "Portable Freezer"
 	desc = "This nifty shock-resistant device will keep your 'groceries' nice and non-spoiled."

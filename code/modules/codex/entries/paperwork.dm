@@ -1,6 +1,7 @@
 /datum/codex_entry/pen
 	associated_paths = list()
-	mechanics_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
+	associated_strings = list("Paperwork")
+	entry_text = {"Used for writing down your thoughts, on paper or elsewhere. The following special commands are available:<br><br>
 \[br\] : Creates a linebreak.<br>
 \[center\] - \[/center\] : Centers the text.<br>
 \[h1\] - \[/h1\] : Makes the text a first level heading.<br>
@@ -40,7 +41,6 @@
 \[triblogo\] : Inserts the Internal Tribunal Department logo.<br>
 \[goclogo\] : Inserts the Global Occult Coalition logo.<br>
 \[uiulogo\] : Inserts the Unusual Incidents Unit logo.<br>
-\[thilogo\] : Inserts the Horizon Initiative logo.<br>
 \[mcdlogo\] : Inserts the Marshall, Carter and Dark logo.<br>
 \[arlogo\] : Inserts the Anderson Robotics logo.<br>
 \[cilogo\] : Inserts the Chaos Insurgency logo.<br>
@@ -58,3 +58,7 @@
 /datum/codex_entry/pen/New()
 	associated_paths += typesof(/obj/item/pen)
 	. = ..()
+
+/datum/codex_entry/slide_projector
+	associated_paths = list(/obj/item/storage/slide_projector)
+	entry_text = "Use in hand to open the interface."

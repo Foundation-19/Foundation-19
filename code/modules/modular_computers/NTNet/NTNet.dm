@@ -9,7 +9,10 @@ var/global/datum/ntnet/ntnet_global = new()
 	var/list/available_antag_software = list()
 	var/list/available_virus_software = list()
 	var/list/chat_channels = list()
+	/// List of all currently hosting fileservers
 	var/list/fileservers = list()
+	/// List of all currently hosting chatservers
+	var/list/chatservers = list()
 	/// Holds all the email accounts that exists. Hopefully won't exceed 999
 	var/list/email_accounts = list()
 	/// A list containing one of each available report datums, used for the report editor program.
@@ -201,13 +204,8 @@ var/global/datum/ntnet/ntnet_global = new()
 			return 1
 	return 0
 
-/datum/ntnet/proc/get_chat_channel_by_id(id)
-	for(var/datum/ntnet_conversation/chan in chat_channels)
-		if(chan.id == id)
-			return chan
-
 //Used for initial email generation.
-/datum/ntnet/proc/create_email(mob/user, desired_name, domain, assignment, desired_password)
+/datum/ntnet/proc/create_email(mob/user, desired_name, domain, desired_password, department_flags)
 	desired_name = sanitize_for_email(desired_name)
 	var/login = "[desired_name]@[domain]"
 	// It is VERY unlikely that we'll have two players, in the same round, with the same name and branch, but still, this is here.
@@ -219,9 +217,10 @@ var/global/datum/ntnet/ntnet_global = new()
 		to_chat(user, "You were not assigned an email address.")
 		user.StoreMemory("You were not assigned an email address.", /decl/memory_options/system)
 	else
-		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account(login, user.real_name, assignment)
+		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
 		EA.password = desired_password ? desired_password : GenerateKey()
 		EA.login = login
+		EA.department_flags = department_flags
 		if(user.mind)
 			user.mind.initial_email_login["login"] = EA.login
 			user.mind.initial_email_login["password"] = EA.password

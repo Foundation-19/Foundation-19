@@ -58,7 +58,7 @@
 		else if(get_dist(src.loc, parent.loc) > 5)
 			walk_to(src, parent, 4, 3 SECONDS)
 
-/mob/living/simple_animal/friendly/juvenile_space_whale/set_dir()
+/mob/living/simple_animal/friendly/juvenile_space_whale/setDir()
 	..()
 	switch(dir)
 		if(NORTH, SOUTH)

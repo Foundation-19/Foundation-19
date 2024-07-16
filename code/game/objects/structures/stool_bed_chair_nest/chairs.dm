@@ -26,7 +26,7 @@
 			return
 		var/obj/structure/bed/chair/e_chair/E = new (src.loc, material.name)
 		playsound(src.loc, 'sounds/items/Deconstruct.ogg', 50, 1)
-		E.set_dir(dir)
+		E.setDir(dir)
 		E.part = SK
 		SK.forceMove(E)
 		SK.master = E
@@ -83,13 +83,11 @@
 		to_chat(user, SPAN_NOTICE("You can't interact with \the [src] right now!"))
 		return
 
-	set_dir(turn(dir, 90))
+	setDir(turn(dir, 90))
 	update_icon()
 
-/obj/structure/bed/chair/set_dir()
+/obj/structure/bed/chair/setDir()
 	..()
-	if(buckled_mob)
-		buckled_mob.set_dir(dir)
 
 /obj/structure/bed/chair/padded/red/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_CARPET)
@@ -240,7 +238,7 @@
 		occupant.throw_at(A, 3, propelled)
 		occupant.apply_effect(6, STUN, blocked)
 		occupant.apply_effect(6, WEAKEN, blocked)
-		occupant.apply_effect(6, STUTTER, blocked)
+		occupant.adjust_stutter(6 SECONDS * ((100 - blocked) / 100))
 		occupant.apply_damage(10, BRUTE, def_zone)
 		playsound(src.loc, 'sounds/weapons/punch1.ogg', 50, 1, -1)
 		if(istype(A, /mob/living))
@@ -249,7 +247,7 @@
 			blocked = 100 * victim.get_blocked_ratio(def_zone, BRUTE, damage = 10)
 			victim.apply_effect(6, STUN, blocked)
 			victim.apply_effect(6, WEAKEN, blocked)
-			victim.apply_effect(6, STUTTER, blocked)
+			victim.adjust_stutter(6 SECONDS * ((100 - blocked) / 100))
 			victim.apply_damage(10, BRUTE, def_zone)
 		occupant.visible_message(SPAN_DANGER("[occupant] crashed into \the [A]!"))
 

@@ -88,6 +88,19 @@
 /datum/component/proc/UnregisterFromParent()
 	return
 
+/**
+ * Register to listen for a signal from the passed in target
+ *
+ * This sets up a listening relationship such that when the target object emits a signal
+ * the source datum this proc is called upon, will receive a callback to the given proctype
+ * Return values from procs registered must be a bitfield
+ *
+ * Arguments:
+ * * datum/target The target to listen for signals from
+ * * signal_type A signal name
+ * * proctype The proc to call back when the signal is emitted
+ * * override If a previous registration exists you must explicitly set this
+ */
 /datum/proc/RegisterSignal(datum/target, sig_type_or_types, proctype, override = FALSE)
 	if(QDELETED(src) || QDELETED(target))
 		return
@@ -118,6 +131,22 @@
 		else // Many other things have registered here
 			lookup[sig_type][src] = TRUE
 
+/// Registers multiple signals to the same proc.
+/datum/proc/RegisterSignals(datum/target, list/signal_types, proctype, override = FALSE)
+	for (var/signal_type in signal_types)
+		RegisterSignal(target, signal_type, proctype, override)
+
+/**
+ * Stop listening to a given signal from target
+ *
+ * Breaks the relationship between target and source datum, removing the callback when the signal fires
+ *
+ * Doesn't care if a registration exists or not
+ *
+ * Arguments:
+ * * datum/target Datum to stop listening to signals from
+ * * sig_typeor_types Signal string key or list of signal keys to stop listening to specifically
+ */
 /datum/proc/UnregisterSignal(datum/target, sig_type_or_types)
 	var/list/lookup = target.comp_lookup
 	if(!signal_procs || !signal_procs[target] || !lookup)

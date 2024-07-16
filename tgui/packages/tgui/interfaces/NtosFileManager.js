@@ -1,5 +1,6 @@
 /* eslint react/no-danger: "off" */
 import { Fragment } from 'inferno';
+
 import { useBackend } from '../backend';
 import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
@@ -39,7 +40,8 @@ export const NtosFileManager = (props, context) => {
                   onClick={() => act('PRG_closefile')}
                 />
               </Fragment>
-            }>
+            }
+          >
             {error || null}
             {/* This dangerouslySetInnerHTML is only ever passed data that has passed through pencode2html
              * It should be safe enough to support pencode in this way.
