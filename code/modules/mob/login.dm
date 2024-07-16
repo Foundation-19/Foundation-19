@@ -93,6 +93,8 @@
 	l_general = new()
 	client.screen += l_plane
 	client.screen += l_general
+	update_lighting_size()
+
 	client.init_verbs()
 
 	refresh_client_images()

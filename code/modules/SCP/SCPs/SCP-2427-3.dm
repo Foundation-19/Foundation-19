@@ -198,7 +198,7 @@
 		to_chat(src, SPAN_WARNING("\The [A] is too far away."))
 		return
 
-	if(!IsEnraged() && (get_area(A) == spawn_area))
+	if((!IsEnraged() || !SCP.hasMinimumPlayers()) && (get_area(A) == spawn_area))
 		to_chat(src, SPAN_WARNING("You cannot open blast doors in your containment zone unless enraged."))
 		return
 
@@ -262,7 +262,8 @@
 		if(LAZYLEN(pure_check))
 			L = pick(pure_check)
 		CheckPurity(L)
-	AdjustSatiety(-satiety_reduction_per_tick)
+	if(SCP.hasMinimumPlayers())
+		AdjustSatiety(-satiety_reduction_per_tick)
 	if(satiety <= min_satiety) // Starvation, so you don't just run at mach 3 all the time
 		adjustBruteLoss(maxHealth * starvation_damage)
 

@@ -292,6 +292,7 @@ var/list/_client_preferences_by_type
 	preference_mob.client.view = new_view
 	preference_mob.update_cone_size()
 	preference_mob.reload_fullscreen()
+	preference_mob.update_lighting_size()
 
 /********************
 * General Staff Preferences *

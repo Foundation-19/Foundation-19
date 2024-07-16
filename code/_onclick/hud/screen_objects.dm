@@ -402,9 +402,6 @@
 	update_size(size)
 
 /atom/movable/screen/fov/proc/update_size(size)
-	//var/icon/rescaled_icon = icon(icon, icon_state)
-	//rescaled_icon.Scale(size[1] * world.icon_size, size[2] * world.icon_size)
-	//icon = rescaled_icon
 	if(view == size)
 		return
 	view = size
