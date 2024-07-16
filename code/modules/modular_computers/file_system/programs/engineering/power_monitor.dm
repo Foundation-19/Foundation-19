@@ -4,7 +4,7 @@
 	tguimodule_path = /datum/tgui_module/power_monitor/ntos
 	program_icon_state = "power_monitor"
 	program_key_state = "power_key"
-	program_menu_icon = "battery-3"
+	program_menu_icon = "plug"
 	extended_desc = "This program connects to sensors to provide information about electrical systems"
 	ui_header = "power_norm.gif"
 	required_access = ACCESS_ENGINEERING_LVL2

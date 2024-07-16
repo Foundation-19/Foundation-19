@@ -5,13 +5,13 @@
 		return
 
 	// "USB" flash drive.
-	if(istype(H, /obj/item/stock_parts/computer/hard_drive/portable))
+	if(istype(H, /obj/item/stock_parts/computer/storage/portable_drive))
 		if(portable_drive)
 			to_chat(user, "This computer's portable drive slot is already occupied by \the [portable_drive].")
 			return
 		found = 1
 		portable_drive = H
-	else if(istype(H, /obj/item/stock_parts/computer/hard_drive))
+	else if(istype(H, /obj/item/stock_parts/computer/storage/hard_drive))
 		if(hard_drive)
 			to_chat(user, "This computer's hard drive slot is already occupied by \the [hard_drive].")
 			return
