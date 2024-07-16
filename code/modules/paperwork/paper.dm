@@ -1,6 +1,3 @@
-// large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
-#define MAX_FIELDS 50
-
 #define PAPER_CAMERA_DISTANCE 2
 #define PAPER_EYEBALL_DISTANCE 3
 
@@ -287,11 +284,12 @@
 				head.forehead_graffiti = null
 				head.graffiti_style = null
 
-/obj/item/paper/proc/addtofield(id, text, links = FALSE)
+/obj/item/paper/proc/addtofield(id, text, links = FALSE, overwrite = FALSE)
 	var/locid = 0
 	var/laststart = 1
 	var/textindex = 1
-	while(locid < MAX_FIELDS)
+	var/field_start = null
+	while(locid < MAX_PAPER_FIELDS)
 		var/istart = 0
 		if(links)
 			istart = findtext(info_links, "<span class=\"paper_field\">", laststart)
@@ -310,6 +308,7 @@
 			else
 				iend = findtext(info, "</span>", istart)
 
+			field_start = istart
 			textindex = iend
 			break
 
@@ -320,6 +319,8 @@
 	else
 		var/before = copytext(info, 1, textindex)
 		var/after = copytext(info, textindex)
+		if(overwrite)
+			before = copytext(info, 1, field_start) + "<span class=\"paper_field\">"
 		info = before + text + after
 		updateinfolinks()
 
@@ -379,16 +380,9 @@
 	t = pencode2html(t)
 
 	//Count the fields
-	var/laststart = 1
-	while(fields < MAX_FIELDS)
-		var/i = findtext(t, "<span class=\"paper_field\">", laststart)	//</span>
-		if(i==0)
-			break
-		laststart = i+1
-		fields++
+	fields = clamp(fields + count_fields_from_html(t), 0, MAX_PAPER_FIELDS)
 
 	return t
-
 
 /obj/item/paper/proc/burnpaper(obj/item/flame/P, mob/user)
 	var/class = "warning"
@@ -464,7 +458,7 @@
 		var/last_fields_value = fields
 		t = parsepencode(t, I, usr, iscrayon, isfancy) // Encode everything from pencode to html
 
-		if(fields > MAX_FIELDS)
+		if(fields > MAX_PAPER_FIELDS)
 			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
 			fields = last_fields_value
 			return

@@ -104,7 +104,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_pocket = null
 	r_pocket = /obj/item/ammo_magazine/scp
 	belt = /obj/item/storage/belt/holster/security/fullmk9
@@ -121,7 +121,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_pocket = null
 	r_pocket = /obj/item/ammo_magazine/scp
 	id_type = /obj/item/card/id/mtf/beta_7

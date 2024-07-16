@@ -19,6 +19,8 @@
 	var/header_custom_text = null
 	/// Custom footer text for use in template generation.
 	var/footer_custom_text = null
+	/// Custom text to append to template bodies.
+	var/body_append_text = null
 	/// Should the template header be used in the text?
 	var/use_header = TRUE
 	/// Should the template footer be used in the text?
@@ -31,10 +33,10 @@
 
 /obj/item/paper/admin/New()
 	..()
-	changeTemplate(SSoffsites.default_template)
-	generateInteractions()
+	change_template(SSoffsites.default_template)
+	generate_interactions()
 
-/obj/item/paper/admin/proc/generateInteractions()
+/obj/item/paper/admin/proc/generate_interactions()
 	//clear first
 	interactions = null
 
@@ -44,21 +46,23 @@
 	interactions += "<A href='?src=\ref[src];cancel=1'>Cancel fax</A> "
 	interactions += "<BR>"
 	interactions += "<A href='?src=\ref[src];changelanguage=1'>Change language ([language])</A> "
-	interactions += "<A href='?src=\ref[src];changetemplate=1'>Change template</A> "
-	interactions += "<A href='?src=\ref[src];toggleheader=1'>Toggle header</A> "
-	interactions += "<A href='?src=\ref[src];togglefooter=1'>Toggle footer</A> "
-	interactions += "<A href='?src=\ref[src];changeheader=1'>Change header</A> "
-	interactions += "<A href='?src=\ref[src];changefooter=1'>Change footer</A> "
+	interactions += "<A href='?src=\ref[src];change_template=1'>Change template</A> "
+	if(template.uses_header)
+		interactions += "<A href='?src=\ref[src];toggleheader=1'>Toggle header</A> "
+		interactions += "<A href='?src=\ref[src];changeheader=1'>Change header</A> "
+	if(template.uses_footer)
+		interactions += "<A href='?src=\ref[src];togglefooter=1'>Toggle footer</A> "
+		interactions += "<A href='?src=\ref[src];changefooter=1'>Change footer</A> "
 	interactions += "<A href='?src=\ref[src];codex=1'>Pencode guide</A> "
 	interactions += "<A href='?src=\ref[src];clear=1'>Clear page</A> "
 	interactions += "</center>"
 
 /obj/item/paper/admin/proc/adminbrowse()
 	updateinfolinks()
-	updateDisplay()
+	update_display()
 
 /// Changes the adminpaper's template; accepts path or instance of template.
-/obj/item/paper/admin/proc/changeTemplate(decl/offsite_template/T)
+/obj/item/paper/admin/proc/change_template(decl/offsite_template/T)
 	if(ispath(T))
 		T = SSoffsites.templates[T]
 	if(!istype(T))
@@ -66,16 +70,27 @@
 	header_custom_text = T.default_custom_header
 	footer_custom_text = T.default_custom_footer
 	template = T
-	updateTemplate()
+	update_template()
+	update_template_body()
+	generate_interactions()
 
 /// Updates the adminpaper's cached header and footer based on the template.
-/obj/item/paper/admin/proc/updateTemplate()
+/obj/item/paper/admin/proc/update_template()
 	header = use_header ? template.generate_header(origin, header_custom_text) : ""
 	footer = use_footer ? template.generate_footer(origin, footer_custom_text) : ""
 
-/obj/item/paper/admin/proc/updateDisplay()
-	updateTemplate()
-	show_browser(usr, "<HTML><HEAD><meta http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'/><TITLE>[name]</TITLE></HEAD><BODY>[header][info_links][stamps][footer][interactions]</BODY></HTML>", "window=[name];can_close=0")
+/// Updates the adminpaper's body based on the template.
+/obj/item/paper/admin/proc/update_template_body()
+	if(template.uses_body)
+		info = template.generate_body(origin)
+		fields = count_fields_from_html(info)
+		updateinfolinks()
+	else
+		body_append_text = null
+
+/obj/item/paper/admin/proc/update_display()
+	update_template()
+	show_browser(usr, "<HTML><HEAD><meta http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'/><TITLE>[name]</TITLE></HEAD><BODY>[header][info_links][body_append_text ? body_append_text : ""][stamps][footer][interactions]</BODY></HTML>", "window=[name];can_close=0")
 
 /// Prompts for custom template header/footer text.
 /obj/item/paper/admin/proc/promptTemplateCustom(text, mob/user = usr)
@@ -92,7 +107,7 @@
 
 	if(href_list["write"])
 		var/id = href_list["write"]
-		var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", id == "end" ? unformatedText : null, MAX_PAPER_MESSAGE_LEN, TRUE, FALSE, trim = FALSE)
+		var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", unformatedText, MAX_PAPER_MESSAGE_LEN, TRUE, FALSE, trim = FALSE)
 		if(!t)
 			return
 
@@ -108,20 +123,23 @@
 			return
 
 		if(id!="end")
-			addtofield(text2num(id), t) // He wants to edit a field, let him.
+			addtofield(text2num(id), t, overwrite = TRUE) // He wants to edit a field, let him.
 		else
-			fields -= last_fields_value
-			info = t // set the file to the new text
-			updateinfolinks()
+			if(!template.uses_body)
+				info = t // set the file to the new text
+				fields = count_fields_from_html(info)
+				updateinfolinks()
+			else
+				body_append_text = t
 
-		updateDisplay()
+		update_display()
 		update_icon()
 		return
 
 	if(href_list["confirm"])
 		switch(tgui_alert(usr, "Are you sure you want to send the fax as is?", "Confirm Sending", list("Yes", "No")))
 			if("Yes")
-				info = header + info + footer
+				info = header + info + (body_append_text ? body_append_text : "") + footer
 				updateinfolinks()
 				close_browser(usr, "window=[name]")
 				admindatum.faxCallback(src)
@@ -134,25 +152,25 @@
 
 	if(href_list["toggleheader"])
 		use_header = !use_header
-		updateDisplay()
+		update_display()
 		return
 
 	if(href_list["togglefooter"])
 		use_footer = !use_footer
-		updateDisplay()
+		update_display()
 		return
 
 	if(href_list["changeheader"])
 		promptTemplateCustom("header")
-		updateDisplay()
+		update_display()
 		return
 
 	if(href_list["changefooter"])
 		promptTemplateCustom("footer")
-		updateDisplay()
+		update_display()
 		return
 
-	if(href_list["changetemplate"])
+	if(href_list["change_template"])
 		var/list/valid_templates = list()
 		for(var/T in SSoffsites.templates_by_name)
 			if(!is_abstract(SSoffsites.templates_by_name[T]))
@@ -160,9 +178,9 @@
 
 		var/newTemplate = tgui_input_list(usr, "What template do you want to use?", "Template", valid_templates, template ? template.name : null)
 		if(newTemplate && SSoffsites.templates_by_name[newTemplate])
-			changeTemplate(SSoffsites.templates_by_name[newTemplate])
+			change_template(SSoffsites.templates_by_name[newTemplate])
 
-		updateDisplay()
+		update_display()
 		return
 
 	if(href_list["codex"])
@@ -172,12 +190,12 @@
 
 	if(href_list["clear"])
 		clearpaper()
-		updateDisplay()
+		update_display()
 		return
 
 	if (href_list["changelanguage"])
 		choose_language(usr, TRUE)
-		updateDisplay()
+		update_display()
 		return
 
 /obj/item/paper/admin/get_signature()

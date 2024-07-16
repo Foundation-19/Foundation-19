@@ -2682,6 +2682,7 @@
 #include "code\modules\offsites\offsites\mcd.dm"
 #include "code\modules\offsites\offsites\uiu.dm"
 #include "code\modules\offsites\templates\default.dm"
+#include "code\modules\offsites\templates\goc.dm"
 #include "code\modules\organs\_organ_setup.dm"
 #include "code\modules\organs\blood.dm"
 #include "code\modules\organs\organ.dm"

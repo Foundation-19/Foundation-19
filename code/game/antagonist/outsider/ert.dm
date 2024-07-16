@@ -44,5 +44,5 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 
 	//Special radio setup
 	player.add_language(LANGUAGE_ENGLISH)
-	dressup_human(player, /decl/hierarchy/outfit/mtf/epsilon_11/agent, TRUE)
+	dressup_human(player, outfits_decls_by_type_[/decl/hierarchy/outfit/mtf/epsilon_11/agent], TRUE)
 	return 1
