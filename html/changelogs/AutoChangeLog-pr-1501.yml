@@ -1,0 +1,11 @@
+author: cheesePizza2
+delete-after: true
+changes:
+  - rscadd: SCP-5295 is here! Located in LCZ, this program lets you remotely hack
+      into other devices (if you can get their network ID). Slight mapping changes
+      were made to accommodate the new skip.
+  - rscadd: The Computer Configuration program allows you to quickly scan internal
+      components.
+  - bugfix: Portable drives actually work now.
+  - rscadd: The IT department starts with a few portable drives.
+  - bugfix: Programs have proper menu icons now.
