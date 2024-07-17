@@ -474,6 +474,9 @@
 	if(inactivity > duration)	return inactivity
 	return 0
 
+/client/proc/get_default_view()
+	return getScreenSize(get_preference_value(/datum/client_preference/widescreen) == GLOB.PREF_YES)
+
 /client/proc/change_view(new_size)
 	if(isnull(new_size))
 		CRASH("change_view called without argument.")
@@ -522,7 +525,7 @@
 /client/proc/on_prefs_loaded(client/target, datum/preferences/prefs)
 	SIGNAL_HANDLER
 	apply_fps(prefs.clientfps)
-	change_view(getScreenSize(get_preference_value(/datum/client_preference/widescreen) == GLOB.PREF_YES))
+	change_view(get_default_view())
 
 /client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
 	. = ..()

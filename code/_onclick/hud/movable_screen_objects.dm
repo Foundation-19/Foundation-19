@@ -76,7 +76,7 @@
 	view = view[2]
 	if(Y > view+1)
 		. = "NORTH-[view*2 + 1-Y]"
-	else if(Y < viewer.client.view+1)
+	else if(Y < view+1)
 		. = "SOUTH+[Y-1]"
 	else
 		. = "CENTER"
