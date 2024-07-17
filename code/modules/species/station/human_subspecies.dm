@@ -17,7 +17,7 @@
 	brute_mod =     0.85
 	slowdown =      1
 	strength = STR_HIGH
-
+	spawn_flags = SPECIES_IS_WHITELISTED
 	descriptors = list(
 		/datum/mob_descriptor/height = -1,
 		/datum/mob_descriptor/build = 1
@@ -47,6 +47,7 @@
 	burn_mod =  1.1
 	darksight_range = 6
 	darksight_tint = DARKTINT_MODERATE
+	spawn_flags = SPECIES_IS_WHITELISTED
 
 	descriptors = list(
 		/datum/mob_descriptor/height,
@@ -78,7 +79,7 @@
 	metabolism."
 	icobase =     'icons/mob/human_races/species/human/subspecies/vatgrown_body.dmi'
 	preview_icon= 'icons/mob/human_races/species/human/subspecies/vatgrown_preview.dmi'
-
+	spawn_flags = SPECIES_IS_WHITELISTED
 	toxins_mod =   1.1
 	has_organ = list(
 		BP_HEART =    /obj/item/organ/internal/heart,
@@ -138,6 +139,7 @@
 		)
 
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_TRITON | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+	spawn_flags = SPECIES_IS_WHITELISTED
 
 /datum/species/human/tritonian/can_float(mob/living/carbon/human/H)
 	if(!H.is_physically_disabled())
@@ -155,7 +157,7 @@
 	civilization, and are physically diminutive and unimposing, with scrawny, often deformed bodies. Their physiology \
 	rejects prosthetics and synthetic organs, and their lifespans are short, but their raw psionic potential is unmatched."
 
-	spawn_flags =   SPECIES_CAN_JOIN | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_ROBOTIC_INTERNAL_ORGANS
+	spawn_flags =   SPECIES_CAN_JOIN | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_ROBOTIC_INTERNAL_ORGANS | SPECIES_IS_WHITELISTED
 	brute_mod =     1.25
 	burn_mod =      1.25
 	oxy_mod =       1.25
