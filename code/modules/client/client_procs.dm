@@ -480,9 +480,10 @@
 
 	view = new_size
 	apply_clickcatcher()
-	mob.update_cone_size()
-	mob.reload_fullscreen()
-	mob.update_lighting_size()
+	if(mob)
+		mob.update_cone_size()
+		mob.reload_fullscreen()
+		mob.update_lighting_size()
 
 /client/proc/generate_clickcatcher()
 	if(!void)

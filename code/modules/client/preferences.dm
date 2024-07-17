@@ -73,7 +73,9 @@
 			load_data()
 
 	sanitize_preferences()
-	SEND_SIGNAL(client, COMSIG_CLIENT_PREFS_LOADED, src)
+	// They might disconnect while it's being loaded. We also use a few of these without a client.
+	if(client)
+		SEND_SIGNAL(client, COMSIG_CLIENT_PREFS_LOADED, src)
 
 /datum/preferences/proc/load_data()
 	load_failed = null

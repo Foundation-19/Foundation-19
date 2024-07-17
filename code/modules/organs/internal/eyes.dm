@@ -145,9 +145,10 @@
 
 /obj/item/organ/internal/eyes/proc/handle_blink()
 	if(owner.client)
-		var/list/viewSize = getviewsize(config.default_view)
+		var/list/view_size = getviewsize(config.default_view)
+		var/to_view = max(view_size[1], view_size[2]) / 2
 		for(var/blink_causer in owner.blink_causers) //Extra precaution to avoid lingering refrences
-			if(!(owner in dview(viewSize[1], blink_causer)) && !(blink_causer in dview(viewSize[1], owner)))
+			if(!(owner in dview(to_view, blink_causer)) && !(blink_causer in dview(to_view, owner)))
 				owner.disable_blink(blink_causer)
 	if(!owner.is_blinking || owner.stat)
 		owner.blink_total = null

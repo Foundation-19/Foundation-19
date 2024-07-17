@@ -19,6 +19,8 @@
 	InitializePlanes()
 
 /mob/proc/InitializePlanes()
+	if(!client)
+		return
 	if(length(effects_planemasters))
 		for(var/i in effects_planemasters)
 			client.screen += effects_planemasters["[i]"]
