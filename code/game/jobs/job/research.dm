@@ -118,7 +118,7 @@
 	supervisors = "the Research Director and Assistant Research Director"
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 480)
-	alt_titles = list("Senior Mentalist")
+	alt_titles = list("Senior Mentalist-R", "Senior Mentalist-C")
 	minimal_player_age = 10
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist
@@ -153,11 +153,14 @@
 	mechanical_difficulty = "Medium"
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist") //Basic level of Psionics, with ability to read others.
+	if (H.mind?.role_alt_title == "Senior Mentalist-R")
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
-		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_MASTER)
-		psi_faculties = list("[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT)
-		psi_faculties = list("[PSI_ENERGISTICS]" = PSI_RANK_OPERANT)
+		outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist/redaction
+		supervisors = "the Research Director and the Chief Medical Officer"
+	if (H.mind?.role_alt_title == "Senior Mentalist-C")
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+		outfit_type = /decl/hierarchy/outfit/job/science/seniormentalist/coercion
+		supervisors = "the Research Director and the EZ Supervisor"
 	return ..()
 
 /datum/job/seniorscientist

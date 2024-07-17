@@ -97,4 +97,21 @@
 	id_type = /obj/item/card/id/sciencelvlp
 	l_pocket = /obj/item/material/coin/nullglass
 	l_ear = /obj/item/device/radio/headset/headset_sci
-	backpack_contents = list(/obj/item/reagent_containers/glass/beaker/vial/jerraman = 2)
+
+/decl/hierarchy/outfit/job/science/seniormentalist/redaction
+	name = OUTFIT_JOB_NAME("Senior Mentalist-R")
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/teal
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	shoes = /obj/item/clothing/shoes/black
+	id_type = /obj/item/card/id/sciencelvlp
+	l_pocket = /obj/item/material/coin/nullglass
+	l_ear = /obj/item/device/radio/headset/headset_medsci
+
+/decl/hierarchy/outfit/job/science/seniormentalist/coercion
+	name = OUTFIT_JOB_NAME("Senior Mentalist-C")
+	uniform = /obj/item/clothing/under/det/black
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	shoes = /obj/item/clothing/shoes/black
+	id_type = /obj/item/card/id/sciencelvlp
+	l_pocket = /obj/item/material/coin/nullglass
+	l_ear = /obj/item/device/radio/headset/headset_secsci
