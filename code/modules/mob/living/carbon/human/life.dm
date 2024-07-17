@@ -1219,7 +1219,9 @@
 
 /mob/living/carbon/human/handle_vision()
 	if(client)
-		client.screen.Remove(GLOB.global_hud.nvg, GLOB.global_hud.scramble, GLOB.global_hud.thermal, GLOB.global_hud.meson, GLOB.global_hud.science)
+		for(var/overlay in equipment_overlays)
+			var/atom/movable/screen/fullscreen/full_overlay = overlay
+			clear_fullscreen("hud_[initial(full_overlay.icon_state)]", animated = FALSE)
 	if(machine)
 		var/viewflags = machine.check_eye(src)
 		machine.apply_visual(src)

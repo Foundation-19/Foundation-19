@@ -18,7 +18,7 @@
 
 /obj/lighting_general
 	plane = LIGHTING_PLANE
-	screen_loc = "CENTER,CENTER"
+	screen_loc = "CENTER"
 
 	icon = LIGHTING_ICON
 	icon_state = LIGHTING_ICON_STATE_DARK

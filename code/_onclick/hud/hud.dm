@@ -306,12 +306,6 @@
 	hud_used.persistant_inventory_update()
 	update_action_buttons()
 
-/mob/proc/add_click_catcher()
-	client.screen |= GLOB.click_catchers
-
-/mob/new_player/add_click_catcher()
-	return
-
 /atom/movable/screen/stamina
 	name = "stamina"
 	icon = 'icons/hud/progressbar.dmi'

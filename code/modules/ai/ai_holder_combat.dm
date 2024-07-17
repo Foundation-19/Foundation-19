@@ -31,6 +31,8 @@
 		if (lose_target()) // We lost them (returns TRUE if we found something else to do)
 			ai_log("engage_target() : Pursuing other options (last seen, or a new target).", AI_LOG_TRACE)
 			return
+	if(!target)
+		return
 
 	var/distance = get_dist(holder, target)
 	ai_log("engage_target() : Distance to target ([target]) is [distance].", AI_LOG_TRACE)

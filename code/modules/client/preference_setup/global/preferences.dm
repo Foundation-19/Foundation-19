@@ -289,10 +289,7 @@ var/list/_client_preferences_by_type
 
 /datum/client_preference/widescreen/changed(mob/preference_mob, new_value)
 	var/new_view = getScreenSize(new_value == GLOB.PREF_YES)
-	preference_mob.client.view = new_view
-	preference_mob.update_cone_size()
-	preference_mob.reload_fullscreen()
-	preference_mob.update_lighting_size()
+	preference_mob.client.change_view(new_view)
 
 /********************
 * General Staff Preferences *
