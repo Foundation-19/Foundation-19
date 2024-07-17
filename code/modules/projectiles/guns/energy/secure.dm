@@ -73,6 +73,66 @@
 	GLOB.secure_weapons |= src
 	. = ..()
 
+/obj/item/gun/energy/gun/mounted/mk9
+	name = "Mounted MK9 Foundation Pistol"
+	desc = "Standard issue 9mm pistol of the SCP Foundation. Based on the HK VP9. This one is shaped for cyborgs. Chambered in lethal bullets."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "MK9"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/pistol
+	fire_delay = 2
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+	firemodes = null
+
+/obj/item/gun/energy/gun/mounted/mk9/on_update_icon()
+	..()
+
+/obj/item/gun/energy/gun/mounted/mk9/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+
+/obj/item/gun/energy/gun/mounted/p90
+	name = "Mounted FN P90"
+	desc = "The FN P90 is a submachine gun chambered in 5.7x28mm, also classified as a personal defense weapon, designed and manufactured by FN Herstal in Belgium. Created in response to NATO requests for a replacement for 9x19mm Parabellum firearms, the P90 was designed as a compact but powerful firearm for vehicle crews, operators of crew-served weapons, support personnel, special forces, and counter-terrorist groups. This one has a scope, and is issued to specifically LCZ Security, and or MTF. This one is shaped for cyborgs."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "p90"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/a57
+	force = 10
+	one_hand_penalty = 1
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-2), dispersion=list(0.1, 0.7, 1.1), autofire_enabled=1),
+		)
+
+/obj/item/gun/energy/gun/mounted/m16/mounted
+	name = "M16A2"
+	desc = "A Foundation-standard service rifle that takes 5.56x45mm straight magazines. Like many reliable firearms of old, the Foundation has found a use for them in the hands of Security Department operatives. This one is shaped for cyborgs."
+	icon = 'icons/obj/gun.dmi'
+	icon_state = "m16"
+	modifystate = null
+	charge_meter = 0
+	projectile_type = /obj/item/projectile/bullet/rifle/m16
+	force = 10
+	one_hand_penalty = 1
+	self_recharge = 1
+	use_external_power = 1
+	has_safety = FALSE
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0, one_hand_penalty=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=1, one_hand_penalty=3, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="full auto",      burst=1, fire_delay=0, burst_delay=1, one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-2), dispersion=list(0.1, 0.6, 0.9), autofire_enabled=1),
+		)
+
 /obj/item/gun/energy/laser/secure
 	name = "laser carbine"
 	desc = "A Hephaestus Industries G40E carbine, designed to kill with concentrated energy blasts. Fitted with an NT1019 chip to make sure killcount is tracked appropriately."
