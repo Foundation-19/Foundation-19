@@ -133,7 +133,7 @@ const OffsitePage = (props, context) => {
                 {time_pretty}
                 <Stack ml={2} textAlign="center">
                   {taker && (
-                    <Stack.Item>
+                    <Stack.Item lineHeight="1.667em">
                       <strong>Taken by {taker}</strong>
                     </Stack.Item>
                   )}
