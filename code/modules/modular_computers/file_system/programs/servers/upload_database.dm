@@ -4,7 +4,7 @@
 	extended_desc = "Servers use this program to maintain an online database"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "arrowthickstop-1-n"
+	program_menu_icon = "file-upload"
 	size = 16
 	available_on_ntnet = TRUE
 	usage_flags = PROGRAM_CONSOLE
@@ -39,7 +39,7 @@
 	. = ..()
 
 /datum/computer_file/program/upload_database/proc/get_files(list/accesses)
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 	. = list()
 
 	for(var/filename in enabled_files)
@@ -79,7 +79,7 @@
 /datum/computer_file/program/upload_database/tgui_data(mob/user)
 	var/list/data = get_header_data()
 
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 
 	data["files"] = list()
 	for(var/datum/computer_file/F in HDD.stored_files)
