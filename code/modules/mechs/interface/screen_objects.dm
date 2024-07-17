@@ -337,5 +337,24 @@
 	toggled = owner.head.active_sensors
 	. = ..()
 
+// Controls strafing mode on the mech
+/atom/movable/screen/exosuit/toggle/strafe
+	name = "toggle strafe"
+
+/atom/movable/exosuit/toggle/strafe/toggled() // Prevents exosuits from strafing when EMP'd enough
+	if(!(owner.legs.movement_flags & PF_OMNI_STRAFE))
+		to_chat(usr, SPAN_WARNING("Error: This propulsion system doesn't support synchronization!"))
+		return
+	if(owner.emp_damage >= EMP_MOVE_DISRUPT)
+		to_chat(usr, SPAN_WARNING("Error: Coordination systems are unable to synchronize. Contact an authorised exo-electrician immediately."))
+		return
+	if(..())
+		owner.mech_flags |= MF_STRAFING
+	else
+		owner.mech_flags &= ~MF_STRAFING
+	to_chat(usr, SPAN_NOTICE("Strafing [owner.mech_flags & MF_STRAFING ? "enabled" : "disabled"]."))
+	playsound(src,'sound/mechs/lever.ogg', 40, 1)
+
+
 #undef BAR_CAP
 #undef MECH_UI_STYLE

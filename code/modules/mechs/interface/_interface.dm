@@ -29,7 +29,8 @@
 			/atom/movable/screen/exosuit/toggle/hatch_open,
 			/atom/movable/screen/exosuit/radio,
 			/atom/movable/screen/exosuit/rename,
-			/atom/movable/screen/exosuit/toggle/camera
+			/atom/movable/screen/exosuit/toggle/camera,
+			/atom/movable/screen/exosuit/toggle/strafe
 			)
 		if(body && body.pilot_coverage >= 100)
 			additional_hud_elements += /atom/movable/screen/exosuit/toggle/air

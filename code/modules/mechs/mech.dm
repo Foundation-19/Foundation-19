@@ -10,8 +10,8 @@
 	default_pixel_x = -8
 	default_pixel_y = 0
 	status_flags = PASSEMOTES
-	a_intent =     I_HURT
-	mob_size =     MOB_LARGE
+	a_intent = I_HURT
+	mob_size = MOB_LARGE
 
 	meat_type = null
 	meat_amount = 0
@@ -19,6 +19,8 @@
 	skin_amount = 0
 	bone_material = null
 	bone_amount = 0
+
+	mob_bump_flag = HEAVY
 
 	can_be_buckled = FALSE
 
@@ -73,6 +75,8 @@
 	var/atom/movable/screen/exosuit/toggle/camera/hud_camera
 	//POWER
 	var/power = MECH_POWER_OFF
+	// Mech flags
+	var/mech_flags = 0
 
 	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
 
