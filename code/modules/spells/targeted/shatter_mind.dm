@@ -23,8 +23,8 @@
 	if(prob(5))
 		to_chat(H, "<span class='warning'>You feel unhinged.</span>")
 	H.adjust_hallucination(5,5)
-	H.confused += 2
-	H.dizziness += 2
+	H.adjust_confusion(3 SECONDS)
+	H.adjust_dizzy(2 SECONDS)
 	if(H.hallucination_power > 50)
 		H.adjustBrainLoss(5)
 		to_chat(H, "<span class='danger'>You feel your mind tearing apart!</span>")

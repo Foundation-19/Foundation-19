@@ -669,6 +669,12 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 3000)
 	id = "augment_circuitry"
 
+/datum/design/item/mechfab/augment/memory_inhibitor
+	name = "class H amnestic implant"
+	build_path = /obj/item/organ/internal/augment/active/memory_inhibitor
+	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 1000, "gold" = 100, "diamond" = 500)
+	req_tech = list(TECH_MATERIAL = 5, TECH_BIO = 5, TECH_ESOTERIC = 5)
+	id = "augment_memory_inhibitor"
 //BigRigs
 /datum/design/item/mechfab/rig/zero
 	category = "Hardsuits"
@@ -677,6 +683,51 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 30000, "glass" = 5000, "silver" = 1000)
 	id = "null _suit"
 	time = 120
+
+/datum/design/item/mechfab/rig/industrial
+	category = "Hardsuits"
+	name = "Industrial suit control module"
+	build_path = /obj/item/rig/industrial
+	materials = list(DEFAULT_WALL_MATERIAL = 60000, "glass" = 5000, "plasteel" = 10000)
+	req_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 2)
+	id = "industrial _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/eva
+	category = "Hardsuits"
+	name = "EVA suit control module"
+	build_path = /obj/item/rig/eva
+	materials = list(DEFAULT_WALL_MATERIAL = 60000, "glass" = 5000, "silver" = 1000, "gold" = 1000, "plastic" = 5000)
+	req_tech = list(TECH_MATERIAL = 5, TECH_COMBAT = 4, TECH_ENGINEERING = 4)
+	id = "eva _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/hazmat
+	category = "Hardsuits"
+	name = "Hazmat suit control module"
+	build_path = /obj/item/rig/hazmat
+	materials = list(DEFAULT_WALL_MATERIAL = 60000, "glass" = 5000, "silver" = 1000, "gold" = 1000, "plastic" = 5000)
+	req_tech = list(TECH_MATERIAL = 5, TECH_COMBAT = 4)
+	id = "hazmat _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/medical
+	category = "Hardsuits"
+	name = "Medical suit control module"
+	build_path = /obj/item/rig/medical
+	materials = list(DEFAULT_WALL_MATERIAL = 60000, "glass" = 5000, "silver" = 1000, "gold" = 1000, "plastic" = 5000)
+	req_tech = list(TECH_MATERIAL = 5, TECH_COMBAT = 4, TECH_BIO = 4)
+	id = "medical _suit"
+	time = 120
+
+/datum/design/item/mechfab/rig/hazard
+	category = "Hardsuits"
+	name = "Hazard suit control module"
+	build_path = /obj/item/rig/hazard
+	materials = list(DEFAULT_WALL_MATERIAL = 90000, "glass" = 5000, "silver" = 1000, "diamond" = 1000, "uranium" = 1000)
+	req_tech = list(TECH_ESOTERIC = 4, TECH_COMBAT = 6, TECH_MATERIAL = 6)
+	id = "hazard _suit"
+	time = 240
 
 /datum/design/item/mechfab/rig/meson
 	category = "Hardsuits"

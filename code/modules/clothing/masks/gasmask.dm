@@ -26,6 +26,7 @@
 	var/clogged
 	var/filter_water
 	var/gas_filter_strength = 1			//For gas mask filters
+	hidden_from_codex = FALSE
 
 
 /obj/item/clothing/mask/gas/examine(mob/user)
@@ -231,12 +232,12 @@
 	body_parts_covered = FACE
 	w_class = 2
 
-/obj/item/clothing/mask/gas/alpha
-	name = "gas mask"
-	desc = "A face-covering mask that can be connected to an air supply, this one is designed for MTF unit 'Red Right Hand'."
+/obj/item/clothing/mask/gas/omega1
+	name = "compact gas mask"
+	desc = "A face-covering mask that can be connected to an air supply, this one is designed for MTF unit 'Laws Left Hand'."
 	icon_state = "alpha-mask"
 	item_state = "alpha-mask"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = FACE|EYES
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
@@ -264,7 +265,7 @@
 	desc = "A glass gas mask that block all vision towards the person's identity. Can be connected to an air supply, this one is designed for the Internal Security Department."
 	icon_state = "isd-mask"
 	item_state = "isd-mask"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = FACE|EYES
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
@@ -283,6 +284,34 @@
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
 		bullet = ARMOR_BALLISTIC_SMALL,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)
+
+/obj/item/clothing/mask/gas/security
+	name = "security gas mask"
+	desc = "A top-grade tactical gas mask that encrypts your voice and can strike fear through those it who see it, oh wait, it's just a redesign of the standard-issue staff gasmask. Can be connected to an air supply.."
+	icon_state = "sec-mask"
+	item_state = "sec-mask"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_SMALL,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		bio = ARMOR_BIO_STRONG,
+		rad = ARMOR_RAD_SMALL
+		)
+
+/obj/item/clothing/mask/gas/mtf
+	name = "tactical coifed gas mask"
+	desc = "A top-grade tactical clear gasmask above an added balaclava, it has a bit of melee-padding in it, along with some heavy bulletproof glass on it. Can be connected to an air supply."
+	icon_state = "gasmask_alt_cover"
+	item_state = "gasmask_alt_cover"
+	flags_inv = HIDEEARS|HIDEFACE|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_AP,
 		bio = ARMOR_BIO_STRONG,
 		rad = ARMOR_RAD_SMALL
 		)

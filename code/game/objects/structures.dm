@@ -69,7 +69,7 @@
 	..()
 	if(MUTATION_FERAL in user.mutations)
 		attack_generic(user,10,"smashes")
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)
+		user.setClickCooldown(CLICK_CD_ATTACK*2)
 		attack_animation(user)
 		playsound(loc, 'sounds/weapons/tablehit1.ogg', 40, 1)
 	if(breakable)

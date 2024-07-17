@@ -30,9 +30,6 @@
 
 	atmos_canpass = CANPASS_PROC
 
-/obj/structure/window/get_mechanics_info()
-	. = "<p>If damaged, it can be repaired by applying some [get_material_display_name()] then welding it. This particular window can require up to [get_glass_cost()] sheets to fully repair depending on damage.</p>"
-
 /obj/structure/window/get_material()
 	return material
 
@@ -61,7 +58,7 @@
 	desc = "A window pane made from [material.display_name][reinf_material ? " and reinforced with [reinf_material.display_name]" : ""]."
 
 	if (start_dir)
-		set_dir(start_dir)
+		setDir(start_dir)
 
 	var/new_max_health = material.integrity
 	if(reinf_material)
@@ -231,14 +228,14 @@
 	deanchor(AM)
 
 /obj/structure/window/attack_hand(mob/user as mob)
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_ATTACK)
 	if(MUTATION_HULK in user.mutations)
 		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!"))
 		user.visible_message(SPAN_DANGER("[user] smashes through [src]!"))
 		user.do_attack_animation(src)
 		shatter()
 	else if(MUTATION_FERAL in user.mutations)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2) //Additional cooldown
+		user.setClickCooldown(CLICK_CD_ATTACK*2) //Additional cooldown
 		attack_generic(user, 10, "smashes")
 
 	else if (user.a_intent && user.a_intent == I_HURT)
@@ -268,7 +265,7 @@
 		damage = max(damage, 10)
 
 	if(istype(user))
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(CLICK_CD_ATTACK)
 		user.do_attack_animation(src)
 	if(!damage)
 		return
@@ -494,14 +491,14 @@
 				return
 
 	update_nearby_tiles(need_rebuild=1) //Compel updates before
-	set_dir(newdir)
+	setDir(newdir)
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/structure/window/Move()
 	var/ini_dir = dir
 	update_nearby_tiles(need_rebuild=1)
 	..()
-	set_dir(ini_dir)
+	setDir(ini_dir)
 	update_nearby_tiles(need_rebuild=1)
 
 //checks if this window is full-tile one

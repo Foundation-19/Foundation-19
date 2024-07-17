@@ -25,16 +25,19 @@
 		to_chat(usr, SPAN_WARNING("You can't reach it."))
 		return
 
-	do_shutdown()
-
-/obj/item/modular_computer/proc/do_shutdown()
 	if(enabled)
-		bsod = 1
+		to_chat(usr, "You press a hard-reset button on \the [src]. It displays a brief debug screen before shutting down.")
+
+		forced_shutdown(2 SECONDS)
+
+///  Shuts the computer down and renders it unusable for X time. Useful for errors/crashes/whatever
+/obj/item/modular_computer/proc/forced_shutdown(shutdown_time)
+	if(enabled)
+		bsod = TRUE
 		update_icon()
 		shutdown_computer()
-		to_chat(usr, "You press a hard-reset button on \the [src]. It displays a brief debug screen before shutting down.")
-		spawn(2 SECONDS)
-			bsod = 0
+		spawn(shutdown_time)
+			bsod = FALSE
 			update_icon()
 
 // Eject ID card from computer, if it has ID slot with card inside.
@@ -177,7 +180,7 @@
 
 // On-click handling. Turns on the computer if it's off and opens the GUI.
 /obj/item/modular_computer/attack_self(mob/user)
-	if(user.IsAdvancedToolUser())
+	if(ISADVANCEDTOOLUSER(user))
 		if(enabled && screen_on)
 			tgui_interact(user)
 		else if(!enabled && screen_on)
@@ -296,7 +299,7 @@
 
 /obj/item/modular_computer/MouseDrop(atom/over_object)
 	var/mob/M = usr
-	if(!istype(over_object, /obj/screen) && CanMouseDrop(M))
+	if(!istype(over_object, /atom/movable/screen) && CanMouseDrop(M))
 		return attack_self(M)
 
 /obj/item/modular_computer/afterattack(atom/target, mob/user, proximity)

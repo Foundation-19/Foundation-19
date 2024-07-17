@@ -10,6 +10,7 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = 0
 	species_restricted = list("exclude", SPECIES_MONARCH_QUEEN, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE)
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/soft/New()
 	..()
@@ -106,3 +107,8 @@
 	name = "corporate security cap"
 	desc = "It's field cap in corporate colors."
 	icon_state = "corpsec_soft"
+
+/obj/item/clothing/head/soft/dclass
+	name = "D-Class cap"
+	desc = "It's a peaked cap in a bland Class-D orange color, with the SCP logo on the front."
+	icon_state = "dclasssoft"

@@ -74,7 +74,7 @@
 	if(density != opacity)
 		set_opacity(density)
 
-/obj/structure/heavy_vehicle_frame/set_dir()
+/obj/structure/heavy_vehicle_frame/setDir()
 	..(SOUTH)
 
 /obj/structure/heavy_vehicle_frame/attackby(obj/item/thing, mob/user)

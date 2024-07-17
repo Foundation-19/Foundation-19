@@ -37,7 +37,7 @@
 /mob/observer/eye/facedir(ndir)
 	if(!canface())
 		return 0
-	set_dir(ndir)
+	setDir(ndir)
 	return 1
 
 /mob/observer/eye/examinate()

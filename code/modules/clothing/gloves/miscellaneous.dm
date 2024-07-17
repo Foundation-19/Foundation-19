@@ -3,6 +3,7 @@
 	name = "captain's gloves"
 	icon_state = "captain"
 	item_state = "egloves"
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/cyborg
 	desc = "Beep boop borp!"
@@ -14,11 +15,11 @@
 /obj/item/clothing/gloves/insulated
 	desc = "These gloves will protect the wearer from electric shocks."
 	name = "insulated gloves"
-	color = COLOR_YELLOW
-	icon_state = "white"
-	item_state = "lgloves"
+	icon_state = "yellow"
+	item_state = "yellow"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/insulated/cheap                             //Cheap Chinese Crap
 	desc = "These gloves are cheap copies of the coveted gloves, no way this can end badly."
@@ -30,6 +31,29 @@
 	//average of 0.4, better than regular gloves' 0.75
 	siemens_coefficient = pick(0, 0.1, 0.2, 0.3, 0.4, 0.6, 1.3)
 
+/obj/item/clothing/gloves/insulated/chief_engineer
+	desc = "These gloves will protect the wearer from electric shocks, and also no longer hinder your fingers."
+	name = "advanced insulated gloves"
+	icon_state = "ce_insuls"
+	item_state = "ce_insuls"
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	hidden_from_codex = FALSE
+
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
+	force = 5
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_RESISTANT,
+		bio = ARMOR_BIO_MINOR)
+
 /obj/item/clothing/gloves/forensic
 	desc = "Specially made gloves for forensic technicians. The luminescent threads woven into the material stand out under scrutiny."
 	name = "forensic gloves"
@@ -37,6 +61,7 @@
 	item_state = "bgloves"
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
+	hidden_from_codex = FALSE
 
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
@@ -51,6 +76,7 @@
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
 	item_flags = ITEM_FLAG_THICKMATERIAL
+	hidden_from_codex = FALSE
 
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
@@ -102,6 +128,12 @@
 /obj/item/clothing/gloves/thick/botany/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
 
+/obj/item/clothing/gloves/thick/miner
+	name = "heavy work gloves"
+	desc = "Some brown heavy gloves issued to mining D-Class personnel, very annoying to use with anything other than mining equipment. Has that classic prisoner color on the knuckles."
+	icon_state = "minegloves"
+	item_state = "minegloves"
+
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
 	desc = "Sterile latex gloves."
@@ -111,6 +143,7 @@
 	siemens_coefficient = 1.1 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
 	permeability_coefficient = 0.01
 	germ_level = 0
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/latex/modified
 	item_flags = ITEM_FLAG_PREMODIFIED
@@ -187,6 +220,7 @@
 		bullet = ARMOR_BALLISTIC_MINOR,
 		laser = ARMOR_LASER_MINOR
 		)
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/tactical/ci
 	desc = "These tan tactical gloves are made from a durable synthetic, and have hardened knuckles."
@@ -210,6 +244,7 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/fire
 	desc = "A pair of Gloves specially design for firefight and damage control."
@@ -227,9 +262,11 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/gloves/foundation_service
 	name = "service gloves"
 	desc = "A pair of dark grey Foundation gloves, with soft padding to make them comfortable to wear."
 	icon_state = "black"
 	item_state = "bgloves"
+	hidden_from_codex = TRUE

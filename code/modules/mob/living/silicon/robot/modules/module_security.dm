@@ -1,13 +1,10 @@
 /obj/item/robot_module/security
-	channels = list(
-		"Security" = TRUE
-	)
-	networks = list(
-		NETWORK_SECURITY
-	)
+	channels = list("Security" = TRUE, "ECZ-Security" = TRUE, "HCZ-Security" = TRUE, "LCZ-Security" = TRUE)
+	networks = list(NETWORK_SECURITY)
 	subsystems = list(
 		/datum/nano_module/crew_monitor,
-		/datum/nano_module/program/digitalwarrant
+		/datum/nano_module/program/digitalwarrant,
+		/datum/nano_module/records
 	)
 	can_be_pushed = FALSE
 	supported_upgrades = list(
@@ -37,19 +34,19 @@
 	display_name = "Security"
 	crisis_locked = TRUE
 	sprites = list(
-		"Basic" = "secborg",
-		"Red Knight" = "Security",
-		"Black Knight" = "securityrobot",
 		"Bloodhound" = "bloodhound",
 		"Bloodhound - Treaded" = "secborg+tread",
-		"Tridroid" = "orb-security"
+		"Red Knight" = "Security",
+		"Tridroid" = "orb-security",
+		"Android - Guard" = "securityrobot",
+		"Android - NCO Guard" = "securityncorobot"
 	)
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/borg/sight/hud/sec,
 		/obj/item/handcuffs/cyborg,
 		/obj/item/melee/baton/robot,
-		/obj/item/gun/energy/gun/secure/mounted,
+		/obj/item/gun/energy/gun/mounted/mk9/rubber,
 		/obj/item/taperoll/police,
 		/obj/item/device/megaphone,
 		/obj/item/device/holowarrant,

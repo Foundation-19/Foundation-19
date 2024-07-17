@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/scp/p90
-	name = "P90 SMG"
-	desc = "A submachine gun sample of the 2010s, with a scope mounted on top"
+	name = "FN P90"
+	desc = "The FN P90 is a submachine gun chambered in 5.7x28mm, also classified as a personal defense weapon, designed and manufactured by FN Herstal in Belgium. Created in response to NATO requests for a replacement for 9x19mm Parabellum firearms, the P90 was designed as a compact but powerful firearm for vehicle crews, operators of crew-served weapons, support personnel, special forces, and counter-terrorist groups. This one has a scope, and is issued to specifically LCZ Security, and or MTF."
 	icon_state = "p90"
 	item_state = "p90"
 	w_class = ITEM_SIZE_HUGE

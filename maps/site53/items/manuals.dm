@@ -150,23 +150,31 @@
 /obj/item/paper/sec_ctp
 	name = "Checkpoint Testing Procedures"
 	info = {"<center><h1>Checkpoint Testing Procedures</h1></center><br>
-	<center><b><font size="1">Site 53</font></b></center><br>
+	<center><b><font size="4">Foundation Site 53</font></b></center><br>
 	<center><img src = sec.png></center><br>
 	<center><b>Secure. Contain. Protect.</b></center><br>
 	<hr>
-	STEP ONE: Check what the current site-wise security level is:<br>
+	<center><b>CHAIN OF PERMISSION</b><br></center>
+	<li>If the Research Director is not available, consult to the Assistant Research Director.<br>
+	<li>If the Assistant Research Director is not available, consult to the Site Director.<br>
+	<li>If the Site Director is not available, consult to the Guard Commander.<br>
+	<li>If the Guard Commander is not available, all testing is to be halted until further notice, or awakening of one of these three heads of staff.<br>
+	<li>Keter testing is to be halted until both the Site Director, and Research Director are available.<br>
+	<li>O5 Command is a available option in the case of requiring dire permission to test if none of these three heads of staff are available.<br>
+	<hr>
+	<b>STEP ONE: Check what the current site-wise security level is:</b><br>
 	<ul><li>CODE GREEN: Testing is to be conducted as normal.<br>
 	<li>CODE YELLOW: Testing can be refused by the checkpoint officer if there is an imminent threat to staff within the respective zone of the checkpoint. <br>
-	<li>CODE ORANGE and RED: No tests are to be conducted. Currently active tests may be ended at the discretion of the Zone Commander and above.<br>
+	<li>CODE ORANGE and RED: No tests are to be conducted. Currently active tests may be ended at the discretion of the Zone Sergeants and above.<br>
 	<li>CODE BLACK and PITCHBLACK: No tests are to be conducted. All currently active tests are to be ended as soon as possible.</ul>
-	STEP TWO: Check the legitimacy of given paperwork and credentials. If paper is incorrect or forged, detain all involved personnel and report to your zone's Sargeant.<br>
-	Paperwork must clearly state the SCP(s) and materials involved in the test and the testing plan. If it does not, directly contact the Reaserch Director and do not allow entry.<br>
-	You do not have the right to either authorize or not authorize a test. Regular researchers and up may test on Safe SCPs at their discretion and do not need explicit approval. Senior researchers and up may test on Euclid SCPs at their own discretion and do not require explicit approval. Any researcher may test on any SCP with the permission of the RD, barring restricted SCPs, which are SCP-106 and SCP-096, which require Site Director approval. You may, however, deny a test depending on the site's security level or if the individuals are suspicious. <br>
-	If a test conflicts with the special containment procedures of an SCP, you are to notify the RD. If the RD still approves the test, you may allow entry. Otherwise, the research staff must be held at the checkpoint until sufficient modifications are made.<br>
-	STEP THREE: Notify the Site Director and the Research Director through email of any attempts to pass through checkpoints for research. State the test and target SCP and whether or not they have been cleared to enter by checkpoint personnel. If you denied their entry, state the reason as to why in your email.<br>
+	<b>STEP TWO:</b> Check the legitimacy of given paperwork. If the documentation is inconclusive or forged, detain all involved personnel and report to your Zone Sergeants.<br>
+	Paperwork must clearly state the SCP's and materials involved in the test. If it does not, directly contact the Research Director and do not allow entry.<br>
+	You do not have the right to either authorize or deny a test. Senior Researcher staff may test on Safe level SCPs at their discretion and do not need explicit approval, however, do still need paperwork. Euclid-Class SCPs require a signature, and stamp from the Research Director. Keter-Class SCPs require both Research Director and Site Director signatures, and stamps. Cross tests require both Research Director and Site Director signatures, and stamps along with O5 Command Approval. You may, however, deny a test depending on the site's security level, if the test is unethical, and or against regulations, or if the individuals are suspicious. <br>
+	If a test conflicts with the SCP's containment procedures, you are to notify the Research Director and Site Director. If both are unavailable, deny the test. If the Research Director and Site Director still approve the test, you may allow entry. Otherwise, the research team shall be denied entry until sufficient changes are made. After all checks are made, you may stamp their document with a stamp to confirm their pass through the checkpoint.<br>
+	<b>STEP THREE:</b> Notify the Site Director and the Research Director through email of any attempts to pass through checkpoints for research. State the test and target SCP and whether or not they have been cleared to enter by checkpoint personnel. If you denied their entry, state the reason as to why in your email.<br>
 	If all paperwork is acceptable and no objections have been raised by either the Research Director or Site Director, you may allow the personnel to pass the checkpoint.<br>
-	STEP FOUR: If the test is on a Euclid level SCP or higher, or the research has a class D present with them, ensure they are escorted throughout the zone. If the test is on a Keter SCP, an officer should be present at the test as well.<br>
-	When returning, all personnel and material must be searched again before transferring through the checkpoint.
+	<b>STEP FOUR:</b> If the test is on a Euclid level SCP or higher, or the Researcher has a Class-D present with them, they are to be acompanied by Zone Security, one officer is for every two D-Class. Said Zone Officer is to guard the chamber as the test is conducted. However, if the manpower does not meet standards, the test shall be denied until further notice.<br>
+	When returning, all personnel must be frisked again before transferring through the checkpoint, this counts for backpacks, labcoats, and as well as webbing, boots, and pockets.
 	<hr>"}
 
 /obj/item/paper/d_class_guide

@@ -1,0 +1,6 @@
+author: ChromeFoxxity
+delete-after: true
+changes:
+  - rscadd: Normal Forensics module. Robot ballistics.
+  - imageadd: Added several android icons.
+  - imagedel: Replaced/Removed a few useless icons.

@@ -4,25 +4,43 @@
 	var/state_name
 	var/fancy_desc
 
-	var/datum/grab/upgrab						// The grab that this will upgrade to if it upgrades, null means no upgrade
-	var/datum/grab/downgrab						// The grab that this will downgrade to if it downgrades, null means break grab on downgrade
+	/// The grab that this will upgrade to if it upgrades, null means no upgrade
+	var/datum/grab/upgrab
+	/// The grab that this will downgrade to if it downgrades, null means break grab on downgrade
+	var/datum/grab/downgrab
 
-	var/datum/time_counter						// For things that need to be timed
+	/// For things that need to be timed
+	var/datum/time_counter
 
-	var/stop_move = 0							// Whether or not the grabbed person can move out of the grab
-	var/force_stand = 0							// Whether or not the grabbed person is forced to be standing
-	var/reverse_facing = 0						// Whether the person being grabbed is facing forwards or backwards.
-	var/can_absorb = 0							// Whether this grab state is strong enough to, as a changeling, absorb the person you're grabbing.
-	var/shield_assailant = 0					// Whether the person you're grabbing will shield you from bullets.,,
-	var/point_blank_mult = 1					// How much the grab increases point blank damage.
-	var/damage_stage = 1						// Affects how much damage is being dealt using certain actions.
-	var/same_tile = 0							// If the grabbed person and the grabbing person are on the same tile.
-	var/ladder_carry = 0						// If the grabber can carry the grabbed person up or down ladders.
-	var/can_throw = 0							// If the grabber can throw the person grabbed.
-	var/downgrade_on_action = 0					// If the grab needs to be downgraded when the grabber does stuff.
-	var/downgrade_on_move = 0					// If the grab needs to be downgraded when the grabber moves.
-	var/force_danger = 0						// If the grab is strong enough to be able to force someone to do something harmful to them.
-	var/restrains = 0							// If the grab acts like cuffs and prevents action from the victim.
+	/// Whether or not the grabbed person can move out of the grab
+	var/stop_move = FALSE
+	/// Whether or not the grabbed person is forced to be standing
+	var/force_stand = FALSE
+	// Whether the person being grabbed is facing forwards or backwards.
+	var/reverse_facing = FALSE
+	/// Whether this grab state is strong enough to, as a changeling, absorb the person you're grabbing.
+	var/can_absorb = FALSE
+	/// Whether the person you're grabbing will shield you from bullets.
+	var/shield_assailant = FALSE
+	/// If the grabbed person and the grabbing person are on the same tile.
+	var/same_tile = FALSE
+	/// If the grabber can carry the grabbed person up or down ladders.
+	var/ladder_carry = FALSE
+	/// If the grabber can throw the person grabbed.
+	var/can_throw = FALSE
+	/// If the grab needs to be downgraded when the grabber does stuff.
+	var/downgrade_on_action = FALSE
+	/// If the grab needs to be downgraded when the grabber moves.
+	var/downgrade_on_move = FALSE
+	/// If the grab is strong enough to be able to force someone to do something harmful to them.
+	var/force_danger = FALSE
+	/// If the grab acts like cuffs and prevents action from the victim.
+	var/restrains = FALSE
+
+	/// How much the grab increases point blank damage.
+	var/point_blank_mult = 1
+	/// Affects how much damage is being dealt using certain actions.
+	var/damage_stage = 1
 
 	var/grab_slowdown = 7
 
@@ -161,7 +179,7 @@
 					make_log(G, harm_action)
 
 	else
-		to_chat(G.assailant, SPAN_WARNING("You must wait before you can do that."))
+		G.affecting.balloon_alert(G.assailant, "wait [round(((G.last_action + action_cooldown) - world.time) / (1 SECOND), 1)] seconds!")
 
 /datum/grab/proc/make_log(obj/item/grab/G, action)
 	admin_attack_log(G.assailant, G.affecting, "[action]s their victim", "was [action]ed", "used [action] on")
@@ -175,7 +193,7 @@
 	if(same_tile)
 		affecting.forceMove(assailant.loc)
 		adir = assailant.dir
-		affecting.set_dir(assailant.dir)
+		affecting.setDir(assailant.dir)
 
 	switch(adir)
 		if(NORTH)
@@ -284,7 +302,7 @@
 
 	if(affecting.incapacitated(INCAPACITATION_ALL))
 		break_strength--
-	if(affecting.confused)
+	if(affecting.has_status_effect(/datum/status_effect/confusion))
 		break_strength--
 
 	if(break_strength < 1)

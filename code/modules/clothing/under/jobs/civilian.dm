@@ -1,12 +1,18 @@
 //Alphabetical order of civilian jobs.
 
+/obj/item/clothing/under/rank/officeworker
+	desc = "A white dress shirt with black suit trousers, along with a black tie to go with it. Makes you feel like you're stuck in a dead-end job."
+	name = "formal wear"
+	icon_state = "office"
+	item_state = "bl_suit"
+	worn_state = "office"
+
 /obj/item/clothing/under/rank/bartender
 	desc = "It looks like it could use some more flair."
 	name = "bartender's uniform"
 	icon_state = "ba_suit"
 	item_state = "ba_suit"
 	worn_state = "ba_suit"
-	gender_icons = 1
 
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
@@ -31,7 +37,6 @@
 	icon_state = "cargotech"
 	item_state = "lb_suit"
 	worn_state = "cargo"
-	gender_icons = 1
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 
@@ -41,7 +46,6 @@
 	icon_state = "chaplain"
 	item_state = "bl_suit"
 	worn_state = "chapblack"
-	gender_icons = 1
 
 
 /obj/item/clothing/under/rank/chef
@@ -50,7 +54,6 @@
 	icon_state = "chef"
 	item_state = "w_suit"
 	worn_state = "chef"
-	gender_icons = 1
 
 
 /obj/item/clothing/under/rank/clown
@@ -82,7 +85,6 @@
 	icon_state = "hydroponics"
 	item_state = "g_suit"
 	worn_state = "hydroponics"
-	gender_icons = 1
 	permeability_coefficient = 0.50
 
 
@@ -92,7 +94,6 @@
 	icon_state = "internalaffairs"
 	item_state = "ba_suit"
 	worn_state = "internalaffairs"
-	gender_icons = 1
 	starting_accessories = list(/obj/item/clothing/accessory/black)
 
 /obj/item/clothing/under/rank/internalaffairs/plain
@@ -112,7 +113,6 @@
 	icon_state = "janitor"
 	worn_state = "janitor"
 	item_state = "janitor"
-	gender_icons = 1
 	armor = list(
 		bio = ARMOR_BIO_MINOR
 		)

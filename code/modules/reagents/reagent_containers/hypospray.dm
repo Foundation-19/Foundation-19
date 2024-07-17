@@ -46,7 +46,7 @@
 		if(!user.do_skilled(INJECTION_PORT_DELAY, SKILL_MEDICAL, M))
 			return
 
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+	user.setClickCooldown(CLICK_CD_QUICK)
 	user.do_attack_animation(M)
 
 	if(user != M && !M.incapacitated() && time) // you're injecting someone else who is concious, so apply the device's intrisic delay
@@ -161,16 +161,15 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector
 	name = "autoinjector"
-	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
-	icon_state = "injector"
-	item_state = "autoinjector"
-	amount_per_transfer_from_this = 5
-	volume = 5
+	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge."
+	icon_state = "medipen"
+	item_state = "medipen"
+	amount_per_transfer_from_this = 15
+	volume = 15
 	origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2)
 	slot_flags = SLOT_BELT | SLOT_EARS
 	w_class = ITEM_SIZE_TINY
-	var/list/starts_with = list(/datum/reagent/medicine/inaprovaline = 5)
-	var/band_color = COLOR_CYAN
+	var/list/starts_with = list(/datum/reagent/medicine/inaprovaline = 12, /datum/reagent/toxin/formaldehyde = 3)
 
 /obj/item/reagent_containers/hypospray/autoinjector/New()
 	..()
@@ -183,14 +182,6 @@
 	..()
 	update_icon()
 
-/obj/item/reagent_containers/hypospray/autoinjector/on_update_icon()
-	cut_overlays()
-	if(reagents.total_volume > 0)
-		icon_state = "[initial(icon_state)]1"
-	else
-		icon_state = "[initial(icon_state)]0"
-	add_overlay(overlay_image(icon,"injector_band",band_color,RESET_COLOR))
-
 /obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
 	. = ..(user)
 	if(reagents && reagents.reagent_list.len)
@@ -198,33 +189,44 @@
 	else
 		to_chat(user, SPAN_NOTICE("It is spent."))
 
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack
+	name = "stimpack medipen"
+	desc = "A heavy duty stimpack full of drugs that could even get a junkie up in the morning, smells slightly of coffee."
+	icon_state = "stimpen"
+	item_state = "stimpen"
+	amount_per_transfer_from_this = 20
+	volume = 20
+	starts_with = list(/datum/reagent/medicine/stimulant/hyperzine = 10, /datum/reagent/drink/coffee = 10)
+
+/obj/item/reagent_containers/hypospray/autoinjector/stimpack/combat
+	name = "combat stimpack medipen"
+	desc = "A combative stimpack issued to combat first-aid kits just incase they need a highly drugged up Cadet mowing down the Chaos Insurgency, though it's most likely the other way around. Extremely deadly if used with another combat stimpack before the reagents could metabolize."
+	icon_state = "syndipen"
+	item_state = "syndipen"
+	starts_with = list(/datum/reagent/medicine/stimulant/synaptizine = 6, /datum/reagent/medicine/nanoblood = 4, /datum/reagent/medicine/tricordrazine = 10)
+
 /obj/item/reagent_containers/hypospray/autoinjector/detox
 	name = "autoinjector (antitox)"
-	band_color = COLOR_GREEN
+	icon_state = "penacid"
 	starts_with = list(/datum/reagent/medicine/dylovene = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pain
 	name = "autoinjector (painkiller)"
-	band_color = COLOR_PURPLE
 	starts_with = list(/datum/reagent/medicine/painkiller/tramadol = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (oxycodone)"
-	band_color = COLOR_DARK_GRAY
 	starts_with = list(/datum/reagent/medicine/painkiller/tramadol/oxycodone = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
-	band_color = COLOR_AMBER
 	starts_with = list(/datum/reagent/medicine/hyronalin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
-	band_color = COLOR_DARK_GRAY
 	starts_with = list(/datum/reagent/mindbreaker_toxin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/empty
 	name = "autoinjector"
-	band_color = COLOR_WHITE
 	starts_with = list()
 	matter = list(MATERIAL_PLASTIC = 150, MATERIAL_GLASS = 50)

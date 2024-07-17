@@ -57,6 +57,9 @@
 		sync_organ_dna()
 	make_blood()
 
+	if(species.has_fine_manipulation)
+		ADD_TRAIT(src, TRAIT_ADVANCED_TOOL_USER, ROUNDSTART_TRAIT)
+
 /mob/living/carbon/human/Destroy()
 	if (dream_timer)
 		deltimer(dream_timer)
@@ -152,7 +155,7 @@
 
 
 /mob/living/carbon/human/show_inv(mob/user as mob)
-	if(user.incapacitated()  || !user.Adjacent(src) || !user.IsAdvancedToolUser())
+	if(user.incapacitated()  || !user.Adjacent(src) || !ISADVANCEDTOOLUSER(user))
 		return
 
 	user.set_machine(src)
@@ -527,7 +530,7 @@
 		return FLASH_PROTECTION_MAJOR
 	return total_protection
 
-/mob/living/carbon/human/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/carbon/human/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(species.has_organ[species.vision_organ])
 		var/obj/item/organ/internal/eyes/I = internal_organs_by_name[species.vision_organ]
 		if(!isnull(I))
@@ -574,13 +577,6 @@
 		return prob(100 / 2**(parent.w_class - affecting.w_class - 1))
 
 	return 1
-
-/mob/living/carbon/human/IsAdvancedToolUser(silent)
-	if(species.has_fine_manipulation(src))
-		return 1
-	if(!silent)
-		to_chat(src, SPAN_WARNING("You don't have the dexterity to use that!"))
-	return 0
 
 /mob/living/carbon/human/abiotic(full_body = TRUE)
 	if(full_body)

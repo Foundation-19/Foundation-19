@@ -48,27 +48,28 @@
 // ## LCZ MACHINES ## //
 
 /obj/machinery/vending/weaponry/lcz
-	name = "\improper LightCZ AutoEquipment Device"
-	desc = "An automated gun storage device that can dispense guns on demand, this one has been designed to supply LCZ personnel."
+	name = "\improper Light Containment Zone Lethal AutoEquipment Device"
+	desc = "An automated gun storage device that can dispense guns on demand, this one has been designed to supply lethal weapons LCZ personnel."
 	icon_state = "lcz_weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 6,
-		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/pistol/mk9 = 4,
 		/obj/item/ammo_magazine/box/a57 = 6,
-		/obj/item/ammo_magazine/box/a57/rubber = 30,
-		/obj/item/ammo_magazine/box/mk9 = 4,
-		/obj/item/ammo_magazine/box/a357 = 4,
-		/obj/item/ammo_magazine/scp/mk9 = 8,
-		/obj/item/ammo_magazine/scp/p90_mag = 12
+		/obj/item/ammo_magazine/box/a57/hp = 3,
+		/obj/item/ammo_magazine/box/a9mm = 4,
+		/obj/item/ammo_magazine/scp/p90_mag = 12,
+		/obj/item/ammo_magazine/scp/p90_mag/hp = 6,
+		/obj/item/ammo_magazine/scp/mk9 = 8
 	)
 
-/obj/machinery/vending/weaponry/lcz/energy
-	name = "\improper LightCZ E.G. Storage"
-	desc = "An automated gun storage device that can dispense guns on demand, this one houses energy/pulse weapons for LCZ personnel."
+/obj/machinery/vending/weaponry/lcz/nonlethal
+	name = "\improper Light Containment Zone Non-Lethal AutoEquipment Device"
+	desc = "An automated gun storage device that can dispense guns on demand, this one has been designed to supply non-lethal weapons LCZ personnel."
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
+		/obj/item/ammo_magazine/box/a57/rubber = 30,
+		/obj/item/ammo_magazine/scp/p90_mag/rubber = 24,
 		/obj/item/gun/energy/stunrevolver/taser = 6,
 		/obj/item/gun/energy/stunrevolver/rifle = 2,
 		/obj/item/gun/energy/ionrifle = 1
@@ -84,14 +85,16 @@
 	products = list(
 		/obj/item/gun/projectile/automatic/scp/p90 = 6,
 		/obj/item/gun/projectile/revolver/mateba = 2,
-		/obj/item/gun/projectile/pistol/mk9 = 4,
-		/obj/item/ammo_magazine/box/a357 = 4,
-		/obj/item/ammo_magazine/box/a50 = 4,
-		/obj/item/ammo_magazine/box/a57 = 12,
-		/obj/item/ammo_magazine/box/mk9 = 6,
+		/obj/item/gun/projectile/pistol/usp45 = 4,
+		/obj/item/ammo_magazine/box/a50 = 8,
+		/obj/item/ammo_magazine/box/a57/ap = 6,
+		/obj/item/ammo_magazine/box/a45 = 8,
 		/obj/item/ammo_magazine/box/a556 = 16,
+		/obj/item/ammo_magazine/scp/usp45 = 12,
+		/obj/item/gun/projectile/pistol/mk9 = 4,
+		/obj/item/ammo_magazine/box/a9mm = 4,
 		/obj/item/ammo_magazine/scp/mk9 = 8,
-		/obj/item/ammo_magazine/scp/p90_mag = 12
+		/obj/item/ammo_magazine/scp/p90_mag/ap = 24
 	)
 
 /obj/machinery/vending/weaponry/hcz/sergeant
@@ -100,11 +103,11 @@
 	icon_state = "weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/m4a1 = 2,
-		/obj/item/gun/projectile/automatic/scp/m16 = 2,
-		/obj/item/ammo_magazine/scp/m16_mag = 8,
-		/obj/item/ammo_magazine/box/a556 = 2,
-		/obj/item/grenade/frag = 2
+		/obj/item/gun/projectile/automatic/scp/m4a1 = 6,
+		/obj/item/gun/projectile/automatic/scp/m16 = 6,
+		/obj/item/ammo_magazine/scp/m16_mag = 16,
+		/obj/item/ammo_magazine/box/a556 = 6,
+		/obj/item/grenade/frag = 8
 
 	)
 
@@ -116,16 +119,18 @@
 	icon_state = "ez_weaponry"
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	products = list(
-		/obj/item/gun/projectile/automatic/scp/p90 = 6,
+		/obj/item/gun/projectile/automatic/scp/mp5 = 6,
 		/obj/item/gun/projectile/revolver/rhino = 2,
 		/obj/item/gun/projectile/pistol/usp45 = 3,
 		/obj/item/gun/projectile/pistol/mk9 = 3,
-		/obj/item/ammo_magazine/box/a57 = 24,
-		/obj/item/ammo_magazine/box/mk9 = 4,
+		/obj/item/ammo_magazine/box/a9mm = 24,
+		/obj/item/ammo_magazine/box/a9mm/rubber = 12,
 		/obj/item/ammo_magazine/box/a357 = 6,
 		/obj/item/ammo_magazine/box/a45 = 2,
 		/obj/item/ammo_magazine/scp/mk9 = 6,
-		/obj/item/ammo_magazine/scp/p90_mag = 12,
+		/obj/item/ammo_magazine/scp/smgm9mm = 12,
 		/obj/item/ammo_magazine/scp/usp45 = 6,
+		/obj/item/gun/energy/stunrevolver/rifle = 2,
+		/obj/item/gun/energy/ionrifle = 1
 	)
 

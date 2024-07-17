@@ -1,0 +1,8 @@
+author: quadbium
+delete-after: true
+changes:
+  - rscadd: Adds a design datum for the industrial hardsuit
+  - rscadd: Adds a design datum for the EVA hardsuit
+  - rscadd: Adds a design datum for the Hazmat hardsuit
+  - rscadd: Adds a design datum for the medical hardsuit
+  - rscadd: Adds a design datum for the Hazard hardsuit

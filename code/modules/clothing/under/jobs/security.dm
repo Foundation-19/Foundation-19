@@ -28,32 +28,44 @@
 // Light Containment Zone Uniforms
 
 /obj/item/clothing/under/rank/security/lcz/medic
-	name = "LCZ Combat Medic Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and red wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Combat Medic uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with red shoulder and wrist markings, as well as medical insignia. Weaved with a durable fabric to absorb melee hits. Sterilized fabric for better treatment, and less likely for infections."
 	icon_state = "lczmed_guard"
 	worn_state = "lczmed_guard"
 
 /obj/item/clothing/under/rank/security/lcz/riot
-	name = "LCZ Riot Control Unit Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and blue wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ Riot Control Unit uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with blue shoulder and wrist markings, as well as shield insignia. Weaved with a durable fabric to absorb melee hits. Moreso than the other security uniforms."
 	icon_state = "lczriot_guard"
 	worn_state = "lczriot_guard"
 
+/obj/item/clothing/under/rank/security/lcz/recontain
+	name = "LCZ Recontainment Unit uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with cyan shoulder and wrist markings, as well as chevron insignia. Weaved with a durable fabric to absorb melee hits. You feel like this division will come back one day.."
+	icon_state = "lczrecon_guard"
+	worn_state = "lczrecon_guard"
+
+/obj/item/clothing/under/rank/security/lcz/cadet
+	name = "LCZ cadet uniform"
+	desc = "A black shortsleeved shirt worn by Cadets still in training, bearing \"Trainee\" on the back of the shirt in white, with the Security Department logo on the shoulder. Also along with this is the LCZ security trousers."
+	icon_state = "lcz_cadet"
+	worn_state = "lcz_cadet"
+
 /obj/item/clothing/under/rank/security/lcz
-	name = "LCZ Security Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
+	name = "LCZ security uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "lcz_guard"
 	worn_state = "lcz_guard"
 
 /obj/item/clothing/under/rank/warden/lcz
-	name = "LCZ Senior Security Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color most known for Sergeants."
+	name = "LCZ senior security uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color on the shoulders and wrists most known for Sergeants."
 	icon_state = "lcz_sergeant"
 	worn_state = "lcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/lcz
-	name = "LCZ Commander Jumpsuit"
-	desc = "A white tactical jumpsuit, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
+	name = "LCZ lieutenant uniform"
+	desc = "A white, tactical security uniform with SCP insignia on it, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
 	icon_state = "lcz_commander"
 	worn_state = "lcz_commander"
 
@@ -71,20 +83,20 @@
 	worn_state = "hcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/hcz
-	name = "HCZ Commander Jumpsuit"
+	name = "HCZ Lieutenant Jumpsuit"
 	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a lighter red color most known for Commanders."
 	icon_state = "hcz_commander"
 	worn_state = "hcz_commander"
 
 // Guard Commander Uniforms
 /obj/item/clothing/under/rank/head_of_security/guardcom
-	name = "Guard Commander's Uniform"
+	name = "Guard Commander Uniform"
 	desc = "A white tactical shirt, with a pair of black trousers with golden striping on the side, the shirt is covered in gold insignia, with an additional black color over the wrists. There's a golden badge and belt buckle. This is definitely the definition of prospertiy."
 	icon_state = "guard_commander"
 	worn_state = "guard_commander"
 
 /obj/item/clothing/under/rank/head_of_security/guardcom/alt
-	name = "Guard Commander's Turtleneck"
+	name = "Guard Commander Turtleneck"
 	desc = "A white turtleneck, atop of a set of black tactical cargo pants. The turtleneck has a golden insignia on the right shoulder, denoting the rank of Guard Commander. It smells of gunpowder."
 	icon_state = "guard_commander_turtleneck"
 	worn_state = "guard_commander_turtleneck"
@@ -104,6 +116,12 @@
 	desc = "A comfortable turtleneck in FBI colors, with some khaki pants. Do the FBI really wear this kind of thing? Usually the outfit of a UIU Relations Agent."
 	icon_state = "uiuclothes"
 	worn_state = "uiuclothes"
+
+/obj/item/clothing/under/rank/civilian/uiu/formal
+	name = "Federal Bureau of Investigation formal suit"
+	desc = "A snazzy pair of formal slacks, and a light blue button-up shirt in FBI colors, with some khaki pants. Usually the outfit of a UIU Relations Agent."
+	icon_state = "uiuformal"
+	worn_state = "uiuformal"
 
 /obj/item/clothing/suit/gocjacket
 	name = "Global Occult Coalition formal jacket"
@@ -141,6 +159,7 @@
 	desc = "It's a special helmet issued to the Warden of a securiy force."
 	icon_state = "policehelm"
 	body_parts_covered = 0
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/under/rank/security
 	name = "Security Jumpsuit"
@@ -241,6 +260,7 @@
 		)
 	siemens_coefficient = 0.9
 	flags_inv = BLOCKHEADHAIR
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/det/attack_self(mob/user)
 	flags_inv ^= BLOCKHEADHAIR
@@ -276,6 +296,7 @@
 	icon_state = "hoscap"
 	body_parts_covered = 0
 	siemens_coefficient = 0.8
+	hidden_from_codex = FALSE
 
 /obj/item/clothing/head/HoS/dermal
 	name = "Dermal Armour Patch"
@@ -304,7 +325,7 @@
 		)
 	siemens_coefficient = 0.6
 
-/obj/item/clothing/under/syndicate/ci
+/obj/item/clothing/under/syndicate/chaos
 	name = "Chaos Insurgency field uniform"
 	desc = "Heavy green field military garbs from an unknown group of interest, you'd assume it's from the Chaos Insurgency."
 	icon_state = "ci_jumpsuit"

@@ -1,4 +1,4 @@
-#define FUSION_ENERGY_PER_K        20
+#define FUSION_ENERGY_PER_K        50
 #define FUSION_INSTABILITY_DIVISOR 50000
 #define FUSION_RUPTURE_THRESHOLD   10000
 #define FUSION_REACTANT_CAP        10000
@@ -398,7 +398,7 @@
 					continue
 				var/decl/fusion_reaction/cur_reaction = get_fusion_reaction(cur_p_react, cur_s_react)
 				if(cur_reaction && plasma_temperature >= cur_reaction.minimum_energy_level)
-					LAZYDISTINCTADD(possible_reactions, cur_reaction)
+					LAZYOR(possible_reactions, cur_reaction)
 
 			//if there are no possible reactions here, abandon this primary reactant and move on
 			if(!LAZYLEN(possible_reactions))

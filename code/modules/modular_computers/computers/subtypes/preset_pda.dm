@@ -2,7 +2,7 @@
 	..()
 
 	network_card = new /obj/item/stock_parts/computer/network_card/(src)
-	hard_drive = new /obj/item/stock_parts/computer/hard_drive/small(src)
+	hard_drive = new /obj/item/stock_parts/computer/storage/hard_drive/small(src)
 	processor_unit = new /obj/item/stock_parts/computer/processor_unit/small(src)
 	card_slot = new /obj/item/stock_parts/computer/card_slot/broadcaster(src)
 	battery_module = new /obj/item/stock_parts/computer/battery_module(src)
@@ -18,6 +18,7 @@
 	hard_drive.store_file(new /datum/computer_file/program/records())
 	hard_drive.store_file(new /datum/computer_file/program/uplink())	//harmless tax software
 	hard_drive.store_file(new /datum/computer_file/program/upload_database_c())
+	hard_drive.store_file(new /datum/computer_file/program/chatserver_c())
 	set_autorun("emailc")
 
 	var/mob/living/carbon/human/H = get_holder_of_type(src, /mob)

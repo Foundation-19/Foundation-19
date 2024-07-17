@@ -367,6 +367,38 @@ Personnel testing SCP-2398 are forbidden from swinging SCP-2398 towards any othe
 SCP-2398 displays no anomalous properties when not in use; however, when swung at a speed over roughly 20m/s, any living organism that SCP-2398 comes in contact with at the end of a swing will violently explode. The mechanism for this is currently unknown.
 "}
 
+/datum/computer_file/data/SCP_doc/scp2020
+	filename = "SCP-2020"
+	stored_data = @{"[acs item_number=2020 clearance_level=2 containment_class=euclid disruption_class=keneq risk_class=caution]
+
+[b]Special Contaiment Procedures:[/b] SCP-2020 is kept in a Type 4 Humanoid Containment Cell at Site 53. Standard amenities and precautions associated with T4HCC are in place. Dietary Supplement 2020-9, consisting of 1.4 kilograms of used shredded paper, is to be provided daily. SCP-2020's cell is to be monitored for any unusual activity, with all vocalizations transcribed.
+
+[b]Description:[/b] SCP-2020 is a sapient humanoid entity approximately 2.2m (7'3") in height and 70kg (150 lbs) in mass. SCP-2020 possesses unusually long and thin limbs, as well as facial features commonly associated with "grey aliens" and bright green coloration.
+
+SCP-2020's body is composed primarily of a novel form of natural rubber that appears to serve skeletal, muscular, circulatory, and endocrine functions. SCP-2020's digestive system and nutritional requirements are consistent with its diet, which consists entirely of paper and water. SCP-2020 has not shown any signs of growth or aging since recovery. Further study of SCP-2020's biology has been hindered by the rubber's toughness and resistance to tearing, which renders standard methodologies ineffective, as well as its dissimilarity to terrestrial biology
+
+SCP-2020 claims to originate from a technologically advanced extraterrestrial civilization, but will make wildly different claims regarding the nature and location of this civilization when questioned. Given the circumstances of SCP-2020's recovery (see Document Bilenkin-Roswell-2020), this avenue of research is nonetheless considered viable.
+
+SCP-2020's behavior suggests that it shares many psychological similarities with humans, such as the ability to learn, a desire for interaction, and partial understanding of social norms. It is fluent in English and responds to the names "Artie", "Bobby", and "Izzy". It has not engaged in hostile behavior, and appears indifferent to its own containment. SCP-2020 will frequently attempt to engage personnel in conversations regarding its desire to write science fiction, and numerous ideas it has for science fiction stories. It has thus far failed to produce any actual writing, citing an inability to choose a concept. See SCP-2020-ADD1 for details.
+"}
+
+/datum/computer_file/data/SCP_doc/scp2020add1
+	filename = "SCP-2020-ADD1"
+	stored_data = @{"[center][b]2020 ADDENDUM 1: INTERVIEW LOG[/b]
+
+No, no. Wait. Guys. I have an idea. A better idea. There's this facility, right? It was made by someone at some time in the past to, to bring the whole world back from the apocalypse. Like, something could blow a big hole in the Earth, and after the facility went "game over, play again why slash en" that hole could just be the Marianas trench, because the facility can do pretty much anything, with physics and technology, I think. Cliche, right? I don't really know how exactly this fits into a story or anything, but I mean, it could be the setting, I think? I guess I can think...
+
+Guys. I had another idea. Forget that one. This one, this one is a brain in a jar, that's a guy. Cliche, right? But like, the idea here is that I'd just run with it. Crazy nutty professor type, nutty inventions that don't work, complete nonsense. But it's all working. Guys. That guy and his inventions could be like, a superhero or something. Germy vacuum, the, the vacuum brain in a jar with... germs. That sounds wrong. I'll think of something.
+
+It's okay though, because I just got this awesome idea. There's a wizard, wait for it, from space. A space wizard. Guys. That's not the only part though. He's a cyborg. And he's with five, with five catgirls. And guess what the twist is? That's right. The catgirls? Also cyborgs. And they fight crime. Cliche, right? I mean, but it's not, because they're fighting... space crime. Crime in space. Does that make sense? Guys. The story would be about them being cyborgs and fighting crime.
+
+Actually, no. Because I just got a better idea. Wait. It's an AI, right? An artificial intelligence on a computer. Cliche, right? Well, it makes simulations of the perfect world for that person, and then, and then it eats their brains. Guys. But maybe it's not actually doing that, and I, or I guess the characters, don't know for sure that it's actually doing that because we can't see inside it. But here's a plot twist, though. It then puts a fake brain in them and makes the bodies convince other people to go into the simulation. It's a horror story, or a sci-fi horror story. Science horror story.
+
+Wait. Guys. Here's an idea for you, I just got this idea. There's a time machine, right? And it sends people to the future and then back to the present, and in the future, in the future everyone dies from an asteroid. I mean, not everyone, just enough people that it's like everyone. Cliche, right? Well, the main characters, or I guess it could be the villains, or villain protagonists, they're trying to make sure that future happens. Guys. That's because every time they try to look at another future, that future is even worse because it involves actually everyone dying, except for one time where it's like a "who wants to live forever" deal. I don't know what the actual story is, but I'll think of something.
+
+Okay, wait, but seriously. Better idea. Guys. There's this alien, right? Like they have in the movies, with the green skin and the big black eyes and everything. Cliche, right? But wait. And for whatever reason, I'll think of that later, it really wants to become a science fiction writer, but it can't stop coming up with ideas long enough to do it. And the twist, here's the twist, is that it's talking to some people, and they're from a government agency that already has all of the things it's talking about, and they're all like "how does it know this stuff" and "does it even know that it's all real", right?
+"}
+
 /datum/computer_file/data/SCP_doc/scp2427
 	filename = "SCP-2427"
 	stored_data = @{"[acs item_number=2427 clearance_level=3 containment_class=keter disruption_class=keneq risk_class=danger]
@@ -404,4 +436,17 @@ Beginning in 1941, SCP-3349 has been actively expunged from the civilian medical
 SCP-3349 is not constant and appears periodically in the affected individual with an average of nine occurrences per day, lasting for an average of three minutes per occurrence. Subjectively, patients report feeling comforted, elated, and euphoric. Objectively, SCP-3349 produces a "fluttering" central and peripheral pulse upon palpation, often described as tactilely similar to a purr of [i]Felis catus[/i] (the common house cat), and can be auscultated with a stethoscope, the clinical descriptions also citing the purr of [i]Felis catus[/i].
 On electrocardiogram, SCP-3349's manifestations display commonalities with the waveforms of human vocalizations. Spectrographically-reconstructed audio signals based on SCP-3349's electrical signatures produce various intonations of human-like laughter, wailing, and speech. Auditory outputs resembling the purr of [i]Felis catus[/i] have also been reported.
 SCP-3349 is non-curable, but is refractory to defibrillation at 200, 300, and 360 Joules. There are no known precipitating or alleviating factors regarding SCP-3349, other than the aforementioned induction. Despite the erratic electrical activity, patients remain stable, though few may experience some reduction in exercise tolerance.
+"}
+
+/datum/computer_file/data/SCP_doc/scp5295
+	filename = "SCP-5295"
+	stored_data = @{"[acs item_number=5295 clearance_level=4 containment_class=safe disruption_class=dark risk_class=notice]
+
+[b]Special Contaiment Procedures:[/b] SCP-5295 is to be stored in a portable flash drive, kept within a standard Safe-class containment locker. Due to the increased risk of malicious use, the drive containing SCP-5295 is not to be inserted into any computer without strict supervision by Security personnel.
+
+[b]Description:[/b] SCP-5295 is an application titled "Total Area Network." When executed, the user is prompted to enter the Network ID of a currently active device. SCP-5295 will then attempt to connect to said device, even if SCP-5295 has no network connection itself.
+Once connected, the user of SCP-5295 must wait for the connected device to be shut down. Said device will display a warning sign - 'You may not switch this device off safely.'
+Once the target device is deactivated, SCP-5295 will allow access to the connected computer's files, as if they were connected via a local area network. This connection will persist even if the connected device is completely removed from all power sources.
+Any file copied by SCP-5295 will become heavily corrupted on the target device.
+To break the connection from SCP-5295, you must remove or destroy the computer's network card.
 "}

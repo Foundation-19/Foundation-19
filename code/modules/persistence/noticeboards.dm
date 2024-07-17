@@ -56,7 +56,7 @@
 
 /obj/structure/noticeboard/proc/add_paper(atom/movable/paper, skip_icon_update)
 	if(istype(paper))
-		LAZYDISTINCTADD(notices, paper)
+		LAZYOR(notices, paper)
 		paper.forceMove(src)
 		if(!skip_icon_update)
 			update_icon()

@@ -58,7 +58,7 @@
 
 /obj/item/folder/Topic(href, href_list)
 	..()
-	if((usr.stat || usr.restrained()))
+	if(usr.stat || usr.restrained() || HAS_TRAIT(usr, TRAIT_HANDS_BLOCKED))
 		return
 
 	if(src.loc == usr)

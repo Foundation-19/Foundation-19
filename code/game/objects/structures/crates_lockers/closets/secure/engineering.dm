@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/engineering_chief
-	name = "chief engineer's locker"
+	name = "engineering director's locker"
 	req_access = list(ACCESS_ENGINEERING_LVL5)
 	icon_state = "securece1"
 	icon_closed = "securece"

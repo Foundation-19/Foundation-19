@@ -1,8 +1,9 @@
-import { classes } from 'common/react';
+import { KEY_ENTER, KEY_ESCAPE } from 'common/keycodes';
 import { clamp } from 'common/math';
+import { classes } from 'common/react';
 import { Component, createRef } from 'inferno';
+
 import { Box } from './Box';
-import { KEY_ESCAPE, KEY_ENTER } from 'common/keycodes';
 
 const DEFAULT_MIN = 0;
 const DEFAULT_MAX = 10000;
@@ -84,7 +85,6 @@ export class RestrictedInput extends Component {
         this.setEditing(false);
         e.target.value = this.props.value;
         e.target.blur();
-        return;
       }
     };
   }
@@ -136,7 +136,8 @@ export class RestrictedInput extends Component {
           monospace && 'Input--monospace',
           className,
         ])}
-        {...rest}>
+        {...rest}
+      >
         <div className="Input__baseline">.</div>
         <input
           className="Input__input"

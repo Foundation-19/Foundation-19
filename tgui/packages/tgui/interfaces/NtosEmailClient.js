@@ -1,9 +1,21 @@
 /* eslint react/no-danger: "off" */
-import { Fragment } from 'inferno';
-import { useBackend } from '../backend';
-import { Button, Box, Section, Table, LabeledList, Input, Tabs, Flex, AnimatedNumber, ProgressBar } from '../components';
-import { NtosWindow } from '../layouts';
 import { round } from 'common/math';
+import { Fragment } from 'inferno';
+
+import { useBackend } from '../backend';
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  Flex,
+  Input,
+  LabeledList,
+  ProgressBar,
+  Section,
+  Table,
+  Tabs,
+} from '../components';
+import { NtosWindow } from '../layouts';
 
 export const NtosEmailClient = (props, context) => {
   const { act, data } = useBackend(context);
@@ -91,7 +103,8 @@ const NtosEmailClientContent = (props, context) => {
             onClick={() => act('logout')}
           />
         </Fragment>
-      }>
+      }
+    >
       {content}
     </Section>
   );
@@ -107,17 +120,20 @@ const NtosEmailClientInbox = (props, context) => {
       <Tabs>
         <Tabs.Tab
           selected={folder === 'Inbox'}
-          onClick={() => act('set_folder', { 'set_folder': 'Inbox' })}>
+          onClick={() => act('set_folder', { set_folder: 'Inbox' })}
+        >
           Inbox
         </Tabs.Tab>
         <Tabs.Tab
           selected={folder === 'Spam'}
-          onClick={() => act('set_folder', { 'set_folder': 'Spam' })}>
+          onClick={() => act('set_folder', { set_folder: 'Spam' })}
+        >
           Spam
         </Tabs.Tab>
         <Tabs.Tab
           selected={folder === 'Deleted'}
-          onClick={() => act('set_folder', { 'set_folder': 'Deleted' })}>
+          onClick={() => act('set_folder', { set_folder: 'Deleted' })}
+        >
           Deleted
         </Tabs.Tab>
       </Tabs>
@@ -225,7 +241,8 @@ export const NtosEmailClientViewMessage = (props, context) => {
             />
           </Fragment>
         )
-      }>
+      }
+    >
       <LabeledList>
         <LabeledList.Item label="From">{cur_source}</LabeledList.Item>
         <LabeledList.Item label="At">{cur_timestamp}</LabeledList.Item>
@@ -263,7 +280,8 @@ const NtosEmailClientAddressBook = (props, context) => {
           icon="times"
           onClick={() => act('set_recipient', { set_recipient: null })}
         />
-      }>
+      }
+    >
       {accounts.map((acc) => (
         <Button
           key={acc.login}
@@ -300,7 +318,8 @@ const NtosEmailClientNewMessage = (props, context) => {
           </Button>
           <Button color="bad" icon="times" onClick={() => act('cancel')} />
         </Fragment>
-      }>
+      }
+    >
       <LabeledList>
         <LabeledList.Item label="Title">
           <Input
@@ -322,7 +341,15 @@ const NtosEmailClientNewMessage = (props, context) => {
               <Button
                 icon="address-book"
                 onClick={() => act('addressbook')}
-                tooltip="Find Receipients"
+                tooltip="Find Recipients"
+                tooltipPosition="left"
+              />
+            </Flex.Item>
+            <Flex.Item>
+              <Button
+                icon="info"
+                onClick={() => act('codexinfo')}
+                tooltip="Check Codex"
                 tooltipPosition="left"
               />
             </Flex.Item>
@@ -335,7 +362,8 @@ const NtosEmailClientNewMessage = (props, context) => {
               <Button
                 color="bad"
                 icon="times"
-                onClick={() => act('remove_attachment')}>
+                onClick={() => act('remove_attachment')}
+              >
                 Remove Attachment
               </Button>
             )) || (
@@ -343,7 +371,8 @@ const NtosEmailClientNewMessage = (props, context) => {
                 Add Attachment
               </Button>
             )
-          }>
+          }
+        >
           {(msg_hasattachment && (
             <Box inline>
               {msg_attachment_filename} ({msg_attachment_size}GQ)
@@ -386,7 +415,8 @@ const NtosEmailClientError = (props, context) => {
           content="Return"
           onClick={() => act('reset')}
         />
-      }>
+      }
+    >
       <Box color="bad">{error}</Box>
     </Section>
   );
