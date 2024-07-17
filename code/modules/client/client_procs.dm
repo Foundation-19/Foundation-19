@@ -483,6 +483,7 @@
 
 	view = new_size
 	apply_clickcatcher()
+	update_skybox(TRUE)
 	if(mob)
 		mob.update_cone_size()
 		mob.reload_fullscreen()

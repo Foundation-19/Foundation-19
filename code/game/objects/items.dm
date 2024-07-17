@@ -764,7 +764,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(istype(H))
 		H.handle_vision()
 
-	user.client.view = viewsize
+	user.client.change_view(viewsize)
 	zoom = 1
 
 	RegisterSignal(src, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/obj/item, unzoom))
@@ -799,7 +799,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(!user.client)
 		return
 
-	user.client.view = user.client.get_default_view()
+	user.client.change_view(user.client.get_default_view())
 	if(!user.hud_used.hud_shown)
 		user.toggle_zoom_hud()
 
