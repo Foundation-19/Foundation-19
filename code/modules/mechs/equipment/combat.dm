@@ -146,6 +146,7 @@
 	layer = ABOVE_HUMAN_LAYER
 	var/north_layer = MECH_UNDER_LAYER
 	plane = DEFAULT_PLANE
+	vis_flags = VIS_INHERIT_PLANE
 	pixel_x = 8
 	pixel_y = 4
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
