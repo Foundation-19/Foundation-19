@@ -81,7 +81,7 @@
 	return 0
 
 /obj/machinery/turretid/CanUseTopic(mob/user)
-	if(isLocked(user))
+	if(isLocked(user) && !user.can_admin_interact())
 		return STATUS_CLOSE
 
 	return ..()
