@@ -158,15 +158,12 @@
 	skill_points = 20
 	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
-
 	psi_faculties = list(
 		"[PSI_COERCION]" = PSI_RANK_OPERANT,
 		"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
 		"[PSI_REDACTION]" = PSI_RANK_MASTER,
 		"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
 		) //Higher level of Psionics, as Seniormost expert on them in the site.
-
-	return ..()
 
 /datum/job/mentalist
 	title = "Psychotronics Researcher"
@@ -210,10 +207,7 @@
 	skill_points = 15
 	roleplay_difficulty = "Easy - Medium"
 	mechanical_difficulty = "Medium"
-
 	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT) //Basic level of Psionics, with ability to read others.
-
-	return ..()
 
 /datum/job/seniorscientist
 	title = "Senior Researcher"
