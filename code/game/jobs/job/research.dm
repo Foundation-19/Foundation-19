@@ -176,7 +176,7 @@
 	minimal_player_age = 10
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/science/mentalist
-	class = CLASS_B
+	class = CLASS_C
 	hud_icon = "hudseniorresearcher"
 
 	access = list(
