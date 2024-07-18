@@ -215,7 +215,7 @@
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 480)
 
-	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist", "Mentalist")
+	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist")
 	minimal_player_age = 7
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/science/seniorscientist
