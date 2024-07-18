@@ -761,6 +761,13 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/sciencelvlp
 	name = "science ID"
 	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl3"
+	item_state = "Science_ID3"
+	job_access_type = /datum/job/mentalist
+
+/obj/item/card/id/sciencelvlps
+	name = "science ID"
+	desc = "An orange ID. Looks important."
 	icon_state = "sciencelvl4"
 	item_state = "Science_ID4"
 	job_access_type = /datum/job/seniormentalist
