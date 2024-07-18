@@ -62,7 +62,7 @@
 
 // IO  && IA Moved into a singular role
 /datum/job/tribunal_agent
-	title = "Internal Affair Agent"
+	title = "Internal Affairs Agent"
 	department = "Command"
 	selection_color = "#2f2f7f"
 	department_flag = COM|SEC
