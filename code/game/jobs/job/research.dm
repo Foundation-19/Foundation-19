@@ -154,8 +154,8 @@
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
 	if (H.mind?.role_alt_title == "Senior Mentalist") //Higher level of Psionics, as Seniormost expert on them in the site.
-		psi_faculties = list("
-			[PSI_COERCION]" = PSI_RANK_MASTER,
+		psi_faculties = list(
+			"[PSI_COERCION]" = PSI_RANK_MASTER,
 			"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
 			"[PSI_REDACTION]" = PSI_RANK_OPERANT,
 			"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
