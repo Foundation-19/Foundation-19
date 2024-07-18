@@ -71,3 +71,35 @@
       stacks of weakness, as well as 4 stacks of paralysis.
   - balance: 049 curing grab has a delay of 10 seconds (from 4 seconds).
   - balance: 049 now has partial flash resistance (from FULL flash resistance).
+2024-07-15:
+  cheesePizza2:
+  - rscdel: All Horizon Initiative references have been removed.
+  - rscadd: Made major changes to the relay chat program. It now works on a server-client
+      system (similar to the upload database), and has additional functionality.
+  - rscadd: Added additional broadcast e-mails (one for every department).
+  quadbium:
+  - rscadd: Added Lobby Track goc_spawn_theme2
+  - rscadd: Added Lobby Track fall_of_ganzir
+2024-07-17:
+  ChromeFoxxity:
+  - rscadd: Normal Forensics module. Robot ballistics.
+  - imageadd: Added several android icons.
+  - imagedel: Replaced/Removed a few useless icons.
+  Magisterium2022:
+  - rscadd: Added basic Psionic abilities to Senior Mentalist.
+  - rscadd: Added two Jerraman vials to Senior Mentalist.
+  cheesePizza2:
+  - rscadd: SCP-5295 is here! Located in LCZ, this program lets you remotely hack
+      into other devices (if you can get their network ID). Slight mapping changes
+      were made to accommodate the new skip.
+  - rscadd: The Computer Configuration program allows you to quickly scan internal
+      components.
+  - bugfix: Portable drives actually work now.
+  - rscadd: The IT department starts with a few portable drives.
+  - bugfix: Programs have proper menu icons now.
+  quadbium:
+  - rscadd: Adds a design datum for the industrial hardsuit
+  - rscadd: Adds a design datum for the EVA hardsuit
+  - rscadd: Adds a design datum for the Hazmat hardsuit
+  - rscadd: Adds a design datum for the medical hardsuit
+  - rscadd: Adds a design datum for the Hazard hardsuit

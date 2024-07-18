@@ -1,6 +1,0 @@
-author: cheesePizza2
-delete-after: true
-changes:
-  - rscadd: Made major changes to the relay chat program. It now works on a server-client
-      system (similar to the upload database), and has additional functionality.
-  - rscadd: Added additional broadcast e-mails (one for every department).

@@ -16,7 +16,7 @@ export const NtosConfiguration = (props, context) => {
     hardware = [],
   } = data;
   return (
-    <NtosWindow theme={PC_device_theme} width={520} height={630} resizable>
+    <NtosWindow theme={PC_device_theme} width={600} height={630} resizable>
       <NtosWindow.Content scrollable>
         <Section
           title="Power Supply"
@@ -80,6 +80,14 @@ export const NtosConfiguration = (props, context) => {
                       }
                     />
                   )}
+                  <Button
+                    mr={1}
+                    onClick={() =>
+                      act('PC_component_diagnostic', { name: component.name })
+                    }
+                  >
+                    Scan
+                  </Button>
                   <Box inline bold mr={1}>
                     Power Usage: {component.powerusage}W
                   </Box>

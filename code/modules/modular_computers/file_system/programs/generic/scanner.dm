@@ -4,6 +4,7 @@
 	extended_desc = "This program allows setting up and using an attached scanner module."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "print"
 	size = 6
 	requires_ntnet = FALSE
 	available_on_ntnet = TRUE

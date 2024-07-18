@@ -153,8 +153,11 @@
 	mechanical_difficulty = "Medium"
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist")
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
+	if (H.mind?.role_alt_title == "Senior Mentalist") //Basic level of Psionics, with ability to read others.
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_MASTER)
+		psi_faculties = list("[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT)
+		psi_faculties = list("[PSI_ENERGISTICS]" = PSI_RANK_OPERANT)
 	return ..()
 
 /datum/job/seniorscientist

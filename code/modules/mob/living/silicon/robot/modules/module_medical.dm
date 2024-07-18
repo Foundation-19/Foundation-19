@@ -19,10 +19,12 @@
 	name = "surgeon robot module"
 	display_name = "Surgeon"
 	sprites = list(
-		"Basic" = "Medbot",
 		"Standard" = "surgeon",
 		"Advanced Droid" = "droid-medical",
-		"Needles" = "medicalrobot"
+		"Android - Medical Intern" = "medinternrobot",
+		"Android - Nurse" = "nurserobot",
+		"Android - Doctor" = "doctorrobot",
+		"Android - Surgeon" = "surgeonrobot"
 		)
 	equipment = list(
 		/obj/item/device/flash,

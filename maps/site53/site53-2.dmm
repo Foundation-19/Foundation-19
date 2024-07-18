@@ -9660,8 +9660,8 @@
 /obj/item/stock_parts/computer/processor_unit,
 /obj/item/stock_parts/computer/nano_printer,
 /obj/item/stock_parts/computer/network_card,
-/obj/item/stock_parts/computer/hard_drive/portable,
-/obj/item/stock_parts/computer/hard_drive,
+/obj/item/stock_parts/computer/storage/portable_drive,
+/obj/item/stock_parts/computer/storage/hard_drive,
 /obj/item/stock_parts/computer/card_slot,
 /obj/item/stock_parts/computer/battery_module,
 /obj/item/stock_parts/computer/ai_slot,
@@ -13183,6 +13183,11 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
+"aJN" = (
+/obj/effect/floor_decal/corner/black/mono,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "aJP" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Technical Closet";
@@ -24304,6 +24309,10 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/scp912)
+"dfi" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/llcz/genstorage2)
 "dfj" = (
 /obj/item/clothing/gloves/thick/botany,
 /obj/item/material/hatchet,
@@ -25346,12 +25355,16 @@
 /obj/structure/sign/scp/euclid_scp{
 	pixel_y = 32
 	},
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 4
-	},
 /obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 1
 	},
+/obj/structure/sign/scp/safe_scp{
+	pixel_x = 32
+	},
+/obj/effect/floor_decal/corner/lightgrey/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/safe/bordercorner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
 "dJZ" = (
@@ -31398,6 +31411,21 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/cellbubble)
+"hlo" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "hls" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -32455,6 +32483,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/researchwing)
+"hMy" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/science{
+	name = "Vacant Item Storage Room"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/genstorage2)
 "hMF" = (
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/humanoidcontainment)
@@ -33539,9 +33578,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/ulcz/humanoidcontainment)
 "inU" = (
-/obj/structure/sign/scp/safe_scp{
-	pixel_x = 32
-	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner{
 	dir = 4
 	},
@@ -34891,6 +34927,17 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/researchwing)
+"jft" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "jfu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -37786,6 +37833,18 @@
 	},
 /turf/simulated/floor/tiled/corner,
 /area/site53/lhcz/scp035room)
+"kMc" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/science{
+	name = "SCP-5295";
+	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/llcz/scp5295)
 "kMV" = (
 /obj/machinery/computer/cryopod{
 	pixel_x = -32
@@ -39531,6 +39590,21 @@
 /obj/item/stool/padded,
 /turf/simulated/floor/tiled/white,
 /area/site53/surface/bunker)
+"lNY" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "lOh" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
@@ -42053,6 +42127,11 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
+"mXY" = (
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/safe/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "mYg" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
@@ -42288,6 +42367,17 @@
 	dir = 8
 	},
 /area/site53/uhcz/hallways)
+"nfD" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "nfV" = (
 /obj/effect/floor_decal/chapel{
 	dir = 8
@@ -45196,6 +45286,13 @@
 	},
 /turf/simulated/floor/tiled/corner,
 /area/site53/uhcz/scp106containment)
+"oCG" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "oCP" = (
 /obj/machinery/light{
 	dir = 1
@@ -54599,6 +54696,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
+"tzy" = (
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/computer/storage/portable_drive/scp5295,
+/obj/effect/floor_decal/corner/safe/mono,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "tzE" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -56131,6 +56234,10 @@
 /obj/effect/floor_decal/corner/safe/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
+"uvi" = (
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site53/llcz/scp5295)
 "uvl" = (
 /obj/structure/closet/crate/bin,
 /obj/item/storage/pill_bottle/happy,
@@ -56443,6 +56550,13 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"uIM" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/black/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "uIO" = (
 /obj/machinery/light{
 	dir = 8
@@ -57740,6 +57854,12 @@
 /obj/machinery/biogenerator,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
+"vzZ" = (
+/obj/effect/floor_decal/corner/black/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/genstorage2)
 "vAq" = (
 /obj/machinery/power/apc{
 	dir = 8
@@ -60889,6 +61009,15 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
+"xnZ" = (
+/obj/machinery/camera/network/lcz{
+	name = "SCP-5295"
+	},
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/llcz/scp5295)
 "xoe" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -62629,6 +62758,14 @@
 	},
 /turf/simulated/floor,
 /area/site53/llcz/dclass/checkcryo)
+"ylk" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/corner/lightgrey/bordercorner,
+/obj/effect/floor_decal/corner/safe/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/hallways)
 "ylz" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Hallway"
@@ -75427,11 +75564,11 @@ dJZ
 kwX
 evx
 dJS
-aIT
-aIT
-aIT
-aIT
-rfq
+fVr
+jqb
+nLr
+fVr
+ylk
 bdf
 nAL
 aGM
@@ -75682,13 +75819,13 @@ jmX
 aXl
 ehR
 wua
-evx
-bdf
-bdf
-bdf
-bdf
-bdf
-bdf
+aXi
+aXi
+gkq
+uvi
+uvi
+kMc
+uvi
 bdf
 uyy
 xTw
@@ -75707,14 +75844,14 @@ aWv
 aWv
 aWL
 aWv
-aXi
-aXi
-gkq
-aXi
 ffp
 ffp
 jbZ
 ffp
+dfi
+dfi
+hMy
+dfi
 bdf
 bMi
 dhj
@@ -75939,13 +76076,13 @@ evx
 evx
 evx
 evx
-evx
-azA
-azA
-azA
-azA
-azA
-azA
+aXi
+huZ
+nXs
+uvi
+lNY
+jft
+uvi
 bdf
 umo
 umo
@@ -75964,14 +76101,14 @@ aWv
 aWB
 aWM
 aWv
-aXi
-huZ
-nXs
-aXi
 ffp
 otI
 wpo
 ffp
+dfi
+hlo
+nfD
+dfi
 azA
 bMi
 bMi
@@ -76196,13 +76333,13 @@ bGY
 bGY
 azA
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aXi
+qUx
+bjA
+uvi
+xnZ
+oCG
+uvi
 azA
 umo
 kXd
@@ -76221,14 +76358,14 @@ aWv
 ebb
 aWC
 aWv
-aXi
-qUx
-bjA
-aXi
 ffp
 iHI
 xxa
 ffp
+dfi
+vzZ
+uIM
+dfi
 azA
 azA
 azA
@@ -76453,13 +76590,13 @@ hZq
 bGY
 bGY
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aXi
+aXb
+tXq
+uvi
+tzy
+mXY
+uvi
 azA
 umo
 weF
@@ -76478,14 +76615,14 @@ aWv
 aWD
 aWN
 aWv
-aXi
-aXb
-tXq
-aXi
 ffp
 dmf
 dmf
 ffp
+dfi
+aJN
+aJN
+dfi
 azA
 azA
 azA
@@ -76710,13 +76847,13 @@ bVF
 oSi
 bGY
 azA
-azA
-azA
-azA
-azA
-azA
-azA
-azA
+aXi
+aXi
+aXi
+uvi
+uvi
+uvi
+uvi
 azA
 umo
 kXd
@@ -76735,14 +76872,14 @@ aWv
 aWv
 aWv
 aWv
-aXi
-aXi
-aXi
-aXi
 ffp
 ffp
 ffp
 ffp
+dfi
+dfi
+dfi
+dfi
 azA
 azA
 azA
