@@ -76,7 +76,7 @@
 	alt_titles = list("Internal Affair Operative" = /decl/hierarchy/outfit/job/security/tribunal_operative)
 	outfit_type = /decl/hierarchy/outfit/job/security/tribunal_agent
 	class = CLASS_B
-	hud_icon = "hudbridgeofficer"
+	hud_icon = "hudtdia"
 
 	access = list(
 		ACCESS_SEC_COMMS,
