@@ -117,7 +117,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director and Assistant Research Director"
 	economic_power = 4
-	requirements = list(EXP_TYPE_SCIENCE = 480)
+	requirements = list(EXP_TYPE_SCIENCE = 620)
 	alt_titles = list("Senior Mentalist")
 	minimal_player_age = 10
 	ideal_character_age = 35
@@ -151,15 +151,12 @@
 	skill_points = 20
 	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
-
-/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist") //Higher level of Psionics, as Seniormost expert on them in the site.
-		psi_faculties = list(
-			"[PSI_COERCION]" = PSI_RANK_MASTER,
-			"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
-			"[PSI_REDACTION]" = PSI_RANK_OPERANT,
-			"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
-			)
+	psi_faculties = list(
+		"[PSI_COERCION]" = PSI_RANK_OPERANT,
+		"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
+		"[PSI_REDACTION]" = PSI_RANK_MASTER,
+		"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
+		) //Higher level of Psionics, as Seniormost expert on them in the site.
 	return ..()
 
 /datum/job/mentalist
@@ -192,22 +189,19 @@
 	min_skill = list(
 	    SKILL_CHEMISTRY	  = SKILL_TRAINED,
 		SKILL_MEDICAL	  = SKILL_TRAINED,
-	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	    SKILL_SCIENCE     = SKILL_ETRAINED
 	)
 
 	max_skill = list(
-		SKILL_CHEMISTRY   = SKILL_MASTER,
+		SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
 	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
-	skill_points = 20
+	skill_points = 15
 	roleplay_difficulty = "Easy - Medium"
 	mechanical_difficulty = "Medium"
-
-/datum/job/mentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Mentalist") //Basic level of Psionics, with ability to read others.
-		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT)
+	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT) //Basic level of Psionics, with ability to read others.
 	return ..()
 
 /datum/job/seniorscientist
