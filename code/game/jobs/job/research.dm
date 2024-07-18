@@ -149,11 +149,63 @@
 	)
 
 	skill_points = 20
-	roleplay_difficulty = "Easy - Medium"
+	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist") //Basic level of Psionics, with ability to read others.
+	if (H.mind?.role_alt_title == "Senior Mentalist") //Higher level of Psionics, as Seniormost expert on them in the site.
+		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_MASTER
+		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_GRANDMASTER)
+		psi_faculties = list("[PSI_PSYCHOKINESIS]" = PSI_RANK_MASTER)
+		psi_faculties = list("[PSI_ENERGISTICS]" = PSI_RANK_MASTER)
+	return ..()
+
+/datum/job/mentalist
+	title = "Psychotronics Researcher"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Senior Psychotronics Researcher, Research Director, and Assistant Research Director"
+	economic_power = 4
+	requirements = list(EXP_TYPE_SCIENCE = 480)
+	alt_titles = list("Mentalist")
+	minimal_player_age = 10
+	ideal_character_age = 35
+	outfit_type = /decl/hierarchy/outfit/job/science/mentalist
+	class = CLASS_B
+	hud_icon = "hudseniorresearcher"
+
+	access = list(
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_SCIENCE_LVL4,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_RESEARCH
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_CHEMISTRY	  = SKILL_TRAINED,
+		SKILL_MEDICAL	  = SKILL_TRAINED,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
+
+	max_skill = list(
+		SKILL_CHEMISTRY   = SKILL_MASTER,
+	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
+
+	skill_points = 20
+	roleplay_difficulty = "Easy - Medium"
+	mechanical_difficulty = "Medium"
+
+/datum/job/rmentalist/equip(mob/living/carbon/human/H)
+	if (H.mind?.role_alt_title == "Mentalist") //Basic level of Psionics, with ability to read others.
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
 		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_MASTER)
 		psi_faculties = list("[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT)
