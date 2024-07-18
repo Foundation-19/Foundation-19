@@ -114,4 +114,4 @@
 	shoes = /obj/item/clothing/shoes/black
 	id_type = /obj/item/card/id/sciencelvlp
 	l_pocket = /obj/item/material/coin/nullglass
-	l_ear = /obj/item/device/radio/headset/headset_secsci
+	l_ear = /obj/item/device/radio/headset/headset_sci
