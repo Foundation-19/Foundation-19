@@ -16,11 +16,11 @@
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "frame"
 	desc = "A remote control for a door."
-	req_access = list(ACCESS_BRIG)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	anchored = TRUE    		// can't pick it up
 	density = FALSE       		// can walk through it.
 	var/id = null     		// id of door it controls.
-	var/timing = 1    		// boolean, true/1 timer is on, false/0 means it's not timing
+	var/timing = FALSE    		// boolean, true/1 timer is on, false/0 means it's not timing
 	var/picture_state		// icon_state of alert picture, if not displaying text/numbers
 	var/list/obj/machinery/door/window/brigdoor/doors = list() // list of weakrefs to nearby doors
 	var/list/obj/machinery/flasher/flashers = list() // list of weakrefs to nearby flashers
@@ -84,7 +84,7 @@
 
 	activation_time = world.time
 	timing = TRUE
-	START_PROCESSING(SSmachines, src)
+	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 	for(var/weakref/door_ref as anything in doors)
 		var/obj/machinery/door/window/brigdoor/door = door_ref.resolve()
@@ -119,7 +119,7 @@
 	activation_time = 0
 	have_logged = FALSE
 	broadcast_security_hud_message("The timer for [id] has expired.", src)
-	STOP_PROCESSING(SSmachines, src)
+	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 	for(var/weakref/door_ref as anything in doors)
 		var/obj/machinery/door/window/brigdoor/door = door_ref.resolve()
@@ -209,12 +209,11 @@
 			flasher.flash()
 
 	if (href_list["adjust"])
-		if(!have_logged && timing)
-			log_and_message_staff("has started a brig timer over 20 minutes in length!")
-			have_logged = TRUE
+		. = TOPIC_REFRESH
+		if(timing)
+			return
 		timer_duration += text2num(href_list["adjust"])
 		timer_duration = Clamp(timer_duration, 0, 30 MINUTES)
-		. = TOPIC_REFRESH
 
 	update_icon()
 
@@ -231,7 +230,7 @@
 		set_picture("ai_bsod")
 		return
 	if(src.timing)
-		var/disp1 = id
+		var/disp1 = name
 		var/timeleft = timeleft()
 		var/disp2 = "[add_zero(num2text((timeleft / 60) % 60),2)]:[add_zero(num2text(timeleft % 60), 2)]"
 		if(length(disp2) > CHARS_PER_LINE)
@@ -276,31 +275,6 @@
 		ID.pixel_y = py
 		I.add_overlay(ID)
 	return I
-
-
-/obj/machinery/door_timer/cell_1
-	name = "Cell 1"
-	id = "Cell 1"
-
-/obj/machinery/door_timer/cell_2
-	name = "Cell 2"
-	id = "Cell 2"
-
-/obj/machinery/door_timer/cell_3
-	name = "Cell 3"
-	id = "Cell 3"
-
-/obj/machinery/door_timer/cell_4
-	name = "Cell 4"
-	id = "Cell 4"
-
-/obj/machinery/door_timer/cell_5
-	name = "Cell 5"
-	id = "Cell 5"
-
-/obj/machinery/door_timer/cell_6
-	name = "Cell 6"
-	id = "Cell 6"
 
 #undef FONT_SIZE
 #undef FONT_COLOR
