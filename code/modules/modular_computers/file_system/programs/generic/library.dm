@@ -114,16 +114,18 @@ The answer was five and a half years -ZeroBits
 
 			var/upload_category = input(usr, "Upload to which category?") in list("Fiction", "Non-Fiction", "Reference", "Religion")
 
+			var/list/query_data = list(
+				"author" = B.author,
+				"title" = B.name,
+				"content" = B.dat,
+				"category" = upload_category
+			)
 			var/datum/db_query/query = SSdbcore.NewQuery({"
 				INSERT INTO library (author, title, content, category)
-				VALUES (:author, :title, :content, :category)
-			"}, list(
-					"author" = B.author,
-					"title" = B.name,
-					"content" = B.dat,
-					"category" = upload_category
-				)
+				VALUES (:author, :title, :content, :category)"},
+				query_data
 			)
+
 			if(!query.Execute())
 				to_chat(usr, query.ErrorMsg())
 				error_message = "Network Error: Unable to upload to the Archive. Contact your system Administrator for assistance."
