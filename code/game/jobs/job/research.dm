@@ -148,16 +148,17 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
-	psi_faculties = list(
-		"[PSI_COERCION]" = PSI_RANK_MASTER,
-		"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
-		"[PSI_REDACTION]" = PSI_RANK_OPERANT,
-		"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
-	)
-
 	skill_points = 20
 	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
+
+/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
+	psi_faculties = list(
+		"[PSI_COERCION]" = PSI_RANK_OPERANT,
+		"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
+		"[PSI_REDACTION]" = PSI_RANK_MASTER,
+		"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
+		)
 
 /datum/job/mentalist
 	title = "Psychotronics Researcher"
@@ -198,6 +199,7 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
+/datum/job/mentalist/equip(mob/living/carbon/human/H)
 	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT) //Basic level of Psionics, with ability to read others.
 
 	skill_points = 15
