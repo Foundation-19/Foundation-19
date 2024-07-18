@@ -182,7 +182,6 @@
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL3,
-		ACCESS_SCIENCE_LVL4,
 		ACCESS_MEDICAL_LVL1,
 		ACCESS_RESEARCH
 	)
@@ -204,7 +203,7 @@
 	roleplay_difficulty = "Easy - Medium"
 	mechanical_difficulty = "Medium"
 
-/datum/job/rmentalist/equip(mob/living/carbon/human/H)
+/datum/job/mentalist/equip(mob/living/carbon/human/H)
 	if (H.mind?.role_alt_title == "Mentalist") //Basic level of Psionics, with ability to read others.
 		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
 		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_MASTER)
