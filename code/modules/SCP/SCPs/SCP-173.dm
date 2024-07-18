@@ -334,7 +334,7 @@
 
 /mob/living/scp173/proc/Defecate()
 	var/feces_amount = CheckFeces()
-	if(feces_amount >= 30 && (!SCP.hasMinimumPlayers()) && !client) //If we're lowpop we cant breach ourselves
+	if(feces_amount >= 30 && (!SCP.has_minimum_players()) && !client) //If we're lowpop we cant breach ourselves
 		return
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time

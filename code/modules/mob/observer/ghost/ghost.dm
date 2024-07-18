@@ -639,7 +639,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	if(world.time < PSCP.min_time)
 		return FALSE
-	if(!PSCP.hasMinimumPlayers())
+	if(!PSCP.has_minimum_players())
 		return FALSE
 	if(PossibleSCP.client)
 		return FALSE

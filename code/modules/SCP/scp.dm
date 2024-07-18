@@ -103,8 +103,8 @@
 	if(job && (job.department_flag & (COM|SCI|SEC)))
 		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
 
-/datum/scp/proc/hasMinimumPlayers()
-	return min_playercount >= length(GLOB.clients)
+/datum/scp/proc/has_minimum_players()
+	return length(GLOB.clients) >= min_playercount
 
 /datum/scp/proc/onGain()
 
