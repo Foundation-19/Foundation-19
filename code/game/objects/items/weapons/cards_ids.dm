@@ -713,7 +713,6 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	job_access_type = /datum/job/tribunal_agent
 	class = CLASS_B
 
-
 // GC ID.
 
 /obj/item/card/id/gcseclvl5
