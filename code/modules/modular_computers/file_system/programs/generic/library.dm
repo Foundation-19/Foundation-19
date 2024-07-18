@@ -118,11 +118,12 @@ The answer was five and a half years -ZeroBits
 				INSERT INTO library (author, title, content, category)
 				VALUES (:author, :title, :content, :category)
 			"}, list(
-				"author" = B.author,
-				"title" = B.name,
-				"content" = B.dat,
-				"category" = upload_category
-			))
+					"author" = B.author,
+					"title" = B.name,
+					"content" = B.dat,
+					"category" = upload_category
+				)
+			)
 			if(!query.Execute())
 				to_chat(usr, query.ErrorMsg())
 				error_message = "Network Error: Unable to upload to the Archive. Contact your system Administrator for assistance."
