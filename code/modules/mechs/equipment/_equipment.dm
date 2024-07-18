@@ -16,33 +16,32 @@
 	var/mech_layer = MECH_GEAR_LAYER //For the part where it's rendered as mech gear
 	var/require_adjacent = TRUE
 	var/active = FALSE //For gear that has an active state (ie, floodlights)
+	var/equipment_flags = ME_ANY_POWER
 
 /obj/item/mech_equipment/attack(mob/living/M, mob/living/user, target_zone) //Generally it's not desired to be able to attack with items
-	return 0
+	return FALSE
 
 /obj/item/mech_equipment/afterattack(atom/target, mob/living/user, inrange, params)
 	if(require_adjacent)
 		if(!inrange)
-			return 0
+			return FALSE
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
 		if(target in owner.contents)
-			return 0
+			return FALSE
 
-		if(!(owner.get_cell()?.check_charge(active_power_use * CELLRATE)))
+		if(!(get_cell()?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
-			return 0
-		return 1
-	else
-		return 0
+			return FALSE
+		return TRUE
+	return FALSE
 
 /obj/item/mech_equipment/attack_self(mob/user)
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
-		if(!(owner.get_cell()?.check_charge(active_power_use * CELLRATE)))
+		if(!(get_cell()?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
-			return 0
-		return 1
-	else
-		return 0
+			return FALSE
+		return TRUE
+	return FALSE
 
 /obj/item/mech_equipment/examine(mob/user, distance)
 	. = ..()
@@ -140,6 +139,14 @@
 	return null
 
 /obj/item/mech_equipment/mounted_system/get_cell()
-	if(owner && loc == owner)
+	if(QDELETED(owner))
+		return null
+	if(loc != owner)
+		return null
+	if(equipment_flags & ME_CELL_POWERED && owner.mech_flags & MF_CELL_POWERED)
+		return owner.get_cell()
+	if(equipment_flags & ME_ENGINE_POWERED && owner.mech_flags & MF_ENGINE_POWERED)
+		return owner.get_cell()
+	if(equipment_flags & ME_AUXILIARY_POWERED && owner.mech_flags & MF_AUXILIARY_AVAILABLE)
 		return owner.get_cell()
 	return null

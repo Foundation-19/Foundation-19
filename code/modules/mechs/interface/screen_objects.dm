@@ -341,7 +341,7 @@
 /atom/movable/screen/exosuit/toggle/strafe
 	name = "toggle strafe"
 
-/atom/movable/exosuit/toggle/strafe/toggled() // Prevents exosuits from strafing when EMP'd enough
+/atom/movable/screen/exosuit/toggle/strafe/toggled() // Prevents exosuits from strafing when EMP'd enough
 	if(!(owner.legs.movement_flags & PF_OMNI_STRAFE))
 		to_chat(usr, SPAN_WARNING("Error: This propulsion system doesn't support synchronization!"))
 		return

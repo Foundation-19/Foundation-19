@@ -125,7 +125,7 @@
 		return
 	if((world.time - last_recharge) < cooldown)
 		return
-	var/obj/item/cell/cell = owner.get_cell()
+	var/obj/item/cell/cell = get_cell()
 
 	var/actual_required_power = Clamp(max_charge - charge, 0, charging_rate)
 
