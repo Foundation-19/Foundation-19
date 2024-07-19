@@ -65,7 +65,7 @@
 		SCP_PLAYABLE
 	)
 
-	SCP.min_playercount = 20
+	SCP.min_playercount = 32 //2 guards always on watch, needs to be fed every once in a while, extremely dangerous MF
 
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
