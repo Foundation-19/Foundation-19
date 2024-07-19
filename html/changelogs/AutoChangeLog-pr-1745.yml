@@ -1,0 +1,34 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - rscadd: Experimental support for widescreen toggleable in char prefs
+  - rscadd: Added a Clear Chat button in the chat settings ported from tg
+  - rscadd: Added cell timers to EZ Security and fixed the ones at CDCZ Isolation
+  - bugfix: Fix a critical bug with jobbans breaking them for longer than 32 characters
+      by upping the title limit to 48 characters and also adding a unit test
+  - bugfix: Fixed brig door timers taking 100ms per timer to initialize
+  - bugfix: Fixed floors and walls adding 20 seconds to server startup time
+  - bugfix: Fixed library app on computers
+  - bugfix: Fixed not being able to use look up verb as mobs other than human
+  - bugfix: Station trait for broken lights on roundstart has been tuned to break
+      1/10 lights instead of 1/4 of the lights on the map
+  - bugfix: 173 is no longer completely counterable by 1 person
+  - bugfix: 012 is no longer broken
+  - bugfix: Goldbaker Reinz logo listed in paperwork guide
+  - bugfix: 2427-3 can't breach below 30 players anymore
+  - bugfix: Improved browser code, syncing assets faster/better for nanoui/other non-tgui
+      browser windows
+  - bugfix: Fix disconnected wire in SCP-5295 containment causing unit tests to fail/depowered
+      chamber
+  - bugfix: Fixed megaphones not showing up on runechat
+  - bugfix: Fixed stuttering not working at all
+  - bugfix: Fixed like 6 different href exploits, one including deletion of notes
+      not being sanitized
+  - code_imp: Removed legacy dbcon
+  - code_imp: Added Tracy profiler support built-in
+  - code_imp: Fixed some harddels
+  - code_imp: Added a tgs5+ yml to easily configure the codebase on tgs
+  - code_imp: Ran OptiVorbis on all sound files, +13mb in savings
+  - code_imp: Ran Oxipng on all image files, +18mb in savings
+  - code_imp: Improved tgui Button.Confirm
+  - code_imp: Changed logic relating to overlays to make them less sucky
