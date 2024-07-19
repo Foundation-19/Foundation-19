@@ -37,6 +37,8 @@
 
 /obj/item/mech_equipment/attack_self(mob/user)
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
+		if(equipment_flags & ME_POWERLESS_ACTIVATION)
+			return TRUE
 		if(!(get_cell()?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
 			return FALSE
@@ -143,10 +145,4 @@
 		return null
 	if(loc != owner)
 		return null
-	if(equipment_flags & ME_CELL_POWERED && owner.mech_flags & MF_CELL_POWERED)
-		return owner.get_cell()
-	if(equipment_flags & ME_ENGINE_POWERED && owner.mech_flags & MF_ENGINE_POWERED)
-		return owner.get_cell()
-	if(equipment_flags & ME_AUXILIARY_POWERED && owner.mech_flags & MF_AUXILIARY_AVAILABLE)
-		return owner.get_cell()
-	return null
+	return owner.get_cell(FALSE, equipment_flags)

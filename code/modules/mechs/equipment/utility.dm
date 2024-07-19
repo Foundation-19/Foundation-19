@@ -788,20 +788,33 @@
 
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 2, TECH_MAGNET = 2)
 
+	atom_flags = ATOM_FLAG_OPEN_CONTAINER
+
 	var/obj/item/cell/internal_cell = null
+	/// units of welding fuel converted to cell charge
+	var/production_ratio = 10 * CELLRATE
+	/// maximum amount of power produced in one Process() cycle.
+	var/power_cap = 100
+
+	var/datum/reagents/internal_chamber = null
 
 /obj/item/mech_equipment/engine/Initialize()
 	. = ..()
-	internal_cell = new /obj/item/cell/large(src)
+	internal_cell = new /obj/item/cell/standard(src)
 	reagents = new /datum/reagents(200, src)
+	internal_chamber = new /datum/reagents(round(production_ratio / CELLRATE), src)
 
 /obj/item/mech_equipment/engine/installed(mob/living/exosuit/_owner)
 	. = ..()
-	if(owner)
-		owner.cell = internal_cell
+	owner.mech_flags |= MF_ENGINE_POWERED
+	if(owner?.body)
+		if(owner.body.cell)
+			owner.body.cell.forceMove(get_turf(src))
+		owner.body.cell = internal_cell
 
 /obj/item/mech_equipment/engine/uninstalled()
-	owner.cell = null
+	owner.body.cell = null
+	owner.mech_flags &= ~MF_ENGINE_POWERED
 	. = ..()
 
 
@@ -812,13 +825,35 @@
 
 /obj/item/mech_equipment/engine/proc/activate()
 	active = TRUE
+	var/power_gap = internal_cell.max_charge - internal_cell.charge
+	if(prob(clamp(power_gap/10, 30, 100)))
+		START_PROCESSING(SSprocessing, src)
+
+/obj/item/mech_equipment/engine/Process()
+	if(reagents.total_volume < 2)
+		deactivate()
+		return
+
+	var/power_gap = internal_cell.max_charge - internal_cell.charge
+	if(power_gap < 5)
+		return
+	var/units_to_use = clamp(round(power_gap / production_ratio), 1, power_cap / production_ratio)
+	units_to_use = min(units_to_use, reagents.total_volume)
+	reagents.trans_to_holder(internal_chamber, units_to_use, 0, FALSE, TRUE)
+	/// No hydro-powered engines allowed in this universe!!
+	units_to_use = internal_chamber.get_reagent_amount(/datum/reagent/fuel)
+	internal_cell.give(units_to_use * production_ratio)
+	internal_chamber.remove_any(internal_chamber.total_volume)
 
 /obj/item/mech_equipment/engine/deactivate()
+	STOP_PROCESSING(SSprocessing,src)
 	. = ..()
 
-/obj/item/mech_equipment/engine/attackby(obj/item/W, mob/user)
+/obj/item/mech_equipment/engine/attackby(obj/item/reagent_containers/W, mob/user)
 	. = ..()
-
+	if(!istype(W) || !.)
+		return
+	W.standard_pour_into(user, src)
 
 /obj/item/mech_equipment/engine/attack_self(mob/user)
 	. = ..()
@@ -830,4 +865,35 @@
 		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
 
 /obj/item/mech_equipment/engine/get_hardpoint_maptext()
-	return "[english_list(camera.network)]: [active ? "ONLINE" : "OFFLINE"]"
+	return "Fuel:[reagents.total_volume]"
+
+
+/obj/item/mech_equipment/power_auxiliary
+	var/obj/item/cell/internal_cell = null
+
+/obj/item/mech_equipment/power_auxiliary/Initialize()
+	. = ..()
+	internal_cell = new /obj/item/cell/high(src)
+
+/obj/item/mech_equipment/power_auxiliary/uninstalled()
+	owner.mech_flags &= ~MF_AUXILIARY_POWERED
+	. = ..()
+
+/obj/item/mech_equipment/power_auxiliary/proc/activate()
+	active = TRUE
+	owner.mech_flags &= MF_AUXILIARY_POWERED
+
+/obj/item/mech_equipment/power_auxiliary/deactivate()
+	owner.mech_flags &= ~MF_AUXILIARY_POWERED
+	. = ..()
+
+/obj/item/mech_equipment/power_auxiliary/attack_self(mob/user)
+	. = ..()
+	if(.)
+		if(active)
+			deactivate()
+		else
+			activate(user)
+		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
+
+

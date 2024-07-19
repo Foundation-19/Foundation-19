@@ -36,7 +36,7 @@
 	var/pilot_coverage = 100
 	var/min_pilot_size = MOB_SMALL
 	var/max_pilot_size = MOB_LARGE
-	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
+	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER, HARDPOINT_POWER, HARDPOINT_BACKUP_POWER)
 	var/climb_time = 3 SECONDS
 
 /obj/item/mech_component/chassis/New()
@@ -52,7 +52,10 @@
 		)
 
 /obj/item/mech_component/chassis/Destroy()
-	QDEL_NULL(cell)
+	if(cell.loc != loc)
+		QDEL_NULL(cell.loc)
+	else
+		QDEL_NULL(cell)
 	QDEL_NULL(diagnostics)
 	QDEL_NULL(m_armour)
 	QDEL_NULL(air_supply)
@@ -142,6 +145,8 @@
 	diagnostics = new(src)
 	cell = new /obj/item/cell/high(src)
 	cell.charge = cell.maxcharge
+	var/mob/living/exosuit/owner = loc
+	owner.mech_flags &= MC_CELL_POWERED
 
 /obj/item/mech_component/chassis/attackby(obj/item/thing, mob/user)
 	if(istype(thing,/obj/item/robot_parts/robot_component/diagnosis_unit))
@@ -151,7 +156,7 @@
 		if(install_component(thing, user)) diagnostics = thing
 	else if(istype(thing, /obj/item/cell))
 		if(cell)
-			to_chat(user, SPAN_WARNING("\The [src] already has a cell installed."))
+			to_chat(user, SPAN_WARNING("\The [src] already has a power provider installed."))
 			return
 		if(install_component(thing,user)) cell = thing
 	else if(istype(thing, /obj/item/robot_parts/robot_component/armour/exosuit))

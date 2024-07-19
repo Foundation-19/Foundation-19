@@ -47,10 +47,16 @@
 	lying = FALSE // Fuck off, carp.
 	handle_vision(powered)
 
-/mob/living/exosuit/get_cell(force)
+/mob/living/exosuit/get_cell(force, power_flags)
 	RETURN_TYPE(/obj/item/cell)
 	if(power == MECH_POWER_ON || force) //For most intents we can assume that a powered off exosuit acts as if it lacked a cell
-		return body ? body.cell : null
+		if(power_flags & MF_CELL_POWERED && mech_flags & MF_CELL_POWERED || force)
+			return body.cell
+		if(power_flags & MF_ENGINE_POWERED && mech_flags & MF_ENGINE_POWERED)
+			return body.cell
+		if(power_flags & MF_AUXILIARY_POWERED && mech_flags & MF_AUXILIARY_POWERED)
+			var/obj/item/mech_equipment/power_auxiliary/provider = hardpoints[HARDPOINT_BACKUP_POWER]
+			return provider.internal_cell
 	return null
 
 /mob/living/exosuit/proc/calc_power_draw()

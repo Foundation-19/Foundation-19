@@ -398,6 +398,7 @@
 				power = MECH_POWER_OFF
 				hud_power_control.queue_icon_update()
 				body.cell = null
+				mech_flags &= ~MF_CELL_POWERED
 				return
 
 			else if(isCrowbar(thing))
@@ -431,6 +432,7 @@
 					body.cell = thing
 					hardpoints[HARDPOINT_POWER] = thing
 					to_chat(user, SPAN_NOTICE("You install \the [body.cell] into \the [src]."))
+					mech_flags |= MF_CELL_POWERED
 					playsound(user.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 					visible_message(SPAN_NOTICE("\The [user] installs \the [body.cell] into \the [src]."))
 				return

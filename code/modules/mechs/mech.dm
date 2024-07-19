@@ -127,6 +127,10 @@
 			for(var/hardpoint in comp.has_hardpoints)
 				hardpoints[hardpoint] = null
 
+
+
+
+
 	if(head && head.radio)
 		radio = new(src)
 

@@ -7,7 +7,7 @@
 #define MF_STRAFING 1<<1
 #define MF_CELL_POWERED 1<<2
 #define MF_ENGINE_POWERED 1<<3
-#define MF_AUXILIARY_AVAILABLE 1<<4
+#define MF_AUXILIARY_POWERED 1<<4
 
 /// Flags for mech equipment
 
@@ -16,6 +16,8 @@
 #define ME_AUXILIARY_POWERED 1<<3
 #define ME_ANY_POWER ME_CELL_POWERED | ME_ENGINE_POWERED | ME_AUXILIARY_POWERED
 #define ME_AUXILIARY_SUPPLIER 1<<4
+/// Lets the equipment start without the requirement of power (or try starting)
+#define ME_POWERLESS_ACTIVATION 1<<5
 
 /// Flags for mech components
 

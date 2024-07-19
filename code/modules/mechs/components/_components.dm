@@ -48,7 +48,7 @@
 /obj/item/mech_component/proc/install_component(obj/item/thing, mob/user)
 	if(user.unEquip(thing, src))
 		user.visible_message(SPAN_NOTICE("\The [user] installs \the [thing] in \the [src]."))
-		return 1
+		return TRUE
 
 /obj/item/mech_component/proc/update_health()
 	total_damage = brute_damage + burn_damage
