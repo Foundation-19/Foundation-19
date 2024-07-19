@@ -14,9 +14,10 @@
 	var/head_content = ""
 	var/content = ""
 	var/title_buttons = ""
+	var/include_common = TRUE
 
 
-/datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null)
+/datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null, include_common = TRUE)
 	user = nuser
 	window_id = nwindow_id
 	if (ntitle)
@@ -27,6 +28,7 @@
 		height = nheight
 	if (nref)
 		ref = weakref(nref)
+	src.include_common = include_common
 
 /datum/browser/proc/set_title(ntitle)
 	title = format_text(ntitle)
@@ -66,12 +68,14 @@
 	content += ncontent
 
 /datum/browser/proc/get_header()
-	var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
 	var/key
-	head_content += "<link rel='stylesheet' type='text/css' href='[common_asset.get_url_mappings()["common.css"]]'>"
+
+	if (include_common)
+		var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
+		head_content += "<link rel='stylesheet' type='text/css' href='[common_asset.get_url_mappings()["common.css"]]'>"
+
 	for (key in stylesheets)
 		head_content += "<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url(key)]'>"
-
 	for (key in scripts)
 		head_content += "<script type='text/javascript' src='[SSassets.transport.get_asset_url(key)]'></script>"
 
@@ -114,8 +118,9 @@
 	var/window_size = ""
 	if (width && height)
 		window_size = "size=[width]x[height];"
-	var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
-	common_asset.send(user)
+	if (include_common)
+		var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
+		common_asset.send(user)
 	if (stylesheets.len)
 		SSassets.transport.send_assets(user, stylesheets)
 	if (scripts.len)
