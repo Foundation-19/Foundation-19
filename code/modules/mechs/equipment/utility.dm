@@ -776,9 +776,6 @@
 /obj/item/mech_equipment/camera/get_hardpoint_maptext()
 	return "[english_list(camera.network)]: [active ? "ONLINE" : "OFFLINE"]"
 
-/obj/item/reagent_containers/glass/mech_engine
-	volume = 200
-
 /obj/item/mech_equipment/engine
 	name = "exosuit engine"
 	desc = "A dedicated visible light spectrum camera for remote feeds. It comes with its own transmitter!"
@@ -825,7 +822,7 @@
 
 /obj/item/mech_equipment/engine/proc/activate()
 	active = TRUE
-	var/power_gap = internal_cell.max_charge - internal_cell.charge
+	var/power_gap = internal_cell.maxcharge - internal_cell.charge
 	if(prob(clamp(power_gap/10, 30, 100)))
 		START_PROCESSING(SSprocessing, src)
 
@@ -834,7 +831,7 @@
 		deactivate()
 		return
 
-	var/power_gap = internal_cell.max_charge - internal_cell.charge
+	var/power_gap = internal_cell.maxcharge - internal_cell.charge
 	if(power_gap < 5)
 		return
 	var/units_to_use = clamp(round(power_gap / production_ratio), 1, power_cap / production_ratio)
