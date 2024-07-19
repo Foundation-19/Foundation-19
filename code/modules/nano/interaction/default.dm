@@ -11,10 +11,11 @@ GLOBAL_DATUM_INIT(default_state, /datum/topic_state/default, new)
 
 /mob/observer/ghost/default_can_use_topic(src_object)
 	if(can_admin_interact())
-		return STATUS_INTERACTIVE							// Admins are more equal
-	if(!client || get_dist(src_object, src)	> client.view)	// Preventing ghosts from having a million windows open by limiting to objects in range
+		return STATUS_INTERACTIVE // Admins are more equal
+	var/view_size = getviewsize(client.view)
+	if(!client || get_dist(src_object, src)	> max(view_size[1], view_size[2])) // Preventing ghosts from having a million windows open by limiting to objects in range
 		return STATUS_CLOSE
-	return STATUS_UPDATE									// Ghosts can view updates
+	return STATUS_UPDATE // Ghosts can view updates
 
 /mob/living/silicon/pai/default_can_use_topic(src_object)
 	if((src_object == src || src_object == silicon_radio) && !stat)
@@ -28,7 +29,8 @@ GLOBAL_DATUM_INIT(default_state, /datum/topic_state/default, new)
 		return
 
 	// robots can interact with things they can see within their view range
-	if((src_object in view(src)) && get_dist(src_object, src) <= src.client.view)
+	var/view_size = getviewsize(client.view)
+	if((src_object in view(src)) && get_dist(src_object, src) <= max(view_size[1], view_size[2]))
 		return STATUS_INTERACTIVE	// interactive (green visibility)
 	return STATUS_DISABLED			// no updates, completely disabled (red visibility)
 

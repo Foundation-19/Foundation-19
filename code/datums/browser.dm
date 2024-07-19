@@ -4,7 +4,7 @@
 	var/window_id // window_id is used as the window name for browse and onclose
 	var/width = 0
 	var/height = 0
-	var/atom/ref = null
+	var/weakref/ref = null
 	var/window_options = "focus=0;can_close=1;can_minimize=1;can_maximize=0;can_resize=1;titlebar=1;" // window option is set using window_id
 	var/stylesheets[0]
 	var/scripts[0]
@@ -14,10 +14,10 @@
 	var/head_content = ""
 	var/content = ""
 	var/title_buttons = ""
+	var/include_common = TRUE
 
 
-/datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null)
-
+/datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null, include_common = TRUE)
 	user = nuser
 	window_id = nwindow_id
 	if (ntitle)
@@ -27,11 +27,8 @@
 	if (nheight)
 		height = nheight
 	if (nref)
-		ref = nref
-	// If a client exists, but they have disabled fancy windowing, disable it!
-	if(user && user.client && user.client.get_preference_value(/datum/client_preference/browser_style) == GLOB.PREF_PLAIN)
-		return
-	add_stylesheet("common", 'html/browser/common.css') // this CSS sheet is common to all UIs
+		ref = weakref(nref)
+	src.include_common = include_common
 
 /datum/browser/proc/set_title(ntitle)
 	title = format_text(ntitle)
@@ -49,10 +46,20 @@
 	//title_image = ntitle_image
 
 /datum/browser/proc/add_stylesheet(name, file)
-	stylesheets[name] = file
+	if (istype(name, /datum/asset/spritesheet))
+		var/datum/asset/spritesheet/sheet = name
+		stylesheets["spritesheet_[sheet.name].css"] = "data/spritesheets/[sheet.name]"
+	else
+		var/asset_name = "[name].css"
+
+		stylesheets[asset_name] = file
+
+		if (!SSassets.cache[asset_name])
+			SSassets.transport.register_asset(asset_name, file)
 
 /datum/browser/proc/add_script(name, file)
-	scripts[name] = file
+	scripts["[ckey(name)].js"] = file
+	SSassets.transport.register_asset("[ckey(name)].js", file)
 
 /datum/browser/proc/set_content(ncontent)
 	content = ncontent
@@ -62,16 +69,15 @@
 
 /datum/browser/proc/get_header()
 	var/key
-	var/filename
-	for (key in stylesheets)
-		filename = "[ckey(key)].css"
-		send_rsc(user, stylesheets[key], filename)
-		head_content += "<link rel='stylesheet' type='text/css' href='[filename]'>"
 
+	if (include_common)
+		var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
+		head_content += "<link rel='stylesheet' type='text/css' href='[common_asset.get_url_mappings()["common.css"]]'>"
+
+	for (key in stylesheets)
+		head_content += "<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url(key)]'>"
 	for (key in scripts)
-		filename = "[ckey(key)].js"
-		send_rsc(user, scripts[key], filename)
-		head_content += "<script type='text/javascript' src='[filename]'></script>"
+		head_content += "<script type='text/javascript' src='[SSassets.transport.get_asset_url(key)]'></script>"
 
 	var/title_attributes = "class='uiTitle'"
 	if (title_image)
@@ -105,12 +111,36 @@
 	"}
 
 /datum/browser/proc/open(use_onclose = 1)
+	if(isnull(window_id)) //null check because this can potentially nuke goonchat
+		WARNING("Browser [title] tried to open with a null ID")
+		to_chat(user, SPAN_USERDANGER("The [title] browser you tried to open failed a sanity check! Please report this on github!"))
+		return
 	var/window_size = ""
 	if (width && height)
 		window_size = "size=[width]x[height];"
+	if (include_common)
+		var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
+		common_asset.send(user)
+	if (stylesheets.len)
+		SSassets.transport.send_assets(user, stylesheets)
+	if (scripts.len)
+		SSassets.transport.send_assets(user, scripts)
 	show_browser(user, get_content(), "window=[window_id];[window_size][window_options]")
 	if (use_onclose)
-		onclose(user, window_id, ref)
+		setup_onclose()
+
+
+/datum/browser/proc/setup_onclose()
+	set waitfor = 0 //winexists sleeps, so we don't need to.
+	for (var/i in 1 to 10)
+		if (user?.client && winexists(user, window_id))
+			var/atom/send_ref
+			if(ref)
+				send_ref = ref.resolve()
+				if(!send_ref)
+					ref = null
+			onclose(user, window_id, send_ref)
+			break
 
 /datum/browser/proc/update(force_open = 0, use_onclose = 1)
 	if(force_open)
@@ -119,7 +149,10 @@
 		send_output(user, get_content(), "[window_id].browser")
 
 /datum/browser/proc/close()
-	close_browser(user, "window=[window_id]")
+	if(!isnull(window_id))//null check because this can potentially nuke goonchat
+		close_browser(user, "window=[window_id]")
+	else
+		WARNING("Browser [title] tried to close with a null ID")
 
 // This will allow you to show an icon in the browse window
 // This is added to mob so that it can be used without a reference to the browser object
@@ -154,14 +187,12 @@
 // Otherwise, the user mob's machine var will be reset directly.
 //
 /proc/onclose(mob/user, windowid, atom/ref=null)
-	if(!user || !user.client) return
+	if(!user?.client) return
 	var/param = "null"
 	if(ref)
 		param = "\ref[ref]"
 
-	spawn(2)
-		if(!user.client) return
-		winset(user, windowid, "on-close=\".windowclose [param]\"")
+	winset(user, windowid, "on-close=\".windowclose [param]\"")
 
 //	log_debug("OnClose [user]: [windowid] : ["on-close=\".windowclose [param]\""]")
 
@@ -173,24 +204,15 @@
 // otherwise, just reset the client mob's machine var.
 //
 /client/verb/windowclose(atomref as text)
-	set hidden = 1						// hide this verb from the user's panel
-	set name = ".windowclose"			// no autocomplete on cmd line
+	set hidden = TRUE // hide this verb from the user's panel
+	set name = ".windowclose" // no autocomplete on cmd line
 
-//	log_debug("windowclose: [atomref]")
-
-	if(atomref!="null")				// if passed a real atomref
-		var/hsrc = locate(atomref)	// find the reffed atom
+	if(atomref != "null") // if passed a real atomref
+		var/hsrc = locate(atomref) // find the reffed atom
+		var/href = "close=1"
 		if(hsrc)
-//			log_debug("[src] Topic [href] [hsrc]")
-
 			usr = src.mob
-			src.Topic("close=1", list("close"="1"), hsrc)	// this will direct to the atom's
-			return										// Topic() proc via client.Topic()
-
-	// no atomref specified (or not found)
-	// so just reset the user mob's machine var
+			src.Topic(href, params2list(href), hsrc) // this will direct to the atom's
+			return // Topic() proc via client.Topic()
 	if(src && src.mob)
-//		log_debug("[src] was [src.mob.machine], setting to null")
-
 		src.mob.unset_machine()
-	return

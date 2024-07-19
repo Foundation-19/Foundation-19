@@ -182,11 +182,6 @@ var/list/_client_preferences_by_type
 	key = "SHOW_PROGRESS"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
-/datum/client_preference/browser_style
-	description = "Fake NanoUI Browser Style"
-	key = "BROWSER_STYLED"
-	options = list(GLOB.PREF_FANCY, GLOB.PREF_PLAIN)
-
 /datum/client_preference/autohiss
 	description = "Autohiss"
 	key = "AUTOHISS"
@@ -280,6 +275,16 @@ var/list/_client_preferences_by_type
 	key = "SWAP_TGUI_INPUTS"
 	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
 	default_value = GLOB.PREF_YES
+
+/datum/client_preference/widescreen
+	description = "Widescreen"
+	key = "WIDESCREEN"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/widescreen/changed(mob/preference_mob, new_value)
+	var/new_view = getScreenSize(new_value == GLOB.PREF_YES)
+	preference_mob.client.change_view(new_view)
 
 /********************
 * General Staff Preferences *
