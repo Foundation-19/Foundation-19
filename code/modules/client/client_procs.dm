@@ -477,6 +477,11 @@
 /client/proc/get_default_view()
 	return getScreenSize(get_preference_value(/datum/client_preference/widescreen) == GLOB.PREF_YES)
 
+/client/proc/has_default_view()
+	var/default_view = get_default_view()
+	var/current_view = getviewsize(view)
+	return (current_view[1] == default_view[1]) && (current_view[2] == default_view[2])
+
 /client/proc/change_view(new_size)
 	if(isnull(new_size))
 		CRASH("change_view called without argument.")

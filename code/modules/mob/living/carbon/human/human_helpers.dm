@@ -56,7 +56,7 @@
 
 	var/binoc_check
 	if(client)
-		binoc_check = (client.view == config.default_view) || (client.view == config.default_view_square)
+		binoc_check = client.has_default_view()
 	else
 		binoc_check = TRUE
 

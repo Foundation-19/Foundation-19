@@ -7658,7 +7658,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "RAISA's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
