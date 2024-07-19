@@ -775,3 +775,59 @@
 
 /obj/item/mech_equipment/camera/get_hardpoint_maptext()
 	return "[english_list(camera.network)]: [active ? "ONLINE" : "OFFLINE"]"
+
+/obj/item/reagent_containers/glass/mech_engine
+	volume = 200
+
+/obj/item/mech_equipment/engine
+	name = "exosuit engine"
+	desc = "A dedicated visible light spectrum camera for remote feeds. It comes with its own transmitter!"
+	icon_state = "mech_camera"
+	restricted_hardpoints = list(HARDPOINT_POWER)
+	equipment_delay = 10
+
+	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 2, TECH_MAGNET = 2)
+
+	var/obj/item/cell/internal_cell = null
+
+/obj/item/mech_equipment/engine/Initialize()
+	. = ..()
+	internal_cell = new /obj/item/cell/large(src)
+	reagents = new /datum/reagents(200, src)
+
+/obj/item/mech_equipment/engine/installed(mob/living/exosuit/_owner)
+	. = ..()
+	if(owner)
+		owner.cell = internal_cell
+
+/obj/item/mech_equipment/engine/uninstalled()
+	owner.cell = null
+	. = ..()
+
+
+/obj/item/mech_equipment/engine/examine(mob/user)
+	. = ..()
+	to_chat(user, "Internal charge : [internal_cell.charge] Fuel : [reagents.total_volume]")
+
+
+/obj/item/mech_equipment/engine/proc/activate()
+	active = TRUE
+
+/obj/item/mech_equipment/engine/deactivate()
+	. = ..()
+
+/obj/item/mech_equipment/engine/attackby(obj/item/W, mob/user)
+	. = ..()
+
+
+/obj/item/mech_equipment/engine/attack_self(mob/user)
+	. = ..()
+	if(.)
+		if(active)
+			deactivate()
+		else
+			activate()
+		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
+
+/obj/item/mech_equipment/engine/get_hardpoint_maptext()
+	return "[english_list(camera.network)]: [active ? "ONLINE" : "OFFLINE"]"

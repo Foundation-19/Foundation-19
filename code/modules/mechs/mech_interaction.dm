@@ -378,23 +378,28 @@
 				return
 			else if(isScrewdriver(thing))
 				if(!maintenance_protocols)
-					to_chat(user, SPAN_WARNING("The cell compartment remains locked while maintenance protocols are disabled."))
+					to_chat(user, SPAN_WARNING("The power supply compartment remains locked while maintenance protocols are disabled."))
 					return
-				if(!body || !body.cell)
-					to_chat(user, SPAN_WARNING("There is no cell here for you to remove!"))
+				if(!body || !hardpoints[HARDPOINT_POWER])
+					to_chat(user, SPAN_WARNING("There is no power provider here for you to remove!"))
 					return
 				var/delay = 2.5 SECONDS * user.skill_delay_mult(SKILL_DEVICES)
 				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols || !body || !body.cell)
 					return
 
-				user.put_in_hands(body.cell)
-				to_chat(user, SPAN_NOTICE("You remove \the [body.cell] from \the [src]."))
+				var/atom/movable/power_provider = hardpoints[HARDPOINT_POWER]
+				if(mech_flags & MF_ENGINE_POWERED)
+					remove_system(HARDPOINT_POWER, null, TRUE)
+
+				user.put_in_hands(power_provider)
+				to_chat(user, SPAN_NOTICE("You remove \the [power_provider] from \the [src]."))
 				playsound(user.loc, 'sounds/items/Crowbar.ogg', 50, 1)
-				visible_message(SPAN_NOTICE("\The [user] pries out \the [body.cell] using \the [thing]."))
+				visible_message(SPAN_NOTICE("\The [user] pries out \the [power_provider] using \the [thing]."))
 				power = MECH_POWER_OFF
 				hud_power_control.queue_icon_update()
 				body.cell = null
 				return
+
 			else if(isCrowbar(thing))
 				if(!hatch_locked)
 					to_chat(user, SPAN_NOTICE("The cockpit isn't locked. There is no need for this."))
@@ -416,15 +421,15 @@
 				return
 			else if(istype(thing, /obj/item/cell))
 				if(!maintenance_protocols)
-					to_chat(user, SPAN_WARNING("The cell compartment remains locked while maintenance protocols are disabled."))
+					to_chat(user, SPAN_WARNING("The power supply compartment remains locked while maintenance protocols are disabled."))
 					return
-				if(!body || body.cell)
-					to_chat(user, SPAN_WARNING("There is already a cell in there!"))
+				if(hardpoints[HARDPOINT_POWER] || !body)
+					to_chat(user, SPAN_WARNING("There is already a power provider installed in there!"))
 					return
-
 				if(user.unEquip(thing))
 					thing.forceMove(body)
 					body.cell = thing
+					hardpoints[HARDPOINT_POWER] = thing
 					to_chat(user, SPAN_NOTICE("You install \the [body.cell] into \the [src]."))
 					playsound(user.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
 					visible_message(SPAN_NOTICE("\The [user] installs \the [body.cell] into \the [src]."))
