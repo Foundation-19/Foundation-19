@@ -98,7 +98,7 @@
 		to_chat(mover, SPAN_WARNING("Maintenance protocols are in effect."))
 		exosuit.SetMoveCooldown(3)
 		return MOVEMENT_STOP
-	var/obj/item/cell/C = exosuit.get_cell()
+	var/obj/item/cell/C = exosuit.get_cell(FALSE , ME_CELL_POWERED | ME_ENGINE_POWERED)
 	if(!C || !C.check_charge(exosuit.legs.power_use * CELLRATE))
 		to_chat(mover, SPAN_WARNING("The power indicator flashes briefly."))
 		exosuit.SetMoveCooldown(3) //On fast exosuits this got annoying fast

@@ -28,8 +28,9 @@
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
 		if(target in owner.contents)
 			return FALSE
-
-		if(!(get_cell()?.check_charge(active_power_use * CELLRATE)))
+		if(equipment_flags & ME_POWERLESS_ACTIVATION)
+			return TRUE
+		if(!(get_cell(FALSE, equipment_flags)?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
 			return FALSE
 		return TRUE
@@ -39,7 +40,7 @@
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
 		if(equipment_flags & ME_POWERLESS_ACTIVATION)
 			return TRUE
-		if(!(get_cell()?.check_charge(active_power_use * CELLRATE)))
+		if(!(get_cell(FALSE,equipment_flags)?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
 			return FALSE
 		return TRUE

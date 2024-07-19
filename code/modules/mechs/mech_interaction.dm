@@ -102,10 +102,10 @@
 		to_chat(user, SPAN_WARNING("Your motivators are damaged! You can't use your manipulators!"))
 		setClickCooldown(15)
 		return
-
-	if(!get_cell()?.checked_use(arms.power_use * CELLRATE))
-		to_chat(user, power == MECH_POWER_ON ? SPAN_WARNING("Error: Power levels insufficient.") :  SPAN_WARNING("\The [src] is powered off."))
-		return
+	if(selected_system && !(selected_system.equipment_flags & ME_ARM_INDEPENDENT))
+		if(!get_cell(FALSE, ME_ANY_POWER)?.checked_use(arms.power_use * CELLRATE))
+			to_chat(user, power == MECH_POWER_ON ? SPAN_WARNING("Error: Power levels insufficient.") :  SPAN_WARNING("\The [src] is powered off."))
+			return
 
 	// User is not necessarily the exosuit, or the same person, so update intent.
 	if(user != src)

@@ -127,9 +127,9 @@
 			for(var/hardpoint in comp.has_hardpoints)
 				hardpoints[hardpoint] = null
 
-
-
-
+	if(body?.cell)
+		mech_flags |= MF_CELL_POWERED
+		hardpoints[HARDPOINT_POWER] = body.cell
 
 	if(head && head.radio)
 		radio = new(src)

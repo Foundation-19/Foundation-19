@@ -787,6 +787,9 @@
 
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
+	/// Power usage is handled in a special way in activate()
+	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT
+
 	var/obj/item/cell/internal_cell = null
 	/// units of welding fuel converted to cell charge
 	var/production_ratio = 10 * CELLRATE
@@ -822,8 +825,11 @@
 
 /obj/item/mech_equipment/engine/proc/activate()
 	active = TRUE
-	var/power_gap = internal_cell.maxcharge - internal_cell.charge
-	if(prob(clamp(power_gap/10, 30, 100)))
+	var/power_gap = clamp(internal_cell.maxcharge - internal_cell.charge/10, 30, 100)
+	if(!get_cell()?.drain_power(TRUE,FALSE, power_gap * CELLRATE))
+		active = FALSE
+		return
+	if(prob(power_gap))
 		START_PROCESSING(SSprocessing, src)
 
 /obj/item/mech_equipment/engine/Process()
@@ -892,5 +898,8 @@
 		else
 			activate(user)
 		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
+
+/obj/item/mech_equipment/power_cell
+
 
 

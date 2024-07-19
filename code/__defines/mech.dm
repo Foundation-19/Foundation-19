@@ -18,6 +18,8 @@
 #define ME_AUXILIARY_SUPPLIER 1<<4
 /// Lets the equipment start without the requirement of power (or try starting)
 #define ME_POWERLESS_ACTIVATION 1<<5
+/// The equipment doesn't require arms to exist or be powered to function
+#define ME_ARM_INDEPENDENT 1<<6
 
 /// Flags for mech components
 

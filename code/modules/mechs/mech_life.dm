@@ -17,9 +17,7 @@
 
 	body.update_air(hatch_closed && use_air)
 
-	var/powered = FALSE
-	if(get_cell())
-		powered = get_cell().drain_power(0, 0, calc_power_draw()) > 0
+	var/powered = get_cell(FALSE, ME_ANY_POWER)?.drain_power(0, 0, calc_power_draw()) > 0
 
 	if(!powered)
 		//Shut down all systems
@@ -50,11 +48,11 @@
 /mob/living/exosuit/get_cell(force, power_flags)
 	RETURN_TYPE(/obj/item/cell)
 	if(power == MECH_POWER_ON || force) //For most intents we can assume that a powered off exosuit acts as if it lacked a cell
-		if(power_flags & MF_CELL_POWERED && mech_flags & MF_CELL_POWERED || force)
+		if(power_flags & ME_CELL_POWERED && mech_flags & MF_CELL_POWERED || force)
 			return body.cell
-		if(power_flags & MF_ENGINE_POWERED && mech_flags & MF_ENGINE_POWERED)
+		if(power_flags & ME_ENGINE_POWERED && mech_flags & MF_ENGINE_POWERED)
 			return body.cell
-		if(power_flags & MF_AUXILIARY_POWERED && mech_flags & MF_AUXILIARY_POWERED)
+		if(power_flags & ME_AUXILIARY_POWERED && mech_flags & MF_AUXILIARY_POWERED)
 			var/obj/item/mech_equipment/power_auxiliary/provider = hardpoints[HARDPOINT_BACKUP_POWER]
 			return provider.internal_cell
 	return null
