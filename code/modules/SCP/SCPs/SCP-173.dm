@@ -270,7 +270,7 @@
 	var/atom/A = src
 	if(istype(loc, /obj/structure/scp173_cage))
 		A = loc
-	for(var/mob/living/L in dview(7, A))
+	for(var/mob/living/L in view(7, A))
 		if((istype(L, /mob/living/simple_animal/friendly/scp131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))

@@ -505,7 +505,7 @@
 /atom/movable/screen/facedir/Click(location, control, params)
 	usr?.face_direction()
 
-/mob/living/carbon/human/InitializePlanes()
+/mob/living/InitializePlanes()
 	..()
 	var/atom/movable/screen/plane_master/vision_cone_target/VC = new
 	var/atom/movable/screen/plane_master/vision_cone/primary/mob = new
