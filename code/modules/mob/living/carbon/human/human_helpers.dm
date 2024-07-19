@@ -56,7 +56,7 @@
 
 	var/binoc_check
 	if(client)
-		binoc_check = client.view == world.view
+		binoc_check = client.has_default_view()
 	else
 		binoc_check = TRUE
 

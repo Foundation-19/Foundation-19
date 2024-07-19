@@ -19,4 +19,4 @@
 /datum/station_trait/disabled_lighting/on_round_start()
 	for(var/obj/machinery/power/apc/C in SSmachines.machinery)
 		if(!C.is_critical && (C.z in GLOB.using_map.station_levels))
-			C.overload_lighting(25) // Every fourth light
+			C.overload_lighting(10) // Every tenth light

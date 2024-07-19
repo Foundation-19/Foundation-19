@@ -59,6 +59,9 @@ var/list/all_virtual_listeners = list()
 
 /atom/movable/Initialize()
 	. = ..()
+	if(!follow_repository.excluded_subtypes[type] && follow_repository.followed_subtypes[type])
+		follow_repository.add_subject(src)
+
 	if(shall_have_virtual_mob())
 		virtual_mob = new virtual_mob(get_turf(src), src)
 

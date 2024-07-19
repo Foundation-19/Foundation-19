@@ -31,11 +31,6 @@
 #define SEE_INVISIBLE_MINIMUM 	5
 #define INVISIBILITY_MAXIMUM 	100
 
-//https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
-#define MOUSE_OPACITY_TRANSPARENT 	0
-#define MOUSE_OPACITY_ICON 			1
-#define MOUSE_OPACITY_OPAQUE 		2
-
 // Some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
 
@@ -101,24 +96,6 @@
 
 //Ruin map template flags
 #define TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED 32 // Ruin is not available during spawning unless another ruin permits it.
-
-// Convoluted setup so defines can be supplied by Bay12 main server compile script.
-// Should still work fine for people jamming the icons into their repo.
-#ifndef CUSTOM_ITEM_CONFIG
-#define CUSTOM_ITEM_CONFIG "config/custom_items/"
-#endif
-#ifndef CUSTOM_ITEM_SYNTH_CONFIG
-#define CUSTOM_ITEM_SYNTH_CONFIG "config/custom_sprites.txt"
-#endif
-#ifndef CUSTOM_ITEM_OBJ
-#define CUSTOM_ITEM_OBJ 'icons/obj/custom_items_obj.dmi'
-#endif
-#ifndef CUSTOM_ITEM_MOB
-#define CUSTOM_ITEM_MOB 'icons/mob/custom_items_mob.dmi'
-#endif
-#ifndef CUSTOM_ITEM_SYNTH
-#define CUSTOM_ITEM_SYNTH 'icons/mob/custom_synthetic.dmi'
-#endif
 
 #define WALL_CAN_OPEN 1
 #define WALL_OPENING 2
