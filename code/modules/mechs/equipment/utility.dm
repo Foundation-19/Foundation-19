@@ -788,11 +788,11 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
 	/// Power usage is handled in a special way in activate()
-	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT
+	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_BYPASS_INTERFACE
 
 	var/obj/item/cell/internal_cell = null
 	/// units of welding fuel converted to cell charge
-	var/production_ratio = 10 * CELLRATE
+	var/production_ratio = 10
 	/// maximum amount of power produced in one Process() cycle.
 	var/power_cap = 100
 
@@ -804,16 +804,7 @@
 	reagents = new /datum/reagents(200, src)
 	internal_chamber = new /datum/reagents(round(production_ratio / CELLRATE), src)
 
-/obj/item/mech_equipment/engine/installed(mob/living/exosuit/_owner)
-	. = ..()
-	owner.mech_flags |= MF_ENGINE_POWERED
-	if(owner?.body)
-		if(owner.body.cell)
-			owner.body.cell.forceMove(get_turf(src))
-		owner.body.cell = internal_cell
-
 /obj/item/mech_equipment/engine/uninstalled()
-	owner.body.cell = null
 	owner.mech_flags &= ~MF_ENGINE_POWERED
 	. = ..()
 
@@ -823,14 +814,24 @@
 	to_chat(user, "Internal charge : [internal_cell.charge] Fuel : [reagents.total_volume]")
 
 
-/obj/item/mech_equipment/engine/proc/activate()
+/obj/item/mech_equipment/engine/proc/activate(mob/living/user)
 	active = TRUE
-	var/power_gap = clamp(internal_cell.maxcharge - internal_cell.charge/10, 30, 100)
-	if(!get_cell()?.drain_power(TRUE,FALSE, power_gap * CELLRATE))
+	var/power_gap = clamp((internal_cell.maxcharge - internal_cell.charge)/10, 10, 100)
+	owner.mech_flags |= MF_ENGINE_POWERED
+	if(!get_cell(TRUE)?.drain_power(TRUE,FALSE, power_gap KILOWATTS))
 		active = FALSE
+		owner.mech_flags &= ~MF_ENGINE_POWERED
 		return
-	if(prob(power_gap))
+	// No spamming the engine
+	user.setClickCooldown(7)
+	if(prob(100 - power_gap))
+		active = TRUE
+		if(owner.power == MECH_POWER_OFF)
+			owner.toggle_power(user)
+		owner.mech_flags |= MF_ENGINE_POWERED
 		START_PROCESSING(SSprocessing, src)
+	else
+		active = FALSE
 
 /obj/item/mech_equipment/engine/Process()
 	if(reagents.total_volume < 2)
@@ -842,14 +843,17 @@
 		return
 	var/units_to_use = clamp(round(power_gap / production_ratio), 1, power_cap / production_ratio)
 	units_to_use = min(units_to_use, reagents.total_volume)
-	reagents.trans_to_holder(internal_chamber, units_to_use, 0, FALSE, TRUE)
+	reagents.trans_to_holder(internal_chamber, units_to_use, 1, FALSE, TRUE)
 	/// No hydro-powered engines allowed in this universe!!
 	units_to_use = internal_chamber.get_reagent_amount(/datum/reagent/fuel)
-	internal_cell.give(units_to_use * production_ratio)
+	internal_cell.give(units_to_use * production_ratio KILOWATTS * CELLRATE)
 	internal_chamber.remove_any(internal_chamber.total_volume)
 
-/obj/item/mech_equipment/engine/deactivate()
+/obj/item/mech_equipment/engine/deactivate(mob/living/user)
 	STOP_PROCESSING(SSprocessing,src)
+	owner.mech_flags &= ~MF_ENGINE_POWERED
+	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
+		owner.toggle_power(user)
 	. = ..()
 
 /obj/item/mech_equipment/engine/attackby(obj/item/reagent_containers/W, mob/user)
@@ -862,44 +866,96 @@
 	. = ..()
 	if(.)
 		if(active)
-			deactivate()
+			deactivate(user)
 		else
-			activate()
+			activate(user)
 		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
 
 /obj/item/mech_equipment/engine/get_hardpoint_maptext()
 	return "Fuel:[reagents.total_volume]"
 
-
 /obj/item/mech_equipment/power_auxiliary
 	var/obj/item/cell/internal_cell = null
+	equipment_flags = ME_BYPASS_INTERFACE | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT
+	restricted_hardpoints = list(HARDPOINT_BACKUP_POWER)
 
 /obj/item/mech_equipment/power_auxiliary/Initialize()
 	. = ..()
 	internal_cell = new /obj/item/cell/high(src)
 
 /obj/item/mech_equipment/power_auxiliary/uninstalled()
-	owner.mech_flags &= ~MF_AUXILIARY_POWERED
+	deactivate()
 	. = ..()
 
-/obj/item/mech_equipment/power_auxiliary/proc/activate()
+/obj/item/mech_equipment/power_auxiliary/proc/activate(mob/living/user)
 	active = TRUE
-	owner.mech_flags &= MF_AUXILIARY_POWERED
+	owner.mech_flags |= MF_AUXILIARY_POWERED
+	if(owner.power == MECH_POWER_OFF)
+		owner.toggle_power(user)
 
 /obj/item/mech_equipment/power_auxiliary/deactivate()
 	owner.mech_flags &= ~MF_AUXILIARY_POWERED
+	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
+		owner.toggle_power()
 	. = ..()
 
 /obj/item/mech_equipment/power_auxiliary/attack_self(mob/user)
 	. = ..()
 	if(.)
 		if(active)
-			deactivate()
+			deactivate(user)
 		else
 			activate(user)
 		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
 
 /obj/item/mech_equipment/power_cell
+
+	name = "internal game container for power cell"
+	desc = "A special object dedicated to keeping bad snowflakey code away, contact your local coders if seen out in the wild."
+	restricted_hardpoints = list(HARDPOINT_POWER)
+	equipment_delay = 10
+
+	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 2, TECH_MAGNET = 2)
+
+	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_BYPASS_INTERFACE
+	var/obj/item/cell/internal_cell = null
+
+/obj/item/mech_equipment/power_cell/proc/set_power_cell(obj/item/cell/power_provider)
+	power_provider.forceMove(src)
+	internal_cell = power_provider
+	icon = internal_cell.icon
+	icon_state = internal_cell.icon_state
+	name = power_provider.name
+	desc = power_provider.desc
+	if(owner)
+		deactivate()
+
+/obj/item/mech_equipment/power_cell/uninstalled()
+	deactivate()
+	. = ..()
+
+/obj/item/mech_equipment/power_cell/proc/activate(mob/living/user)
+	active = TRUE
+	owner.mech_flags |= MF_CELL_POWERED
+	if(owner.power == MECH_POWER_OFF)
+		owner.toggle_power(user)
+
+
+/obj/item/mech_equipment/power_cell/deactivate(mob/living/user)
+	owner.mech_flags &= ~MF_CELL_POWERED
+	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
+		owner.toggle_power(user)
+	. = ..()
+
+/obj/item/mech_equipment/power_cell/attack_self(mob/user)
+	. = ..()
+	if(.)
+		if(active)
+			deactivate(user)
+		else
+			activate(user)
+		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
+
 
 
 

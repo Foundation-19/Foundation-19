@@ -23,7 +23,6 @@
 	gender = NEUTER
 
 	var/mech_health = 300
-	var/obj/item/cell/cell
 	var/obj/item/robot_parts/robot_component/diagnosis_unit/diagnostics
 	var/obj/item/robot_parts/robot_component/armour/exosuit/m_armour
 	var/obj/machinery/portable_atmospherics/canister/air_supply
@@ -52,10 +51,6 @@
 		)
 
 /obj/item/mech_component/chassis/Destroy()
-	if(cell.loc != loc)
-		QDEL_NULL(cell.loc)
-	else
-		QDEL_NULL(cell)
 	QDEL_NULL(diagnostics)
 	QDEL_NULL(m_armour)
 	QDEL_NULL(air_supply)
@@ -64,14 +59,11 @@
 
 /obj/item/mech_component/chassis/update_components()
 	diagnostics = locate() in src
-	cell =        locate() in src
 	m_armour =    locate() in src
 	air_supply =  locate() in src
 	storage_compartment = locate() in src
 
 /obj/item/mech_component/chassis/show_missing_parts(mob/user)
-	if(!cell)
-		to_chat(user, SPAN_WARNING("It is missing a power cell."))
 	if(!diagnostics)
 		to_chat(user, SPAN_WARNING("It is missing a diagnostics unit."))
 	if(!m_armour)
@@ -139,14 +131,10 @@
 		cockpit.react()
 
 /obj/item/mech_component/chassis/ready_to_install()
-	return (cell && diagnostics && m_armour)
+	return (diagnostics && m_armour)
 
 /obj/item/mech_component/chassis/prebuild()
 	diagnostics = new(src)
-	cell = new /obj/item/cell/high(src)
-	cell.charge = cell.maxcharge
-	var/mob/living/exosuit/owner = loc
-	owner.mech_flags &= MC_CELL_POWERED
 
 /obj/item/mech_component/chassis/attackby(obj/item/thing, mob/user)
 	if(istype(thing,/obj/item/robot_parts/robot_component/diagnosis_unit))
@@ -154,11 +142,6 @@
 			to_chat(user, SPAN_WARNING("\The [src] already has a diagnostic system installed."))
 			return
 		if(install_component(thing, user)) diagnostics = thing
-	else if(istype(thing, /obj/item/cell))
-		if(cell)
-			to_chat(user, SPAN_WARNING("\The [src] already has a power provider installed."))
-			return
-		if(install_component(thing,user)) cell = thing
 	else if(istype(thing, /obj/item/robot_parts/robot_component/armour/exosuit))
 		if(m_armour)
 			to_chat(user, SPAN_WARNING("\The [src] already has armour installed."))

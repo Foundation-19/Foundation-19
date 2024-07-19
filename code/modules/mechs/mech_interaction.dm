@@ -44,9 +44,8 @@
 		//If this happens something broke tbh
 		user.RemoveClickHandler(src)
 		return
-	if(E.hatch_closed)
-		return E.ClickOn(A, params, user)
-	else return ..()
+
+	return E.ClickOn(A, params, user)
 
 /datum/click_handler/default/mech/OnDblClick(atom/A, params)
 	OnClick(A, params)
@@ -306,6 +305,7 @@
 		var/to_place = input("Where would you like to install it?") as null|anything in (realThing.restricted_hardpoints & free_hardpoints)
 		if(!to_place)
 			to_chat(user, SPAN_WARNING("There is no room to install \the [thing]."))
+			return
 		if(install_system(thing, to_place, user))
 			return
 		to_chat(user, SPAN_WARNING("\The [thing] could not be installed in that hardpoint."))
@@ -384,21 +384,23 @@
 					to_chat(user, SPAN_WARNING("There is no power provider here for you to remove!"))
 					return
 				var/delay = 2.5 SECONDS * user.skill_delay_mult(SKILL_DEVICES)
-				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols || !body || !body.cell)
+				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols || !body || !hardpoints[HARDPOINT_POWER])
 					return
 
 				var/atom/movable/power_provider = hardpoints[HARDPOINT_POWER]
-				if(mech_flags & MF_ENGINE_POWERED)
+				if(istype(power_provider, /obj/item/mech_equipment/power_cell))
+					var/obj/item/mech_equipment/power_cell/cast = power_provider
 					remove_system(HARDPOINT_POWER, null, TRUE)
-
+					power_provider = cast.internal_cell
+					cast.internal_cell = null
+					qdel(cast)
+				else
+					remove_system(HARDPOINT_POWER, null, TRUE)
 				user.put_in_hands(power_provider)
 				to_chat(user, SPAN_NOTICE("You remove \the [power_provider] from \the [src]."))
 				playsound(user.loc, 'sounds/items/Crowbar.ogg', 50, 1)
 				visible_message(SPAN_NOTICE("\The [user] pries out \the [power_provider] using \the [thing]."))
 				power = MECH_POWER_OFF
-				hud_power_control.queue_icon_update()
-				body.cell = null
-				mech_flags &= ~MF_CELL_POWERED
 				return
 
 			else if(isCrowbar(thing))
@@ -428,13 +430,12 @@
 					to_chat(user, SPAN_WARNING("There is already a power provider installed in there!"))
 					return
 				if(user.unEquip(thing))
-					thing.forceMove(body)
-					body.cell = thing
-					hardpoints[HARDPOINT_POWER] = thing
-					to_chat(user, SPAN_NOTICE("You install \the [body.cell] into \the [src]."))
-					mech_flags |= MF_CELL_POWERED
+					var/obj/item/mech_equipment/power_cell/holder = new(null)
+					holder.set_power_cell(thing)
+					install_system(holder, HARDPOINT_POWER, null)
+					to_chat(user, SPAN_NOTICE("You install \the [thing] into \the [src]."))
 					playsound(user.loc, 'sounds/items/Screwdriver.ogg', 50, 1)
-					visible_message(SPAN_NOTICE("\The [user] installs \the [body.cell] into \the [src]."))
+					visible_message(SPAN_NOTICE("\The [user] installs \the [thing] into \the [src]."))
 				return
 			else if(istype(thing, /obj/item/device/robotanalyzer))
 				to_chat(user, SPAN_NOTICE("Diagnostic Report for \the [src]:"))

@@ -16,12 +16,14 @@
 	var/mech_layer = MECH_GEAR_LAYER //For the part where it's rendered as mech gear
 	var/require_adjacent = TRUE
 	var/active = FALSE //For gear that has an active state (ie, floodlights)
-	var/equipment_flags = ME_ANY_POWER
+	var/equipment_flags = ME_ANY_POWER | ME_BYPASS_INTERFACE
 
 /obj/item/mech_equipment/attack(mob/living/M, mob/living/user, target_zone) //Generally it's not desired to be able to attack with items
 	return FALSE
 
 /obj/item/mech_equipment/afterattack(atom/target, mob/living/user, inrange, params)
+	if(!owner.hatch_closed && !(equipment_flags & ME_BYPASS_INTERFACE))
+		return FALSE
 	if(require_adjacent)
 		if(!inrange)
 			return FALSE
@@ -37,6 +39,8 @@
 	return FALSE
 
 /obj/item/mech_equipment/attack_self(mob/user)
+	if(!owner.hatch_closed && !(equipment_flags & ME_BYPASS_INTERFACE))
+		return FALSE
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
 		if(equipment_flags & ME_POWERLESS_ACTIVATION)
 			return TRUE
@@ -141,9 +145,9 @@
 /obj/item/proc/get_hardpoint_maptext()
 	return null
 
-/obj/item/mech_equipment/mounted_system/get_cell()
+/obj/item/mech_equipment/get_cell(force = FALSE)
 	if(QDELETED(owner))
 		return null
 	if(loc != owner)
 		return null
-	return owner.get_cell(FALSE, equipment_flags)
+	return owner.get_cell(force, equipment_flags)

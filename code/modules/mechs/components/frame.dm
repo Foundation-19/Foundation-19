@@ -146,8 +146,6 @@
 		var/mob/living/exosuit/M = new(get_turf(src), src)
 		visible_message(SPAN_NOTICE("\The [user] finishes off \the [M]."))
 		playsound(user.loc, 'sounds/items/Screwdriver.ogg', 100, 1)
-		if(body.cell)
-			M.mech_flags &= MC_CELL_POWERED
 
 		arms = null
 		legs = null

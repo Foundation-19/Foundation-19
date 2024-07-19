@@ -15,13 +15,19 @@
 		var/i = 1
 		for(var/hardpoint in hardpoints)
 			var/atom/movable/screen/exosuit/hardpoint/H = new(src, hardpoint)
-			H.screen_loc = "1:6,[15-i]" //temp
+			// those 2 are always forced to the bottom for UI
+			switch(hardpoint)
+				if(HARDPOINT_POWER)
+					H.screen_loc = "1:6,8"
+				if(HARDPOINT_BACKUP_POWER)
+					H.screen_loc = "1:6,7"
+				else
+					H.screen_loc = "1:6,[15-i]" //temp
 			hud_elements |= H
 			hardpoint_hud_elements[hardpoint] = H
 			i++
 
 		var/list/additional_hud_elements = list(
-			/atom/movable/screen/exosuit/toggle/power_control,
 			/atom/movable/screen/exosuit/toggle/maint,
 			/atom/movable/screen/exosuit/eject,
 			/atom/movable/screen/exosuit/toggle/hardpoint,
@@ -35,7 +41,7 @@
 		if(body && body.pilot_coverage >= 100)
 			additional_hud_elements += /atom/movable/screen/exosuit/toggle/air
 		i = 0
-		var/pos = 7
+		var/pos = 6
 		for(var/additional_hud in additional_hud_elements)
 			var/atom/movable/screen/exosuit/M = new additional_hud(src)
 			M.screen_loc = "1:6,[pos]:[i]"
@@ -49,7 +55,6 @@
 		hud_power = new /atom/movable/screen/exosuit/power(src)
 		hud_power.screen_loc = "EAST-1:12,CENTER-4:25"
 		hud_elements |= hud_power
-		hud_power_control = locate(/atom/movable/screen/exosuit/toggle/power_control) in hud_elements
 		hud_camera = locate(/atom/movable/screen/exosuit/toggle/camera) in hud_elements
 
 	refresh_hud()
@@ -59,11 +64,11 @@
 		var/atom/movable/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
 		if(H) H.update_system_info()
 	handle_hud_icons_health()
-	var/obj/item/cell/C = get_cell()
+	var/obj/item/cell/C = get_cell(FALSE, ME_ANY_POWER)
 	if(istype(C))
 		hud_power.maptext_x = initial(hud_power.maptext_x)
 		hud_power.maptext_y = initial(hud_power.maptext_y)
-		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;",  "[round(get_cell().charge)]/[round(get_cell().maxcharge)]")
+		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;",  "[round(C.charge)]/[round(C.maxcharge)]")
 	else
 		hud_power.maptext_x = 16
 		hud_power.maptext_y = -8

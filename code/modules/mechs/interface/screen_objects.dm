@@ -134,8 +134,15 @@
 		return
 
 	if(!owner?.hatch_closed)
-		to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
-		return
+		if(istype(holding, /obj/item/mech_equipment))
+			var/obj/item/mech_equipment/cast = holding
+			if(!(cast.equipment_flags & ME_BYPASS_INTERFACE))
+				to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
+				return
+		else
+			to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
+			return
+
 
 	var/modifiers = params2list(params)
 	if(modifiers["ctrl"])
@@ -201,22 +208,6 @@
 	toggled = !toggled
 	queue_icon_update()
 	return toggled
-
-/atom/movable/screen/exosuit/toggle/power_control
-	name = "Power control"
-	icon_state = "small_important"
-	maptext = MECH_UI_STYLE("POWER")
-	maptext_x = 3
-	maptext_y = 13
-	height = 12
-
-/atom/movable/screen/exosuit/toggle/power_control/toggled()
-	. = ..()
-	owner.toggle_power(usr)
-
-/atom/movable/screen/exosuit/toggle/power_control/on_update_icon()
-	toggled = (owner.power == MECH_POWER_ON)
-	. = ..()
 
 /atom/movable/screen/exosuit/toggle/air
 	name = "air"
@@ -340,6 +331,9 @@
 // Controls strafing mode on the mech
 /atom/movable/screen/exosuit/toggle/strafe
 	name = "toggle strafe"
+	maptext = MECH_UI_STYLE("STRAFE")
+	maptext_x = 2
+	maptext_y = 12
 
 /atom/movable/screen/exosuit/toggle/strafe/toggled() // Prevents exosuits from strafing when EMP'd enough
 	if(!(owner.legs.movement_flags & PF_OMNI_STRAFE))

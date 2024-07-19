@@ -71,7 +71,6 @@
 	var/atom/movable/screen/exosuit/health/hud_health
 	var/atom/movable/screen/exosuit/toggle/hatch_open/hud_open
 	var/atom/movable/screen/exosuit/power/hud_power
-	var/atom/movable/screen/exosuit/toggle/power_control/hud_power_control
 	var/atom/movable/screen/exosuit/toggle/camera/hud_camera
 	//POWER
 	var/power = MECH_POWER_OFF
@@ -127,10 +126,6 @@
 			for(var/hardpoint in comp.has_hardpoints)
 				hardpoints[hardpoint] = null
 
-	if(body?.cell)
-		mech_flags |= MF_CELL_POWERED
-		hardpoints[HARDPOINT_POWER] = body.cell
-
 	if(head && head.radio)
 		radio = new(src)
 
@@ -158,7 +153,6 @@
 	hud_health = null
 	hud_open = null
 	hud_power = null
-	hud_power_control = null
 	hud_camera = null
 
 	for(var/thing in hud_elements)
@@ -220,21 +214,22 @@
 
 /mob/living/exosuit/proc/toggle_power(mob/user)
 	if(power == MECH_POWER_TRANSITION)
-		to_chat(user, SPAN_NOTICE("Power transition in progress. Please wait."))
+		if(user)
+			to_chat(user, SPAN_NOTICE("Power transition in progress. Please wait."))
 	else if(power == MECH_POWER_ON) //Turning it off is instant
 		playsound(src, 'sounds/mecha/mech-shutdown.ogg', 100, 0)
 		power = MECH_POWER_OFF
-	else if(get_cell(TRUE))
+	else if(get_cell(TRUE, ME_ANY_POWER))
 		//Start power up sequence
 		power = MECH_POWER_TRANSITION
 		playsound(src, 'sounds/mecha/powerup.ogg', 50, 0)
-		if(user.do_skilled(1.5 SECONDS, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
-			playsound(src, 'sounds/mecha/nominal.ogg', 50, 0)
-			power = MECH_POWER_ON
-		else
-			to_chat(user, SPAN_WARNING("You abort the powerup sequence."))
-			power = MECH_POWER_OFF
-		hud_power_control?.queue_icon_update()
-	else
+		if(user)
+			if(user.do_skilled(1.5 SECONDS, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
+				playsound(src, 'sounds/mecha/nominal.ogg', 50, 0)
+				power = MECH_POWER_ON
+			else
+				to_chat(user, SPAN_WARNING("You abort the powerup sequence."))
+				power = MECH_POWER_OFF
+	else if(user)
 		to_chat(user, SPAN_WARNING("Error: No power cell was detected."))
 
