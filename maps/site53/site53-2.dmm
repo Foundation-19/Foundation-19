@@ -22991,19 +22991,6 @@
 	dir = 8
 	},
 /area/site53/lowertrams/brownline)
-"cuQ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/site53/ulcz/hallways)
 "cvh" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
@@ -25559,17 +25546,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/ulcz/scp2427_3)
-"dOT" = (
-/obj/effect/floor_decal/corner/safe/border{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/ulcz/hallways)
 "dPn" = (
 /obj/machinery/camera/network/lcz{
 	dir = 8;
@@ -29618,6 +29594,19 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
+"gib" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/ulcz/hallways)
 "gic" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -62012,6 +62001,17 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
+"xQM" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/hallways)
 "xQS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/camera/network/entrance{
@@ -75331,10 +75331,10 @@ los
 giE
 sqL
 bJx
+gib
 tNo
 tNo
-tNo
-cuQ
+gib
 tNo
 abZ
 tNo
@@ -75588,10 +75588,10 @@ dJZ
 kwX
 evx
 dJS
-fVr
+xQM
 jqb
 nLr
-dOT
+xQM
 ylk
 bdf
 nAL
