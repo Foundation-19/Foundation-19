@@ -224,7 +224,8 @@
 /mob/living/silicon/robot/proc/set_module_sprites(list/new_sprites)
 	if(new_sprites && new_sprites.len)
 		module_sprites = new_sprites.Copy()
-		icon_state = module_sprites[module_sprites[1]]
+		icontype = module_sprites[1]
+		icon_state = module_sprites[icontype]
 	update_icon()
 	return module_sprites
 
