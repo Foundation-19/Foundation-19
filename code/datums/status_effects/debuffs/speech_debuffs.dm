@@ -22,10 +22,9 @@
  * Iterates over all of the characters in the passed message
  * and calls apply_speech() on each.
  */
-/datum/status_effect/speech/proc/handle_message(datum/source, list/speech_args, datum/language/speaking)
+/datum/status_effect/speech/proc/handle_message(datum/source, message, datum/language/speaking)
 	SIGNAL_HANDLER
 
-	var/message = speech_args[SPEECH_ARG_MESSAGE]
 	if(speaking.flags & NO_STUTTER)
 		return
 
@@ -41,7 +40,7 @@
 
 		final_phrase += apply_speech(original_char, original_char)
 
-	speech_args[SPEECH_ARG_MESSAGE] = sanitize(final_phrase)
+	message = sanitize(final_phrase)
 
 /**
  * Applies the speech effects on the past character, changing

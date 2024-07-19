@@ -9,8 +9,7 @@ GLOBAL_DATUM_INIT(view_state, /datum/topic_state/view, new)
 /mob/proc/view_can_use_topic(src_object)
 	if(!client)
 		return STATUS_CLOSE
-	var/view_size = getviewsize(client.view)
-	if(src_object in view(max(view_size[1], view_size[2]), src))
+	if(src_object in view(client.view, src))
 		return shared_nano_interaction(src_object)
 	return STATUS_CLOSE
 

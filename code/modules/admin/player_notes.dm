@@ -64,8 +64,6 @@
 	if(!infos || infos.len < index) return
 
 	var/datum/player_info/item = infos[index]
-	if(!(item.author == usr.key || item.author == "Adminbot" || ishost(usr)))
-		return
 	infos.Remove(item)
 	to_save(info, infos)
 

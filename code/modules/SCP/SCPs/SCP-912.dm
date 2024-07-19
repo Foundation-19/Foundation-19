@@ -11,8 +11,11 @@
 		"SCP-912", //Name (Should not be the scp desg, more like what it can be described as to viewers)
 		SCP_SAFE, //Obj Class
 		"912", //Numerical Designation
-		SCP_ROLEPLAY
+		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
+
+	SCP.min_time = 999 MINUTES
+	SCP.min_playercount = 999
 
 	init_skills()
 

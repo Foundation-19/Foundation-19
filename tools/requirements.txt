@@ -1,12 +1,9 @@
-pygit2==1.7.2
-bidict==0.22.0
-Pillow==9.3.0
+pygit2==1.0.1
+bidict==0.13.1
+Pillow==9.0.1
 
 # changelogs
-PyYaml==6.0.1
-beautifulsoup4==4.9.3
+PyYAML==6.0
+beautifulsoup4==4.10.0
 ruamel.yaml==0.17.20
 PyGithub==1.55
-
-# ezdb
-mysql-connector-python==8.0.33

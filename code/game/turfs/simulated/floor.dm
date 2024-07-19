@@ -28,16 +28,15 @@
 	height = -FLUID_SHALLOW / 2
 
 /turf/simulated/floor/is_plating()
-	return (!flooring && !initial_flooring)
+	return !flooring
 
 /turf/simulated/floor/protects_atom(atom/A)
 	return (A.level <= 1 && !is_plating()) || ..()
 
-/turf/simulated/floor/Initialize(mapload, floortype)
-	. = ..()
+/turf/simulated/floor/New(newloc, floortype)
+	..(newloc)
 	if(!floortype && initial_flooring)
 		floortype = initial_flooring
-		initial_flooring = null
 	if(floortype)
 		set_flooring(decls_repository.get_decl(floortype))
 

@@ -14,11 +14,6 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 /datum/antagonist/traitor/Topic(href, href_list)
 	if (..())
 		return 1
-
-	var/client/target = usr.client
-	if(!check_rights(R_ADMIN|R_MOD, TRUE, target))
-		return 1
-
 	if(href_list["spawn_uplink"])
 		spawn_uplink(locate(href_list["spawn_uplink"]))
 		return 1

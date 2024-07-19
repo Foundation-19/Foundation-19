@@ -117,8 +117,9 @@
 	return istype(S, src)
 
 /obj/structure/proc/refresh_neighbors()
-	for(var/turf/thing as anything in RANGE_TURFS(src, 1))
-		thing.update_icon()
+	for(var/thing in RANGE_TURFS(src, 1))
+		var/turf/T = thing
+		T.update_icon()
 
 /obj/structure/proc/update_connections(propagate = 0)
 	var/list/dirs = list()

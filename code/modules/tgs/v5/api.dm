@@ -4,15 +4,10 @@
 
 	var/instance_name
 	var/security_level
-	var/visibility
 
 	var/reboot_mode = TGS_REBOOT_MODE_NORMAL
 
-	/// List of chat messages list()s that attempted to be sent during a topic call. To be bundled in the result of the call
 	var/list/intercepted_message_queue
-
-	/// List of chat messages list()s that attempted to be sent during a topic call. To be bundled in the result of the call
-	var/list/offline_message_queue
 
 	var/list/custom_commands
 
@@ -21,20 +16,15 @@
 	var/list/chat_channels
 
 	var/initialized = FALSE
-	var/initial_bridge_request_received = FALSE
-	var/datum/tgs_version/interop_version
 
 	var/chunked_requests = 0
 	var/list/chunked_topics = list()
-
-	var/list/pending_events = list()
 
 	var/detached = FALSE
 
 /datum/tgs_api/v5/New()
 	. = ..()
-	interop_version = version
-	TGS_DEBUG_LOG("V5 API created: [json_encode(args)]")
+	TGS_DEBUG_LOG("V5 API created")
 
 /datum/tgs_api/v5/ApiVersion()
 	return new /datum/tgs_version(
@@ -47,12 +37,8 @@
 	access_identifier = world.params[DMAPI5_PARAM_ACCESS_IDENTIFIER]
 
 	var/datum/tgs_version/api_version = ApiVersion()
-	version = null // we want this to be the TGS version, not the interop version
-
-	// sleep once to prevent an issue where world.Export on the first tick can hang indefinitely
-	sleep(world.tick_lag)
-
-	var/list/bridge_response = Bridge(DMAPI5_BRIDGE_COMMAND_STARTUP, list(DMAPI5_BRIDGE_PARAMETER_MINIMUM_SECURITY_LEVEL = minimum_required_security_level, DMAPI5_BRIDGE_PARAMETER_VERSION = api_version.raw_parameter, DMAPI5_PARAMETER_CUSTOM_COMMANDS = ListCustomCommands(), DMAPI5_PARAMETER_TOPIC_PORT = GetTopicPort()))
+	version = null
+	var/list/bridge_response = Bridge(DMAPI5_BRIDGE_COMMAND_STARTUP, list(DMAPI5_BRIDGE_PARAMETER_MINIMUM_SECURITY_LEVEL = minimum_required_security_level, DMAPI5_BRIDGE_PARAMETER_VERSION = api_version.raw_parameter, DMAPI5_PARAMETER_CUSTOM_COMMANDS = ListCustomCommands()))
 	if(!istype(bridge_response))
 		TGS_ERROR_LOG("Failed initial bridge request!")
 		return FALSE
@@ -64,12 +50,10 @@
 
 	if(runtime_information[DMAPI5_RUNTIME_INFORMATION_API_VALIDATE_ONLY])
 		TGS_INFO_LOG("DMAPI validation, exiting...")
-		TerminateWorld()
+		del(world)
 
-	initial_bridge_request_received = TRUE
-	version = new /datum/tgs_version(runtime_information[DMAPI5_RUNTIME_INFORMATION_SERVER_VERSION]) // reassigning this because it can change if TGS updates
+	version = new /datum/tgs_version(runtime_information[DMAPI5_RUNTIME_INFORMATION_SERVER_VERSION])
 	security_level = runtime_information[DMAPI5_RUNTIME_INFORMATION_SECURITY_LEVEL]
-	visibility = runtime_information[DMAPI5_RUNTIME_INFORMATION_VISIBILITY]
 	instance_name = runtime_information[DMAPI5_RUNTIME_INFORMATION_INSTANCE_NAME]
 
 	var/list/revisionData = runtime_information[DMAPI5_RUNTIME_INFORMATION_REVISION]
@@ -116,22 +100,15 @@
 	initialized = TRUE
 	return TRUE
 
-/datum/tgs_api/v5/proc/GetTopicPort()
-#if defined(OPENDREAM) && defined(OPENDREAM_TOPIC_PORT_EXISTS)
-	return "[world.opendream_topic_port]"
-#else
-	return null
-#endif
-
 /datum/tgs_api/v5/proc/RequireInitialBridgeResponse()
 	TGS_DEBUG_LOG("RequireInitialBridgeResponse()")
 	var/logged = FALSE
-	while(!initial_bridge_request_received)
+	while(!version)
 		if(!logged)
 			TGS_DEBUG_LOG("RequireInitialBridgeResponse: Starting sleep")
 			logged = TRUE
 
-		sleep(world.tick_lag)
+		sleep(1)
 
 	TGS_DEBUG_LOG("RequireInitialBridgeResponse: Passed")
 
@@ -204,7 +181,17 @@
 		var/datum/tgs_chat_channel/channel = I
 		ids += channel.id
 
-	SendChatMessageRaw(message2, ids)
+	message2 = UpgradeDeprecatedChatMessage(message2)
+
+	if (!length(channels))
+		return
+
+	var/list/data = message2._interop_serialize()
+	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = ids
+	if(intercepted_message_queue)
+		intercepted_message_queue += list(data)
+	else
+		Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
 
 /datum/tgs_api/v5/ChatTargetedBroadcast(datum/tgs_message_content/message2, admin_only)
 	var/list/channels = list()
@@ -213,81 +200,31 @@
 		if (!channel.is_private_channel && ((channel.is_admin_channel && admin_only) || (!channel.is_admin_channel && !admin_only)))
 			channels += channel.id
 
-	SendChatMessageRaw(message2, channels)
-
-/datum/tgs_api/v5/ChatPrivateMessage(datum/tgs_message_content/message2, datum/tgs_chat_user/user)
-	SendChatMessageRaw(message2, list(user.channel.id))
-
-/datum/tgs_api/v5/proc/SendChatMessageRaw(datum/tgs_message_content/message2, list/channel_ids)
 	message2 = UpgradeDeprecatedChatMessage(message2)
 
-	if (!length(channel_ids))
+	if (!length(channels))
 		return
 
 	var/list/data = message2._interop_serialize()
-	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = channel_ids
+	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = channels
 	if(intercepted_message_queue)
 		intercepted_message_queue += list(data)
-		return
-
-	if(offline_message_queue)
-		offline_message_queue += list(data)
-		return
-
-	if(detached)
-		offline_message_queue = list(data)
-
-		WaitForReattach(FALSE)
-
-		data = offline_message_queue
-		offline_message_queue = null
-
-		for(var/queued_message in data)
-			SendChatDataRaw(queued_message)
 	else
-		SendChatDataRaw(data)
+		Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
 
-/datum/tgs_api/v5/proc/SendChatDataRaw(list/data)
-	Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
+/datum/tgs_api/v5/ChatPrivateMessage(datum/tgs_message_content/message2, datum/tgs_chat_user/user)
+	message2 = UpgradeDeprecatedChatMessage(message2)
+	var/list/data = message2._interop_serialize()
+	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = list(user.channel.id)
+	if(intercepted_message_queue)
+		intercepted_message_queue += list(data)
+	else
+		Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
 
 /datum/tgs_api/v5/ChatChannelInfo()
 	RequireInitialBridgeResponse()
 	WaitForReattach(TRUE)
 	return chat_channels.Copy()
-
-/datum/tgs_api/v5/TriggerEvent(event_name, list/parameters, wait_for_completion)
-	RequireInitialBridgeResponse()
-	WaitForReattach(TRUE)
-
-	if(interop_version.minor < 9)
-		TGS_WARNING_LOG("Interop version too low for custom events!")
-		return FALSE
-
-	var/str_parameters = list()
-	for(var/i in parameters)
-		str_parameters += "[i]"
-
-	var/list/response = Bridge(DMAPI5_BRIDGE_COMMAND_EVENT, list(DMAPI5_BRIDGE_PARAMETER_EVENT_INVOCATION = list(DMAPI5_EVENT_INVOCATION_NAME = event_name, DMAPI5_EVENT_INVOCATION_PARAMETERS = str_parameters, DMAPI5_EVENT_INVOCATION_NOTIFY_COMPLETION = wait_for_completion)))
-	if(!response)
-		return FALSE
-
-	var/event_id = response[DMAPI5_EVENT_ID]
-	if(!event_id)
-		return FALSE
-
-	TGS_DEBUG_LOG("Created event ID: [event_id]")
-	if(!wait_for_completion)
-		return TRUE
-
-	TGS_DEBUG_LOG("Waiting for completion of event ID: [event_id]")
-
-	while(!pending_events[event_id])
-		sleep(world.tick_lag)
-
-	TGS_DEBUG_LOG("Completed wait on event ID: [event_id]")
-	pending_events -= event_id
-
-	return TRUE
 
 /datum/tgs_api/v5/proc/DecodeChannels(chat_update_json)
 	TGS_DEBUG_LOG("DecodeChannels()")
@@ -315,7 +252,3 @@
 /datum/tgs_api/v5/SecurityLevel()
 	RequireInitialBridgeResponse()
 	return security_level
-
-/datum/tgs_api/v5/Visibility()
-	RequireInitialBridgeResponse()
-	return visibility

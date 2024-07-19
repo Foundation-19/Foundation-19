@@ -1,7 +1,7 @@
 /obj/effect/floor_decal/reset
 	name = "reset marker"
 
-/obj/effect/floor_decal/reset/LateInitialize()
+/obj/effect/floor_decal/reset/Initialize()
 	SHOULD_CALL_PARENT(FALSE)
 	var/turf/T = get_turf(src)
 	T.remove_decals()
