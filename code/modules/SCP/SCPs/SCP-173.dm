@@ -191,14 +191,14 @@
 
 /mob/living/scp173/Life()
 	. = ..()
-	var/list/our_view = dview(7, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
+	var/list/our_view = dview(9, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
 	for(var/mob/living/carbon/human/H in next_blinks)
 		if(!(H in our_view))
 			H.disable_blink(src)
 			next_blinks -= H
 	for(var/mob/living/carbon/human/H in our_view)
 		H.enable_blink(src)
-		next_blinks += H
+		next_blinks |= H
 	handle_regular_hud_updates()
 	process_blink_hud(src)
 	if(!isturf(loc)) // Inside of something
@@ -270,7 +270,7 @@
 	var/atom/A = src
 	if(istype(loc, /obj/structure/scp173_cage))
 		A = loc
-	for(var/mob/living/L in dview(7, A))
+	for(var/mob/living/L in dview(9, A))
 		if((istype(L, /mob/living/simple_animal/friendly/scp131)) && (InCone(L, L.dir)))
 			return TRUE
 		if(!istype(L, /mob/living/carbon/human))
@@ -334,7 +334,7 @@
 
 /mob/living/scp173/proc/Defecate()
 	var/feces_amount = CheckFeces()
-	if(feces_amount >= 30 && length(GLOB.clients) <= SCP.min_playercount && !client) //If we're lowpop we cant breach ourselves
+	if(feces_amount >= 30 && (!SCP.has_minimum_players()) && !client) //If we're lowpop we cant breach ourselves
 		return
 	if(!isobj(loc) && world.time > defecation_cooldown)
 		defecation_cooldown = world.time + defecation_cooldown_time
@@ -381,7 +381,7 @@
 
 	var/list/possible_human_targets = list()
 
-	for(var/mob/living/carbon/human/H in dview(14, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
+	for(var/mob/living/carbon/human/H in dview(18, src)) //Identifies possible human targets. Range is double regular view to allow 173 to pursue tarets outside of world.view to make evading him harder.
 		if(H.SCP || H.stat == DEAD)
 			continue
 		if(!LAZYLEN(get_path_to(src, H, flee_distance * 2, min_target_dist = 1)))
@@ -506,7 +506,7 @@
 			LAZYREMOVE(steps_to_target, step_turf)
 
 /mob/living/scp173/proc/get_viable_light_target() //Gets a viable light bulb target
-	for(var/obj/machinery/light/light_in_view in dview(7, src))
+	for(var/obj/machinery/light/light_in_view in dview(9, src))
 		if(get_area(light_in_view) == spawn_area)
 			continue
 		if(light_in_view.get_status() != LIGHT_OK)

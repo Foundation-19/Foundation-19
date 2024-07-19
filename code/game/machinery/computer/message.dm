@@ -42,16 +42,16 @@
 	// Will create sparks and print out the console's password. You will then have to wait a while for the console to be back online.
 	// It'll take more time if there's more characters in the password..
 	if(!emag && operable())
-		if(!isnull(src.linkedServer))
+		if(src.linkedServer)
 			emag = 1
 			screen = 2
 			spark_system.set_up(5, 0, src)
 			src.spark_system.start()
-			var/obj/item/paper/monitorkey/MK = new/obj/item/paper/monitorkey
+			var/obj/item/paper/monitorkey/MK = new/obj/item/paper/monitorkey(src.linkedServer)
 			MK.dropInto(loc)
 			// Will help make emagging the console not so easy to get away with.
 			MK.info += "<br><br><font color='red'>£%@%(*$%&(£&?*(%&£/{}</font>"
-			spawn(100*length(src.linkedServer.decryptkey)) UnmagConsole()
+			addtimer(CALLBACK(src, PROC_REF(UnmagConsole)), 1 SECOND * length(src.linkedServer.decryptkey))
 			message = rebootmsg
 			update_icon()
 			return 1
@@ -304,16 +304,21 @@
 /obj/item/paper/monitorkey
 	//..()
 	name = "Monitor Decryption Key"
-	var/obj/machinery/message_server/server = null
 
-/obj/item/paper/monitorkey/New()
-	..()
-	spawn(10)
-		if(message_servers)
-			for(var/obj/machinery/message_server/server in message_servers)
-				if(!isnull(server))
-					if(!isnull(server.decryptkey))
-						info = "<center><h2>Daily Key Reset</h2></center><br>The new message monitor key is '[server.decryptkey]'.<br>This key is only intended for personnel granted access to the messaging server. Keep it safe.<br>If necessary, change the password to a more secure one."
-						info_links = info
-						icon_state = "paper_words"
-						break
+/obj/item/paper/monitorkey/proc/print(obj/machinery/message_server/server)
+	set_content("<center><h2>Daily Key Reset</h2></center><br>The new message monitor key is '[server.decryptkey]'.<br>This key is only intended for personnel granted access to the messaging server. Keep it safe.<br>If necessary, change the password to a more secure one.")
+
+/obj/item/paper/monitorkey/Initialize(mapload, obj/machinery/message_server/server)
+	. = ..()
+	if(server)
+		print(server)
+		return INITIALIZE_HINT_NORMAL
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/item/paper/monitorkey/LateInitialize()
+	. = ..()
+	if(message_servers)
+		for(var/obj/machinery/message_server/server in message_servers)
+			if(server.decryptkey)
+				print(server)
+				break

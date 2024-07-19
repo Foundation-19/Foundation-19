@@ -113,13 +113,12 @@
 			break
 
 	if(!chosen_reagent)
-		for(var/possible in GLOB.chemical_reagents_list)
-			if(is_abstract(possible))
+		for(var/datum/reagent/possible as anything in subtypesof(/datum/reagent))
+			if(is_abstract(possible) || !initial(possible.name))
 				continue
-			var/datum/reagent/possible_reagent = possible
-			var/chem_name = initial(possible_reagent.name) //It dosent work if we dont do this black magic
+			var/chem_name = initial(possible.name) //It dosent work if we dont do this black magic
 			if(findtext(chosen_reagen_text, chem_name))
-				chosen_reagent = possible_reagent
+				chosen_reagent = possible
 				break
 
 	if(!chosen_reagent || (chosen_reagent in blacklist))

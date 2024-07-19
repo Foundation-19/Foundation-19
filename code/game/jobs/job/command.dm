@@ -258,7 +258,6 @@
 	ideal_character_age = 30
 	alt_titles = list(
 		"UIU Relations Agent" = /decl/hierarchy/outfit/job/civ/uiu,
-		"Horizon Initiative Scribe" = /decl/hierarchy/outfit/job/civ/thirep,
 		"Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/civ/MCDRep,
 		"Goldbaker-Reinz Corporate Liaison" = /decl/hierarchy/outfit/job/civ/grcl
 	)

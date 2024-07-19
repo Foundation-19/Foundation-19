@@ -97,3 +97,4 @@
 	id_type = /obj/item/card/id/sciencelvlp
 	l_pocket = /obj/item/material/coin/nullglass
 	l_ear = /obj/item/device/radio/headset/headset_sci
+	backpack_contents = list(/obj/item/reagent_containers/glass/beaker/vial/jerraman = 2)

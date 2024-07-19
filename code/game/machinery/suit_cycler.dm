@@ -131,9 +131,6 @@
 			to_chat(user, SPAN_DANGER("The cycler already contains a helmet."))
 			return
 
-		if(I.icon_override == CUSTOM_ITEM_MOB)
-			to_chat(user, "You cannot refit a customised voidsuit.")
-			return
 		if(!user.unEquip(I, src))
 			return
 		to_chat(user, "You fit \the [I] into the suit cycler.")
@@ -152,9 +149,6 @@
 			to_chat(user, SPAN_DANGER("The cycler already contains a voidsuit."))
 			return
 
-		if(I.icon_override == CUSTOM_ITEM_MOB)
-			to_chat(user, "You cannot refit a customised voidsuit.")
-			return
 		if(!user.unEquip(I, src))
 			return
 		to_chat(user, "You fit \the [I] into the suit cycler.")

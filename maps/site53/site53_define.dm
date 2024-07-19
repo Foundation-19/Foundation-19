@@ -34,7 +34,6 @@
 		"Foundation Central Office",
 		"UIU Central Office",
 		"GOC Central Office",
-		"Horizon Initiative Central Office ",
 		"Marshall, Carter, and Dark Central Office",
 		"Goldbaker-Reinz Central Office"
 	)
@@ -100,6 +99,8 @@
 		/decl/audio/track/purge_protocol,
 		/decl/audio/track/uiu_spawn_theme,
 		/decl/audio/track/surface_area,
+		/decl/audio/track/goc_spawn_theme2,
+		/decl/audio/track/fall_of_ganzir
 	)
 
 	available_cultural_info = list(
