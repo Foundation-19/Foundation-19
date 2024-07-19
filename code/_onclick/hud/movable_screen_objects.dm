@@ -45,8 +45,7 @@
 		screen_loc = "[screen_loc_X[1]]:[pix_X],[screen_loc_Y[1]]:[pix_Y]"
 
 /atom/movable/screen/movable/proc/encode_screen_X(X, mob/viewer)
-	var/view = getviewsize(viewer.client ? viewer.client.view : world.view)
-	view = view[1]
+	var/view = viewer.client ? viewer.client.view : world.view
 	if(X > view+1)
 		. = "EAST-[view*2 + 1-X]"
 	else if(X < view+1)
@@ -55,8 +54,7 @@
 		. = "CENTER"
 
 /atom/movable/screen/movable/proc/decode_screen_X(X, mob/viewer)
-	var/view = getviewsize(viewer.client ? viewer.client.view : world.view)
-	view = view[1]
+	var/view = viewer.client ? viewer.client.view : world.view
 	//Find EAST/WEST implementations
 	if(findtext(X,"EAST-"))
 		var/num = text2num(copytext(X,6)) //Trim EAST-
@@ -72,18 +70,16 @@
 		. = view+1
 
 /atom/movable/screen/movable/proc/encode_screen_Y(Y, mob/viewer)
-	var/view = getviewsize(viewer.client ? viewer.client.view : world.view)
-	view = view[2]
+	var/view = viewer.client ? viewer.client.view : world.view
 	if(Y > view+1)
 		. = "NORTH-[view*2 + 1-Y]"
-	else if(Y < view+1)
+	else if(Y < viewer.client.view+1)
 		. = "SOUTH+[Y-1]"
 	else
 		. = "CENTER"
 
 /atom/movable/screen/movable/proc/decode_screen_Y(Y, mob/viewer)
-	var/view = getviewsize(viewer.client ? viewer.client.view : world.view)
-	view = view[2]
+	var/view = viewer.client ? viewer.client.view : world.view
 	if(findtext(Y,"NORTH-"))
 		var/num = text2num(copytext(Y,7)) //Trim NORTH-
 		if(!num)

@@ -81,4 +81,7 @@
 	vision_flags = SEE_TURFS
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	eye_color = COLOR_LIME
-	overlay = /atom/movable/screen/fullscreen/hud/meson
+
+/obj/item/clothing/glasses/eyepatch/hud/meson/Initialize()
+	. = ..()
+	overlay = GLOB.global_hud.meson

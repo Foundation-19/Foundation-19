@@ -34,20 +34,11 @@ export const PortParameter = new Juke.Parameter({
   alias: 'p',
 });
 
-export const DmVersionParameter = new Juke.Parameter({
-  type: 'string',
-});
-
 export const CiParameter = new Juke.Parameter({ type: 'boolean' });
 
 export const WarningParameter = new Juke.Parameter({
   type: 'string[]',
   alias: 'W',
-});
-
-export const NoWarningParameter = new Juke.Parameter({
-  type: 'string[]',
-  alias: 'I',
 });
 
 export const DmMapsIncludeTarget = new Juke.Target({
@@ -67,16 +58,18 @@ export const DmMapsIncludeTarget = new Juke.Target({
 });
 
 export const DmTarget = new Juke.Target({
-  parameters: [DefineParameter, DmVersionParameter, WarningParameter, NoWarningParameter],
+  parameters: [DefineParameter],
   dependsOn: ({ get }) => [
     get(DefineParameter).includes('ALL_MAPS') && DmMapsIncludeTarget,
   ],
   inputs: [
     'maps/**',
     'code/**',
+    'goon/**',
     'html/**',
     'icons/**',
     'interface/**',
+    'packs/**',
     `${DME_NAME}.dme`,
   ],
   outputs: [
@@ -87,8 +80,6 @@ export const DmTarget = new Juke.Target({
     await DreamMaker(`${DME_NAME}.dme`, {
       defines: ['CBT', ...get(DefineParameter)],
       warningsAsErrors: get(WarningParameter).includes('error'),
-      ignoreWarningCodes: get(NoWarningParameter),
-      namedDmVersion: get(DmVersionParameter),
     });
   },
 });

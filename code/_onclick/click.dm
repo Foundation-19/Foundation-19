@@ -310,8 +310,7 @@
 /mob/observer/ghost/TurfAdjacent(turf/T)
 	if(!isturf(loc) || !client)
 		return FALSE
-	var/screen_view = getviewsize(client.view)
-	return z == T.z && (get_dist(loc, T) <= max(screen_view[1], screen_view[2]))
+	return z == T.z && (get_dist(loc, T) <= client.view)
 
 /*
 	Control+Shift click
@@ -391,69 +390,50 @@
 	return FALSE
 
 // Simple helper to face what you clicked on, in case it should be needed in more than one place
-/mob/proc/face_atom(atom/atom_to_face)
-	if(stat != CONSCIOUS || !canface() || moving || (buckled && !buckled.buckle_movable) || !x || !y || !atom_to_face.x || !atom_to_face.y)
-		return
+/mob/proc/face_atom(atom/A)
+	if(!A || !x || !y || !A.x || !A.y) return
+	var/dx = A.x - x
+	var/dy = A.y - y
+	if(!dx && !dy) return
 
-	var/dx = atom_to_face.x - x
-	var/dy = atom_to_face.y - y
-	if(!dx && !dy) // Wall items are graphically shifted but on the floor
-		if(atom_to_face.pixel_y > 16)
-			setDir(NORTH)
-		else if(atom_to_face.pixel_y < -16)
-			setDir(SOUTH)
-		else if(atom_to_face.pixel_x > 16)
-			setDir(EAST)
-		else if(atom_to_face.pixel_x < -16)
-			setDir(WEST)
-		SetMoveCooldown(movement_delay())
-		return
-
+	var/direction
 	if(abs(dx) < abs(dy))
-		if(dy > 0)
-			setDir(NORTH)
-		else
-			setDir(SOUTH)
+		if(dy > 0)	direction = NORTH
+		else		direction = SOUTH
 	else
-		if(dx > 0)
-			setDir(EAST)
-		else
-			setDir(WEST)
-	SetMoveCooldown(movement_delay())
+		if(dx > 0)	direction = EAST
+		else		direction = WEST
+	if(direction != dir)
+		facedir(direction)
+
+GLOBAL_LIST_INIT(click_catchers, create_click_catcher())
 
 /atom/movable/screen/click_catcher
 	icon = 'icons/mob/screen_gen.dmi'
-	icon_state = "catcher"
+	icon_state = "click_catcher"
 	plane = CLICKCATCHER_PLANE
 	mouse_opacity = MOUSE_OPACITY_OPAQUE
-	screen_loc = "CENTER"
+	screen_loc = "CENTER-7,CENTER-7"
 
-#define MAX_SAFE_BYOND_ICON_SCALE_PX (33 * 32) //Not using world.icon_size on purpose.
-#define MAX_SAFE_BYOND_ICON_SCALE_TILES (MAX_SAFE_BYOND_ICON_SCALE_PX / world.icon_size)
+/atom/movable/screen/click_catcher/Destroy()
+	SHOULD_CALL_PARENT(FALSE)
+	return QDEL_HINT_LETMELIVE
 
-/atom/movable/screen/click_catcher/proc/UpdateGreed(view_size_x = 15, view_size_y = 15)
-	var/icon/newicon = icon('icons/mob/screen_gen.dmi', "catcher")
-	var/ox = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_x)
-	var/oy = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_y)
-	var/px = view_size_x * world.icon_size
-	var/py = view_size_y * world.icon_size
-	var/sx = min(MAX_SAFE_BYOND_ICON_SCALE_PX, px)
-	var/sy = min(MAX_SAFE_BYOND_ICON_SCALE_PX, py)
-	newicon.Scale(sx, sy)
-	icon = newicon
-	screen_loc = "CENTER-[(ox-1)*0.5],CENTER-[(oy-1)*0.5]"
-	var/matrix/M = new
-	M.Scale(px/sx, py/sy)
-	transform = M
+/proc/create_click_catcher()
+	. = list()
+	for(var/i = 0, i<15, i++)
+		for(var/j = 0, j<15, j++)
+			var/atom/movable/screen/click_catcher/CC = new()
+			CC.screen_loc = "NORTH-[i],EAST-[j]"
+			. += CC
 
 /atom/movable/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)
-	if(LAZYACCESS(modifiers, MIDDLE_CLICK) && iscarbon(usr))
+	if(modifiers["middle"] && istype(usr, /mob/living/carbon))
 		var/mob/living/carbon/C = usr
 		C.swap_hand()
 	else
-		var/turf/click_turf = parse_caught_click_modifiers(modifiers, get_turf(usr.client ? usr.client.eye : usr), usr.client)
-		if (click_turf)
-			modifiers["catcher"] = TRUE
-			click_turf.Click(click_turf, control, list2params(modifiers))
+		var/turf/T = screen_loc2turf(screen_loc, get_turf(usr))
+		if(T)
+			T.Click(location, control, params)
 	. = 1

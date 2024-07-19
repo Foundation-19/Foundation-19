@@ -131,26 +131,26 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 	for(var/datum/category_item/player_setup_item/PI in items)
 		PI.sanitize_character()
 
-/datum/category_group/player_setup_category/proc/load_character(datum/pref_record_reader/R)
+/datum/category_group/player_setup_category/proc/load_character(savefile/S)
 	for(var/datum/category_item/player_setup_item/PI in items)
-		PI.load_character(R)
+		PI.load_character(S)
 
-/datum/category_group/player_setup_category/proc/save_character(datum/pref_record_reader/W)
+/datum/category_group/player_setup_category/proc/save_character(savefile/S)
 	// Sanitize all data, then save it
 	for(var/datum/category_item/player_setup_item/PI in items)
 		PI.sanitize_character()
 	for(var/datum/category_item/player_setup_item/PI in items)
-		PI.save_character(W)
+		PI.save_character(S)
 
-/datum/category_group/player_setup_category/proc/load_preferences(datum/pref_record_reader/R)
+/datum/category_group/player_setup_category/proc/load_preferences(savefile/S)
 	for(var/datum/category_item/player_setup_item/PI in items)
-		PI.load_preferences(R)
+		PI.load_preferences(S)
 
-/datum/category_group/player_setup_category/proc/save_preferences(datum/pref_record_reader/W)
+/datum/category_group/player_setup_category/proc/save_preferences(savefile/S)
 	for(var/datum/category_item/player_setup_item/PI in items)
 		PI.sanitize_preferences()
 	for(var/datum/category_item/player_setup_item/PI in items)
-		PI.save_preferences(W)
+		PI.save_preferences(S)
 
 /datum/category_group/player_setup_category/proc/content(mob/user)
 	. = "<table style='width:100%'><tr style='vertical-align:top'><td style='width:50%'>"

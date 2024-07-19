@@ -22,7 +22,10 @@
 	blend_mode = BLEND_MULTIPLY
 
 /obj/effect/paint/Initialize()
-	SHOULD_CALL_PARENT(FALSE)
+	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/paint/LateInitialize()
 	var/turf/simulated/wall/W = get_turf(src)
 	if(istype(W))
 		W.paint_color = color
@@ -31,8 +34,7 @@
 	if(WF)
 		WF.paint_color = color
 		WF.update_icon()
-	atom_flags |= ATOM_FLAG_INITIALIZED
-	return INITIALIZE_HINT_QDEL
+	qdel(src)
 
 /obj/effect/paint/pink
 	color = COLOR_PINK
@@ -73,7 +75,10 @@
 	blend_mode = BLEND_MULTIPLY
 
 /obj/effect/paint_stripe/Initialize()
-	SHOULD_CALL_PARENT(FALSE)
+	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/paint_stripe/LateInitialize()
 	var/turf/simulated/wall/W = get_turf(src)
 	if(istype(W))
 		W.stripe_color = color
@@ -82,8 +87,7 @@
 	if(WF)
 		WF.stripe_color = color
 		WF.update_icon()
-	atom_flags |= ATOM_FLAG_INITIALIZED
-	return INITIALIZE_HINT_QDEL
+	qdel(src)
 
 /obj/effect/paint_stripe/green
 	color = COLOR_GREEN_GRAY
@@ -127,4 +131,4 @@
 		var/datum/gas_mixture/G = P.air_temporary
 		G.adjust_gas(GAS_OXYGEN,((pressure*P.volume)/(R_IDEAL_GAS_EQUATION*temperature)))
 	return INITIALIZE_HINT_QDEL
-
+	

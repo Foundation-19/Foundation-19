@@ -190,7 +190,8 @@
 	html += "[stamps]"
 
 	// Ported to browser datum for IE11 feature parity
-	var/datum/browser/window = new(user, "paper_[name]", include_common = FALSE)
+	var/datum/browser/window = new(user, "paper_[name]")
+	window.stylesheets.Remove("common")
 	window.add_stylesheet("acs", 'html/acs.css')
 	window.add_head_content("<title>[name]</title><style>body { background-color: [color]; }</style>")
 	window.set_content(html)

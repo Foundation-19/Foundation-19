@@ -13,7 +13,6 @@ import {
   addChatPage,
   changeChatPage,
   changeScrollTracking,
-  clearChat,
   loadChat,
   rebuildChat,
   removeChatPage,
@@ -143,10 +142,6 @@ export const chatMiddleware = (store) => {
     }
     if (type === saveChatToDisk.type) {
       chatRenderer.saveToDisk();
-      return;
-    }
-    if (type === clearChat.type) {
-      chatRenderer.clearChat();
       return;
     }
     return next(action);

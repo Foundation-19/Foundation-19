@@ -103,11 +103,6 @@
 
 /// Called on `/mob/living/say` (/mob/living, message, /datum/language)
 #define COMSIG_LIVING_TREAT_MESSAGE "living_treat_message"
-	#define SPEECH_ARG_MESSAGE 1
-	#define SPEECH_ARG_LANGUAGE 2
-	#define SPEECH_ARG_VERB 3
-	#define SPEECH_ARG_ALT_NAME 4
-	#define SPEECH_ARG_WHISPERING 5
 
 /// Called on `/obj/item/proc/dropped` (/mob, /obj)
 #define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
