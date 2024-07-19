@@ -78,7 +78,7 @@
 /datum/unit_test/jobs_shall_have_short_title
 	name = "JOBS: All Job Datums Shall Have A Title Under 48 Characters"
 
-/datum/unit_test/jobs_shall_have_a_unique_title/start_test()
+/datum/unit_test/jobs_shall_have_short_title/start_test()
 	var/list/too_long_titles = list()
 	for(var/job_type in SSjobs.types_to_datums)
 		var/datum/job/job = SSjobs.types_to_datums[job_type]
@@ -88,5 +88,5 @@
 	if(LAZYLEN(too_long_titles))
 		fail("Some jobs have a title above 48 characters:\n[jointext(too_long_titles, "\n")]")
 	else
-		pass("All jobs have a unique title.")
+		pass("All jobs have a valid title.")
 	return 1
