@@ -13175,10 +13175,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp151)
 "aJH" = (
-/obj/machinery/door_timer/cell_2{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
 /obj/effect/floor_decal/corner/black/mono,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
@@ -29972,16 +29968,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
 "gsR" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator4";
+	name = "Cell 4"
 	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator5";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 5 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "gth" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -30243,13 +30235,12 @@
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
 "gCL" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_4{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator7";
+	name = "Cell 7"
 	},
-/obj/effect/floor_decal/corner/black/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "gCY" = (
 /obj/structure/table/standard,
@@ -36952,16 +36943,12 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/lowertrams/hub)
 "kmn" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator6";
+	name = "Cell 6"
 	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator8";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 8 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "kmz" = (
 /obj/machinery/door/airlock/glass/security{
@@ -39729,13 +39716,12 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "lPM" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_6{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator1";
+	name = "Cell 1"
 	},
-/obj/effect/floor_decal/corner/black/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "lPZ" = (
 /obj/structure/table/rack{
@@ -43171,18 +43157,6 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/ulcz/scp914)
-"nBL" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
-	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator3";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 3 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/isolation)
 "nBV" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
@@ -47502,16 +47476,12 @@
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint)
 "pPF" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator5";
+	name = "Cell 5"
 	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator1";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 1 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "pPJ" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -47933,6 +47903,19 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/aiccore)
+"qcn" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/ulcz/hallways)
 "qcu" = (
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/white/monotile,
@@ -48818,16 +48801,12 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "qAP" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator8";
+	name = "Cell 8"
 	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator4";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 4 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "qAX" = (
 /obj/machinery/door/airlock/command{
@@ -49218,16 +49197,12 @@
 /turf/simulated/floor,
 /area/site53/ulcz/humanoidcontainment)
 "qMF" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator2";
+	name = "Cell 2"
 	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator2";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 2 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "qNc" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -51547,15 +51522,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp294)
-"rWn" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_5{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/black/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/isolation)
 "rWv" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 1
@@ -51580,15 +51546,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/generalpurpose)
-"rWM" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_1{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/black/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/isolation)
 "rWP" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
@@ -52891,18 +52848,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/engine)
-"sDW" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
-	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator7";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 7 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/isolation)
 "sEr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -58398,18 +58343,6 @@
 /obj/item/modular_computer/console/preset/cardslot/command,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/surface/bunker)
-"vPT" = (
-/obj/effect/floor_decal/corner/black/border{
-	dir = 4
-	},
-/obj/machinery/button/flasher{
-	id_tag = "isolator6";
-	pixel_x = 25;
-	dir = 8;
-	name = "Cell 6 Flasher"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/isolation)
 "vQk" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -59594,15 +59527,12 @@
 	},
 /area/site53/logistics/logistics)
 "wBn" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_6{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	id = "Cell 8";
-	name = "Cell 8"
+/obj/effect/paint_stripe/orange,
+/obj/machinery/door_timer{
+	id = "isolator3";
+	name = "Cell 3"
 	},
-/obj/effect/floor_decal/corner/black/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/wall/r_titanium,
 /area/site53/llcz/dclass/isolation)
 "wBv" = (
 /obj/effect/floor_decal/corner/keter/bordercorner,
@@ -60753,15 +60683,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp529)
-"xfE" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_3{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/black/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/isolation)
 "xfG" = (
 /obj/effect/catwalk_plated/dark,
 /obj/structure/cable/green{
@@ -61683,12 +61604,6 @@
 /area/site53/ulcz/scp2427_3)
 "xGy" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door_timer/cell_6{
-	pixel_x = -32;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	id = "Cell 7";
-	name = "Cell 7"
-	},
 /obj/effect/floor_decal/corner/black/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
@@ -62182,6 +62097,17 @@
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
+"xWe" = (
+/obj/effect/floor_decal/corner/safe/border{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/hallways)
 "xWw" = (
 /obj/machinery/camera/network/lcz{
 	name = "SCP-263"
@@ -63268,28 +63194,28 @@ vRO
 vRO
 vRO
 vRO
+lPM
 vRO
 vRO
+qMF
 vRO
 vRO
+wBn
 vRO
 vRO
+gsR
 vRO
 vRO
+pPF
 vRO
 vRO
+kmn
 vRO
 vRO
+gCL
 vRO
 vRO
-vRO
-vRO
-vRO
-vRO
-vRO
-vRO
-vRO
-vRO
+qAP
 vRO
 vRO
 kwD
@@ -63525,28 +63451,28 @@ vRO
 tnS
 fHB
 poh
-rWM
+xGy
 xys
 poh
 aJH
 xys
 poh
-xfE
-xys
-poh
-gCL
-xys
-poh
-rWn
-xys
-poh
-lPM
+xGy
 xys
 poh
 xGy
 xys
 poh
-wBn
+xGy
+xys
+poh
+xGy
+xys
+poh
+xGy
+xys
+poh
+xGy
 xys
 vRO
 xcT
@@ -64038,28 +63964,28 @@ azA
 vRO
 bsp
 rVG
-pPF
 lwG
 lwG
-qMF
 lwG
 lwG
-nBL
 lwG
 lwG
-qAP
 lwG
 lwG
-gsR
 lwG
 lwG
-vPT
 lwG
 lwG
-sDW
 lwG
 lwG
-kmn
+lwG
+lwG
+lwG
+lwG
+lwG
+lwG
+lwG
+lwG
 lwG
 nRC
 vRO
@@ -75307,10 +75233,10 @@ los
 giE
 sqL
 bJx
+qcn
 tNo
 tNo
-tNo
-tNo
+qcn
 tNo
 abZ
 tNo
@@ -75564,10 +75490,10 @@ dJZ
 kwX
 evx
 dJS
-fVr
+xWe
 jqb
 nLr
-fVr
+xWe
 ylk
 bdf
 nAL

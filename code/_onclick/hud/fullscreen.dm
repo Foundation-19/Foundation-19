@@ -7,23 +7,18 @@
 
 /mob/proc/overlay_fullscreen(category, type, severity)
 	var/atom/movable/screen/fullscreen/screen = screens[category]
-
-	if(screen)
-		if(screen.type != type)
-			clear_fullscreen(category, FALSE)
-			screen = null
-		else if(!severity || severity == screen.severity)
-			return null
-
-	if(!screen)
-		screen = new type()
+	if(!screen || screen.type != type)
+		clear_fullscreen(category, FALSE)
+		screens[category] = screen = new type()
+	else if((!severity || severity == screen.severity)  && (!client || screen.screen_loc != "CENTER-7,CENTER-7" || screen.view == client.view))
+		return screen
 
 	screen.icon_state = "[initial(screen.icon_state)][severity]"
 	screen.severity = severity
-
-	screens[category] = screen
 	if(client && (stat != DEAD || screen.allstate))
+		screen.update_for_view(client.view)
 		client.screen += screen
+
 	return screen
 
 /mob/proc/clear_fullscreen(category, animated = 1 SECOND)
@@ -33,17 +28,18 @@
 
 	screens -= category
 
-	if(animated)
-		spawn(0)
-			animate(screen, alpha = 0, time = animated)
-			sleep(animated)
-			if(client)
-				client.screen -= screen
-			qdel(screen)
+	if(!QDELETED(src) && animated)
+		animate(screen, alpha = 0, time = animated)
+		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen_after_animate), screen), animated, TIMER_CLIENT_TIME)
 	else
 		if(client)
 			client.screen -= screen
 		qdel(screen)
+
+/mob/proc/clear_fullscreen_after_animate(atom/movable/screen/fullscreen/screen)
+	if(client)
+		client.screen -= screen
+	qdel(screen)
 
 /mob/proc/clear_fullscreens()
 	for(var/category in screens)
@@ -56,8 +52,11 @@
 
 /mob/proc/reload_fullscreen()
 	if(client)
+		var/atom/movable/screen/fullscreen/screen
 		for(var/category in screens)
-			client.screen |= screens[category]
+			screen = screens[category]
+			screen.update_for_view(client.view)
+			client.screen |= screen
 
 /atom/movable/screen/fullscreen
 	icon = 'icons/mob/screen_full.dmi'
@@ -65,8 +64,15 @@
 	screen_loc = "CENTER-7,CENTER-7"
 	plane = FULLSCREEN_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/view
 	var/severity = 0
 	var/allstate = 0 //shows if it should show up for dead people too
+
+/atom/movable/screen/fullscreen/proc/update_for_view(client_view)
+	if (screen_loc == "CENTER-7,CENTER-7" && view != client_view)
+		var/list/actualview = getviewsize(client_view)
+		view = client_view
+		transform = matrix(actualview[1] / 15, 0, 0, 0, actualview[2] / 15, 0)
 
 /atom/movable/screen/fullscreen/Destroy()
 	severity = 0

@@ -65,20 +65,23 @@
 	. = ..()
 
 /obj/machinery/turretid/proc/isLocked(mob/user)
+	if(user.can_admin_interact())
+		return FALSE
+
 	if(ailock && issilicon(user))
 		to_chat(user, SPAN_NOTICE("There seems to be a firewall preventing you from accessing this device."))
-		return 1
+		return TRUE
 
 	if(malf_upgraded && master_ai)
 		if((user == master_ai) || (user in master_ai.connected_robots))
-			return 0
-		return 1
+			return FALSE
+		return TRUE
 
 	if(locked && !issilicon(user))
 		to_chat(user, SPAN_NOTICE("Access denied."))
-		return 1
+		return TRUE
 
-	return 0
+	return FALSE
 
 /obj/machinery/turretid/CanUseTopic(mob/user)
 	if(isLocked(user))
