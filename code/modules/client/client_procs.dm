@@ -478,7 +478,7 @@
 	return getScreenSize(get_preference_value(/datum/client_preference/widescreen) == GLOB.PREF_YES)
 
 /client/proc/has_default_view()
-	var/default_view = get_default_view()
+	var/default_view = getviewsize(get_default_view())
 	var/current_view = getviewsize(view)
 	return (current_view[1] == default_view[1]) && (current_view[2] == default_view[2])
 
