@@ -85,8 +85,8 @@
 		if(length(job.title) > 48)
 			too_long_titles += job.title
 
-	if(LAZYLEN(non_unique_titles))
-		fail("Some jobs have a title above 48 characters:\n[jointext(non_unique_titles, "\n")]")
+	if(LAZYLEN(too_long_titles))
+		fail("Some jobs have a title above 48 characters:\n[jointext(too_long_titles, "\n")]")
 	else
 		pass("All jobs have a unique title.")
 	return 1
