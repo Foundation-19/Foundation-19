@@ -353,7 +353,7 @@
 	else
 		owner.mech_flags &= ~MF_STRAFING
 	to_chat(usr, SPAN_NOTICE("Strafing [owner.mech_flags & MF_STRAFING ? "enabled" : "disabled"]."))
-	playsound(src,'sound/mecha/lever.ogg', 40, 1)
+	playsound(src,'sounds/mecha/lever.ogg', 40, 1)
 
 
 #undef BAR_CAP

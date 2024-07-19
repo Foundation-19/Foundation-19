@@ -89,7 +89,7 @@
 	restricted_software = list(MECH_SOFTWARE_MEDICAL)
 	active_power_use = 0 //Usage doesn't really require power. It's per wound
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
-	var/list/apply_sounds = list('sound/effects/spray.ogg', 'sound/effects/spray2.ogg', 'sound/effects/spray3.ogg')
+	var/list/apply_sounds = list('sounds/effects/spray.ogg', 'sounds/effects/spray2.ogg', 'sounds/effects/spray3.ogg')
 	var/mode = MEDIGEL_SALVE
 	var/obj/item/device/scanner/health/scanner = null
 
@@ -146,7 +146,7 @@
 						to_chat(H, SPAN_NOTICE(SPAN_BOLD("... [pick("feels better", "hurts less")] ...")))
 				if(large_wound)
 					owner.visible_message(SPAN_NOTICE("\The [src]'s UV matrix glows faintly as it cures the medigel."))
-					playsound(owner, 'sound/items/Welder2.ogg', 10)
+					playsound(owner, 'sounds/items/Welder2.ogg', 10)
 				affecting.update_damages()
 				H.update_bandages(TRUE)
 	else if(mode == MEDIGEL_SCAN)
