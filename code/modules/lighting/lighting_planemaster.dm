@@ -18,7 +18,7 @@
 
 /obj/lighting_general
 	plane = LIGHTING_PLANE
-	screen_loc = "8,8"
+	screen_loc = "CENTER"
 
 	icon = LIGHTING_ICON
 	icon_state = LIGHTING_ICON_STATE_DARK
@@ -29,10 +29,6 @@
 
 /obj/lighting_general/Initialize()
 	. = ..()
-	var/matrix/M = matrix()
-	M.Scale(world.view*2.2)
-
-	transform = M
 
 /obj/lighting_general/proc/sync(new_colour)
 	color = new_colour
@@ -45,3 +41,12 @@
 /mob/proc/change_light_colour(new_colour)
 	if(l_general)
 		l_general.sync(new_colour)
+
+/mob/proc/update_lighting_size()
+	if(!client)
+		return
+	if(!l_general)
+		return
+
+	var/list/actual_size = getviewsize(client.view)
+	l_general.transform = matrix(actual_size[1], 0, 0, 0, actual_size[2], 0)
