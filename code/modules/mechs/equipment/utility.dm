@@ -267,7 +267,7 @@
 	RegisterSignals(owner, list(COMSIG_MOVED, COMSIG_ATOM_DIR_CHANGE), PROC_REF(on_move))
 
 /obj/item/mech_equipment/light/uninstalled()
-	UnregisterSignal(owner, COMSIG_MOVED)
+	UnregisterSignals(owner, list(COMSIG_MOVED, COMSIG_ATOM_DIR_CHANGE))
 	. = ..()
 
 /obj/item/mech_equipment/light/attack_self(mob/user)
