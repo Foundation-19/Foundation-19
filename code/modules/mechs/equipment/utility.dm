@@ -227,8 +227,8 @@
 	for(var/i = 0, i <= effect_steps, i++ )
 		if(temp.opacity)
 			break
-		for(var/atom in tem.contents)
-			if(atom.opacity)
+		for(var/atom/thing in temp.contents)
+			if(thing.opacity)
 				break
 		current = temp
 		temp = get_step(current, owner.dir)
@@ -267,7 +267,7 @@
 	RegisterSignals(owner, list(COMSIG_MOVED, COMSIG_ATOM_DIR_CHANGE), PROC_REF(on_move))
 
 /obj/item/mech_equipment/light/uninstalled()
-	UnregisterSignals(owner, list(COMSIG_MOVED, COMSIG_ATOM_DIR_CHANGE))
+	UnregisterSignal(owner, list(COMSIG_MOVED, COMSIG_ATOM_DIR_CHANGE))
 	. = ..()
 
 /obj/item/mech_equipment/light/attack_self(mob/user)
