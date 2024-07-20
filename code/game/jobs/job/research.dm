@@ -153,12 +153,6 @@
 	mechanical_difficulty = "Medium"
 
 /datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	psi_faculties = list(
-		"[PSI_COERCION]" = PSI_RANK_OPERANT,
-		"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
-		"[PSI_REDACTION]" = PSI_RANK_MASTER,
-		"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
-		)
 
 /datum/job/mentalist
 	title = "Psychotronics Researcher"
