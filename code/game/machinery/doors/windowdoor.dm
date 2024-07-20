@@ -30,7 +30,7 @@
 		set_density(0)
 		if(assembly.electronics)
 			if(assembly.electronics.autoset)
-				autoset_access = FALSE // Being careful in case of subtypes or something.
+				autoset_access = TRUE
 			else
 				req_access = assembly.electronics.conf_access
 				if(assembly.electronics.one_access)

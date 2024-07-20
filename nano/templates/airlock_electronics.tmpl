@@ -27,7 +27,7 @@
 		{{for data.regions}}
 			<td>
 			{{for value.accesses :access:access_i}}
-				{{:helper.link(access.name, access.req ? "check-square" : "square", {'access' : access.id}, null, access.req ? "selected" : null)}}
+				{{:helper.link(access.name, access.req ? "check-square" : "square", {'access' : access.id}, data.autoset ? 'disabled' : null, access.req ? "selected" : null)}}
 				<br/>
 			{{/for}}
 			<br/>

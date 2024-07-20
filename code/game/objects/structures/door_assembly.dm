@@ -21,7 +21,8 @@
 	var/stripe_color = "none"
 	var/symbol_color = "none"
 
-/obj/structure/door_assembly/New()
+/obj/structure/door_assembly/Initialize()
+	. = ..()
 	update_state()
 
 /obj/structure/door_assembly/door_assembly_hatch
@@ -76,8 +77,6 @@
 	else
 		bound_width = world.icon_size
 		bound_height = width * world.icon_size
-
-
 
 /obj/structure/door_assembly/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/pen))
