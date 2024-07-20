@@ -199,14 +199,7 @@
 	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
-
-/datum/job/mentalist/equip(mob/living/carbon/human/H)
 	psi_faculties = list("[PSI_COERCION]" = PSI_RANK_OPERANT) //Basic level of Psionics, with ability to read others.
-
-	skill_points = 15
-	roleplay_difficulty = "Easy - Medium"
-	mechanical_difficulty = "Medium"
-
 
 /datum/job/seniorscientist
 	title = "Senior Researcher"
