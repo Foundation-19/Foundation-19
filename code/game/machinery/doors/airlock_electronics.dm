@@ -14,7 +14,7 @@
 	var/last_configurator = null
 	var/locked = 1
 	var/lockable = 1
-	var/autoset = TRUE // Whether the door should inherit access from surrounding areas
+	var/autoset = FALSE // Whether the door should inherit access from surrounding areas
 
 /obj/item/airlock_electronics/attack_self(mob/user)
 	if (ishuman(user) || issilicon(user))
@@ -64,10 +64,9 @@
 				locked = FALSE
 				last_configurator = user.name
 			else
-				var/obj/item/card/id/I = user.get_active_hand()
-				I = I ? I.GetIdCard() : null
+				var/obj/item/card/id/I = user.GetIdCard()
 				if(!istype(I, /obj/item/card/id))
-					to_chat(user, SPAN_WARNING("[\src] flashes a yellow LED near the ID scanner. Did you remember to scan your ID or PDA?"))
+					to_chat(user, SPAN_WARNING("[\src] flashes a yellow LED near the ID scanner. Do you have an ID to scan?"))
 					return TOPIC_HANDLED
 				if (check_access(I))
 					locked = FALSE

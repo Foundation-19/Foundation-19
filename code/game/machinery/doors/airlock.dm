@@ -38,8 +38,6 @@ var/list/airlock_overlays = list()
 	var/lights = 1 // Lights show by default
 	var/aiDisabledIdScanner = 0
 	var/aiHacking = 0
-	var/obj/machinery/door/airlock/closeOther = null
-	var/closeOtherId = null
 	autoclose = 1
 	var/assembly_type = /obj/structure/door_assembly
 	var/mineral = null
@@ -1245,8 +1243,6 @@ About the new airlock wires panel:
 		playsound(src.loc, open_sound_unpowered, 100, 1)
 		show_sound_effect(get_turf(src))
 
-	if(src.closeOther != null && istype(src.closeOther, /obj/machinery/door/airlock/) && !src.closeOther.density)
-		src.closeOther.close()
 	return ..()
 
 /obj/machinery/door/airlock/can_open(forced=0)
@@ -1344,44 +1340,45 @@ About the new airlock wires panel:
 		return 0
 	return ..(M)
 
-/obj/machinery/door/airlock/New(newloc, obj/structure/door_assembly/assembly=null)
-	..()
+/obj/machinery/door/airlock/proc/inherit_from_assembly(obj/structure/door_assembly/assembly)
+	assembly_type = assembly.type
 
+	electronics = assembly.electronics
+	electronics.forceMove(src)
+
+	//update the door's access to match the electronics'
+	if(electronics.autoset)
+		autoset_access = TRUE
+	else
+		req_access = electronics.conf_access
+		if(electronics.one_access)
+			req_access = list(req_access)
+		autoset_access = FALSE // We just set it, so don't try and do anything fancy later.
+	secured_wires = electronics.secure
+
+	//get the name from the assembly
+	if(assembly.created_name)
+		SetName(assembly.created_name)
+	else
+		SetName("[istext(assembly.glass) ? "[assembly.glass] airlock" : assembly.base_name]")
+
+	//get the dir from the assembly
+	setDir(assembly.dir)
+
+	if(assembly)
+		paintable = assembly.paintable
+		door_color = assembly.door_color
+		stripe_color = assembly.stripe_color
+		symbol_color = assembly.symbol_color
+	queue_icon_update()
+
+/obj/machinery/door/airlock/Initialize(mapload, obj/structure/door_assembly/assembly = null)
 	//if assembly is given, create the new door from the assembly
 	if (assembly && istype(assembly))
-		assembly_type = assembly.type
-
-		electronics = assembly.electronics
-		electronics.forceMove(src)
-
-		//update the door's access to match the electronics'
-		if(electronics.autoset)
-			autoset_access = FALSE
-		else
-			req_access = electronics.conf_access
-			if(electronics.one_access)
-				req_access = list(req_access)
-			autoset_access = FALSE // We just set it, so don't try and do anything fancy later.
-		secured_wires = electronics.secure
-
-		//get the name from the assembly
-		if(assembly.created_name)
-			SetName(assembly.created_name)
-		else
-			SetName("[istext(assembly.glass) ? "[assembly.glass] airlock" : assembly.base_name]")
-
-		//get the dir from the assembly
-		setDir(assembly.dir)
-
-		if(assembly)
-			paintable = assembly.paintable
-			door_color = assembly.door_color
-			stripe_color = assembly.stripe_color
-			symbol_color = assembly.symbol_color
-		queue_icon_update()
+		inherit_from_assembly(assembly)
 
 	//wires
-	var/turf/T = get_turf(newloc)
+	var/turf/T = get_turf(loc)
 	if(T && (T.z in GLOB.using_map.admin_levels))
 		secured_wires = 1
 	if (secured_wires)
@@ -1389,22 +1386,15 @@ About the new airlock wires panel:
 	else
 		wires = new/datum/wires/airlock(src)
 
-/obj/machinery/door/airlock/Initialize()
-	if(src.closeOtherId != null)
-		for (var/obj/machinery/door/airlock/A in world)
-			if(A.closeOtherId == src.closeOtherId && A != src)
-				src.closeOther = A
-				break
-	var/turf/T = loc
 	var/obj/item/airlock_brace/A = locate(/obj/item/airlock_brace) in T
 	if(!brace && A)
 		brace = A
 		brace.airlock = src
 		brace.forceMove(src)
 		if(brace.electronics && !length(brace.req_access))
-			brace.electronics.set_access(src)
-			brace.update_access()
+			brace.req_access = get_req_access()
 		update_icon()
+
 	if (glass)
 		paintable |= AIRLOCK_WINDOW_PAINTABLE
 		window_material = SSmaterials.get_material_by_name(init_material_window)
@@ -1466,7 +1456,7 @@ About the new airlock wires panel:
 
 /obj/machinery/door/airlock/autoname
 
-/obj/machinery/door/airlock/autoname/New()
+/obj/machinery/door/airlock/autoname/Initialize()
 	var/area/A = get_area(src)
 	name = A.name
 	..()
