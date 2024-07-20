@@ -258,7 +258,7 @@
 			returnval = call(target, procname)()
 	else
 		log_and_message_staff("[key_name(C)] called [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].", location = get_turf(target))
-		returnval = call(procname)(arglist(arguments))
+		returnval = call(text2path("/proc/[procname]"))(arglist(arguments))
 
 	to_chat(usr, "<span class='info'>[procname]() returned: [json_encode(returnval)]</span>")
 	SSstatistics.add_field_details("admin_verb","APC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

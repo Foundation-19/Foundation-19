@@ -4,7 +4,7 @@
 	extended_desc = "This program may be used to log in into your email account."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "mail-closed"
+	program_menu_icon = "envelope"
 	size = 7
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
@@ -53,9 +53,9 @@
 		if(check_count)
 			if(check_count == 2)
 				new_mail_notify()
-			ui_header = "ntnrc_new.gif"
+			ui_header = "sciprc_new.gif"
 		else
-			ui_header = "ntnrc_idle.gif"
+			ui_header = "sciprc_idle.gif"
 	else
-		ui_header = "ntnrc_idle.gif"
+		ui_header = "sciprc_idle.gif"
 

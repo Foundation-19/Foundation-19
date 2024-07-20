@@ -76,6 +76,8 @@
 	*/
 	preload_rsc = 0
 
+	var/atom/movable/screen/click_catcher/void
+
 	//Hide top bars
 	var/fullscreen = FALSE
 	//Hide status bar (bottom left)

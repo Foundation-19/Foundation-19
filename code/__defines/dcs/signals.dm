@@ -90,11 +90,6 @@
 /// Called on `/obj/machinery/cryopod/despawn_occupant` (/mob)
 #define COMSIG_HUMAN_DESPAWNED "human_despawned"
 
-/// Called on `/mob/login` (/mob)
-#define COMSIG_MOB_LOGIN "mob_login"
-/// Called on `mob/logout` (/mob)
-#define COMSIG_MOB_LOGOUT "mob_logout"
-
 /// Called on `/mob/living/carbon/ingest` (/mob/living/carbon/, type)
 #define COMSIG_REAGENT_INGESTED "reagent_ingested"
 /// Called on `/obj/item/clothing/mask/smokable/smoke` (/datum, /obj/item/clothing/mask/smokable, number)
@@ -108,6 +103,11 @@
 
 /// Called on `/mob/living/say` (/mob/living, message, /datum/language)
 #define COMSIG_LIVING_TREAT_MESSAGE "living_treat_message"
+	#define SPEECH_ARG_MESSAGE 1
+	#define SPEECH_ARG_LANGUAGE 2
+	#define SPEECH_ARG_VERB 3
+	#define SPEECH_ARG_ALT_NAME 4
+	#define SPEECH_ARG_WHISPERING 5
 
 /// Called on `/obj/item/proc/dropped` (/mob, /obj)
 #define COMSIG_MOB_DROPPED_ITEM "mob_dropped_item"
@@ -154,6 +154,11 @@
 #define COMSIG_DO_AFTER_BEGAN "do_after_began"
 /// Called on `/proc/do_after` (/user)
 #define COMSIG_DO_AFTER_ENDED "do_after_ended"
+
+/// Called on `/datum/chatserver_channel/add_message` (/datum/computer_file/program/chatserver, /datum/chatserver_channel, fullmessage)
+#define COMSIG_SCIPRC_MESSAGE_SENT "sciprc_message_sent"
+/// Called when a server program stops hosting (hosting program)
+#define COMSIG_SERVER_PROGRAM_OFFLINE "server_program_offline"
 
 /// From base of atom/movable/Moved(): (/atom)
 #define COMSIG_MOVABLE_PRE_MOVE "movable_pre_move"
@@ -228,6 +233,11 @@
 
 /// Called on `/mob/proc/update_movespeed` (/mob)
 #define COMSIG_MOB_MOVESPEED_UPDATED "mob_movespeed_updated"
+
+/// Called on `/mob/login` (/mob)
+#define COMSIG_MOB_LOGIN "mob_login"
+/// Called on `mob/logout` (/mob)
+#define COMSIG_MOB_LOGOUT "mob_logout"
 
 /*
 *	Photos

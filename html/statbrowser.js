@@ -230,7 +230,7 @@ function tab_change(tab) {
 		draw_debug();
 	} else if (tab == turfname) {
 		draw_listedturf();
-	} else if (tab == "Subsystems"){
+	} else if (tab == "Subsystems") {
 		draw_borg_subsystems();
 	} else {
 		statcontentdiv.textContext = "Loading...";
@@ -761,7 +761,6 @@ Byond.subscribeTo("add_borg_subsystems", function () {
 	}
 
 	addPermanentTab("Subsystems");
-
 });
 
 Byond.subscribeTo("update_borg_subsystems", function (new_borg_subsystems) {

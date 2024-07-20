@@ -8,9 +8,9 @@
 	extended_desc = "This program allows configuration of computer's hardware"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "gear"
-	unsendable = 1
-	undeletable = 1
+	program_menu_icon = "cog"
+	unsendable = TRUE
+	undeletable = TRUE
 	size = 4
 	available_on_ntnet = FALSE
 	requires_ntnet = FALSE

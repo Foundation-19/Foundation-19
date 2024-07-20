@@ -18,8 +18,8 @@
 	var/corner_overlay_state = "diagonalWall"
 	var/image/corner_overlay
 
-/turf/simulated/shuttle/wall/corner/New()
-	..()
+/turf/simulated/shuttle/wall/corner/Initialize(mapload)
+	. = ..(mapload, )
 	reset_base_appearance()
 	reset_overlay()
 
