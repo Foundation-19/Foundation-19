@@ -257,6 +257,7 @@
 	minimal_player_age = 9
 	ideal_character_age = 30
 	alt_titles = list(
+		"Global Occult Coalition Ambassador",
 		"UIU Relations Agent" = /decl/hierarchy/outfit/job/civ/uiu,
 		"Marshall, Carter, and Dark Corporate Liaison" = /decl/hierarchy/outfit/job/civ/MCDRep,
 		"Goldbaker-Reinz Corporate Liaison" = /decl/hierarchy/outfit/job/civ/grcl
