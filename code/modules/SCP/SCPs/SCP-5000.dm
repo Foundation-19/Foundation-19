@@ -23,7 +23,7 @@
 	aimove_power_usage = 0
 	emp_protection = 100
 	siemens_coefficient = 1
-	req_access = list()
+	req_access = list(ACCESS_ADMIN_LEVEL3)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
