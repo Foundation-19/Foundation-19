@@ -69,8 +69,6 @@
 			return global.SScuisine;
 		if("SSculture")
 			return global.SSculture;
-		if("SScustomitems")
-			return global.SScustomitems;
 		if("SSdbcore")
 			return global.SSdbcore;
 		if("SSdisposals")
@@ -123,8 +121,6 @@
 			return global.SSobj;
 		if("SSorbit")
 			return global.SSorbit;
-		if("SSoverlays")
-			return global.SSoverlays;
 		if("SSpersistence")
 			return global.SSpersistence;
 		if("SSping")
@@ -365,10 +361,6 @@
 			return global.custom_event_msg;
 		if("damage_icon_parts")
 			return global.damage_icon_parts;
-		if("dbcon")
-			return global.dbcon;
-		if("dbcon_old")
-			return global.dbcon_old;
 		if("debug_verbs")
 			return global.debug_verbs;
 		if("decls_repository")
@@ -411,10 +403,6 @@
 			return global.explosion_in_progress;
 		if("explosion_turfs")
 			return global.explosion_turfs;
-		if("failed_db_connections")
-			return global.failed_db_connections;
-		if("failed_old_db_connections")
-			return global.failed_old_db_connections;
 		if("failed_unit_tests")
 			return global.failed_unit_tests;
 		if("file_uid")
@@ -669,8 +657,6 @@
 			return global.responsive_carriers;
 		if("revdata")
 			return global.revdata;
-		if("robot_custom_icons")
-			return global.robot_custom_icons;
 		if("robot_hud_colours")
 			return global.robot_hud_colours;
 		if("robot_inventory")
@@ -908,8 +894,6 @@
 			global.SScuisine=newval;
 		if("SSculture")
 			global.SSculture=newval;
-		if("SScustomitems")
-			global.SScustomitems=newval;
 		if("SSdbcore")
 			global.SSdbcore=newval;
 		if("SSdisposals")
@@ -962,8 +946,6 @@
 			global.SSobj=newval;
 		if("SSorbit")
 			global.SSorbit=newval;
-		if("SSoverlays")
-			global.SSoverlays=newval;
 		if("SSpersistence")
 			global.SSpersistence=newval;
 		if("SSping")
@@ -1204,10 +1186,6 @@
 			global.custom_event_msg=newval;
 		if("damage_icon_parts")
 			global.damage_icon_parts=newval;
-		if("dbcon")
-			global.dbcon=newval;
-		if("dbcon_old")
-			global.dbcon_old=newval;
 		if("debug_verbs")
 			global.debug_verbs=newval;
 		if("decls_repository")
@@ -1250,10 +1228,6 @@
 			global.explosion_in_progress=newval;
 		if("explosion_turfs")
 			global.explosion_turfs=newval;
-		if("failed_db_connections")
-			global.failed_db_connections=newval;
-		if("failed_old_db_connections")
-			global.failed_old_db_connections=newval;
 		if("failed_unit_tests")
 			global.failed_unit_tests=newval;
 		if("file_uid")
@@ -1508,8 +1482,6 @@
 			global.responsive_carriers=newval;
 		if("revdata")
 			global.revdata=newval;
-		if("robot_custom_icons")
-			global.robot_custom_icons=newval;
 		if("robot_hud_colours")
 			global.robot_hud_colours=newval;
 		if("robot_inventory")
@@ -1712,7 +1684,6 @@
 	"SScodex",
 	"SScuisine",
 	"SSculture",
-	"SScustomitems",
 	"SSdbcore",
 	"SSdisposals",
 	"SSevac",
@@ -1739,7 +1710,6 @@
 	"SSnano",
 	"SSobj",
 	"SSorbit",
-	"SSoverlays",
 	"SSpersistence",
 	"SSping",
 	"SSplants",
@@ -1861,8 +1831,6 @@
 	"csrfz_check",
 	"custom_event_msg",
 	"damage_icon_parts",
-	"dbcon",
-	"dbcon_old",
 	"debug_verbs",
 	"decls_repository",
 	"default_material_composition",
@@ -1884,8 +1852,6 @@
 	"evacuation_controller",
 	"explosion_in_progress",
 	"explosion_turfs",
-	"failed_db_connections",
-	"failed_old_db_connections",
 	"failed_unit_tests",
 	"file_uid",
 	"fileaccess_timer",
@@ -2022,7 +1988,6 @@
 	"req_console_supplies",
 	"responsive_carriers",
 	"revdata",
-	"robot_custom_icons",
 	"robot_hud_colours",
 	"robot_inventory",
 	"round_progressing",

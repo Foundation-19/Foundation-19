@@ -380,7 +380,6 @@
 		max_storage_space = storage_slots*BASE_STORAGE_COST(max_w_class)
 
 	storage_ui = new storage_ui(src)
-	prepare_ui()
 
 	if(startswith)
 		for(var/item_path in startswith)

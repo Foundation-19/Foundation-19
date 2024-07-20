@@ -33,9 +33,6 @@
 		I.color = overlay_color
 		I.appearance_flags |= RESET_COLOR
 		add_overlay(I)
-		// Projectile effects only exist for a tick or two, need to call
-		// this to ensure they show their overlays before expiring.
-		compile_overlays()
 
 /obj/effect/projectile/singularity_pull()
 	return
