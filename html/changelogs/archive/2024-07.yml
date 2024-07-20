@@ -136,3 +136,6 @@
   - code_imp: Ran Oxipng on all image files, +18mb in savings
   - code_imp: Improved tgui Button.Confirm
   - code_imp: Changed logic relating to overlays to make them less sucky
+2024-07-20:
+  checkraisefold:
+  - bugfix: Re-merged widescreen PR

@@ -1,4 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Re-merged widescreen PR
