@@ -54,6 +54,15 @@
 	active_power_usage = 0 //It'd be hard to handle, so for now all power is consumed by mech sleeper object
 	synth_modifier = 0
 	stasis_power = 0
+	base_chemicals = list(
+    "Inaprovaline" = /datum/reagent/medicine/inaprovaline,
+    "Paracetamol" = /datum/reagent/medicine/painkiller/paracetamol,
+    "Dylovene" = /datum/reagent/medicine/dylovene,
+    "Dexalin" = /datum/reagent/medicine/dexalin,
+    "Kelotane" = /datum/reagent/medicine/kelotane,
+    "Bicaridine" = /datum/reagent/medicine/bicaridine,
+    "Hyronalin" = /datum/reagent/medicine/hyronalin
+    )
 	interact_offline = TRUE
 	stat_immune = NOPOWER
 

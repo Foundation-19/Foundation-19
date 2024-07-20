@@ -7,32 +7,32 @@
 #define PF_OMNI_STRAFE PF_SIDE_STRAFE | PF_STRAIGHT_STRAFE
 
 /// Flags for the mech itself
-#define MF_STRAFING 1<<1 // 2 // 1
-#define MF_CELL_POWERED 1<<2 // 4 // 2
-#define MF_ENGINE_POWERED 1<<3 // 16 // 4
-#define MF_AUXILIARY_POWERED 1<<4 // 32 // 8
+#define MF_STRAFING 1<<0 // 2 // 1
+#define MF_CELL_POWERED 1<<1 // 4 // 2
+#define MF_ENGINE_POWERED 1<<2 // 16 // 4
+#define MF_AUXILIARY_POWERED 1<<3 // 32 // 8
 #define MF_ANY_POWER (MF_CELL_POWERED | MF_ENGINE_POWERED | MF_AUXILIARY_POWERED)
 
 /// Flags for mech equipment
 
 /// These define what power sources this equipment can draw from
-#define ME_CELL_POWERED 1<<1
-#define ME_ENGINE_POWERED 1<<2
-#define ME_AUXILIARY_POWERED 1<<3
+#define ME_CELL_POWERED 1<<0
+#define ME_ENGINE_POWERED 1<<1
+#define ME_AUXILIARY_POWERED 1<<2
 #define ME_ANY_POWER (ME_CELL_POWERED | ME_ENGINE_POWERED | ME_AUXILIARY_POWERED)
 /// Lets the equipment start without the requirement of power (or try starting)
-#define ME_POWERLESS_ACTIVATION 1<<5
+#define ME_POWERLESS_ACTIVATION 1<<3
 /// The equipment doesn't require arms to exist or be powered to function
-#define ME_ARM_INDEPENDENT 1<<6
+#define ME_ARM_INDEPENDENT 1<<4
 /// This equipment doesn't require the canopy to be closed to be operated.
-#define ME_BYPASS_INTERFACE 1<<7
+#define ME_BYPASS_INTERFACE 1<<5
 
 /// Flags for mech components
 
 /// Defines the currently available power sources on the mech.
-#define MC_CELL_POWERED 1<<1
-#define MC_ENGINE_POWERED 1<<2
-#define MC_AUXILIARY_POWERED 1<<3
+#define MC_CELL_POWERED 1<<0
+#define MC_ENGINE_POWERED 1<<1
+#define MC_AUXILIARY_POWERED 1<<2
 #define MC_ANY_POWER MQ_CELL_POWERED | MQ_ENGINE_POWERED | MQ_AUXILIARY_POWERED
 
 /// Delay multiplier applied when doing movement using strafing

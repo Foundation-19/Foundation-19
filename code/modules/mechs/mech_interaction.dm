@@ -81,6 +81,8 @@
 				selected_system.CtrlClick(user)
 				setClickCooldown(3)
 			return
+	if(modifiers["alt"])
+		return user.AltClickOn(A)
 
 	if(!(user in pilots) && user != src)
 		return

@@ -212,7 +212,7 @@
 	if(.)
 		update_pilots()
 
-/mob/living/exosuit/proc/toggle_power(mob/user)
+/mob/living/exosuit/proc/toggle_power(mob/user, time_override = 1.5 SECONDS)
 	if(power == MECH_POWER_TRANSITION)
 		if(user)
 			to_chat(user, SPAN_NOTICE("Power transition in progress. Please wait."))
@@ -224,12 +224,12 @@
 		power = MECH_POWER_TRANSITION
 		playsound(src, 'sounds/mecha/powerup.ogg', 50, 0)
 		if(user)
-			if(user.do_skilled(1.5 SECONDS, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
+			if(user.do_skilled(time_override, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
 				playsound(src, 'sounds/mecha/nominal.ogg', 50, 0)
 				power = MECH_POWER_ON
 			else
 				to_chat(user, SPAN_WARNING("You abort the powerup sequence."))
 				power = MECH_POWER_OFF
 	else if(user)
-		to_chat(user, SPAN_WARNING("Error: No power cell was detected."))
+		to_chat(user, SPAN_WARNING("Error: No power provider was detected."))
 

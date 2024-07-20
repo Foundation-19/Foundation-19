@@ -192,6 +192,9 @@
 			carrying -= load
 	. = ..()
 
+#define MODE_DIRECTED 1
+#define MODE_CIRCULAR 2
+
 // A lot of this is copied from floodlights.
 /obj/item/mech_equipment/light
 	name = "floodlight"
@@ -205,11 +208,67 @@
 	var/l_max_bright = 0.9
 	var/l_inner_range = 1
 	var/l_outer_range = 6
+	var/mode = MODE_CIRCULAR
+	var/obj/effect/light_effect
+	/// Defines how far the directiona light is projected
+	var/effect_steps = 2
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
+
+/obj/item/mech_equipment/light/Initialize()
+	light_effect = new /obj/effect(src)
+	. = ..()
+
+/obj/item/mech_equipment/light/proc/on_move(atom/movable/mover, atom/old_loc, atom/new_loc)
+	SIGNAL_HANDLER
+	if(mode == MODE_CIRCULAR || !on)
+		return
+	var/turf/current = get_turf(owner)
+	var/turf/temp = get_step(src, owner.dir)
+	for(var/i = 0, i <= effect_steps, i++ )
+		if(temp.opacity)
+			break
+		for(var/atom in tem.contents)
+			if(atom.opacity)
+				break
+		current = temp
+		temp = get_step(current, owner.dir)
+	light_effect.forceMove(current)
+
+/obj/item/mech_equipment/light/proc/toggle_mode(force, mob/user)
+	if(force)
+		if(force == mode)
+			return
+	switch(mode)
+		if(MODE_CIRCULAR)
+			if(on)
+				set_light(0,0)
+				light_effect.set_light(l_max_bright, l_inner_range, l_outer_range)
+				var/turf/current = get_turf(owner)
+				var/turf/temp = get_step(src, owner.dir)
+				for(var/i = 0, i <= effect_steps, i++ )
+					if(temp.density)
+						break
+					current = temp
+					temp = get_step(current, owner.dir)
+				light_effect.forceMove(current)
+				mode = MODE_DIRECTED
+				to_chat(user, SPAN_NOTICE("You switch \the [src] to directed lightning mode"))
+		if(MODE_DIRECTED)
+			if(on)
+				light_effect.forceMove(src)
+				light_effect.set_light(0,0)
+				set_light(l_max_bright, l_inner_range, l_outer_range)
+				mode = MODE_CIRCULAR
+				to_chat(user, SPAN_NOTICE("You switch \the [src] to circular lightning mode"))
 
 /obj/item/mech_equipment/light/installed(mob/living/exosuit/_owner)
 	. = ..()
 	update_icon()
+	RegisterSignals(owner, list(COMSIG_MOVED, COMSIG_ATOM_DIR_CHANGE), PROC_REF(on_move))
+
+/obj/item/mech_equipment/light/uninstalled()
+	UnregisterSignal(owner, COMSIG_MOVED)
+	. = ..()
 
 /obj/item/mech_equipment/light/attack_self(mob/user)
 	. = ..()
@@ -217,7 +276,37 @@
 		toggle()
 		to_chat(user, "You switch \the [src] [on ? "on" : "off"].")
 
-/obj/item/mech_equipment/light/proc/toggle()
+/obj/item/mech_equipment/light/AltClick(mob/user)
+	. = ..()
+	// yes ghosts can do this , even if it'd be silly..
+	if(user.loc != owner || !isliving(user) || user.is_alive() || !owner)
+		return
+	toggle_mode(FALSE, user)
+
+/obj/item/mech_equipment/light/proc/toggle(mob/user)
+	if(on)
+		switch(mode)
+			if(MODE_CIRCULAR)
+				set_light(0,0)
+			if(MODE_DIRECTED)
+				light_effect.forceMove(src)
+				light_effect.set_light(0,0)
+
+	else
+		switch(mode)
+			if(MODE_CIRCULAR)
+				set_light(l_max_bright, l_inner_range, l_outer_range)
+			if(MODE_DIRECTED)
+				light_effect.set_light(l_max_bright, l_inner_range, l_outer_range)
+				var/turf/current = get_turf(owner)
+				var/turf/temp = get_step(src, owner.dir)
+				for(var/i = 0, i <= effect_steps, i++ )
+					if(temp.density)
+						break
+					current = temp
+					temp = get_step(current, owner.dir)
+				light_effect.forceMove(current)
+
 	on = !on
 	update_icon()
 	owner.update_icon()
@@ -232,10 +321,8 @@
 /obj/item/mech_equipment/light/on_update_icon()
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
-		set_light(l_max_bright, l_inner_range, l_outer_range)
 	else
 		icon_state = "[initial(icon_state)]"
-		set_light(0, 0)
 
 	//Check our layers
 	if(owner && (owner.hardpoints[HARDPOINT_HEAD] == src))
@@ -894,7 +981,22 @@
 		owner.toggle_power(user)
 
 /obj/item/mech_equipment/power_auxiliary/deactivate()
-	owner.mech_flags &= ~MF_AUXILIARY_POWERED
+	var/local_save = owner.mech_flags
+	var/local_inverse = 0
+	/// Manual implementation of the ~ complement operator in & and | bit operations
+	/// Either my CPU has an issue executing NOT instructions or something is wrong with BYOND
+	/// Trying to do &= ~MF_AUXILIARY_POWERED would return 0 for cases it shouldn't(it is omitting 4 bits to the right)
+	/// Yes this is 24 times more unefficient , but this is not something that runs frequently and i'd rather not pull
+	/// myself in the deep-pit of compilation bugs & providing test cases for edge-cases like these
+	/// Paradoxically enough ,  it compiles fine for all the others power suppliers.
+	for(var/i=1, i < 2 ** 24, i *= 2)
+		if(i & MF_AUXILIARY_POWERED)
+			continue
+		else
+			local_inverse |= i
+	local_save = local_save & local_inverse
+	owner.mech_flags = local_save
+	//owner_mech_flags &= ~MF_AUXILIARY_POWERED
 	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
 		owner.toggle_power()
 	. = ..()
