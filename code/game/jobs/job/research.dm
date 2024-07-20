@@ -148,6 +148,13 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
+	psi_faculties = list(
+		"[PSI_COERCION]" = PSI_RANK_OPERANT,
+		"[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT,
+		"[PSI_REDACTION]" = PSI_RANK_MASTER,
+		"[PSI_ENERGISTICS]" = PSI_RANK_OPERANT
+	)
+
 	skill_points = 20
 	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
