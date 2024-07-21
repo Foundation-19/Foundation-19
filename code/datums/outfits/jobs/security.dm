@@ -11,7 +11,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	suit = /obj/item/clothing/suit/armor/hos/coat
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmateba
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
@@ -28,7 +28,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/clothing/head/beret/sec = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmateba
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
@@ -46,7 +46,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/scp/lczcomm
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/security/lczcom
@@ -61,7 +61,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/cos
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
@@ -78,7 +78,7 @@
 	id_type = /obj/item/card/id/seclvl3lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
@@ -95,7 +95,7 @@
 	id_type = /obj/item/card/id/seclvl3hcz
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
@@ -111,7 +111,7 @@
 	l_pocket = /obj/item/book/manual/scp/secsop
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
@@ -128,7 +128,7 @@
 	l_pocket = /obj/item/book/manual/scp/secsop
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
@@ -145,7 +145,7 @@
 	l_pocket = /obj/item/book/manual/scp/secsop
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
@@ -159,14 +159,14 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench/grey
 	id_type = /obj/item/card/id/seclvl3ez
-	l_ear = /obj/item/device/radio/headset/heads/cos
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/det/grey
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
 /decl/hierarchy/outfit/job/security/ez_guard_investigative
@@ -175,14 +175,14 @@
 	shoes = /obj/item/clothing/shoes/dress
 	suit = /obj/item/clothing/suit/storage/det_trench
 	id_type = /obj/item/card/id/seclvl3ez
-	l_ear = /obj/item/device/radio/headset/heads/cos
+	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
 	belt = /obj/item/storage/belt/holster/security/fullrhino
 	l_hand = /obj/item/storage/briefcase/crimekit
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	head = /obj/item/clothing/head/det
 	gloves = /obj/item/clothing/gloves/forensic
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityofficer = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
 
 /decl/hierarchy/outfit/job/security/lcz_guard
@@ -194,7 +194,7 @@
 	id_type = /obj/item/card/id/junseclvl2lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security
@@ -210,7 +210,7 @@
 	id_type = /obj/item/card/id/seclvl2lczdivision
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/medic
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security/medic
@@ -226,7 +226,7 @@
 	id_type = /obj/item/card/id/seclvl2lczdivision2
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security/riot
@@ -242,7 +242,7 @@
 	id_type = /obj/item/card/id/seclvl3lczdivision3
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz/recontain
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/security/recontain
@@ -258,7 +258,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullusp45
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
@@ -274,7 +274,7 @@
 	l_pocket = /obj/item/book/manual/scp/secsop
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list()
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
 	belt = /obj/item/gun/energy/stunrevolver/taser
@@ -289,7 +289,7 @@
 	id_type = /obj/item/card/id/junseclvl1lcz
 	l_ear = /obj/item/device/radio/headset/headset_sec_lcz
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list(/obj/item/handcuffs = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	gloves = /obj/item/clothing/gloves/tactical/scp
@@ -303,7 +303,7 @@
 	l_pocket = /obj/item/book/manual/scp/secsop
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
@@ -319,7 +319,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_sec_hcz
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	l_pocket = /obj/item/handcuffs
-	r_pocket = /obj/item/melee/telebaton
+	r_pocket = /obj/item/device/flashlight/maglight
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
 	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard

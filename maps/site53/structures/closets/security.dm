@@ -246,6 +246,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/guard,
 		/obj/item/ammo_magazine/scp/usp45 = 3,
+		/obj/item/clothing/mask/gas/security,
 	)
 
 // HCZ - Sergeant
@@ -278,6 +279,7 @@
 		/obj/item/clothing/suit/armor/pcarrier/scp/medium,
 		/obj/item/clothing/head/beret/sec/sergeant,
 		/obj/item/ammo_magazine/scp/usp45 = 3,
+		/obj/item/clothing/mask/gas/security,
 	)
 
 // EZ - Cadet
@@ -378,6 +380,7 @@
 		/obj/item/ammo_magazine/scp/mk9 = 3,
 		/obj/item/ammo_magazine/box/a9mm,
 		/obj/item/gun/energy/taser/carbine,
+		/obj/item/clothing/mask/gas/security,
 	)
 
 // Zone Commander
@@ -410,6 +413,8 @@
 		/obj/item/gun/projectile/pistol/usp45,
 		/obj/item/ammo_magazine/scp/usp45 = 3,
 		/obj/item/ammo_magazine/box/acp45,
+		/obj/item/gun/energy/stunrevolver/taser,
+		/obj/item/clothing/mask/gas/security,
 	)
 
 /obj/structure/closet/secure_closet/guard/zone_commander/hcz
