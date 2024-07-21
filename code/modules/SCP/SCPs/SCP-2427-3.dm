@@ -64,7 +64,6 @@
 		"2427-3", //Numerical Designation
 		SCP_PLAYABLE
 	)
-	SCP.min_time = 10 MINUTES
 	SCP.min_playercount = 30
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
