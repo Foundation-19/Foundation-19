@@ -94,7 +94,7 @@
 	var/changed
 	if(!cockpit)
 		return
-	if(!take_from_supply || pilot_coverage < 100 || body.total_damage == body.max_damage)
+	if(!take_from_supply || pilot_coverage < 100 || total_damage == max_damage)
 		var/turf/T = get_turf(src)
 		if(!T)
 			return
