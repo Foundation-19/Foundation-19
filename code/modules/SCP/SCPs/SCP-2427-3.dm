@@ -66,6 +66,7 @@
 	)
 
 	SCP.min_playercount = 30
+
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
 	set_default_language(all_languages[LANGUAGE_ENGLISH])
