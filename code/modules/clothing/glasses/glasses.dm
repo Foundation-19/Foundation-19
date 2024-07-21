@@ -11,7 +11,7 @@
 	var/active = TRUE
 	var/activation_sound = 'sounds/items/goggles_charge.ogg'
 	var/deactivation_sound // set this if you want a sound on deactivation
-	var/atom/movable/screen/overlay = null
+	var/atom/movable/screen/fullscreen/overlay = null
 	var/obj/item/clothing/glasses/hud/hud = null	// Hud glasses, if any
 	var/electric = FALSE //if the glasses should be disrupted by EMP
 
@@ -95,14 +95,6 @@
 		else
 			activate(user)
 
-/obj/item/clothing/glasses/inherit_custom_item_data(datum/custom_item/citem)
-	. = ..()
-	if(toggleable)
-		if(citem.additional_data["icon_on"])
-			set_icon_state(citem.additional_data["icon_on"])
-		if(citem.additional_data["icon_off"])
-			off_state = citem.additional_data["icon_off"]
-
 /obj/item/clothing/glasses/meson
 	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
@@ -117,10 +109,7 @@
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
 	hidden_from_codex = FALSE
-
-/obj/item/clothing/glasses/meson/Initialize()
-	. = ..()
-	overlay = GLOB.global_hud.meson
+	overlay = /atom/movable/screen/fullscreen/hud/meson
 
 /obj/item/clothing/glasses/meson/prescription
 	name = "prescription mesons"
@@ -137,15 +126,12 @@
 	action_button_name = "Toggle Goggles"
 	electric = TRUE
 	hidden_from_codex = FALSE
+	overlay = /atom/movable/screen/fullscreen/hud/science
 
 /obj/item/clothing/glasses/science/prescription
 	name = "prescription science goggles"
 	desc = "Science goggles with prescription lenses."
 	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED)
-
-/obj/item/clothing/glasses/science/Initialize()
-	. = ..()
-	overlay = GLOB.global_hud.science
 
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
@@ -161,10 +147,7 @@
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
 	hidden_from_codex = FALSE
-
-/obj/item/clothing/glasses/night/Initialize()
-	. = ..()
-	overlay = GLOB.global_hud.nvg
+	overlay = /atom/movable/screen/fullscreen/hud/nvg
 
 /obj/item/clothing/glasses/tacgoggles
 	name = "tactical goggles"

@@ -30,13 +30,7 @@ SUBSYSTEM_DEF(garbage)
 
 
 /datum/controller/subsystem/garbage/PreInit()
-	queues = new(GC_QUEUE_COUNT)
-	pass_counts = new(GC_QUEUE_COUNT)
-	fail_counts = new(GC_QUEUE_COUNT)
-	for(var/i in 1 to GC_QUEUE_COUNT)
-		queues[i] = list()
-		pass_counts[i] = 0
-		fail_counts[i] = 0
+	InitQueues()
 
 /datum/controller/subsystem/garbage/stat_entry(msg)
 	var/list/counts = list()
@@ -102,6 +96,16 @@ SUBSYSTEM_DEF(garbage)
 					state = SS_RUNNING
 				break
 
+/datum/controller/subsystem/garbage/proc/InitQueues()
+	if (isnull(queues)) // Only init the queues if they don't already exist, prevents overriding of recovered lists
+		queues = new(GC_QUEUE_COUNT)
+		pass_counts = new(GC_QUEUE_COUNT)
+		fail_counts = new(GC_QUEUE_COUNT)
+		for(var/i in 1 to GC_QUEUE_COUNT)
+			queues[i] = list()
+			pass_counts[i] = 0
+			fail_counts[i] = 0
+
 /datum/controller/subsystem/garbage/proc/HandleQueue(level = GC_QUEUE_CHECK)
 	if (level == GC_QUEUE_CHECK)
 		delslasttick = 0
@@ -118,6 +122,9 @@ SUBSYSTEM_DEF(garbage)
 
 	lastlevel = level
 
+// 1 from the hard reference in the queue, and 1 from the variable used before this
+#define REFS_WE_EXPECT 2
+
 	//We do this rather then for(var/refID in queue) because that sort of for loop copies the whole list.
 	//Normally this isn't expensive, but the gc queue can grow to 40k items, and that gets costly/causes overrun.
 	for (var/i in 1 to length(queue))
@@ -131,17 +138,17 @@ SUBSYSTEM_DEF(garbage)
 		var/GCd_at_time = L[1]
 		if(GCd_at_time > cut_off_time)
 			break // Everything else is newer, skip them
-		count++
-		var/refID = L[2]
-		var/datum/D
-		D = locate(refID)
 
-		if (!D || D.gc_destroyed != GCd_at_time) // So if something else coincidently gets the same ref, it's not deleted by mistake
+		count++
+		var/datum/D = L[2]
+
+		// If that's all we've got, send er off
+		if (refcount(D) == REFS_WE_EXPECT) // So if something else coincidently gets the same ref, it's not deleted by mistake
 			++gcedlasttick
 			++totalgcs
 			pass_counts[level]++
 			#ifdef REFERENCE_TRACKING
-			reference_find_on_fail -= refID //It's deleted we don't care anymore.
+			reference_find_on_fail -= ref(D) //It's deleted we don't care anymore.
 			#endif
 			if (MC_TICK_CHECK)
 				return
@@ -157,15 +164,18 @@ SUBSYSTEM_DEF(garbage)
 		switch (level)
 			if (GC_QUEUE_CHECK)
 				#ifdef REFERENCE_TRACKING
-				if(reference_find_on_fail[refID])
-					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum, find_references))
+				// Decides how many refs to look for (potentially)
+				// Based off the remaining and the ones we can account for
+				var/remaining_refs = refcount(D) - REFS_WE_EXPECT
+				if(reference_find_on_fail[ref(D)])
+					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum, find_references), remaining_refs)
 					ref_searching = TRUE
 				#ifdef GC_FAILURE_HARD_LOOKUP
 				else
-					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum, find_references))
+					INVOKE_ASYNC(D, TYPE_PROC_REF(/datum, find_references), remaining_refs)
 					ref_searching = TRUE
 				#endif
-				reference_find_on_fail -= refID
+				reference_find_on_fail -= ref(D)
 				#endif
 				var/type = D.type
 				var/datum/qdel_item/I = items[type]
@@ -204,19 +214,21 @@ SUBSYSTEM_DEF(garbage)
 		queue.Cut(1,count+1)
 		count = 0
 
+#undef REFS_WE_EXPECT
+
 /datum/controller/subsystem/garbage/proc/Queue(datum/D, level = GC_QUEUE_CHECK)
 	if (isnull(D))
 		return
 	if (level > GC_QUEUE_COUNT)
 		HardDelete(D)
 		return
-	var/gctime = world.time
-	var/refid = "\ref[D]"
+	var/queue_time = world.time
 
-	D.gc_destroyed = gctime
+	if (D.gc_destroyed <= 0)
+		D.gc_destroyed = queue_time
+
 	var/list/queue = queues[level]
-
-	queue[++queue.len] = list(gctime, refid) // not += for byond reasons
+	queue[++queue.len] = list(queue_time, D) // not += for byond reasons
 
 //this is mainly to separate things profile wise.
 /datum/controller/subsystem/garbage/proc/HardDelete(datum/D)
@@ -253,6 +265,7 @@ SUBSYSTEM_DEF(garbage)
 			I.qdel_flags |= QDEL_ITEM_SUSPENDED_FOR_LAG
 
 /datum/controller/subsystem/garbage/Recover()
+	InitQueues()
 	if (istype(SSgarbage.queues))
 		for (var/i in 1 to SSgarbage.queues.len)
 			queues[i] |= SSgarbage.queues[i]
@@ -333,7 +346,7 @@ SUBSYSTEM_DEF(garbage)
 			#ifdef REFERENCE_TRACKING
 			if (QDEL_HINT_FINDREFERENCE) //qdel will, if REFERENCE_TRACKING is enabled, display all references to this object, then queue the object for deletion.
 				SSgarbage.Queue(D)
-				D.find_references()
+				INVOKE_ASYNC(D, TYPE_PROC_REF(/datum, find_references))
 			if (QDEL_HINT_IFFAIL_FINDREFERENCE) //qdel will, if REFERENCE_TRACKING is enabled and the object fails to collect, display all references to this object.
 				SSgarbage.Queue(D)
 				SSgarbage.reference_find_on_fail["\ref[D]"] = TRUE

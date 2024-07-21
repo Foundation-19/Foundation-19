@@ -110,7 +110,6 @@ var/list/ai_verbs_default = list(
 	var/multitool_mode = 0
 
 	var/default_ai_icon = /datum/ai_icon/blue
-	var/static/list/custom_ai_icons_by_ckey_and_name
 
 /mob/living/silicon/ai/proc/add_ai_verbs()
 	add_verb(src, ai_verbs_default)
@@ -221,7 +220,6 @@ var/list/ai_verbs_default = list(
 		to_chat(src, "<b>These laws may be changed by other players or by other random events.</b>")
 
 	job = "AIC"
-	setup_icon()
 	eyeobj.possess(src)
 
 /mob/living/silicon/ai/Destroy()
@@ -241,44 +239,6 @@ var/list/ai_verbs_default = list(
 
 	. = ..()
 
-/mob/living/silicon/ai/proc/setup_icon()
-	if(LAZYACCESS(custom_ai_icons_by_ckey_and_name, "[ckey][real_name]"))
-		return
-	var/list/custom_icons = list()
-	LAZYSET(custom_ai_icons_by_ckey_and_name, "[ckey][real_name]", custom_icons)
-
-	var/file = file2text(CUSTOM_ITEM_SYNTH_CONFIG)
-	var/lines = splittext(file, "\n")
-
-	var/custom_index = 1
-	var/custom_icon_states = icon_states(CUSTOM_ITEM_SYNTH)
-
-	for(var/line in lines)
-	// split & clean up
-		var/list/Entry = splittext(line, ":")
-		for(var/i = 1 to Entry.len)
-			Entry[i] = trim(Entry[i])
-
-		if(Entry.len < 2)
-			continue
-		if(Entry.len == 2) // This is to handle legacy entries
-			Entry[++Entry.len] = Entry[1]
-
-		if(Entry[1] == src.ckey && Entry[2] == src.real_name)
-			var/alive_icon_state = "[Entry[3]]-ai"
-			var/dead_icon_state = "[Entry[3]]-ai-crash"
-
-			if(!(alive_icon_state in custom_icon_states))
-				to_chat(src, SPAN_WARNING("Custom display entry found but the icon state '[alive_icon_state]' is missing!"))
-				continue
-
-			if(!(dead_icon_state in custom_icon_states))
-				dead_icon_state = ""
-
-			selected_sprite = new/datum/ai_icon("Custom Icon [custom_index++]", alive_icon_state, dead_icon_state, COLOR_WHITE, CUSTOM_ITEM_SYNTH)
-			custom_icons += selected_sprite
-	update_icon()
-
 /mob/living/silicon/ai/pointed(atom/A as mob|obj|turf in view())
 	set popup_menu = 0
 	set src = usr.contents
@@ -289,8 +249,6 @@ var/list/ai_verbs_default = list(
 	announcement.announcer = pickedName
 	if(eyeobj)
 		eyeobj.SetName("[pickedName] (AI Eye)")
-
-	setup_icon()
 
 /mob/living/silicon/ai/proc/pick_icon()
 	set category = "Silicon Commands"
@@ -311,9 +269,6 @@ var/list/ai_verbs_default = list(
 		var/datum/ai_icon/ai_icon = all_ai_icons[ai_icon_type]
 		if(ai_icon.may_used_by_ai(src))
 			dd_insertObjectList(., ai_icon)
-
-	// Placing custom icons first to have them be at the top
-	. = LAZYACCESS(custom_ai_icons_by_ckey_and_name, "[ckey][real_name]") | .
 
 /mob/living/silicon/ai/var/message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_announcement()
