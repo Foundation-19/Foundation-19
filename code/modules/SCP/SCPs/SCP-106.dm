@@ -58,7 +58,7 @@
 	)
 
 	SCP.min_time = 40 MINUTES
-	SCP.min_playercount = 35 //have at least 1 guard that set up the generators so they dont escape and murder everyobe
+	SCP.min_playercount = 25
 
 	spawn_turf = get_turf(src)
 	spawn_area = get_area(src)
