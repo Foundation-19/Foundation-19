@@ -64,9 +64,8 @@
 		"2427-3", //Numerical Designation
 		SCP_PLAYABLE
 	)
-
-	SCP.min_playercount = 32 //2 guards always on watch, needs to be fed every once in a while, extremely dangerous MF
-
+	SCP.min_time = 10 MINUTES
+	SCP.min_playercount = 20
 	spawn_area = get_area(src)
 	add_language(LANGUAGE_ENGLISH, FALSE)
 	set_default_language(all_languages[LANGUAGE_ENGLISH])
