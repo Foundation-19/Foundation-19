@@ -463,8 +463,9 @@
 	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
 	var/flash_time = (rand(flash_min, flash_max) - 1) SECONDS
 
-	var/obj/item/cell/C = owner.get_cell()
-	C.use(active_power_use * CELLRATE)
+	var/obj/item/cell/C = owner.get_cell(FALSE, ME_ANY_POWER)
+	if(!C?.use(active_power_use * CELLRATE))
+		return
 
 	for (var/mob/living/O in oviewers(flash_range, owner))
 		if(istype(O))

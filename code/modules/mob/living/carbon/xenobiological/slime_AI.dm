@@ -23,7 +23,7 @@
 	handle_targets()
 	if(!AIproc)
 		AIproc = 1
-		addtimer(CALLBACK(src, PROC_REF(handle_AI)), 1)
+		//addtimer(CALLBACK(src, PROC_REF(handle_AI)), 1)
 	handle_speech_and_mood()
 
 /mob/living/carbon/slime/proc/handle_targets()

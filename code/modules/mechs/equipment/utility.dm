@@ -229,9 +229,10 @@
 			break
 		for(var/atom/thing in temp.contents)
 			if(thing.opacity)
-				break
+				goto end
 		current = temp
 		temp = get_step(current, owner.dir)
+	end:
 	light_effect.forceMove(current)
 
 /obj/item/mech_equipment/light/proc/toggle_mode(force, mob/user)
@@ -875,13 +876,13 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
 	/// Power usage is handled in a special way in activate()
-	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_BYPASS_INTERFACE
+	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_BYPASS_INTERFACE | ME_NOT_SELECTABLE
 
 	var/obj/item/cell/internal_cell = null
 	/// units of welding fuel converted to cell charge
-	var/production_ratio = 10
+	var/production_ratio = 50
 	/// maximum amount of power produced in one Process() cycle.
-	var/power_cap = 100
+	var/power_cap = 10
 
 	var/datum/reagents/internal_chamber = null
 
@@ -930,6 +931,8 @@
 		return
 	var/units_to_use = clamp(round(power_gap / production_ratio), 1, power_cap / production_ratio)
 	units_to_use = min(units_to_use, reagents.total_volume)
+	if(units_to_use * production_ratio > power_cap)
+		units_to_use = power_cap/production_ratio
 	reagents.trans_to_holder(internal_chamber, units_to_use, 1, FALSE, TRUE)
 	/// No hydro-powered engines allowed in this universe!!
 	units_to_use = internal_chamber.get_reagent_amount(/datum/reagent/fuel)
@@ -963,7 +966,7 @@
 
 /obj/item/mech_equipment/power_auxiliary
 	var/obj/item/cell/internal_cell = null
-	equipment_flags = ME_BYPASS_INTERFACE | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT
+	equipment_flags = ME_BYPASS_INTERFACE | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_NOT_SELECTABLE
 	restricted_hardpoints = list(HARDPOINT_BACKUP_POWER)
 
 /obj/item/mech_equipment/power_auxiliary/Initialize()
@@ -981,22 +984,7 @@
 		owner.toggle_power(user)
 
 /obj/item/mech_equipment/power_auxiliary/deactivate()
-	var/local_save = owner.mech_flags
-	var/local_inverse = 0
-	/// Manual implementation of the ~ complement operator in & and | bit operations
-	/// Either my CPU has an issue executing NOT instructions or something is wrong with BYOND
-	/// Trying to do &= ~MF_AUXILIARY_POWERED would return 0 for cases it shouldn't(it is omitting 4 bits to the right)
-	/// Yes this is 24 times more unefficient , but this is not something that runs frequently and i'd rather not pull
-	/// myself in the deep-pit of compilation bugs & providing test cases for edge-cases like these
-	/// Paradoxically enough ,  it compiles fine for all the others power suppliers.
-	for(var/i=1, i < 2 ** 24, i *= 2)
-		if(i & MF_AUXILIARY_POWERED)
-			continue
-		else
-			local_inverse |= i
-	local_save = local_save & local_inverse
-	owner.mech_flags = local_save
-	//owner_mech_flags &= ~MF_AUXILIARY_POWERED
+	owner.mech_flags &= ~MF_AUXILIARY_POWERED
 	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
 		owner.toggle_power()
 	. = ..()
@@ -1019,7 +1007,7 @@
 
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 2, TECH_MAGNET = 2)
 
-	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_BYPASS_INTERFACE
+	equipment_flags = ME_ANY_POWER | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_BYPASS_INTERFACE | ME_NOT_SELECTABLE
 	var/obj/item/cell/internal_cell = null
 
 /obj/item/mech_equipment/power_cell/proc/set_power_cell(obj/item/cell/power_provider)

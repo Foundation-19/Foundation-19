@@ -32,7 +32,7 @@
 		if(hardpoints[HARDPOINT_BACKUP_POWER])
 			var/obj/item/mech_equipment/power_auxiliary/hungry = hardpoints[HARDPOINT_BACKUP_POWER]
 			if((hungry.internal_cell.maxcharge - hungry.internal_cell.charge) > 10)
-				hungry.internal_cell.give(get_cell(FALSE, ME_ENGINE_POWERED | ME_CELL_POWERED).drain_power(0,0, 5 KILOWATTS))
+				hungry.internal_cell?.give(get_cell(FALSE, ME_ENGINE_POWERED | ME_CELL_POWERED)?.drain_power(0,0, 5 KILOWATTS))
 
 	updatehealth()
 	if(health <= 0 && stat != DEAD)

@@ -31,10 +31,13 @@
 /atom/movable/screen/exosuit/Click()
 	return (!usr.incapacitated() && usr.canClick() && (usr == owner || usr.loc == owner))
 
+#define HARDPOINT_SELECTABLE 1<<0
+
 /atom/movable/screen/exosuit/hardpoint
 	name = "hardpoint"
 	var/hardpoint_tag
 	var/obj/item/holding
+	var/interact_flags = HARDPOINT_SELECTABLE
 	icon_state = "hardpoint"
 
 	maptext_x = 34
@@ -131,36 +134,50 @@
 /atom/movable/screen/exosuit/hardpoint/Click(location, control, params)
 
 	if(!(..()))
-		return
+		return FALSE
 
 	if(!owner?.hatch_closed)
 		if(istype(holding, /obj/item/mech_equipment))
 			var/obj/item/mech_equipment/cast = holding
 			if(!(cast.equipment_flags & ME_BYPASS_INTERFACE))
 				to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
-				return
+				return FALSE
 		else
 			to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
-			return
+			return FALSE
 
 
 	var/modifiers = params2list(params)
 	if(modifiers["ctrl"])
 		if(owner.hardpoints_locked)
 			to_chat(usr, SPAN_WARNING("Hardpoint ejection system is locked."))
-			return
+			return FALSE
 		if(owner.remove_system(hardpoint_tag))
 			to_chat(usr, SPAN_NOTICE("You disengage and discard the system mounted to your [hardpoint_tag] hardpoint."))
 		else
 			to_chat(usr, SPAN_DANGER("You fail to remove the system mounted to your [hardpoint_tag] hardpoint."))
-		return
+		return FALSE
 
-	if(owner.selected_hardpoint == hardpoint_tag)
-		icon_state = "hardpoint"
-		owner.clear_selected_hardpoint()
-	else
-		if(owner.set_hardpoint(hardpoint_tag))
-			icon_state = "hardpoint_selected"
+	if(interact_flags & HARDPOINT_SELECTABLE)
+		if(owner.selected_hardpoint == hardpoint_tag)
+			icon_state = initial(icon_state)
+			owner.clear_selected_hardpoint()
+		else
+			if(owner.set_hardpoint(hardpoint_tag))
+				icon_state = "[initial(icon_state)]_selected"
+	return TRUE
+
+/atom/movable/screen/exosuit/hardpoint/power
+	name = "power hardpoint"
+	icon_state = "hardpoint_p"
+	interact_flags = null
+
+/atom/movable/screen/exosuit/hardpoint/power/Click(location, control, params)
+	if(!..())
+		return
+	var/obj/item/mech_equipment/power_stuff = owner.hardpoints[hardpoint_tag]
+	if(power_stuff)
+		power_stuff.attack_self(usr)
 
 /atom/movable/screen/exosuit/eject
 	name = "eject"
@@ -318,7 +335,7 @@
 	if(!owner.head.vision_flags)
 		to_chat(usr,  SPAN_WARNING("Alternative sensor configurations not found. Contact manufacturer for more details."))
 		return
-	if(!owner.get_cell())
+	if(!owner.get_cell(FALSE, ME_ANY_POWER))
 		to_chat(usr,  SPAN_WARNING("The augmented vision systems are offline."))
 		return
 	owner.head.active_sensors = ..()

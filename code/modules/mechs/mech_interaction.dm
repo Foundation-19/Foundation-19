@@ -127,6 +127,12 @@
 		failed = TRUE
 
 	if(!failed)
+		if(istype(A, /obj/item/mech_equipment))
+			var/obj/item/mech_equipment/cast = A
+			if(cast.equipment_flags & ME_NOT_SELECTABLE)
+				setClickCooldown(5)
+				cast.attack_self(user)
+				return
 		if(selected_system)
 			if(selected_system == A)
 				selected_system.attack_self(user)
@@ -394,6 +400,7 @@
 					var/obj/item/mech_equipment/power_cell/cast = power_provider
 					remove_system(HARDPOINT_POWER, null, TRUE)
 					power_provider = cast.internal_cell
+					power_provider.forceMove(get_turf(src))
 					cast.internal_cell = null
 					qdel(cast)
 				else

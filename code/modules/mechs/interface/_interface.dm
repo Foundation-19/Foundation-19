@@ -14,14 +14,17 @@
 	if(!LAZYLEN(hud_elements))
 		var/i = 1
 		for(var/hardpoint in hardpoints)
-			var/atom/movable/screen/exosuit/hardpoint/H = new(src, hardpoint)
+			var/atom/movable/screen/exosuit/hardpoint/H
 			// those 2 are always forced to the bottom for UI
 			switch(hardpoint)
 				if(HARDPOINT_POWER)
+					H = new /atom/movable/screen/exosuit/hardpoint/power(src, hardpoint)
 					H.screen_loc = "1:6,8"
 				if(HARDPOINT_BACKUP_POWER)
+					H = new /atom/movable/screen/exosuit/hardpoint/power(src, hardpoint)
 					H.screen_loc = "1:6,7"
 				else
+					H = new(src, hardpoint)
 					H.screen_loc = "1:6,[15-i]" //temp
 			hud_elements |= H
 			hardpoint_hud_elements[hardpoint] = H
