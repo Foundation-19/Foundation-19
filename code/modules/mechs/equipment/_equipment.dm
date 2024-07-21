@@ -146,6 +146,7 @@
 	return null
 
 /obj/item/mech_equipment/get_cell(force = FALSE)
+	RETURN_TYPE(/obj/item/cell)
 	if(QDELETED(owner))
 		return null
 	if(loc != owner)

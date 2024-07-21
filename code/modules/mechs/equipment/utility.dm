@@ -912,14 +912,15 @@
 		return
 	// No spamming the engine
 	user.setClickCooldown(7)
-	if(prob(100 - power_gap))
-		active = TRUE
-		if(owner.power == MECH_POWER_OFF)
-			owner.toggle_power(user)
-		owner.mech_flags |= MF_ENGINE_POWERED
-		START_PROCESSING(SSprocessing, src)
-	else
-		active = FALSE
+	if(do_after(user, 0.7 SECONDS, DO_DEFAULT | DO_SHOW_TARGET))
+		if(prob(100 - power_gap))
+			active = TRUE
+			if(owner.power == MECH_POWER_OFF)
+				owner.toggle_power(user)
+			owner.mech_flags |= MF_ENGINE_POWERED
+			START_PROCESSING(SSprocessing, src)
+		else
+			active = FALSE
 
 /obj/item/mech_equipment/engine/Process()
 	if(reagents.total_volume < 2)

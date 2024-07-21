@@ -179,6 +179,14 @@
 	if(power_stuff)
 		power_stuff.attack_self(usr)
 
+/atom/movable/screen/exosuit/hardpoint/power/update_system_info()
+	..()
+	var/obj/item/mech_equipment/power_stuff = owner.hardpoints[hardpoint_tag]
+	if(power_stuff?.active)
+		icon_state = "[initial(icon_state)]_selected"
+	else
+		icon_state = "[initial(icon_state)]"
+
 /atom/movable/screen/exosuit/eject
 	name = "eject"
 	maptext = MECH_UI_STYLE("EJECT")
