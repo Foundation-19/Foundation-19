@@ -65,21 +65,35 @@
 	return 1
 
 /obj/item/mech_component/proc/repair_brute_damage(amt)
-	take_brute_damage(-amt)
+	if(total_damage == max_damage)
+		take_brute_damage(-amt)
+		if(istype(loc, /mob/living/exosuit))
+			loc.update_icon()
+	else
+		take_brute_damage(-amt)
 
 /obj/item/mech_component/proc/repair_burn_damage(amt)
-	take_burn_damage(-amt)
+	if(total_damage == max_damage)
+		take_burn_damage(-amt)
+		if(istype(loc, /mob/living/exosuit))
+			loc.update_icon()
+	else
+		take_burn_damage(-amt)
 
 /obj/item/mech_component/proc/take_brute_damage(amt)
 	brute_damage = max(0, brute_damage + amt)
 	update_health()
 	if(total_damage == max_damage)
+		if(istype(loc, /mob/living/exosuit))
+			loc.update_icon()
 		take_component_damage(amt,0)
 
 /obj/item/mech_component/proc/take_burn_damage(amt)
 	burn_damage = max(0, burn_damage + amt)
 	update_health()
 	if(total_damage == max_damage)
+		if(istype(loc, /mob/living/exosuit))
+			loc.update_icon()
 		take_component_damage(0,amt)
 
 /obj/item/mech_component/proc/take_component_damage(brute, burn)

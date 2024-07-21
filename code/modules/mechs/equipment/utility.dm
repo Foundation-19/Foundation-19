@@ -867,7 +867,7 @@
 /obj/item/mech_equipment/engine
 	name = "exosuit engine"
 	desc = "A exosuit-mountable welding-fuel powered engine system. Holds 200 units of fuel at most, has a internal cell of 500 power units, recharges slowly."
-	icon_state = "mech_engine"
+	icon_state = "engine"
 	restricted_hardpoints = list(HARDPOINT_POWER)
 	equipment_delay = 10
 
@@ -921,6 +921,7 @@
 				owner.toggle_power(user)
 			owner.mech_flags |= MF_ENGINE_POWERED
 			START_PROCESSING(SSprocessing, src)
+			icon_state = "[initial(icon_state)]_on"
 		else
 			active = FALSE
 
@@ -945,6 +946,7 @@
 /obj/item/mech_equipment/engine/deactivate(mob/living/user)
 	STOP_PROCESSING(SSprocessing,src)
 	owner.mech_flags &= ~MF_ENGINE_POWERED
+	icon_state = initial(icon_state)
 	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
 		owner.toggle_power(user)
 	. = ..()
@@ -968,6 +970,9 @@
 	return "Fuel:[reagents.total_volume]"
 
 /obj/item/mech_equipment/power_auxiliary
+	name = "auxiliary power unit"
+	desc = "a auxiliary power unit for the exosuit, its low voltage means it can only power up equipment and basic mech functions."
+	icon_state = "auxi"
 	var/obj/item/cell/internal_cell = null
 	equipment_flags = ME_BYPASS_INTERFACE | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_NOT_SELECTABLE
 	restricted_hardpoints = list(HARDPOINT_BACKUP_POWER)
