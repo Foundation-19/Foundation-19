@@ -441,7 +441,7 @@
 
 /decl/audio/track/the_bookburners_v2
 	source = 'sounds/music/the_bookburners_v2.ogg'
-	title = "(SCP Original) Astowo - The Bookburners V2 (Theme of the ̶G̶O̶C̶ MTT)"
+	title = "(SCP Original) Astowo - The Bookburners V2 (Theme of the GOC MTT)"
 	author = "Astowo"
 	license = /decl/license/cc_by_sa_3_0
 	url = "https://www.youtube.com/watch?v=NXZ4hbOl7eY"
