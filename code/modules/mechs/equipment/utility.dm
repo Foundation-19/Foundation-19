@@ -866,8 +866,8 @@
 
 /obj/item/mech_equipment/engine
 	name = "exosuit engine"
-	desc = "A dedicated visible light spectrum camera for remote feeds. It comes with its own transmitter!"
-	icon_state = "mech_camera"
+	desc = "A exosuit-mountable welding-fuel powered engine system. Holds 200 units of fuel at most, has a internal cell of 500 power units, recharges slowly."
+	icon_state = "mech_engine"
 	restricted_hardpoints = list(HARDPOINT_POWER)
 	equipment_delay = 10
 
@@ -912,8 +912,10 @@
 		return
 	// No spamming the engine
 	user.setClickCooldown(7)
+	playsound(owner, 'sounds/mecha/engineattempt.ogg')
 	if(do_after(user, 0.7 SECONDS, DO_DEFAULT | DO_SHOW_TARGET))
 		if(prob(100 - power_gap))
+			playsound(owner, 'sounds/mecha/enginestarted.ogg')
 			active = TRUE
 			if(owner.power == MECH_POWER_OFF)
 				owner.toggle_power(user)
@@ -926,7 +928,7 @@
 	if(reagents.total_volume < 2)
 		deactivate()
 		return
-
+	playsound(owner, 'sounds/mecha/engineloop.ogg')
 	var/power_gap = internal_cell.maxcharge - internal_cell.charge
 	if(power_gap < 5)
 		return
