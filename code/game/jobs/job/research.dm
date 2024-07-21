@@ -159,8 +159,6 @@
 	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
 
-/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-
 /datum/job/mentalist
 	title = "Psychotronics Researcher"
 	department = "Science"
