@@ -5,6 +5,7 @@
 	holding_type = /obj/item/gun/energy/taser/carbine/mounted/mech
 	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND)
 	restricted_software = list(MECH_SOFTWARE_WEAPONS)
+	equipment_flags = ME_ENGINE_POWERED | ME_BYPASS_INTERFACE | ME_CELL_POWERED
 
 /obj/item/mech_equipment/mounted_system/taser/MouseDragInteraction(src_object, over_object, src_location, over_location, src_control, over_control, params, mob/user)
 	. = ..()
@@ -19,12 +20,14 @@
 	desc = "An exosuit-mounted ion rifle. Handle with care."
 	icon_state = "mech_ionrifle"
 	holding_type = /obj/item/gun/energy/ionrifle/mounted/mech
+	equipment_flags = ME_ENGINE_POWERED | ME_BYPASS_INTERFACE | ME_CELL_POWERED
 
 /obj/item/mech_equipment/mounted_system/taser/laser
 	name = "\improper CH-PS \"Immolator\" laser"
 	desc = "An exosuit-mounted laser rifle. Handle with care."
 	icon_state = "mech_lasercarbine"
 	holding_type = /obj/item/gun/energy/laser/mounted/mech
+	equipment_flags = ME_ENGINE_POWERED | ME_BYPASS_INTERFACE | ME_CELL_POWERED
 
 /obj/item/gun/energy/taser/carbine/mounted/mech
 	use_external_power = TRUE

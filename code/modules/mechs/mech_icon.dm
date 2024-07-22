@@ -38,10 +38,8 @@
 	update_pilots(FALSE)
 	if(LAZYLEN(pilot_overlays))
 		new_overlays += pilot_overlays
-	if(head && head.total_damage == head.max_damage)
-		new_overlays += get_mech_image(head.decal, "[head.icon_state]_broken]", head.on_mech_icon, head.color, MECH_COCKPIT_LAYER)
 	if(body)
-		new_overlays += get_mech_image(body.decal, "[body.icon_state]_[body.total_damage == body.max_damage ? "broken" : ("overlay[hatch_closed ? "" : "open"]")]", body.on_mech_icon, body.color, MECH_COCKPIT_LAYER)
+		new_overlays += get_mech_image(body.decal, "[body.icon_state][body.total_damage == body.max_damage ? "_broken" : ("_overlay[hatch_closed ? "" : "_open"]")]", body.on_mech_icon, body.color, MECH_COCKPIT_LAYER)
 	if(arms)
 		new_overlays += get_mech_image(arms.decal, "[arms.icon_state][arms.total_damage == arms.max_damage ? "_broken" : ""]", arms.on_mech_icon, arms.color, MECH_ARM_LAYER)
 	if(legs)

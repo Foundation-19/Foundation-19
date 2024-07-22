@@ -866,7 +866,7 @@
 
 /obj/item/mech_equipment/engine
 	name = "exosuit engine"
-	desc = "A exosuit-mountable welding-fuel powered engine system. Holds 200 units of fuel at most, has a internal cell of 500 power units, recharges slowly."
+	desc = "A exosuit-mountable welding-fuel powered engine system. Holds 200 units of fuel at most, recharges slowly."
 	icon_state = "engine"
 	restricted_hardpoints = list(HARDPOINT_POWER)
 	equipment_delay = 10
@@ -979,7 +979,7 @@
 
 /obj/item/mech_equipment/power_auxiliary/Initialize()
 	. = ..()
-	internal_cell = new /obj/item/cell/high(src)
+	internal_cell = new /obj/item/cell/device(src)
 
 /obj/item/mech_equipment/power_auxiliary/uninstalled()
 	deactivate()
@@ -1053,6 +1053,7 @@
 		else
 			activate(user)
 		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
+
 
 
 
