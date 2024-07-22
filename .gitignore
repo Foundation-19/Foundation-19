@@ -11,6 +11,7 @@ Thumbs.db
 data/
 dmdoc/
 cfg/
+config/
 build_log.txt
 use_map
 stopserver
