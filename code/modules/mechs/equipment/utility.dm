@@ -901,6 +901,8 @@
 	. = ..()
 	to_chat(user, "Internal charge : [internal_cell.charge] Fuel : [reagents.total_volume]")
 
+/obj/item/mech_equipment/engine/get_hardpoint_maptext()
+	return "FUEL : [reagents.total_volume]"
 
 /obj/item/mech_equipment/engine/proc/activate(mob/living/user)
 	active = TRUE
@@ -984,6 +986,9 @@
 /obj/item/mech_equipment/power_auxiliary/uninstalled()
 	deactivate()
 	. = ..()
+
+/obj/item/mech_equipment/power_auxiliary/get_hardpoint_maptext()
+	return "CHARGE : [internal_cell?.charge]"
 
 /obj/item/mech_equipment/power_auxiliary/proc/activate(mob/living/user)
 	active = TRUE

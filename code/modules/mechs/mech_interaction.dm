@@ -334,6 +334,16 @@
 
 	else
 		if(user.a_intent != I_HURT)
+			if(istype(thing, /obj/item/reagent_containers))
+				var/obj/item/reagent_containers/W = thing
+				if(!(HARDPOINT_POWER in hardpoints))
+					to_chat(user, SPAN_WARNING("There is no engine to try refueling!"))
+					return
+				if(!istype(hardpoints[HARDPOINT_POWER], /obj/item/mech_equipment/engine ))
+					to_chat(user, SPAN_WARNING("There is no engine to try refueling!"))
+					return
+				W.standard_pour_into(user, src)
+				return
 			if(isMultitool(thing))
 				if(hardpoints_locked)
 					to_chat(user, SPAN_WARNING("Hardpoint system access is disabled."))
