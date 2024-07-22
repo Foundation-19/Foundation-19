@@ -4,8 +4,8 @@
 
 	description = "Positronic intelligence really took off in the 21st century, and it is not uncommon to see independant, free-willed \
 	robots in the anolmalous world, particularly where Anderson Robotics is involved. IPCs (Integrated Positronic Chassis) are a \
-	loose category of self-willed robots with a humanoid form, generally owned and produced by Anderson robotics, or are occasionally \
-	quietly purchased or seized from them by the SCP Foundation, or produced in-house by the SCP foundation using assets aquired from Prometheus Labs. \
+	loose category of self-willed robots with a humanoid form, generally owned and produced by Anderson Robotics. They are occasionally
+	quietly purchased or seized from them by the SCP Foundation, or produced in-house by the SCP Foundation using assets aquired from Prometheus Labs. \
 	They are reliable and dedicated workers, albeit more than slightly inhuman in outlook and perspective."
 	cyborg_noun = null
 
