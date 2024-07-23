@@ -1,0 +1,6 @@
+author: Ambrose997
+delete-after: true
+changes:
+  - balance: Access contained within the EZ ZC list has been added to the General
+      Commanders access list. Now also starts with Trained combat skill, trained computers,
+      etc to at least be on par with the EZ Zone Commander.
