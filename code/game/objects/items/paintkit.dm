@@ -11,13 +11,6 @@
 	. = ..()
 	to_chat(user, "It has [uses] use\s left.")
 
-/obj/item/device/kit/inherit_custom_item_data(datum/custom_item/citem)
-	new_name = citem.item_name
-	new_desc = citem.item_desc
-	new_icon = citem.item_icon_state
-	new_icon_file = CUSTOM_ITEM_OBJ
-	. = src
-
 /obj/item/device/kit/proc/use(amt, mob/user)
 	uses -= amt
 	playsound(get_turf(user), 'sounds/items/Screwdriver.ogg', 50, 1)
@@ -32,12 +25,6 @@
 	uses = 2
 	var/new_light_overlay
 	var/new_mob_icon_file
-
-/obj/item/device/kit/suit/inherit_custom_item_data(datum/custom_item/citem)
-	. = ..()
-	if(citem.additional_data["light_overlay"])
-		new_light_overlay = citem.additional_data["light_overlay"]
-	new_mob_icon_file = CUSTOM_ITEM_MOB
 
 /obj/item/clothing/head/helmet/space/void/attackby(obj/item/O, mob/user)
 	if(istype(O,/obj/item/device/kit/suit))

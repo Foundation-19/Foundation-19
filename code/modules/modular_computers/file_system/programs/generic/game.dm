@@ -4,7 +4,8 @@
 /datum/computer_file/program/game
 	filename = "dsarcade"				// File name, as shown in the file browser program.
 	filedesc = "MacroSoft Micro Arcade"	// User-Friendly name.
-	program_icon_state = "game"		// Icon state of this program's screen.
+	program_icon_state = "game"			// Icon state of this program's screen.
+	program_menu_icon = "gamepad"		// Name of an icon (as in, tgui icon). Used for the main menu and file downloader.
 	extended_desc = "This is a port of the classic game 'Outbomb Cuban Pete', redesigned to run on tablets; Now with thrilling graphics and chilling storytelling."	// A nice description.
 	size = 6							// Size in GQ. Integers only. Smaller sizes should be used for utility/low use programs (like this one), while large sizes are for important programs.
 	requires_ntnet = FALSE				// This particular program does not require NTNet network conectivity...

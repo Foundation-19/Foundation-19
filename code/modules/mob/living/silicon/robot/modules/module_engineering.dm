@@ -14,10 +14,10 @@
 		/obj/item/borg/upgrade/rcd
 	)
 	sprites = list(
-		"Basic" = "Engineering",
-		"Antique" = "engineerrobot",
 		"Landmate" = "landmate",
-		"Landmate - Treaded" = "engiborg+tread"
+		"Landmate - Treaded" = "engiborg+tread",
+		"Android - Engineer" = "engineerrobot",
+		"Android - Comms Tech" = "commstechrobot"
 	)
 	no_slip = 1
 	equipment = list(

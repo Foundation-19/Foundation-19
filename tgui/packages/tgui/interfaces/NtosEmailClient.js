@@ -341,7 +341,15 @@ const NtosEmailClientNewMessage = (props, context) => {
               <Button
                 icon="address-book"
                 onClick={() => act('addressbook')}
-                tooltip="Find Receipients"
+                tooltip="Find Recipients"
+                tooltipPosition="left"
+              />
+            </Flex.Item>
+            <Flex.Item>
+              <Button
+                icon="info"
+                onClick={() => act('codexinfo')}
+                tooltip="Check Codex"
                 tooltipPosition="left"
               />
             </Flex.Item>

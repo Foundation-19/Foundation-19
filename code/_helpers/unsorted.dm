@@ -871,6 +871,24 @@ Turf and target are seperate in case you want to teleport some distance from a t
 			mobs += M
 	return mobs
 
+///ultra range (no limitations on distance, faster than range for distances > 8); including areas drastically decreases performance
+/proc/urange(dist = 0, atom/center = usr, orange = FALSE, areas = FALSE)
+	if(!dist)
+		if(!orange)
+			return list(center)
+		else
+			return list()
+
+	var/list/turfs = RANGE_TURFS(center, dist)
+	if(orange)
+		turfs -= get_turf(center)
+	. = list()
+	for(var/turf/checked_turf as anything in turfs)
+		. += checked_turf
+		. += checked_turf.contents
+		if(areas)
+			. |= checked_turf.loc
+
 //similar function to range(), but with no limitations on the distance; will search spiralling outwards from the center
 /proc/spiral_range(dist=0, center=usr, orange=0)
 	var/list/L = list()

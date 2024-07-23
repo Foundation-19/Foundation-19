@@ -209,6 +209,9 @@ var/list/ticket_panels = list()
 	if(!ticket)
 		return
 
+	if(!(check_rights(R_ADMIN|R_MOD, FALSE, usr)) && (ticket.owner.ckey != usr.ckey))
+		return
+
 	switch(href_list["action"])
 		if("view")
 			open_ticket = ticket
