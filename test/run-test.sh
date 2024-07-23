@@ -72,9 +72,6 @@ FAILED_BYNAME=()
 # Global counter of passed tests
 PASSED=0
 
-# Version of Node to install for tgui
-NODE_VERSION=4
-
 function msg {
     echo -e "\t\e[34mtest\e[0m: $*"
 }
@@ -209,7 +206,7 @@ function run_code_tests {
     run_test "indentation check" "awk -f tools/indentation.awk **/*.dm"
     run_test "check tags" "python3 tools/TagMatcher/tag-matcher.py ."
     run_test "check punctuation" "python3 tools/PunctuationChecker/punctuation-checker.py ."
-    run_test "check icon state limit" "python3 tools/dmitool/check_icon_state_limit.py ."
+    run_test "check icon states validity" "tools/bootstrap/python -m dmi.test"
 }
 
 function run_byond_tests {
@@ -220,11 +217,6 @@ function run_byond_tests {
     else msg "configured map is '$MAP_PATH'"
     fi
     cp config/example/* config/
-    if [[ "$CI" == "true" ]]; then
-        msg "installing BYOND"
-        ./install-byond.sh || exit 1
-        source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
-    fi
     #run_test_ci "check globals build" "python3 tools/GenerateGlobalVarAccess/gen_globals.py baystation12.dme code/_helpers/global_access.dm"
     #run_test "check globals unchanged" "md5sum -c - <<< '867473a8a8375e5b73b8bd0d58433c2a *code/_helpers/global_access.dm'" whatever
     run_test "build map unit tests" "tools/build/build --ci dm -DUNIT_TEST -M$MAP_PATH | tee build_log.txt"

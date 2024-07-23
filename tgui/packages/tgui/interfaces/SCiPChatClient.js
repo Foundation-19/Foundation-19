@@ -1,5 +1,13 @@
 import { useBackend } from '../backend';
-import { Button, Section, LabeledList, Box, Table, Fragment, Input } from '../components';
+import {
+  Box,
+  Button,
+  Fragment,
+  Input,
+  LabeledList,
+  Section,
+  Table,
+} from '../components';
 import { NtosWindow } from '../layouts';
 
 export const SCiPChatClient = (props, context) => {
@@ -37,7 +45,8 @@ const Error = (props, context) => {
         <Button icon="undo" onClick={() => act('PRG_reset')}>
           Reset
         </Button>
-      }>
+      }
+    >
       Additional Information: {error}
     </Section>
   );
@@ -57,7 +66,8 @@ const ServerSelect = (props, context) => {
                 icon="server"
                 onClick={() =>
                   act('PRG_connect_to_server', { uid: server.uid })
-                }>
+                }
+              >
                 {server.sysadmin
                   ? 'Connect to Server (sysadmin)'
                   : 'Connect to Server'}
@@ -89,7 +99,8 @@ const Messages = (props, context) => {
             verticalAlign="top"
             style={{
               width: '200px',
-            }}>
+            }}
+          >
             <Box height="560px" overflowY="scroll">
               {servername}
               {sysadmin && (
@@ -138,7 +149,8 @@ const Messages = (props, context) => {
             verticalAlign="top"
             style={{
               width: '150px',
-            }}>
+            }}
+          >
             {channel_open && (
               <Button.Input
                 fluid
@@ -153,11 +165,9 @@ const Messages = (props, context) => {
             )}
             {channel_open & sysadmin && (
               <Fragment>
-                <Button.Confirm
-                  fluid
-                  content="Delete Channel"
-                  onClick={() => act('PRG_delete_channel')}
-                />
+                <Button.Confirm fluid onClick={() => act('PRG_delete_channel')}>
+                  Delete Channel
+                </Button.Confirm>
                 <Button
                   fluid
                   content="Rename Channel"
@@ -192,7 +202,8 @@ const UserAccess = (props, context) => {
         <Button onClick={() => act('PRG_set_editing_access', { value: 0 })}>
           Return
         </Button>
-      }>
+      }
+    >
       {region_access.map((region = [], index) => (
         <Section title={region_names[index]} key={region_names[index]}>
           {region.map((access) => (
@@ -201,7 +212,8 @@ const UserAccess = (props, context) => {
               checked={access.required}
               onClick={() =>
                 act('PRG_change_access_user', { access: access.id })
-              }>
+              }
+            >
               {access.desc}
             </Button.Checkbox>
           ))}
@@ -221,7 +233,8 @@ const AdminAccess = (props, context) => {
         <Button onClick={() => act('PRG_set_editing_access', { value: 0 })}>
           Return
         </Button>
-      }>
+      }
+    >
       {region_access.map((region = [], index) => (
         <Section title={region_names[index]} key={region_names[index]}>
           {region.map((access) => (
@@ -230,7 +243,8 @@ const AdminAccess = (props, context) => {
               checked={access.required}
               onClick={() =>
                 act('PRG_change_access_admin', { access: access.id })
-              }>
+              }
+            >
               {access.desc}
             </Button.Checkbox>
           ))}

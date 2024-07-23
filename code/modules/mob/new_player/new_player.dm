@@ -138,7 +138,6 @@
 		return FALSE
 
 	character = SSjobs.equip_rank(character, job.title, 1)					//equips the human
-	SScustomitems.equip_custom_items(character)
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
 	if(character.mind.assigned_role == "AIC")

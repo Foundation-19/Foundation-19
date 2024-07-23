@@ -42,6 +42,7 @@
 \[goclogo\] : Inserts the Global Occult Coalition logo.<br>
 \[uiulogo\] : Inserts the Unusual Incidents Unit logo.<br>
 \[mcdlogo\] : Inserts the Marshall, Carter and Dark logo.<br>
+\[grlogo\] : Inserts the Goldbaker-Reinz logo.<br>
 \[arlogo\] : Inserts the Anderson Robotics logo.<br>
 \[cilogo\] : Inserts the Chaos Insurgency logo.<br>
 \[shlogo\] : Inserts the Serpent's Hand logo.<br>
