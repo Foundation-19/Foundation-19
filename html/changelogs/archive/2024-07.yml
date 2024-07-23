@@ -139,3 +139,10 @@
 2024-07-20:
   checkraisefold:
   - bugfix: Re-merged widescreen PR
+2024-07-23:
+  Ambrose997:
+  - balance: Access contained within the EZ ZC list has been added to the General
+      Commanders access list. Now also starts with Trained combat skill, trained computers,
+      etc to at least be on par with the EZ Zone Commander.
+  quadbium:
+  - rscadd: adds the bookburners v2 to lobby music
