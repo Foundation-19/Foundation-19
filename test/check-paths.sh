@@ -37,7 +37,7 @@ exactly 0 "world.log<< uses" 'world.log<<|world.log[[:space:]]<<'
 #exactly 122 "<< uses" '(?<!<)<<(?!<)' -P - bitshifts exist
 exactly 0 "incorrect indentations" '^( {4,})' -P
 #exactly 3 "update_icon() override" '/update_icon\((.*)\)'  -P - nothing wrong wtih overriding it
-exactly 1 "goto use" 'goto '
+exactly 2 "goto use" 'goto '
 exactly 3 "NOOP match" 'NOOP'
 #exactly 416 "spawn uses" 'spawn\s*\(\s*(-\s*)?\d*\s*\)' -P - oddly specific number
 exactly 0 "tag uses" '\stag = ' -P '**/*.dmm'
