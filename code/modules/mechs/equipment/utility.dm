@@ -224,15 +224,18 @@
 		return
 	var/turf/current = get_turf(owner)
 	var/turf/temp = get_step(src, owner.dir)
+	var/breaker = FALSE
 	for(var/i = 0, i <= effect_steps, i++ )
 		if(temp.opacity)
 			break
 		for(var/atom/thing in temp.contents)
 			if(thing.opacity)
-				goto end
+				breaker = TRUE
+				break
+		if(breaker)
+			break
 		current = temp
 		temp = get_step(current, owner.dir)
-	end:
 	light_effect.forceMove(current)
 
 /obj/item/mech_equipment/light/proc/toggle_mode(force, mob/user)
