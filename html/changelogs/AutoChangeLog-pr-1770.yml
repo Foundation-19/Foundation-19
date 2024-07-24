@@ -1,0 +1,5 @@
+author: K4rlox
+delete-after: true
+changes:
+  - balance: SCP-049's minimum playercount changed from 20 -> 15.
+  - balance: SCP-106's minimum playercount changed from 20 -> 25.
