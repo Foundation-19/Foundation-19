@@ -150,3 +150,6 @@
   K4rlox:
   - balance: SCP-049's minimum playercount changed from 20 -> 15.
   - balance: SCP-106's minimum playercount changed from 20 -> 25.
+2024-07-25:
+  checkraisefold:
+  - balance: Made money cannon do a max of 30 damage instead of infinite
