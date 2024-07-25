@@ -60,7 +60,7 @@
 		return
 
 	// Must launch at least 100 thaler to incur damage.
-	release_force = dispensing / 100
+	release_force = min(dispensing / 100, 40)
 
 /obj/item/gun/launcher/money/proc/unload_receptacle(mob/user)
 	if(receptacle_value < 1)
