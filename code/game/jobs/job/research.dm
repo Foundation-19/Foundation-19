@@ -117,7 +117,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director and Assistant Research Director"
 	economic_power = 4
-	requirements = list(EXP_TYPE_SCIENCE = 480)
+	requirements = list(EXP_TYPE_SCIENCE = 620)
 	alt_titles = list("Senior Mentalist")
 	minimal_player_age = 10
 	ideal_character_age = 35
@@ -148,17 +148,56 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
+	psi_faculties = list(
+		PSI_COERCION = PSI_RANK_OPERANT,
+		PSI_PSYCHOKINESIS = PSI_RANK_OPERANT,
+		PSI_REDACTION = PSI_RANK_MASTER,
+		PSI_ENERGISTICS = PSI_RANK_OPERANT
+	)
+
 	skill_points = 20
-	roleplay_difficulty = "Easy - Medium"
+	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
 
-/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist") //Basic level of Psionics, with ability to read others.
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)
-		psi_faculties = list("[PSI_COERCION]" = PSI_RANK_MASTER)
-		psi_faculties = list("[PSI_PSYCHOKINESIS]" = PSI_RANK_OPERANT)
-		psi_faculties = list("[PSI_ENERGISTICS]" = PSI_RANK_OPERANT)
-	return ..()
+/datum/job/mentalist
+	title = "Psychotronics Researcher"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Senior Psychotronics Researcher, Research Director, and Assistant Research Director"
+	economic_power = 4
+	requirements = list(EXP_TYPE_SCIENCE = 480)
+	alt_titles = list("Mentalist")
+	minimal_player_age = 10
+	ideal_character_age = 35
+	outfit_type = /decl/hierarchy/outfit/job/science/mentalist
+	class = CLASS_C
+	hud_icon = "hudseniorresearcher"
+
+	access = list(
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_RESEARCH
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_CHEMISTRY	  = SKILL_BASIC,
+		SKILL_MEDICAL	  = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
+	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
+	psi_faculties = list(PSI_COERCION = PSI_RANK_OPERANT) //Basic level of Psionics, with ability to read others.
 
 /datum/job/seniorscientist
 	title = "Senior Researcher"
@@ -171,7 +210,7 @@
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 480)
 
-	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist", "Mentalist")
+	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist")
 	minimal_player_age = 7
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/science/seniorscientist

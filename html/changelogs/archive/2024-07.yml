@@ -136,3 +136,17 @@
   - code_imp: Ran Oxipng on all image files, +18mb in savings
   - code_imp: Improved tgui Button.Confirm
   - code_imp: Changed logic relating to overlays to make them less sucky
+2024-07-20:
+  checkraisefold:
+  - bugfix: Re-merged widescreen PR
+2024-07-23:
+  Ambrose997:
+  - balance: Access contained within the EZ ZC list has been added to the General
+      Commanders access list. Now also starts with Trained combat skill, trained computers,
+      etc to at least be on par with the EZ Zone Commander.
+  quadbium:
+  - rscadd: adds the bookburners v2 to lobby music
+2024-07-24:
+  K4rlox:
+  - balance: SCP-049's minimum playercount changed from 20 -> 15.
+  - balance: SCP-106's minimum playercount changed from 20 -> 25.
