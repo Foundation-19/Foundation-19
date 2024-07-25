@@ -68,7 +68,11 @@
 		if(H) H.update_system_info()
 	handle_hud_icons_health()
 	var/obj/item/cell/C = get_cell(FALSE, ME_ANY_POWER)
-	if(istype(C))
+	if(istype(hardpoints[HARDPOINT_POWER], /obj/item/mech_equipment/engine) && C?.loc == hardpoints[HARDPOINT_POWER])
+		hud_power.maptext_x = 16
+		hud_power.maptext_y = -8
+		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;", "UNAVAIL")
+	else if(istype(C))
 		hud_power.maptext_x = initial(hud_power.maptext_x)
 		hud_power.maptext_y = initial(hud_power.maptext_y)
 		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;",  "[round(C.charge)]/[round(C.maxcharge)]")
@@ -83,7 +87,7 @@
 
 	hud_health.cut_overlays()
 
-	if(!body || !get_cell() || (get_cell().charge <= 0))
+	if(!body || !get_cell(FALSE, ME_ANY_POWER) || (get_cell(FALSE, ME_ANY_POWER).charge <= 0))
 		return
 
 	if(!body.diagnostics || !body.diagnostics.is_functional() || ((emp_damage>EMP_GUI_DISRUPT) && prob(emp_damage*2)))

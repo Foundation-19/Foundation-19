@@ -22,6 +22,8 @@
 	return FALSE
 
 /obj/item/mech_equipment/afterattack(atom/target, mob/living/user, inrange, params)
+	if(!owner)
+		return FALSE
 	if(!owner.hatch_closed && !(equipment_flags & ME_BYPASS_INTERFACE))
 		return FALSE
 	if(require_adjacent)

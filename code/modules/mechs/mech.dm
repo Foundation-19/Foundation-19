@@ -224,7 +224,10 @@
 		power = MECH_POWER_TRANSITION
 		playsound(src, 'sounds/mecha/powerup.ogg', 50, 0)
 		if(user)
-			if(user.do_skilled(time_override, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
+			if(time_override == 0)
+				playsound(src, 'sounds/mecha/nominal.ogg', 50, 0)
+				power = MECH_POWER_ON
+			else if(user.do_skilled(time_override, SKILL_ELECTRICAL, src, 0.5) && power == MECH_POWER_TRANSITION)
 				playsound(src, 'sounds/mecha/nominal.ogg', 50, 0)
 				power = MECH_POWER_ON
 			else

@@ -1030,6 +1030,18 @@
 	face_current_direction()
 
 /mob/proc/face_current_direction()
+	if(istype(loc, /mob/living/exosuit))
+		var/mob/living/exosuit/owner = loc
+		if(!(owner.legs?.movement_flags & PF_OMNI_STRAFE))
+			return
+		if(owner.mech_flags & MF_STRAFING)
+			owner.mech_flags &= ~MF_STRAFING
+			balloon_alert(src, "No longer strafing")
+		else
+			owner.mech_flags |= MF_STRAFING
+			balloon_alert(src, "Strafing")
+		return
+
 	if(!facing_dir)
 		set_face_dir(dir)
 	else

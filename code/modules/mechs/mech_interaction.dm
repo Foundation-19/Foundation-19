@@ -258,6 +258,9 @@
 	LAZYOR(user.additional_vision_handlers, src)
 	update_pilots()
 	user.PushClickHandler(/datum/click_handler/default/mech)
+	var/mob/living/carbon/human/man = user
+	man.reset_view(null)
+	man.check_fov()
 	return 1
 
 /mob/living/exosuit/proc/sync_access()
@@ -293,6 +296,8 @@
 		LAZYREMOVE(pilots, user)
 		UNSETEMPTY(pilots)
 		update_pilots()
+	var/mob/living/carbon/human/man = user
+	man.check_fov()
 	return 1
 
 /mob/living/exosuit/attackby(obj/item/thing, mob/user)
@@ -342,7 +347,7 @@
 				if(!istype(hardpoints[HARDPOINT_POWER], /obj/item/mech_equipment/engine ))
 					to_chat(user, SPAN_WARNING("There is no engine to try refueling!"))
 					return
-				W.standard_pour_into(user, src)
+				W.standard_pour_into(user, hardpoints[HARDPOINT_POWER])
 				return
 			if(isMultitool(thing))
 				if(hardpoints_locked)

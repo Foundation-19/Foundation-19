@@ -377,6 +377,15 @@
 	to_chat(usr, SPAN_NOTICE("Strafing [owner.mech_flags & MF_STRAFING ? "enabled" : "disabled"]."))
 	playsound(src,'sounds/mecha/lever.ogg', 40, 1)
 
+/atom/movable/screen/exosuit/toggle/strafe/on_update_icon()
+	toggled = owner.mech_flags & MF_STRAFING
+	if(!(owner?.legs?.movement_flags & PF_OMNI_STRAFE))
+		maptext = MECH_UI_STYLE("------")
+	else
+		maptext = initial(maptext)
+	. = ..()
+
+
 
 #undef BAR_CAP
 #undef MECH_UI_STYLE

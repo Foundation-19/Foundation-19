@@ -916,14 +916,14 @@
 		owner.mech_flags &= ~MF_ENGINE_POWERED
 		return
 	// No spamming the engine
-	user.setClickCooldown(7)
-	playsound(owner, 'sounds/mecha/engineattempt.ogg')
-	if(do_after(user, 0.7 SECONDS, DO_DEFAULT | DO_SHOW_TARGET))
+	user.setClickCooldown(13)
+	playsound(owner, 'sounds/mecha/engineattempt.ogg', 100, FALSE)
+	if(do_after(user, 1 SECONDS, src, DO_DEFAULT | DO_SHOW_TARGET))
 		if(prob(100 - power_gap))
-			playsound(owner, 'sounds/mecha/enginestarted.ogg')
+			playsound(owner, 'sounds/mecha/enginestarted.ogg', 100, FALSE)
 			active = TRUE
 			if(owner.power == MECH_POWER_OFF)
-				owner.toggle_power(user)
+				owner.toggle_power(user,0)
 			owner.mech_flags |= MF_ENGINE_POWERED
 			START_PROCESSING(SSprocessing, src)
 			icon_state = "[initial(icon_state)]_on"
@@ -934,7 +934,7 @@
 	if(reagents.total_volume < 2)
 		deactivate()
 		return
-	playsound(owner, 'sounds/mecha/engineloop.ogg')
+	playsound(get_turf(owner), 'sounds/mecha/enginestarted.ogg', 100, FALSE)
 	var/power_gap = internal_cell.maxcharge - internal_cell.charge
 	if(power_gap < 5)
 		return
@@ -970,6 +970,10 @@
 		else
 			activate(user)
 		to_chat(user, SPAN_NOTICE("You toggle \the [src] [active ? "on" : "off"]"))
+
+/obj/item/mech_equipment/engine/prefilled/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/fuel, 120)
 
 /obj/item/mech_equipment/engine/get_hardpoint_maptext()
 	return "Fuel:[reagents.total_volume]"
