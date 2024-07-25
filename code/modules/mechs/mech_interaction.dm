@@ -398,23 +398,38 @@
 				if(!maintenance_protocols)
 					to_chat(user, SPAN_WARNING("The power supply compartment remains locked while maintenance protocols are disabled."))
 					return
-				if(!body || !hardpoints[HARDPOINT_POWER])
+				var/chosen_hardpoint
+				if(hardpoints[HARDPOINT_POWER] && hardpoints[HARDPOINT_BACKUP_POWER])
+					chosen_hardpoint = input(user, "Choose power hardpoint to interact with", "MechEngineer3000", HARDPOINT_POWER) as anything in list(HARDPOINT_POWER, HARDPOINT_BACKUP_POWER)
+				else if(hardpoints[HARDPOINT_POWER])
+					chosen_hardpoint = HARDPOINT_POWER
+				else if(hardpoints[HARDPOINT_BACKUP_POWER])
+					chosen_hardpoint = HARDPOINT_BACKUP_POWER
+
+				if(!chosen_hardpoint)
+					to_chat(user, SPAN_WARNING("There is nothing to remove with the use of a screwdriver!"))
+					return
+				if(!hardpoints[chosen_hardpoint])
+					to_chat(user, SPAN_WARNING("There is nothing to remove with the use of a screwdriver!"))
+					return
+
+				if(!body)
 					to_chat(user, SPAN_WARNING("There is no power provider here for you to remove!"))
 					return
 				var/delay = 2.5 SECONDS * user.skill_delay_mult(SKILL_DEVICES)
-				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols || !body || !hardpoints[HARDPOINT_POWER])
+				if(!do_after(user, delay, bonus_percentage = 25) || !maintenance_protocols || !body || !hardpoints[chosen_hardpoint])
 					return
 
-				var/atom/movable/power_provider = hardpoints[HARDPOINT_POWER]
+				var/atom/movable/power_provider = hardpoints[chosen_hardpoint]
 				if(istype(power_provider, /obj/item/mech_equipment/power_cell))
 					var/obj/item/mech_equipment/power_cell/cast = power_provider
-					remove_system(HARDPOINT_POWER, null, TRUE)
+					remove_system(chosen_hardpoint, null, TRUE)
 					power_provider = cast.internal_cell
 					power_provider.forceMove(get_turf(src))
 					cast.internal_cell = null
 					qdel(cast)
 				else
-					remove_system(HARDPOINT_POWER, null, TRUE)
+					remove_system(chosen_hardpoint, null, TRUE)
 				user.put_in_hands(power_provider)
 				to_chat(user, SPAN_NOTICE("You remove \the [power_provider] from \the [src]."))
 				playsound(user.loc, 'sounds/items/Crowbar.ogg', 50, 1)

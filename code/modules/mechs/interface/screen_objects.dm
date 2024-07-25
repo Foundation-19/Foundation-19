@@ -31,13 +31,14 @@
 /atom/movable/screen/exosuit/Click()
 	return (!usr.incapacitated() && usr.canClick() && (usr == owner || usr.loc == owner))
 
-#define HARDPOINT_SELECTABLE 1<<0
+#define HARDPOINT_SELECTABLE (1<<0)
+#define HARDPOINT_EJECTABLE (1<<1)
 
 /atom/movable/screen/exosuit/hardpoint
 	name = "hardpoint"
 	var/hardpoint_tag
 	var/obj/item/holding
-	var/interact_flags = HARDPOINT_SELECTABLE
+	var/interact_flags = HARDPOINT_SELECTABLE | HARDPOINT_EJECTABLE
 	icon_state = "hardpoint"
 
 	maptext_x = 34
@@ -146,11 +147,13 @@
 			to_chat(usr, SPAN_WARNING("Error: Hardpoint interface disabled while [owner.body.hatch_descriptor] is open."))
 			return FALSE
 
-
 	var/modifiers = params2list(params)
 	if(modifiers["ctrl"])
 		if(owner.hardpoints_locked)
 			to_chat(usr, SPAN_WARNING("Hardpoint ejection system is locked."))
+			return FALSE
+		if(!(interact_flags & HARDPOINT_EJECTABLE))
+			to_chat(usr, SPAN_WARNING("This hardpoint can't eject modules! It must be done manually."))
 			return FALSE
 		if(owner.remove_system(hardpoint_tag))
 			to_chat(usr, SPAN_NOTICE("You disengage and discard the system mounted to your [hardpoint_tag] hardpoint."))

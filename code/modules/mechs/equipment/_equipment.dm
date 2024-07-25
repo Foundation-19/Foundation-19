@@ -39,6 +39,8 @@
 	return FALSE
 
 /obj/item/mech_equipment/attack_self(mob/user)
+	if(!owner)
+		return FALSE
 	if(!owner.hatch_closed && !(equipment_flags & ME_BYPASS_INTERFACE))
 		return FALSE
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
