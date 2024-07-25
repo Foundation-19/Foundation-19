@@ -1,0 +1,4 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - balance: Made money cannon do a max of 30 damage instead of infinite
