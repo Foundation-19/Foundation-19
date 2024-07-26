@@ -57,7 +57,7 @@
 	)
 
 	SCP.min_time = 10 MINUTES
-	SCP.min_playercount = 20
+	SCP.min_playercount = 15 //mostly a RP scp, cant escape as soon as they spawn in
 
 	add_verb(src, list(
 		/mob/living/carbon/human/scp049/verb/Greetings,

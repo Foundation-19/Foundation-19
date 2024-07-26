@@ -100,7 +100,8 @@
 		/decl/audio/track/uiu_spawn_theme,
 		/decl/audio/track/surface_area,
 		/decl/audio/track/goc_spawn_theme2,
-		/decl/audio/track/fall_of_ganzir
+		/decl/audio/track/fall_of_ganzir,
+		/decl/audio/track/the_bookburners_v2
 	)
 
 	available_cultural_info = list(
