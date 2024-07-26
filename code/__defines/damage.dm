@@ -3,10 +3,10 @@
 #define	DAM_BULLET_RUBBER 2
 #define	DAM_BULLET_HEAVY_RUBBER 6
 
-#define	DAM_BULLET_PELLET 16
+#define	DAM_BULLET_12G_PELLET 16
 #define	DAM_BULLET_SHRAP 35
-#define	DAM_BULLET_REVOLVER 50 //Revolvers get snowflake bullets, to keep them relevant
-#define	DAM_BULLET_SLUG	60 //12g
+#define	DAM_BULLET_127X50 50 //12.7x50mm
+#define	DAM_BULLET_12G_SLUG	60 //12g
 
 #define	DAM_BULLET_4MM 20 //4mm
 #define	DAM_BULLET_4MMHP 35 //4mm hp
