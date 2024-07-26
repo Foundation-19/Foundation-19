@@ -10,9 +10,9 @@
 	requirements = list("LCZ Zone Junior Lieutenant" = 240, "HCZ Zone Senior Lieutenant" = 240, "EZ Zone Supervisor" = 240)
 	total_positions = 1
 	spawn_positions = 1
-	alt_titles = list("Security Chief", "Head of Security")
+	alt_titles = list("Security Chief", "Head of Security", "Security Commander")
 	minimal_player_age = 15
-	ideal_character_age = 35
+	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/command/cos
 	class = CLASS_A
 	hud_icon = "hudguardcommander"
@@ -45,7 +45,7 @@
 	minimal_access = list()
 
 	min_skill = list(
-	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_EXPERIENCED,
 	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
 	    SKILL_HAULING     = SKILL_TRAINED,
 		SKILL_COMPUTER	  = SKILL_TRAINED,
@@ -62,9 +62,9 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	roleplay_difficulty = "Hard"
+	roleplay_difficulty = "God Help Us All.."
 	mechanical_difficulty = "Easy - Medium"
-	duties = "Manage all three Security branches. Keep track of potential and on-going threats (such as containment breaches). Work with other departments to respond to said threats."
+	duties = "Manage all three Security branches. Keep track of potential and on-going threats (such as containment breaches). Work with other departments to respond to said threats. Battle the Site Director for ultimate control over why we shouldnt demolish all of 096's walls."
 
 //##
 //ZONE COMMANDERS
@@ -301,6 +301,7 @@
 		ACCESS_SEC_COMMS,
 		ACCESS_SECURITY_LVL1,
 		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_DCLASS_KITCHEN,
