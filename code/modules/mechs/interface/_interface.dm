@@ -59,6 +59,7 @@
 		hud_power.screen_loc = "EAST-1:12,CENTER-4:25"
 		hud_elements |= hud_power
 		hud_camera = locate(/atom/movable/screen/exosuit/toggle/camera) in hud_elements
+		strafing = locate(/atom/movable/screen/exosuit/toggle/strafe) in hud_elements
 
 	refresh_hud()
 

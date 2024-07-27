@@ -66,7 +66,7 @@
 		return
 
 	var/list/new_overlays = list()
-	if(!owner.get_cell() || (owner.get_cell().charge <= 0))
+	if(!owner.get_cell(FALSE, ME_ANY_POWER) || (owner.get_cell(FALSE, ME_ANY_POWER).charge <= 0))
 		cut_overlays()
 		maptext = ""
 		return
@@ -322,7 +322,7 @@
 
 /atom/movable/screen/exosuit/health/Click()
 	if(..())
-		if(owner && owner.body && owner.get_cell() && owner.body.diagnostics?.is_functional())
+		if(owner && owner.body && owner.get_cell(FALSE, ME_ANY_POWER) && owner.body.diagnostics?.is_functional())
 			usr.setClickCooldown(0.2 SECONDS)
 			to_chat(usr, SPAN_NOTICE("The diagnostics panel blinks several times as it updates:"))
 			playsound(owner.loc,'sounds/effects/scanbeep.ogg',30,0)
@@ -378,7 +378,6 @@
 	playsound(src,'sounds/mecha/lever.ogg', 40, 1)
 
 /atom/movable/screen/exosuit/toggle/strafe/on_update_icon()
-	toggled = owner.mech_flags & MF_STRAFING
 	if(!(owner?.legs?.movement_flags & PF_OMNI_STRAFE))
 		maptext = MECH_UI_STYLE("------")
 	else

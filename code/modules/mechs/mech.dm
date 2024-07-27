@@ -72,6 +72,7 @@
 	var/atom/movable/screen/exosuit/toggle/hatch_open/hud_open
 	var/atom/movable/screen/exosuit/power/hud_power
 	var/atom/movable/screen/exosuit/toggle/camera/hud_camera
+	var/atom/movable/screen/exosuit/toggle/strafe/strafing
 	//POWER
 	var/power = MECH_POWER_OFF
 	// Mech flags

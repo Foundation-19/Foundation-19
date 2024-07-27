@@ -919,6 +919,10 @@
 	user.setClickCooldown(13)
 	playsound(owner, 'sounds/mecha/engineattempt.ogg', 100, FALSE)
 	if(do_after(user, 1 SECONDS, src, DO_DEFAULT | DO_SHOW_TARGET))
+		if(reagents.total_volume < 2)
+			active = FALSE
+			owner.mech_flags &= ~MF_ENGINE_POWERED
+			return
 		if(prob(100 - power_gap))
 			playsound(owner, 'sounds/mecha/enginestarted.ogg', 100, FALSE)
 			active = TRUE
@@ -934,7 +938,7 @@
 	if(reagents.total_volume < 2)
 		deactivate()
 		return
-	playsound(get_turf(owner), 'sounds/mecha/enginestarted.ogg', 100, FALSE)
+	playsound(owner, 'sounds/mecha/enginestarted.ogg', 100, FALSE)
 	var/power_gap = internal_cell.maxcharge - internal_cell.charge
 	if(power_gap < 5)
 		return
@@ -1049,13 +1053,24 @@
 	owner.mech_flags |= MF_CELL_POWERED
 	if(owner.power == MECH_POWER_OFF)
 		owner.toggle_power(user)
+	START_PROCESSING(SSprocessing, src)
 
 
 /obj/item/mech_equipment/power_cell/deactivate(mob/living/user)
 	owner.mech_flags &= ~MF_CELL_POWERED
 	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
 		owner.toggle_power(user)
+	STOP_PROCESSING(SSprocessing,src)
 	. = ..()
+
+/obj/item/mech_equipment/power_cell/Process()
+	if(QDELETED(owner))
+		deactivate()
+		return
+	if(!active || internal_cell.charge < 1)
+		deactivate()
+		return
+	playsound(owner, 'sounds/mecha/electricloop.ogg', 100, FALSE)
 
 /obj/item/mech_equipment/power_cell/attack_self(mob/user)
 	. = ..()
