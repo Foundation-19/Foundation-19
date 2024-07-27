@@ -540,7 +540,6 @@
 /obj/item/reagent_containers/food/snacks/meat/chicken,
 /obj/item/reagent_containers/food/snacks/meat/chicken,
 /obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abq" = (
@@ -46175,6 +46174,7 @@
 /obj/item/reagent_containers/food/snacks/meat/chicken,
 /obj/item/reagent_containers/food/snacks/meat/chicken,
 /obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
 "pcN" = (
@@ -52408,7 +52408,6 @@
 /obj/effect/floor_decal/corner/research/three_quarters{
 	dir = 8
 	},
-/obj/item/storage/briefcase/foundation/jerraman,
 /turf/simulated/floor/tiled/nullglass,
 /area/site53/reswing/psionic)
 "ssc" = (
@@ -93963,7 +93962,7 @@ aeB
 aav
 otN
 iGp
-abp
+pcD
 aav
 abz
 abz
@@ -94218,9 +94217,9 @@ aIn
 aId
 aeB
 aav
-pcD
-abj
 abp
+abj
+pcD
 aav
 abH
 aOv
