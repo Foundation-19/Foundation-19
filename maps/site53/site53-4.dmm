@@ -2984,13 +2984,14 @@
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door"
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
 	},
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor,
 /area/site53/upper_surface/commstower)
@@ -3292,10 +3293,11 @@
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
 "lz" = (
-/obj/structure/railing/mapped{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
 "lA" = (
@@ -3614,6 +3616,9 @@
 "mT" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 10
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
@@ -4529,6 +4534,18 @@
 	dir = 4
 	},
 /area/site53/uez/hallway)
+"rf" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 1;
+	icon_state = "map_injector";
+	id_tag = "external_out";
+	use_power = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/site53/engineering/atmosext)
 "rh" = (
 /obj/effect/floor_decal/corner/orange/mono,
 /obj/structure/bed/chair/armchair/brown{
@@ -5516,21 +5533,6 @@
 	},
 /turf/simulated/floor/tiled/white/small,
 /area/site53/uez/commandpanicbunker)
-"vy" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door";
-	dir = 4
-	},
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor,
-/area/site53/upper_surface/commstower)
 "vz" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -8207,8 +8209,9 @@
 /area/site53/uez/repoffice/internaltribunal)
 "HD" = (
 /obj/structure/railing/mapped{
-	dir = 6
+	dir = 4
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/site53/engineering/atmosext)
 "HE" = (
@@ -9367,6 +9370,20 @@
 /obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
+"MZ" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/site53/upper_surface/commstower)
 "Na" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "EZentrancewest";
@@ -11322,19 +11339,6 @@
 "VF" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
-"VJ" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 4
-	},
-/area/site53/upper_surface/commstower)
 "VK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -11815,6 +11819,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/commandpanicbunker)
+"Yc" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/upper_surface/commstower)
 "Yd" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/paper_bin,
@@ -41214,7 +41231,7 @@ kj
 jJ
 QS
 kq
-vy
+kx
 kl
 oC
 jT
@@ -41471,7 +41488,7 @@ kb
 jJ
 OT
 Tg
-kx
+MZ
 kq
 ke
 kX
@@ -41985,7 +42002,7 @@ jY
 OX
 eH
 jJ
-VJ
+Yc
 hQ
 kF
 WT
@@ -44027,7 +44044,7 @@ xv
 NX
 xv
 mT
-AE
+rf
 Pf
 hZ
 hZ
