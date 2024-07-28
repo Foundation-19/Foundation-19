@@ -8,7 +8,7 @@
 
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch)
 	species_flags = SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_DISEASE
-	spawn_flags = SPECIES_IS_RESTRICTED
+	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_IS_WHITELISTED
 	siemens_coefficient = 0
 
 	meat_type = null

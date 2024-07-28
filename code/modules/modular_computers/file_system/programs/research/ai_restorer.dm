@@ -3,7 +3,7 @@
 	filedesc = "AIC Maintenance Utility"
 	program_icon_state = "generic"
 	program_key_state = "mining_key"
-	program_menu_icon = "person"
+	program_menu_icon = "robot"
 	extended_desc = "This program is capable of reconstructing damaged AIC systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
 	size = 12
 	requires_ntnet = FALSE

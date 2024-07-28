@@ -450,6 +450,14 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/commandpanicbunker)
+"bC" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/door_timer{
+	name = "Cell 4";
+	id = "EZ Security Cell 4"
+	},
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/equipmentroom)
 "bD" = (
 /turf/simulated/floor/carpet/blue,
 /area/site53/uez/equipmentroom)
@@ -915,6 +923,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
+"dg" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/upper_surface/commstower)
 "dh" = (
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
@@ -2379,6 +2400,9 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/equipmentroom)
+"hX" = (
+/turf/unsimulated/mineral,
+/area/site53/surface/surface/upper)
 "hZ" = (
 /turf/simulated/open,
 /area/site53/surface/surface/upper)
@@ -2387,12 +2411,31 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
+"ic" = (
+/obj/effect/floor_decal/corner/orange,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/upper_surface/commstower)
 "ie" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	name = "Guard Commander's Office"
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
+"ii" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/upper_surface/commstower)
 "in" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2470,6 +2513,17 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
+"iY" = (
+/obj/effect/floor_decal/corner/orange,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/upper_surface/commstower)
 "iZ" = (
 /obj/machinery/cooker/grill,
 /turf/simulated/floor/carpet/blue3,
@@ -2922,6 +2976,15 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
+"kx" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "ky" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "EZ Forensics Office";
@@ -2980,16 +3043,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "kM" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/machinery/flasher{
+	id_tag = "EZ Security Cell 4"
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/upper_surface/commstower)
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "kN" = (
 /obj/effect/floor_decal/corner/orange/half,
 /turf/simulated/floor/tiled/horizontal,
@@ -3857,6 +3916,20 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/uez/hallway)
+"oC" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "oD" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -4363,17 +4436,6 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/commandpanicbunker)
-"qP" = (
-/obj/effect/floor_decal/corner/orange,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 8
-	},
-/area/site53/upper_surface/commstower)
 "qR" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -5656,15 +5718,6 @@
 /obj/machinery/computer/rcon,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
-"wv" = (
-/obj/effect/floor_decal/corner/orange/mono,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/upper_surface/commstower)
 "wz" = (
 /obj/machinery/light{
 	dir = 4
@@ -6165,9 +6218,6 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/hallway)
-"yL" = (
-/turf/unsimulated/mineral,
-/area/site53/surface/surface/upper)
 "yM" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/photocopier/faxmachine{
@@ -6253,20 +6303,6 @@
 /obj/effect/floor_decal/corner/yellow/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
-"zo" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site53/upper_surface/commstower)
 "zq" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#2B0F42"
@@ -6402,6 +6438,15 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/corner,
+/area/site53/uez/equipmentroom)
+"zP" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 4
+	},
+/obj/machinery/flasher{
+	id_tag = "ezsecflasher"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
 "zQ" = (
 /obj/effect/floor_decal/corner/red/border{
@@ -6709,6 +6754,13 @@
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
+/area/site53/uez/equipmentroom)
+"Bk" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/machinery/flasher{
+	id_tag = "EZ Security Cell 3"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
 "Bn" = (
 /obj/machinery/door/airlock/command{
@@ -7355,7 +7407,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "RAISA's Office";
-	send_access = list("ACCESS_SECURITY_LEVEL4")
+	send_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
@@ -7683,17 +7735,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
-"FK" = (
-/obj/effect/floor_decal/corner/orange,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 8
-	},
-/area/site53/upper_surface/commstower)
 "FL" = (
 /obj/machinery/camera/network/entrance{
 	dir = 8;
@@ -7744,6 +7785,14 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uez/armory)
+"FU" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/door_timer{
+	name = "Cell 1";
+	id = "EZ Security Cell 1"
+	},
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/equipmentroom)
 "FV" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 8
@@ -7917,6 +7966,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"GG" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/door_timer{
+	name = "Cell 3";
+	id = "EZ Security Cell 3"
+	},
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/equipmentroom)
 "GH" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/structure/window/phoronreinforced,
@@ -8049,6 +8106,14 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
+"Hn" = (
+/obj/effect/paint_stripe/blue,
+/obj/machinery/door_timer{
+	name = "Cell 2";
+	id = "EZ Security Cell 2"
+	},
+/turf/simulated/wall/r_titanium,
+/area/site53/uez/equipmentroom)
 "Hp" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -8170,14 +8235,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/hallway)
-"HL" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/upper_surface/commstower)
 "HM" = (
 /obj/structure/bed/chair/office/comfy/red{
 	dir = 8
@@ -8943,6 +9000,12 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
+"LA" = (
+/obj/machinery/flasher{
+	id_tag = "ezsecflasher"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "LD" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9039,6 +9102,13 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
+"LR" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/machinery/flasher{
+	id_tag = "EZ Security Cell 2"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "LS" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/machinery/microwave{
@@ -9751,6 +9821,13 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uez/equipmentroom)
+"Pp" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/machinery/flasher{
+	id_tag = "EZ Security Cell 1"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "Pr" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 6
@@ -10271,6 +10348,15 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/wood/maple,
 /area/site53/uez/hallway)
+"Rt" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/obj/machinery/flasher{
+	id_tag = "ezsecflasher"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uez/equipmentroom)
 "Ru" = (
 /obj/structure/closet/secure_closet/administration/ethicscommittee,
 /obj/item/implantcase/death_alarm,
@@ -10909,19 +10995,6 @@
 /obj/item/book/manual/scp/fra,
 /turf/simulated/floor/wood/walnut,
 /area/site53/uez/repoffice/ethics)
-"Ut" = (
-/obj/effect/floor_decal/corner/orange{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 1
-	},
-/area/site53/upper_surface/commstower)
 "Uv" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -11218,7 +11291,13 @@
 	id_tag = "EZPermaLockdown";
 	name = "EZ Confinement Lockdown Control";
 	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 2
+	pixel_y = 7
+	},
+/obj/machinery/button/flasher{
+	pixel_y = -2;
+	name = "EZ Yard Flasher";
+	id_tag = "ezsecflasher";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
@@ -12147,6 +12226,17 @@
 /obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
+"ZS" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/upper_surface/commstower)
 "ZU" = (
 /obj/structure/closet/secure_closet/site53/cmo,
 /obj/item/folder/white,
@@ -37223,7 +37313,7 @@ hk
 hk
 hk
 hk
-yL
+hX
 WQ
 WQ
 WQ
@@ -37479,8 +37569,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 WQ
@@ -37735,8 +37825,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 hZ
 hZ
@@ -37991,8 +38081,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 hZ
@@ -38247,8 +38337,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 hZ
@@ -38504,7 +38594,7 @@ hk
 hk
 hk
 hk
-yL
+hX
 WQ
 WQ
 WQ
@@ -38760,8 +38850,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 hZ
@@ -39016,8 +39106,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 WQ
@@ -39272,8 +39362,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 WQ
@@ -39528,8 +39618,8 @@ hk
 hk
 hk
 hk
-yL
-yL
+hX
+hX
 WQ
 WQ
 WQ
@@ -39785,7 +39875,7 @@ hk
 hk
 hk
 hk
-yL
+hX
 WQ
 WQ
 WQ
@@ -40042,7 +40132,7 @@ hk
 hk
 hk
 hk
-yL
+hX
 WQ
 WQ
 WQ
@@ -41090,8 +41180,8 @@ QS
 kq
 jW
 kl
-zo
-kM
+oC
+ZS
 nD
 jT
 jT
@@ -41349,13 +41439,13 @@ kq
 kq
 ke
 kX
-wv
+kx
 rh
 rh
 kq
 kq
 kH
-Ut
+dg
 jJ
 QS
 jY
@@ -41612,7 +41702,7 @@ gK
 jW
 LG
 Ts
-HL
+ii
 kU
 kK
 gK
@@ -41863,13 +41953,13 @@ OT
 hQ
 kF
 WT
-HL
+ii
 HS
 kF
 LV
 Ts
 jJ
-FK
+iY
 kZ
 Xz
 jY
@@ -42125,7 +42215,7 @@ jH
 qU
 jH
 jH
-qP
+ic
 qn
 jY
 jY
@@ -52303,12 +52393,12 @@ hk
 hk
 uP
 wZ
-wZ
+Pp
 wZ
 sb
 cj
 jD
-Rd
+Rt
 jD
 hU
 HE
@@ -52562,7 +52652,7 @@ uP
 uL
 Xa
 zt
-uP
+FU
 Bd
 VF
 Fo
@@ -53074,7 +53164,7 @@ hk
 hk
 uP
 wZ
-wZ
+LR
 wZ
 Bz
 Bd
@@ -53333,7 +53423,7 @@ uP
 uL
 Xa
 zt
-uP
+Hn
 JP
 VF
 VF
@@ -53594,7 +53684,7 @@ uP
 bP
 na
 LX
-VF
+LA
 xn
 SH
 VE
@@ -53845,7 +53935,7 @@ hk
 hk
 uP
 wZ
-wZ
+Bk
 wZ
 Gd
 Bd
@@ -54104,7 +54194,7 @@ uP
 uL
 Xa
 zt
-uP
+GG
 Bd
 VF
 Fo
@@ -54616,7 +54706,7 @@ hk
 hk
 uP
 wZ
-wZ
+kM
 wZ
 bq
 Bd
@@ -54875,10 +54965,10 @@ uP
 uL
 Xa
 zt
-uP
+bC
 cY
 Pm
-Qi
+zP
 Pm
 bF
 uP

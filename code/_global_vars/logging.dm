@@ -18,3 +18,7 @@ GLOBAL_VAR(tgui_log)
 GLOBAL_PROTECT(tgui_log)
 GLOBAL_VAR(world_asset_log)
 GLOBAL_PROTECT(world_asset_log)
+#ifdef REFERENCE_TRACKING_LOG_APART
+GLOBAL_VAR(harddel_log)
+GLOBAL_PROTECT(harddel_log)
+#endif

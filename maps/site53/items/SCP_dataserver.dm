@@ -437,3 +437,16 @@ SCP-3349 is not constant and appears periodically in the affected individual wit
 On electrocardiogram, SCP-3349's manifestations display commonalities with the waveforms of human vocalizations. Spectrographically-reconstructed audio signals based on SCP-3349's electrical signatures produce various intonations of human-like laughter, wailing, and speech. Auditory outputs resembling the purr of [i]Felis catus[/i] have also been reported.
 SCP-3349 is non-curable, but is refractory to defibrillation at 200, 300, and 360 Joules. There are no known precipitating or alleviating factors regarding SCP-3349, other than the aforementioned induction. Despite the erratic electrical activity, patients remain stable, though few may experience some reduction in exercise tolerance.
 "}
+
+/datum/computer_file/data/SCP_doc/scp5295
+	filename = "SCP-5295"
+	stored_data = @{"[acs item_number=5295 clearance_level=4 containment_class=safe disruption_class=dark risk_class=notice]
+
+[b]Special Contaiment Procedures:[/b] SCP-5295 is to be stored in a portable flash drive, kept within a standard Safe-class containment locker. Due to the increased risk of malicious use, the drive containing SCP-5295 is not to be inserted into any computer without strict supervision by Security personnel.
+
+[b]Description:[/b] SCP-5295 is an application titled "Total Area Network." When executed, the user is prompted to enter the Network ID of a currently active device. SCP-5295 will then attempt to connect to said device, even if SCP-5295 has no network connection itself.
+Once connected, the user of SCP-5295 must wait for the connected device to be shut down. Said device will display a warning sign - 'You may not switch this device off safely.'
+Once the target device is deactivated, SCP-5295 will allow access to the connected computer's files, as if they were connected via a local area network. This connection will persist even if the connected device is completely removed from all power sources.
+Any file copied by SCP-5295 will become heavily corrupted on the target device.
+To break the connection from SCP-5295, you must remove or destroy the computer's network card.
+"}
