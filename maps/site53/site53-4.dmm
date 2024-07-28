@@ -3808,6 +3808,16 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/hallway)
+"nT" = (
+/obj/machinery/power/apc{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "nV" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor,
@@ -4652,17 +4662,16 @@
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
 	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8";
-	dir = 1
-	},
 /obj/machinery/power/apc/hyper{
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower South";
 	network = list("Entrance Zone Network")
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
@@ -11609,6 +11618,9 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/entrancezone/forensics)
+"Xy" = (
+/turf/simulated/floor/plating,
+/area/site53/maintenance/upper_surface)
 "Xz" = (
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -40647,7 +40659,7 @@ hk
 hk
 hk
 xv
-fz
+Xy
 xv
 WQ
 hZ
@@ -40904,7 +40916,7 @@ hk
 hk
 hk
 xv
-fz
+Xy
 xv
 hZ
 hZ
@@ -41161,7 +41173,7 @@ hk
 hk
 hk
 xv
-fz
+Xy
 xv
 NT
 XN
@@ -41418,7 +41430,7 @@ hk
 hk
 hk
 xv
-fz
+Xy
 xv
 Hs
 Yu
@@ -41675,7 +41687,7 @@ hk
 hk
 hk
 xv
-fz
+Xy
 xv
 fG
 Yu
@@ -41932,7 +41944,7 @@ hk
 hk
 hk
 xv
-fz
+nT
 xv
 Hs
 Yu

@@ -70,22 +70,6 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
-/area/turbolift/site53/logisticstorage
-	name = "lift (Logistics Storage)"
-	lift_floor_label = "Logistics Storage"
-	lift_floor_name = "Logistics Storage"
-	lift_announce_str = "Arriving at Logistics Storage: Secure Storage."
-	requires_power = 0
-	dynamic_lighting = 1
-
-/area/turbolift/site53/logistics
-	name = "lift (Logistics Loading Pad)"
-	lift_floor_label = "Logistics"
-	lift_floor_name = "Logistics"
-	lift_announce_str = "Arriving at Logistics Loading pad: Loading Docks."
-	requires_power = 0
-	dynamic_lighting = 1
-
 /area/turbolift/site53/robotlwr
 	name = "lift (Lower Robotics)"
 	lift_floor_label = "Lower Robotics"
@@ -1230,9 +1214,9 @@
 	icon_state = "quart"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/logistics/logisticsbreak
-	name = "\improper Logistics Surface Area"
-	icon_state = "quart"
+/area/site53/logistics/Lowercommstower
+	name = "\improper Lower Communications Tower"
+	icon_state = "checkpoint1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/logistics/understorage
