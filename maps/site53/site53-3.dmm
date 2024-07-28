@@ -1336,6 +1336,11 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "dh" = (
@@ -1383,6 +1388,11 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
+"dm" = (
+/turf/simulated/mineral{
+	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
+	},
 /area/site53/upper_surface/entrancehallway2)
 "dp" = (
 /obj/machinery/door/airlock/maintenance{
@@ -1908,6 +1918,14 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
+"fu" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway2)
 "fv" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -2000,7 +2018,7 @@
 /area/site53/surface/surface/west)
 "fO" = (
 /turf/simulated/wall/r_titanium,
-/area/site53/surface/surface/east)
+/area/site53/upper_surface/entrancehallway2)
 "fP" = (
 /obj/machinery/door/airlock/glass/security{
 	name = "Checkpoint Office Storage Closet";
@@ -2549,6 +2567,14 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
+"ig" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway2)
 "ip" = (
 /obj/structure/flora/tree/dead,
 /turf/simulated/floor/exoplanet/snow,
@@ -5291,6 +5317,10 @@
 /obj/item/clothing/shoes/swimmingfins,
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/uez/bridge)
+"rY" = (
+/obj/structure/ladder,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway2)
 "rZ" = (
 /obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/freezer,
@@ -8737,8 +8767,13 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/uez/bridge)
 "CU" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
-/area/site53/surface/surface/east)
+/area/site53/upper_surface/entrancehallway2)
 "CV" = (
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 8
@@ -10315,6 +10350,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
+"Ib" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway2)
 "Id" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
@@ -11141,7 +11182,7 @@
 /area/site53/medical/exam_room)
 "KP" = (
 /turf/simulated/floor/plating,
-/area/space)
+/area/site53/upper_surface/entrancehallway2)
 "KR" = (
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/suit/straight_jacket,
@@ -12295,6 +12336,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/entrancezone/hallway)
+"Oq" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/entrancehallway2)
 "Os" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -15073,6 +15125,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
+"Xu" = (
+/obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 32;
+	icon_state = "32-1"
+	},
+/turf/simulated/open,
+/area/site53/upper_surface/entrancehallway2)
 "Xv" = (
 /obj/structure/bed/chair/office/comfy/blue,
 /obj/effect/landmark/start{
@@ -15138,8 +15198,14 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/exam_room)
 "XG" = (
-/turf/simulated/wall/r_titanium,
-/area/space)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/engineering,
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway2)
 "XH" = (
 /turf/simulated/floor/exoplanet/snow,
 /area/site53/maintenance/surfaceeast)
@@ -15423,6 +15489,13 @@
 	dir = 4
 	},
 /area/site53/medical/morgue)
+"Yv" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/simulated/floor/plating,
+/area/site53/upper_surface/entrancehallway2)
 "Yw" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
@@ -48926,11 +48999,11 @@ Yx
 ZK
 UR
 TZ
-dA
-dA
-dA
-dA
-dA
+dm
+dm
+dm
+dm
+dm
 lE
 Uh
 RY
@@ -49183,11 +49256,11 @@ fq
 fq
 fq
 fq
-dA
-XG
-XG
-XG
-XG
+dm
+fO
+fO
+fO
+fO
 lE
 Gl
 RY
@@ -49440,10 +49513,10 @@ fq
 qV
 uQ
 fq
-dA
-XG
+dm
+fO
 KP
-KP
+Ib
 KP
 lE
 cg
@@ -49697,10 +49770,10 @@ fq
 su
 fq
 fq
-gk
+dm
 fO
-CU
-KP
+ig
+Xu
 KP
 lE
 Ia
@@ -49954,13 +50027,13 @@ fq
 ds
 uQ
 fq
-rm
+dm
 fO
 CU
-CU
-CU
-lE
-cg
+fu
+fu
+XG
+Oq
 OP
 Hu
 Hu
@@ -50211,11 +50284,11 @@ QA
 su
 fq
 fq
-rm
+dm
 fO
-CU
-CU
-CU
+rY
+Yv
+KP
 lE
 dg
 Ej
@@ -50468,7 +50541,7 @@ fq
 qV
 uQ
 fq
-rm
+dm
 fO
 fO
 fO

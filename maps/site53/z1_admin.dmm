@@ -498,6 +498,13 @@
 /obj/item/passport/goc,
 /turf/simulated/floor/carpet/blue,
 /area/centcom/goc)
+"bI" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "bJ" = (
 /obj/structure/table/woodentable,
 /obj/random/action_figure,
@@ -10355,6 +10362,12 @@
 "Aj" = (
 /turf/simulated/mineral,
 /area/centcom/chaos)
+"Ak" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "Am" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#272B5B"
@@ -12893,6 +12906,12 @@
 /obj/machinery/organ_printer/robot/mapped,
 /turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
+"GZ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "Hb" = (
 /obj/structure/table/standard,
 /obj/item/crowbar/prybar,
@@ -26949,7 +26968,7 @@ jx
 jx
 jx
 jx
-zv
+bI
 uA
 Rr
 tq
@@ -27141,11 +27160,11 @@ SD
 TN
 TN
 TN
-TN
+GZ
 TN
 TN
 TE
-TN
+GZ
 TN
 TN
 TN
@@ -27343,11 +27362,11 @@ SD
 TN
 TN
 TN
+Ak
 TN
 TN
 TN
-TN
-TN
+Ak
 TN
 TN
 TN
@@ -27555,7 +27574,7 @@ jx
 jx
 jx
 jx
-zv
+bI
 uA
 Rr
 tq

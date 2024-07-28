@@ -189,7 +189,6 @@
 	name = "Supply Dock"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // SITE 53 SURFACE AREA'S
@@ -1309,7 +1308,6 @@
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
 	icon_state = "quart"
-	dynamic_lighting = 0
 
 //SCP-106's realm
 /area/pocketdimension
