@@ -2580,6 +2580,11 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/upper_surface/commstower)
 "jp" = (
@@ -2925,12 +2930,11 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/upper_surface/commstower)
 "kl" = (
+/obj/structure/lattice,
 /obj/structure/cable{
 	d1 = 32;
-	icon_state = "32-1";
-	dir = 1
+	icon_state = "32-1"
 	},
-/obj/structure/lattice,
 /turf/simulated/open,
 /area/site53/upper_surface/commstower)
 "ko" = (
@@ -2977,13 +2981,18 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
 "kx" = (
-/obj/effect/floor_decal/corner/orange/mono,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door"
+	},
+/obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor,
 /area/site53/upper_surface/commstower)
 "ky" = (
 /obj/machinery/door/airlock/glass/security{
@@ -3160,11 +3169,6 @@
 	id_tag = "commtower";
 	name = "Communications Tower Lockdown Blast Door";
 	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
@@ -3743,11 +3747,6 @@
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "nG" = (
@@ -3929,11 +3928,6 @@
 "oC" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -5522,6 +5516,21 @@
 	},
 /turf/simulated/floor/tiled/white/small,
 /area/site53/uez/commandpanicbunker)
+"vy" = (
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "commtower";
+	name = "Communications Tower Lockdown Blast Door";
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor,
+/area/site53/upper_surface/commstower)
 "vz" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -11313,6 +11322,19 @@
 "VF" = (
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"VJ" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/upper_surface/commstower)
 "VK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -12239,15 +12261,17 @@
 /turf/simulated/floor/carpet/red,
 /area/site53/uez/equipmentroom)
 "ZS" = (
-/obj/effect/floor_decal/corner/orange/half{
-	dir = 4
+/obj/machinery/door/airlock/glass/command{
+	name = "Communications Center";
+	req_access = list(list("ACCESS_ADMIN_LEVEL4","ACCESS_ENGINEERING_LEVEL3"))
 	},
+/obj/machinery/door/firedoor,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/vertical,
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/commstower)
 "ZU" = (
 /obj/structure/closet/secure_closet/site53/cmo,
@@ -41190,10 +41214,10 @@ kj
 jJ
 QS
 kq
-jW
+vy
 kl
 oC
-ZS
+jT
 nD
 jT
 jT
@@ -41447,11 +41471,11 @@ kb
 jJ
 OT
 Tg
-kq
+kx
 kq
 ke
 kX
-kx
+kX
 rh
 rh
 kq
@@ -41961,11 +41985,11 @@ jY
 OX
 eH
 jJ
-OT
+VJ
 hQ
 kF
 WT
-ii
+jJ
 HS
 kF
 LV
@@ -42218,11 +42242,11 @@ Xz
 jY
 rJ
 nj
-jJ
-jJ
-Bb
-jJ
 mQ
+jH
+ZS
+jH
+jH
 jH
 qU
 jH
