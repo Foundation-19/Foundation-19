@@ -61,8 +61,7 @@
 		/area/site53/surface = NO_APC,
 		/area/turbolift/site53/surface = NO_APC,
 		/area/turbolift/site53/basement = NO_APC,
-		/area/turbolift/site53/logistics = NO_APC,
-		/area/turbolift/site53/logisticstorage = NO_APC,
+
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/uhcz = NO_APC,

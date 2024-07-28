@@ -7105,7 +7105,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/exoplanet/concrete,
+/turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
 "asH" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -7335,7 +7335,7 @@
 /obj/machinery/light/spot{
 	dir = 1
 	},
-/turf/simulated/floor/exoplanet/concrete,
+/turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
 "atj" = (
 /obj/structure/cable{
@@ -15032,6 +15032,14 @@
 "aPL" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/researchwing)
+"aPM" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/logistics/Lowercommstower)
 "aPN" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/machinery/hologram/holopad,
@@ -15343,7 +15351,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/turf/simulated/floor/exoplanet/concrete,
+/turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
 "aQR" = (
 /obj/machinery/telecomms/server/presets/supply,
@@ -15545,6 +15553,8 @@
 /area/site53/upper_surface/serverfarmcontrol)
 "aRH" = (
 /obj/effect/floor_decal/corner/orange/half,
+/obj/structure/cable,
+/obj/machinery/power/apc,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/logistics/Lowercommstower)
 "aRI" = (
@@ -19395,7 +19405,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/exoplanet/concrete,
+/turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
 "bfj" = (
 /obj/machinery/door/airlock/maintenance{
@@ -21787,6 +21797,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
+"bMd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/logistics/logistics)
 "bMi" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/r_wall/prepainted,
@@ -22529,14 +22545,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp247observation)
-"cdL" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/logistics/Lowercommstower)
 "cdY" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
@@ -22580,6 +22588,26 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/prototype/control)
+"cew" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "ceF" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/regular/open{
@@ -22743,26 +22771,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/logistics/logistics)
-"cku" = (
-/obj/effect/floor_decal/corner/brown/border,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site53/logistics/logistics)
 "ckV" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -22879,12 +22887,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
-"cnD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "cnO" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/red/border{
@@ -25080,6 +25082,14 @@
 /obj/item/trash/proteinbar,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
+"dwy" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/logistics/Lowercommstower)
 "dwJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -26221,13 +26231,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/upper_surface/serverfarmcontrol)
-"ecJ" = (
-/obj/effect/floor_decal/corner/brown/border,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site53/logistics/logistics)
 "edk" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
@@ -26584,15 +26587,6 @@
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
 /area/chapel)
-"enH" = (
-/obj/effect/floor_decal/corner/brown/border{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site53/logistics/logistics)
 "eon" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/wood/walnut,
@@ -31149,6 +31143,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/surface/bunker)
+"gTB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/logistics/logistics)
 "gTG" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "cargobay";
@@ -31523,12 +31523,6 @@
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"hdc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/logistics/logistics)
 "hdg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31687,14 +31681,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/grass,
 /area/site53/reswing/psionic)
-"hhM" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/logistics/Lowercommstower)
 "hiu" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -34779,21 +34765,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/maintenance)
-"iME" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/site53/lowertrams/maintenance)
 "iNh" = (
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
@@ -35454,6 +35425,14 @@
 /obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp012)
+"jfc" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "jfh" = (
 /obj/structure/hygiene/sink/kitchen{
 	dir = 8;
@@ -40472,17 +40451,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/hallways)
-"lQc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/site53/lowertrams/maintenance)
 "lQA" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor,
@@ -45704,6 +45672,17 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
+"orj" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "orr" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -47204,7 +47183,7 @@
 /obj/machinery/light/spot{
 	dir = 1
 	},
-/turf/simulated/floor/exoplanet/concrete,
+/turf/simulated/floor/reinforced,
 /area/quartermaster/hangar)
 "pgp" = (
 /obj/structure/sign/dontlook{
@@ -47226,6 +47205,10 @@
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/logistics/logistics)
+"pgM" = (
+/obj/effect/floor_decal/corner/orange/half,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/logistics/Lowercommstower)
 "pgW" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -50182,6 +50165,13 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/quartermaster/hangar)
+"qLw" = (
+/obj/effect/floor_decal/corner/brown/border,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "qMc" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -51609,14 +51599,6 @@
 /obj/effect/paint_stripe/mauve,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/science/aiccore)
-"ryc" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating,
-/area/site53/lowertrams/maintenance)
 "ryp" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -53544,12 +53526,6 @@
 "stC" = (
 /turf/unsimulated/mineral,
 /area/site53/science/aicobservation)
-"stG" = (
-/obj/effect/floor_decal/corner/orange/half,
-/obj/structure/cable,
-/obj/machinery/power/apc,
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site53/logistics/Lowercommstower)
 "stH" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -54459,6 +54435,21 @@
 /obj/structure/sign/electrical,
 /turf/simulated/wall/titanium,
 /area/site53/uhcz/generalpurpose3)
+"sUI" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/site53/lowertrams/maintenance)
 "sUN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -59300,6 +59291,15 @@
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/small,
 /area/site53/llcz/dclass/medicalpost/morgue)
+"vIv" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/logistics/logistics)
 "vIF" = (
 /obj/structure/closet/l3closet/dclass,
 /obj/effect/floor_decal/corner/keter/mono,
@@ -88193,7 +88193,7 @@ asu
 asu
 asu
 asu
-iME
+sUI
 ast
 ast
 ast
@@ -91257,15 +91257,15 @@ eir
 eFa
 azQ
 bet
-cku
-hdc
-enH
-cnD
-cnD
-cnD
-cnD
-cnD
-ecJ
+cew
+gTB
+vIv
+bMd
+bMd
+bMd
+bMd
+bMd
+qLw
 mYp
 asz
 asz
@@ -91275,9 +91275,9 @@ asz
 asz
 asz
 asz
-lQc
+orj
 asz
-ryc
+jfc
 sre
 aYK
 aYQ
@@ -91789,7 +91789,7 @@ rPy
 rPy
 rPy
 xpc
-hhM
+dwy
 opf
 rPy
 uOP
@@ -92046,8 +92046,8 @@ fbm
 rPy
 wJo
 ctX
-cdL
-stG
+aPM
+aRH
 rPy
 uOP
 aYK
@@ -92304,7 +92304,7 @@ nUH
 wJo
 ctX
 qJO
-aRH
+pgM
 rPy
 uOP
 aYK
@@ -92818,7 +92818,7 @@ rPy
 rPy
 aRx
 gWA
-aRH
+pgM
 rPy
 uOP
 beR
@@ -93332,7 +93332,7 @@ sfX
 bEn
 ctX
 qJO
-aRH
+pgM
 rPy
 uOP
 aYK
