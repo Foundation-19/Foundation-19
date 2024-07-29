@@ -1,5 +1,0 @@
-author: quadbium
-delete-after: true
-changes:
-  - rscadd: Added a drone fabricator to the AIC lab
-  - rscadd: Added AIC controlled drones
