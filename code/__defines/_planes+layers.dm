@@ -244,7 +244,7 @@ What is the naming convention for planes or layers?
 
 /atom/movable/screen/plane_master
 	appearance_flags = PLANE_MASTER
-	screen_loc = "CENTER,CENTER"
+	screen_loc = "CENTER"
 	globalscreen = 1
 
 /atom/movable/screen/plane_master/ghost_master

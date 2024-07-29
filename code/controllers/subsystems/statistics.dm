@@ -142,7 +142,7 @@ SUBSYSTEM_DEF(statistics)
 
 /datum/controller/subsystem/statistics/proc/report_death(mob/living/dead)
 
-	if(dead && dead.mind && dead.client)
+	/*if(dead && dead.mind && dead.client)
 		var/datum/death/death = new
 		var/area/placeofdeath = get_area(dead)
 		death.place_of_death = placeofdeath ? placeofdeath.name : "Unknown area"
@@ -168,3 +168,4 @@ SUBSYSTEM_DEF(statistics)
 
 		if(!player_is_antag(dead.mind) && dead.mind.assigned_job && dead.mind.assigned_job.department_flag)
 			crew_death_count++
+*/

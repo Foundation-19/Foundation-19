@@ -108,10 +108,6 @@
 			GLOB.latejoin_comms += loc
 			delete_me = 1
 			return
-		if("JoinLatelcz")
-			GLOB.latejoin_lcz += loc
-			delete_me = 1
-			return
 		if("NewPlayer")
 			GLOB.new_player += loc
 			delete_me = 1

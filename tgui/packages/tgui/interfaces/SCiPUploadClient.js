@@ -1,6 +1,13 @@
 /* eslint react/no-danger: "off" */
 import { useBackend } from '../backend';
-import { Button, Box, Section, Table, LabeledList, ProgressBar } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+  Table,
+} from '../components';
 import { NtosWindow } from '../layouts';
 
 export const SCiPUploadClient = (props, context) => {
@@ -34,7 +41,8 @@ const Error = (props, context) => {
         <Button icon="undo" onClick={() => act('PRG_reset')}>
           Reset
         </Button>
-      }>
+      }
+    >
       Additional Information: {error}
     </Section>
   );
@@ -54,7 +62,8 @@ const ServerBrowser = (props, context) => {
                 icon="server"
                 onClick={() =>
                   act('PRG_connect_to_server', { uid: server.uid })
-                }>
+                }
+              >
                 Connect to Server
               </Button>
             </LabeledList.Item>
@@ -74,10 +83,12 @@ const FileBrowser = (props, context) => {
       buttons={
         <Button
           icon="sign-out"
-          onClick={() => act('PRG_disconnect_from_server')}>
+          onClick={() => act('PRG_disconnect_from_server')}
+        >
           Disconnect
         </Button>
-      }>
+      }
+    >
       <Table>
         <Table.Row header>
           <Table.Cell>File</Table.Cell>
@@ -93,7 +104,8 @@ const FileBrowser = (props, context) => {
               <Button
                 onClick={() =>
                   act('PRG_downloadfile', { file_name: file.name })
-                }>
+                }
+              >
                 Download
               </Button>
             </Table.Cell>

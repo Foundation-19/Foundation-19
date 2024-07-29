@@ -309,11 +309,6 @@
 	icon_state = "mcushankadown"
 	icon_state_up = "mcushankaup"
 
-//helmets and other such trash
-
-/obj/item/clothing/head/helmet/solgov
-	accessories = list(/obj/item/clothing/accessory/armor/helmcover/blue/un)
-
 //FOUNDATION
 /obj/item/clothing/head/helmet/site53/guard
 	name = "guard's helmet"

@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 /datum/antagonist/traitor
 	id = MODE_TRAITOR
 	antaghud_indicator = "hud_traitor"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/rd, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/goirep, /datum/job/raisa)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/classd, /datum/job/captain, /datum/job/hos, /datum/job/chief_engineer, /datum/job/achief_engineer, /datum/job/cmo, /datum/job/acmo, /datum/job/rd, /datum/job/ard, /datum/job/qm, /datum/job/ethicsliaison, /datum/job/tribunal, /datum/job/commsofficer, /datum/job/enlistedofficerez, /datum/job/enlistedofficerlcz, /datum/job/enlistedofficerhcz, /datum/job/ncoofficerez, /datum/job/ncoofficerlcz, /datum/job/ncoofficerhcz, /datum/job/ltofficerez, /datum/job/ltofficerlcz, /datum/job/ltofficerhcz, /datum/job/guardlcz, /datum/job/guardhcz, /datum/job/guardez, /datum/job/goirep, /datum/job/raisa)
 	flags = ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	skill_setter = /datum/antag_skill_setter/station
 
@@ -14,6 +14,11 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 /datum/antagonist/traitor/Topic(href, href_list)
 	if (..())
 		return 1
+
+	var/client/target = usr.client
+	if(!check_rights(R_ADMIN|R_MOD, TRUE, target))
+		return 1
+
 	if(href_list["spawn_uplink"])
 		spawn_uplink(locate(href_list["spawn_uplink"]))
 		return 1

@@ -5960,7 +5960,7 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
-/obj/item/storage/firstaid/trauma,
+/obj/item/storage/firstaid/brute,
 /obj/effect/floor_decal/corner/red{
 	dir = 6
 	},

@@ -761,6 +761,13 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/sciencelvlp
 	name = "science ID"
 	desc = "An orange ID. Looks important."
+	icon_state = "sciencelvl3"
+	item_state = "Science_ID3"
+	job_access_type = /datum/job/mentalist
+
+/obj/item/card/id/sciencelvlps
+	name = "science ID"
+	desc = "An orange ID. Looks important."
 	icon_state = "sciencelvl4"
 	item_state = "Science_ID4"
 	job_access_type = /datum/job/seniormentalist
@@ -826,6 +833,12 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Epsilon-11 Task Force Operative"
 
+
+/obj/item/card/id/mtf/ninetaillead
+	name = "mobile task force ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "Epsilon-11 Task Force Leader"
+
 /obj/item/card/id/mtf/epsilon
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
@@ -839,7 +852,7 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/mtf/beta_7
 	name = "mobile task force ID"
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
-	assignment = "beta_7 Task Force Operative"
+	assignment = "Beta-7 Task Force Operative"
 
 /obj/item/card/id/mtf/alpha
 	name = "mobile task force ID"
@@ -856,11 +869,20 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	desc = "A black ID. Looks like the person wearing this won't give it up easy."
 	assignment = "Internal Security Agent"
 
+/obj/item/card/id/mtf/o5rep
+	name = "central council command ID"
+	desc = "A black ID. Looks like the person wearing this won't give it up easy."
+	assignment = "O5 Representative"
+
 /obj/item/card/id/mtf/Initialize()
 	. = ..()
 	rank = "Mobile Task Force Operative"
 	access |= get_all_site_access()
 
+/obj/item/card/id/mtf/ninetaillead/Initialize()
+	. = ..()
+	rank = "Mobile Task Force Leader"
+	access |= get_all_site_access()
 
 /obj/item/card/id/physics
 	name = "military ID"
@@ -995,20 +1017,20 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 // LOGISTICS
 
 /obj/item/card/id/logoff
-	name = "security ID"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	name = "science ID"
+	desc = "A dark yellow ID. Looks cool, the person wearing it, not so much."
+	icon_state = "sciencelvl3"
+	item_state = "Science_ID3"
 	job_access_type = /datum/job/qm
+	class = CLASS_B
 
 
 /obj/item/card/id/logspec
-	name = "security ID"
-	desc = "A dark blue ID. Looks important. The person wearing it not so much."
-	icon_state = "securitylvl3"
-	item_state = "Sec_ID3"
+	name = "science ID"
+	desc = "A bright yellow ID. Looks ordinary?"
+	icon_state = "sciencelvl2"
+	item_state = "Science_ID2"
 	job_access_type = /datum/job/cargo_tech
-	class = CLASS_B
 
 // CD ASSIGNMENT CARDS
 
@@ -1039,3 +1061,19 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /obj/item/card/id/dassignment/dluxury
 	name = "luxury reward card"
 	access = list(ACCESS_DCLASS_LUXURY)
+
+/obj/item/card/id/chaos
+	name = "stolen ID"
+	desc = "A green ID card, it's drawn on with black ink saying \"C.I.\", it's also got a crudely painted Chaos Insurgency logo over the SCP Logo, and an X marked over the SCP slogan, whoever's wearing this must be scary."
+	icon_state = "ci"
+	item_state = "ci"
+	class = CLASS_CI
+	access = list(ACCESS_ENGINEERING_LVL1, ACCESS_SYNDICATE)
+
+/obj/item/card/id/chaos/lead
+	name = "stolen administrative ID"
+	desc = "A golden ID card mostly used by administrative staff, it's drawn on professionally with white ink saying \"C.I.\", it's also got a crudely painted Chaos Insurgency logo over the SCP Logo, and an aggressively red X marked over the SCP slogan, whoever's wearing this must be scary."
+	icon_state = "cilead"
+	item_state = "cilead"
+	class = CLASS_CI
+	access = list(ACCESS_ENGINEERING_LVL1, ACCESS_ADMIN_LVL1, ACCESS_SYNDICATE)

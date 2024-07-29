@@ -2,7 +2,7 @@
 	..()
 	processor_unit = new /obj/item/stock_parts/computer/processor_unit(src)
 	tesla_link = new /obj/item/stock_parts/computer/tesla_link(src)
-	hard_drive = new /obj/item/stock_parts/computer/hard_drive/super(src)
+	hard_drive = new /obj/item/stock_parts/computer/storage/hard_drive/super(src)
 	network_card = new /obj/item/stock_parts/computer/network_card/wired(src)
 	scanner = new /obj/item/stock_parts/computer/scanner/paper(src)
 

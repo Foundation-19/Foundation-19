@@ -29,17 +29,24 @@
 	flags_inv = 0
 
 /obj/item/clothing/suit/armor/director_coat
-	name = "Site Director Coat"
+	name = "Site Director's coat"
 	desc = "A heavy, black long coat with synthetic fur on it. It isn't very distinguishable except for the initials on the collar's tag, S.D."
 	icon_state = "director_coat"
-	body_parts_covered = UPPER_TORSO|ARMS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/armor/overseer
-	name = "Overwatch Command's Coat"
+	name = "Overwatch Command's coat"
 	desc = "A heavy, black long coat with golden markings along the wrists, as well as real genuine bear fur on it. It's woven from the finest cotton, and alloyed with durathread, to make the user comfortable, but durable to many kinds of damage."
 	icon_state = "o5_coat"
-	body_parts_covered = UPPER_TORSO|ARMS
-	armor = list(melee = 80, bullet = 85, laser = 65, energy = 15, bomb = 80, bio = 40, rad = 60)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 90, bullet = 90, laser = 90, energy = 90, bomb = 80, bio = 40, rad = 60)
+
+/obj/item/clothing/suit/armor/itd
+	name = "Internal Tribunal Officer's coat"
+	desc = "A heavy, black long coat with silver markings along the wrists, as well as real genuine polar bear fur on it. It's woven from the finest cotton."
+	icon_state = "itd_coat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 15, rad = 15)
 
 //Chaplain
 /obj/item/clothing/suit/chaplain_hoodie

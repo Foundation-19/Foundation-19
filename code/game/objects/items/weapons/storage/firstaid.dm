@@ -9,17 +9,17 @@
  */
 /obj/item/storage/firstaid
 	name = "first-aid kit"
-	desc = "It's an emergency medical kit for those serious boo-boos."
+	desc = "It's a standard, yet universal medical kit meant for treatment of basic wounds."
 	icon_state = "firstaid"
+	item_state = "firstaid"
+	open_icon = "firstaidopen"
 	throw_speed = 2
 	throw_range = 8
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = DEFAULT_BOX_STORAGE
 	use_sound = 'sounds/effects/storage/box.ogg'
-	open_icon = "firstaidopen"
 
 /obj/item/storage/firstaid/empty
-	icon_state = "firstaid"
 	name = "First-Aid (empty)"
 
 /obj/item/storage/firstaid/regular
@@ -33,57 +33,51 @@
 		/obj/item/stack/medical/splint
 		)
 
-/obj/item/storage/firstaid/trauma
-	name = "trauma first-aid kit"
-	desc = "It's an emergency medical kit for when people brought ballistic weapons to a laser fight."
-	icon_state = "radfirstaid"
-	item_state = "firstaid-ointment"
-	open_icon = "radopen"
+/obj/item/storage/firstaid/brute
+	name = "brute first-aid kit"
+	desc = "It's a sterile medical kit for blunt or bleeding-based trauma, manual not included."
+	icon_state = "brutefirstaid"
+	item_state = "brutefirstaid"
+	open_icon = "brutefirstaidopen"
 
 	startswith = list(
-		/obj/item/storage/med_pouch/trauma = 4
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/advanced/bruise_pack = 2,
+		/obj/item/storage/pill_bottle/bicaridine
 		)
 
-/obj/item/storage/firstaid/trauma/New()
-	..()
-	icon_state = pick("radfirstaid", "radfirstaid2")
-
-/obj/item/storage/firstaid/fire
-	name = "fire first-aid kit"
-	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
-	icon_state = "ointment"
-	item_state = "firstaid-ointment"
-	open_icon = "fireopen"
+/obj/item/storage/firstaid/burn
+	name = "burn first-aid kit"
+	desc = "It's a sterile medical kit for burn or heat-based trauma, manual not included."
+	icon_state = "firefirstaid"
+	item_state = "firefirstaid"
+	open_icon = "firefirstaidopen"
 
 	startswith = list(
-		/obj/item/storage/med_pouch/burn = 4
+		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/advanced/ointment = 2,
+		/obj/item/storage/pill_bottle/kelotane
 		)
-
-/obj/item/storage/firstaid/fire/New()
-	..()
-	icon_state = pick("ointment","firefirstaid")
 
 /obj/item/storage/firstaid/toxin
-	name = "toxin first aid"
-	desc = "Used to treat when you have a high amount of toxins in your body."
-	icon_state = "antitoxin"
-	item_state = "firstaid-toxin"
-	open_icon = "toxinopen"
+	name = "toxin first-aid kit"
+	desc = "It's an extremely sterilized medical kit for poisoning or toxic reagents, manual not included."
+	icon_state = "toxinfirstaid"
+	item_state = "toxinfirstaid"
+	open_icon = "toxinfirstaidopen"
 
 	startswith = list(
-		/obj/item/storage/med_pouch/toxin = 4
+		/obj/item/reagent_containers/glass/bottle/antitoxin,
+		/obj/item/reagent_containers/syringe/antitoxin,
+		/obj/item/storage/pill_bottle/dylovene
 		)
 
-/obj/item/storage/firstaid/toxin/New()
-	..()
-	icon_state = pick("antitoxin","antitoxfirstaid")
-
 /obj/item/storage/firstaid/o2
-	name = "oxygen deprivation first aid"
-	desc = "A box full of oxygen goodies."
-	icon_state = "o2"
-	item_state = "firstaid-o2"
-	open_icon = "o2open"
+	name = "oxygen deprivation first-aid kit"
+	desc = "It's a not-so-sterile medical kit for that rare chance you start choking, manual not included."
+	icon_state = "o2firstaid"
+	item_state = "o2firstaid"
+	open_icon = "o2firstaidopen"
 
 	startswith = list(
 		/obj/item/storage/med_pouch/oxyloss = 4
@@ -91,10 +85,10 @@
 
 /obj/item/storage/firstaid/adv
 	name = "advanced first-aid kit"
-	desc = "Contains advanced medical treatments."
-	icon_state = "doctor-kit"
-	item_state = "firstaid-advanced"
-	open_icon = "doctor-kitopen"
+	desc = "It's an extremely sterilized medical kit for all sorts of treatment ranging from swift pain relief, to burn and brute treatment, as well as bloodloss, manual not included."
+	icon_state = "advfirstaid"
+	item_state = "advfirstaid"
+	open_icon = "advfirstaidopen"
 
 	startswith = list(
 		/obj/item/storage/pill_bottle/assorted,
