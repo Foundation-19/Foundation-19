@@ -1,0 +1,11 @@
+author: AMcilraith
+delete-after: true
+changes:
+  - rscadd: Added chicken to kitchen.
+  - rscadd: Added chemical heater to bar.
+  - rscadd: Added cutlery microlathe to bar.
+  - rscadd: Added coffee machine to medical break room.
+  - rscadd: Added cigars in ECL and ITDo office.
+  - rscadd: 'Added the #1 coffee cups to LCZ sergeant offices.'
+  - rscdel: Removed random doctor spawn in CDCZ.
+  - bugfix: Fixed break room coffee machine to now dispense things.
