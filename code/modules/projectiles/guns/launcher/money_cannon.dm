@@ -59,8 +59,8 @@
 		release_force = 0
 		return
 
-	// Must launch at least 100 thaler to incur damage.
-	release_force = dispensing / 100
+	// Must launch at least 100 thaler to incur damage. Max of 15k to prevent infinite damage.
+	release_force = min(dispensing / 100, 150)
 
 /obj/item/gun/launcher/money/proc/unload_receptacle(mob/user)
 	if(receptacle_value < 1)

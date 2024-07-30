@@ -536,6 +536,10 @@
 /area/site53/lowertrams/hub)
 "abp" = (
 /obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
 "abq" = (
@@ -894,9 +898,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/flora/pottedplant/orientaltree{
-	pixel_x = -5;
-	pixel_y = 9
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
+/obj/machinery/fabricator/micro/bartender{
+	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
@@ -1151,7 +1157,12 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/machinery/reagent_temperature/cooler,
+/obj/machinery/reagent_temperature/cooler{
+	pixel_x = 7
+	},
+/obj/machinery/reagent_temperature{
+	pixel_x = -7
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/lowertrams/restaurantkitchenarea)
 "adr" = (
@@ -17214,7 +17225,8 @@
 /area/site53/upper_surface/serverfarminterior)
 "aYv" = (
 /obj/machinery/power/smes/buildable/preset/ds90/substation_full{
-	charge = 50000
+	charge = 50000;
+	RCon_tag = "Telecommunications Substation"
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -25345,6 +25357,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/one,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "dJS" = (
@@ -27245,11 +27258,6 @@
 "eNi" = (
 /obj/effect/floor_decal/corner/paleblue/bordercee{
 	dir = 1
-	},
-/obj/effect/landmark/start{
-	name = "Surgeon";
-	icon_state = "medsurgspawn";
-	icon = 'icons/effects/landmarks.dmi'
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
@@ -33474,6 +33482,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/one,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
 "imq" = (
@@ -45006,6 +45015,10 @@
 "otN" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
 /turf/simulated/floor/tiled/freezer,
 /area/site53/lowertrams/restaurantkitchenarea)
 "ouf" = (
@@ -46156,13 +46169,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp1507observation)
 "pcD" = (
-/obj/effect/landmark/start{
-	name = "Medical Doctor";
-	icon_state = "meddocspawn";
-	icon = 'icons/effects/landmarks.dmi'
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/llcz/dclass/medicalpost)
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/turf/simulated/floor/tiled/freezer,
+/area/site53/lowertrams/restaurantkitchenarea)
 "pcN" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -71929,7 +71943,7 @@ mcg
 xGE
 sVz
 xGE
-pcD
+hAC
 hAC
 hjN
 hAC
@@ -93948,7 +93962,7 @@ aeB
 aav
 otN
 iGp
-abp
+pcD
 aav
 abz
 abz
@@ -94205,7 +94219,7 @@ aeB
 aav
 abp
 abj
-abp
+pcD
 aav
 abH
 aOv
