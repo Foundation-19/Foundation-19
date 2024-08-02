@@ -5,11 +5,26 @@
  */
 
 import { toFixed } from 'common/math';
-import { useLocalState } from 'tgui/backend';
 import { useDispatch, useSelector } from 'common/redux';
-import { Box, Button, ColorBox, Divider, Dropdown, Flex, Input, LabeledList, NumberInput, Section, Stack, Tabs, TextArea } from 'tgui/components';
+import { useLocalState } from 'tgui/backend';
+import {
+  Box,
+  Button,
+  ColorBox,
+  Divider,
+  Dropdown,
+  Flex,
+  Input,
+  LabeledList,
+  NumberInput,
+  Section,
+  Stack,
+  Tabs,
+  TextArea,
+} from 'tgui/components';
+
 import { ChatPageSettings } from '../chat';
-import { rebuildChat, saveChatToDisk } from '../chat/actions';
+import { clearChat, rebuildChat, saveChatToDisk } from '../chat/actions';
 import { THEMES } from '../themes';
 import { changeSettingsTab, updateSettings } from './actions';
 import { FONTS, SETTINGS_TABS } from './constants';
@@ -31,9 +46,10 @@ export const SettingsPanel = (props, context) => {
                   dispatch(
                     changeSettingsTab({
                       tabId: tab.id,
-                    })
+                    }),
                   )
-                }>
+                }
+              >
                 {tab.name}
               </Tabs.Tab>
             ))}
@@ -72,7 +88,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   theme: value,
-                })
+                }),
               )
             }
           />
@@ -88,7 +104,7 @@ export const SettingsGeneral = (props, context) => {
                     dispatch(
                       updateSettings({
                         fontFamily: value,
-                      })
+                      }),
                     )
                   }
                 />
@@ -99,7 +115,7 @@ export const SettingsGeneral = (props, context) => {
                     dispatch(
                       updateSettings({
                         fontFamily: value,
-                      })
+                      }),
                     )
                   }
                 />
@@ -132,7 +148,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   fontSize: value,
-                })
+                }),
               )
             }
           />
@@ -150,7 +166,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   lineHeight: value,
-                })
+                }),
               )
             }
           />
@@ -171,7 +187,7 @@ export const SettingsGeneral = (props, context) => {
                 dispatch(
                   updateSettings({
                     highlightColor: value,
-                  })
+                  }),
                 )
               }
             />
@@ -184,7 +200,7 @@ export const SettingsGeneral = (props, context) => {
             dispatch(
               updateSettings({
                 highlightText: value,
-              })
+              }),
             )
           }
         />
@@ -196,9 +212,10 @@ export const SettingsGeneral = (props, context) => {
             dispatch(
               updateSettings({
                 matchWord: !matchWord,
-              })
+              }),
             )
-          }>
+          }
+        >
           Match word
         </Button.Checkbox>
         <Button.Checkbox
@@ -207,9 +224,10 @@ export const SettingsGeneral = (props, context) => {
             dispatch(
               updateSettings({
                 matchCase: !matchCase,
-              })
+              }),
             )
-          }>
+          }
+        >
           Match case
         </Button.Checkbox>
       </Box>
@@ -223,9 +241,26 @@ export const SettingsGeneral = (props, context) => {
         </Box>
       </Box>
       <Divider />
-      <Button icon="save" onClick={() => dispatch(saveChatToDisk())}>
-        Save chat log
-      </Button>
+      <Stack fill>
+        <Stack.Item grow mt={0.15}>
+          <Button
+            icon="save"
+            tooltip="Export current tab history into HTML file"
+            onClick={() => dispatch(saveChatToDisk())}
+          >
+            Save chat log
+          </Button>
+        </Stack.Item>
+        <Stack.Item mt={0.15}>
+          <Button.Confirm
+            icon="trash"
+            tooltip="Erase current tab history"
+            onClick={() => dispatch(clearChat())}
+          >
+            Clear chat
+          </Button.Confirm>
+        </Stack.Item>
+      </Stack>
     </Section>
   );
 };

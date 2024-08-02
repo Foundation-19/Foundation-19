@@ -1,8 +1,18 @@
-import { useBackend, useLocalState } from '../backend';
-import { Input, Button, Stack, Section, Tabs, Box, Slider, Divider } from '../components';
 import { Fragment } from 'inferno';
-import { Window } from '../layouts';
+
 import { round } from '../../common/math';
+import { useBackend, useLocalState } from '../backend';
+import {
+  Box,
+  Button,
+  Divider,
+  Input,
+  Section,
+  Slider,
+  Stack,
+  Tabs,
+} from '../components';
+import { Window } from '../layouts';
 
 const PAGES = [
   {
@@ -92,7 +102,7 @@ export const PlayerPanel = (props, context) => {
   const [canModifyCkey, setModifyCkey] = useLocalState(
     context,
     'canModifyCkey',
-    false
+    false,
   );
   const PageComponent = PAGES[pageIndex].component();
   const {
@@ -110,7 +120,8 @@ export const PlayerPanel = (props, context) => {
       title={`${mob_name} Player Panel`}
       width={600}
       height={540}
-      theme="admin">
+      theme="admin"
+    >
       <Window.Content scrollable>
         <Section md={1}>
           <Stack>
@@ -241,7 +252,8 @@ export const PlayerPanel = (props, context) => {
                       color={page.color}
                       selected={i === pageIndex}
                       icon={page.icon}
-                      onClick={() => setPageIndex(i)}>
+                      onClick={() => setPageIndex(i)}
+                    >
                       {page.title}
                     </Tabs.Tab>
                   );
@@ -282,17 +294,20 @@ const GeneralActions = (props, context) => {
             confirmColor="average"
             disabled={!hasPermission(data, 'mob_kill')}
             onClick={() => act('mob_kill')}
-          />
+          >
+            Kill
+          </Button.Confirm>
           <Button.Confirm
             width="100%"
             height="100%" // weird ass bug here, so height set to 100%
             icon="skull-crossbones"
             color="bad"
-            content="Gib"
             confirmColor="bad"
             disabled={!hasPermission(data, 'mob_gib')}
             onClick={() => act('mob_gib')}
-          />
+          >
+            Gib
+          </Button.Confirm>
         </Stack>
       </Section>
 
@@ -301,23 +316,26 @@ const GeneralActions = (props, context) => {
           <Button.Confirm
             width="100%"
             icon="reply"
-            content="Bring"
             disabled={!hasPermission(data, 'mob_bring')}
             onClick={() => act('mob_bring')}
-          />
+          >
+            Bring
+          </Button.Confirm>
           <Button.Confirm
             width="100%"
-            content="Follow"
             disabled={!hasPermission(data, 'jump_to')}
             onClick={() => act('mob_follow')}
-          />
+          >
+            Follow
+          </Button.Confirm>
           <Button.Confirm
             width="100%"
             icon="transporter"
-            content="Send To"
             disabled={!hasPermission(data, 'send_to')}
             onClick={() => act('send_to')}
-          />
+          >
+            Send To
+          </Button.Confirm>
           <Button
             width="100%"
             height="100%"
@@ -335,31 +353,31 @@ const GeneralActions = (props, context) => {
             width="100%"
             content="Say"
             disabled={!hasPermission(data, 'check_logs')}
-            onClick={() => act('check_logs', { 'log_type': 'say' })}
+            onClick={() => act('check_logs', { log_type: 'say' })}
           />
           <Button
             width="100%"
             content="Emote"
             disabled={!hasPermission(data, 'check_logs')}
-            onClick={() => act('check_logs', { 'log_type': 'emote' })}
+            onClick={() => act('check_logs', { log_type: 'emote' })}
           />
           <Button
             width="100%"
             content="OOC"
             disabled={!hasPermission(data, 'check_logs')}
-            onClick={() => act('check_logs', { 'log_type': 'ooc' })}
+            onClick={() => act('check_logs', { log_type: 'ooc' })}
           />
           <Button
             width="100%"
             content="DSay"
             disabled={!hasPermission(data, 'check_logs')}
-            onClick={() => act('check_logs', { 'log_type': 'dsay' })}
+            onClick={() => act('check_logs', { log_type: 'dsay' })}
           />
           <Button
             width="100%"
             content="Interact"
             disabled={!hasPermission(data, 'check_logs')}
-            onClick={() => act('check_logs', { 'log_type': 'interact' })}
+            onClick={() => act('check_logs', { log_type: 'interact' })}
           />
         </Stack>
       </Section>
@@ -442,7 +460,9 @@ const PunishmentActions = (props, context) => {
             content="Ban"
             disabled={!hasPermission(data, 'mob_ban')}
             onClick={() => act('mob_ban')}
-          />
+          >
+            Ban
+          </Button.Confirm>
           <Button
             width="100%"
             height="100%"
@@ -501,7 +521,7 @@ const PunishmentActions = (props, context) => {
                 disabled={!hasPermission(data, 'mob_mute')}
                 onClick={() =>
                   act('mob_mute', {
-                    'mute_flag': !isMuted
+                    mute_flag: !isMuted
                       ? client_muted | bit.bitflag
                       : client_muted & ~bit.bitflag,
                   })
@@ -530,10 +550,11 @@ const TransformActions = (props, context) => {
                 height="100%"
                 icon={option.icon}
                 color={option.color}
-                content={option.name}
                 disabled={!hasPermission(data, 'mob_transform')}
                 onClick={() => act('mob_transform', { key: option.key })}
-              />
+              >
+                {option.name}
+              </Button.Confirm>
             ))}
           </Stack>
         </Section>
@@ -548,13 +569,13 @@ const FunActions = (props, context) => {
   const [getSpanSetting, setSpanSetting] = useLocalState(
     context,
     'span_setting',
-    glob_span[0].span
+    glob_span[0].span,
   );
 
   const [lockExplode, setLockExplode] = useLocalState(
     context,
     'explode_lock_toggle',
-    true
+    true,
   );
   const [expPower, setExpPower] = useLocalState(context, 'exp_power', 50);
   const [falloff, setFalloff] = useLocalState(context, 'falloff', 75);
@@ -604,13 +625,15 @@ const FunActions = (props, context) => {
               onClick={() => setLockExplode(!lockExplode)}
               color={lockExplode ? 'good' : 'bad'}
             />
-          }>
+          }
+        >
           <Button
             width="100%"
             height="100%"
             color="red"
             disabled={lockExplode}
-            onClick={() => act('mob_explode')}>
+            onClick={() => act('mob_explode')}
+          >
             <Box height="100%" pt={2} pb={2} textAlign="center">
               Detonate
             </Box>
@@ -637,7 +660,7 @@ const PhysicalActions = (props, context) => {
   const [delimbOption, setDelimbOption] = useLocalState(
     context,
     'delimb_flags',
-    0
+    0,
   );
   return (
     <Section fill>
@@ -677,45 +700,48 @@ const PhysicalActions = (props, context) => {
                     setDelimbOption(
                       delimbOption & limb_flags[index]
                         ? delimbOption & ~limb_flags[index]
-                        : delimbOption | limb_flags[index]
+                        : delimbOption | limb_flags[index],
                     )
                   }
                 />
               ))}
             </Stack>
-          }>
+          }
+        >
           <Stack align="right" grow={1}>
             <Button.Confirm
               width="100%"
               icon="unlink"
-              content="Delimb"
               color="red"
               disabled={!hasPermission(data, 'mob_delimb')}
               onClick={() =>
                 act('mob_delimb', {
                   limbs: limb_flags.map(
                     (val, index) =>
-                      !!(delimbOption & val) && glob_limbs[limbs[index]]
+                      !!(delimbOption & val) && glob_limbs[limbs[index]],
                   ),
                 })
               }
-            />
+            >
+              Delimb
+            </Button.Confirm>
             <Button.Confirm
               width="100%"
               height="100%"
               icon="link"
-              content="Relimb"
               color="green"
               disabled={!hasPermission(data, 'mob_relimb')}
               onClick={() =>
                 act('mob_relimb', {
                   limbs: limb_flags.map(
                     (val, index) =>
-                      !!(delimbOption & val) && glob_limbs[limbs[index]]
+                      !!(delimbOption & val) && glob_limbs[limbs[index]],
                   ),
                 })
               }
-            />
+            >
+              Relimb
+            </Button.Confirm>
           </Stack>
         </Section>
       )}
@@ -749,8 +775,9 @@ const LanguageActions = (props, context) => {
             <Button.Checkbox
               checked={mob_languages.includes(language)}
               onClick={() =>
-                act('toggle_language', { 'language_name': language })
-              }>
+                act('toggle_language', { language_name: language })
+              }
+            >
               {language}
             </Button.Checkbox>
           </Stack.Item>
@@ -781,8 +808,9 @@ const DNAActions = (props, context) => {
                   <Button.Checkbox
                     checked={dna_blocks[i]}
                     onClick={() =>
-                      act('dna_switch', { 'block_to_toggle': i + 1 })
-                    }>
+                      act('dna_switch', { block_to_toggle: i + 1 })
+                    }
+                  >
                     {dna}
                   </Button.Checkbox>
                 </Stack.Item>
@@ -818,10 +846,11 @@ const PsionicsActions = (props, context) => {
                     key={rank}
                     onClick={() =>
                       act('set_psi_faculty_rank', {
-                        'psi_faculty': faculty,
-                        'psi_faculty_rank': e + 1,
+                        psi_faculty: faculty,
+                        psi_faculty_rank: e + 1,
                       })
-                    }>
+                    }
+                  >
                     {rank}
                   </Button>
                 ))}

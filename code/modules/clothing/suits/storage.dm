@@ -50,13 +50,6 @@
 		return
 	update_clothing_icon()	//so our overlays update
 
-/obj/item/clothing/suit/storage/toggle/inherit_custom_item_data(datum/custom_item/citem)
-	. = ..()
-	if(citem.additional_data["icon_open"])
-		icon_open = citem.additional_data["icon_open"]
-	if(citem.additional_data["icon_closed"])
-		icon_closed = citem.additional_data["icon_closed"]
-
 /obj/item/clothing/suit/storage/vest/merc
 	slots = 4
 

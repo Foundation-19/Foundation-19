@@ -97,10 +97,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //AREAS USED BY CODE//
 //////////////////////
 /area/centcom
-	name = "\improper Centcom"
+	name = "Mobile Task Force Dispatch Center"
 	icon_state = "centcom"
 	requires_power = 0
-	dynamic_lighting = 0
+	dynamic_lighting = 1
 	req_access = list(ACCESS_CENT_GENERAL)
 
 /area/centcom/holding
@@ -206,52 +206,4 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	luminosity = 1
 	dynamic_lighting = 0
 	requires_power = 0
-	var/sound/mysound = null
-
-/area/beach/New()
-	..()
-	var/sound/S = new/sound()
-	mysound = S
-	S.file = 'sounds/ambience/shore.ogg'
-	S.repeat = 1
-	S.wait = 0
-	S.channel = GLOB.sound_channels.RequestChannel(/area/beach)
-	S.volume = 100
-	S.priority = 255
-	S.status = SOUND_UPDATE
-	process()
-
-/area/beach/Entered(atom/movable/Obj,atom/OldLoc)
-	. = ..()
-	if(ismob(Obj))
-		var/mob/M = Obj
-		if(M.client)
-			mysound.status = SOUND_UPDATE
-			sound_to(M, mysound)
-
-/area/beach/Exited(atom/movable/Obj)
-	. = ..()
-	if(ismob(Obj))
-		var/mob/M = Obj
-		if(M.client)
-			mysound.status = SOUND_PAUSED | SOUND_UPDATE
-			sound_to(M, mysound)
-
-/area/beach/proc/process()
-	set background = 1
-
-	var/sound/S = null
-	var/sound_delay = 0
-	if(prob(25))
-		S = sound(file=pick('sounds/ambience/seag1.ogg','sounds/ambience/seag2.ogg','sounds/ambience/seag3.ogg'), volume=100)
-		sound_delay = rand(0, 50)
-
-	for(var/mob/living/carbon/human/H in src)
-		if(H.client)
-			mysound.status = SOUND_UPDATE
-			to_chat(H, mysound)
-			if(S)
-				spawn(sound_delay)
-					sound_to(H, S)
-
-	spawn(60) .()
+	ambience = list('sounds/ambience/shore.ogg')

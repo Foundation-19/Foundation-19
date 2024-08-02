@@ -6,6 +6,7 @@
 
 import { canRender, classes } from 'common/react';
 import { Component, createRef, InfernoNode, RefObject } from 'inferno';
+
 import { addScrollableNode, removeScrollableNode } from '../events';
 import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
 
@@ -67,7 +68,8 @@ export class Section extends Component<SectionProps> {
           className,
           computeBoxClassName(rest),
         ])}
-        {...computeBoxProps(rest)}>
+        {...computeBoxProps(rest)}
+      >
         {hasTitle && (
           <div className="Section__title">
             <span className="Section__titleText">{title}</span>

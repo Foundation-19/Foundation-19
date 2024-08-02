@@ -8,8 +8,18 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
+/obj/item/clothing/head/helmet/scp/security/ruined
+	name = "\improper ruined foundation security helmet"
+	desc = "A heavy non-descript helmet with built-in padding, and armor, however age has deminished it's quality, scratching the paint off. It has a cracked, and shattered poly-carbonate yellow riot visor on it, devestating blow to it's previous owner."
+	icon_state = "forgotten-guard-helm"
+	body_parts_covered = HEAD
+	armor = list(melee = 30, bullet = 20, laser = 20, energy = 5, bomb = 15, bio = 5, rad = 5)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS|BLOCKHAIR
+	action_button_name = null
+
 /obj/item/clothing/head/helmet/scp/security/medic
-	name = "medical security helmet"
+	name = "\improper foundation security medical helmet"
 	desc = "A light non-descript helmet with built-in padding, and armor. It has a red cross on the front, and a red visor. Durability lessened to cope with faster response."
 	icon_state = "medichelm"
 	body_parts_covered = HEAD|EYES
@@ -19,7 +29,7 @@
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/recontain
-	name = "response security helmet"
+	name = "\improper foundation security response helmet"
 	desc = "A heavy non-descript helmet with extra built-in padding, and armor. The massive amount of armor makes the helmet look thicker, it has a cyan visor."
 	icon_state = "reconhelm"
 	body_parts_covered = HEAD|EYES
@@ -29,20 +39,20 @@
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/riot
-	name = "riot security helmet"
+	name = "\improper foundation security riot helmet"
 	desc = "A heavy non-descript helmet with a heavy durathread armor plating in the helmet, giving it a massive defense against melee. It has a poly-carbonate modernized white riot visor on it."
 	icon_state = "guardriothelm"
 	armor = list(melee = 70, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 25, rad = 15)
 
 /obj/item/clothing/head/helmet/scp/security/lczcom
-	name = "\improper Heavy-plated foundation security helmet"
+	name = "\improper heavy-plated foundation security helmet"
 	desc = "A heavy non-descript helmet with more built-in padding, and armor. The golden badge on the front of the helmet incidates the rank of 'Lieutenant', looks important. It has a poly-carbonate yellow riot visor on it."
 	icon_state = "heavy-guard-helm"
-	armor = list(melee = 65, bullet = 45, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = 55, bullet = 45, laser = 45, energy = 30, bomb = 30, bio = 15, rad = 15)
 
 /obj/item/clothing/head/helmet/scp/security/cadet
 	name = "\improper foundation security trainee helmet"
-	desc = "A light non-descript helmet with built-in padding, and armor, nothing special really."
+	desc = "A light non-descript helmet given to Light Containment Zone cadets, with barely any built-in armor plating, nothing special really."
 	icon_state = "cadethelm"
 	body_parts_covered = HEAD
 	armor = list(melee = 45, bullet = 30, laser = 30, energy = 15, bomb = 15, bio = 15, rad = 10)
@@ -51,8 +61,8 @@
 	action_button_name = null
 
 /obj/item/clothing/head/helmet/scp/security/cadet/hat
-	name = "foundation security trainee hat"
-	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums living."
+	name = "\improper foundation security trainee hat"
+	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums intact."
 	icon_state = "cadethat"
 	body_parts_covered = HEAD
 	armor = list(melee = 25, bullet = 15, laser = 15, energy = 15, bomb = 15, bio = 15, rad = 10)
@@ -105,24 +115,33 @@
 
 /obj/item/clothing/head/helmet/scp/chaos
 	name = "Chaos Insurgency helmet"
-	desc = "A russian type of helmet usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
+	desc = "A russian type of ballistics helmet usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_helmet"
-	body_parts_covered = HEAD //face shield
-	armor = list(melee = 50, bullet = 65, laser = 50, energy = 25, bomb = 40, bio = 10, rad = 10)
+	body_parts_covered = HEAD
+	armor = list(melee = 30, bullet = 65, laser = 40, energy = 25, bomb = 40, bio = 10, rad = 10)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/helmet/scp/security/chaos
-	name = "Heavy-plated Chaos Insurgency helmet"
+	name = "Chaos Insurgency K6-3 Altyn helmet"
 	desc = "A heavy russian type of helmet usually seen worn by modern russian military forces, this one has a face shield and is used by heavy soldiers, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_heavy_helmet"
-	armor = list(melee = 65, bullet = 85, laser = 50, energy = 35, bomb = 45, bio = 20, rad = 10)
+	armor = list(melee = 50, bullet = 75, laser = 50, energy = 35, bomb = 45, bio = 20, rad = 10)
 
 /obj/item/clothing/head/helmet/scp/chaos/officer
 	name = "Chaos Insurgency field cap"
 	desc = "A durable, unquestionably bulletproof russian type of field cap used by mainly officers of the russian military forces, this one is colored tan and is used by the Chaos Insurgency."
 	icon_state = "ci_officer"
-	armor = list(melee = 65, bullet = 60, laser = 25,energy = 15, bomb = 15, bio = 0, rad = 0)
+	armor = list(melee = 65, bullet = 45, laser = 25,energy = 10, bomb = 15, bio = 0, rad = 0)
+
+/obj/item/clothing/head/helmet/scp/chaos/pilot
+	name = "Chaos Insurgency pilot helmet"
+	desc = "A pilot helmet worn by air pilots usually wanting the utmost defense while flying a plane. Also keeps the bugs out of your eyes if your windshield ever breaks. usually seen worn by modern russian military forces, this one is colored tan and is used by the Chaos Insurgency."
+	icon_state = "ci_pilot_helmet"
+	body_parts_covered = EYES|FACE
+	armor = list(melee = 10, bullet = 15, laser = 10, energy = 0, bomb = 5, bio = 5, rad = 10)
+	acid_resistance = 1.5
+	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/helmet/scp/donor
 	name = "\improper tactical helmet"

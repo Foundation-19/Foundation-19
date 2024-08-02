@@ -25,7 +25,6 @@
 		ACCESS_SCIENCE_LVL3,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL1,
-		ACCESS_SECURITY_LVL1,
 		ACCESS_MEDICAL_LVL1,
 		ACCESS_ENGINEERING_LVL1,
 		ACCESS_ADMIN_LVL1,
@@ -81,13 +80,11 @@
 		ACCESS_SCIENCE_LVL3,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_SCIENCE_LVL1,
-		ACCESS_SECURITY_LVL1,
 		ACCESS_MEDICAL_LVL1,
 		ACCESS_ENGINEERING_LVL1,
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,
 		ACCESS_ADMIN_LVL3,
-		ACCESS_ADMIN_LVL4,
 		ACCESS_KEYAUTH,
 		ACCESS_RESEARCH,
 		ACCESS_ROBOTICS
@@ -111,52 +108,6 @@
 	roleplay_difficulty = "Easy"
 	mechanical_difficulty = "Easy - Medium"
 
-/datum/job/scientist
-	title = "Researcher"
-	department = "Science"
-	department_flag = SCI
-	total_positions = 8
-	spawn_positions = 8
-	selection_color = "#633d63"
-	supervisors = "the Senior Researchers and Research Director"
-	economic_power = 4
-	requirements = list(EXP_TYPE_SCIENCE = 60)
-	alt_titles = list("Xenobiologist", "Xenoarcheologist", "Xenobotanist", "Junior Mentalist")
-	minimal_player_age = 3
-	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/science/scientist
-	class = CLASS_C
-	hud_icon = "hudscientist"
-
-	access = list(
-	ACCESS_SCI_COMMS,
-	ACCESS_RESEARCH,
-	ACCESS_SCIENCE_LVL1,
-	ACCESS_SCIENCE_LVL2,
-	ACCESS_SCIENCE_LVL3
-	)
-	minimal_access = list()
-
-	min_skill = list(
-	    SKILL_COMPUTER    = SKILL_TRAINED,
-	    SKILL_DEVICES     = SKILL_TRAINED,
-	    SKILL_SCIENCE     = SKILL_EXPERIENCED
-	)
-
-	max_skill = list(
-		SKILL_ANATOMY     = SKILL_MASTER,
-	    SKILL_DEVICES     = SKILL_MASTER,
-	    SKILL_SCIENCE     = SKILL_MASTER
-	)
-
-	skill_points = 22
-	roleplay_difficulty = "Easy - Medium"
-	mechanical_difficulty = "Medium"
-	duties = "Perform experiments and develop new technologies. Instruct junior researchers."
-
-/datum/job/roboticist
-	title = "Robotics Technician"
-
 /datum/job/seniormentalist
 	title = "Senior Psychotronics Researcher"
 	department = "Science"
@@ -166,7 +117,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director and Assistant Research Director"
 	economic_power = 4
-	requirements = list(EXP_TYPE_SCIENCE = 480)
+	requirements = list(EXP_TYPE_SCIENCE = 620)
 	alt_titles = list("Senior Mentalist")
 	minimal_player_age = 10
 	ideal_character_age = 35
@@ -197,14 +148,56 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
+	psi_faculties = list(
+		PSI_COERCION = PSI_RANK_OPERANT,
+		PSI_PSYCHOKINESIS = PSI_RANK_OPERANT,
+		PSI_REDACTION = PSI_RANK_MASTER,
+		PSI_ENERGISTICS = PSI_RANK_OPERANT
+	)
+
 	skill_points = 20
-	roleplay_difficulty = "Easy - Medium"
+	roleplay_difficulty = "Medium - Hard"
 	mechanical_difficulty = "Medium"
 
-/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist")
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
-	return ..()
+/datum/job/mentalist
+	title = "Psychotronics Researcher"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Senior Psychotronics Researcher, Research Director, and Assistant Research Director"
+	economic_power = 4
+	requirements = list(EXP_TYPE_SCIENCE = 480)
+	alt_titles = list("Mentalist")
+	minimal_player_age = 10
+	ideal_character_age = 35
+	outfit_type = /decl/hierarchy/outfit/job/science/mentalist
+	class = CLASS_C
+	hud_icon = "hudseniorresearcher"
+
+	access = list(
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_RESEARCH
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_CHEMISTRY	  = SKILL_BASIC,
+		SKILL_MEDICAL	  = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_CHEMISTRY   = SKILL_EXPERIENCED,
+	    SKILL_MEDICAL     = SKILL_EXPERIENCED,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
+	psi_faculties = list(PSI_COERCION = PSI_RANK_OPERANT) //Basic level of Psionics, with ability to read others.
 
 /datum/job/seniorscientist
 	title = "Senior Researcher"
@@ -217,7 +210,7 @@
 	economic_power = 4
 	requirements = list(EXP_TYPE_SCIENCE = 480)
 
-	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist", "Mentalist")
+	alt_titles = list("Senior Xenobiologist", "Senior Xenoarcheologist", "Senior Xenobotanist")
 	minimal_player_age = 7
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/science/seniorscientist
@@ -282,7 +275,8 @@
 	    SKILL_COMPUTER    = SKILL_BASIC,
 	    SKILL_DEVICES     = SKILL_TRAINED,
 	    SKILL_SCIENCE     = SKILL_TRAINED,
-		SKILL_ELECTRICAL  = SKILL_EXPERIENCED
+		SKILL_ELECTRICAL  = SKILL_EXPERIENCED,
+		SKILL_WEAPONS     = SKILL_BASIC
 	)
 
 	max_skill = list(
@@ -295,8 +289,6 @@
 	roleplay_difficulty = "Medium"
 	mechanical_difficulty = "Medium"
 
-/datum/job/seniormentalist
-	title = "Senior Psychotronics Researcher"
 
 /datum/job/scientist
 	title = "Researcher"
@@ -366,7 +358,8 @@
 	    SKILL_COMPUTER    = SKILL_BASIC,
 	    SKILL_DEVICES     = SKILL_TRAINED,
 	    SKILL_SCIENCE     = SKILL_BASIC,
-		SKILL_ELECTRICAL  = SKILL_TRAINED
+		SKILL_ELECTRICAL  = SKILL_TRAINED,
+		SKILL_WEAPONS     = SKILL_BASIC
 	)
 
 	max_skill = list(
@@ -378,10 +371,43 @@
 	roleplay_difficulty = "Medium"
 	mechanical_difficulty = "Medium - Hard"
 
-/datum/job/seniormentalist/equip(mob/living/carbon/human/H)
-	if (H.mind?.role_alt_title == "Senior Mentalist")
-		psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_LATENT)
-	return ..()
+
+/datum/job/juniorscientist
+	title = "Researcher Associate"
+	department = "Science"
+	department_flag = SCI
+	selection_color = "#633d63"
+	total_positions = 10
+	spawn_positions = 10
+	supervisors = "the Research Director and Assistant Research Director"
+	economic_power = 4
+	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Junior Xenobotanist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
+	ideal_character_age = 20
+	outfit_type = /decl/hierarchy/outfit/job/science/juniorscientist
+	class = CLASS_C
+	hud_icon = "hudresearchassistant"
+
+	access = list(
+		ACCESS_SCI_COMMS,
+		ACCESS_SCIENCE_LVL1
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_DEVICES     = SKILL_BASIC,
+	    SKILL_SCIENCE     = SKILL_EXPERIENCED
+	)
+
+	max_skill = list(
+		SKILL_ANATOMY     = SKILL_MASTER,
+	    SKILL_DEVICES     = SKILL_MASTER,
+	    SKILL_SCIENCE     = SKILL_MASTER
+	)
+	skill_points = 12
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Easy - Medium"
+	duties = "Assist with experiments and technological developments."
 
 /datum/job/juniorroboticist
 	title = "Junior Robotics Technician"
@@ -419,43 +445,6 @@
 	    SKILL_SCIENCE     = SKILL_MASTER
 	)
 
-	skill_points = 12
-	roleplay_difficulty = "Easy"
-	mechanical_difficulty = "Easy - Medium"
-	duties = "Assist with experiments and technological developments."
-
-/datum/job/juniorscientist
-	title = "Researcher Associate"
-	department = "Science"
-	department_flag = SCI
-	selection_color = "#633d63"
-	total_positions = 10
-	spawn_positions = 10
-	supervisors = "the Research Director and Assistant Research Director"
-	economic_power = 4
-	alt_titles = list("Junior Xenobiologist", "Junior Xenoarcheologist", "Junior Xenobotanist", "Assistant Researcher", "Research Assistant", "Research Intern", "Junior Researcher")
-	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/science/juniorscientist
-	class = CLASS_C
-	hud_icon = "hudresearchassistant"
-
-	access = list(
-		ACCESS_SCI_COMMS,
-		ACCESS_SCIENCE_LVL1
-	)
-	minimal_access = list()
-
-	min_skill = list(
-	    SKILL_COMPUTER    = SKILL_BASIC,
-	    SKILL_DEVICES     = SKILL_BASIC,
-	    SKILL_SCIENCE     = SKILL_EXPERIENCED
-	)
-
-	max_skill = list(
-		SKILL_ANATOMY     = SKILL_MASTER,
-	    SKILL_DEVICES     = SKILL_MASTER,
-	    SKILL_SCIENCE     = SKILL_MASTER
-	)
 	skill_points = 12
 	roleplay_difficulty = "Easy"
 	mechanical_difficulty = "Easy - Medium"

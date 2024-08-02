@@ -106,6 +106,7 @@
 			amount -= E.remove_pain(amount)
 		else
 			amount -= E.add_pain(amount)
+			bad_external_organs |= E
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 //These procs fetch a cumulative total damage from all organs

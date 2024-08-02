@@ -29,7 +29,6 @@
 		"pata.png" = 'html/images/pata.png',
 		"raisa.png" = 'html/images/raisa.png',
 		"uiu.png" = 'html/images/uiu.png',
-		"thi.png" = 'html/images/thi.png',
 		"gr.png" = 'html/images/gr.png',
 		"mcd.png" = 'html/images/mcd4.png',
 		"sh.png" = 'html/images/sh.png',

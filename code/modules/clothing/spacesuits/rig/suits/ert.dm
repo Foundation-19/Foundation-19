@@ -148,3 +148,4 @@
 	desc = "A heavy technologically advanced suit that protects the user from severe dangers of fire, and other sorts of damage, well insulated."
 	suit_type = "Epsilon-9 'Fire Breathers' field"
 	icon_state = "e9_rig"
+	req_access = list(ACCESS_MTF)

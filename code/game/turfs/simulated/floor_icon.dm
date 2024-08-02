@@ -43,9 +43,6 @@ var/list/flooring_cache = list()
 
 		has_smooth = ~(has_border & (NORTH | SOUTH | EAST | WEST))
 
-		if(flooring.can_paint && decals && decals.len)
-			add_overlay(decals)
-
 		//We can only have inner corners if we're smoothed with something
 		if (has_smooth && flooring.flags & TURF_HAS_INNER_CORNERS)
 			for(var/direction in GLOB.cornerdirs)
@@ -60,6 +57,9 @@ var/list/flooring_cache = list()
 					if(!flooring.symmetric_test_link(src, get_step(src, direction)))
 						add_overlay(get_flooring_overlay("[flooring.icon]_[flooring.icon_base]-edge-[direction]", "[flooring.icon_base]_edges", direction,(flooring.flags & TURF_HAS_EDGES)))
 
+		if(flooring.can_paint && length(decals))
+			add_overlay(decals)
+
 		/*
 		//Now lets handle those fancy floors which have many centre icons
 		if(flooring.has_base_range)
@@ -70,12 +70,6 @@ var/list/flooring_cache = list()
 			else
 				icon_state = flooring.icon_base+"0"
 		*/
-
-	if(decals && decals.len)
-		for(var/image/I in decals)
-			if(I.layer != DECAL_PLATING_LAYER)
-				continue
-			add_overlay(I)
 
 	if(is_plating() && !(isnull(broken) && isnull(burnt))) //temp, todo
 		icon = 'icons/turf/flooring/plating.dmi'

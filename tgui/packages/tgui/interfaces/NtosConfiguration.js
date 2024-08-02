@@ -1,13 +1,22 @@
 import { Fragment } from 'inferno';
+
 import { useBackend } from '../backend';
 import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosConfiguration = (props, context) => {
   const { act, data } = useBackend(context);
-  const { PC_device_theme, power_usage, battery_exists, battery = {}, disk_size, disk_used, hardware = [] } = data;
+  const {
+    PC_device_theme,
+    power_usage,
+    battery_exists,
+    battery = {},
+    disk_size,
+    disk_used,
+    hardware = [],
+  } = data;
   return (
-    <NtosWindow theme={PC_device_theme} width={520} height={630} resizable>
+    <NtosWindow theme={PC_device_theme} width={600} height={630} resizable>
       <NtosWindow.Content scrollable>
         <Section
           title="Power Supply"
@@ -15,9 +24,13 @@ export const NtosConfiguration = (props, context) => {
             <Box inline bold mr={1}>
               Power Draw: {power_usage}W
             </Box>
-          }>
+          }
+        >
           <LabeledList>
-            <LabeledList.Item label="Battery Status" color={!battery_exists && 'average'}>
+            <LabeledList.Item
+              label="Battery Status"
+              color={!battery_exists && 'average'}
+            >
               {battery_exists ? (
                 <ProgressBar
                   value={battery.charge}
@@ -27,7 +40,8 @@ export const NtosConfiguration = (props, context) => {
                     good: [battery.max / 2, Infinity],
                     average: [battery.max / 4, battery.max / 2],
                     bad: [-Infinity, battery.max / 4],
-                  }}>
+                  }}
+                >
                   {battery.charge} / {battery.max}
                 </ProgressBar>
               ) : (
@@ -37,7 +51,12 @@ export const NtosConfiguration = (props, context) => {
           </LabeledList>
         </Section>
         <Section title="File System">
-          <ProgressBar value={disk_used} minValue={0} maxValue={disk_size} color="good">
+          <ProgressBar
+            value={disk_used}
+            minValue={0}
+            maxValue={disk_size}
+            color="good"
+          >
             {disk_used} GQ / {disk_size} GQ
           </ProgressBar>
         </Section>
@@ -61,11 +80,20 @@ export const NtosConfiguration = (props, context) => {
                       }
                     />
                   )}
+                  <Button
+                    mr={1}
+                    onClick={() =>
+                      act('PC_component_diagnostic', { name: component.name })
+                    }
+                  >
+                    Scan
+                  </Button>
                   <Box inline bold mr={1}>
                     Power Usage: {component.powerusage}W
                   </Box>
                 </Fragment>
-              }>
+              }
+            >
               {component.desc}
             </Section>
           ))}

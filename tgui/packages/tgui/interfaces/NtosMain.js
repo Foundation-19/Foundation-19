@@ -2,24 +2,6 @@ import { useBackend } from '../backend';
 import { Button, ColorBox, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
-const PROGRAM_ICONS = {
-  compconfig: 'cog',
-  ntndownloader: 'download',
-  filemanager: 'folder',
-  smmonitor: 'radiation',
-  alarmmonitor: 'bell',
-  cardmod: 'id-card',
-  arcade: 'gamepad',
-  ntnrc_client: 'comment-alt',
-  nttransfer: 'exchange-alt',
-  powermonitor: 'plug',
-  job_manage: 'address-book',
-  crewmani: 'clipboard-list',
-  robocontrol: 'robot',
-  atmosscan: 'thermometer-half',
-  shipping: 'tags',
-};
-
 export const NtosMain = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -28,8 +10,9 @@ export const NtosMain = (props, context) => {
     has_light,
     light_on,
     comp_light_color,
-    removable_media = [],
+    removable_media,
     login = [],
+    unsafe_to_shutdown,
   } = data;
   return (
     <NtosWindow
@@ -40,7 +23,8 @@ export const NtosMain = (props, context) => {
       theme={device_theme}
       width={400}
       height={500}
-      resizable>
+      resizable
+    >
       <NtosWindow.Content scrollable>
         {!!has_light && (
           <Section>
@@ -48,7 +32,8 @@ export const NtosMain = (props, context) => {
               width="144px"
               icon="lightbulb"
               selected={light_on}
-              onClick={() => act('PC_toggle_light')}>
+              onClick={() => act('PC_toggle_light')}
+            >
               Flashlight: {light_on ? 'ON' : 'OFF'}
             </Button>
             <Button ml={1} onClick={() => act('PC_light_color')}>
@@ -66,31 +51,25 @@ export const NtosMain = (props, context) => {
               disabled={!login.IDName}
               onClick={() => act('PC_Eject_Disk', { name: 'ID' })}
             />
-          }>
+          }
+        >
           <Table>
             <Table.Row>ID Name: {login.IDName}</Table.Row>
             <Table.Row>Assignment: {login.IDJob}</Table.Row>
           </Table>
         </Section>
-        {!!removable_media.length && (
+        {!!removable_media && (
           <Section title="Media Eject">
-            <Table>
-              {removable_media.map((device) => (
-                <Table.Row key={device}>
-                  <Table.Cell>
-                    <Button
-                      fluid
-                      color="transparent"
-                      icon="eject"
-                      content={device}
-                      onClick={() => act('PC_Eject_Disk', { name: device })}
-                    />
-                  </Table.Cell>
-                </Table.Row>
-              ))}
-            </Table>
+            <Button
+              fluid
+              color="transparent"
+              icon="eject"
+              content={removable_media}
+              onClick={() => act('PC_Eject_Disk')}
+            />
           </Section>
         )}
+        {unsafe_to_shutdown && 'You may not switch this device off safely.'}
         <Section title="Programs">
           <Table>
             {programs.map((program) => (
@@ -99,7 +78,7 @@ export const NtosMain = (props, context) => {
                   <Button
                     fluid
                     color="transparent"
-                    icon={PROGRAM_ICONS[program.name] || 'window-maximize-o'}
+                    icon={program.icon}
                     content={program.desc}
                     onClick={() =>
                       act('PC_runprogram', {
@@ -133,7 +112,8 @@ export const NtosMain = (props, context) => {
                       act('PC_setautorun', {
                         name: program.name,
                       })
-                    }>
+                    }
+                  >
                     AR
                   </Button>
                 </Table.Cell>

@@ -20,3 +20,7 @@
 /obj/item/stamp/scp/cmo
 	name = "Medical Director's rubber stamp"
 	icon_state = "stamp-cmo"
+
+/obj/item/stamp/scp/acmo
+	name = "Assistant Medical Director's rubber stamp"
+	icon_state = "stamp-cmo"

@@ -19,6 +19,8 @@
 	InitializePlanes()
 
 /mob/proc/InitializePlanes()
+	if(!client)
+		return
 	if(length(effects_planemasters))
 		for(var/i in effects_planemasters)
 			client.screen += effects_planemasters["[i]"]
@@ -201,7 +203,7 @@
 	var/ui_color = mymob.client.prefs.UI_style_color
 	var/ui_alpha = mymob.client.prefs.UI_style_alpha
 
-
+	mymob.reload_fullscreen()
 	FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 
 /datum/hud/proc/FinalizeInstantiation(ui_style, ui_color, ui_alpha)
@@ -221,8 +223,7 @@
 		return
 
 	if(!client) return
-	if(client.view != world.view)
-		return
+	if(!client.has_default_view()) return
 	if(hud_used.hud_shown)
 		hud_used.hud_shown = 0
 		if(src.hud_used.adding)
@@ -305,12 +306,6 @@
 	hud_used.hidden_inventory_update()
 	hud_used.persistant_inventory_update()
 	update_action_buttons()
-
-/mob/proc/add_click_catcher()
-	client.screen |= GLOB.click_catchers
-
-/mob/new_player/add_click_catcher()
-	return
 
 /atom/movable/screen/stamina
 	name = "stamina"

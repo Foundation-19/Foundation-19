@@ -1,7 +1,7 @@
 /obj/effect/floor_decal/reset
 	name = "reset marker"
 
-/obj/effect/floor_decal/reset/Initialize()
+/obj/effect/floor_decal/reset/LateInitialize()
 	SHOULD_CALL_PARENT(FALSE)
 	var/turf/T = get_turf(src)
 	T.remove_decals()
@@ -340,6 +340,108 @@
 	icon_state = "bordercolorfull"
 
 /obj/effect/floor_decal/corner/red/bordercee
+	icon_state = "bordercolorcee"
+
+/obj/effect/floor_decal/corner/keter
+	name = "keter red corner"
+	color = COLOR_KETER_RED
+
+/obj/effect/floor_decal/corner/keter/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/keter/three_quarters
+	icon_state = "corner_white_three_quarters"
+
+/obj/effect/floor_decal/corner/keter/full
+	icon_state = "corner_white_full"
+
+/obj/effect/floor_decal/corner/keter/border
+	icon_state = "bordercolor"
+
+/obj/effect/floor_decal/corner/keter/half
+	icon_state = "bordercolorhalf"
+
+/obj/effect/floor_decal/corner/keter/mono
+	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/keter/bordercorner
+	icon_state = "bordercolorcorner"
+
+/obj/effect/floor_decal/corner/keter/bordercorner2
+	icon_state = "bordercolorcorner2"
+
+/obj/effect/floor_decal/corner/keter/borderfull
+	icon_state = "bordercolorfull"
+
+/obj/effect/floor_decal/corner/keter/bordercee
+	icon_state = "bordercolorcee"
+
+/obj/effect/floor_decal/corner/safe
+	name = "safe green corner"
+	color = COLOR_SAFE_GREEN
+
+/obj/effect/floor_decal/corner/safe/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/safe/three_quarters
+	icon_state = "corner_white_three_quarters"
+
+/obj/effect/floor_decal/corner/safe/full
+	icon_state = "corner_white_full"
+
+/obj/effect/floor_decal/corner/safe/border
+	icon_state = "bordercolor"
+
+/obj/effect/floor_decal/corner/safe/half
+	icon_state = "bordercolorhalf"
+
+/obj/effect/floor_decal/corner/safe/mono
+	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/safe/bordercorner
+	icon_state = "bordercolorcorner"
+
+/obj/effect/floor_decal/corner/safe/bordercorner2
+	icon_state = "bordercolorcorner2"
+
+/obj/effect/floor_decal/corner/safe/borderfull
+	icon_state = "bordercolorfull"
+
+/obj/effect/floor_decal/corner/safe/bordercee
+	icon_state = "bordercolorcee"
+
+/obj/effect/floor_decal/corner/euclid
+	name = "euclid yellow corner"
+	color = COLOR_EUCLID_YELLOW
+
+/obj/effect/floor_decal/corner/euclid/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/euclid/three_quarters
+	icon_state = "corner_white_three_quarters"
+
+/obj/effect/floor_decal/corner/euclid/full
+	icon_state = "corner_white_full"
+
+/obj/effect/floor_decal/corner/euclid/border
+	icon_state = "bordercolor"
+
+/obj/effect/floor_decal/corner/euclid/half
+	icon_state = "bordercolorhalf"
+
+/obj/effect/floor_decal/corner/euclid/mono
+	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/euclid/bordercorner
+	icon_state = "bordercolorcorner"
+
+/obj/effect/floor_decal/corner/euclid/bordercorner2
+	icon_state = "bordercolorcorner2"
+
+/obj/effect/floor_decal/corner/euclid/borderfull
+	icon_state = "bordercolorfull"
+
+/obj/effect/floor_decal/corner/euclid/bordercee
 	icon_state = "bordercolorcee"
 
 /obj/effect/floor_decal/corner/pink

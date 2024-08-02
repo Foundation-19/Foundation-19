@@ -20,7 +20,7 @@
 	caliber = CALIBER_PISTOL_SMALL
 	projectile_type = /obj/item/projectile/bullet/pistol/holdout
 	icon_state = "pistol-brass"
-	spent_icon = "pistol-brass-spent"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/small/rubber
 	desc = "A small pistol rubber bullet casing."
@@ -185,6 +185,8 @@
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
+	icon_state = "pistol-brass"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/c9mm/rubber
 	desc = "A 9mm rubber bullet casing."
@@ -225,9 +227,14 @@
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium
 
+/obj/item/ammo_casing/pistol/c45/ap
+	desc = "A .45 armor-piercing bullet casing."
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/ap
+	icon_state = "pistol-brass-ap"
+
 /obj/item/ammo_casing/pistol/c45/practice
 	desc = "A .45 practice bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/practice
+	projectile_type = /obj/item/projectile/bullet/pistol/ap
 	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/c45/rubber
@@ -254,27 +261,28 @@
 	desc = "A 5.7x28mm bullet casing."
 	caliber = "5.7x28mm"
 	projectile_type = /obj/item/projectile/bullet/a57
-	icon_state = "rifle-brass"
+	icon_state = "pistol-brass"
+	spent_icon = "pistol-brass-empty"
 
 /obj/item/ammo_casing/pistol/a57/rubber
 	desc = "A 5.7x28mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/rubber
-	icon_state = "rifle-brass-rubber"
+	icon_state = "pistol-brass-rubber"
 
 /obj/item/ammo_casing/pistol/a57/ap
 	desc = "A 5.7x28mm armor piercing bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/ap
-	icon_state = "rifle-brass-ap"
+	icon_state = "pistol-brass-ap"
 
 /obj/item/ammo_casing/pistol/a57/hp
 	desc = "A 5.7x28mm hollow-point bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/hollowpoint
-	icon_state = "rifle-brass-hollow"
+	icon_state = "pistol-brass-hollow"
 
 /obj/item/ammo_casing/a57/sc
 	desc = "A 5.7x28mm Silver Crescent bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a57/silver
-	icon_state = "rifle-silver"
+	icon_state = "pistol-silver"
 
 /obj/item/ammo_casing/shotgun
 	name = "slug shell"
@@ -374,7 +382,7 @@
 	caliber = "a762nato"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762nato
 	icon_state = "rifle-brass"
-	spent_icon = "rifle-brass-spent"
+	spent_icon = "rifle-brass-empty"
 
 /obj/item/ammo_casing/a145
 	name = "shell casing"

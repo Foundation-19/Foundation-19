@@ -1,6 +1,0 @@
-author: checkraisefold
-delete-after: true
-changes:
-  - bugfix: Orbit menu cancel button now works correctly
-  - bugfix: Orbit menu is no longer extremely long and no longer duplicates its items
-      when opened

@@ -13,11 +13,6 @@
  * SQL sanitization
  */
 
-// Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
-/proc/sanitizeSQL(t as text)
-	var/sqltext = dbcon.Quote(t);
-	return copytext_char(sqltext, 2, length(sqltext));//Quote() adds quotes around input, we already do that
-
 // Adds a prefix to the table parameter, used in SQL to unify all tables under a common prefix, i.e. "tegu__[tablename]"
 /proc/format_table_name(table as text)
 	return "" + table // TODO: Remove hardcoded table prefix, make config entry instead
@@ -159,18 +154,25 @@
 		dat.Cut(length(dat))
 	return jointext(dat, null)
 
-//Returns null if there is any bad text in the string
-/proc/reject_bad_text(text, max_length=512)
-	if(length(text) > max_length)	return			//message too long
+/// Checks the string for bad content (e.g. non-ASCII letters, whitespace only). If it's good, returns the string, otherwise returns null
+/proc/reject_bad_text(text, max_length = 512)
+	if(length(text) > max_length)
+		return			//message too long
 	var/non_whitespace = 0
-	for(var/i=1, i<=length(text), i++)
-		switch(text2ascii(text,i))
-			if(62,60,92,47)	return			//rejects the text if it contains these bad characters: <, >, \ or /
-			if(127 to 255)	return			//rejects non-ASCII letters
-			if(0 to 31)		return			//more weird stuff
-			if(32)			continue		//whitespace
-			else			non_whitespace = 1
-	if(non_whitespace)		return text		//only accepts the text if it has some non-spaces
+	for(var/i = 1, i <= length(text), i++)
+		switch(text2ascii(text, i))
+			if(62, 60, 92, 47)	// <, >, \, and /
+				return
+			if(127 to 255)		// non-ASCII characters
+				return
+			if(0 to 31)			// weird stuff
+				return
+			if(32)				// whitespace
+				continue
+			else
+				non_whitespace = 1
+	if(non_whitespace)	//only accepts the text if it has some non-spaces
+		return text
 
 
 //Old variant. Haven't dared to replace in some places.
@@ -477,7 +479,6 @@
 	t = replacetext(t, "\[raisalogo\]", "<img src = raisa.png>")
 	t = replacetext(t, "\[goclogo\]", "<img src = ungoc.png>")
 	t = replacetext(t, "\[uiulogo\]", "<img src = uiu.png>")
-	t = replacetext(t, "\[thilogo\]", "<img src = thi.png>")
 	t = replacetext(t, "\[mcdlogo\]", "<img src = mcd.png>")
 	t = replacetext(t, "\[grlogo\]", "<img src = gr.png>")
 	t = replacetext(t, "\[arlogo\]", "<img src = ar.png>")
@@ -650,7 +651,6 @@
 	t = replacetext(t, "<img src = trib.png>", "\[triblogo\]")
 	t = replacetext(t, "<img src = ungoc.png>", "\[goclogo\]")
 	t = replacetext(t, "<img src = uiu.png>", "\[uiulogo\]")
-	t = replacetext(t, "<img src = thi.png>", "\[thilogo\]")
 	t = replacetext(t, "<img src = mcd.png>", "\[mcdlogo\]")
 	t = replacetext(t, "<img src = ar.png>", "\[arlogo\]")
 	t = replacetext(t, "<img src = ci.png>", "\[cilogo\]")

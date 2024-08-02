@@ -18,7 +18,7 @@
 		var/delta_x = T.x - position.x
 		var/delta_y = T.y - position.y
 
-		if(abs(delta_x) > 7 || abs(delta_y) > 7)
+		if(abs(delta_x) > 9 || abs(delta_y) > 9)
 			return
 		if(delta_x == 0 && delta_y == 0)
 			return

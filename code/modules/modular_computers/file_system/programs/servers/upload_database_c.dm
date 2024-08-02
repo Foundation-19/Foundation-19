@@ -4,7 +4,7 @@
 	extended_desc = "Allows access to file databases"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "arrowthickstop-1-s"
+	program_menu_icon = "file-download"
 	size = 2
 	requires_ntnet = TRUE
 	requires_ntnet_feature = NTNET_PEERTOPEER
@@ -89,7 +89,7 @@
 
 	if(remote)
 		data["remote_name"] = remote.server_name
-		data["remote_uid"] = remote.unique_token
+		data["remote_uid"] = remote.computer.network_card.identification_id
 		data["files"] = list()
 		for(var/datum/computer_file/F in available_files)
 			data["files"] += list(list(
@@ -101,7 +101,7 @@
 		data["servers"] = list()
 		for(var/datum/computer_file/program/upload_database/P in ntnet_global.fileservers)
 			data["servers"] += list(list(
-				"uid" = P.unique_token,
+				"uid" = P.computer.network_card.identification_id,
 				"name" = P.server_name
 			))
 
@@ -127,7 +127,7 @@
 		if("PRG_connect_to_server")
 			var/datum/computer_file/program/upload_database/new_remote
 			for(var/datum/computer_file/program/upload_database/P in ntnet_global.fileservers)
-				if(P.unique_token == text2num(params["uid"]))
+				if(P.computer.network_card.identification_id == text2num(params["uid"]))
 					new_remote = P
 					break
 			if(!new_remote || !new_remote.hosting)

@@ -155,8 +155,11 @@
 		. = FALSE
 	else if(autofiring_by.get_active_hand() != src || autofiring_by.incapacitated())
 		. = FALSE
-	else if(!autofiring_by.client || !(autofiring_by in view(autofiring_by.client.view, autofiring_by)))
+	else if(!autofiring_by.client)
 		. = FALSE
+	else if(autofiring_by.client)
+		var/view_size = getviewsize(autofiring_by.client.view)
+		. = (autofiring_at in view(max(view_size[1], view_size[2]), autofiring_by))
 	if(!.)
 		clear_autofire()
 	else if(can_autofire())
@@ -555,8 +558,11 @@
 /obj/item/gun/proc/toggle_scope(mob/user, zoom_amount=2.0)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
-	var/zoom_offset = round(world.view * zoom_amount)
-	var/view_size = round(world.view + zoom_amount)
+	var/default_view = getviewsize(config.default_view_square)
+	default_view = max(default_view[1], default_view[2])
+
+	var/zoom_offset = round(default_view * zoom_amount)
+	var/view_size = round(default_view + zoom_amount)
 
 	if(zoom)
 		unzoom(user)

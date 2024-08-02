@@ -2,6 +2,7 @@
 	filename = "taxquickly"
 	filedesc = "TaxQuickly 1.45b"
 	program_icon_state = "uplink"
+	program_menu_icon = "file-invoice-dollar"
 	extended_desc = "An online tax filing software. It is a few years out of date."
 	size = 0 // it is cloud based
 	requires_ntnet = FALSE
