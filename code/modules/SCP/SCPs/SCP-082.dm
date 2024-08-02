@@ -257,7 +257,7 @@
 				total_damage_taken += min(external.brute_dam + external.burn_dam, external.max_damage)
 			// At full HP: Reaches 0% at 300 ticks (600s), 50% at 539 (1078s), 100% at 700 (1400s)
 			// The minimum time to go into hungering state decreases the more damage SCP-082 takes
-			// https://www.desmos.com/calculator/9oeevh7gii
+			// https://www.desmos.com/calculator/9m2joerhjc
 			hunger_prob = ((0.0005 * ((non_hunger_ticks + (300 * (total_damage_taken / practical_max_health))) ** 2)) - 45) * 0.5
 			non_hunger_ticks++
 
