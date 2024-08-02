@@ -65,14 +65,14 @@
 "au" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Emergency Armor Locker";
 	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "armor1";
 	icon_closed = "armor";
+	icon_locked = "armor1";
 	icon_off = "armoroff";
 	icon_opened = "gunopen";
-	icon_state = "armor1"
+	icon_state = "armor1";
+	name = "Emergency Armor Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
@@ -187,9 +187,9 @@
 	color = "#6a97b0"
 	},
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door";
-	icon_state = "pdoor0"
+	name = "Entrance Zone Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -209,9 +209,9 @@
 	color = "#a2819e"
 	},
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door";
-	icon_state = "pdoor0"
+	name = "Entrance Zone Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -777,10 +777,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/blast/shutters/open{
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble";
 	dir = 4;
-	icon_state = "shutter0"
+	icon_state = "shutter0";
+	id_tag = "UEZ Checkpoint Bubble";
+	name = "North EZ Checkpoint Bubble"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -809,9 +809,9 @@
 /area/site53/upper_surface/commstower)
 "cd" = (
 /obj/machinery/door/blast/shutters/open{
+	icon_state = "shutter0";
 	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble";
-	icon_state = "shutter0"
+	name = "North EZ Checkpoint Bubble"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -825,9 +825,9 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters/open{
+	icon_state = "shutter0";
 	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble";
-	icon_state = "shutter0"
+	name = "North EZ Checkpoint Bubble"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/securitypost)
@@ -849,9 +849,9 @@
 "ch" = (
 /obj/effect/floor_decal/industrial/hatch/orange,
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door";
-	icon_state = "pdoor0"
+	name = "Entrance Zone Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -867,9 +867,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door";
-	icon_state = "pdoor0"
+	name = "Entrance Zone Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -885,9 +885,9 @@
 	color = "#a2819e"
 	},
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door";
-	icon_state = "pdoor0"
+	name = "Entrance Zone Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -907,14 +907,14 @@
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Checkpoint East";
 	name = "EZ Checkpoint East";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 7
+	pixel_y = 7;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Checkpoint West";
 	name = "EZ Checkpoint West";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = -2
+	pixel_y = -2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/reinforced,
@@ -961,20 +961,20 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/standard,
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "gatea";
 	name = "Gate A Checkpoint Doors Control";
+	pixel_x = -5;
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 4;
-	pixel_x = -5
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "gateawind";
 	name = "Gate A Checkpoint Windows Control";
+	pixel_x = 4;
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 4;
-	pixel_x = 4
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway2)
@@ -1011,14 +1011,14 @@
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Checkpoint Staircase";
 	name = "EZ Checkpoint Staircase";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 7
+	pixel_y = 7;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "EZ Security Maintenance Hatch";
 	name = "EZ Security Maintenance Hatch";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = -2
+	pixel_y = -2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/cable/green{
@@ -1168,11 +1168,11 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/boombox,
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "security locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1185,11 +1185,11 @@
 "cP" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "confiscated items locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1257,11 +1257,11 @@
 /area/site53/medical/exam_room)
 "da" = (
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "security locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -1287,8 +1287,8 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/machinery/camera/network/entrance{
-	dir = 8;
-	c_tag = "Gate A Security Office"
+	c_tag = "Gate A Security Office";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway2)
@@ -1523,14 +1523,14 @@
 /obj/machinery/button/blast_door{
 	id_tag = "UEZ Checkpoint Bubble";
 	name = "UEZ Checkpoint Bubble";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 7
+	pixel_y = 7;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ECZ Security Lockdown";
 	name = "ECZ Security Lockdown";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = -2
+	pixel_y = -2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/securitypost)
@@ -1679,8 +1679,8 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/detailed{
-	name = "GATE B";
 	dir = 4;
+	name = "GATE B";
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -1800,16 +1800,17 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/infirmreception)
 "eo" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/paint_stripe/gray,
+/turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/scp173)
 "ep" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+	dir = 9
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "eq" = (
@@ -2271,10 +2272,10 @@
 /area/site53/upper_surface/breachshelter)
 "fG" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "EZ Checkpoint Access";
-	name = "North EZ Checkpoint Access";
+	dir = 4;
 	icon_state = "pdoor0";
-	dir = 4
+	id_tag = "EZ Checkpoint Access";
+	name = "North EZ Checkpoint Access"
 	},
 /obj/machinery/door/airlock/glass/security{
 	name = "North EZ Checkpoint Office";
@@ -2959,10 +2960,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "hG" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
 	},
-/turf/simulated/open,
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight/lamp,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "hH" = (
 /obj/machinery/vitals_monitor,
@@ -3368,11 +3371,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/alternate/door/bolts{
+	dir = 4;
 	id_tag = "EZ Security Maintenance Hatch";
 	name = "EZ Security Maintenance Hatch";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 4;
-	pixel_x = -25
+	pixel_x = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/maintenance/surfacewest)
@@ -3675,14 +3678,7 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/medical/chemistry)
 "jp" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/machinery/camera/network/scp173{
-	c_tag = "SCP-173 Preperations Room Overlook";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/open,
 /area/site53/ulcz/scp173)
 "jq" = (
 /obj/machinery/optable,
@@ -4533,19 +4529,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "lt" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
-	},
-/obj/structure/table/reinforced,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/machinery/light{
-	dir = 8
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/open,
 /area/site53/ulcz/scp173)
 "lu" = (
 /obj/effect/paint_stripe/paleblue,
@@ -4635,9 +4622,9 @@
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 2;
+	icon_state = "pdoor0";
 	id_tag = "EZ Checkpoint South";
-	name = "South Checkpoint Blast Door";
-	icon_state = "pdoor0"
+	name = "South Checkpoint Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#ceb689"
@@ -4647,8 +4634,8 @@
 "lO" = (
 /obj/machinery/door/airlock/multi_tile/glass/security{
 	dir = 1;
-	req_access = list("ACCESS_SECURITY_LEVEL1");
-	name = "Security Control Center"
+	name = "Security Control Center";
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/breachshelter)
@@ -4711,10 +4698,11 @@
 /area/quartermaster/hangar)
 "mg" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
+	dir = 8
 	},
-/obj/structure/table/reinforced,
-/obj/item/device/flashlight/lamp,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "mi" = (
@@ -4787,10 +4775,10 @@
 /area/site53/entrancezone/hallway)
 "my" = (
 /obj/machinery/door/blast/shutters/open{
-	id_tag = "UEZ Checkpoint Bubble";
-	name = "North EZ Checkpoint Bubble";
 	dir = 4;
-	icon_state = "shutter0"
+	icon_state = "shutter0";
+	id_tag = "UEZ Checkpoint Bubble";
+	name = "North EZ Checkpoint Bubble"
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -5054,14 +5042,14 @@
 "nH" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Small Armnaments Locker";
 	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "tactical1";
 	icon_closed = "tactical";
+	icon_locked = "tactical1";
 	icon_off = "tacticaloff";
 	icon_opened = "gunopen";
-	icon_state = "tactical1"
+	icon_state = "tactical1";
+	name = "Small Armnaments Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/item/ammo_magazine/scp/m1911,
 /obj/item/ammo_magazine/scp/m1911,
@@ -5081,13 +5069,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/roboticsupr)
 "nN" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Window Shutters";
+/obj/structure/bed/chair/office/comfy/black{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "nO" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -5129,19 +5114,21 @@
 /area/site53/medical/mentalhealth/isolation)
 "nV" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 9
+	dir = 4
 	},
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "nY" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light,
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "security locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -5263,11 +5250,11 @@
 	dir = 4
 	},
 /obj/machinery/button/blast_door{
+	dir = 8;
 	id_tag = "BreachShelter";
 	name = "Breach Shelter Entrance Doors Control";
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL1");
-	dir = 8
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -5369,10 +5356,10 @@
 	},
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
-	id_tag = "BreachSecurity";
-	name = "Breach Shelter Security Station Lockdown";
+	dir = 4;
 	icon_state = "shutter0";
-	dir = 4
+	id_tag = "BreachSecurity";
+	name = "Breach Shelter Security Station Lockdown"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -5475,13 +5462,13 @@
 /turf/unsimulated/mineral,
 /area/site53/surface/surface/west)
 "oV" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Shutters"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor,
 /area/site53/ulcz/scp173)
 "oX" = (
 /obj/structure/railing/mapped,
@@ -5652,10 +5639,10 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	begins_closed = 0;
-	id_tag = "BreachSecurity";
-	name = "Breach Shelter Security Station Lockdown";
+	dir = 4;
 	icon_state = "shutter0";
-	dir = 4
+	id_tag = "BreachSecurity";
+	name = "Breach Shelter Security Station Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/breachshelter)
@@ -5732,14 +5719,8 @@
 /turf/simulated/wall/prepainted,
 /area/site53/medical/infirmreception)
 "pU" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
@@ -5809,10 +5790,10 @@
 /area/site53/uez/bridge)
 "qh" = (
 /obj/machinery/door/blast/regular/open{
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "commtower";
-	name = "Communications Tower Lockdown Blast Door";
-	dir = 4
+	name = "Communications Tower Lockdown Blast Door"
 	},
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -6147,13 +6128,6 @@
 /turf/simulated/floor/wood/ebony,
 /area/site53/uez/repoffice/ethics)
 "rB" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 9
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier{
-	pixel_y = 4
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "rC" = (
@@ -6243,8 +6217,8 @@
 "rQ" = (
 /obj/machinery/camera/autoname{
 	c_tag = "Comms Tower External North";
-	network = list("Entrance Zone Network");
-	dir = 1
+	dir = 1;
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface/west)
@@ -6275,14 +6249,14 @@
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/blast_door{
-	name = "EZ Checkpoint North";
 	id_tag = "EZ Checkpoint North";
+	name = "EZ Checkpoint North";
 	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	pixel_y = -2;
 	id_tag = "EZ Checkpoint South";
-	name = "EZ Checkpoint South"
+	name = "EZ Checkpoint South";
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
@@ -6364,16 +6338,11 @@
 /area/site53/entrancezone/hallway)
 "sh" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 6
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Window Control";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"));
-	dir = 8;
-	pixel_x = 25
+	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/item/device/camera,
+/obj/item/device/camera_film,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "si" = (
@@ -6587,11 +6556,11 @@
 "tc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
+	dir = 8;
 	id_tag = "BreachSecurity";
 	name = "Security Station Lockdown Control";
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL1");
-	dir = 8
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -6731,10 +6700,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/blast/regular/open{
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door";
-	dir = 4
+	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -6880,10 +6849,10 @@
 "uP" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
-	id_tag = "South EZ Checkpoint Bubble";
-	name = "South EZ Checkpoint Bubble";
 	dir = 4;
-	icon_state = "shutter0"
+	icon_state = "shutter0";
+	id_tag = "South EZ Checkpoint Bubble";
+	name = "South EZ Checkpoint Bubble"
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
@@ -6946,9 +6915,9 @@
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 2;
+	icon_state = "pdoor0";
 	id_tag = "EZ Checkpoint North";
-	name = "North Checkpoint Blast Door";
-	icon_state = "pdoor0"
+	name = "North Checkpoint Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -6962,9 +6931,9 @@
 /obj/machinery/door/blast/regular{
 	begins_closed = 0;
 	dir = 2;
+	icon_state = "pdoor0";
 	id_tag = "EZ Checkpoint North";
-	name = "North Checkpoint Blast Door";
-	icon_state = "pdoor0"
+	name = "North Checkpoint Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/dark/small,
@@ -7033,9 +7002,9 @@
 "vj" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/camera/autoname{
+	c_tag = "Entrance Zone Security post 2";
 	dir = 4;
-	network = list("Entrance Zone Network");
-	c_tag = "Entrance Zone Security post 2"
+	network = list("Entrance Zone Network")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
@@ -7267,11 +7236,11 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "wf" = (
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "security locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -7364,18 +7333,18 @@
 "wF" = (
 /obj/structure/table/standard,
 /obj/machinery/door/window/brigdoor/northleft{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 4
+	dir = 4;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/window/brigdoor/southright{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	dir = 8
+	dir = 8;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/machinery/door/blast/shutters/open{
-	id_tag = "South EZ Checkpoint Bubble";
-	name = "South EZ Checkpoint Bubble";
 	dir = 4;
-	icon_state = "shutter0"
+	icon_state = "shutter0";
+	id_tag = "South EZ Checkpoint Bubble";
+	name = "South EZ Checkpoint Bubble"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -7410,11 +7379,19 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
 /obj/structure/table/reinforced,
-/obj/item/device/radio,
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173";
+	name = "SCP-173 Containment Chamber Access Control";
+	pixel_y = 7;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Control";
+	pixel_y = -2;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "wS" = (
@@ -7702,10 +7679,10 @@
 /area/site53/medical/infirmary)
 "yr" = (
 /obj/machinery/door/blast/regular/open{
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door";
-	dir = 4
+	name = "Exterior Lockdown Blast Door"
 	},
 /obj/effect/floor_decal/industrial/hatch{
 	color = "#b19664"
@@ -7968,7 +7945,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/surgery/hall)
 "zn" = (
-/turf/simulated/open,
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Shutters"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
 /area/site53/ulcz/scp173)
 "zo" = (
 /obj/effect/floor_decal/corner/green/mono,
@@ -8040,8 +8023,8 @@
 /obj/structure/table/standard,
 /obj/machinery/recharger,
 /obj/machinery/camera/network/entrance{
-	dir = 1;
-	c_tag = "Gate B Security Office"
+	c_tag = "Gate B Security Office";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/upper_surface/entrancehallway)
@@ -8142,9 +8125,9 @@
 /area/site53/medical/surgery/op2)
 "zW" = (
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "EZ Checkpoint Bubble 2";
-	name = "South EZ Checkpoint Access";
-	icon_state = "pdoor0"
+	name = "South EZ Checkpoint Access"
 	},
 /obj/machinery/door/airlock/glass/security{
 	name = "South EZ Checkpoint Office";
@@ -8155,8 +8138,8 @@
 "zX" = (
 /obj/effect/paint_stripe/blue,
 /obj/structure/sign/warning/detailed{
-	name = "GATE B";
-	dir = 8
+	dir = 8;
+	name = "GATE B"
 	},
 /turf/simulated/wall/r_titanium,
 /area/site53/entrancezone/hallway)
@@ -8310,14 +8293,10 @@
 /area/site53/uez/goirepoffice)
 "AB" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/device/flashlight,
-/obj/item/device/flashlight,
-/obj/item/device/flashlight,
-/obj/item/device/flashlight,
-/obj/item/device/flashlight,
+/obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "AC" = (
@@ -8391,9 +8370,14 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/infirmary)
 "AR" = (
-/obj/structure/bed/chair/office/comfy/black{
-	dir = 4
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
 	},
+/obj/machinery/photocopier/faxmachine{
+	department = "SCP-173 Containment Chamber";
+	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "AS" = (
@@ -8492,9 +8476,9 @@
 "Bl" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
+	dir = 4;
 	id_tag = "goirep";
-	name = "Privacy Shutters";
-	dir = 4
+	name = "Privacy Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/goirepoffice)
@@ -8592,8 +8576,8 @@
 "BH" = (
 /obj/effect/paint_stripe/mauve,
 /obj/structure/sign/warning/detailed{
-	name = "GATE B";
-	dir = 8
+	dir = 8;
+	name = "GATE B"
 	},
 /turf/simulated/wall/r_titanium,
 /area/site53/entrancezone/hallway)
@@ -8664,8 +8648,8 @@
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen{
-	pixel_y = 2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/logistics/logisticsbreak)
@@ -8731,13 +8715,8 @@
 /turf/simulated/floor/wood/maple,
 /area/site53/surface/surface/east)
 "Co" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
-	},
-/turf/simulated/floor,
+/obj/effect/floor_decal/corner/yellow/border,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Cp" = (
 /obj/machinery/hologram/holopad,
@@ -8771,21 +8750,30 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/commstower)
 "Cs" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
+	dir = 6
 	},
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "SCP173Window";
+	name = "SCP-173 Cell Observation Window Control";
+	pixel_x = 25;
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Ct" = (
-/obj/effect/floor_decal/corner/yellow/bordercorner{
-	dir = 4
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/machinery/door/airlock/science{
+	name = "SCP-173 Observation";
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp173)
 "Cv" = (
 /obj/effect/floor_decal/corner/yellow/border{
@@ -8809,10 +8797,13 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway2)
 "CA" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor,
 /area/site53/ulcz/scp173)
 "CC" = (
 /obj/effect/paint_stripe/paleblue,
@@ -8861,10 +8852,8 @@
 /area/site53/entrancezone/hallway)
 "CK" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
+	dir = 9
 	},
-/obj/structure/table/reinforced,
-/obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "CO" = (
@@ -8956,14 +8945,14 @@
 "Ds" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Emergency Armor Locker";
 	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "armor1";
 	icon_closed = "armor";
+	icon_locked = "armor1";
 	icon_off = "armoroff";
 	icon_opened = "gunopen";
-	icon_state = "armor1"
+	icon_state = "armor1";
+	name = "Emergency Armor Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
@@ -9030,8 +9019,8 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "DF" = (
 /obj/machinery/door/airlock/glass/command{
-	req_access = list("ACCESS_ADMIN_LEVEL3");
-	name = "Executive Section"
+	name = "Executive Section";
+	req_access = list("ACCESS_ADMIN_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/upper_surface/breachshelter)
@@ -9329,14 +9318,14 @@
 "Fg" = (
 /obj/effect/floor_decal/corner/red/mono,
 /obj/structure/closet/secure_closet{
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	name = "Small Armnaments Locker";
 	icon = 'icons/obj/sec-lockers_new.dmi';
-	icon_locked = "tactical1";
 	icon_closed = "tactical";
+	icon_locked = "tactical1";
 	icon_off = "tacticaloff";
 	icon_opened = "gunopen";
-	icon_state = "tactical1"
+	icon_state = "tactical1";
+	name = "Small Armnaments Locker";
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/item/ammo_magazine/scp/m1911,
 /obj/item/ammo_magazine/scp/m1911,
@@ -9528,6 +9517,9 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
 "Gf" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Gg" = (
@@ -9629,12 +9621,13 @@
 /turf/simulated/floor/tiled,
 /area/site53/reswing/roboticsupr)
 "Gy" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
+	dir = 5
 	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Gz" = (
@@ -9671,10 +9664,10 @@
 /area/site53/logistics/logisticsbreak)
 "GI" = (
 /obj/machinery/door/blast/regular/open{
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "facilitylockdown";
-	name = "Exterior Lockdown Blast Door";
-	dir = 4
+	name = "Exterior Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -9916,9 +9909,9 @@
 "HD" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
+	dir = 4;
 	id_tag = "gateawind";
-	name = "Gate A Checkpoint Window Shutters";
-	dir = 4
+	name = "Gate A Checkpoint Window Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/site53/upper_surface/entrancehallway2)
@@ -10074,21 +10067,26 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/item/boombox,
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "security locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/entrancezone/hallway)
 "Ir" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
+/obj/structure/railing/mapped{
+	dir = 4
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Is" = (
@@ -10314,8 +10312,8 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen{
-	pixel_y = 2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logisticsbreak)
@@ -10345,8 +10343,14 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/quartermaster/hangar)
 "JP" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/scp173{
+	c_tag = "SCP-173 Preperations Room Overlook";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "JQ" = (
 /obj/structure/railing/mapped{
@@ -10414,8 +10418,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "ethicsrep";
 	name = "Privacy Shutters Control";
-	req_access = list("ACCESS_SECURITY_LEVEL2");
-	pixel_y = 2
+	pixel_y = 2;
+	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -10580,16 +10584,15 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/mentalhealth/office)
 "KI" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
+/obj/structure/railing/mapped{
+	dir = 4
 	},
-/obj/machinery/door/airlock/science{
-	name = "SCP-173 Observation";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "KM" = (
 /obj/machinery/organ_printer/flesh/mapped{
@@ -10782,9 +10785,9 @@
 /area/site53/uez/repoffice/ethics)
 "LQ" = (
 /obj/machinery/computer/rdconsole/robotics{
-	req_access = list();
 	dir = 8;
-	name = "upper robotics fabrication console"
+	name = "upper robotics fabrication console";
+	req_access = list()
 	},
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -10945,9 +10948,9 @@
 "My" = (
 /obj/effect/paint_stripe/yellow,
 /obj/structure/sign/warning/detailed{
+	dir = 4;
 	name = "GATE B";
-	pixel_x = 0;
-	dir = 4
+	pixel_x = 0
 	},
 /turf/simulated/wall/r_titanium,
 /area/site53/upper_surface/entrancehallway)
@@ -11080,10 +11083,9 @@
 /area/site53/surface/surface/west)
 "Ng" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
+	dir = 8
 	},
 /obj/structure/flora/pottedplant/minitree,
-/obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Nh" = (
@@ -11188,12 +11190,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/roboticsupr)
 "NO" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 4
 	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/radio,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "NP" = (
@@ -11235,9 +11239,9 @@
 "Ob" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
+	icon_state = "shutter0";
 	id_tag = "South EZ Checkpoint Bubble";
-	name = "South EZ Checkpoint Bubble";
-	icon_state = "shutter0"
+	name = "South EZ Checkpoint Bubble"
 	},
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
@@ -11337,11 +11341,14 @@
 /area/site53/uez/bridge)
 "OD" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
+	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/structure/table/reinforced,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/obj/item/crowbar,
+/obj/item/crowbar,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "OF" = (
@@ -11440,13 +11447,9 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/hallway)
 "OZ" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 4
 	},
-/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Pa" = (
@@ -11461,22 +11464,26 @@
 /area/site53/surface/surface/east)
 "Pc" = (
 /obj/machinery/button/blast_door{
+	dir = 4;
 	id_tag = "goirep";
 	name = "Privacy Shutters Control";
-	pixel_x = -25;
-	dir = 4
+	pixel_x = -25
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/uez/goirepoffice)
 "Pd" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/obj/machinery/light,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Pi" = (
 /obj/machinery/door/airlock/multi_tile/glass/science{
-	name = "Mechanical Laboratory";
 	dir = 4;
+	name = "Mechanical Laboratory";
 	req_access = list("ACCESS_MEDICAL_LEVEL1")
 	},
 /obj/structure/cable/green{
@@ -11511,14 +11518,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
 "Pp" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 10
+	dir = 5
 	},
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-173 Containment Chamber";
-	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
-	},
-/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Pq" = (
@@ -11757,8 +11763,14 @@
 /area/site53/lowertrams/restaurantkitchenarea)
 "Qp" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 6
+	dir = 8
 	},
+/obj/structure/table/reinforced,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
+/obj/item/device/flashlight,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Qq" = (
@@ -11801,7 +11813,7 @@
 /area/site53/uez/janitor)
 "Qx" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
@@ -11854,11 +11866,11 @@
 "QI" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
+	dir = 8;
 	id_tag = "BreachShelter";
 	name = "Breach Shelter Entrance Doors Control";
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL1");
-	dir = 8
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -12035,14 +12047,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/isolation)
 "RB" = (
-/obj/structure/railing/mapped{
-	dir = 1
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 5
-	},
-/obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/open,
 /area/site53/ulcz/scp173)
 "RC" = (
 /obj/structure/table/standard,
@@ -12313,7 +12321,16 @@
 /area/site53/upper_surface/entrancehallway2)
 "SJ" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/item/device/radio,
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
@@ -12381,8 +12398,9 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Tc" = (
@@ -12548,8 +12566,8 @@
 /area/site53/upper_surface/entrancehallway2)
 "TU" = (
 /obj/machinery/door/airlock/multi_tile/glass/mining{
-	req_access = list("ACCESS_ADMIN_LEVEL1");
-	name = "Logistics Department"
+	name = "Logistics Department";
+	req_access = list("ACCESS_ADMIN_LEVEL1")
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/logistics/logisticsbreak)
@@ -12600,8 +12618,8 @@
 	name = "Customs rubber stamp"
 	},
 /obj/item/modular_computer/telescreen/preset/generic{
-	pixel_y = 25;
-	pixel_x = 0
+	pixel_x = 0;
+	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/logistics/logisticsbreak)
@@ -12690,8 +12708,8 @@
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/button/blast_door{
-	name = "UEZ Checkpoint Bubble 2";
 	id_tag = "UEZ Checkpoint Bubble 2";
+	name = "UEZ Checkpoint Bubble 2";
 	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/dark,
@@ -12828,11 +12846,11 @@
 "Ve" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "security locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -13007,10 +13025,9 @@
 /area/site53/engineering/maintenance/maintenancetunnel)
 "VV" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 6
+	dir = 10
 	},
 /obj/structure/flora/pottedplant/minitree,
-/obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "VW" = (
@@ -13040,11 +13057,11 @@
 "We" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/closet/secure_closet{
-	icon_state = "sec1";
-	icon_opened = "secopen";
-	icon_off = "secoff";
-	icon_locked = "sec1";
 	icon_closed = "sec";
+	icon_locked = "sec1";
+	icon_off = "secoff";
+	icon_opened = "secopen";
+	icon_state = "sec1";
 	name = "confiscated items locker";
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
@@ -13064,12 +13081,8 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/upper_surface/commstower)
 "Wj" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/device/camera,
-/obj/item/device/camera_film,
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Wl" = (
@@ -13115,10 +13128,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/chemistry)
 "Wy" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
 	},
-/turf/simulated/open,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Wz" = (
 /obj/structure/bed/chair{
@@ -13202,8 +13215,8 @@
 "WS" = (
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/structure/sign/warning/detailed{
-	name = "GATE A";
 	dir = 1;
+	name = "GATE A";
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -13249,8 +13262,12 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/surface/surface/east)
 "WZ" = (
-/obj/effect/floor_decal/corner/yellow/border,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "SCP173Lock";
+	name = "SCP-173 Emergency Lockdown Blast Door"
+	},
+/turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp173)
 "Xb" = (
 /obj/structure/cable/green{
@@ -13368,13 +13385,10 @@
 /turf/simulated/floor/grass,
 /area/site53/medical/mentalhealth/office)
 "XJ" = (
-/obj/machinery/door/blast/shutters/open{
-	id_tag = "SCP173Window";
-	name = "SCP-173 Cell Observation Window Shutters";
-	dir = 4
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
 	},
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "XK" = (
 /obj/machinery/vending/coffee{
@@ -13438,9 +13452,9 @@
 	color = "#6a97b0"
 	},
 /obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
 	id_tag = "ECZ Security Lockdown";
-	name = "Entrance Zone Lockdown Blast Door";
-	icon_state = "pdoor0"
+	name = "Entrance Zone Lockdown Blast Door"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/entrancezone/hallway)
@@ -13559,14 +13573,10 @@
 /area/site53/medical/chemistry)
 "Yw" = (
 /obj/effect/floor_decal/corner/yellow/border{
-	dir = 8
+	dir = 10
 	},
-/obj/structure/table/reinforced,
-/obj/item/crowbar,
-/obj/item/crowbar,
-/obj/item/crowbar,
-/obj/item/crowbar,
-/obj/item/crowbar,
+/obj/structure/flora/pottedplant/minitree,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 "Yx" = (
@@ -13590,8 +13600,8 @@
 	dir = 4
 	},
 /obj/structure/sign/warning/detailed{
-	name = "GATE B";
 	dir = 8;
+	name = "GATE B";
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -13783,21 +13793,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/engineering/maintenance/maintenancetunnel)
 "Zl" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	id_tag = "SCP173";
-	name = "SCP-173 Containment Chamber Access Control";
-	pixel_y = 7;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Control";
-	pixel_y = -2;
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"))
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
@@ -13855,9 +13855,9 @@
 "Zv" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
+	dir = 4;
 	id_tag = "ethicsrep";
-	name = "Privacy Shutters";
-	dir = 4
+	name = "Privacy Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/repoffice/ethics)
@@ -13969,12 +13969,12 @@
 /turf/simulated/floor/wood/walnut,
 /area/site53/medical/exam_room)
 "ZZ" = (
-/obj/machinery/door/blast/regular/open{
-	icon_state = "pdoor0";
-	id_tag = "SCP173Lock";
-	name = "SCP-173 Emergency Lockdown Blast Door"
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
 	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/structure/flora/pottedplant/minitree,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp173)
 
 (1,1,1) = {"
@@ -14295,15 +14295,15 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
 dA
 dA
 dA
@@ -14552,24 +14552,24 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+eo
+ep
+mg
+pU
+pU
+pU
+mg
+AR
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
 dA
 dA
 dA
@@ -14809,38 +14809,38 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
+eo
+gA
+nN
+rB
+rB
+nN
+rB
+Co
+Ct
+CK
+mg
 JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
+Ng
+OD
+Qp
+SJ
+VV
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -15066,47 +15066,47 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
+eo
+hG
+nV
+sh
+wR
+nV
+AB
+Cs
+CA
+Gf
 rB
-oV
-Qx
-Qx
-Qx
-oV
-Pp
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
+rB
+rB
+rB
+rB
+rB
+Co
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -15323,47 +15323,47 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-gA
-AR
-Gf
-Gf
-AR
-Gf
-WZ
-KI
-nV
+eo
+eo
 oV
-jp
-ep
-Yw
-AB
-lt
-Ir
-JP
+oV
+zn
+zn
+zn
+eo
+eo
+Gf
+rB
+nN
+rB
+rB
+rB
+rB
+Co
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -15580,47 +15580,47 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-CK
-Ta
+eo
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+eo
+Gy
+Ir
+KI
+NO
+OZ
+rB
+rB
 Wj
-Zl
-Ta
-mg
-sh
-Co
-CA
-Gf
-Gf
-Gf
-Gf
-Gf
-Gf
-WZ
-JP
+eo
+eo
+eo
+eo
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -15837,47 +15837,47 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-JP
-nN
-nN
-XJ
-XJ
-XJ
-JP
-JP
+eo
+lt
+jp
+jp
+jp
+jp
+jp
+jp
+eo
+jp
+jp
+jp
+jp
+Pd
+rB
+rB
+Co
 CA
-Gf
-AR
-Gf
-Gf
-Gf
-Gf
-WZ
-JP
+CK
+pU
+Yw
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -16094,51 +16094,51 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-JP
-OZ
-pU
-Cs
-wR
+eo
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+Pp
+Qx
+Ta
+Wy
 Ct
 Gf
-Gf
-Pd
-JP
-JP
-JP
-JP
-JP
+rB
+Zl
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -16351,51 +16351,51 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-Wy
-zn
-zn
-zn
-zn
-zn
-zn
-JP
-zn
-zn
-zn
-zn
-Gy
+eo
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+eo
+eo
+eo
+eo
+eo
 Gf
-Gf
-WZ
+rB
 Co
-nV
-Qx
-Ng
-JP
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -16608,51 +16608,51 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
+eo
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+eo
 RB
-SJ
-OD
-Qp
-KI
-CA
-Gf
-NO
-JP
+rB
+rB
+WZ
+XJ
+Qx
+ZZ
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -16865,6 +16865,28 @@ dA
 dA
 dA
 dA
+eo
+lt
+jp
+jp
+jp
+jp
+jp
+jp
+eo
+jp
+jp
+jp
+jp
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
 dA
 dA
 dA
@@ -16888,28 +16910,6 @@ dA
 dA
 dA
 dA
-JP
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-JP
-JP
-JP
-JP
-JP
-CA
-Gf
-WZ
-JP
 dA
 dA
 dA
@@ -17122,51 +17122,51 @@ dA
 dA
 dA
 dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-dA
-JP
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-JP
-hG
-Gf
-Gf
-ZZ
 eo
-SJ
-VV
-JP
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+eo
+jp
+jp
+jp
+jp
+eo
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -17379,6 +17379,20 @@ dA
 dA
 dA
 dA
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+eo
+lt
+jp
+jp
+jp
+eo
 dA
 dA
 dA
@@ -17402,28 +17416,14 @@ dA
 dA
 dA
 dA
-JP
-Wy
-zn
-zn
-zn
-zn
-zn
-zn
-JP
-zn
-zn
-zn
-zn
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -17644,6 +17644,12 @@ dA
 dA
 dA
 dA
+eo
+jp
+jp
+jp
+jp
+eo
 dA
 dA
 dA
@@ -17659,20 +17665,14 @@ dA
 dA
 dA
 dA
-JP
-zn
-zn
-zn
-zn
-zn
-zn
-zn
-JP
-zn
-zn
-zn
-zn
-JP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -17901,6 +17901,12 @@ dA
 dA
 dA
 dA
+eo
+eo
+eo
+eo
+eo
+eo
 dA
 dA
 dA
@@ -17916,20 +17922,14 @@ dA
 dA
 dA
 dA
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-JP
-Wy
-zn
-zn
-zn
-JP
+dA
+dA
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -18181,12 +18181,12 @@ dA
 dA
 dA
 dA
-JP
-zn
-zn
-zn
-zn
-JP
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
@@ -18438,12 +18438,12 @@ dA
 dA
 dA
 dA
-JP
-JP
-JP
-JP
-JP
-JP
+dA
+dA
+dA
+dA
+dA
+dA
 dA
 dA
 dA
