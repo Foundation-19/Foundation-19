@@ -226,9 +226,13 @@
 	to_chat(src, SPAN_WARNING("A proper hunger. You feel the need to <b>feast</b>."))
 	hungering = TRUE
 	queue_icon_update()
+	addtimer(CALLBACK(src, PROC_REF(stop_hunger), TRUE), 2 MINUTES)
 
-/mob/living/carbon/human/scp082/proc/stop_hunger()
-	to_chat(src, SPAN_WARNING("You feel sated. Your hunger recedes."))
+/mob/living/carbon/human/scp082/proc/stop_hunger(time = FALSE)
+	if(time)
+		to_chat(src, SPAN_WARNING("Your hunger passes."))
+	else
+		to_chat(src, SPAN_WARNING("You feel sated. Your hunger recedes."))
 	hungering = FALSE
 	var/total_damage_taken = 0
 	for(var/obj/item/organ/external/external in organs)
