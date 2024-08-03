@@ -21,6 +21,10 @@
 	var/item_state = null // Used to specify the item state for the on-mob overlays.
 	var/does_spin = TRUE // Does the atom spin when thrown (of course it does :P)
 	var/datum/orbit/orbiting = null
+	/// How many pixels on the X axis to offset any generated floating messages when this is the holder
+	var/floating_message_pixel_x_offset = 0
+	/// How many pixels on the Y axis to offset any generated floating messages when this is the holder
+	var/floating_message_pixel_y_offset = 0
 
 /atom/movable/Destroy()
 	if(!(atom_flags & ATOM_FLAG_INITIALIZED))

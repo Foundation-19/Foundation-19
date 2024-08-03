@@ -75,6 +75,8 @@ var/global/list/floating_chat_colors = list()
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	I.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	I.pixel_w = -round(I.maptext_width/2) + 16
+	I.pixel_x = holder.floating_message_pixel_x_offset
+	I.pixel_y = holder.floating_message_pixel_y_offset
 
 	style = "font-family: 'Small Fonts'; -dm-text-outline: 1px black; font-size: [size]px; line-height: 1.1; [style]"
 	I.maptext = "<center><span style=\"[style]\">[message]</span></center>"

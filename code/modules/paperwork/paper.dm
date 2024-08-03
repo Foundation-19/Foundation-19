@@ -688,7 +688,6 @@
 	name = "aromatherapy disclaimer"
 	info = "<I>The manufacturer and the retailer make no claims of the contained products' effacy.</I> <BR><BR><B>Use at your own risk.</B>"
 
-
 #undef PAPER_CAMERA_DISTANCE
 #undef PAPER_EYEBALL_DISTANCE
 

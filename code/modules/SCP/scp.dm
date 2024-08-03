@@ -33,6 +33,9 @@
 	///Sounds that are considered memetic
 	var/list/memetic_sounds
 
+	/// If this SCP can still be examined as normal
+	var/regular_examine = FALSE
+
 /datum/scp/New(atom/creation, vName, vClass = SCP_SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
 
