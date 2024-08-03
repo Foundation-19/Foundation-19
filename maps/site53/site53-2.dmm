@@ -33300,6 +33300,10 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/hallways)
+"hWu" = (
+/obj/machinery/cooker/grill,
+/turf/simulated/floor/tiled/white,
+/area/site53/ulcz/scp082/kitchen)
 "hWH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -43430,7 +43434,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/prep)
 "nqK" = (
-/obj/machinery/cooker/grill,
+/obj/machinery/stove,
 /turf/simulated/floor/tiled/white,
 /area/site53/ulcz/scp082/kitchen)
 "nqM" = (
@@ -65349,7 +65353,7 @@ mjL
 oxk
 uXY
 uXY
-oxk
+hWu
 uXY
 uXY
 bqn
