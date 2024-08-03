@@ -4,13 +4,11 @@
 	icon = 'icons/SCP/scp-082.dmi'
 
 	status_flags = NO_ANTAG | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NEED_DIRECT_ABSORB
-
 	roundstart_traits = list(TRAIT_ADVANCED_TOOL_USER)
-
 	handcuffs_breakout_modifier = 0.2
 	pixel_x = -16
 	pixel_y = -16
-	usefov = FALSE // temporary
+	usefov = FALSE
 	health = 2000
 	maxHealth = 2000
 	floating_message_pixel_x_offset = 16
@@ -148,7 +146,7 @@
 	. = ..()
 	if(!.)
 		return
-	priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-082, on-site security personnel are to investigate the issue.", "Motion Sensors", 'sounds/AI/049.ogg') // temporary
+	priority_announcement.Announce("Motion sensors triggered in the containment chamber of SCP-082, on-site security personnel are to investigate the issue.", "Motion Sensors")
 	last_interaction_time = world.time + 5 MINUTES
 
 /mob/living/carbon/human/scp082/proc/open_door(obj/machinery/door/door) // this should probably be a component honestly
@@ -216,6 +214,7 @@
 
 	non_hunger_ticks = 0
 	hunger_prob = 0
+	stamina = max_stamina
 	to_chat(src, SPAN_WARNING("You feel like you're getting <b>very</b> hungry..."))
 	var/total_damage_taken = 0
 	for(var/obj/item/organ/external/external in organs)
