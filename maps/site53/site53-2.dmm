@@ -10633,17 +10633,6 @@
 	dir = 4
 	},
 /area/site53/uhcz/scp457containment)
-"aBU" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 5
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 4
-	},
-/area/site53/uhcz/hallways)
 "aBV" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -11916,13 +11905,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
-"aFs" = (
-/obj/machinery/door/airlock/glass/security{
-	name = "SCP-2427-3 Checkpoint Office";
-	req_access = list("ACCESS_SECURITY_LEVEL3")
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/scp082)
 "aFw" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -12826,14 +12808,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
-"aIE" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "aIF" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -13498,10 +13472,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
 /area/site53/uhcz/hallways)
-"aKN" = (
-/obj/structure/reagent_dispensers/watertank,
-/turf/simulated/floor/tiled/small,
-/area/site53/ulcz/scp082)
 "aKW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -16318,16 +16288,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/checkequip)
 "aVs" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "2427-3 Northern Gate";
-	name = "2427-3 Northern Gate"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/small,
+/obj/effect/floor_decal/corner/euclid/bordercorner,
+/turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp082)
 "aVu" = (
 /obj/effect/floor_decal/spline/fancy/black{
@@ -17309,17 +17271,6 @@
 /obj/machinery/field_generator,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/tram/scpcar)
-"aYX" = (
-/obj/machinery/door/unpowered/simple/walnut{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "aYY" = (
 /obj/structure/bed/roller,
 /obj/item/bodybag,
@@ -18229,12 +18180,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/scp343entrance)
-"bbj" = (
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "bbk" = (
 /obj/effect/floor_decal/corner/blue/full,
 /obj/machinery/door/airlock/highsecurity{
@@ -20859,16 +20804,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp263research)
 "bqn" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp082)
 "bqo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -21059,13 +21001,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/scp066)
-"btS" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "btZ" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/floor_decal/corner/grey/border{
@@ -21267,13 +21202,6 @@
 /obj/effect/paint_stripe/yellow,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/reswing/robotics)
-"bzd" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "bzf" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/machinery/door/blast/shutters{
@@ -21502,12 +21430,6 @@
 /obj/item/folder/red,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/scp1507observation)
-"bFP" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "bGo" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 6
@@ -21572,8 +21494,12 @@
 /turf/simulated/floor,
 /area/site53/llcz/dclass/isolation)
 "bIf" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 1
+	},
+/obj/item/modular_computer/console/preset/security,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "bIg" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters/open{
@@ -21593,18 +21519,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/ulcz/hallways)
-"bIm" = (
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 23
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "bIu" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 6
@@ -22670,16 +22584,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
-"chW" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb1"
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp082)
 "cij" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -23066,13 +22970,6 @@
 	dir = 8
 	},
 /area/site53/lhcz/hczguardgear)
-"crW" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/wall/r_titanium,
-/area/site53/ulcz/scp082)
 "csb" = (
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/horizontal,
@@ -23452,18 +23349,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"cCV" = (
-/obj/structure/table/marble,
-/obj/item/material/knife/table/plastic{
-	pixel_x = 11;
-	pixel_y = 3
-	},
-/obj/item/clothing/head/chefhat{
-	pixel_x = -4;
-	pixel_y = -2
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "cDl" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -23692,10 +23577,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
-"cIQ" = (
-/obj/machinery/chem_master/condimaster,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "cIV" = (
 /obj/effect/floor_decal/corner/brown/bordercorner,
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
@@ -24017,14 +23898,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp012)
-"cSw" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "cSI" = (
 /obj/machinery/light{
 	dir = 8
@@ -24331,12 +24204,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
-"cYh" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "cYr" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/reinforced,
@@ -24366,12 +24233,6 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/plating,
 /area/site53/llcz/entrance_checkpoint)
-"cZp" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "cZG" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile,
@@ -25705,10 +25566,6 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor,
 /area/site53/uhcz/generalpurpose3)
-"dLY" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "dMO" = (
 /obj/machinery/light{
 	dir = 1
@@ -25902,9 +25759,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/lowertrams/restaurantkitchenarea)
-"dQW" = (
-/turf/simulated/wall/wood,
-/area/site53/ulcz/scp082/bedroom)
 "dRU" = (
 /obj/machinery/camera/network/hcz{
 	dir = 1
@@ -26305,13 +26159,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/atmos)
-"edt" = (
-/obj/structure/bed/chair/armchair/beige,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "edv" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -26784,18 +26631,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/site53/logistics/logistics)
-"erc" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "erj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -27151,12 +26986,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
-"eAb" = (
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "eAd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/cable/cyan{
@@ -28612,16 +28441,6 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
-"fte" = (
-/obj/structure/table/standard,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/gloves/latex,
-/obj/item/clothing/gloves/latex,
-/obj/item/clothing/gloves/latex,
-/turf/simulated/floor/tiled/small,
-/area/site53/ulcz/scp082)
 "ftf" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -29091,19 +28910,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
-"fGk" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "fGE" = (
 /obj/machinery/camera/network/entrance{
 	dir = 8
@@ -30066,18 +29872,6 @@
 /obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp066)
-"giI" = (
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -23
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "giJ" = (
 /obj/effect/landmark{
 	name = "scp527"
@@ -30175,12 +29969,6 @@
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/lhcz/hczguardgear)
-"gkR" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082)
 "gkX" = (
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
@@ -30516,19 +30304,6 @@
 /obj/effect/floor_decal/corner/black/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/morgue)
-"gxR" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "gyb" = (
 /obj/effect/floor_decal/corner/orange/bordercorner{
 	dir = 4
@@ -30861,9 +30636,6 @@
 	dir = 4
 	},
 /area/site53/uhcz/scp106containment)
-"gGC" = (
-/turf/simulated/wall/wood,
-/area/site53/ulcz/scp082/bathroom)
 "gGI" = (
 /obj/item/reagent_containers/glass/beaker/bowl{
 	name = "food bowl"
@@ -31175,10 +30947,6 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
-"gQp" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "gRd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31277,13 +31045,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/generalpurpose)
-"gUt" = (
-/obj/structure/table/marble,
-/obj/machinery/microwave{
-	pixel_y = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "gUC" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monotile,
@@ -32309,14 +32070,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
-"hxT" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "hyd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -32362,11 +32115,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/logistics/logistics)
-"hzp" = (
-/turf/simulated/mineral/random{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/ulcz/scp082/recreation)
 "hzu" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -32459,15 +32207,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"hAR" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/machinery/door/blast/regular{
-	dir = 4;
-	id_tag = "2427-3 Window Port";
-	name = "SCP-2427-3 Checkpoint Window Blast Door"
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp082)
 "hBu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -32790,12 +32529,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/scp106maintup)
-"hHv" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/paper_bin,
-/obj/item/pen/fancy,
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "hHF" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -32880,19 +32613,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/ulcz/humanoidcontainment)
-"hJj" = (
-/obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/reagent_containers/food/snacks/meat/chicken/game,
-/obj/item/reagent_containers/food/snacks/meat/chicken/game,
-/obj/item/reagent_containers/food/snacks/meat/chicken/game,
-/obj/item/reagent_containers/food/snacks/meat/goat,
-/obj/item/reagent_containers/food/snacks/meat/beef,
-/obj/item/reagent_containers/food/snacks/meat/beef,
-/obj/item/reagent_containers/food/snacks/meat/beef,
-/obj/item/reagent_containers/food/snacks/meat/beef,
-/obj/item/reagent_containers/food/snacks/meat/beef,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "hJW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -33183,23 +32903,6 @@
 /obj/item/stool,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"hRx" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/food/condiment/barbecue{
-	pixel_x = 3;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/condiment/barbecue,
-/obj/item/reagent_containers/food/condiment/capsaicin{
-	pixel_x = -8;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/food/condiment/mint{
-	pixel_x = 8;
-	pixel_y = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "hRE" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -33502,10 +33205,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/hallways)
-"hWu" = (
-/obj/machinery/cooker/grill,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "hWH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34288,19 +33987,6 @@
 /obj/item/paper/sec_ctp,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
-"isp" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/throne)
 "isy" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/floor_decal/corner/red/border{
@@ -34674,12 +34360,6 @@
 /obj/effect/paint_stripe/brown,
 /turf/simulated/wall/prepainted,
 /area/site53/lowertrams/brownline)
-"iFC" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "iFQ" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -35895,9 +35575,6 @@
 /obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp513)
-"jpB" = (
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/bedroom)
 "jpP" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline{
@@ -36591,14 +36268,6 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
-"jJZ" = (
-/obj/structure/hygiene/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "jKa" = (
 /obj/structure/cable/green,
 /obj/effect/floor_decal/industrial/warning{
@@ -36750,12 +36419,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/aiccore)
 "jNc" = (
-/obj/machinery/cooker/fryer,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
+/turf/simulated/wall/sandstone,
+/area/site53/ulcz/scp082)
 "jOb" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -36998,10 +36663,8 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/uhcz/scp106containment)
 "jTB" = (
-/obj/structure/table/marble,
-/obj/item/material/kitchen/rollingpin,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/ulcz/scp082)
 "jUp" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/machinery/light/small/red{
@@ -37406,12 +37069,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/uhcz/securitypost)
-"kdN" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "kdR" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -37822,14 +37479,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp999)
-"kor" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/wall/r_titanium,
-/area/site53/ulcz/scp082)
 "koI" = (
 /obj/machinery/photocopier{
 	pixel_y = 3
@@ -38272,12 +37921,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/llcz/dclass/primaryhallway)
-"kDW" = (
-/obj/machinery/door/unpowered/simple/walnut{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "kEc" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -38391,12 +38034,6 @@
 /obj/machinery/light/small/red,
 /turf/simulated/floor,
 /area/site53/llcz/scp012)
-"kHp" = (
-/obj/machinery/door/unpowered/simple/walnut{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "kHx" = (
 /obj/effect/floor_decal/corner/safe/mono,
 /obj/effect/floor_decal/industrial/loading{
@@ -38797,12 +38434,6 @@
 	dir = 4
 	},
 /area/site53/uhcz/hallways)
-"kRi" = (
-/obj/structure/bed/chair/armchair/beige{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "kRC" = (
 /obj/structure/closet,
 /obj/item/device/tape/random,
@@ -39427,19 +39058,6 @@
 "ljb" = (
 /turf/simulated/floor/lino,
 /area/site53/ulcz/humanoidcontainment)
-"ljc" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "ljP" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/beige/border{
@@ -39669,11 +39287,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp106containment)
-"lrK" = (
-/obj/structure/table/marble,
-/obj/machinery/cooker/cereal,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "lsq" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /obj/machinery/door/blast/regular/open{
@@ -40063,12 +39676,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/logistics/logistics)
-"lCs" = (
-/obj/structure/bed/chair/armchair/brown{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "lCE" = (
 /obj/effect/floor_decal/chapel{
 	dir = 1
@@ -40459,14 +40066,6 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uhcz/hallways)
-"lMF" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082)
 "lMO" = (
 /obj/effect/floor_decal/spline/fancy/black/corner,
 /obj/effect/floor_decal/spline/fancy/black/corner{
@@ -40741,12 +40340,6 @@
 	dir = 1
 	},
 /area/site53/uhcz/scp1507observation)
-"lRj" = (
-/obj/structure/hygiene/toilet{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "lRm" = (
 /obj/machinery/microwave,
 /obj/structure/table/standard,
@@ -41117,9 +40710,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
-"mcC" = (
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "mcT" = (
 /mob/living/simple_animal/hostile/retaliate/scp1507,
 /turf/simulated/floor/exoplanet/concrete,
@@ -41377,9 +40967,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/hallways)
-"mjL" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "mjN" = (
 /obj/structure/bookcase/manuals/xenoarchaeology,
 /obj/machinery/light{
@@ -41493,12 +41080,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/site53/science/aiccore)
-"mlw" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "mmw" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Humanoid Containment Cell"
@@ -41895,20 +41476,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/engineering/bathrooms)
-"mtC" = (
-/obj/structure/filingcabinet,
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 5
-	},
-/obj/item/device/radio/intercom{
-	canhear_range = 7;
-	frequency = 1449;
-	name = "intercom (Containment Zone)";
-	pixel_x = 30;
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "mtJ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -41995,14 +41562,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/robotics)
-"muQ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "muU" = (
 /obj/machinery/vending/hydroseeds/generic{
 	dir = 4
@@ -42250,27 +41809,6 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
-"mBk" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
-"mBn" = (
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "mBo" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "LCZ Security Center";
@@ -42353,14 +41891,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp529)
-"mDB" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "mDU" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/border{
@@ -42762,11 +42292,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"mOd" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/soap,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "mOw" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/railing/mapped{
@@ -43656,15 +43181,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost/storage)
-"nks" = (
-/obj/structure/table/reinforced,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "nkR" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/white/monotile,
@@ -43839,10 +43355,6 @@
 /obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/prep)
-"nqK" = (
-/obj/machinery/stove,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "nqM" = (
 /obj/machinery/door/airlock/research{
 	name = "SCP-912";
@@ -44421,8 +43933,11 @@
 /turf/simulated/floor/tiled/nullglass,
 /area/site53/reswing/psionic)
 "nEO" = (
-/turf/simulated/wall/wood,
-/area/site53/ulcz/scp082/recreation)
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "nFS" = (
 /obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
@@ -44450,17 +43965,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
 "nGp" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
+/turf/simulated/open,
+/area/site53/ulcz/scp082)
 "nGR" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -44570,13 +44076,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/ulcz/hallways)
-"nIy" = (
-/obj/machinery/cooker/oven{
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "nIH" = (
 /obj/structure/closet/secure_closet/guard/lcz/sergeant,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -44818,12 +44317,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"nNV" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp082)
 "nNY" = (
 /obj/machinery/camera/autoname{
 	network = list("Light Containment Zone Network")
@@ -44851,21 +44344,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"nOJ" = (
-/obj/structure/table/reinforced,
-/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
-/obj/machinery/button/blast_door{
-	id_tag = "2427-3 Window Port";
-	name = "Checkpoint Window Control";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL3"));
-	dir = 4;
-	pixel_x = -25
-	},
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "nPw" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -45176,10 +44654,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"nXW" = (
-/obj/structure/synthesized_instrument/synthesizer/piano,
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "nYz" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -45509,18 +44983,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/isolation)
-"ogE" = (
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -23
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "ogF" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/euclid/border{
@@ -45619,15 +45081,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
-"ohW" = (
-/obj/machinery/door/unpowered/simple/walnut,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "ohX" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -45970,11 +45423,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/researchanddevelopment)
-"opE" = (
-/obj/structure/bed,
-/obj/item/bedsheet/hos,
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/bedroom)
 "opO" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -46060,12 +45508,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
-"orh" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "orr" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -46309,10 +45751,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp106observ)
-"oxk" = (
-/obj/structure/table/marble,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "oxL" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/closet/crate/bin,
@@ -46460,18 +45898,6 @@
 /obj/item/clothing/mask/gas/mime,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
-"oBp" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "2427-3 Southern Gate";
-	name = "2427-3 Southern Gate"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site53/ulcz/scp082)
 "oBq" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -46535,13 +45961,6 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/ulcz/hallways)
-"oDs" = (
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 23
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/bedroom)
 "oDy" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -46637,14 +46056,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
-"oGN" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "oGS" = (
 /obj/effect/floor_decal/industrial/fire{
 	dir = 1
@@ -46813,17 +46224,6 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/site53/science/aiccore)
-"oKi" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "oKv" = (
 /obj/machinery/light{
 	dir = 8
@@ -46921,14 +46321,6 @@
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/llcz/entrance_checkpoint)
-"oNO" = (
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "oNT" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -48076,13 +47468,6 @@
 /obj/effect/floor_decal/corner/safe/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp216)
-"puC" = (
-/obj/structure/scp082_trunk,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "puM" = (
 /obj/structure/bed/chair/office/comfy/blue{
 	dir = 4
@@ -48190,12 +47575,6 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"pyq" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "pyI" = (
 /obj/machinery/light{
 	dir = 1
@@ -48643,10 +48022,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
-"pJA" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "pJQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -48933,20 +48308,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/lowertrams/hub)
-"pTf" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/storage/fancy/cigar,
-/obj/item/storage/fancy/cigar{
-	pixel_y = 5
-	},
-/obj/item/storage/fancy/cigar{
-	pixel_y = 10
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "pTu" = (
 /obj/effect/floor_decal/industrial/outline{
 	color = "#b19664"
@@ -49148,13 +48509,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/ulcz/scp912)
-"pXy" = (
-/obj/machinery/reagentgrinder,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "pXz" = (
 /obj/structure/sign/warning/high_voltage{
 	pixel_y = 32
@@ -51153,12 +50507,11 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
 "raE" = (
-/obj/machinery/light_switch{
-	on = 1;
-	pixel_y = -25
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 4
 	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "raM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -51526,17 +50879,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/office)
-"rkv" = (
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "rkX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -51738,14 +51080,6 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"rox" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "roz" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -51972,9 +51306,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp529)
-"rsE" = (
-/turf/simulated/wall/wood,
-/area/site53/ulcz/scp082/dining)
 "rsF" = (
 /obj/structure/scp_914,
 /obj/effect/floor_decal/industrial/warning,
@@ -52299,12 +51630,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
 "rCJ" = (
-/obj/structure/closet,
-/obj/item/clothing/under/suit_jacket/charcoal,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/gloves/color/white,
-/obj/effect/floor_decal/corner/euclid/mono,
-/turf/simulated/floor/tiled/monotile,
+/turf/unsimulated/mask,
 /area/site53/ulcz/scp082)
 "rCM" = (
 /obj/structure/cable/green{
@@ -52479,14 +51805,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site53/reswing/psionic)
-"rGC" = (
-/obj/machinery/light_switch{
-	dir = 4;
-	on = 1;
-	pixel_x = -23
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "rGF" = (
 /obj/structure/table/rack,
 /obj/item/storage/box/teargas,
@@ -52671,19 +51989,6 @@
 /obj/effect/floor_decal/corner/euclid/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp012)
-"rKn" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "rKo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -53642,13 +52947,12 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
 "sfT" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 1
 	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "sfX" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -53883,20 +53187,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/securitypost)
-"slu" = (
-/obj/structure/window/reinforced/tinted/frosted{
-	dir = 8
-	},
-/obj/structure/hygiene/shower{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "slB" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -54332,8 +53622,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp294)
 "swo" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/turf/simulated/floor,
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp082)
 "swJ" = (
 /obj/machinery/door/airlock/science{
@@ -54359,17 +53652,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/ulcz/hallways)
-"sxB" = (
-/obj/structure/table/rack,
-/obj/item/reagent_containers/food/condiment/mayo{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/food/condiment/frostoil,
-/obj/item/reagent_containers/food/condiment/ketchup{
-	pixel_x = 9
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "sxX" = (
 /obj/machinery/light{
 	dir = 4
@@ -54510,14 +53792,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
-"sAY" = (
-/obj/structure/closet/l3closet,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/obj/item/clothing/shoes/white,
-/turf/simulated/floor/tiled/small,
-/area/site53/ulcz/scp082)
 "sBj" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
@@ -54812,29 +54086,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmtunnel)
-"sJk" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "2427-3 Southern Gate";
-	name = "Southern Gate Control";
-	pixel_x = 4;
-	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/machinery/button/blast_door{
-	dir = 4;
-	id_tag = "2427-3 Northern Gate";
-	name = "Northern Gate Control";
-	pixel_x = -5;
-	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL2")
-	},
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "sJo" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/light,
@@ -55062,15 +54313,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/logistics/logistics)
-"sRe" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/condimentbottles,
-/obj/item/reagent_containers/food/condiment/salt{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "sRt" = (
 /obj/effect/floor_decal/corner/black/border,
 /obj/effect/floor_decal/corner/black/border{
@@ -55633,24 +54875,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/breakroom)
-"tby" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "tbC" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/robotics)
-"tcb" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "tcd" = (
 /obj/machinery/door/airlock/glass/medical{
 	name = "Aid Post"
@@ -55670,16 +54900,6 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/hub)
-"tcq" = (
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082)
 "tcs" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
@@ -55856,14 +55076,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
-"thN" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/throne)
 "thR" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northright{
@@ -56360,10 +55572,14 @@
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "tuN" = (
-/obj/structure/table/marble,
-/obj/machinery/cooker/candy,
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uhcz/hallways)
 "tuR" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -56440,17 +55656,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
-"twt" = (
-/obj/structure/table/reinforced,
-/obj/machinery/photocopier/faxmachine{
-	department = "SCP-151 Containment Chamber";
-	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
-	},
-/obj/effect/floor_decal/corner/euclid/border{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/site53/ulcz/scp082)
 "twA" = (
 /obj/machinery/light{
 	dir = 4
@@ -56488,18 +55693,6 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/uhcz/securitypost)
-"twW" = (
-/obj/structure/hygiene/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/machinery/light{
-	dir = 8;
-	pixel_x = -4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "txb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "AIC Laboratory";
@@ -56658,14 +55851,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/office)
-"tAC" = (
-/obj/effect/paint_stripe/red,
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/wall/r_titanium,
-/area/site53/ulcz/scp082)
 "tAN" = (
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /obj/effect/floor_decal/industrial/warning{
@@ -56986,9 +56171,6 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/lhcz/hczguardgear)
-"tKJ" = (
-/turf/simulated/wall/wood,
-/area/site53/ulcz/scp082/kitchen)
 "tLg" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/item/flame/lighter,
@@ -57065,13 +56247,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/lhcz/scp343room)
-"tNk" = (
-/obj/machinery/light_switch{
-	on = 1;
-	pixel_y = -25
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "tNo" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -57111,17 +56286,6 @@
 /obj/item/trash/pistachios,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
-"tNX" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/hygiene/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "tOa" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -57190,17 +56354,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/engineering/biosupplies)
-"tRw" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "tRA" = (
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/structure/table/rack,
@@ -57306,12 +56459,6 @@
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/redline)
-"tWz" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "tWB" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/ore_box,
@@ -57520,12 +56667,6 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/quartermaster/hangar)
-"ubZ" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "uce" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /turf/simulated/floor/tiled/monotile,
@@ -58043,8 +57184,11 @@
 /turf/simulated/floor/reinforced,
 /area/site53/llcz/scp263research)
 "upm" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
+/obj/structure/bed/chair/office/comfy/red{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "uqL" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -58499,9 +57643,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/science/seniorresearchera)
-"uFH" = (
-/turf/simulated/wall/r_titanium,
-/area/site53/ulcz/scp082/dining)
 "uGj" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -58701,12 +57842,6 @@
 /obj/item/newspaper,
 /turf/simulated/floor/wood/walnut,
 /area/site53/lowertrams/restaurantkitchenarea)
-"uOu" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/bedroom)
 "uOG" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/brown/border,
@@ -58954,9 +58089,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/engineering/primaryhallway)
-"uVC" = (
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "uVK" = (
 /obj/machinery/contraband_detector,
 /turf/simulated/floor/tiled/dark,
@@ -58972,13 +58104,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
-"uWd" = (
-/obj/structure/bed/chair/wood/wings/walnut,
-/obj/effect/landmark{
-	name = "scp082"
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/throne)
 "uWu" = (
 /obj/structure/sign/emergonly{
 	pixel_x = 32
@@ -59032,9 +58157,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
-"uXY" = (
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "uYb" = (
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/white/monotile,
@@ -59244,19 +58366,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "vex" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "SCP-173 Cleaning Supplies"
-	},
-/turf/simulated/floor/tiled/dark/small,
+/turf/simulated/wall/r_titanium,
 /area/site53/ulcz/scp082)
-"veF" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bathroom)
 "veT" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
@@ -59341,17 +58452,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/isolation)
-"vho" = (
-/obj/machinery/door/unpowered/simple/walnut{
-	name = "Quarters"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "vhB" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
@@ -60138,28 +59238,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/carpet/orange,
 /area/site53/logistics/logisticsofficer)
-"vGn" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/material/knife/kitchen/cleaver{
-	desc = "A heavy blade favored by SCP-082 for shaving purposes.";
-	pixel_x = -6;
-	pixel_y = -5
-	},
-/obj/item/paper/scp082_memoir{
-	pixel_x = 9;
-	pixel_y = -4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/bedroom)
 "vGz" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site53/uhcz/scp096)
@@ -60382,16 +59460,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
-"vMV" = (
-/obj/machinery/power/apc{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "vNb" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 6
@@ -61190,16 +60258,6 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
-"wip" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp082)
 "wiF" = (
 /obj/structure/table/rack,
 /obj/item/gun/launcher/syringe,
@@ -61321,27 +60379,11 @@
 	},
 /turf/simulated/floor,
 /area/site53/lowertrams/hczmaint/south)
-"wnb" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/device/flashlight/lamp,
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/bedroom)
 "wnj" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/secure_closet/logistics/specialist,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
-"wnl" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "wnA" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light,
@@ -61701,11 +60743,6 @@
 	},
 /turf/simulated/open,
 /area/site53/engineering/atmos)
-"wuH" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/item/reagent_containers/food/snacks/meatsteak,
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "wuI" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -62002,14 +61039,6 @@
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
-"wFc" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "wFp" = (
 /obj/effect/floor_decal/corner/black/full,
 /obj/item/clothing/suit/hcz_hazmat,
@@ -62569,14 +61598,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
-"wTw" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/throne)
 "wTN" = (
 /obj/structure/skele_stand,
 /obj/machinery/light{
@@ -62765,12 +61786,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/lowertrams/restaurantkitchenarea)
-"wWL" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 4
-	},
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "wWX" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -62862,11 +61877,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/humanoidcontainment)
 "wZT" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
+/obj/effect/floor_decal/corner/euclid/border,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "xac" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/reinforced,
@@ -62929,8 +61943,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/medicalpost)
 "xbH" = (
-/turf/simulated/floor/carpet/red,
-/area/site53/ulcz/scp082/throne)
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/ulcz/scp082)
 "xbL" = (
 /obj/structure/table/standard,
 /obj/item/storage/pill_bottle/amnesticsa,
@@ -63184,12 +62199,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/checkequip)
-"xjn" = (
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/site53/ulcz/scp082)
 "xjx" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/safe/border,
@@ -63294,15 +62303,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/science/aiccore)
-"xlW" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "xlZ" = (
 /obj/structure/sign/scp/euclid_scp{
 	pixel_y = 32
@@ -63458,28 +62458,6 @@
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/redline)
-"xpg" = (
-/obj/machinery/door/unpowered/simple/walnut{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082/bedroom)
-"xpn" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "xpD" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/monotile,
@@ -63607,14 +62585,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lowertrams/restaurantkitchenarea)
-"xsz" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "xsT" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
@@ -63852,17 +62822,6 @@
 	dir = 4
 	},
 /area/site53/logistics/logistics)
-"xzr" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "xzQ" = (
 /obj/structure/window/basic/full{
 	name = "Safety Glass"
@@ -63879,14 +62838,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
-"xzS" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/throne)
 "xAv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 5
@@ -63928,9 +62879,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uhcz/scp106containment)
-"xCA" = (
-/turf/simulated/wall/wood,
-/area/site53/ulcz/scp082/throne)
 "xCR" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -63957,13 +62905,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/uhcz/scp106containment)
-"xDp" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4;
-	icon_state = "warning"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site53/ulcz/scp082)
 "xDq" = (
 /obj/effect/floor_decal/spline/fancy/black,
 /obj/structure/disposalpipe/segment,
@@ -63977,19 +62918,6 @@
 	dir = 1
 	},
 /area/site53/logistics/logistics)
-"xDM" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "xDO" = (
 /obj/machinery/light{
 	dir = 8
@@ -64214,17 +63142,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
-"xJi" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "xJI" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -64314,21 +63231,6 @@
 /obj/item/storage/firstaid/burn,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/scp457containment)
-"xNg" = (
-/obj/structure/reagent_dispensers/watertank,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/small,
-/area/site53/ulcz/scp082)
-"xNt" = (
-/obj/structure/cable/green,
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/dining)
 "xNw" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark,
@@ -64603,12 +63505,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/surface/bunker)
-"xVe" = (
-/obj/structure/bed/chair/wood/walnut{
-	dir = 8
-	},
-/turf/simulated/floor/carpet,
-/area/site53/ulcz/scp082/dining)
 "xVn" = (
 /obj/machinery/vending/security{
 	req_access = list("ACCESS_SECURITY_LEVEL2")
@@ -64623,17 +63519,6 @@
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/logistics/logistics)
-"xVH" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site53/ulcz/scp082/kitchen)
 "xWe" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 4
@@ -64875,11 +63760,6 @@
 	dir = 8
 	},
 /area/site53/llcz/dclass/checkcryo)
-"ybV" = (
-/obj/structure/mopbucket,
-/obj/item/mop,
-/turf/simulated/floor/tiled/small,
-/area/site53/ulcz/scp082)
 "ybW" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining_internal";
@@ -65177,11 +64057,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
-"yka" = (
-/obj/structure/bookcase,
-/obj/machinery/light,
-/turf/simulated/floor/wood/walnut,
-/area/site53/ulcz/scp082/recreation)
 "ykA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -102651,22 +101526,6 @@ aqA
 azA
 azA
 azA
-tKJ
-tKJ
-tKJ
-tKJ
-tKJ
-tKJ
-tKJ
-rsE
-rsE
-rsE
-rsE
-rsE
-rsE
-rsE
-rsE
-uFH
 azA
 azA
 azA
@@ -102676,6 +101535,22 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+vex
+vex
+vex
+vex
+vex
+vex
+vex
 azA
 azA
 abY
@@ -102908,22 +101783,6 @@ aqA
 azA
 azA
 azA
-tKJ
-tWz
-vMV
-uXY
-jJZ
-tNX
-tKJ
-mjL
-mjL
-orh
-mjL
-aIE
-cSw
-xJi
-xNt
-uFH
 azA
 azA
 azA
@@ -102933,6 +101792,22 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+vex
+rCJ
+rCJ
+rCJ
+rCJ
+rCJ
+vex
 azA
 azA
 abY
@@ -103165,22 +102040,6 @@ aqA
 azA
 azA
 azA
-tKJ
-uXY
-rox
-hWu
-uXY
-uXY
-oxk
-mjL
-wWL
-wWL
-wWL
-xpn
-wWL
-wWL
-mjL
-uFH
 azA
 azA
 azA
@@ -103190,6 +102049,22 @@ azA
 azA
 azA
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+vex
+rCJ
+rCJ
+rCJ
+rCJ
+rCJ
+vex
 azA
 azA
 abY
@@ -103422,31 +102297,31 @@ aqA
 azA
 azA
 azA
-tKJ
-uXY
-rox
-cCV
-uXY
-bzd
-oxk
-mjL
-pJA
-pJA
-pJA
-xlW
-pJA
-pJA
-mjL
-urr
-urr
-urr
-urr
-urr
-urr
-urr
-urr
-urr
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+vex
+rCJ
+rCJ
+rCJ
+rCJ
+rCJ
+vex
 azA
 azA
 abY
@@ -103679,31 +102554,31 @@ azA
 azA
 azA
 azA
-tKJ
-uXY
-rox
-jTB
-uXY
-btS
-oxk
-mjL
-pJA
-wuH
-pJA
-xlW
-pJA
-pJA
-mjL
-urr
-aKN
-xNg
-fte
-urr
-rCJ
-rCJ
-rCJ
-urr
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+vex
+rCJ
+rCJ
+rCJ
+rCJ
+rCJ
+vex
 azA
 azA
 azA
@@ -103936,31 +102811,31 @@ azA
 azA
 azA
 azA
-tKJ
-uXY
-rox
-gUt
-uXY
-tNk
-tKJ
-mjL
-xVe
-xVe
-xVe
-xzr
-xVe
-xVe
-mjL
-tAC
-ybV
-aVl
-aVl
-urr
-rnm
-ijY
-bbj
-urr
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+vex
+rCJ
+rCJ
+rCJ
+rCJ
+rCJ
+vex
 azA
 azA
 azA
@@ -104193,31 +103068,31 @@ azA
 azA
 azA
 azA
-tKJ
-uXY
-bqn
-mDB
-fGk
-xVH
-ohW
-cSw
-wnl
-bIm
-cSw
-ljc
-bFP
-mjL
-mjL
-crW
-ybV
-sAY
-aVl
-vex
-sPh
-bob
-hkp
-urr
 azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+urr
+urr
+urr
+urr
+urr
+urr
+urr
+vex
+rCJ
+rCJ
+rCJ
+vex
+vex
 aBo
 aBo
 aBo
@@ -104448,31 +103323,31 @@ atC
 bLc
 azA
 azA
-tKJ
-tKJ
-tKJ
-kHp
-tKJ
-tKJ
-tKJ
-tKJ
-xCA
-xCA
-xCA
-xCA
-kDW
-aYX
-xCA
-xCA
-xCA
-kor
+azA
+azA
+azA
+azA
+azA
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+rnm
+ijY
+ijY
+ijY
+ijY
+ijY
 urr
-urr
-urr
-urr
-sPh
 bob
-hkp
+bob
+aVs
 urr
 aBo
 aBo
@@ -104705,31 +103580,31 @@ aPx
 aPx
 aPx
 azA
-tKJ
-tcb
-uXY
-uXY
-hJj
-hJj
-uXY
-hRx
-xCA
-upm
-upm
-mlw
-upm
-xzS
-rGC
-mlw
-upm
-swo
-chW
-xjn
-chW
-urr
-mBn
+azA
+azA
+azA
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
+sfT
+bob
+bob
+bob
+bob
+bob
+jTB
+bob
 sMJ
-hkp
+wZT
 urr
 aBo
 feJ
@@ -104962,29 +103837,29 @@ heG
 heG
 aPx
 azA
-tKJ
-tcb
-uXY
-uXY
-uXY
-uXY
-uXY
-sxB
-xCA
+azA
+azA
+azA
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
 xbH
-xbH
-xbH
-xbH
-wTw
-xbH
+bIf
 upm
-upm
-swo
-gkR
-gkR
-gkR
-urr
-rkv
+bob
+hRE
+hRE
+hRE
+bqn
+hRE
 hRE
 lNc
 urr
@@ -105219,29 +104094,29 @@ aKu
 agI
 aPx
 azA
-tKJ
-uXY
-uXY
-uXY
-uXY
-uXY
-uXY
-sRe
-xCA
-xbH
-uWd
-xbH
-xbH
-isp
-thN
-muQ
-muQ
+azA
+azA
+azA
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+jNc
+sfT
+bob
 aVs
-lMF
-tcq
-lMF
-oBp
-eAb
+raE
+raE
+raE
+urr
+raE
 obI
 fSL
 fFD
@@ -105476,27 +104351,27 @@ fTi
 heG
 aPx
 azA
-tKJ
-uXY
-uXY
-uXY
-uXY
-uXY
-uXY
-uXY
-xCA
-xbH
-xbH
-xbH
-xbH
-wTw
-xbH
-upm
-upm
-swo
-xDp
-xDp
-xDp
+azA
+azA
+azA
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+jNc
+sfT
+bob
+hkp
+urr
+urr
+urr
 urr
 rcy
 xEi
@@ -105733,27 +104608,27 @@ aPx
 aPx
 aPx
 azA
-tKJ
-pXy
-cIQ
-nqK
-nIy
+azA
+azA
+azA
+azA
+azA
 jNc
-tuN
-lrK
-xCA
 nGp
-tRw
-muQ
-muQ
-gxR
-iFC
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
+bIf
 upm
-upm
-swo
-wip
-nNV
-wip
+hkp
+urr
+azA
+azA
 urr
 jcN
 sPh
@@ -105990,27 +104865,27 @@ fTi
 heG
 aPx
 azA
-tKJ
-tKJ
-tKJ
-dQW
-dQW
-dQW
-dQW
-dQW
-dQW
-xCA
-xCA
-xCA
-kDW
-aYX
-xCA
-xCA
-xCA
+azA
+azA
+azA
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
+sfT
+bob
+hkp
 urr
-urr
-hAR
-urr
+azA
+azA
 urr
 rcy
 sPh
@@ -106250,24 +105125,24 @@ azA
 azA
 azA
 azA
-dQW
-uVC
-uVC
-uVC
-vGn
-puC
-nEO
-hHv
-pTf
-bIf
-xsz
-lCs
-cZp
-gQp
-swo
-nOJ
-sJk
-nks
+azA
+azA
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+sPh
+bob
+hkp
+urr
+azA
+azA
 urr
 mkn
 brk
@@ -106507,25 +105382,25 @@ azA
 azA
 azA
 azA
-dQW
-uVC
-uVC
-uVC
-oGN
-rKn
-vho
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
 sfT
-sfT
-sfT
-xDM
-bIf
-bIf
-gQp
-swo
-sPh
-kdN
+bob
 hkp
-aFs
+urr
+azA
+azA
+urr
 urr
 urr
 uQi
@@ -106764,24 +105639,24 @@ azA
 azA
 azA
 azA
-dQW
-uOu
-jpB
-jpB
-uVC
-giI
-nEO
-bIf
-bIf
-bIf
-xsz
-bIf
-bIf
-yka
-swo
-mtC
-erc
-twt
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
+sfT
+bob
+hkp
+urr
+azA
+azA
 urr
 jxc
 aVl
@@ -107021,24 +105896,24 @@ azA
 azA
 azA
 azA
-dQW
-wnb
-opE
-oDs
-ubZ
-hxT
-nEO
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+jNc
 bIf
-bIf
-bIf
-xsz
-bIf
-bIf
-bIf
-qII
-qII
-qII
-qII
+upm
+hkp
+urr
+azA
+azA
 qII
 jVY
 paF
@@ -107278,23 +106153,23 @@ azA
 azA
 azA
 azA
-dQW
-dQW
-dQW
-dQW
-dQW
-xpg
-nEO
-wZT
-bIf
-bIf
-wFc
+azA
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
 sfT
-sfT
-oNO
-nEO
-aKM
-aKM
+bob
+hkp
+urr
+azA
 aKM
 aKM
 aKM
@@ -107536,24 +106411,24 @@ urC
 urC
 urC
 urC
-gGC
-lRj
-mOd
-twW
-tby
-nEO
-bIf
-nXW
-bIf
-bIf
-bIf
-bIf
+azA
+jNc
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+nGp
+xbH
+swo
 raE
 nEO
+urr
+azA
 aKM
 pEy
-aPk
-aPk
 teU
 ndt
 hWt
@@ -107793,24 +106668,24 @@ ljb
 tWa
 sbY
 urC
-gGC
-mcC
-mcC
-mcC
-ogE
-nEO
-cYh
-pyq
-bIf
-bIf
-edt
-dLY
-kRi
-nEO
+azA
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+jNc
+urr
+urr
+urr
+urr
+azA
 aKM
 ubb
-gpO
-gpO
 rDY
 gRd
 gRd
@@ -108050,24 +106925,24 @@ ljb
 aXV
 mLp
 urC
-gGC
-mBk
-oKi
-veF
-slu
-nEO
-nEO
-nEO
-nEO
-nEO
-nEO
-nEO
-nEO
-nEO
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 aKM
-aBU
-kUj
-xKh
+tuN
 jwV
 wwd
 tzE
@@ -108307,22 +107182,22 @@ ljb
 ljb
 ljb
 urC
-gGC
-gGC
-gGC
-gGC
-gGC
-nEO
-hzp
-hzp
-hzp
-hzp
-hzp
-hzp
-hzp
-hzp
-aKM
-aKM
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
+azA
 aKM
 aKM
 cWo
