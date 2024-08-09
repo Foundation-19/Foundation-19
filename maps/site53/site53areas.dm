@@ -103,18 +103,18 @@
 	dynamic_lighting = 1
 
 /area/turbolift/site53/up082
-	name = "lift (Upper palace)"
-	lift_floor_label = "Upper palace"
-	lift_floor_name = "Upper palace"
-	lift_announce_str = "Arriving at the Upper palace."
+	name = "lift (Upper palSCP-082 containmentace)"
+	lift_floor_label = "Upper SCP-082 containment"
+	lift_floor_name = "Upper SCP-082 containment"
+	lift_announce_str = "Arriving at Upper SCP-082 containment."
 	requires_power = 0
 	dynamic_lighting = 1
 
 /area/turbolift/site53/low82
-	name = "lift (Lower palace)"
-	lift_floor_label = "Lower palace"
-	lift_floor_name = "Lower palace"
-	lift_announce_str = "Arriving at the Lower palace."
+	name = "lift (Lower SCP-082 containment)"
+	lift_floor_label = "Lower SCP-082 containment"
+	lift_floor_name = "Lower SCP-082 containment"
+	lift_announce_str = "Arriving at  Lower SCP-082 containment."
 	requires_power = 0
 	dynamic_lighting = 1
 // SITE 53 TRAM AREA'S
@@ -395,12 +395,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
-/area/site53/ulcz/scp2427_3
-	name = "\improper SCP-2427-3"
-	icon_state = "research"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = SMALL_ENCLOSED
-
 /area/site53/ulcz/humanoidcontainment
 	name = "\improper Humanoid Containment"
 	icon_state = "research"
@@ -442,6 +436,9 @@
 
 /area/site53/ulcz/scp082/recreation
 	name = "\improper SCP-082 Recreation Room"
+
+/area/site53/ulcz/scp082/observation
+	name = "\improper SCP-082 observation"
 
 /area/site53/llcz/scp500
 	name = "\improper SCP-500"
