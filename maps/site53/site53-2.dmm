@@ -8853,6 +8853,7 @@
 	req_access = list("ACCESS_ENGINEERING_LEVEL2")
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/control)
 "awY" = (
@@ -28873,7 +28874,7 @@
 /area/site53/ulcz/hallways)
 "fFD" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "SCP-2427-3"
+	name = "SCP-082"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -29332,11 +29333,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "fSL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -34133,6 +34129,15 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/site53/llcz/dclass/cellbubble)
+"iyE" = (
+/obj/effect/floor_decal/corner/euclid/bordercorner,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "iyT" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -36228,15 +36233,15 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/upper_surface/serverfarmcontrol)
 "jJj" = (
-/obj/structure/cable/green,
+/obj/effect/floor_decal/corner/euclid/border,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/obj/effect/floor_decal/corner/euclid/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp082)
 "jJn" = (
@@ -36663,6 +36668,9 @@
 /turf/simulated/wall/r_titanium,
 /area/site53/uhcz/scp106containment)
 "jTB" = (
+/obj/machinery/door/airlock/multi_tile/security{
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp082)
 "jUp" = (
@@ -40046,6 +40054,14 @@
 	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/hallways)
+"lLQ" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "lLS" = (
 /obj/machinery/light{
 	dir = 8
@@ -44800,11 +44816,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/robotics)
 "obI" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/effect/floor_decal/corner/euclid/bordercorner{
 	dir = 4
 	},
@@ -46396,6 +46407,15 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
+"oSg" = (
+/obj/effect/floor_decal/corner/euclid/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "oSi" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/table/rack,
@@ -46959,10 +46979,6 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/hallways)
-"pgw" = (
-/obj/effect/paint_stripe/gray,
-/turf/space,
-/area/site53/ulcz/hallways)
 "pgW" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -57882,7 +57898,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/highsecurity{
-	name = "SCP-2427-3 Delivery";
+	name = "SCP-082 Delivery";
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -58366,6 +58382,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "vex" = (
+/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_titanium,
 /area/site53/ulcz/scp082)
 "veT" = (
@@ -62847,6 +62865,15 @@
 "xBj" = (
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/logistics/logistics)
+"xBK" = (
+/obj/effect/floor_decal/corner/euclid/border,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/ulcz/scp082)
 "xBU" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -62928,13 +62955,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/researchanddevelopment)
 "xEi" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/effect/floor_decal/corner/euclid/border{
-	dir = 1
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp082)
@@ -70450,7 +70475,7 @@ azA
 azA
 azA
 dsW
-pgw
+bdf
 hIO
 hIO
 hIO
@@ -101545,12 +101570,12 @@ azA
 azA
 azA
 vex
-vex
-vex
-vex
-vex
-vex
-vex
+urr
+urr
+urr
+urr
+urr
+urr
 azA
 azA
 abY
@@ -101801,13 +101826,13 @@ azA
 azA
 azA
 azA
-vex
+urr
 rCJ
 rCJ
 rCJ
 rCJ
 rCJ
-vex
+urr
 azA
 azA
 abY
@@ -102058,13 +102083,13 @@ azA
 azA
 azA
 azA
-vex
+urr
 rCJ
 rCJ
 rCJ
 rCJ
 rCJ
-vex
+urr
 azA
 azA
 abY
@@ -102315,13 +102340,13 @@ azA
 azA
 azA
 azA
-vex
+urr
 rCJ
 rCJ
 rCJ
 rCJ
 rCJ
-vex
+urr
 azA
 azA
 abY
@@ -102572,13 +102597,13 @@ azA
 azA
 azA
 azA
-vex
+urr
 rCJ
 rCJ
 rCJ
 rCJ
 rCJ
-vex
+urr
 azA
 azA
 azA
@@ -102829,13 +102854,13 @@ azA
 azA
 azA
 azA
-vex
+urr
 rCJ
 rCJ
 rCJ
 rCJ
 rCJ
-vex
+urr
 azA
 azA
 azA
@@ -103087,12 +103112,12 @@ urr
 urr
 urr
 urr
-vex
+urr
 rCJ
 rCJ
 rCJ
-vex
-vex
+urr
+urr
 aBo
 aBo
 aBo
@@ -103341,7 +103366,7 @@ jNc
 rnm
 ijY
 ijY
-ijY
+xEi
 ijY
 ijY
 urr
@@ -103597,13 +103622,13 @@ nGp
 xbH
 sfT
 bob
-bob
+sMJ
 bob
 bob
 bob
 jTB
 bob
-sMJ
+bob
 wZT
 urr
 aBo
@@ -103854,7 +103879,7 @@ nGp
 xbH
 bIf
 upm
-bob
+lLQ
 hRE
 hRE
 hRE
@@ -104111,8 +104136,8 @@ nGp
 jNc
 sfT
 bob
-aVs
-raE
+iyE
+oSg
 raE
 raE
 urr
@@ -104368,14 +104393,14 @@ nGp
 jNc
 sfT
 bob
-hkp
+xBK
 urr
 urr
 urr
 urr
 rcy
-xEi
-jJj
+sPh
+ttn
 urr
 pgp
 xKh
@@ -104625,7 +104650,7 @@ nGp
 xbH
 bIf
 upm
-hkp
+jJj
 urr
 azA
 azA
@@ -104882,7 +104907,7 @@ nGp
 xbH
 sfT
 bob
-hkp
+wZT
 urr
 azA
 azA
@@ -106167,7 +106192,7 @@ nGp
 xbH
 sfT
 bob
-hkp
+wZT
 urr
 azA
 aKM
