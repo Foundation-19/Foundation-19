@@ -74,7 +74,7 @@
 		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
 		/area/turbolift/site53/up082 = NO_APC,
-		/area/turbolift/site53/low082 = NO_APC
+		/area/turbolift/site53/low82 = NO_APC
 
 	)
 
