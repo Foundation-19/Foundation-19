@@ -73,6 +73,9 @@
 		/area/turbolift/site53/gatea = NO_APC,
 		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
+		/area/turbolift/site53/up082 = NO_APC,
+		/area/turbolift/site53/up082 = NO_APC
+
 	)
 
 	away_site_budget = 3
