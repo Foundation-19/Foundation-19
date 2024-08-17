@@ -395,7 +395,7 @@
 
 /obj/structure/closet/secure_closet/guard/zone_commander/WillContain()
 	return list(
-		/obj/item/handcuffs = 4,
+		/obj/item/handcuffs = 2,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
 		/obj/item/material/knife/combat,
