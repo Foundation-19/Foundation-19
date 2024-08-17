@@ -3564,6 +3564,7 @@
 #include "maps\site53\items\storage.dm"
 #include "maps\site53\items\toys.dm"
 #include "maps\site53\items\clothing\platecarriers.dm"
+#include "maps\site53\structures\closets\security.dm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\maps.dm"
 #include "maps\~mapsystem\maps_announcements.dm"
