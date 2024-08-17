@@ -395,7 +395,6 @@
 
 /obj/structure/closet/secure_closet/guard/zone_commander/WillContain()
 	return list(
-		/obj/item/handcuffs = 2,
 		/obj/item/storage/box/ifak,
 		/obj/item/crowbar/emergency_forcing_tool,
 		/obj/item/material/knife/combat,
@@ -411,7 +410,7 @@
 		/obj/item/clothing/head/bio_hood/security,
 		/obj/item/storage/pill_bottle/amnesticsa,
 		/obj/item/gun/projectile/pistol/usp45,
-		/obj/item/ammo_magazine/scp/usp45 = 3,
+		/obj/item/ammo_magazine/scp/usp45 = 2,
 		/obj/item/ammo_magazine/box/acp45,
 		/obj/item/gun/energy/stunrevolver,
 		/obj/item/clothing/mask/gas/security,
