@@ -67,7 +67,7 @@
 	max_damage = 300
 	mech_health = 700
 	power_use = 50
-	has_hardpoints = list(HARDPOINT_BACK)
+	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_POWER, HARDPOINT_BACKUP_POWER)
 
 /obj/item/mech_component/chassis/heavy/prebuild()
 	. = ..()

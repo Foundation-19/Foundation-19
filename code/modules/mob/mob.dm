@@ -1030,6 +1030,11 @@
 	face_current_direction()
 
 /mob/proc/face_current_direction()
+	if(istype(loc, /mob/living/exosuit))
+		var/mob/living/exosuit/owner = loc
+		owner?.strafing.toggled()
+		return
+
 	if(!facing_dir)
 		set_face_dir(dir)
 	else

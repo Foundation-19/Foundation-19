@@ -181,8 +181,6 @@
 				a_intent = I_HURT
 			UnarmedAttack(frenemy)
 
-
-
 /mob/living/carbon/slime/proc/UpdateFace()
 	var/newmood = ""
 	a_intent = I_HELP

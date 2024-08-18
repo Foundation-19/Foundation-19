@@ -28,7 +28,7 @@
 /proc/get_mech_images(list/components = list(), overlay_layer = FLOAT_LAYER)
 	var/list/all_images = list()
 	for(var/obj/item/mech_component/comp in components)
-		all_images += get_mech_image(comp.decal, comp.icon_state, comp.on_mech_icon, comp.color, overlay_layer)
+		all_images += get_mech_image(comp.decal, "[comp.icon_state][comp.total_damage==comp.max_damage ? "_broken" : ""]", comp.on_mech_icon, comp.color, overlay_layer)
 	return all_images
 
 /mob/living/exosuit/on_update_icon()
@@ -39,11 +39,11 @@
 	if(LAZYLEN(pilot_overlays))
 		new_overlays += pilot_overlays
 	if(body)
-		new_overlays += get_mech_image(body.decal, "[body.icon_state]_overlay[hatch_closed ? "" : "_open"]", body.on_mech_icon, body.color, MECH_COCKPIT_LAYER)
+		new_overlays += get_mech_image(body.decal, "[body.icon_state][body.total_damage == body.max_damage ? "_broken" : ("_overlay[hatch_closed ? "" : "_open"]")]", body.on_mech_icon, body.color, MECH_COCKPIT_LAYER)
 	if(arms)
-		new_overlays += get_mech_image(arms.decal, arms.icon_state, arms.on_mech_icon, arms.color, MECH_ARM_LAYER)
+		new_overlays += get_mech_image(arms.decal, "[arms.icon_state][arms.total_damage == arms.max_damage ? "_broken" : ""]", arms.on_mech_icon, arms.color, MECH_ARM_LAYER)
 	if(legs)
-		new_overlays += get_mech_image(legs.decal, legs.icon_state, legs.on_mech_icon, legs.color, MECH_LEG_LAYER)
+		new_overlays += get_mech_image(legs.decal, "[legs.icon_state][legs.total_damage == legs.max_damage ? "_broken" : ""]", legs.on_mech_icon, legs.color, MECH_LEG_LAYER)
 	for(var/hardpoint in hardpoints)
 		var/obj/item/mech_equipment/hardpoint_object = hardpoints[hardpoint]
 		if(hardpoint_object)
