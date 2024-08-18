@@ -170,7 +170,7 @@
 /mob/living/exosuit/proc/update_hud_alerts()
 	for(var/mob/pilot as anything in pilots)
 
-		var/obj/item/cell/cell = get_cell(TRUE)
+		var/obj/item/cell/cell = get_cell(TRUE, ME_ANY_POWER)
 
 		if(cell)
 			var/cellcharge = cell.charge/cell.maxcharge

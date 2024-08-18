@@ -286,6 +286,7 @@
 			to_chat(user, SPAN_NOTICE("You climb out of \the [src]."))
 
 	user.RemoveClickHandler(/datum/click_handler/default/mech)
+	user.clear_alert(ALERT_CHARGE)
 	user.dropInto(loc)
 	LAZYREMOVE(user.additional_vision_handlers, src)
 	if(user.client)

@@ -908,9 +908,8 @@
 	return "FUEL : [reagents.total_volume]"
 
 /obj/item/mech_equipment/engine/proc/activate(mob/living/user)
-	active = TRUE
 	var/power_gap = clamp((internal_cell.maxcharge - internal_cell.charge)/10, 10, 100)
-	if(!get_cell(TRUE)?.drain_power(TRUE,FALSE, power_gap KILOWATTS))
+	if(!get_cell(TRUE, ME_AUXILIARY_POWERED )?.drain_power(TRUE,FALSE, power_gap KILOWATTS))
 		active = FALSE
 		owner.mech_flags &= ~MF_ENGINE_POWERED
 		return
@@ -924,12 +923,23 @@
 			return
 		if(prob(100 - power_gap))
 			playsound(owner, 'sounds/mecha/enginestarted.ogg', 100, FALSE)
-			active = TRUE
 			if(owner.power == MECH_POWER_OFF)
+				owner.mech_flags |= MF_ENGINE_POWERED
 				owner.toggle_power(user,0)
-			owner.mech_flags |= MF_ENGINE_POWERED
-			START_PROCESSING(SSprocessing, src)
-			icon_state = "[initial(icon_state)]_on"
+				if(owner.power == MECH_POWER_ON)
+					owner.mech_flags |= MF_ENGINE_POWERED
+					active = TRUE
+					START_PROCESSING(SSprocessing, src)
+					icon_state = "[initial(icon_state)]_on"
+				else
+					owner.mech_flags &= ~MF_ENGINE_POWERED
+					active = FALSE
+			else
+				owner.mech_flags |= MF_ENGINE_POWERED
+				active = TRUE
+				START_PROCESSING(SSprocessing, src)
+				icon_state = "[initial(icon_state)]_on"
+
 		else
 			active = FALSE
 			owner.mech_flags &= ~MF_ENGINE_POWERED
@@ -983,30 +993,57 @@
 /obj/item/mech_equipment/engine/get_hardpoint_maptext()
 	return "Fuel:[reagents.total_volume]"
 
+/obj/item/cell/device/internal
+	name = "internal powercell"
+	var/intentional = FALSE
+
+/obj/item/cell/device/internal/Destroy()
+	if(!intentional)
+		CRASH("[src] Being destroyed , Usr : [usr] , Src : [src] ,Loc : [loc] , Turf : [get_turf(src)]")
+	. = ..()
+
+/obj/item/cell/device/internal/Del()
+	if(!intentional)
+		CRASH("[src] Being destroyed , Usr : [usr] , Src : [src] ,Loc : [loc] , Turf : [get_turf(src)]")
+	. = ..()
+
 /obj/item/mech_equipment/power_auxiliary
 	name = "auxiliary power unit"
 	desc = "a auxiliary power unit for the exosuit, its low voltage means it can only power up equipment and basic mech functions."
 	icon_state = "auxi"
-	var/obj/item/cell/internal_cell = null
+	var/obj/item/cell/device/internal/internal_cell = null
 	equipment_flags = ME_BYPASS_INTERFACE | ME_POWERLESS_ACTIVATION | ME_ARM_INDEPENDENT | ME_NOT_SELECTABLE
 	restricted_hardpoints = list(HARDPOINT_BACKUP_POWER)
 
 /obj/item/mech_equipment/power_auxiliary/Initialize()
 	. = ..()
-	internal_cell = new /obj/item/cell/device(src)
+	internal_cell = new /obj/item/cell/device/internal(src)
 
 /obj/item/mech_equipment/power_auxiliary/uninstalled()
 	deactivate()
 	. = ..()
 
+/obj/item/mech_equipment/power_auxiliary/Destroy()
+	internal_cell.intentional = TRUE
+	QDEL_NULL(internal_cell)
+	. = ..()
+
 /obj/item/mech_equipment/power_auxiliary/get_hardpoint_maptext()
-	return "CHARGE : [internal_cell?.charge]"
+	return "CHARGE : [internal_cell.charge]"
 
 /obj/item/mech_equipment/power_auxiliary/proc/activate(mob/living/user)
-	active = TRUE
-	owner.mech_flags |= MF_AUXILIARY_POWERED
 	if(owner.power == MECH_POWER_OFF)
+		owner.mech_flags |= MF_AUXILIARY_POWERED
 		owner.toggle_power(user)
+		if(owner.power == MECH_POWER_ON)
+			owner.mech_flags |= MF_AUXILIARY_POWERED
+			active = TRUE
+		else
+			owner.mech_flags &= MF_AUXILIARY_POWERED
+			active = FALSE
+	else
+		owner.mech_flags |= MF_AUXILIARY_POWERED
+		active = TRUE
 
 /obj/item/mech_equipment/power_auxiliary/deactivate()
 	owner.mech_flags &= ~MF_AUXILIARY_POWERED
@@ -1050,14 +1087,24 @@
 	. = ..()
 
 /obj/item/mech_equipment/power_cell/proc/activate(mob/living/user)
-	active = TRUE
-	owner.mech_flags |= MF_CELL_POWERED
 	if(owner.power == MECH_POWER_OFF)
+		owner.mech_flags |= MF_CELL_POWERED
 		owner.toggle_power(user)
-	START_PROCESSING(SSprocessing, src)
+		if(owner.power == MECH_POWER_ON)
+			owner.mech_flags |= MF_CELL_POWERED
+			active = TRUE
+			START_PROCESSING(SSprocessing, src)
+		else
+			owner.mech_flags &= ~MF_CELL_POWERED
+			active = FALSE
+	else
+		owner.mech_flags |= MF_CELL_POWERED
+		active = TRUE
+		START_PROCESSING(SSprocessing, src)
 
 
 /obj/item/mech_equipment/power_cell/deactivate(mob/living/user)
+	active = FALSE
 	owner.mech_flags &= ~MF_CELL_POWERED
 	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
 		owner.toggle_power(user)
