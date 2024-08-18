@@ -421,6 +421,30 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/ulcz/scp082
+	name = "\improper SCP-082"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/ulcz/scp082/bedroom
+	name = "\improper SCP-082 Bedroom"
+
+/area/site53/ulcz/scp082/throne
+	name = "\improper SCP-082 Throne Room"
+
+/area/site53/ulcz/scp082/kitchen
+	name = "\improper SCP-082 Kitchen"
+
+/area/site53/ulcz/scp082/bathroom
+	name = "\improper SCP-082 Bathroom"
+
+/area/site53/ulcz/scp082/dining
+	name = "\improper SCP-082 Dining Hall"
+
+/area/site53/ulcz/scp082/recreation
+	name = "\improper SCP-082 Recreation Room"
+
 /area/site53/llcz/scp500
 	name = "\improper SCP-500"
 	icon_state = "research"

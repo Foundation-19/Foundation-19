@@ -1,0 +1,6 @@
+2024-08-03:
+  Zonespace, InfraredBaron, Sheets:
+  - rscadd: Added SCP-082 to the game, located in the LCZ.
+  Zonespace27:
+  - bugfix: 082 motion sensor announcement no longer plays 049's announcement sound.
+  - balance: 082 now resets his stamina to full on entering a hungering state.

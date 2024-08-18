@@ -166,3 +166,6 @@
   quadbium:
   - rscadd: Added a drone fabricator to the AIC lab
   - rscadd: Added AIC controlled drones
+2024-07-30:
+  MLGTASTICa:
+  - refactor: Refactored slime AI handling.
