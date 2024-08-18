@@ -429,6 +429,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/storage/box/detergent,
 /turf/simulated/floor/tiled/old_cargo,
 /area/site53/uez/bridge)
 "bh" = (
@@ -8019,6 +8020,7 @@
 	},
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/table/steel_reinforced,
+/obj/machinery/chemical_dispenser/bar_coffee/full,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
 "yZ" = (
@@ -13208,6 +13210,7 @@
 /obj/item/crowbar/prybar,
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/light,
+/obj/item/clothing/head/hardhat/EMS,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
 "On" = (
@@ -13327,9 +13330,7 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 8
 	},
-/obj/machinery/chemical_dispenser/bar_coffee{
-	dir = 4
-	},
+/obj/machinery/chemical_dispenser/bar_coffee/full,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uez/bridge)
 "OB" = (
@@ -13431,6 +13432,7 @@
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/item/clothing/head/hardhat/EMS,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/medical/equipstorage)
 "OW" = (
