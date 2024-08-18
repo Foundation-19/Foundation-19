@@ -52,11 +52,11 @@
 /mob/living/exosuit/get_cell(force, power_flags)
 	RETURN_TYPE(/obj/item/cell)
 	if(power == MECH_POWER_ON || force) //For most intents we can assume that a powered off exosuit acts as if it lacked a cell
-		if((power_flags & ME_CELL_POWERED && mech_flags & MF_CELL_POWERED) || force)
+		if((power_flags & ME_CELL_POWERED && mech_flags & MF_CELL_POWERED) || force == 2)
 			var/obj/item/mech_equipment/power_cell/provider = hardpoints[HARDPOINT_POWER]
 			if(provider)
 				return provider.internal_cell
-		if((power_flags & ME_ENGINE_POWERED && mech_flags & MF_ENGINE_POWERED) || force)
+		if((power_flags & ME_ENGINE_POWERED && mech_flags & MF_ENGINE_POWERED) || force == 2)
 			var/obj/item/mech_equipment/engine/provider = hardpoints[HARDPOINT_POWER]
 			if(provider)
 				return provider.internal_cell

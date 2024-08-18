@@ -70,9 +70,9 @@
 	handle_hud_icons_health()
 	var/obj/item/cell/C = get_cell(FALSE, ME_ANY_POWER)
 	if(istype(hardpoints[HARDPOINT_POWER], /obj/item/mech_equipment/engine) && C?.loc == hardpoints[HARDPOINT_POWER])
-		hud_power.maptext_x = 16
-		hud_power.maptext_y = -8
-		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;", "UNAVAIL")
+		hud_power.maptext_x = 25
+		hud_power.maptext_y = initial(hud_power.maptext_y)
+		hud_power.maptext = SPAN_STYLE("font-family: 'Small Fonts'; -dm-text-outline: 1 black; font-size: 7px;", "--/--")
 	else if(istype(C))
 		hud_power.maptext_x = initial(hud_power.maptext_x)
 		hud_power.maptext_y = initial(hud_power.maptext_y)

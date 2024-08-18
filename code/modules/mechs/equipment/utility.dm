@@ -910,7 +910,6 @@
 /obj/item/mech_equipment/engine/proc/activate(mob/living/user)
 	active = TRUE
 	var/power_gap = clamp((internal_cell.maxcharge - internal_cell.charge)/10, 10, 100)
-	owner.mech_flags |= MF_ENGINE_POWERED
 	if(!get_cell(TRUE)?.drain_power(TRUE,FALSE, power_gap KILOWATTS))
 		active = FALSE
 		owner.mech_flags &= ~MF_ENGINE_POWERED
@@ -933,9 +932,10 @@
 			icon_state = "[initial(icon_state)]_on"
 		else
 			active = FALSE
+			owner.mech_flags &= ~MF_ENGINE_POWERED
 
 /obj/item/mech_equipment/engine/Process()
-	if(reagents.total_volume < 2)
+	if(reagents.total_volume < 2 || !active)
 		deactivate()
 		return
 	playsound(owner, 'sounds/mecha/enginestarted.ogg', 100, FALSE)
@@ -956,6 +956,7 @@
 	STOP_PROCESSING(SSprocessing,src)
 	owner.mech_flags &= ~MF_ENGINE_POWERED
 	icon_state = initial(icon_state)
+	active = FALSE
 	if(owner.power == MECH_POWER_ON && !(owner.mech_flags & MF_ANY_POWER))
 		owner.toggle_power(user)
 	. = ..()
