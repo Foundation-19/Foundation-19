@@ -997,11 +997,6 @@
 	name = "internal powercell"
 	var/intentional = FALSE
 
-/obj/item/cell/device/internal/Destroy()
-	if(!intentional)
-		CRASH("[src] Being destroyed , Usr : [usr] , Src : [src] ,Loc : [loc] , Turf : [get_turf(src)]")
-	. = ..()
-
 /obj/item/cell/device/internal/Del()
 	if(!intentional)
 		CRASH("[src] Being destroyed , Usr : [usr] , Src : [src] ,Loc : [loc] , Turf : [get_turf(src)]")
