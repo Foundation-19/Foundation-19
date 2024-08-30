@@ -1,0 +1,5 @@
+author: Tuulipommi
+delete-after: true
+changes:
+  - bugfix: fixed the examine the item within a container that was inside another
+      container.
