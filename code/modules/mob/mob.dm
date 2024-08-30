@@ -316,7 +316,7 @@
 	if((is_blind()) || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
 	if(origin)
-		if(!(origin in view(7, src)))
+		if(!(get_turf(origin) in view(7, src)))
 			return FALSE
 	return TRUE
 
