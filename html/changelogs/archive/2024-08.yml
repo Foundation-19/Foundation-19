@@ -19,3 +19,7 @@
   - rscadd: added a new mode to the exosuit floodlight , DIRECTED which will cause
       it to light in a cone ahead of the exosuit.
   - bugfix: Fixed mech shields not properly layering
+2024-08-30:
+  Tuulipommi:
+  - bugfix: fixed the examine the item within a container that was inside another
+      container.
