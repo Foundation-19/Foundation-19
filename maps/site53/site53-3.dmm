@@ -13854,11 +13854,11 @@
 /turf/simulated/floor/plating,
 /area/site53/entrancezone/substation)
 "SN" = (
-/obj/effect/floor_decal/corner/yellow/border{
-	dir = 1
-	},
 /obj/machinery/camera/network/entrance{
 	c_tag = "Gate B Internal Gate"
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/upper_surface/entrancehallway)
