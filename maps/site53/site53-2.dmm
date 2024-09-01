@@ -43057,7 +43057,9 @@
 	dir = 8
 	},
 /obj/structure/table/woodentable/mahogany,
-/obj/machinery/photocopier/faxmachine,
+/obj/machinery/photocopier/faxmachine{
+	department = "Chapel"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel)
 "nfX" = (
@@ -61734,7 +61736,7 @@
 "wRi" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/machinery/photocopier/faxmachine{
-	req_access = list("ACCESS_CHAPEL_STORAGE")
+	department = "Chapel Office"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/chapel)
