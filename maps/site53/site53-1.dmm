@@ -5242,7 +5242,7 @@
 	pixel_y = 2;
 	id_tag = "scp008bolt";
 	name = "SCP-008 Containment Cell Access Bolt Control";
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -6660,7 +6660,7 @@
 /obj/machinery/turretid{
 	dir = 1;
 	name = "Secure Containment turret control panel";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	pixel_y = 2;
 	ailock = 1
 	},
@@ -9397,7 +9397,7 @@
 "jtl" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Internal Control Office";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	aiControlDisabled = 1
 	},
 /turf/simulated/floor/tiled/dark/small,

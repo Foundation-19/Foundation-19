@@ -48191,13 +48191,14 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/reswing/psionic)
 "pLN" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/catwalk_plated/dark,
 /obj/machinery/button/crematorium{
 	id_tag = "HCZCrematorium";
 	name = "HCZCrematorium";
-	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL2"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_MEDICAL_LEVEL2"));
+	pixel_x = -32
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
 /area/site53/uhcz/securitypost)
 "pMp" = (
 /obj/effect/floor_decal/corner/yellow{
@@ -57486,7 +57487,7 @@
 	name = "SCP-457 Internal Access Control";
 	pixel_x = -5;
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
 	},
 /obj/machinery/button/blast_door{
 	dir = 4;
@@ -57494,7 +57495,7 @@
 	name = "SCP-457 External Access Control";
 	pixel_x = 4;
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/scp457containment)
@@ -58097,7 +58098,7 @@
 	id_tag = "lock457";
 	name = "SCP-457 Lockdown Control";
 	pixel_y = 2;
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL3"))
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/scp457containment)
@@ -103434,7 +103435,7 @@ cEb
 gHP
 xcu
 xcu
-xcu
+pLN
 aow
 cEb
 jEd
@@ -104206,7 +104207,7 @@ cEb
 iik
 iik
 iik
-pLN
+cEb
 cEb
 oAS
 aaO
