@@ -8710,6 +8710,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/stock_parts/circuitboard/fusion_fuel_compressor,
+/obj/item/stock_parts/circuitboard/fusion_fuel_control,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/secstorage)
 "awF" = (
