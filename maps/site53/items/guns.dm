@@ -52,7 +52,6 @@
 	ammo_type = /obj/item/ammo_casing/pistol/a50
 	handle_casings = CYCLE_CASINGS
 
-
 /obj/item/gun/projectile/revolver/mateba/bigiron
 	name = "Big Iron"
 	desc = "A Mateba Unica chambered in .44 Magnum. Various engravings of fine art adorn the sides of the barrel. On the right side, an engraving reads 'I fought the law and the law won'. A Security Department logo is precisely cut into the grip, with an engraved label of 'Marty Robbins' below it."
