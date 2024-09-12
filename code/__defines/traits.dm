@@ -146,6 +146,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NEARSIGHTED_CORRECTED "nearsighted_corrected"
 /// Inability to access UI hud elements.
 #define TRAIT_UI_BLOCKED "uiblocked"
+/// Prevents the user from using guns
+#define TRAIT_FATFINGERS "fatfingers"
 
 /**
  * Trait sources

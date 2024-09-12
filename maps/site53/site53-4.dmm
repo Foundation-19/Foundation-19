@@ -1285,6 +1285,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/equipmentroom)
 "eo" = (
@@ -2257,9 +2260,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL4");
 	pixel_x = -25
 	},
-/obj/structure/closet/secure_closet/guard/breachautomatics{
-	req_access = list("ACCESS_SECURITY_LEVEL4")
-	},
+/obj/structure/closet/secure_closet/guard/breachautomatics,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/armory)
 "hD" = (
@@ -6428,6 +6429,7 @@
 /obj/structure/flora/pottedplant/deskfern{
 	pixel_y = 13
 	},
+/obj/item/storage/fancy/cigar,
 /turf/simulated/floor/carpet/green,
 /area/site53/uez/repoffice/ethics)
 "yE" = (
@@ -6649,6 +6651,16 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
+"zI" = (
+/obj/machinery/button/blast_door{
+	dir = 1;
+	id_tag = "HCZ Secure Armoury";
+	name = "HCZ Secure Armoury";
+	req_access = list("ACCESS_ADMIN_LEVEL3");
+	pixel_y = 2
+	},
+/turf/simulated/floor/exoplanet/snow,
+/area/site53/uez/hallway)
 "zJ" = (
 /obj/machinery/vending/security{
 	req_access = list("ACCESS_SECURITY_LEVEL2");
@@ -11999,6 +12011,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/hallway)
+"XU" = (
+/obj/effect/floor_decal/corner/grey/mono,
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/equipmentroom)
 "XV" = (
 /obj/effect/catwalk_plated/dark,
 /obj/item/stack/material/tritium/fifty,
@@ -12208,6 +12227,7 @@
 	pixel_y = 13
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/storage/fancy/cigar,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/repoffice/internaltribunal)
 "YM" = (
@@ -43163,7 +43183,7 @@ aw
 aw
 To
 To
-aw
+zI
 aw
 aw
 aw
@@ -52699,7 +52719,7 @@ hk
 hk
 hk
 uP
-wZ
+XU
 Pp
 wZ
 sb
@@ -53470,7 +53490,7 @@ hk
 hk
 hk
 uP
-wZ
+XU
 LR
 wZ
 Bz
@@ -54241,7 +54261,7 @@ hk
 hk
 hk
 uP
-wZ
+XU
 Bk
 wZ
 Gd
@@ -55012,7 +55032,7 @@ hk
 hk
 hk
 uP
-wZ
+XU
 kM
 wZ
 bq
