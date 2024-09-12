@@ -46,7 +46,7 @@
 	item_state = "[cpr_mode ? "med_harness_cpr" : "[initial(item_state)]"]"
 
 	if(breath_mask)
-		AddOverlays("mask_[mask_on ? "worn" : "idle"]")
+		add_overlays("mask_[mask_on ? "worn" : "idle"]")
 	if(battery)
 		switch(battery.percent())
 			if(90 to INFINITY)	battery_level = 6
@@ -56,7 +56,7 @@
 			if(20 to 39)		battery_level = 2
 			if(05 to 19)		battery_level = 1
 			if(-INFINITY to 4)	battery_level = 0
-		AddOverlays("battery[battery_level]")
+		add_overlays("battery[battery_level]")
 	if(tank)
 		switch(tank.percent())
 			if(90 to INFINITY)	tank_level = 6
@@ -66,7 +66,7 @@
 			if(20 to 39)		tank_level = 2
 			if(05 to 19)		tank_level = 1
 			if(-INFINITY to 4)	tank_level = 0
-		AddOverlays("tank_indicator[tank_level]")
+		add_overlays("tank_indicator[tank_level]")
 
 		if(istype(tank, /obj/item/tank/oxygen_emergency_extended))
 			tank_type = "engi"
@@ -74,11 +74,11 @@
 			tank_type = "oxy"
 		else
 			tank_type = "other"
-		AddOverlays("tank_[tank_type]")
+		add_overlays("tank_[tank_type]")
 	if(epp_active)
-		AddOverlays("epp_active")
+		add_overlays("epp_active")
 	if(panel_open)
-		AddOverlays("panel_open[battery ? "_battery" : ""]")
+		add_overlays("panel_open[battery ? "_battery" : ""]")
 
 /obj/item/auto_cpr/mob_can_equip(mob/living/carbon/human/H, slot, disable_warning = 0, force = 0)
 	. = ..()
