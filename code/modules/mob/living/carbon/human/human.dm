@@ -1057,11 +1057,10 @@
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
-/mob/living/carbon/human/verb/lookup()
+/mob/living/verb/lookup()
 	set name = "Look up"
 	set desc = "If you want to know what's above."
 	set category = "IC"
-
 
 	if(client && !is_physically_disabled())
 		if(z_eye)

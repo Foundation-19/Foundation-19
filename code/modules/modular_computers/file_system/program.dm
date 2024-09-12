@@ -1,34 +1,65 @@
 // /program/ files are executable programs that do things.
 /datum/computer_file/program
+	abstract_type = /datum/computer_file/program
 	filetype = "PRG"
-	filename = "UnknownProgram"						// File name. FILE NAME MUST BE UNIQUE IF YOU WANT THE PROGRAM TO BE DOWNLOADABLE FROM SCiPnet!
-	var/required_access = null						// List of required accesses to download the program.
-	// NanoModule
-	var/datum/nano_module/NM = null					// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
-	var/nanomodule_path = null						// Path to nanomodule, make sure to set this if implementing new program.
-	// TGUIModule
-	var/datum/tgui_module/TM = null					// If the program uses TGUIModule, put it here and it will be automagically opened. Otherwise implement tgui_interact.
-	var/tguimodule_path = null						// Path to tguimodule, make sure to set this if implementing new program.
-	// Etc Program stuff
-	var/program_state = PROGRAM_STATE_KILLED		// PROGRAM_STATE_KILLED or PROGRAM_STATE_BACKGROUND or PROGRAM_STATE_ACTIVE - specifies whether this program is running.
-	var/obj/item/modular_computer/computer			// Device that runs this program.
-	var/filedesc = "Unknown Program"				// User-friendly name of this program.
-	var/extended_desc = "N/A"						// Short description of this program's function.
-	var/program_icon_state = null					// Program-specific screen icon state
-	var/program_key_state = "standby_key"			// Program-specific keyboard icon state
-	var/program_menu_icon = "newwin"				// Icon to use for program's link in main menu
-	var/program_malicious = 0						// Program doesn't show up in main menu, cant be in PROGRAM_STATE_ACTIVE, autoran on download, etc. Used by viruses
-	var/requires_ntnet = 0							// Set to 1 for program to require nonstop SCiPnet connection to run. If SCiPnet connection is lost program crashes.
-	var/requires_ntnet_feature = 0					// Optional, if above is set to 1 checks for specific function of SCiPnet (currently NTNET_SOFTWAREDOWNLOAD, NTNET_PEERTOPEER, NTNET_SYSTEMCONTROL and NTNET_COMMUNICATION)
-	var/ntnet_status = 1							// SCiPnet status, updated every tick by computer running this program. Don't use this for checks if SCiPnet works, computers do that. Use this for calculations, etc.
-	var/usage_flags = PROGRAM_ALL & ~PROGRAM_PDA	// Bitflags (PROGRAM_CONSOLE, PROGRAM_LAPTOP, PROGRAM_TABLET, PROGRAM_PDA combination) or PROGRAM_ALL
-	var/network_destination = null					// Optional string that describes what SCiPnet server/system this program connects to. Used in default logging.
-	var/available_on_ntnet = 1						// Whether the program can be downloaded from SCiPnet. Set to 0 to disable.
-	var/available_on_syndinet = 0					// Whether the program can be downloaded from SyndiNet (accessible via emagging the computer). Set to 1 to enable.
-	var/computer_emagged = FALSE					// Set to 1 if computer that's running us was emagged. Computer updates this every Process() tick
-	var/ui_header = null							// Example: "something.gif" - a header image that will be rendered in computer's UI when this program is running at background. Images are taken from /nano/images/status_icons. Be careful not to use too large images!
-	var/ntnet_speed = 0								// GQ/s - current network connectivity transfer rate
+	/// File name. FILE NAME MUST BE UNIQUE IF YOU WANT THE PROGRAM TO BE DOWNLOADABLE FROM SCiPnet!
+	filename = "UnknownProgram"
+	/// User-friendly name of this program.
+	var/filedesc = "Unknown Program"
+	/// Short description of this program's function.
+	var/extended_desc = "N/A"
+	/// Icon to use for program's link in main menu
+	var/program_menu_icon = "window-maximize-o"
+
+	/// Program-specific screen icon state
+	var/program_icon_state = null
+	/// Program-specific keyboard icon state
+	var/program_key_state = "standby_key"
+
+	/// List of required accesses to download the program.
+	var/required_access = null
+	/// Whether the program can be downloaded from SCiPnet. Set to FALSE to disable.
+	var/available_on_ntnet = TRUE
+	/// Whether the program can be downloaded from SyndiNet (accessible via emagging the computer). Set to TRUE to enable.
+	var/available_on_syndinet = FALSE
+	/// Program doesn't show up in main menu, cant be in PROGRAM_STATE_ACTIVE, autoran on download, etc. Used by viruses
+	var/program_malicious = FALSE
+	/// Bitflags (PROGRAM_CONSOLE, PROGRAM_LAPTOP, PROGRAM_TABLET, PROGRAM_PDA combination) or PROGRAM_ALL
+	var/usage_flags = PROGRAM_ALL & ~PROGRAM_PDA
+
+	/// Set to 1 for program to require nonstop SCiPnet connection to run. If SCiPnet connection is lost program crashes.
+	var/requires_ntnet = FALSE
+	/// Optional, if above is set to 1 checks for specific function of SCiPnet (currently NTNET_SOFTWAREDOWNLOAD, NTNET_PEERTOPEER, NTNET_SYSTEMCONTROL and NTNET_COMMUNICATION)
+	var/requires_ntnet_feature = 0
+	/// Optional string that describes what SCiPnet server/system this program connects to. Used in default logging.
+	var/network_destination = null
+
+
+	/// If the program uses NanoModule, put it here and it will be automagically opened. Otherwise implement ui_interact.
+	var/datum/nano_module/NM = null
+	/// Path to nanomodule, make sure to set this if implementing new program.
+	var/nanomodule_path = null
+
+	/// If the program uses TGUIModule, put it here and it will be automagically opened. Otherwise implement tgui_interact.
+	var/datum/tgui_module/TM = null
+	/// Path to tguimodule, make sure to set this if implementing new program.
+	var/tguimodule_path = null
+
 	var/tgui_id
+
+
+	/// PROGRAM_STATE_KILLED or PROGRAM_STATE_BACKGROUND or PROGRAM_STATE_ACTIVE - specifies whether this program is running.
+	var/program_state = PROGRAM_STATE_KILLED
+	/// Device that runs this program.
+	var/obj/item/modular_computer/computer
+	/// SCiPnet status, updated every tick by computer running this program. Don't use this for checks if SCiPnet works, computers do that. Use this for calculations, etc.
+	var/ntnet_status = 1
+	/// GQ/s - current network connectivity transfer rate
+	var/ntnet_speed = 0
+	/// Set to TRUE if computer that's running us was emagged. Computer updates this every Process() tick
+	var/computer_emagged = FALSE
+	/// Example: "something.gif" - a header image that will be rendered in computer's UI when this program is running at background. Images are taken from /nano/images/status_icons. Be careful not to use too large images!
+	var/ui_header = null
 
 /datum/computer_file/program/New(obj/item/modular_computer/comp = null)
 	..()
@@ -59,7 +90,7 @@
 
 // Used by programs that manipulate data files.
 /datum/computer_file/program/proc/get_data_file(filename)
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
 	var/datum/computer_file/data/F = HDD.find_file_by_name(filename)
@@ -70,7 +101,7 @@
 /datum/computer_file/program/proc/create_data_file(newname, data = "", file_type = /datum/computer_file/data)
 	if(!newname)
 		return
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
 	if(get_data_file(newname))
@@ -124,18 +155,18 @@
 // User has to wear their ID or have it inhand for ID Scan to work.
 // Can also be called manually, with optional parameter being access_to_check to scan the user's ID
 /datum/computer_file/program/proc/program_has_access(mob/living/user, loud = 0, access_to_check)
-	// Defaults to required_access
-	if(!access_to_check)
-		access_to_check = required_access
-	if(!access_to_check) // No required_access, allow it.
-		return 1
-
 	// Admin override - allows operation of any computer as aghosted admin, as if you had any required access.
 	if(isghost(user) && check_rights(R_ADMIN, 0, user))
 		return 1
 
 	if(!istype(user))
 		return 0
+
+	// Defaults to required_access
+	if(!access_to_check)
+		access_to_check = required_access
+	if(!access_to_check) // No required_access, allow it.
+		return 1
 
 	var/obj/item/card/id/I = user.GetIdCard()
 	if(!I)
@@ -155,9 +186,17 @@
 		return computer.get_header_data()
 	return list()
 
-// This is performed on program startup. May be overriden to add extra logic. Remember to include ..() call. Return 1 on success, 0 on failure.
+// This is performed on program startup. May be overriden to add extra logic. Return TRUE on success, FALSE on failure.
 // When implementing new program based device, use this to run the program.
 /datum/computer_file/program/proc/run_program(mob/living/user)
+	SHOULD_CALL_PARENT(TRUE)
+
+	if(corrupt)
+		computer.visible_message(SPAN_WARNING("Random bits flash on the screen of [computer] before it suddenly crashes!"), range = 4)
+		computer.balloon_alert_to_viewers("blue screen of death!", vision_distance = 4)
+		computer.forced_shutdown(10 SECONDS)
+		return
+
 	if(program_malicious)
 		computer.idle_threads.Add(src)
 		program_state = PROGRAM_STATE_BACKGROUND
@@ -175,10 +214,12 @@
 
 	if(requires_ntnet && network_destination)
 		generate_network_log("Connection opened to [network_destination].")
-	return 1
+	return TRUE
 
 // Use this proc to kill the program. Designed to be implemented by each program if it requires on-quit logic, such as the SCPRC client.
 /datum/computer_file/program/proc/kill_program(forced = 0)
+	SHOULD_CALL_PARENT(TRUE)
+
 	program_state = PROGRAM_STATE_KILLED
 	if(requires_ntnet && network_destination)
 		generate_network_log("Connection to [network_destination] closed.")

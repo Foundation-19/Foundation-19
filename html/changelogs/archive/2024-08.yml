@@ -1,0 +1,25 @@
+2024-08-03:
+  Zonespace, InfraredBaron, Sheets:
+  - rscadd: Added SCP-082 to the game, located in the LCZ.
+  Zonespace27:
+  - bugfix: 082 motion sensor announcement no longer plays 049's announcement sound.
+  - balance: 082 now resets his stamina to full on entering a hungering state.
+2024-08-19:
+  MLGTASTICa:
+  - refactor: Reworked mech power , now mechs draw power from power hardpoints , which
+      are colored in yellow.
+  - rscadd: Added the auxiliary power cell slot to combat mechs , this will be used
+      for weapons & arm actions when the main one is not available
+  - rscadd: Added the mech engine , a alternative to the power cell,the engine has
+      a internal cell of just 500 units ,but will use welding fuel to recharge itself
+      slowly
+  - rscadd: Mech mender, used to heal pacients or scan them
+  - balance: buffed the mech sleeper to include more chemicals
+  - rscadd: added in exosuit strafing
+  - rscadd: added a new mode to the exosuit floodlight , DIRECTED which will cause
+      it to light in a cone ahead of the exosuit.
+  - bugfix: Fixed mech shields not properly layering
+2024-08-30:
+  Tuulipommi:
+  - bugfix: fixed the examine the item within a container that was inside another
+      container.

@@ -33,6 +33,9 @@
 	///Sounds that are considered memetic
 	var/list/memetic_sounds
 
+	/// If this SCP can still be examined as normal
+	var/regular_examine = FALSE
+
 /datum/scp/New(atom/creation, vName, vClass = SCP_SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
 
@@ -55,9 +58,7 @@
 		var/mob/pMob = parent
 		if(LAZYLEN(name))
 			pMob.fully_replace_character_name(name)
-
-		if(metaFlags & SCP_PLAYABLE)
-			pMob.status_flags += NO_ANTAG
+		pMob.status_flags += NO_ANTAG
 
 	if(metaFlags & SCP_DISABLED)
 		log_and_message_staff("Disabled SCP-[designation] spawned and subsequently deleted! Do not spawn disabled SCPs!", location = get_turf(parent))
@@ -102,6 +103,9 @@
 	var/datum/job/job = SSjobs.get_by_title(H.job)
 	if(job && (job.department_flag & (COM|SCI|SEC)))
 		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
+
+/datum/scp/proc/has_minimum_players()
+	return length(GLOB.clients) >= min_playercount
 
 /datum/scp/proc/onGain()
 

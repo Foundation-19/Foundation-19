@@ -825,7 +825,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 					"You hear a crackling sound[gore]."
 					)
 			if(DROPLIMB_BLUNT)
-				var/gore = "[BP_IS_ROBOTIC(src) ? "": " in shower of gore"]"
+				var/gore = "[BP_IS_ROBOTIC(src) ? "": " in a shower of gore"]"
 				var/gore_sound = "[BP_IS_ROBOTIC(src) ? "rending sound of tortured metal" : "sickening splatter of gore"]"
 				return list(
 					"\The [owner]'s [src.name] explodes[gore]!",
@@ -859,11 +859,12 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(BP_IS_CRYSTAL(src) || (disintegrate == DROPLIMB_EDGE && species.limbs_are_nonsolid))
 		disintegrate = DROPLIMB_BLUNT //splut
 
-	var/list/organ_msgs = get_droplimb_messages_for(disintegrate, clean)
-	if(LAZYLEN(organ_msgs) >= 3)
-		owner.visible_message(SPAN_DANGER("[organ_msgs[1]]"), \
-			SPAN_CLASS("moderate","<b>[organ_msgs[2]]</b>"), \
-			SPAN_DANGER("[organ_msgs[3]]"))
+	if(!silent)
+		var/list/organ_msgs = get_droplimb_messages_for(disintegrate, clean)
+		if(LAZYLEN(organ_msgs) >= 3)
+			owner.visible_message(SPAN_DANGER("[organ_msgs[1]]"), \
+				SPAN_CLASS("moderate","<b>[organ_msgs[2]]</b>"), \
+				SPAN_DANGER("[organ_msgs[3]]"))
 
 	play_droplimb_sound(disintegrate, clean)
 
@@ -919,6 +920,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if(I.w_class > ITEM_SIZE_SMALL && !istype(I,/obj/item/organ))
 					I.dropInto(loc)
 			qdel(src)
+			return
 		if(DROPLIMB_BLUNT)
 			var/obj/gore
 			if(BP_IS_CRYSTAL(src))
@@ -945,6 +947,8 @@ Note that amputating the affected organ does in fact remove the infection from t
 				I.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),5)
 
 			qdel(src)
+			return
+	return src
 
 /****************************************************
 			   HELPERS

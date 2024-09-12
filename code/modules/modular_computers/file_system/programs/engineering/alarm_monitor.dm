@@ -5,7 +5,7 @@
 	ui_header = "alarm_green.gif"
 	program_icon_state = "alert-green"
 	program_key_state = "atmos_key"
-	program_menu_icon = "alert"
+	program_menu_icon = "bell"
 	extended_desc = "This program provides visual interface for the engineering alarm system."
 	required_access = ACCESS_ENGINEERING_LVL2
 	requires_ntnet = TRUE

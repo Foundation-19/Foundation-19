@@ -51,7 +51,7 @@
 					virus_runvar++
 					virus_cooldown = world.time + 1 MINUTE
 				else if(virus_runvar == 1)
-					var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+					var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 					if(!HDD)
 						return
 					var/datum/computer_file/program/email_client/email_c = HDD.find_file_by_name("emailc")	// since it's not a data file, we need to get it manually
@@ -115,13 +115,13 @@
 				RUNVAR USE: keeps track of how bad things should be getting
 			*/
 				if((virus_runvar > 15) || prob(1.5 * virus_runvar))		// delete a random program and replace it with an armed revelation. once this happens you're probably screwed
-					var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+					var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 					if(!HDD)
 						return
 					var/list/datum/computer_file/program/programs = list()
 					var/datum/computer_file/program/deleted
 					for(var/datum/computer_file/file in HDD.stored_files)
-						if(istype(file, /datum/computer_file/program) || !(file.undeletable))	// don't want to delete programs like file manager
+						if(istype(file, /datum/computer_file/program) && !(file.undeletable))	// don't want to delete programs like file manager
 							var/datum/computer_file/program/T = file
 							programs += T
 					if(LAZYLEN(programs))

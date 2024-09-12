@@ -157,10 +157,14 @@ export class ButtonConfirm extends Component {
     this.state = {
       clickedOnce: false,
     };
-    this.handleClick = () => {
-      if (this.state.clickedOnce) {
-        this.setClickedOnce(false);
+    this.handleClick = (event, onClick) => {
+      if (!this.state.clickedOnce) {
+        this.setClickedOnce(true);
+        return;
       }
+
+      onClick(event);
+      this.setClickedOnce(false);
     };
   }
 
@@ -168,15 +172,11 @@ export class ButtonConfirm extends Component {
     this.setState({
       clickedOnce,
     });
-    if (clickedOnce) {
-      setTimeout(() => window.addEventListener('click', this.handleClick));
-    } else {
-      window.removeEventListener('click', this.handleClick);
-    }
   }
 
   render() {
     const {
+      children,
       confirmContent = 'Confirm?',
       confirmColor = 'bad',
       confirmIcon,
@@ -188,14 +188,13 @@ export class ButtonConfirm extends Component {
     } = this.props;
     return (
       <Button
-        content={this.state.clickedOnce ? confirmContent : content}
         icon={this.state.clickedOnce ? confirmIcon : icon}
         color={this.state.clickedOnce ? confirmColor : color}
-        onClick={() =>
-          this.state.clickedOnce ? onClick() : this.setClickedOnce(true)
-        }
+        onClick={(e) => this.handleClick(e, onClick)}
         {...rest}
-      />
+      >
+        {this.state.clickedOnce ? confirmContent : children}
+      </Button>
     );
   }
 }

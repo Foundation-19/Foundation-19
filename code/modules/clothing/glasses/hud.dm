@@ -79,10 +79,7 @@
 	electric = TRUE
 	species_restricted = list("exclude", SPECIES_DIONA)
 	hidden_from_codex = FALSE
-
-/obj/item/clothing/glasses/hud/security/night/Initialize()
-	. = ..()
-	overlay = GLOB.global_hud.thermal
+	overlay = /atom/movable/screen/fullscreen/hud/thermal
 
 /obj/item/clothing/glasses/hud/security/prescription
 	name = "prescription security HUD"
@@ -153,14 +150,10 @@
 	off_state = "denight"
 	electric = TRUE
 	visual_insulation = V_INSL_PERFECT
-
-/obj/item/clothing/glasses/hud/scramble/Initialize()
-	. = ..()
-	overlay = GLOB.global_hud.scramble
+	overlay = /atom/movable/screen/fullscreen/hud/scramble
 
 /obj/item/clothing/glasses/hud/scramble/process_hud(mob/M)
 	process_scramble_hud(M)
-
 
 /obj/item/clothing/glasses/hud/scramble/faulty // for admin shenanigans
 	visual_insulation = V_INSL_IMPERFECT
