@@ -1,0 +1,5 @@
+author: quadbium
+delete-after: true
+changes:
+  - rscadd: Adds defines for several bullet damage values
+  - rscadd: Adds extra brute and ballistic values, sets all armor to defined values
