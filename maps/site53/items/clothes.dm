@@ -49,7 +49,7 @@
 	body_parts_covered = HANDS
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
-	armor = list(melee = 50, bullet = 40, laser = 30, energy = 25, bomb = 30, bio = 10, rad = 0)
+	armor = list(melee = ARMOR_MELEE_MAJOR, bullet = ARMOR_BALLISTIC_MID, laser = ARMOR_LASER_SMALL_MID, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = 0)
 
 /obj/item/clothing/gloves/tactical/alpha
 	desc = "These grey tactical gloves are made from a durable synthetic, and have hardened knuckles."
@@ -60,4 +60,4 @@
 	body_parts_covered = HANDS
 	siemens_coefficient = 0.50
 	permeability_coefficient = 0.05
-	armor = list(melee = 80, bullet = 80, laser = 60, energy = 30, bomb = 50, bio = 10, rad = 0)
+	armor = list(melee = ARMOR_MELEE_VERY_VERY_HIGH, bullet = ARMOR_BALLISTIC_RIFLE, laser = ARMOR_MELEE_SMALL_HIGH, energy = ARMOR_ENERGY_RESISTANT, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_MINOR, rad = 0)

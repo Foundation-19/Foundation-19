@@ -18,7 +18,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 25, bullet = 25, laser = 30, energy = 35, bomb = 35, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_MID, bullet = ARMOR_BALLISTIC_SMALL, laser = ARMOR_LASER_SMALL_MID, energy = ARMOR_ENERGY_RESISTANT, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.3
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor
@@ -27,7 +27,7 @@
 	icon_state = "guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
 	cold_protection = UPPER_TORSO | LOWER_TORSO
-	armor = list(melee = 60, bullet = 35, laser = 35, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_SMALL_HIGH, bullet = ARMOR_BALLISTIC_SMALL_MID, laser = ARMOR_LASER_MID, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/ruined
@@ -36,7 +36,7 @@
 	icon_state = "forgotten-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
 	cold_protection = UPPER_TORSO | LOWER_TORSO
-	armor = list(melee = 30, bullet = 15, laser = 15, energy = 10, bomb = 15, bio = 5, rad = 5)
+	armor = list(melee = ARMOR_MELEE_RESISTANT, bullet = ARMOR_BALLISTIC_VVSMALL, laser = ARMOR_LASER_VERY_SMALL, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = 0, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/medic
@@ -45,7 +45,7 @@
 	icon_state = "combatmedic"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS
-	armor = list(melee = 35, bullet = 40, laser = 40, energy = 45, bomb = 15, bio = 45, rad = 35)
+	armor = list(melee = ARMOR_MELEE_VRESISTANT, bullet = ARMOR_BALLISTIC_MID, laser = ARMOR_LASER_HANDGUNS, energy = ARMOR_ENERGY_RESISTANT, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_RESISTANT, rad = ARMOR_RAD_RESISTANT)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/recontain
@@ -54,7 +54,7 @@
 	icon_state = "reconguard"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS
-	armor = list(melee = 35, bullet = 50, laser = 45, energy = 25, bomb = 30, bio = 10, rad = 5)
+	armor = list(melee = ARMOR_MELEE_VRESISTANT, bullet = ARMOR_BALLISTIC_PISTOL, laser = ARMOR_LASER_HANDGUNS_PLUS, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/riot
@@ -63,7 +63,7 @@
 	icon_state = "riotguard"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS | LEGS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS | LEGS
-	armor = list(melee = 70, bullet = 15, laser = 25, energy = 25, bomb = 50, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_VERY_HIGH, bullet = ARMOR_BALLISTIC_VVSMALL, laser = ARMOR_LASER_SMALL, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
@@ -72,7 +72,7 @@
 	icon_state = "cadetarmor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
 	cold_protection = UPPER_TORSO | LOWER_TORSO
-	armor = list(melee = 35, bullet = 20, laser = 15, energy = 15, bomb = 15, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_VRESISTANT, bullet = ARMOR_BALLISTIC_VERY_SMALL, laser = ARMOR_LASER_VERY_SMALL, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 	flags_inv = 0
 
@@ -82,7 +82,7 @@
 	icon_state = "isd_trenchcoat"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | ARMS
-	armor = list(melee = 40, bullet = 60, laser = 30, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_PISTOLP, laser = ARMOR_LASER_SMALL_MID, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/lczcomm
@@ -91,7 +91,7 @@
 	icon_state = "heavy-guard-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 65, bullet = 45, laser = 30, energy = 40, bomb = 40, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_HIGH, bullet = ARMOR_BALLISTIC_MID_PLUS, laser = ARMOR_LASER_SMALL_MID, energy = ARMOR_ENERGY_RESISTANT, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos
@@ -100,7 +100,7 @@
 	icon_state = "ci_vest"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
-	armor = list(melee = 40, bullet = 65, laser = 40, energy = 25, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_RESISTANT, laser = ARMOR_LASER_HANDGUNS, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/chaos/pilot
@@ -109,7 +109,7 @@
 	icon_state = "ci_pilot_vest"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
 	cold_protection = UPPER_TORSO | LOWER_TORSO
-	armor = list(melee = 15, bullet = 25, laser = 10, energy = 0, bomb = 5, bio = 5, rad = 10)
+	armor = list(melee = ARMOR_MELEE_KNIVES, bullet = ARMOR_BALLISTIC_SMALL, laser = ARMOR_LASER_MINOR, energy = 0, bomb = 0, bio = 0, rad = ARMOR_RAD_MINOR)
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/eta
 	name = "armored vest"
@@ -117,7 +117,7 @@
 	icon_state = "eta-armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
-	armor = list(melee = 70, bullet = 70, laser = 70, energy = 70, bomb = 30, bio = 15, rad = 10)
+	armor = list(melee = ARMOR_MELEE_VERY_HIGH, bullet = ARMOR_BALLISTIC_VRESISTANT, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_STRONG, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 
 /obj/item/clothing/suit/armor/vest/scp/medarmor/beta
@@ -127,7 +127,7 @@
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	permeability_coefficient = 0.5
-	armor = list(melee = 80, bullet = 80, laser = 40, energy = 25, bomb = 30, bio = 90, rad = 90)
+	armor = list(melee = ARMOR_MELEE_VERY_VERY_HIGH, bullet = ARMOR_BALLISTIC_RIFLE, laser = ARMOR_LASER_HANDGUNS, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_SHIELDED, rad = ARMOR_RAD_SHIELDED)
 	acid_resistance = 5
 
 /obj/item/clothing/head/hcz_hazmat
