@@ -1,3 +1,7 @@
 2024-09-12:
   Oprime:
   - rscadd: Cool examine text by Gio
+2024-09-13:
+  quadbium:
+  - rscadd: Adds defines for several bullet damage values
+  - rscadd: Adds extra brute and ballistic values, sets all armor to defined values
