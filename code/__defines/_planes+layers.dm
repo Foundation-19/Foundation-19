@@ -139,6 +139,7 @@ What is the naming convention for planes or layers?
 	//MOB
 	#define MECH_UNDER_LAYER            3.11
 	// MOB_LAYER                        4
+	//MECH
 	#define MECH_BASE_LAYER             4.01
 	#define MECH_INTERMEDIATE_LAYER     4.02
 	#define MECH_PILOT_LAYER            4.03
@@ -150,6 +151,9 @@ What is the naming convention for planes or layers?
 	#define ABOVE_HUMAN_LAYER           4.08
 	#define VEHICLE_LOAD_LAYER          4.09
 	#define CAMERA_LAYER                4.10
+	//SCP
+	#define SCP_082_LYING_LAYER			4.101
+	#define SCP_082_LAYER				4.102
 	//BLOB
 	#define BLOB_SHIELD_LAYER           4.11
 	#define BLOB_NODE_LAYER             4.12

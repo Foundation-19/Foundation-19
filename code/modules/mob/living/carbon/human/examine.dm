@@ -10,7 +10,7 @@
 	var/skipface = 0
 
 	//Skips this for humanoid SCPS
-	if(SCP)
+	if(SCP && !SCP.regular_examine)
 		to_chat(user, "[icon2html(src, user)] That's \a [src] [suffix]")
 		to_chat(user, desc)
 		return
