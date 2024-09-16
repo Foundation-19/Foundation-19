@@ -83,7 +83,7 @@
 	if(sound_takeoff)
 		if(audioalways)
 			playsound(current_location, sound_takeoff, 100)
-			playsound(destination, sound_landing, 100)
+			playsound(destination, sound_takeoff, 100)
 		else
 			playsound(current_location, sound_takeoff, 100)
 	spawn(warmup_time*10)
@@ -133,7 +133,7 @@
 				if(!fwooshed && (arrive_time - world.time) < 100)
 					fwooshed = 1
 					if(audioalways)
-						playsound(current_location, sound_takeoff, 100)
+						playsound(current_location, sound_landing, 100)
 						playsound(destination, sound_landing, 100)
 					else
 						playsound(destination, sound_landing, 100)
