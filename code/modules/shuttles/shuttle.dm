@@ -19,6 +19,8 @@
 	var/sound_takeoff = 'sounds/effects/shuttle_takeoff.ogg'
 	var/sound_landing = 'sounds/effects/shuttle_landing.ogg'
 
+	var/audioalways = 0 //Do we want the audio to play in the destination and takeoff location? Useful for things such as lifts with no transition location to trigger landing audio.
+
 	///These two can be customized under individual shuttles.
 	var/landing_message = "The rumble of engines are heard as a shuttle approaches."
 	var/takeoff_message = "The rumble of engines are heard as a shuttle takes off."
@@ -79,7 +81,11 @@
 
 	moving_status = SHUTTLE_WARMUP
 	if(sound_takeoff)
-		playsound(current_location, sound_takeoff, 100)
+		if(audioalways)
+			playsound(current_location, sound_takeoff, 100)
+			playsound(destination, sound_landing, 100)
+		else
+			playsound(current_location, sound_takeoff, 100)
 	spawn(warmup_time*10)
 		if (moving_status == SHUTTLE_IDLE)
 			return //someone cancelled the launch
@@ -126,7 +132,11 @@
 			while (world.time < arrive_time)
 				if(!fwooshed && (arrive_time - world.time) < 100)
 					fwooshed = 1
-					playsound(destination, sound_landing, 100)
+					if(audioalways)
+						playsound(current_location, sound_takeoff, 100)
+						playsound(destination, sound_landing, 100)
+					else
+						playsound(destination, sound_landing, 100)
 					if (!istype(destination.base_area, /area/space))
 						var/area/A = get_area(destination)
 
