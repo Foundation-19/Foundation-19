@@ -978,6 +978,15 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/equipmentroom)
+"dk" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "dm" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -1707,6 +1716,13 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
+"fI" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "fL" = (
 /obj/structure/cable{
 	d2 = 2;
@@ -3574,6 +3590,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/uez/equipmentroom)
+"mG" = (
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "mJ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -4909,6 +4929,10 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/site53/uez/hallway)
+"sS" = (
+/obj/structure/ladder,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "sX" = (
 /obj/machinery/door/blast/shutters{
 	id_tag = "EZ Interrogation shutters";
@@ -5557,6 +5581,12 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/uez/hallway)
+"vJ" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "vK" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
@@ -6229,6 +6259,12 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/uez/commandpanicbunker)
+"yH" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "yJ" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
@@ -7559,6 +7595,13 @@
 "EC" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/uez/commandpanicbunker)
+"EE" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "EG" = (
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
@@ -7692,6 +7735,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"Fu" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "Fv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -10194,6 +10247,12 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
 /area/site53/uez/hallway)
+"QD" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site53/surface/surface/upper)
 "QE" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -45370,9 +45429,9 @@ hZ
 hZ
 hZ
 hZ
-hZ
-hZ
-hZ
+Fu
+QD
+EE
 hZ
 hZ
 hZ
@@ -45627,9 +45686,9 @@ hZ
 hZ
 hZ
 hZ
-hZ
-hZ
-hZ
+yH
+sS
+mG
 hZ
 hZ
 hZ
@@ -45884,9 +45943,9 @@ hZ
 hZ
 hZ
 hZ
-hZ
-hZ
-hZ
+dk
+vJ
+fI
 hZ
 hZ
 hZ

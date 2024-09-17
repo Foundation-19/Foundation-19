@@ -50229,6 +50229,11 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/llcz/entrance_checkpoint)
+"qPT" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/ladder/up,
+/turf/simulated/floor/tiled/dark,
+/area/site53/logistics/logistics)
 "qPV" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 8
@@ -97627,7 +97632,7 @@ aDM
 apr
 aDM
 aQZ
-pWn
+qPT
 oic
 qiQ
 pWn
