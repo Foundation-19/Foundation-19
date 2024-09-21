@@ -1412,7 +1412,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/alarm,
+/obj/machinery/alarm{
+	req_access = list(list("ACCESS_SECURITY_LEVEL1","ACCESS_ATMOS","ACCESS_ENGINEERING_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/lowres/Anomaly)
 "bqK" = (
@@ -4514,6 +4516,26 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/cryo)
+"eiF" = (
+/obj/machinery/door/airlock/highsecurity/bolted{
+	name = "SCP-008 Sample Storage";
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
+	aiControlDisabled = 1;
+	id_tag = "scp008bolt"
+	},
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "lock008";
+	name = "SCP-008 Lockdown Blast Door"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/uhcz/scp8containment)
 "eiO" = (
 /obj/machinery/door/airlock/glass/civilian{
 	name = "SCP-049 Garden"
@@ -5563,7 +5585,7 @@
 	pixel_y = 2;
 	id_tag = "scp008bolt";
 	name = "SCP-008 Containment Cell Access Bolt Control";
-	req_access = list("ACCESS_SECURITY_LEVEL4")
+	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/uhcz/scp8containment)
@@ -7101,7 +7123,7 @@
 /obj/machinery/turretid{
 	dir = 1;
 	name = "Secure Containment turret control panel";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	pixel_y = 2;
 	ailock = 1
 	},
@@ -9966,7 +9988,7 @@
 "jtl" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Internal Control Office";
-	req_access = list("ACCESS_SECURITY_LEVEL4");
+	req_access = list("ACCESS_SECURITY_LEVEL3");
 	aiControlDisabled = 1
 	},
 /turf/simulated/floor/tiled/dark/small,
@@ -10715,14 +10737,14 @@
 	id_tag = "viro008";
 	name = "SCP-008 Virology Lab Lockdown Control";
 	dir = 4;
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
 	pixel_x = -25
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "viro0082";
 	name = "SCP-008-2 Containment Cell Control";
 	dir = 4;
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
 	pixel_x = -34
 	},
 /turf/simulated/floor/tiled/white/vertical,
@@ -12080,7 +12102,7 @@
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	name = "SCP-008 Secure Freezer";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/light{
 	dir = 4
@@ -14347,7 +14369,7 @@
 "nFD" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Sample Testing Lab";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -15080,7 +15102,7 @@
 "oub" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008-2 Containment Cell";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -15226,7 +15248,7 @@
 "oAH" = (
 /obj/machinery/door/window/brigdoor/westright{
 	name = "SCP-008 Secure Freezer";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"))
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
@@ -16171,7 +16193,9 @@
 /obj/item/clothing/glasses/science,
 /obj/item/clothing/gloves/latex,
 /obj/item/device/scanner/health,
-/obj/machinery/alarm,
+/obj/machinery/alarm{
+	req_access = list(list("ACCESS_SECURITY_LEVEL1","ACCESS_ATMOS","ACCESS_ENGINEERING_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	},
 /obj/effect/floor_decal/corner/research/full,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
@@ -17482,7 +17506,7 @@
 "qTm" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Medical Office";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/structure/cable/green{
@@ -21846,7 +21870,7 @@
 "vqu" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-008 Virology Lab";
-	req_access = list(list("ACCESS_SECURITY_LEVEL3","ACCESS_SCIENCE_LEVEL4"));
+	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"));
 	aiControlDisabled = 1
 	},
 /obj/machinery/door/blast/shutters/open{
@@ -84761,7 +84785,7 @@ pka
 pka
 pka
 pka
-wHx
+eiF
 pka
 pka
 iBi

@@ -49,6 +49,7 @@
 #include "code\__defines\combat.dm"
 #include "code\__defines\cooldowns.dm"
 #include "code\__defines\culture.dm"
+#include "code\__defines\damage.dm"
 #include "code\__defines\damage_organs.dm"
 #include "code\__defines\database.dm"
 #include "code\__defines\directions.dm"
