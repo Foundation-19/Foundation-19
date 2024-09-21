@@ -1359,7 +1359,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/alarm,
+/obj/machinery/alarm{
+	req_access = list(list("ACCESS_SECURITY_LEVEL1","ACCESS_ATMOS","ACCESS_ENGINEERING_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	},
 /turf/simulated/floor/reinforced,
 /area/site53/reswing/lowres/Anomaly)
 "bqK" = (
@@ -15259,7 +15261,9 @@
 /obj/item/clothing/glasses/science,
 /obj/item/clothing/gloves/latex,
 /obj/item/device/scanner/health,
-/obj/machinery/alarm,
+/obj/machinery/alarm{
+	req_access = list(list("ACCESS_SECURITY_LEVEL1","ACCESS_ATMOS","ACCESS_ENGINEERING_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
+	},
 /obj/effect/floor_decal/corner/research/full,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/lowres/Anomaly)
