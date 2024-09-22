@@ -267,17 +267,6 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
-"bb" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/showcase{
-	desc = "A self-contained autopilot that controls supply drones.";
-	icon_state = "comm_server";
-	name = "Supply Drone Virtual Intelligence"
-	},
-/turf/simulated/floor,
-/area/supply/dock)
 "bc" = (
 /obj/structure/railing/mapped{
 	dir = 6
@@ -451,12 +440,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
-"bA" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor,
-/area/supply/dock)
 "bB" = (
 /obj/machinery/light{
 	dir = 8
@@ -510,19 +493,18 @@
 /obj/item/gun/projectile/flare/loaded,
 /turf/simulated/floor/shuttle/white,
 /area/site53/tram/mtf)
-"bG" = (
-/obj/machinery/button/blast_door{
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutter Control"
-	},
-/obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
-/area/supply/dock)
 "bH" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/passport/goc,
 /turf/simulated/floor/carpet/blue,
 /area/centcom/goc)
+"bI" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "bJ" = (
 /obj/structure/table/woodentable,
 /obj/random/action_figure,
@@ -2241,12 +2223,6 @@
 	dir = 4
 	},
 /area/centcom)
-"gt" = (
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor,
-/area/supply/dock)
 "gu" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -3254,6 +3230,9 @@
 /obj/machinery/light/small/emergency,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site53/lhcz/scp1102entrance)
+"jx" = (
+/turf/simulated/wall/r_titanium,
+/area/supply/dock)
 "jy" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/light/small/emergency,
@@ -8928,14 +8907,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
-"wt" = (
-/obj/effect/paint/silver,
-/obj/machinery/button/blast_door{
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutter Control"
-	},
-/turf/simulated/wall/r_titanium,
-/area/supply/dock)
 "wu" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#C40000";
@@ -10104,6 +10075,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"zv" = (
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/supply/dock)
 "zw" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -10387,6 +10362,12 @@
 "Aj" = (
 /turf/simulated/mineral,
 /area/centcom/chaos)
+"Ak" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "Am" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#272B5B"
@@ -10765,10 +10746,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/centcom/goc)
-"Bn" = (
-/obj/machinery/light/spot,
-/turf/simulated/floor,
-/area/supply/dock)
 "Bo" = (
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
@@ -12929,6 +12906,12 @@
 /obj/machinery/organ_printer/robot/mapped,
 /turf/simulated/floor/tiled/white/vertical,
 /area/centcom/goc)
+"GZ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/supply/dock)
 "Hb" = (
 /obj/structure/table/standard,
 /obj/item/crowbar/prybar,
@@ -13697,6 +13680,14 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/centcom)
+"Ja" = (
+/obj/structure/showcase{
+	desc = "A self-contained autopilot that controls supply drones.";
+	icon_state = "comm_server";
+	name = "Supply Drone Virtual Intelligence"
+	},
+/turf/simulated/floor/carpet,
+/area/supply/dock)
 "Jb" = (
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/dark/horizontal,
@@ -13817,15 +13808,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/centcom)
-"Js" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutters"
-	},
-/turf/simulated/floor,
-/area/supply/dock)
 "Jt" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -15149,12 +15131,6 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/centcom)
-"Mc" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 1
-	},
-/turf/simulated/floor,
-/area/supply/dock)
 "Md" = (
 /obj/structure/table/standard,
 /obj/item/stamp/chameleon,
@@ -16072,10 +16048,6 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/centcom)
-"OB" = (
-/obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
-/area/supply/dock)
 "OD" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#561919";
@@ -16813,13 +16785,6 @@
 /obj/structure/table/woodentable_reinforced/ebony,
 /turf/simulated/floor/carpet/blue,
 /area/centcom/goc)
-"Qz" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/turf/simulated/floor,
-/area/supply/dock)
 "QA" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#561919";
@@ -17281,15 +17246,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/centcom/chaos)
-"Rt" = (
-/obj/machinery/door/blast/shutters{
-	dir = 4;
-	id_tag = "supply_shuttle";
-	name = "Supply Drone Shutters"
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor,
-/area/supply/dock)
 "Ru" = (
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
@@ -18835,12 +18791,6 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/centcom/goc)
-"VE" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/supply/dock)
 "VF" = (
 /obj/effect/floor_decal/corner/white/border{
 	color = "#E5511B"
@@ -20037,6 +19987,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/centcom)
+"Zf" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/carpet,
+/area/supply/dock)
 "Zh" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -26407,11 +26361,11 @@ tq
 tq
 tq
 tq
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+tq
+tq
+tq
 ab
 ab
 ab
@@ -26608,12 +26562,12 @@ Rr
 Rr
 WF
 Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -26808,14 +26762,14 @@ PA
 PA
 PA
 PA
+PA
+PA
+PA
+PA
+PA
 pr
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27001,23 +26955,23 @@ jL
 tq
 Rr
 SD
-xC
-OB
-wt
-Rt
-Rt
-Rt
-bG
-OB
-xC
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+bI
 uA
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27203,23 +27157,23 @@ Jf
 tq
 Rr
 SD
-Mc
-Qz
-bA
 TN
 TN
 TN
-bA
-OB
-OB
+GZ
+TN
+TN
+TE
+GZ
+TN
+TN
+TN
+jx
+Zf
+zv
 uA
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27405,23 +27359,23 @@ jL
 tq
 Cf
 SD
-Mc
-Qz
-gt
 TN
-TE
 TN
-Bn
-bb
-OB
+TN
+Ak
+TN
+TN
+TN
+Ak
+TN
+TN
+TN
+jx
+Ja
+zv
 uA
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27607,23 +27561,23 @@ jL
 tq
 Rr
 SD
-Mc
-Qz
-VE
-TN
-TN
-TN
-VE
-OB
-OB
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+jx
+bI
 uA
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -27808,24 +27762,24 @@ ur
 jL
 tq
 Rr
-SD
-xC
-OB
-bG
-Js
-Js
-Js
-bG
-OB
-xC
-uA
+zl
+TS
+TS
+TS
+TS
+TS
+TS
+Kf
+Kf
+Kf
+Kf
+Kf
+Kf
+Kf
+Kf
+LY
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28010,24 +27964,24 @@ ur
 jL
 tq
 Rr
-zl
-TS
-TS
-TS
-TS
-TS
-TS
-Kf
-Kf
-Kf
-LY
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
+Rr
 Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28224,12 +28178,12 @@ Rr
 Rr
 Rr
 Yh
+Rr
+Rr
+Rr
+Rr
+Rr
 tq
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -28427,11 +28381,11 @@ nM
 nM
 tq
 tq
-ab
-ab
-ab
-ab
-ab
+tq
+tq
+tq
+tq
+tq
 ab
 ab
 ab
