@@ -5,3 +5,11 @@
   quadbium:
   - rscadd: Adds defines for several bullet damage values
   - rscadd: Adds extra brute and ballistic values, sets all armor to defined values
+2024-09-22:
+  quadbium:
+  - rscadd: Replaces cargo truck with cargo drone
+  - rscadd: Moves upper cargo to z2
+  - rscadd: Moves telecomms to engineering
+  - rscadd: Moves SCP-082 cantonment into HCZ
+  - rscadd: adds more cyborg rechargers to the site
+  - rscdel: Removes SCP-2427-3 containment
