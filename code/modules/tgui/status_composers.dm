@@ -68,7 +68,7 @@
 /mob/living/silicon/robot/get_ui_access(atom/source)
 	// Robots can interact with anything they can see.
 	var/list/clientviewlist = getviewsize(client.view)
-	if(get_dist(src, source) <= min(clientviewlist[1],clientviewlist[2]))
+	if(get_dist(src, source) <= max(clientviewlist[1], clientviewlist[2]))
 		return UI_INTERACTIVE
 	return UI_DISABLED // Otherwise they can keep the UI open.
 

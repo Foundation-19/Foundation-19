@@ -61,51 +61,51 @@
 	job.current_positions++
 
 	var/mob/living/character = joining.create_character(spawn_turf)
-	if(istype(character))
+	if(!istype(character))
+		return
 
-		var/mob/living/other_mob = job.handle_variant_join(character, job.title)
-		if(istype(other_mob))
-			character = other_mob
+	var/mob/living/other_mob = job.handle_variant_join(character, job.title)
+	if(istype(other_mob))
+		character = other_mob
 
-		var/mob/living/carbon/human/user_human
-		if(ishuman(character))
-			user_human = character
+	var/mob/living/carbon/human/user_human
+	if(ishuman(character))
+		user_human = character
 
-			// We need to make sure to use the abstract instance here; it's not the same as the one we were passed.
-			character.skillset.obtain_from_client(SSjobs.get_by_path(job.type), character.client)
-			job.equip(character, "")
-			job.apply_fingerprints(character)
-			var/list/spawn_in_storage = SSjobs.equip_custom_loadout(character, job)
-			if(spawn_in_storage)
-				for(var/datum/gear/G in spawn_in_storage)
-					G.spawn_in_storage_or_drop(user_human, user_human.client.prefs.Gear()[G.display_name])
-			SScustomitems.equip_custom_items(user_human)
+		// We need to make sure to use the abstract instance here; it's not the same as the one we were passed.
+		character.skillset.obtain_from_client(SSjobs.get_by_path(job.type), character.client)
+		job.equip(character, "")
+		job.apply_fingerprints(character)
+		var/list/spawn_in_storage = SSjobs.equip_custom_loadout(character, job)
+		if(spawn_in_storage)
+			for(var/datum/gear/G in spawn_in_storage)
+				G.spawn_in_storage_or_drop(user_human, user_human.client.prefs.Gear()[G.display_name])
 
-		character.job = job.title
-		if(character.mind)
-			character.mind.assigned_job = job
-			character.mind.assigned_role = character.job
+	character.job = job.title
+	if(character.mind)
+		character.mind.assigned_job = job
+		character.mind.assigned_role = character.job
 
-		to_chat(character, "<B>You are [job.total_positions == 1 ? "the" : "a"] [job.title] of the [name].</B>")
+	to_chat(character, "<B>You are [job.total_positions == 1 ? "the" : "a"] [job.title] of the [name].</B>")
 
-		if(job.supervisors)
-			to_chat(character, "<b>As a [job.title] you answer directly to [job.supervisors].</b>")
-		var/datum/job/submap/ojob = job
-		if(istype(ojob) && ojob.info)
-			to_chat(character, ojob.info)
+	if(job.supervisors)
+		to_chat(character, "<b>As a [job.title] you answer directly to [job.supervisors].</b>")
+	var/datum/job/submap/ojob = job
+	if(istype(ojob) && ojob.info)
+		to_chat(character, ojob.info)
 
-		if(user_human && user_human.is_nearsighted())
-			user_human.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(user_human), slot_glasses)
+	if(user_human && user_human.is_nearsighted())
+		user_human.equip_to_slot_or_store_or_drop(new /obj/item/clothing/glasses/prescription(user_human), slot_glasses)
 
-		BITSET(character.hud_updateflag, ID_HUD)
-		BITSET(character.hud_updateflag, IMPLOYAL_HUD)
-		BITSET(character.hud_updateflag, SPECIALROLE_HUD)
+	BITSET(character.hud_updateflag, ID_HUD)
+	BITSET(character.hud_updateflag, IMPLOYAL_HUD)
+	BITSET(character.hud_updateflag, SPECIALROLE_HUD)
 
-		SSticker.mode.handle_offsite_latejoin(character)
-		GLOB.universe.OnPlayerLatejoin(character)
-		log_and_message_staff("has joined the round as offsite role [character.mind.assigned_role].", character)
-		if(character.cannot_stand()) equip_wheelchair(character)
-		job.post_equip_rank(character, job.title)
-		qdel(joining)
+	SSticker.mode.handle_offsite_latejoin(character)
+	GLOB.universe.OnPlayerLatejoin(character)
+	log_and_message_staff("has joined the round as offsite role [character.mind.assigned_role].", character)
+	if(character.cannot_stand()) equip_wheelchair(character)
+	job.post_equip_rank(character, job.title)
+	qdel(joining)
 
 	return character

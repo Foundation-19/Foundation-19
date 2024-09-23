@@ -12,7 +12,7 @@ The answer was five and a half years -ZeroBits
 	extended_desc = "This program can be used to view e-books from an external archive."
 	program_icon_state = "word"
 	program_key_state = "atmos_key"
-	program_menu_icon = "note"
+	program_menu_icon = "book"
 	size = 6
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE
@@ -35,20 +35,22 @@ The answer was five and a half years -ZeroBits
 		data["current_book"] = current_book
 	else
 		var/list/all_entries[0]
-		establish_old_db_connection()
-		if(!dbcon_old.IsConnected())
+		if(!SSdbcore.Connect())
 			error_message = "Unable to contact External Archive. Please contact your system administrator for assistance."
 		else
-			var/datum/db_query/query = dbcon_old.NewQuery("SELECT id, author, title, category FROM library ORDER BY "+sanitizeSQL(sort_by))
+			var/datum/db_query/query = SSdbcore.NewQuery(
+				"SELECT id, author, title, category FROM library ORDER BY :sort_by",
+				list(sort_by)
+			)
 			query.Execute()
 
 			while(query.NextRow())
-				all_entries.Add(list(list(
-				"id" = query.item[1],
-				"author" = query.item[2],
-				"title" = query.item[3],
-				"category" = query.item[4]
-			)))
+				all_entries += list(list(
+					"id" = query.item[1],
+					"author" = query.item[2],
+					"title" = query.item[3],
+					"category" = query.item[4]
+				))
 			qdel(query)
 		data["book_list"] = all_entries
 		data["scanner"] = istype(scanner)
@@ -67,7 +69,7 @@ The answer was five and a half years -ZeroBits
 		view_book(href_list["viewbook"])
 		return 1
 	if(href_list["viewid"])
-		view_book(sanitizeSQL(input("Enter USBN:") as num|null))
+		view_book(tgui_input_number(usr, "Enter USBN", "USBN Input"))
 		return 1
 	if(href_list["closebook"])
 		current_book = null
@@ -106,18 +108,24 @@ The answer was five and a half years -ZeroBits
 
 		var/choice = input(usr, "Upload [B.name] by [B.author] to the External Archive?") in list("Yes", "No")
 		if(choice == "Yes")
-			establish_old_db_connection()
-			if(!dbcon_old.IsConnected())
+			if(!SSdbcore.Connect())
 				error_message = "Network Error: Connection to the Archive has been severed."
 				return 1
 
 			var/upload_category = input(usr, "Upload to which category?") in list("Fiction", "Non-Fiction", "Reference", "Religion")
 
-			var/sqltitle = sanitizeSQL(B.name)
-			var/sqlauthor = sanitizeSQL(B.author)
-			var/sqlcontent = sanitizeSQL(B.dat)
-			var/sqlcategory = sanitizeSQL(upload_category)
-			var/datum/db_query/query = dbcon_old.NewQuery("INSERT INTO library (author, title, content, category) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]')")
+			var/list/query_data = list(
+				"author" = B.author,
+				"title" = B.name,
+				"content" = B.dat,
+				"category" = upload_category
+			)
+			var/datum/db_query/query = SSdbcore.NewQuery({"
+				INSERT INTO library (author, title, content, category)
+				VALUES (:author, :title, :content, :category)"},
+				query_data
+			)
+
 			if(!query.Execute())
 				to_chat(usr, query.ErrorMsg())
 				error_message = "Network Error: Unable to upload to the Archive. Contact your system Administrator for assistance."
@@ -157,7 +165,12 @@ The answer was five and a half years -ZeroBits
 		print_text("<i>Author: [current_book["author"]]<br>USBN: [current_book["id"]]</i><br><h3>[current_book["title"]]</h3><br>[current_book["content"]]", usr)
 		return 1
 	if(href_list["sortby"])
-		sort_by = href_list["sortby"]
+		var/list/can_sort_by = list("id", "category", "title", "author")
+		var/sort_by = href_list["sortby"]
+		if(!(sort_by in can_sort_by))
+			return 1
+
+		src.sort_by = sort_by
 		return 1
 	if(href_list["reseterror"])
 		if(error_message)
@@ -171,13 +184,14 @@ The answer was five and a half years -ZeroBits
 	if(current_book || !id)
 		return 0
 
-	var/sqlid = sanitizeSQL(id)
-	establish_old_db_connection()
-	if(!dbcon_old.IsConnected())
+	if(!SSdbcore.Connect())
 		error_message = "Network Error: Connection to the Archive has been severed."
 		return 1
 
-	var/datum/db_query/query = dbcon_old.NewQuery("SELECT * FROM library WHERE id=[sqlid]")
+	var/datum/db_query/query = SSdbcore.NewQuery(
+		"SELECT * FROM library WHERE id = :id",
+		list("id" = id)
+	)
 	query.Execute()
 
 	while(query.NextRow())
@@ -186,7 +200,7 @@ The answer was five and a half years -ZeroBits
 			"author" = query.item[2],
 			"title" = query.item[3],
 			"content" = query.item[4]
-			)
+		)
 		break
 	qdel(query)
 	return 1

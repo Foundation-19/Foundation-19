@@ -156,7 +156,7 @@
 /obj/item/ammo_casing/pistol/a50
 	desc = "A .44 magnum bullet casing."
 	caliber = ".44"
-	projectile_type = /obj/item/projectile/bullet/pistol/strong
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
 	icon_state = "magnum-brass"
 
 /obj/item/ammo_casing/a127

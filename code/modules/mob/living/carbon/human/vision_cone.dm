@@ -60,6 +60,16 @@
 /mob/proc/update_vision_cone()
 	return
 
+/mob/proc/update_cone_size()
+	return
+
+/mob/living/carbon/human/update_cone_size()
+	if(!client)
+		return
+
+	fov.update_size(client.view)
+	fov_mask.update_size(client.view)
+
 /mob/living/carbon/human/update_vision_cone()
 	if(!client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
 		return

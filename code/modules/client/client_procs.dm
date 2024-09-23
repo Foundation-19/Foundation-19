@@ -249,6 +249,8 @@
 	connection_realtime = world.realtime
 	connection_timeofday = world.timeofday
 
+	apply_clickcatcher()
+
 	if (SSmisc.changelog_hash && prefs.lastchangelog != SSmisc.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, SPAN_INFO("You have unread updates in the changelog."))
 		winset(src, "infowindow.changelog", "background-color=#eaeaea;font-style=bold")
@@ -472,6 +474,37 @@
 	if(inactivity > duration)	return inactivity
 	return 0
 
+/client/proc/get_default_view()
+	return getScreenSize(get_preference_value(/datum/client_preference/widescreen) == GLOB.PREF_YES)
+
+/client/proc/has_default_view()
+	var/default_view = getviewsize(get_default_view())
+	var/current_view = getviewsize(view)
+	return (current_view[1] == default_view[1]) && (current_view[2] == default_view[2])
+
+/client/proc/change_view(new_size)
+	if(isnull(new_size))
+		CRASH("change_view called without argument.")
+
+	view = new_size
+	apply_clickcatcher()
+	update_skybox(TRUE)
+	if(mob)
+		mob.update_cone_size()
+		mob.reload_fullscreen()
+		mob.update_lighting_size()
+
+/client/proc/generate_clickcatcher()
+	if(!void)
+		void = new()
+	if(!(void in screen))
+		screen += void
+
+/client/proc/apply_clickcatcher()
+	generate_clickcatcher()
+	var/list/actualview = getviewsize(view)
+	void.UpdateGreed(actualview[1], actualview[2])
+
 /client/proc/inactivity2text()
 	var/seconds = inactivity/10
 	return "[round(seconds / 60)] minute\s, [seconds % 60] second\s"
@@ -492,12 +525,13 @@
 	prefs?.open_setup_window(usr)
 
 /client/proc/apply_fps(client_fps)
-	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
+	if(client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = client_fps
 
 /client/proc/on_prefs_loaded(client/target, datum/preferences/prefs)
 	SIGNAL_HANDLER
 	apply_fps(prefs.clientfps)
+	change_view(get_default_view())
 
 /client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
 	. = ..()

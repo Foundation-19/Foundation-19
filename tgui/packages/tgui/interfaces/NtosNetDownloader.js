@@ -80,7 +80,10 @@ const Program = (props, context) => {
   return (
     <Box mb={3}>
       <Flex align="baseline">
-        <Flex.Item bold grow={1}>
+        <Flex.Item>
+          <Icon name={program.icon} />
+        </Flex.Item>
+        <Flex.Item bold grow={1} ml={1}>
           {program.filedesc}
         </Flex.Item>
         <Flex.Item color="label" nowrap>

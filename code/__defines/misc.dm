@@ -31,11 +31,6 @@
 #define SEE_INVISIBLE_MINIMUM 	5
 #define INVISIBILITY_MAXIMUM 	100
 
-//https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
-#define MOUSE_OPACITY_TRANSPARENT 	0
-#define MOUSE_OPACITY_ICON 			1
-#define MOUSE_OPACITY_OPAQUE 		2
-
 // Some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
 
@@ -102,24 +97,6 @@
 //Ruin map template flags
 #define TEMPLATE_FLAG_RUIN_STARTS_DISALLOWED 32 // Ruin is not available during spawning unless another ruin permits it.
 
-// Convoluted setup so defines can be supplied by Bay12 main server compile script.
-// Should still work fine for people jamming the icons into their repo.
-#ifndef CUSTOM_ITEM_CONFIG
-#define CUSTOM_ITEM_CONFIG "config/custom_items/"
-#endif
-#ifndef CUSTOM_ITEM_SYNTH_CONFIG
-#define CUSTOM_ITEM_SYNTH_CONFIG "config/custom_sprites.txt"
-#endif
-#ifndef CUSTOM_ITEM_OBJ
-#define CUSTOM_ITEM_OBJ 'icons/obj/custom_items_obj.dmi'
-#endif
-#ifndef CUSTOM_ITEM_MOB
-#define CUSTOM_ITEM_MOB 'icons/mob/custom_items_mob.dmi'
-#endif
-#ifndef CUSTOM_ITEM_SYNTH
-#define CUSTOM_ITEM_SYNTH 'icons/mob/custom_synthetic.dmi'
-#endif
-
 #define WALL_CAN_OPEN 1
 #define WALL_OPENING 2
 
@@ -127,38 +104,6 @@
 #define BOMBCAP_HEAVY_RADIUS (config.max_explosion_range / 2)
 #define BOMBCAP_LIGHT_RADIUS (config.max_explosion_range)
 #define BOMBCAP_FLASH_RADIUS (config.max_explosion_range * 1.5)
-									// SCiPnet module-configuration values. Do not change these. If you need to add another use larger number (5..6..7 etc)
-#define NTNET_SOFTWAREDOWNLOAD 1 	// Downloads of software from SCiPnet
-#define NTNET_PEERTOPEER 2			// P2P transfers of files between devices
-#define NTNET_COMMUNICATION 3		// Communication (messaging)
-#define NTNET_SYSTEMCONTROL 4		// Control of various systems, RCon, air alarm control, etc.
-
-// SCiPnet transfer speeds, used when downloading/uploading a file/program.
-#define NTNETSPEED_LOWSIGNAL 0.5	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
-#define NTNETSPEED_HIGHSIGNAL 1	// GQ/s transfer speed when the device is wirelessly connected and on High signal
-#define NTNETSPEED_ETHERNET 2		// GQ/s transfer speed when the device is using wired connection
-#define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on SCiPnet relay is this multiplied by NTNETSPEED of the device
-
-// Program bitflags
-#define PROGRAM_ALL 		(~0)
-#define PROGRAM_CONSOLE 	(1<<0)
-#define PROGRAM_LAPTOP 		(1<<1)
-#define PROGRAM_TABLET 		(1<<2)
-#define PROGRAM_TELESCREEN 	(1<<3)
-#define PROGRAM_PDA 		(1<<4)
-
-// Program states
-#define PROGRAM_STATE_KILLED 		0
-#define PROGRAM_STATE_BACKGROUND 	1
-#define PROGRAM_STATE_ACTIVE 		2
-
-// Data block sizes (data is divided by this to get file size)
-#define BLOCK_SIZE_DATA		2000
-#define BLOCK_SIZE_NEWS		5000
-
-// Caps for SCiPnet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
-#define MAX_NTNET_LOGS 500
-#define MIN_NTNET_LOGS 10
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
 #define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()
@@ -243,11 +188,6 @@
 #define SHUTTLE_MISSION_STARTED  2
 #define SHUTTLE_MISSION_FINISHED 3
 #define SHUTTLE_MISSION_QUEUED   4
-
-//Built-in email accounts
-#define EMAIL_DOCUMENTS "document.server@internal-services.net"
-#define EMAIL_SYSADMIN  "admin@internal-services.net"
-#define EMAIL_BROADCAST "broadcast@internal-services.net"
 
 //Stats for department goals etc
 #define STAT_XENOPLANTS_SCANNED  "xenoplants_scanned"

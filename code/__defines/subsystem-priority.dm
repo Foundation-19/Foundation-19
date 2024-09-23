@@ -15,6 +15,7 @@
 
 // Normal
 #define SS_PRIORITY_TICKER         100 // Gameticker.
+#define SS_PRIORITY_FAST_MOB       96
 #define SS_PRIORITY_MOB            95  // Mob Life().
 #define SS_PRIORITY_MACHINERY      95  // Machinery + powernet ticks.
 #define SS_PRIORITY_AIR            80  // ZAS processing.

@@ -71,3 +71,101 @@
       stacks of weakness, as well as 4 stacks of paralysis.
   - balance: 049 curing grab has a delay of 10 seconds (from 4 seconds).
   - balance: 049 now has partial flash resistance (from FULL flash resistance).
+2024-07-15:
+  cheesePizza2:
+  - rscdel: All Horizon Initiative references have been removed.
+  - rscadd: Made major changes to the relay chat program. It now works on a server-client
+      system (similar to the upload database), and has additional functionality.
+  - rscadd: Added additional broadcast e-mails (one for every department).
+  quadbium:
+  - rscadd: Added Lobby Track goc_spawn_theme2
+  - rscadd: Added Lobby Track fall_of_ganzir
+2024-07-17:
+  ChromeFoxxity:
+  - rscadd: Normal Forensics module. Robot ballistics.
+  - imageadd: Added several android icons.
+  - imagedel: Replaced/Removed a few useless icons.
+  Magisterium2022:
+  - rscadd: Added basic Psionic abilities to Senior Mentalist.
+  - rscadd: Added two Jerraman vials to Senior Mentalist.
+  cheesePizza2:
+  - rscadd: SCP-5295 is here! Located in LCZ, this program lets you remotely hack
+      into other devices (if you can get their network ID). Slight mapping changes
+      were made to accommodate the new skip.
+  - rscadd: The Computer Configuration program allows you to quickly scan internal
+      components.
+  - bugfix: Portable drives actually work now.
+  - rscadd: The IT department starts with a few portable drives.
+  - bugfix: Programs have proper menu icons now.
+  quadbium:
+  - rscadd: Adds a design datum for the industrial hardsuit
+  - rscadd: Adds a design datum for the EVA hardsuit
+  - rscadd: Adds a design datum for the Hazmat hardsuit
+  - rscadd: Adds a design datum for the medical hardsuit
+  - rscadd: Adds a design datum for the Hazard hardsuit
+2024-07-19:
+  checkraisefold:
+  - rscadd: Experimental support for widescreen toggleable in char prefs
+  - rscadd: Added a Clear Chat button in the chat settings ported from tg
+  - rscadd: Added cell timers to EZ Security and fixed the ones at CDCZ Isolation
+  - bugfix: Fix a critical bug with jobbans breaking them for longer than 32 characters
+      by upping the title limit to 48 characters and also adding a unit test
+  - bugfix: Fixed brig door timers taking 100ms per timer to initialize
+  - bugfix: Fixed floors and walls adding 20 seconds to server startup time
+  - bugfix: Fixed library app on computers
+  - bugfix: Fixed not being able to use look up verb as mobs other than human
+  - bugfix: Station trait for broken lights on roundstart has been tuned to break
+      1/10 lights instead of 1/4 of the lights on the map
+  - bugfix: 173 is no longer completely counterable by 1 person
+  - bugfix: 012 is no longer broken
+  - bugfix: Goldbaker Reinz logo listed in paperwork guide
+  - bugfix: 2427-3 can't breach below 30 players anymore
+  - bugfix: Improved browser code, syncing assets faster/better for nanoui/other non-tgui
+      browser windows
+  - bugfix: Fix disconnected wire in SCP-5295 containment causing unit tests to fail/depowered
+      chamber
+  - bugfix: Fixed megaphones not showing up on runechat
+  - bugfix: Fixed stuttering not working at all
+  - bugfix: Fixed like 6 different href exploits, one including deletion of notes
+      not being sanitized
+  - code_imp: Removed legacy dbcon
+  - code_imp: Added Tracy profiler support built-in
+  - code_imp: Fixed some harddels
+  - code_imp: Added a tgs5+ yml to easily configure the codebase on tgs
+  - code_imp: Ran OptiVorbis on all sound files, +13mb in savings
+  - code_imp: Ran Oxipng on all image files, +18mb in savings
+  - code_imp: Improved tgui Button.Confirm
+  - code_imp: Changed logic relating to overlays to make them less sucky
+2024-07-20:
+  checkraisefold:
+  - bugfix: Re-merged widescreen PR
+2024-07-23:
+  Ambrose997:
+  - balance: Access contained within the EZ ZC list has been added to the General
+      Commanders access list. Now also starts with Trained combat skill, trained computers,
+      etc to at least be on par with the EZ Zone Commander.
+  quadbium:
+  - rscadd: adds the bookburners v2 to lobby music
+2024-07-24:
+  K4rlox:
+  - balance: SCP-049's minimum playercount changed from 20 -> 15.
+  - balance: SCP-106's minimum playercount changed from 20 -> 25.
+2024-07-25:
+  checkraisefold:
+  - balance: Made money cannon do a max of 30 damage instead of infinite
+2024-07-29:
+  AMcilraith:
+  - rscadd: Added chicken to kitchen.
+  - rscadd: Added chemical heater to bar.
+  - rscadd: Added cutlery microlathe to bar.
+  - rscadd: Added coffee machine to medical break room.
+  - rscadd: Added cigars in ECL and ITDo office.
+  - rscadd: 'Added the #1 coffee cups to LCZ sergeant offices.'
+  - rscdel: Removed random doctor spawn in CDCZ.
+  - bugfix: Fixed break room coffee machine to now dispense things.
+  quadbium:
+  - rscadd: Added a drone fabricator to the AIC lab
+  - rscadd: Added AIC controlled drones
+2024-07-30:
+  MLGTASTICa:
+  - refactor: Refactored slime AI handling.

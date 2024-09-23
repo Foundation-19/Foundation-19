@@ -246,6 +246,9 @@ var/list/gamemode_cache = list()
 
 	var/use_timelocks = FALSE
 
+	var/default_view = "19x15"
+	var/default_view_square = "15x15"
+
 	/* Cross-communications */
 	var/comms_key = null
 	var/cross_comms_name = null
@@ -535,6 +538,12 @@ var/list/gamemode_cache = list()
 
 				if ("use_timelocks")
 					config.use_timelocks = 1
+
+				if("default_view")
+					config.default_view = value
+
+				if("default_view_square")
+					config.default_view_square = value
 
 				if ("objectives_disabled")
 					if(!value)

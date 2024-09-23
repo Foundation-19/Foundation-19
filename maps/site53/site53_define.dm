@@ -53,8 +53,6 @@
 		/area/site53/surface = NO_APC,
 		/area/turbolift/site53/surface = NO_APC,
 		/area/turbolift/site53/basement = NO_APC,
-		/area/turbolift/site53/logistics = NO_APC,
-		/area/turbolift/site53/logisticstorage = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/uhcz = NO_APC,
@@ -67,6 +65,9 @@
 		/area/turbolift/site53/gatea = NO_APC,
 		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
+		/area/turbolift/site53/up082 = NO_APC,
+		/area/turbolift/site53/low82 = NO_APC
+
 	)
 
 	away_site_budget = 3
@@ -91,6 +92,9 @@
 		/decl/audio/track/purge_protocol,
 		/decl/audio/track/uiu_spawn_theme,
 		/decl/audio/track/surface_area,
+		/decl/audio/track/goc_spawn_theme2,
+		/decl/audio/track/fall_of_ganzir,
+		/decl/audio/track/the_bookburners_v2
 	)
 
 	available_cultural_info = list(

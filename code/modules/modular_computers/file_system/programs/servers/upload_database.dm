@@ -4,7 +4,7 @@
 	extended_desc = "Servers use this program to maintain an online database"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "arrowthickstop-1-n"
+	program_menu_icon = "file-upload"
 	size = 16
 	available_on_ntnet = TRUE
 	usage_flags = PROGRAM_CONSOLE
@@ -25,14 +25,10 @@
 	/// user-set name for easier identification by the client
 	var/server_name = ""
 
-	/// UID of this server
-	var/unique_token
-
 	/// all connected clients
 	var/list/datum/computer_file/program/upload_database_c/clients = list()
 
 /datum/computer_file/program/upload_database/New()
-	unique_token = ntnet_global.generate_uid()
 	if(!server_name)
 		server_name = GenerateKey()
 	..()
@@ -43,7 +39,7 @@
 	. = ..()
 
 /datum/computer_file/program/upload_database/proc/get_files(list/accesses)
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 	. = list()
 
 	for(var/filename in enabled_files)
@@ -83,7 +79,7 @@
 /datum/computer_file/program/upload_database/tgui_data(mob/user)
 	var/list/data = get_header_data()
 
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 
 	data["files"] = list()
 	for(var/datum/computer_file/F in HDD.stored_files)
@@ -104,8 +100,8 @@
 			files_required_access[editing_file] = list()
 
 		var/list/all_regions = get_all_access_datums_by_region()
-		for(var/r_name in all_regions)
-			var/list/region = all_regions[r_name]
+		for(var/r_index in all_regions)
+			var/list/region = all_regions[r_index]
 
 			var/list/prepared_region = list()
 
@@ -119,7 +115,7 @@
 					))
 
 			data["region_access"] += list(prepared_region)
-			data["region_names"] += r_name
+			data["region_names"] += get_region_accesses_name(text2num(r_index))
 
 	return data
 
@@ -154,7 +150,7 @@
 				files_required_access[editing_file] += acc
 			return TRUE
 		if("PRG_setname")
-			var/newname = sanitize(tgui_input_text(usr, "Enter new server name. Leave blank to cancel.", "Server settings", ""))
+			var/newname = sanitize(tgui_input_text(usr, "Enter new server name. Leave blank to cancel.", "Server settings", server_name))
 			if(!newname)
 				return
 			server_name = newname

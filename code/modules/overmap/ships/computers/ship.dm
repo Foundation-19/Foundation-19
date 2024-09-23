@@ -56,7 +56,8 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 	if(linked)
 		user.reset_view(linked)
 	if(user.client)
-		user.client.view = world.view + extra_view
+		var/default_view = getviewsize(config.default_view_square)
+		user.client.change_view(max(default_view[1], default_view[2]) + extra_view)
 	RegisterSignal(user, COMSIG_MOVED, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
 	RegisterSignal(user, COMSIG_SET_STAT, TYPE_PROC_REF(/obj/machinery/computer/ship, unlook))
 	LAZYOR(viewers, weakref(user))
@@ -64,7 +65,7 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 /obj/machinery/computer/ship/proc/unlook(mob/user)
 	user.reset_view(null, FALSE)
 	if(user.client)
-		user.client.view = world.view
+		user.client.change_view(user.client.get_default_view())
 	UnregisterSignal(user, COMSIG_MOVED)
 	UnregisterSignal(user, COMSIG_SET_STAT)
 	LAZYREMOVE(viewers, weakref(user))

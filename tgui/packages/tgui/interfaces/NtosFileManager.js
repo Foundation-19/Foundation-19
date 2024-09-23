@@ -73,9 +73,9 @@ export const NtosFileManager = (props, context) => {
                   files={usbfiles}
                   usbconnected={usbconnected}
                   onUpload={(file) => act('PRG_copyfromusb', { name: file })}
-                  onDelete={(file) => act('PRG_deletefile', { name: file })}
+                  onDelete={(file) => act('PRG_usbdeletefile', { name: file })}
                   onRename={(file, newName) =>
-                    act('PRG_rename', {
+                    act('PRG_usb_rename', {
                       name: file,
                       new_name: newName,
                     })
@@ -135,8 +135,8 @@ const FileTable = (props) => {
           <Table.Cell>{file.type}</Table.Cell>
           <Table.Cell>{file.size}</Table.Cell>
           <Table.Cell collapsing>
-            {!file.undeletable && (
-              <Fragment>
+            <Fragment>
+              {!file.undeletable && (
                 <Button.Confirm
                   icon="trash"
                   confirmIcon="times"
@@ -144,22 +144,23 @@ const FileTable = (props) => {
                   tooltip="Delete"
                   onClick={() => onDelete(file.name)}
                 />
-                {!!usbconnected &&
-                  (usbmode ? (
-                    <Button
-                      icon="download"
-                      tooltip="Download"
-                      onClick={() => onUpload(file.name)}
-                    />
-                  ) : (
-                    <Button
-                      icon="upload"
-                      tooltip="Upload"
-                      onClick={() => onUpload(file.name)}
-                    />
-                  ))}
-              </Fragment>
-            )}
+              )}
+              {!!usbconnected &&
+                !file.unsendable &&
+                (usbmode ? (
+                  <Button
+                    icon="download"
+                    tooltip="Download"
+                    onClick={() => onUpload(file.name)}
+                  />
+                ) : (
+                  <Button
+                    icon="upload"
+                    tooltip="Upload"
+                    onClick={() => onUpload(file.name)}
+                  />
+                ))}
+            </Fragment>
           </Table.Cell>
         </Table.Row>
       ))}

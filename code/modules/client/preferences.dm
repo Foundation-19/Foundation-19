@@ -73,7 +73,9 @@
 			load_data()
 
 	sanitize_preferences()
-	SEND_SIGNAL(client, COMSIG_CLIENT_PREFS_LOADED, src)
+	// They might disconnect while it's being loaded. We also use a few of these without a client.
+	if(client)
+		SEND_SIGNAL(client, COMSIG_CLIENT_PREFS_LOADED, src)
 
 /datum/preferences/proc/load_data()
 	load_failed = null
@@ -81,11 +83,7 @@
 	try
 		var/pref_path = get_path(client_ckey, "preferences")
 		if(!fexists(pref_path))
-			stage = "migrate"
-			// Try to migrate legacy savefile-based preferences
-			if(!migrate_legacy_preferences())
-				// If there's no old save, there'll be nothing to load.
-				return
+			return
 
 		stage = "load"
 		load_preferences()
@@ -93,42 +91,6 @@
 	catch(var/exception/E)
 		load_failed = "{[stage]} [E]"
 		throw E
-
-/datum/preferences/proc/migrate_legacy_preferences()
-	// We make some assumptions here:
-	// - all relevant savefiles were version 17, which covers anything saved from 2018+
-	// - legacy saves were only made on the "torch" map
-	// - a maximum of 40 slots were used
-
-	var/legacy_pref_path = get_path(client.ckey, "preferences", "sav")
-	if(!fexists(legacy_pref_path))
-		return 0
-
-	var/savefile/S = new(legacy_pref_path)
-	if(S["version"] != 17)
-		return 0
-
-	// Legacy version 17 ~= new version 1
-	var/datum/pref_record_reader/savefile/savefile_reader = new(S, 1)
-
-	player_setup.load_preferences(savefile_reader)
-	var/orig_slot = default_slot
-
-	S.cd = "/torch"
-	for(var/slot = 1 to 40)
-		if(!list_find(S.dir, "character[slot]"))
-			continue
-		S.cd = "/torch/character[slot]"
-		default_slot = slot
-		player_setup.load_character(savefile_reader)
-		save_character(override_key="character_torch_[slot]")
-		S.cd = "/torch"
-	S.cd = "/"
-
-	default_slot = orig_slot
-	save_preferences()
-
-	return 1
 
 /datum/preferences/proc/get_content(mob/user)
 	if(!SScharacter_setup.initialized)
