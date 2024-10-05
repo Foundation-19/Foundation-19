@@ -11,6 +11,31 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+// THE EVIL HARDCODED EVENT AREAS. SHAME ON YOU, BLOB, GREYTIDE, AND VINES.
+// Don't forget to remove these later when this spaghetti gets unravelled.
+
+/area/site53/ulcz/hallways
+/area/site53/llcz/hallways
+/area/site53/uhcz/hallways
+/area/site53/lhcz/hallway
+/area/site53/engineering
+/area/site53/engineering/maintenance
+/area/site53/engineering/selfdestruct
+/area/site53/engineering/lowernukeladders
+/area/site53/engineering/uppernukeladders
+/area/site53/medical
+/area/site53/medical/mentalhealth/isolation
+/area/site53/reswing
+/area/site53/science
+/area/site53/reswing/xenobiology
+/area/site53/science/aicobservation
+/area/site53/science/aiccore
+/area/site53/uez
+/area/site53/ulcz/maintenance
+/area/site53/lhcz/maintenance
+/area/site53/uez/maintenance
+/area/site53/lhcz/maintenance
+
 // SITE 404 ELEVATOR SHAFT AREAS
 
 /area/turbolift/site404/elevator/hcz
