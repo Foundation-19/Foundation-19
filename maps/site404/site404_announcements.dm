@@ -1,8 +1,8 @@
 /datum/map/site53
-	emergency_shuttle_docked_message = "Attention all personnel: The emergency train has arrived. You have %ETD% before the train departs."
-	emergency_shuttle_leaving_dock = "Attention all personnel: The emergency train has left the facility, and will be arriving at off-site rendezvous point alpha in %ETA%."
+	emergency_shuttle_docked_message = "Attention all personnel: The emergency shuttle has arrived. You have %ETD% before the shuttle departs."
+	emergency_shuttle_leaving_dock = "Attention all personnel: The emergency shuttle has left the facility, and will be arriving at off-site rendezvous point alpha in %ETA%."
 
-	emergency_shuttle_called_message = "Attention all personnel: Code Gamma initiated, emergency evacuation procedures are now in effect. The emergency train will arrive in %ETA%"
+	emergency_shuttle_called_message = "Attention all personnel: Code Gamma initiated, emergency evacuation procedures are now in effect. The emergency shuttle will arrive in %ETA%"
 	emergency_shuttle_called_sound = sound('sounds/AI/torch/abandonship.ogg', volume = 45)
 
 	emergency_shuttle_recall_message = "Attention all personnel: Emergency evacuation sequence aborted. Return to normal operating conditions."

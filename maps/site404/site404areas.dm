@@ -58,7 +58,7 @@
 	name = "lift (Entrance Zone)"
 	lift_floor_label = "Entrance Zone"
 	lift_floor_name = "Deck 2"
-	lift_announce_str = "Arriving at Light Containment Zone: Objects 294. Departments Medical, Research, Service."
+	lift_announce_str = "Arriving at Entrance Zone: Objects 294. Departments Medical, Research, Service."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -130,6 +130,21 @@
 /area/site404/administration/holodeck
 	name = "Administration Department - Holodeck"
 
+/area/site404/administration/customs
+	name = "Administration Department - Docking Bay Customs Checkpoint"
+	icon_state = "EZ"
+
+/area/site404/administration/customscorridor
+	name = "Administration Department - Customs Checkpoint Corridor"
+	icon_state = "EZ"
+
+/area/site404/administration/escapepodhall
+	name = "Administration Zone Escape Pod Corridor"
+
+/area/site404/administration/substation
+	name = "Administration Zone Substation Compartment"
+	icon_state = "engineeringdepartment"
+
 /area/site404/administration/maintenance
 	icon_state = "engineeringdepartment"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -170,6 +185,10 @@
 	name = "Research Department - Assistant Engineering Director Office"
 	icon_state = "administrationdepartment"
 
+/area/site404/engineering/containmentengineeroffice
+	name = "Research Department - Containment Engineer's Office"
+	icon_state = "HCZ"
+
 /area/site404/engineering/monitoringroom
 	name = "Engineering Department - Monitoring Room"
 
@@ -199,6 +218,9 @@
 
 /area/site404/engineering/constructionzone
 	name = "Engineering Department - Construction Zone"
+
+/area/site404/engineering/auxiliaryreactor
+	name = "Research Department - Auxiliary Reactor Compartment"
 
 /area/site404/engineering/fusionengine/interior
 	name = "Engineering Department - Fusion Reactor Compartment"
@@ -299,6 +321,10 @@
 /area/site404/entrancezone/securityoffice/hallway
 	name = "EZ Security Office - Upper Corridor"
 
+/area/site404/entrancezone/escapepodhall
+	name = "Entrance Zone Escape Pod Corridor"
+	icon_state = "administrationdepartment"
+
 /area/site404/entrancezone/substation
 	name = "Entrance Zone Substation Compartment"
 	icon_state = "engineeringdepartment"
@@ -366,6 +392,13 @@
 /area/site404/medical/assistantmedicaldirectoroffice
 	name = "Medical Department - Assistant Medical Director's Office"
 	icon_state = "administrationdepartment"
+
+/area/site404/medical/securitystation
+	name = "Medical Department - Security Station"
+	icon_state = "EZ"
+
+/area/site404/medical/virology
+	name = "Medical Department - Virology Laboratory"
 
 /area/site404/medical/hallway
 	name = "Medical Department - Primary Corridor"
@@ -588,6 +621,10 @@
 
 /area/site404/heavycontainmentzone/officebreakroom
 	name = "LCZ Office Worker Breakroom"
+
+/area/site404/lightcontainmentzone/escapepodhall
+	name = "Light Containment Zone Escape Pod Corridor"
+	icon_state = "administrationdepartment"
 
 /area/site404/lightcontainmentzone/eva
 	name = "LCZ EVA Compartment"

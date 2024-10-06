@@ -3559,7 +3559,6 @@
 #include "maps\site404\items\automatic.dm"
 #include "maps\site404\items\bullets.dm"
 #include "maps\site404\items\clothes.dm"
-#include "maps\site404\items\encryption_keys.dm"
 #include "maps\site404\items\guns.dm"
 #include "maps\site404\items\paperwork_dataserver.dm"
 #include "maps\site404\items\sciprc_server.dm"
