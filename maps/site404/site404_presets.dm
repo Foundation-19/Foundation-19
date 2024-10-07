@@ -116,82 +116,82 @@
 
 // Networks
 /obj/machinery/camera/network/department/administrationzone
-	network = NETWORK_ADMIN
+	network = list(NETWORK_ADMIN)
 
 /obj/machinery/camera/network/department/engineeringdepartment
-	network = NETWORK_ENGINE
+	network = list(NETWORK_ENGINE)
 
 /obj/machinery/camera/network/department/logisticsdepartment
-	network = NETWORK_LOGISTICS
+	network = list(NETWORK_LOGISTICS)
 
 /obj/machinery/camera/network/department/entrancezone
-	network = NETWORK_EZ
+	network = list(NETWORK_EZ)
 
 /obj/machinery/camera/network/department/sciencedepartment
-	network = NETWORK_SCI
+	network = list(NETWORK_SCI)
 
 /obj/machinery/camera/network/department/medicaldepartment
-	network = NETWORK_MED
+	network = list(NETWORK_MED)
 
 /obj/machinery/camera/network/department/servicedepartment
-	network = NETWORK_SERVICE
+	network = list(NETWORK_SERVICE)
 
 /obj/machinery/camera/network/department/lightcontainmentzone
-	network = NETWORK_LCZ
+	network = list(NETWORK_LCZ)
 
 /obj/machinery/camera/network/containmentunit/scp012
-	network = NETWORK_012
+	network = list(NETWORK_012)
 
 /obj/machinery/camera/network/containmentunit/scp173
-	network = NETWORK_173
+	network = list(NETWORK_173)
 
 /obj/machinery/camera/network/containmentunit/scp343
-	network = NETWORK_343
+	network = list(NETWORK_343)
 
 /obj/machinery/camera/network/containmentunit/scp513
-	network = NETWORK_513
+	network = list(NETWORK_513)
 
 /obj/machinery/camera/network/containmentunit/scp529
-	network = NETWORK_529
+	network = list(NETWORK_529)
 
 /obj/machinery/camera/network/containmentunit/scp999
-	network = NETWORK_999
+	network = list(NETWORK_999)
 
 /obj/machinery/camera/network/department/heavycontainmentunit
-	network = NETWORK_HCZ
+	network = list(NETWORK_HCZ)
 
 /obj/machinery/camera/network/containmentunit/scp008
-	network = NETWORK_008
+	network = list(NETWORK_008)
 
 /obj/machinery/camera/network/containmentunit/scp017
-	network = NETWORK_017
+	network = list(NETWORK_017)
 
 /obj/machinery/camera/network/containmentunit/scp035
-	network = NETWORK_035
+	network = list(NETWORK_035)
 
 /obj/machinery/camera/network/containmentunit/scp049
-	network = NETWORK_049
+	network = list(NETWORK_049)
 
 /obj/machinery/camera/network/containmentunit/scp082
-	network = NETWORK_082
+	network = list(NETWORK_082)
 
 /obj/machinery/camera/network/containmentunit/scp096
-	network = NETWORK_096
+	network = list(NETWORK_096)
 
 /obj/machinery/camera/network/containmentunit/scp106
-	network = NETWORK_106
+	network = list(NETWORK_106)
 
 /obj/machinery/camera/network/containmentunit/scp247
-	network = NETWORK_247
+	network = list(NETWORK_247)
 
 /obj/machinery/camera/network/containmentunit/scp280
-	network = NETWORK_280
+	network = list(NETWORK_280)
 
 /obj/machinery/camera/network/containmentunit/scp457
-	network = NETWORK_457
+	network = list(NETWORK_457)
 
 /obj/machinery/camera/network/containmentunit/scp895
-	network = NETWORK_895
+	network = list(NETWORK_895)
 
 /obj/machinery/camera/network/containmentunit/scp2427
 	network = list(NETWORK_2427)
