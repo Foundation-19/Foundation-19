@@ -194,6 +194,9 @@
 "acm" = (
 /obj/structure/table/standard,
 /obj/item/cell/standard,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp2427/observation)
 "aco" = (
@@ -210,12 +213,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp096/observation)
-"acu" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "acz" = (
 /obj/effect/floor_decal/corner/yellow/half{
 	dir = 4
@@ -343,18 +340,6 @@
 	},
 /turf/simulated/floor/grass,
 /area/site404/medical/psychologistoffice)
-"adA" = (
-/obj/effect/floor_decal/corner/green/mono,
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "adC" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -587,6 +572,9 @@
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ENGINEERING_LVL1)
+	},
 /turf/simulated/floor/plating,
 /area/site404/heavycontainmentzone/hallway/west)
 "agp" = (
@@ -795,6 +783,18 @@
 /obj/machinery/botany/extractor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/xenoflora)
+"ajG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/medical/virology)
 "ajH" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -1829,10 +1829,6 @@
 /obj/effect/floor_decal/spline/fancy/black/corner{
 	dir = 1
 	},
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Research Compartment Fore";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
 "auF" = (
@@ -2708,7 +2704,7 @@
 "aEu" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-895 Containment Facilities";
-	req_access = list(list("ACCESS_SCIENCE_LVL3", "ACCESS_SECURITY_LVL3"))
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2718,6 +2714,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp895)
@@ -2790,10 +2789,6 @@
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -24
-	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -23
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/heavycontainmentzone/securityoffice/checkpoint)
@@ -3222,10 +3217,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/classdzone/luxury/hallway)
-"aLf" = (
-/obj/effect/paint_stripe/paleblue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/hallway)
 "aLj" = (
 /obj/structure/table/plastic,
 /turf/simulated/floor/tiled/white/small,
@@ -4215,6 +4206,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/service/canteen)
+"aVY" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/research/robotics/roboticssurgery)
 "aWd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet/blue,
@@ -4302,6 +4297,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/substation)
+"aWT" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "aWW" = (
 /turf/simulated/floor/tiled/dark/airless,
 /area/space)
@@ -4632,20 +4633,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp280/observation)
-"baq" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "bat" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -5334,10 +5321,6 @@
 /obj/structure/shuttle/engine/propulsion/burst/right,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/dockingbay)
-"bjZ" = (
-/obj/structure/sign/poster,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/entrancezone/waitingroom/lower)
 "bke" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
@@ -5740,6 +5723,7 @@
 /obj/structure/hygiene/sink/kitchen{
 	pixel_y = -32
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white/small,
 /area/site404/containmentchambers/scp2427/observation)
 "boR" = (
@@ -6425,6 +6409,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp895)
+"bwS" = (
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/service/chapel/coffinstore)
 "bwV" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
@@ -7582,6 +7570,14 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/site404/administration/office/tribunal)
+"bLo" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/effect/paint_stripe/green,
+/turf/simulated/floor/plating,
+/area/site404/medical/virology)
 "bLt" = (
 /obj/effect/floor_decal/corner/euclid/half,
 /obj/structure/bed/chair{
@@ -7755,17 +7751,6 @@
 /obj/item/device/scanner/plant,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/classdzone/labor/hydroponics)
-"bNO" = (
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/safe/half,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - SCP-500 Storage Vault";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/heavycontainmentzone/safestorage)
 "bNP" = (
 /obj/structure/window/reinforced/polarized{
 	dir = 8
@@ -7852,10 +7837,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/entrancezone/securityoffice/securitymeetingroom)
-"bPf" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/research/robotics/roboticsmaintenancebay)
 "bPi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -7965,10 +7946,6 @@
 /obj/structure/hygiene/sink{
 	pixel_y = 18
 	},
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Security Cell 1";
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
@@ -8053,6 +8030,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
+"bRF" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/hallway)
 "bRG" = (
 /obj/structure/flora/pottedplant/deskferntrim,
 /obj/effect/floor_decal/corner/orange/half{
@@ -8135,6 +8116,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/research/aic/foyer)
+"bSu" = (
+/obj/machinery/light,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/service/chapel/coffinstore)
 "bSw" = (
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp082/upperhallway)
@@ -8606,10 +8592,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/containmentchambers/scp066)
-"bWB" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "bWE" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 9
@@ -8771,6 +8753,20 @@
 "bYL" = (
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp012)
+"bYT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "bYX" = (
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 1
@@ -8907,6 +8903,25 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp049/observation)
+"cas" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/virology{
+	name = "Virology Laboratory";
+	req_access = list(ACCESS_MEDICAL_LVL2)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "cat" = (
 /obj/structure/hygiene/sink{
 	dir = 1;
@@ -9165,24 +9180,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/containmentchambers/scp173/observation)
-"ccG" = (
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Exterior Chamber Fore"
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site404/containmentchambers/scp106/chamber/lowercontainment)
 "ccH" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -10000,15 +9997,6 @@
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/medical/chemistry)
-"cmO" = (
-/obj/effect/floor_decal/corner/euclid{
-	dir = 1
-	},
-/obj/machinery/camera/network/lcz{
-	c_tag = "SCP-151 - Containment Hallway"
-	},
-/turf/simulated/floor/tiled/white,
-/area/space)
 "cmR" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -10041,23 +10029,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp049/chamber/office)
-"cnb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/hcz{
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Fore Hallway";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/containmentchambers/scp008/laboratory)
 "cnj" = (
 /turf/simulated/shuttle/wall,
 /area/site404/heavycontainmentzone/escapepodhall)
@@ -10109,6 +10080,25 @@
 /obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/hallway/lowerprimary)
+"cnS" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-2427-3 Containment Facilities";
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/containmentchambers/scp2427/observation)
 "coh" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -10174,17 +10164,6 @@
 /obj/structure/coatrack,
 /turf/simulated/floor/carpet/magenta,
 /area/site404/containmentchambers/scp082/chamber/quarters)
-"coG" = (
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/safe/half,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - SCP-2398 Storage Vault";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/heavycontainmentzone/safestorage)
 "coJ" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -10251,24 +10230,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site404/research/robotics/roboticsdevelopment)
-"coU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/securityoffice/checkpoint)
 "coV" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 1
@@ -10461,20 +10422,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/space)
-"cqC" = (
-/obj/structure/table/standard,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/item/storage/firstaid/toxin,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "cqG" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -10488,10 +10435,6 @@
 "cqJ" = (
 /turf/simulated/floor/tiled/white/small,
 /area/site404/containmentchambers/scp513)
-"cqK" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "cqS" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/machinery/light,
@@ -10966,6 +10909,25 @@
 /obj/machinery/power/breakerbox/activated,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/substation)
+"cwl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_MEDICAL_LVL1);
+	name = "Medical Department Maintenance Access"
+	},
+/turf/simulated/floor/plating,
+/area/site404/medical/hallway)
 "cwo" = (
 /obj/structure/chair/sofa/corp,
 /turf/simulated/floor/tiled/horizontal,
@@ -11218,11 +11180,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/machinery/camera/network/hcz{
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Research Office";
-	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp008/researchoffice)
@@ -11658,10 +11615,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/north)
-"cGV" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/hallway)
 "cGZ" = (
 /obj/effect/floor_decal/corner/euclid{
 	dir = 6
@@ -12028,14 +11981,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
-"cKY" = (
-/obj/structure/table/standard,
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Research Compartment Portside";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/containmentchambers/scp049/observation)
 "cLd" = (
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 4
@@ -12395,6 +12340,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/heavycontainmentzone/securityoffice/checkpoint)
+"cPN" = (
+/obj/machinery/atmospherics/unary/tank{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "cPR" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 4
@@ -12700,7 +12651,7 @@
 "cSh" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-895 Exterior Containment Chamber";
-	req_access = list(list("ACCESS_SCIENCE_LVL3", "ACCESS_SECURITY_LVL3"))
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -12710,6 +12661,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp895)
@@ -13193,6 +13147,14 @@
 	},
 /turf/simulated/open,
 /area/site404/lightcontainmentzone/maintenance/elevator)
+"cYC" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/effect/paint_stripe/blue,
+/turf/simulated/floor/plating,
+/area/site404/medical/waitingroom)
 "cYJ" = (
 /obj/effect/floor_decal/corner/euclid{
 	dir = 1
@@ -13455,11 +13417,6 @@
 "dbZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/machinery/camera/network/hcz{
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Test Chamber";
-	dir = 1
 	},
 /turf/simulated/floor/reinforced,
 /area/site404/containmentchambers/scp008/testroom)
@@ -13744,6 +13701,18 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/administration/commandlounge)
+"ddP" = (
+/obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "ddS" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 4
@@ -13816,10 +13785,6 @@
 /area/site404/research/hallway)
 "deM" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1
-	},
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Engineering Compartment";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -14307,6 +14272,15 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/containmentchambers/scp106/uppermaintenance)
+"dkT" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/green/half,
+/obj/structure/hygiene/sink{
+	pixel_y = 23;
+	pixel_x = 16
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "dkX" = (
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = list()
@@ -14327,6 +14301,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/administration/assemblyhall)
+"dlj" = (
+/obj/structure/girder/displaced,
+/turf/simulated/floor/plating,
+/area/site404/heavycontainmentzone/hallway/west)
 "dlw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -14376,16 +14354,6 @@
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/medical/securitystation)
-"dlK" = (
-/obj/machinery/door/firedoor/autoset,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/glass/virology{
-	name = "Quarantine Unit Two";
-	req_access = list(ACCESS_MEDICAL_LVL1)
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "dlS" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -15185,21 +15153,6 @@
 	},
 /turf/simulated/floor/reinforced/airmix,
 /area/space)
-"duK" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "duL" = (
 /turf/simulated/open,
 /area/site404/administration/maintenance/starboardbow)
@@ -15668,19 +15621,6 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/plating,
 /area/site404/heavycontainmentzone/hallway/east)
-"dAm" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/hcz{
-	dir = 4;
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Starboard Hallway"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/containmentchambers/scp008/laboratory)
 "dAq" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
@@ -15738,6 +15678,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/medical/psychologistoffice)
+"dAO" = (
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "dAS" = (
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/lino,
@@ -15969,6 +15913,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/humanoidcontainment/hallway)
+"dDz" = (
+/turf/simulated/floor/tiled/white,
+/area/site404/medical/virology)
 "dDC" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -15976,18 +15923,6 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site404/containmentchambers/scp082/chamber/main)
-"dDF" = (
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Storage Vaults";
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/heavycontainmentzone/safestorage)
 "dDP" = (
 /obj/effect/floor_decal/borderfloorblack/corner{
 	dir = 1
@@ -16389,10 +16324,6 @@
 "dIS" = (
 /obj/effect/floor_decal/corner/keter/mono,
 /obj/structure/table/reinforced,
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Security Observation";
-	dir = 8
-	},
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "lock106";
@@ -16470,7 +16401,7 @@
 "dJP" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-280 Containment Facilities";
-	req_access = list(list("ACCESS_CONTAINMENT_SCP_106"))
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17757,6 +17688,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/hallway/lowerprimary)
+"eav" = (
+/obj/structure/closet/crate,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/obj/random/loot,
+/turf/simulated/floor/plating,
+/area/site404/heavycontainmentzone/hallway/west)
 "eaw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -17875,6 +17815,13 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/waitingroom)
+"ebp" = (
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site404/containmentchambers/scp2427/observation)
 "ebx" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -17965,12 +17912,6 @@
 /obj/structure/bed/chair/armchair/brown,
 /turf/simulated/floor/wood/walnut,
 /area/space)
-"ecL" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "ecU" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 9
@@ -18551,6 +18492,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/entrancezone/securityoffice/commanderoffice)
+"ejx" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/site404/service/coldroom)
 "ejy" = (
 /obj/machinery/door/window/brigdoor/westleft,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19442,18 +19396,6 @@
 /obj/effect/floor_decal/corner/green/half{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -20053,10 +19995,6 @@
 	dir = 4
 	},
 /area/site404/research/researchdevelopment)
-"eBt" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/hallway)
 "eBw" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -20425,26 +20363,6 @@
 "eFn" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/entrancezone/securityoffice/checkpoint)
-"eFq" = (
-/obj/effect/floor_decal/corner/keter/border,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Upper Deck Exterior Chamber Aft";
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site404/containmentchambers/scp106/chamber/uppercontainment)
 "eFz" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -20798,12 +20716,6 @@
 /obj/item/spirit_board,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/space)
-"eIW" = (
-/obj/structure/bed/chair/office/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/medical/virology)
 "eJb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -20989,10 +20901,6 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/administration/bridge)
 "eLQ" = (
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Entrance Checkpoint";
-	dir = 1
-	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -31
@@ -21148,25 +21056,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/securityoffice/guardfacilities)
-"eOf" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/obj/machinery/door/airlock/maintenance{
-	req_access = list(ACCESS_MEDICAL_LVL1);
-	name = "Medical Department Maintenance Access"
-	},
-/turf/simulated/floor/plating,
-/area/site404/medical/hallway)
 "eOg" = (
 /turf/simulated/mineral/random/high_chance,
 /area/space)
@@ -21210,6 +21099,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/securityoffice/checkpoint)
+"eOL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "eOU" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -21288,11 +21189,6 @@
 "eQm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/machinery/camera/network/hcz{
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Engineering Compartment";
-	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site404/containmentchambers/scp008/maintenance)
@@ -21585,6 +21481,10 @@
 "eUs" = (
 /obj/effect/floor_decal/corner/lightgrey,
 /obj/effect/floor_decal/techfloor/corner,
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -22532,6 +22432,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/medical/morgue/coroner)
+"fgd" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "fgg" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -22733,15 +22637,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp096/observation)
-"fiA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "fiL" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 8
@@ -22934,6 +22829,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/hallway/central)
 "fkK" = (
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/lino,
 /area/site404/containmentchambers/scp2427/chamber)
 "fkO" = (
@@ -23009,6 +22907,16 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/service/canteen)
+"flV" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "fmc" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp173/chamber)
@@ -23508,6 +23416,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/port)
+"frW" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/plating,
+/area/site404/heavycontainmentzone/hallway/west)
 "fsc" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -24105,6 +24017,10 @@
 "fAH" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/entrancezone/securityoffice/brig)
+"fAI" = (
+/obj/machinery/door/firedoor/autoset,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/escapepodhall)
 "fAZ" = (
 /turf/simulated/floor/plating,
 /area/site404/engineering/janitorial)
@@ -24624,6 +24540,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/securityoffice/securitymeetingroom)
+"fFu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "fFv" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -25303,18 +25231,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site404/medical/exam)
-"fOY" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "fPk" = (
 /obj/machinery/optable,
 /obj/structure/hygiene/drain,
@@ -26014,18 +25930,6 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/site404/heavycontainmentzone/hallway/east)
-"fYp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/button/windowtint{
-	dir = 8;
-	pixel_x = 24
-	},
-/turf/simulated/floor/carpet/green,
-/area/site404/medical/psychologistoffice)
 "fYs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -27376,6 +27280,15 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site404/entrancezone/securityoffice/breakroom)
+"gna" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "gnh" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor/hole,
@@ -27545,15 +27458,6 @@
 /obj/effect/floor_decal/corner/grey/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/heavycontainmentzone/guardfacilities)
-"gpL" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/white/vertical,
-/area/site404/medical/virology)
 "gpP" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/blue/border{
@@ -27606,7 +27510,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-2427-3 Containment Facilities";
-	req_access = list(list("ACCESS_SCIENCE_LVL3", "ACCESS_SECURITY_LVL3"))
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/observation)
@@ -28218,6 +28122,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/research/xenobiology)
+"gwr" = (
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "gwt" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset,
@@ -28252,9 +28162,9 @@
 /turf/simulated/floor/reinforced,
 /area/site404/research/canisterstorage)
 "gwF" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/entrancezone/substation)
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/service/chapel/coffinstore)
 "gwJ" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
@@ -28332,6 +28242,9 @@
 	send_access = list(list("ACCESS_SECURITY_LEVEL2","ACCESS_SCIENCE_LEVEL2"))
 	},
 /obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/observation)
 "gxT" = (
@@ -28752,6 +28665,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ENGINEERING_LVL1)
+	},
 /turf/simulated/floor/plating,
 /area/site404/heavycontainmentzone/hallway/west)
 "gCz" = (
@@ -29051,14 +28967,6 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/containmentchambers/scp012)
-"gGt" = (
-/obj/structure/table/standard,
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Stairwell";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/site404/containmentchambers/scp106/lowerhallway)
 "gGy" = (
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/reinforced,
@@ -29138,10 +29046,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp049/chamber/clinic)
-"gHC" = (
-/obj/machinery/atmospherics/binary/pump/on,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "gHD" = (
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = list(ACCESS_SCIENCE_LVL2)
@@ -30353,6 +30257,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/machinery/camera/network/containmentunit/scp2427{
+	c_tag = "SCP-2427-3 - Cold Storage Compartment";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/containmentchambers/scp2427/observation)
 "gXV" = (
@@ -30361,9 +30269,6 @@
 /area/space)
 "gYa" = (
 /obj/effect/floor_decal/corner/keter/mono,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Security Office Foreside"
-	},
 /obj/structure/bed/chair/armchair/red,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/heavycontainmentzone/securityoffice/briefingroom)
@@ -30395,6 +30300,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/space)
+"gYH" = (
+/obj/structure/table/standard,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/site404/heavycontainmentzone/hallway/west)
 "gYK" = (
 /obj/machinery/atmospherics/pipe/zpipe/up/supply{
 	dir = 8
@@ -30601,15 +30512,9 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/administration/bridge)
 "haP" = (
-/obj/machinery/door/firedoor/autoset,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/glass/virology{
-	name = "Quarantine Unit One";
-	req_access = list(ACCESS_MEDICAL_LVL1)
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
+/obj/effect/paint_stripe/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/morgue/corpsestorage)
 "haS" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -30658,6 +30563,18 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/medical/securitystation)
+"hbx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/access_button/airlock_interior{
+	pixel_y = 21;
+	pixel_x = -23;
+	id_tag = "2427";
+	master_tag = "2427"
+	},
+/turf/simulated/floor/carpet/brown,
+/area/site404/containmentchambers/scp2427/chamber)
 "hbE" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/techfloor,
@@ -30990,19 +30907,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/medical/psychologistoffice)
-"heS" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/hcz{
-	dir = 8;
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Port Hallway"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/containmentchambers/scp008/laboratory)
 "heT" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -31982,12 +31886,6 @@
 /obj/random/action_figure,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/site404/logistics/warehouse)
-"hrm" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "hrq" = (
 /obj/structure/table/standard,
 /obj/random/snack,
@@ -32160,7 +32058,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/external/bolted{
-	name = "SCP-2427-3 Exterior Containment"
+	name = "SCP-2427-3 Exterior Containment";
+	id_tag = "2427_outer"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -32808,6 +32707,27 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site404/heavycontainmentzone/securityoffice/armory)
+"hAY" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site404/medical/virology)
 "hAZ" = (
 /obj/effect/floor_decal/corner/black{
 	dir = 8
@@ -33082,6 +33002,14 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/research/office/C)
+"hED" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable,
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/securityoffice/checkpoint)
 "hEL" = (
 /obj/effect/floor_decal/corner/safe/half{
 	dir = 8
@@ -33625,12 +33553,12 @@
 /area/site404/administration/assemblywaitingroom)
 "hKg" = (
 /obj/effect/floor_decal/corner/red/half,
-/obj/machinery/camera/network/scp895{
-	dir = 1;
-	c_tag = "SCP-895 - Exterior Containment Chamber"
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/machinery/camera/network/containmentunit/scp895{
+	dir = 1;
+	c_tag = "SCP-895 - Containment Unit Access Corridor"
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/containmentchambers/scp895)
@@ -34149,12 +34077,6 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/space)
-"hQv" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	dir = 9
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "hQx" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/reinforced/airmix,
@@ -34979,17 +34901,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/site404/administration/assemblyhall)
-"hYt" = (
-/obj/effect/floor_decal/corner/euclid/half{
-	dir = 1
-	},
-/obj/structure/closet/l3closet/dclass,
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Observation Compartment";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/containmentchambers/scp049/observation)
 "hYL" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -35186,10 +35097,6 @@
 /obj/item/storage/med_pouch/burn,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/space)
-"iaZ" = (
-/obj/effect/paint_stripe/gunmetal,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/morgue/corpsestorage)
 "iba" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/horizontal,
@@ -35745,6 +35652,10 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/containmentchambers/scp012)
+"igT" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/chemistry)
 "igY" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -35797,12 +35708,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/containmentchambers/scp106/uppermaintenance)
-"ihR" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "ihS" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -36088,6 +35993,12 @@
 	},
 /turf/simulated/floor/tiled/corner,
 /area/site404/service/janitorial)
+"ilW" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/glass/fifty,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/service/chapel/coffinstore)
 "ilZ" = (
 /obj/item/modular_computer/console/preset/library{
 	dir = 8
@@ -36420,6 +36331,10 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/classdzone/labor/hydroponics)
+"ipQ" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/research/robotics/roboticsmaintenancebay)
 "ipS" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -36512,6 +36427,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp173/chamber)
+"irQ" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "irS" = (
 /obj/structure/virology/incubator_off,
 /obj/effect/floor_decal/corner/green/half,
@@ -37283,13 +37202,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp106/uppermaintenance)
-"iBM" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Upper Deck Chamber Entrance"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/containmentchambers/scp106/entrance)
 "iBP" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -37344,6 +37256,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3));
+	name = "SCP-2427-3 Maintenance Compartment Access"
 	},
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp2427/observation)
@@ -38150,11 +38066,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/workshop)
-"iNo" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/half,
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "iNB" = (
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/white/monotile,
@@ -38343,10 +38254,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor/corner,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Vacant Storage Vault 4";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/heavycontainmentzone/safestorage)
 "iQB" = (
@@ -38375,6 +38282,9 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site404/medical/morgue/coroner)
+"iQU" = (
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "iQZ" = (
 /obj/effect/floor_decal/spline/fancy/black/corner,
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -38410,6 +38320,15 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/medical/psychologistoffice)
+"iRJ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "iRL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -38508,6 +38427,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/service/archive/upper)
+"iTc" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "iTm" = (
 /obj/item/modular_computer/console/preset/medical{
 	dir = 4
@@ -38903,10 +38828,6 @@
 /area/site404/containmentchambers/scp513)
 "iXi" = (
 /obj/structure/table/standard,
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Security Storage";
-	dir = 1
-	},
 /obj/item/storage/box/survival,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp106/upperobservation)
@@ -39041,6 +38962,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/humanoidcontainment/two)
+"iYR" = (
+/obj/machinery/button/blast_door{
+	id_tag = "maintenancebayshutter";
+	name = "Maintenance Bay Shutter button"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/research/robotics/roboticsmaintenancebay)
 "iYV" = (
 /obj/structure/catwalk,
 /obj/structure/cable/yellow{
@@ -40021,20 +39949,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/walnut,
 /area/site404/containmentchambers/scp343)
-"jko" = (
-/obj/structure/hygiene/toilet,
-/obj/structure/hygiene/sink{
-	pixel_y = 18
-	},
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Security Cell 2";
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/heavycontainmentzone/securityoffice/cells)
 "jky" = (
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 4
@@ -40521,6 +40435,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/containmentchambers/scp457)
+"jpp" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/green/half,
+/obj/item/storage/lockbox/vials{
+	req_access = list()
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "jpF" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -40540,6 +40462,22 @@
 /obj/structure/cable,
 /turf/simulated/floor/wood/mahogany,
 /area/site404/administration/office/sitemanager)
+"jpK" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ezbrigwindow";
+	name = "Entrance Zone Brig Window Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/securityoffice/brig)
 "jpL" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/floor_decal/corner/keter/half{
@@ -40562,11 +40500,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/service/archive)
-"jqk" = (
-/obj/machinery/light,
-/obj/structure/flora/pottedplant/floorleaf,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/service/chapel/coffinstore)
 "jqm" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled,
@@ -40601,20 +40534,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/dockingbay)
-"jqQ" = (
-/obj/structure/table/standard,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/reagent_containers/syringe,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "jqV" = (
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -40857,10 +40776,6 @@
 /obj/structure/shuttle/window,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/escapepodhall)
-"jua" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "jub" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -40936,18 +40851,6 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/research/robotics/roboticsdevelopment)
-"juI" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "juU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -41030,16 +40933,6 @@
 /obj/structure/bed/chair/office/comfy/purple,
 /turf/simulated/floor/carpet/purple,
 /area/site404/research/assistantresearchdirectoroffice)
-"jvO" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "jvU" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -41483,6 +41376,9 @@
 "jAT" = (
 /obj/effect/floor_decal/corner/euclid/diagonal,
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp2427/observation)
 "jAY" = (
@@ -41547,6 +41443,12 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/securityoffice/raisa)
+"jBz" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset,
+/obj/effect/paint_stripe/green,
+/turf/simulated/floor/plating,
+/area/site404/medical/virology)
 "jBA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -41942,12 +41844,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/engineering/constructionzone)
-"jFW" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "jGk" = (
 /turf/simulated/floor/wood/walnut,
 /area/site404/administration/assemblyhall)
@@ -42351,6 +42247,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/heavycontainmentzone/securityoffice/checkpoint)
 "jLb" = (
@@ -42640,10 +42540,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/safe/half,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Vacant Storage Vault 1";
-	dir = 8
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/heavycontainmentzone/safestorage)
 "jPv" = (
@@ -43192,12 +43088,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/lightcontainmentzone/safestorage)
-"jWA" = (
-/obj/machinery/atmospherics/unary/tank/air{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "jWC" = (
 /obj/machinery/button/blast_door{
 	id_tag = "cdzhydroponics";
@@ -43242,6 +43132,10 @@
 "jXx" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/service/chapel/office)
+"jXA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "jXB" = (
 /obj/machinery/vending/coffee{
 	dir = 8
@@ -43569,6 +43463,20 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/camera/network/containmentunit/scp2427{
+	c_tag = "SCP-2427-3 - Interior Containment Unit Entrance";
+	dir = 1
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	id_tag = "2427";
+	dir = 1;
+	pixel_y = -24;
+	tag_exterior_door = "2427_outer"
+	},
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	id_tag = "2427";
+	tag_exterior_door = "2427_outer"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp2427/chamber)
 "kaK" = (
@@ -43703,12 +43611,6 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site404/lightcontainmentzone/hallway/south)
-"kci" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 9
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "kct" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
@@ -43790,8 +43692,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/medical/hallway)
-"kcZ" = (
-/obj/structure/flora/pottedplant/floorleaf,
+"kcX" = (
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass/virology{
+	name = "Quarantine Unit One";
+	req_access = list(ACCESS_MEDICAL_LVL1)
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/virology)
 "kdk" = (
@@ -44111,18 +44019,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/hallway)
-"khk" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Portside Hallway";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site404/containmentchambers/scp106/lowermaintenance)
 "khn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -44548,10 +44444,6 @@
 	},
 /turf/simulated/floor/tiled/corner,
 /area/site404/entrancezone/hallway/lowerprimary)
-"kmM" = (
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/service/chapel/coffinstore)
 "kmU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -44992,6 +44884,26 @@
 	},
 /turf/simulated/floor/wood/maple,
 /area/site404/service/baroffice)
+"ksn" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	name = "Maintenance Bay Shutter";
+	id_tag = "maintenancebayshutter"
+	},
+/turf/simulated/floor/tiled/monofloor,
+/area/site404/research/robotics/roboticsmaintenancebay)
 "ksr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -45036,16 +44948,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/research/office/B)
-"ksS" = (
-/obj/structure/morgue{
-	dir = 8
-	},
-/obj/machinery/camera/network/scp049{
-	dir = 8;
-	c_tag = "SCP-049 - Medical Storage"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/containmentchambers/scp049/chamber/storage)
 "ksV" = (
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/brown,
@@ -46109,10 +46011,6 @@
 /obj/effect/floor_decal/corner/euclid/half{
 	dir = 8
 	},
-/obj/machinery/camera/network/lcz{
-	c_tag = "SCP-151 - Observation Compartment";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/space)
 "kFm" = (
@@ -46538,6 +46436,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/machinery/camera/network/containmentunit/scp2427{
+	c_tag = "SCP-2427-3 - Containment Facilities Entrance";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp2427/observation)
 "kJR" = (
@@ -46743,6 +46645,21 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp082/chamber/park)
+"kMb" = (
+/obj/structure/table/standard,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/syringes,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "kMg" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -46867,9 +46784,6 @@
 /turf/simulated/floor/plating,
 /area/site404/heavycontainmentzone/substation)
 "kOk" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Engineering Control"
-	},
 /obj/effect/floor_decal/corner/orange{
 	dir = 1
 	},
@@ -46948,6 +46862,7 @@
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/service/hydroponics)
 "kOY" = (
+/obj/machinery/light,
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp2427/observation)
 "kPa" = (
@@ -47065,6 +46980,19 @@
 /obj/structure/hygiene/shower,
 /turf/simulated/floor/tiled/white/small,
 /area/site404/lightcontainmentzone/humanoidcontainment/four)
+"kQb" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ezbrigwindow";
+	name = "Entrance Zone Brig Window Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/securityoffice/brig)
 "kQe" = (
 /obj/structure/hygiene/toilet,
 /obj/structure/hygiene/sink{
@@ -47112,10 +47040,6 @@
 "kQQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
-	},
-/obj/machinery/camera/network/hcz{
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Pathogen Storage Compartment"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp008/storage)
@@ -47339,6 +47263,18 @@
 /obj/item/taperoll/engineering,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp049/maintenance)
+"kTd" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/medical/virology)
 "kTe" = (
 /obj/machinery/door/airlock/multi_tile/research{
 	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3));
@@ -47415,6 +47351,13 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site404/administration/office/ethicsrep)
+"kTW" = (
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/entrancezone/hallway/lowerprimary)
 "kUd" = (
 /obj/effect/floor_decal/corner/keter/mono,
 /obj/structure/closet/secure_closet/cadet/hcz,
@@ -47657,6 +47600,12 @@
 "kWh" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/containmentchambers/scp008/testroom)
+"kWl" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "kWn" = (
 /obj/machinery/computer{
 	dir = 4
@@ -47834,20 +47783,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/containmentchambers/scp914)
-"kYi" = (
-/obj/structure/hygiene/toilet{
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/machinery/flasher{
-	id_tag = "EZ Security Cell 2";
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/simulated/floor/tiled/monofloor,
-/area/site404/entrancezone/securityoffice/brig)
 "kYp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -48581,10 +48516,6 @@
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/space)
 "lhb" = (
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Office";
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -21
@@ -49209,6 +49140,10 @@
 /obj/item/reagent_containers/pill/kelotane,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/containmentchambers/scp457)
+"lqC" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating,
+/area/site404/heavycontainmentzone/hallway/west)
 "lqK" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -49219,6 +49154,13 @@
 	},
 /turf/simulated/open,
 /area/site404/containmentchambers/scp106/chamber/uppercontainment)
+"lqN" = (
+/obj/structure/table/rack/shelf,
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
+/turf/simulated/floor/plating,
+/area/site404/containmentchambers/scp2427/observation)
 "lqR" = (
 /obj/structure/catwalk,
 /obj/structure/cable/yellow{
@@ -49450,10 +49392,6 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/grass,
 /area/site404/research/aic/electrical)
-"ltI" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/chemistry)
 "ltP" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -49752,9 +49690,21 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/hallway)
+"lxy" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "lxE" = (
 /turf/simulated/wall/r_wall/hull,
 /area/site404/research/aic/cores/three)
+"lxJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "lxO" = (
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/white/small,
@@ -49827,20 +49777,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/containmentchambers/scp082/janitorial)
-"lzl" = (
-/obj/structure/hygiene/toilet{
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/machinery/flasher{
-	id_tag = "EZ Security Cell 3";
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/simulated/floor/tiled/monofloor,
-/area/site404/entrancezone/securityoffice/brig)
 "lzs" = (
 /obj/structure/sign/scp/euclid_scp,
 /turf/simulated/wall/r_wall/prepainted,
@@ -50112,13 +50048,6 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp106/entrance)
-"lCV" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Interior Chamber";
-	dir = 1
-	},
-/turf/simulated/floor/reinforced,
-/area/space)
 "lCX" = (
 /obj/item/stack/material/wood/maple/twentyfive,
 /obj/structure/table/steel_reinforced,
@@ -51040,6 +50969,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/engineering/janitorial)
+"lPj" = (
+/obj/effect/floor_decal/corner/black{
+	dir = 10
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/service/canteen)
 "lPk" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -51242,6 +51182,21 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
+"lRw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "lRA" = (
 /obj/structure/flora/pottedplant/deskferntrim,
 /obj/effect/floor_decal/corner/black{
@@ -51462,6 +51417,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/lightcontainmentzone/humanoidbreakroom)
+"lUH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "lUO" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/euclid/border{
@@ -51512,6 +51473,19 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/heavycontainmentzone/substation)
+"lVw" = (
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/service/kitchen)
 "lVC" = (
 /obj/item/stool,
 /turf/simulated/floor/tiled/techfloor,
@@ -51612,25 +51586,6 @@
 /obj/structure/flora/pottedplant/deskferntrim,
 /turf/simulated/floor/tiled/dark,
 /area/site404/heavycontainmentzone/securityoffice/briefingroom)
-"lWj" = (
-/obj/structure/railing/mapped,
-/obj/effect/floor_decal/corner/keter/border{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Upper Deck Exterior Chamber Fore"
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site404/containmentchambers/scp106/chamber/uppercontainment)
 "lWk" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -51906,6 +51861,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/north)
+"lZA" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/containmentunit/scp895{
+	dir = 4;
+	c_tag = "SCP-895 - Interior Containment Unit"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site404/containmentchambers/scp895)
 "lZG" = (
 /obj/structure/catwalk,
 /obj/structure/cable/yellow{
@@ -52105,14 +52070,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/lightcontainmentzone/securityoffice/sargeoffice)
-"mcv" = (
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
-/obj/structure/cable,
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/securityoffice/checkpoint)
 "mcA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -52634,19 +52591,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/medical/psychologistoffice)
-"mjL" = (
-/obj/item/gun/projectile/automatic/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/scp/saiga12/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/item/ammo_magazine/box/buckshot,
-/obj/structure/table/rack/shelf,
-/obj/machinery/camera/network/hcz{
-	dir = 1;
-	c_tag = "HCZ - Security Heavy Armory"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/heavycontainmentzone/securityoffice/armory)
 "mkd" = (
 /obj/effect/floor_decal/corner/black/half{
 	dir = 8
@@ -53205,18 +53149,6 @@
 	},
 /turf/simulated/floor/reinforced/oxygen,
 /area/space)
-"mqb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/medical/virology)
 "mql" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -53549,14 +53481,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/maintenance/starboardquarter)
-"mtJ" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/machinery/camera/network/hcz{
-	dir = 4;
-	c_tag = "HCZ - Security Office Portside"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/heavycontainmentzone/securityoffice/briefingroom)
 "mtK" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -53596,6 +53520,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/security/controlroom)
+"mtU" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "ezbrigwindow";
+	name = "Entrance Zone Brig Window Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/securityoffice/brig)
 "mtV" = (
 /obj/effect/floor_decal/corner/euclid/half{
 	dir = 1
@@ -54347,10 +54282,6 @@
 /obj/structure/bookcase,
 /turf/simulated/floor/wood/walnut,
 /area/site404/containmentchambers/scp049/chamber/study)
-"mCw" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/entrancezone/maintenance/starboardbow)
 "mCC" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -54438,7 +54369,8 @@
 	dir = 4;
 	pixel_x = -20;
 	tag_exterior_door = "280exterior";
-	tag_interior_door = "280interior"
+	tag_interior_door = "280interior";
+	req_access = list(ACCESS_CONTAINMENT_SCP_106)
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -54525,6 +54457,10 @@
 "mED" = (
 /turf/simulated/floor/wood/maple,
 /area/site404/lightcontainmentzone/hallway/south)
+"mEI" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "mEK" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/lino,
@@ -54730,6 +54666,20 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/lightcontainmentzone/securityoffice/riotarmory)
+"mHZ" = (
+/obj/structure/table/standard,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/reagent_containers/syringe,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "mIk" = (
 /obj/structure/bed/chair{
 	dir = 8;
@@ -54896,7 +54846,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/glass/medical{
-	req_access = list(ACCESS_MEDICAL_LVL1);
+	req_access = list(list(ACCESS_MEDICAL_LVL1, ACCESS_SECURITY_LVL2));
 	name = "Medical Entrance Chamberlock";
 	id_tag = "medicalexterior"
 	},
@@ -55011,11 +54961,6 @@
 	req_access = list(list("ACCESS_SECURITY_LEVEL4","ACCESS_SCIENCE_LEVEL4"))
 	},
 /obj/effect/floor_decal/corner/euclid/half,
-/obj/machinery/camera/network/hcz{
-	dir = 1;
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Virology Laboratory"
-	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/containmentchambers/scp008/laboratory)
 "mMy" = (
@@ -55024,6 +54969,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/camera/network/containmentunit/scp2427{
+	c_tag = "SCP-2427-3 - Research Compartment Fore"
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site404/containmentchambers/scp2427/observation)
@@ -55075,21 +55023,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/small,
 /area/site404/lightcontainmentzone/maintenance/starboard)
-"mMQ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "mMR" = (
 /obj/effect/floor_decal/corner/orange/half{
 	dir = 1
@@ -55147,7 +55080,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site404/research/aic/hallway)
 "mOa" = (
-/obj/effect/paint_stripe/gunmetal,
+/obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/medical/morgue/coroner)
 "mOf" = (
@@ -55429,6 +55362,16 @@
 	},
 /turf/simulated/floor/tiled/small,
 /area/site404/classdzone/luxury/quarters/one)
+"mRu" = (
+/obj/effect/floor_decal/corner/euclid/half{
+	dir = 4
+	},
+/obj/machinery/camera/network/containmentunit/scp895{
+	dir = 8;
+	c_tag = "SCP-895 - Research Compartment Starboard"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/containmentchambers/scp895)
 "mRv" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 6
@@ -55555,6 +55498,9 @@
 /area/site404/research/aic/cores/three)
 "mSH" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/lino,
 /area/site404/containmentchambers/scp2427/chamber)
 "mSN" = (
@@ -56232,21 +56178,6 @@
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/monitoringroom)
-"naZ" = (
-/obj/structure/table/standard,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/storage/box/beakers,
-/obj/item/storage/box/syringes,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "nbe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -56627,25 +56558,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/substation)
-"nfP" = (
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/obj/machinery/door/airlock/glass/virology{
-	name = "Virology Laboratory";
-	req_access = list(ACCESS_MEDICAL_LVL2)
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "nfU" = (
 /obj/effect/floor_decal/spline/fancy/black/corner{
 	dir = 8
@@ -56690,9 +56602,6 @@
 /obj/item/storage/pill_bottle/amnesticsa,
 /obj/item/storage/pill_bottle/amnesticsb,
 /obj/item/storage/pill_bottle/amnesticsh,
-/obj/machinery/camera/network/scp895{
-	c_tag = "SCP-895 - Research Compartment Fore"
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp895)
 "ngj" = (
@@ -56813,6 +56722,10 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/containmentchambers/scp106/chamber/uppercontainment)
+"nhR" = (
+/obj/structure/sign/poster,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/entrancezone/waitingroom/lower)
 "nhT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -57487,6 +57400,20 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/entrancezone/shelter)
+"npz" = (
+/obj/structure/hygiene/toilet{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/flasher{
+	id_tag = "EZ Security Cell 3";
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/monofloor,
+/area/site404/entrancezone/securityoffice/brig)
 "npE" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -57939,9 +57866,6 @@
 /obj/structure/sign/noidle{
 	pixel_y = 32
 	},
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Chamber Entrance"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/chamber/office)
 "nvQ" = (
@@ -58037,18 +57961,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/tiled,
 /area/site404/engineering/atmospherics)
-"nxn" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "nxo" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -58102,6 +58014,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/administration/office/goc)
+"nxQ" = (
+/obj/structure/table/standard,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/containmentchambers/scp2427/observation)
 "nxV" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -58111,12 +58031,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/hallway/lowerprimary)
-"nxW" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "nyc" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
@@ -58162,19 +58076,6 @@
 	dir = 8
 	},
 /area/site404/containmentchambers/scp066)
-"nyp" = (
-/obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/site404/service/coldroom)
 "nyq" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -58370,9 +58271,6 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
 "nAS" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Security Compartment"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -59075,6 +58973,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/humanoidcontainment/six)
+"nJY" = (
+/obj/structure/table/rack/shelf,
+/obj/machinery/camera/network/containmentunit/scp2427{
+	c_tag = "SCP-2427-3 - Maintenance Compartment"
+	},
+/turf/simulated/floor/plating,
+/area/site404/containmentchambers/scp2427/observation)
 "nKe" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 8
@@ -59214,6 +59119,16 @@
 /obj/structure/sign/electrical,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/containmentchambers/scp008/maintenance)
+"nLF" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "nLG" = (
 /obj/effect/floor_decal/corner/paleblue/half,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -59800,17 +59715,18 @@
 "nUn" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/classdzone/security/hallway)
-"nUG" = (
-/obj/effect/floor_decal/corner/black{
-	dir = 10
+"nUo" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 1
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white,
-/area/site404/service/canteen)
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "nUS" = (
 /obj/effect/floor_decal/corner/keter/diagonal,
 /obj/machinery/light{
@@ -59901,6 +59817,11 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/medical/securitystation)
+"nVN" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/escapepodhall)
 "nVP" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/corner/keter/border{
@@ -60294,18 +60215,6 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/lino,
 /area/site404/heavycontainmentzone/escapepodhall)
-"nZD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "nZF" = (
 /obj/machinery/vending/games{
 	dir = 4
@@ -60807,6 +60716,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site404/containmentchambers/scp2427/chamber)
 "ogj" = (
@@ -60919,6 +60829,11 @@
 "ohp" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	name = "Maintenance Bay Shutter";
+	id_tag = "maintenancebayshutter"
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/research/robotics/roboticsmaintenancebay)
@@ -61116,20 +61031,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/maintenance/port)
-"ojR" = (
-/obj/structure/hygiene/toilet,
-/obj/structure/hygiene/sink{
-	pixel_y = 18
-	},
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Security Cell 3";
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/heavycontainmentzone/securityoffice/cells)
 "ojT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -61547,16 +61448,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/site404/service/archive/upper)
-"oow" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "ooH" = (
 /obj/effect/floor_decal/corner/research/mono,
 /obj/structure/cable{
@@ -61846,6 +61737,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock/freezer{
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3));
+	name = "Cold Storage Compartment"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp2427/observation)
@@ -62339,6 +62234,10 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/workshop)
+"oxH" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/entrancezone/maintenance/starboardbow)
 "oxJ" = (
 /obj/item/modular_computer/console/preset/security{
 	dir = 8;
@@ -62750,6 +62649,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/access_button/airlock_exterior{
+	pixel_y = -22;
+	pixel_x = 22;
+	id_tag = "2427";
+	master_tag = "2427";
+	tag = "2427"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp2427/observation)
 "oCX" = (
@@ -62936,6 +62842,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/lightcontainmentzone/humanoidcontainment/four)
+"oEW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "oFu" = (
 /obj/structure/iv_drip,
 /obj/machinery/body_scan_display{
@@ -62969,14 +62884,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp106/upperobservation)
-"oFN" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "oFR" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/vertical,
@@ -63411,6 +63318,10 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp280/observation)
+"oKg" = (
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "oKl" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset,
@@ -63902,15 +63813,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/fusionengine/control)
-"oRc" = (
-/obj/structure/table/standard,
-/obj/machinery/alarm{
-	alarm_id = "petrov3";
-	dir = 8;
-	pixel_x = 23
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "oRi" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/classdzone/quarters/six)
@@ -64203,22 +64105,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/site404/administration/assemblyhall)
-"oUb" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "ezbrigwindow";
-	name = "Entrance Zone Brig Window Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/securityoffice/brig)
 "oUe" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/engineering/breakroom)
@@ -64373,6 +64259,25 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/workshop)
+"oUR" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3));
+	name = "SCP-2427-3 Maintenance Compartment Access"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/containmentchambers/scp2427/observation)
 "oUV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -65405,18 +65310,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/classdzone/labor/kitchen)
-"piQ" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/medical/virology)
 "piS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -65476,24 +65369,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
 /area/site404/research/xenoflora)
-"pjI" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "pjK" = (
 /obj/structure/closet/wardrobe/engineering_yellow,
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/engineering/atmospherics)
-"pjW" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/obj/effect/paint_stripe/green,
-/turf/simulated/floor/plating,
-/area/site404/medical/virology)
 "pjX" = (
 /turf/simulated/shuttle/wall{
 	icon_state = "swall";
@@ -65786,12 +65665,16 @@
 	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/medical/exam)
+"pne" = (
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/containmentchambers/scp2427/observation)
 "pni" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/camera/network/lcz{
-	c_tag = "SCP-151 - Maintenance Compartment"
-	},
 /turf/simulated/floor/tiled,
 /area/space)
 "pnj" = (
@@ -66938,6 +66821,11 @@
 /area/site404/containmentchambers/scp082/chamber/main)
 "pzu" = (
 /obj/structure/table/standard,
+/obj/machinery/alarm{
+	alarm_id = "petrov3";
+	dir = 8;
+	pixel_x = 23
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/virology)
 "pzJ" = (
@@ -66983,6 +66871,20 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site404/heavycontainmentzone/guardfacilities)
+"pAs" = (
+/obj/structure/table/standard,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/storage/firstaid/toxin,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "pAC" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -67165,13 +67067,6 @@
 	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/site404/entrancezone/hallway/starboard)
-"pBW" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Upper Deck Stairwell";
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/containmentchambers/scp106/upperobservation)
 "pBY" = (
 /obj/effect/floor_decal/corner/black/half,
 /obj/machinery/stove,
@@ -67185,14 +67080,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/entrancezone/waitingroom/upper)
-"pCu" = (
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -25;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/securityoffice/checkpoint)
 "pCx" = (
 /obj/structure/chair/sofa/left{
 	color = "#964B00"
@@ -67631,10 +67518,6 @@
 "pHj" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green,
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Quarters";
-	dir = 4
-	},
 /turf/simulated/floor/wood/ebony,
 /area/site404/containmentchambers/scp049/chamber/quarters)
 "pHl" = (
@@ -67693,7 +67576,9 @@
 /turf/simulated/floor/plating,
 /area/site404/engineering/gravitygenerator)
 "pHJ" = (
-/obj/machinery/door/window/brigdoor/eastright,
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
+	},
 /obj/effect/floor_decal/corner/lightgrey/half{
 	dir = 4
 	},
@@ -67775,6 +67660,22 @@
 "pIJ" = (
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/securityoffice/hallway)
+"pIR" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "pJd" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/safe/half{
@@ -68082,6 +67983,20 @@
 /obj/effect/floor_decal/corner/red/half,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/containmentchambers/scp895)
+"pLN" = (
+/obj/structure/hygiene/toilet{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/flasher{
+	id_tag = "EZ Security Cell 2";
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/monofloor,
+/area/site404/entrancezone/securityoffice/brig)
 "pLO" = (
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/open,
@@ -68304,17 +68219,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/hallway)
-"pOC" = (
-/obj/effect/floor_decal/corner/safe/half{
-	dir = 1
-	},
-/obj/effect/floor_decal/techfloor/corner,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Vacant Storage Vault 3";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/heavycontainmentzone/safestorage)
 "pOD" = (
 /obj/structure/bed/chair/shuttle/white{
 	dir = 8
@@ -68721,17 +68625,24 @@
 /area/site404/medical/morgue/coroner)
 "pTX" = (
 /obj/machinery/door/airlock/external/bolted{
-	name = "SCP-2427-3 Interior Containment"
+	name = "SCP-2427-3 Interior Containment";
+	id_tag = "2427_inner"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/chamber)
-"pUf" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/service/chapel/coffinstore)
+"pUm" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/airlock/vault{
+	name = "Emergency Saferoom";
+	id_tag = "saferoomdoorright"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site404/entrancezone/maintenance/elevator)
 "pUn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -68798,17 +68709,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site404/service/archive/upper)
-"pVi" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/cable,
-/obj/machinery/door/blast/regular/open{
-	id_tag = "ezbrigwindow";
-	name = "Entrance Zone Brig Window Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/securityoffice/brig)
 "pVB" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -69474,12 +69374,6 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/engineering/breakroom)
-"qfq" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "qfw" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset,
@@ -70222,6 +70116,9 @@
 /area/site404/containmentchambers/scp096/observation)
 "qnh" = (
 /obj/effect/floor_decal/corner/euclid/diagonal,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp2427/observation)
 "qno" = (
@@ -70270,14 +70167,11 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/service/canteen)
 "qnG" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
+/obj/structure/bed/chair/office/light{
+	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/monofloor,
-/area/site404/entrancezone/securityoffice/brig)
+/turf/simulated/floor/tiled/white,
+/area/site404/medical/virology)
 "qnX" = (
 /obj/effect/floor_decal/corner/euclid{
 	dir = 4
@@ -70402,7 +70296,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/glass/medical{
-	req_access = list(ACCESS_MEDICAL_LVL1);
+	req_access = list(list(ACCESS_MEDICAL_LVL1, ACCESS_SECURITY_LVL2));
 	name = "Medical Entrance Chamberlock";
 	id_tag = "medicalinterior"
 	},
@@ -70452,32 +70346,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/xenoarcheology)
-"qpW" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/door/airlock/maintenance,
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "qqj" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /obj/structure/closet/crate/secure/biohazard/alt,
-/obj/machinery/camera/network/hcz{
-	dir = 8;
-	network = list("SCP-008 CCTV Network");
-	c_tag = "SCP-008 - Incineration Compartment"
-	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/containmentchambers/scp008/incineration)
 "qqm" = (
@@ -70713,6 +70586,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/chamber/kitchen)
+"qsR" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "qsT" = (
 /obj/effect/floor_decal/corner/safe/half{
 	dir = 8
@@ -70833,9 +70712,9 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/port)
 "qum" = (
-/obj/effect/paint_stripe/blue,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/r_wall/prepainted,
-/area/site404/entrancezone/maintenance/starboardquarter)
+/area/site404/medical/assistantmedicaldirectoroffice)
 "qur" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -71005,6 +70884,10 @@
 /obj/item/stool,
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/entrancezone/waitingroom/lower)
+"qww" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "qwx" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
@@ -71974,10 +71857,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/classdzone/quarters/hallway)
-"qHR" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/morgue/coroner)
 "qHS" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -72101,18 +71980,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/service/archive)
-"qJx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Starboard Hallway";
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/site404/containmentchambers/scp106/lowerhallway)
 "qJB" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -72152,6 +72019,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/reinforced,
 /area/site404/containmentchambers/scp012)
+"qJW" = (
+/obj/effect/paint_stripe/green,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/virology)
 "qJZ" = (
 /obj/effect/floor_decal/corner/research/mono,
 /obj/machinery/reagentgrinder,
@@ -73407,6 +73278,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
+	id_tag = "2427";
+	tag_exterior_door = "2427_outer"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp2427/chamber)
 "rbs" = (
@@ -74161,6 +74036,14 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/administration/office/tribunal)
+"rje" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/securityoffice/checkpoint)
 "rjh" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 9
@@ -74229,10 +74112,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/research/aic/foyer)
-"rjH" = (
-/obj/effect/paint_stripe/yellow,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/research/robotics/roboticssurgery)
 "rjN" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -74486,15 +74365,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/wood/walnut,
 /area/site404/containmentchambers/scp082/chamber/quarters)
-"rnp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor/autoset,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "rnq" = (
 /obj/effect/floor_decal/corner/black{
 	dir = 9
@@ -75329,6 +75199,18 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site404/administration/office/marshalcarterdark)
+"rwu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ENGINEERING_LVL1)
+	},
+/turf/simulated/floor/plating,
+/area/site404/heavycontainmentzone/hallway/central)
 "rwN" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/site404/lightcontainmentzone/maintenance/starboard)
@@ -75834,18 +75716,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/cult,
 /area/space)
-"rDz" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/obj/effect/paint_stripe/blue,
-/turf/simulated/floor/plating,
-/area/site404/medical/waitingroom)
 "rDD" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-895 Interior Containment Chamber";
-	req_access = list(list("ACCESS_SCIENCE_LVL3", "ACCESS_SECURITY_LVL3"))
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -75855,6 +75729,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp895)
@@ -75910,6 +75787,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/chemistry)
+"rEe" = (
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass/virology{
+	name = "Quarantine Unit Three";
+	req_access = list(ACCESS_MEDICAL_LVL1)
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "rEj" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -76186,6 +76073,10 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/containmentchambers/scp914)
+"rHQ" = (
+/obj/machinery/atmospherics/binary/pump/on,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "rHZ" = (
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/horizontal,
@@ -76495,6 +76386,16 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site404/medical/psychologistoffice)
+"rLT" = (
+/obj/effect/floor_decal/corner/euclid/half{
+	dir = 8
+	},
+/obj/machinery/camera/network/containmentunit/scp895{
+	dir = 4;
+	c_tag = "SCP-895 - Research Compartment Port"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/containmentchambers/scp895)
 "rLW" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -76980,7 +76881,7 @@
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/door/airlock/glass/research{
 	name = "SCP 280 Research Observation";
-	req_access = list("ACCESS_SCIENCE_LVL3")
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -78009,9 +77910,6 @@
 "sey" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/logistics/logisticsofficer)
-"seA" = (
-/turf/simulated/floor/tiled/white,
-/area/site404/medical/virology)
 "seD" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -78042,9 +77940,14 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/port)
 "seJ" = (
-/obj/effect/paint_stripe/green,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/virology)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/monofloor,
+/area/site404/entrancezone/securityoffice/brig)
 "seL" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/structure/cable{
@@ -78367,7 +78270,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/port)
 "sjP" = (
-/obj/effect/paint_stripe/green,
+/obj/effect/paint_stripe/gunmetal,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/medical/morgue/corpsestorage)
 "sjT" = (
@@ -78452,6 +78355,10 @@
 /obj/item/cell/high,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/containmentchambers/scp106/lowermaintenance)
+"sld" = (
+/obj/effect/paint_stripe/paleblue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/hallway)
 "slt" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -79038,10 +78945,6 @@
 	dir = 8
 	},
 /area/site404/engineering/atmospherics)
-"stf" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "sto" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/research/anomaly)
@@ -79101,17 +79004,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/site404/containmentchambers/scp008/researchoffice)
-"suz" = (
-/obj/effect/floor_decal/corner/euclid/half,
-/obj/machinery/camera/network/scp895{
-	dir = 1;
-	c_tag = "SCP-895 - Research Compartment Aft"
-	},
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/containmentchambers/scp895)
 "suF" = (
 /obj/machinery/light{
 	dir = 8
@@ -79171,6 +79063,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp008/laboratory)
+"svf" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/autoset,
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "svj" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -79498,6 +79399,7 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
 	},
+/obj/machinery/light,
 /turf/simulated/floor/lino,
 /area/site404/containmentchambers/scp2427/chamber)
 "syp" = (
@@ -79744,11 +79646,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/medical/assistantmedicaldirectoroffice)
 "sBv" = (
-/obj/machinery/door/airlock/external/bolted{
-	name = "SCP-2427-3 Interior Containment"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/external/bolted{
+	name = "SCP-2427-3 Interior Containment";
+	id_tag = "2427_inner"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/chamber)
@@ -79856,7 +79759,7 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/research/xenobiology)
 "sDb" = (
-/obj/effect/paint_stripe/yellow,
+/obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/medical/chemistry)
 "sDc" = (
@@ -80045,20 +79948,6 @@
 /obj/structure/closet/jcloset,
 /turf/simulated/floor/plating,
 /area/site404/research/janitorial)
-"sEK" = (
-/obj/structure/table/standard,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/item/storage/pill_bottle/penicillin,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "sES" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -80431,6 +80320,11 @@
 /area/space)
 "sJh" = (
 /obj/structure/ladder/up,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	pixel_y = -26;
+	id_tag = "saferoomdoorright"
+	},
 /turf/simulated/floor/reinforced,
 /area/site404/entrancezone/maintenance/elevator)
 "sJi" = (
@@ -80505,9 +80399,6 @@
 "sKi" = (
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp082/upperhallway)
-"sKj" = (
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "sKn" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier{
@@ -81431,14 +81322,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/site404/engineering/fusionengine/interior)
-"sWR" = (
-/obj/structure/bookcase,
-/obj/machinery/camera/network/scp049{
-	dir = 4;
-	c_tag = "SCP-049 - Study"
-	},
-/turf/simulated/floor/wood/walnut,
-/area/site404/containmentchambers/scp049/chamber/study)
+"sWI" = (
+/obj/effect/paint_stripe/gunmetal,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/morgue/coroner)
 "sWU" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/heavycontainmentzone/maintenance/foreb)
@@ -81454,12 +81341,6 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/site404/administration/assemblyhall)
-"sXg" = (
-/obj/structure/table/rack/shelf,
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/glass/fifty,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/service/chapel/coffinstore)
 "sXn" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/autoset,
@@ -81565,23 +81446,6 @@
 "sYx" = (
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/auxiliaryreactor)
-"sYQ" = (
-/obj/effect/floor_decal/corner/keter/border,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Exterior Chamber Aft";
-	dir = 1
-	},
-/turf/simulated/floor/tiled/horizontal,
-/area/site404/containmentchambers/scp106/chamber/lowercontainment)
 "sYT" = (
 /obj/machinery/alarm{
 	alarm_id = "petrov3";
@@ -82690,16 +82554,25 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp008/researchoffice)
+"tmE" = (
+/obj/structure/table/standard,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/item/storage/pill_bottle/penicillin,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "tmJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/grass,
 /area/site404/research/aic/hallway)
-"tmV" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor/autoset,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/escapepodhall)
 "tmW" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/lightcontainmentzone/securityoffice/briefingroom)
@@ -82964,14 +82837,6 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/auxiliaryreactor)
-"tpS" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/green/half,
-/obj/item/storage/lockbox/vials{
-	req_access = list()
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "tpX" = (
 /obj/structure/hygiene/toilet,
 /obj/machinery/button/alternate/door/bolts{
@@ -82994,16 +82859,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
-"tqq" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 8
-	},
-/obj/machinery/camera/network/scp895{
-	dir = 4;
-	c_tag = "SCP-895 - Interior Containment Chamber"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site404/containmentchambers/scp895)
 "tqD" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/pottedplant/floorleaf{
@@ -83497,6 +83352,12 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled/white/small,
 /area/site404/medical/treatment)
+"tvD" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "tvE" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/research/xenobiology)
@@ -83539,6 +83400,10 @@
 	},
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
+	},
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site404/containmentchambers/scp2427/observation)
@@ -86119,12 +85984,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/entrancezone/hallway/lowerprimary)
-"tZU" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Engineering Storage"
-	},
-/turf/simulated/floor/tiled,
-/area/site404/containmentchambers/scp106/lowermaintenance)
 "tZZ" = (
 /obj/machinery/door/airlock/external/glass/bolted_open{
 	icon_state = "open";
@@ -86409,19 +86268,6 @@
 /obj/machinery/washing_machine,
 /turf/simulated/floor/lino,
 /area/site404/entrancezone/dormitory)
-"udq" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/door/blast/regular/open{
-	id_tag = "ezbrigwindow";
-	name = "Entrance Zone Brig Window Blast Door";
-	icon_state = "pdoor0";
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/securityoffice/brig)
 "udv" = (
 /obj/structure/table/rack/shelf,
 /obj/random/soap,
@@ -86503,6 +86349,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/site404/service/chapel/main)
+"uez" = (
+/obj/structure/table/rack/shelf,
+/obj/effect/floor_decal/corner/euclid/mono,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/containmentchambers/scp2427/observation)
 "ueS" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -87510,6 +87362,21 @@
 /obj/effect/floor_decal/corner/orange/bordercorner,
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
+"urW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "urX" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -87569,14 +87436,6 @@
 "usJ" = (
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/containmentchambers/scp049/chamber/office)
-"usM" = (
-/obj/effect/floor_decal/corner/euclid/diagonal,
-/obj/machinery/camera/network/lcz{
-	dir = 8;
-	c_tag = "SCP-151 - Containment Facility Entrance"
-	},
-/turf/simulated/floor/tiled/white,
-/area/space)
 "usU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -87848,15 +87707,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/containmentchambers/scp008/maintenance)
-"uvE" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "uvL" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -87969,10 +87819,10 @@
 /obj/effect/floor_decal/corner/green/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/medical/virology)
 "uxf" = (
@@ -89168,10 +89018,6 @@
 /obj/effect/floor_decal/corner/orange/three_quarters{
 	dir = 4
 	},
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Engineering Compartment";
-	dir = 8
-	},
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp106/lowermaintenance)
 "uKt" = (
@@ -89288,6 +89134,10 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/service/canteen)
+"uMk" = (
+/obj/effect/paint_stripe/blue,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/entrancezone/substation)
 "uMq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -89347,6 +89197,18 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /turf/simulated/floor/plating,
 /area/site404/research/assistantresearchdirectoroffice)
+"uML" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "uMP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -89978,10 +89840,6 @@
 /obj/item/storage/firstaid/combat,
 /obj/structure/table/rack/shelf,
 /obj/effect/floor_decal/corner/keter/mono,
-/obj/machinery/camera/network/hcz{
-	dir = 4;
-	c_tag = "HCZ - Security Light Armory"
-	},
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -90179,13 +90037,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/heavycontainmentzone/hallway/central)
-"uXY" = (
-/obj/effect/floor_decal/corner/blue/bordercorner,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/entrancezone/hallway/lowerprimary)
 "uYc" = (
 /obj/effect/floor_decal/corner/yellow/mono,
 /obj/effect/floor_decal/spline/fancy/black{
@@ -90627,10 +90478,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/device/radio,
-/obj/machinery/camera/network/scp049{
-	dir = 8;
-	c_tag = "SCP-049 - Clinic"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/chamber/clinic)
 "vcx" = (
@@ -90768,7 +90615,7 @@
 /turf/simulated/floor/grass,
 /area/site404/service/chapel/office)
 "vev" = (
-/obj/effect/paint_stripe/red,
+/obj/effect/paint_stripe/blue,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/medical/assistantmedicaldirectoroffice)
 "vez" = (
@@ -91645,6 +91492,15 @@
 	},
 /turf/simulated/floor/tiled/dark/airless,
 /area/site404/entrancezone/hallway/port)
+"vox" = (
+/obj/effect/floor_decal/corner/green/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/medical/virology)
 "voA" = (
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/light,
@@ -92010,10 +91866,6 @@
 /obj/structure/hygiene/sink/kitchen{
 	pixel_x = 32
 	},
-/obj/machinery/camera/network/scp049{
-	dir = 8;
-	c_tag = "SCP-049 - Kitchen"
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site404/containmentchambers/scp049/chamber/kitchen)
 "vtD" = (
@@ -92183,6 +92035,12 @@
 	},
 /turf/simulated/floor/wood/bamboo,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
+"vuM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "vuN" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/railing/mapped{
@@ -92665,6 +92523,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/securityoffice/commanderoffice)
+"vAi" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "vAl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -92812,10 +92678,6 @@
 /area/site404/engineering/atmospherics)
 "vBV" = (
 /obj/effect/floor_decal/spline/fancy/black{
-	dir = 1
-	},
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Deliveries Compartment";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -94191,21 +94053,8 @@
 /obj/effect/floor_decal/corner/safe/half{
 	dir = 1
 	},
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - SCP-5000 Storage Vault";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/heavycontainmentzone/safestorage)
-"vRD" = (
-/obj/effect/floor_decal/corner/green/half{
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/horizontal,
-/area/site404/medical/virology)
 "vRP" = (
 /obj/effect/floor_decal/corner/euclid{
 	dir = 9
@@ -94434,10 +94283,6 @@
 /area/site404/research/researchdevelopment)
 "vUM" = (
 /obj/structure/table/glass,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Security Clinic";
-	dir = 8
-	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
@@ -94563,6 +94408,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/site404/administration/maintenance/elevator)
+"vVN" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/entrancezone/maintenance/starboardquarter)
 "vVO" = (
 /obj/item/stool/bar,
 /turf/simulated/floor/tiled,
@@ -94646,10 +94497,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/hallway)
-"vWJ" = (
-/obj/effect/paint_stripe/blue,
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/medical/assistantmedicaldirectoroffice)
 "vWM" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -94972,22 +94819,6 @@
 	},
 /turf/simulated/floor/tiled/corner,
 /area/site404/containmentchambers/scp012)
-"wbf" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/camera/network/scp049{
-	c_tag = "SCP-049 - Research Compartment Starboard";
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
-/area/site404/containmentchambers/scp049/observation)
-"wbi" = (
-/obj/machinery/door/firedoor/autoset,
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/escapepodhall)
 "wbk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -95968,10 +95799,6 @@
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "SCP-2427-3 Containment Facilities";
-	req_access = list(list("ACCESS_SCIENCE_LVL3", "ACCESS_SECURITY_LVL3"))
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -95980,6 +95807,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "SCP-2427-3 Containment Facilities";
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3))
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/observation)
@@ -96581,6 +96412,24 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/research/researchdevelopment)
+"wuL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/securityoffice/checkpoint)
 "wuO" = (
 /obj/machinery/light{
 	dir = 8
@@ -96871,9 +96720,6 @@
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/securityoffice/securitymeetingroom)
 "wxw" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Engineering Compartment"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
@@ -96956,10 +96802,6 @@
 "wyq" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/green/half,
-/obj/structure/hygiene/sink{
-	pixel_y = 23;
-	pixel_x = 16
-	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/medical/virology)
 "wyt" = (
@@ -96984,12 +96826,6 @@
 /obj/structure/cable,
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp082/chamber/park)
-"wyE" = (
-/obj/machinery/atmospherics/unary/tank{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/maintenance/starboardquarter)
 "wyO" = (
 /obj/structure/catwalk,
 /obj/machinery/door/window/brigdoor/eastright,
@@ -97211,12 +97047,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/site404/administration/office/engineering)
-"wAy" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Chamber Entrance"
-	},
-/turf/simulated/floor/tiled/dark/small,
-/area/site404/containmentchambers/scp106/lowerhallway)
 "wAD" = (
 /obj/effect/floor_decal/corner/euclid/half{
 	dir = 8
@@ -97714,14 +97544,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp008/laboratory)
-"wFz" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/machinery/camera/network/hcz{
-	dir = 8;
-	c_tag = "HCZ - Security Office Starboard"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/heavycontainmentzone/securityoffice/briefingroom)
 "wFD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -98044,6 +97866,15 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/lightcontainmentzone/humanoidbreakroom)
+"wJE" = (
+/obj/structure/ladder/up,
+/obj/machinery/button/alternate/door/bolts{
+	dir = 1;
+	pixel_y = -26;
+	id_tag = "saferoomdoorleft"
+	},
+/turf/simulated/floor/reinforced,
+/area/site404/entrancezone/maintenance/elevator)
 "wJK" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -98321,6 +98152,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/airless,
 /area/site404/entrancezone/lockerroom)
+"wNn" = (
+/obj/effect/floor_decal/corner/euclid/diagonal,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark,
+/area/site404/containmentchambers/scp2427/observation)
 "wNv" = (
 /turf/simulated/floor/tiled/white,
 /area/site404/research/robotics/roboticssurgery)
@@ -98904,10 +98740,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/camera/network/lcz{
-	c_tag = "SCP-151 - Containment Chamber";
-	dir = 1
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -23
@@ -99131,12 +98963,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/humanoidbreakroom)
-"wXe" = (
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Lower Deck Aft Maintenance Shaft"
-	},
-/turf/simulated/floor/plating,
-/area/site404/containmentchambers/scp106/lowermaintenance)
 "wXg" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -99433,10 +99259,6 @@
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9,
-/obj/machinery/camera/network/hcz{
-	c_tag = "HCZ - Heavy Zone Commander's Office";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/heavycontainmentzone/securityoffice/commanderoffice)
 "xaf" = (
@@ -99653,6 +99475,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/entrancezone/hallway/port)
+"xcT" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/white,
+/area/site404/medical/virology)
 "xdg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -100565,6 +100392,9 @@
 /area/site404/research/janitorial)
 "xph" = (
 /obj/structure/largecrate/animal/goat,
+/obj/item/device/radio/intercom{
+	pixel_y = 20
+	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/containmentchambers/scp2427/observation)
 "xpi" = (
@@ -100673,10 +100503,6 @@
 	dir = 8
 	},
 /obj/structure/lattice,
-/obj/machinery/camera/network/scp106{
-	c_tag = "SCP-106 - Maintenance Shaft";
-	dir = 8
-	},
 /obj/structure/sign/warning/fall{
 	pixel_x = 32
 	},
@@ -101021,12 +100847,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/medical/hallway)
-"xuj" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor/autoset,
-/obj/effect/paint_stripe/green,
-/turf/simulated/floor/plating,
-/area/site404/medical/virology)
 "xum" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
@@ -101319,6 +101139,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(list(ACCESS_SCIENCE_LVL3, ACCESS_SECURITY_LVL3));
+	name = "SCP-280 Containment Facilities Maintenance Access"
+	},
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp280/observation)
 "xyg" = (
@@ -101413,11 +101237,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/dockingbay)
 "xzu" = (
-/obj/machinery/door/airlock/external/bolted{
-	name = "SCP-2427-3 Exterior Containment"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/external/bolted{
+	name = "SCP-2427-3 Exterior Containment";
+	id_tag = "2427_outer"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/chamber)
@@ -101939,19 +101764,6 @@
 	},
 /turf/simulated/floor/tiled/small,
 /area/site404/entrancezone/dockingbay)
-"xGr" = (
-/obj/effect/floor_decal/corner/black/diagonal,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/service/kitchen)
 "xGx" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -102061,6 +101873,10 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/port)
+"xIj" = (
+/obj/effect/paint_stripe/yellow,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/medical/hallway)
 "xIl" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -102567,11 +102383,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/maintenance/elevator)
-"xNO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/white,
-/area/site404/medical/virology)
 "xNP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/small,
@@ -102770,6 +102581,18 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/plating,
 /area/site404/administration/maintenance/elevator)
+"xQj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/windowtint{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/simulated/floor/carpet/green,
+/area/site404/medical/psychologistoffice)
 "xQp" = (
 /obj/effect/floor_decal/corner/black/half,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -103307,6 +103130,10 @@
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
+/obj/machinery/door/airlock/vault{
+	name = "Emergency Saferoom";
+	id_tag = "saferoomdoorleft"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/entrancezone/maintenance/elevator)
 "xXv" = (
@@ -103315,15 +103142,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site404/containmentchambers/scp914)
-"xXy" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "xXF" = (
 /obj/structure/window/reinforced/polarized{
 	dir = 8
@@ -103604,16 +103422,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/administration/bridge)
-"yaA" = (
-/obj/machinery/door/firedoor/autoset,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/glass/virology{
-	name = "Quarantine Unit Three";
-	req_access = list(ACCESS_MEDICAL_LVL1)
-	},
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/medical/virology)
 "yaE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -104015,6 +103823,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp008/laboratory)
+"yfm" = (
+/obj/machinery/camera/network/containmentunit/scp2427{
+	c_tag = "SCP-2427-3 - Research Compartment Aft";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/site404/containmentchambers/scp2427/observation)
 "yfo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -104177,6 +103992,16 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/medical/treatment)
+"yib" = (
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass/virology{
+	name = "Quarantine Unit Two";
+	req_access = list(ACCESS_MEDICAL_LVL1)
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/medical/virology)
 "yid" = (
 /obj/machinery/light{
 	dir = 8
@@ -121621,7 +121446,7 @@ rhp
 nYM
 fTA
 rlQ
-tqq
+lZA
 jzB
 yeq
 oJz
@@ -125221,7 +125046,7 @@ tni
 xKa
 cCe
 pkz
-cCe
+rLT
 lNR
 tni
 fTA
@@ -125995,7 +125820,7 @@ oUy
 pJv
 aqY
 mxF
-suz
+iPS
 fTA
 fzO
 fzO
@@ -127018,7 +126843,7 @@ fTA
 fTA
 qZi
 cWU
-cWU
+mRu
 pkz
 cWU
 ifM
@@ -128308,7 +128133,7 @@ vBs
 vBs
 sDm
 gqa
-wpn
+cnS
 cRK
 vBs
 tmu
@@ -128559,17 +128384,17 @@ oBR
 vBs
 gxI
 mQb
-mQb
+nxQ
 eyA
-mQb
+pne
 vBs
 jAT
 qdy
 aGI
 kJN
 vBs
-jIO
-jIO
+frW
+gYH
 bpO
 dto
 izf
@@ -128823,7 +128648,7 @@ vBs
 qnh
 cXL
 axV
-qnh
+wNn
 vBs
 jIO
 jIO
@@ -129082,7 +128907,7 @@ gqa
 wpn
 cRK
 vBs
-jIO
+eav
 jIO
 bpO
 dto
@@ -129339,8 +129164,8 @@ raz
 maG
 rgR
 vBs
-jIO
-jIO
+lqC
+dlj
 bpO
 dto
 izf
@@ -129594,7 +129419,7 @@ fSA
 fSA
 fSA
 eEd
-isV
+uez
 vBs
 jIO
 jIO
@@ -129843,13 +129668,13 @@ hnu
 cfw
 vBs
 raz
-raz
+ebp
 bSo
 oCU
 eUs
 pHJ
 twi
-raz
+yfm
 maG
 isV
 vBs
@@ -130872,7 +130697,7 @@ oBR
 xJf
 fkK
 rlM
-djD
+hbx
 xHz
 dIr
 syk
@@ -131135,7 +130960,7 @@ wlh
 kru
 vBs
 vBs
-orJ
+oUR
 vBs
 vBs
 jIO
@@ -131648,7 +131473,7 @@ xHz
 wlh
 ntz
 vBs
-lMy
+lqN
 mcA
 tzO
 vBs
@@ -131905,13 +131730,13 @@ rOP
 xmg
 ofO
 vBs
-lMy
+nJY
 pok
 mXL
 iCw
 pOj
 ycR
-lqm
+rwu
 mQT
 vPX
 dto
@@ -133443,11 +133268,11 @@ mMp
 tvV
 rWN
 xpJ
-bNO
+jPs
 tvV
 rWN
 dSH
-coG
+jPs
 tvV
 rWN
 jWM
@@ -134216,7 +134041,7 @@ ksr
 sfd
 mXF
 fkO
-dDF
+xuF
 glb
 oEF
 dWE
@@ -134495,10 +134320,10 @@ hUG
 bQA
 aTb
 xJv
-jko
+bQA
 aTb
 xJv
-ojR
+bQA
 aTb
 xJv
 biQ
@@ -134730,7 +134555,7 @@ vRw
 xUW
 kPL
 tvV
-pOC
+iQy
 uUa
 vSC
 tvV
@@ -134962,13 +134787,13 @@ fKT
 rVp
 jMl
 tvg
-sWR
+mCu
 mCu
 wxQ
 nco
 vUj
 coV
-cKY
+lmw
 qmH
 xWP
 xmA
@@ -136298,7 +136123,7 @@ hiv
 hiv
 hiv
 hiv
-mtJ
+hiv
 kMm
 aqn
 hiv
@@ -137008,7 +136833,7 @@ nwa
 aJM
 eQh
 dKH
-hYt
+lYc
 adF
 uyy
 ofg
@@ -137082,7 +136907,7 @@ kto
 pLk
 vlU
 pLk
-mjL
+cta
 eNy
 eRa
 eRa
@@ -138354,7 +138179,7 @@ hiv
 hiv
 hiv
 hiv
-wFz
+hiv
 dOL
 fbj
 hiv
@@ -139061,7 +138886,7 @@ xOV
 mFQ
 ozS
 uEn
-ksS
+uEn
 tzA
 kkh
 mwY
@@ -139596,7 +139421,7 @@ vUj
 eCr
 lmw
 ihE
-wbf
+xWP
 sME
 vUj
 uhg
@@ -141450,7 +141275,7 @@ eRa
 eRa
 eRa
 sCD
-tZU
+qNI
 qNI
 qNI
 sCD
@@ -141907,7 +141732,7 @@ hyG
 nZa
 gOM
 xWl
-heS
+nZa
 nZa
 iRQ
 bgg
@@ -142213,7 +142038,7 @@ waJ
 wPg
 waJ
 waJ
-khk
+waJ
 waJ
 waJ
 wPg
@@ -143445,7 +143270,7 @@ eaO
 eQm
 nLy
 dub
-cnb
+xtS
 bIo
 taC
 hWA
@@ -144263,7 +144088,7 @@ wEl
 rLJ
 roU
 lrd
-ccG
+bYs
 dKJ
 pdN
 jdL
@@ -144516,7 +144341,7 @@ mHa
 sJY
 hSA
 rmS
-wAy
+roU
 cWi
 fcc
 myw
@@ -144532,9 +144357,9 @@ mHa
 jdL
 pdN
 dKJ
-sYQ
+pah
 lrd
-wXe
+cXA
 lLV
 gVS
 tvZ
@@ -145505,7 +145330,7 @@ jlU
 nZa
 xVX
 ome
-dAm
+nZa
 nZa
 kbR
 dub
@@ -146839,7 +146664,7 @@ sqn
 klr
 sqn
 sqn
-qJx
+sqn
 sqn
 sqn
 klr
@@ -147616,7 +147441,7 @@ wUK
 rmS
 rmS
 fdP
-gGt
+efq
 rmS
 wUK
 gIx
@@ -209799,7 +209624,7 @@ iad
 wYu
 qyo
 cwa
-lWj
+nVP
 inE
 bUG
 dNr
@@ -210063,12 +209888,12 @@ dXz
 emy
 ddp
 srA
-lCV
+mHa
 xqi
 enQ
 hHS
 hHS
-eFq
+fyb
 cwa
 tVr
 xcN
@@ -210566,7 +210391,7 @@ nTS
 nTS
 mrQ
 nTS
-iBM
+ltj
 gki
 ltj
 cwa
@@ -211108,7 +210933,7 @@ liO
 urR
 wYd
 vLD
-usM
+vLD
 dQe
 sJY
 djL
@@ -211368,7 +211193,7 @@ sJY
 sJY
 sJY
 sJY
-cmO
+djL
 gYt
 sJY
 plR
@@ -213150,7 +212975,7 @@ jph
 dIS
 iFK
 xyK
-pBW
+dWa
 cEW
 dWa
 xyK
@@ -260913,14 +260738,14 @@ ciM
 yid
 uAt
 rnw
-nyp
+ejx
 rQH
 uly
 vnk
 ase
 gPQ
 hcS
-xGr
+lVw
 tLx
 iDU
 tLx
@@ -264015,7 +263840,7 @@ lCC
 lCC
 grn
 cnz
-nUG
+lPj
 mZp
 hcy
 hcy
@@ -266329,7 +266154,7 @@ gsM
 bqm
 qzS
 oyH
-uXY
+kTW
 bqm
 bqm
 bqm
@@ -266576,7 +266401,7 @@ xyA
 vFP
 gjG
 cfD
-bjZ
+nhR
 cfD
 xMP
 cfD
@@ -266593,15 +266418,15 @@ bUO
 bUO
 cKM
 cKM
-oUb
+jpK
 cKM
 cKM
 cKM
-oUb
+jpK
 cKM
 cKM
 cKM
-oUb
+jpK
 cKM
 cKM
 rzA
@@ -266824,7 +266649,7 @@ llS
 dhp
 uNo
 dhp
-sJh
+wJE
 dhp
 knI
 qld
@@ -266850,16 +266675,16 @@ bmN
 maz
 cKM
 ldc
-qnG
+seJ
 hiX
 cKM
 ldc
-qnG
-kYi
+seJ
+pLN
 cKM
 ldc
-qnG
-lzl
+seJ
+npz
 cKM
 ojN
 rgX
@@ -267363,17 +267188,17 @@ giZ
 foW
 lSy
 cKM
-udq
+kQb
 xro
-pVi
+mtU
 cKM
-udq
+kQb
 gaK
-pVi
+mtU
 cKM
-udq
+kQb
 xgw
-pVi
+mtU
 cKM
 wmA
 rgX
@@ -267613,8 +267438,8 @@ bUO
 bUO
 vSa
 mCL
-coU
-mcv
+wuL
+hED
 bUO
 bUO
 bUO
@@ -269156,7 +268981,7 @@ bUO
 vSa
 mCL
 kQC
-pCu
+rje
 bUO
 bUO
 bUO
@@ -270165,7 +269990,7 @@ mtY
 dhp
 dhp
 dhp
-xXq
+pUm
 dhp
 dhp
 dhp
@@ -270177,7 +270002,7 @@ cfD
 cfD
 cfD
 xMP
-bjZ
+nhR
 cfD
 cfD
 atT
@@ -270472,9 +270297,9 @@ mML
 mML
 lCe
 hMz
-pUf
-pUf
-sXg
+gwF
+gwF
+ilW
 sSD
 vWv
 dhG
@@ -271187,21 +271012,21 @@ wxD
 tvM
 vvx
 qbH
-bpv
+iYR
 ohp
-eGz
+ksn
 ohp
 bpv
-bPf
-sDb
+ipQ
+igT
 wHm
 wHm
-sDb
-sDb
-sDb
+igT
+igT
+igT
 wHm
 wHm
-sDb
+igT
 cmN
 wqc
 suq
@@ -271243,14 +271068,14 @@ vot
 mML
 lCe
 uvL
-kmM
+bwS
 bTz
-pUf
+gwF
 sSD
-jqk
+bSu
 dhG
 taO
-qpW
+pIR
 iqL
 iqL
 iqL
@@ -271449,7 +271274,7 @@ ape
 oTA
 kFC
 rPp
-bPf
+ipQ
 bcE
 qtr
 pOk
@@ -271459,7 +271284,7 @@ vnt
 dLf
 uID
 aWn
-ltI
+sDb
 aPK
 aYO
 hKD
@@ -271508,7 +271333,7 @@ dhG
 dhG
 rxb
 ogl
-tmV
+nVN
 jIt
 jIt
 jIt
@@ -271706,7 +271531,7 @@ kFC
 pwf
 kFC
 nrz
-bPf
+ipQ
 iMO
 kbW
 mnE
@@ -271765,7 +271590,7 @@ quE
 quE
 quE
 mtH
-wbi
+fAI
 rmA
 rmA
 rmA
@@ -271963,7 +271788,7 @@ hif
 wDO
 kFC
 rPp
-bPf
+ipQ
 aZy
 rfY
 toB
@@ -272022,7 +271847,7 @@ rxb
 rxb
 rxb
 ogl
-wbi
+fAI
 rmA
 rmA
 rmA
@@ -272220,7 +272045,7 @@ kFC
 pwf
 kFC
 nrz
-bPf
+ipQ
 qcj
 dHe
 kPa
@@ -272279,7 +272104,7 @@ sJG
 sJG
 rxb
 ogl
-tmV
+nVN
 jIt
 jIt
 jIt
@@ -272477,7 +272302,7 @@ qeV
 hfD
 kFC
 fxk
-bPf
+ipQ
 oML
 oIP
 uzw
@@ -272487,7 +272312,7 @@ kHA
 vZl
 rGv
 aWn
-ltI
+sDb
 lNr
 fIQ
 jLi
@@ -272535,7 +272360,7 @@ glD
 glD
 sJG
 taO
-qpW
+pIR
 iqL
 iqL
 iqL
@@ -272734,7 +272559,7 @@ vpI
 eGz
 vpI
 bpv
-bPf
+ipQ
 fQl
 fQl
 exV
@@ -272991,7 +272816,7 @@ wJb
 pQa
 mJm
 hzd
-bPf
+ipQ
 fnh
 ngN
 edR
@@ -273029,14 +272854,14 @@ ujo
 glD
 glD
 glD
-nZD
-oFN
-rnp
-oFN
-oFN
-oFN
-oFN
-oFN
+uML
+vAi
+svf
+vAi
+vAi
+vAi
+vAi
+vAi
 kNE
 ojM
 ojM
@@ -273248,7 +273073,7 @@ dDk
 dDk
 dDk
 qln
-rjH
+aVY
 xZh
 rRa
 rdm
@@ -273277,7 +273102,7 @@ dSQ
 uEI
 ujo
 hJN
-fYp
+xQj
 hBX
 ntE
 kjx
@@ -273505,7 +273330,7 @@ vOH
 vOH
 cal
 oDR
-rjH
+aVY
 xZh
 rRa
 rdm
@@ -273543,7 +273368,7 @@ ujo
 ujo
 sJG
 sJG
-mMQ
+lRw
 sJG
 sJG
 sJG
@@ -273762,7 +273587,7 @@ mjn
 hcw
 wNv
 fdv
-rjH
+aVY
 bOO
 tSh
 rdm
@@ -274019,7 +273844,7 @@ rbF
 hGt
 wNv
 ekY
-rjH
+aVY
 nJr
 bJT
 rdm
@@ -274276,7 +274101,7 @@ piS
 cZw
 wNv
 xyY
-rjH
+aVY
 xZh
 rRa
 rdm
@@ -274289,7 +274114,7 @@ paG
 paG
 rDN
 mJU
-rDz
+cYC
 mJU
 rDN
 xgR
@@ -274533,17 +274358,17 @@ bam
 qSo
 jmG
 jUZ
-rjH
+aVY
 xZh
 rRa
 rdm
 gXJ
 xZh
-ltI
+sDb
 qIo
 gLF
 iBy
-cGV
+bRF
 anq
 kCz
 vmF
@@ -274790,17 +274615,17 @@ dDk
 xJn
 dDk
 dDk
-rjH
+aVY
 vln
 djZ
 edR
 gEs
 mCS
-ltI
+sDb
 xug
 gLF
 lPG
-cGV
+bRF
 jZX
 rcl
 vmF
@@ -275047,7 +274872,7 @@ dAK
 gWJ
 dAK
 dAK
-eBt
+xIj
 fQl
 fQl
 exV
@@ -275057,12 +274882,12 @@ jRG
 hHm
 czy
 vka
-cGV
-cGV
+bRF
+bRF
 qpp
 nBh
 qpp
-cGV
+bRF
 mPd
 xgR
 cgu
@@ -275083,11 +274908,11 @@ kro
 rrn
 adx
 aYM
-aLf
-aLf
-eOf
-aLf
-aLf
+sld
+sld
+cwl
+sld
+sld
 aYM
 aYM
 gHO
@@ -276085,14 +275910,14 @@ dMk
 xnm
 czy
 vBu
-vWJ
+vev
 nzI
 nzI
 gZj
 nzI
 nzI
-vWJ
 vev
+qum
 aCt
 pMG
 icW
@@ -276102,20 +275927,20 @@ aCt
 iZU
 qFX
 eFU
-mOa
-mOa
+sWI
+sWI
 awy
 awy
 kTi
 awy
 awy
+sWI
 mOa
-qHR
-seJ
+qJW
 xsk
 eKD
-seJ
-seJ
+qJW
+qJW
 aYM
 aYM
 ujw
@@ -276342,14 +276167,14 @@ ogJ
 rsM
 vDx
 rxa
-vWJ
+vev
 fCN
 gCm
 koi
 gCm
 gCm
 pSA
-vev
+qum
 tMG
 cIN
 cIN
@@ -276359,7 +276184,7 @@ uDs
 iZU
 glD
 idT
-mOa
+sWI
 qll
 sca
 fuF
@@ -276367,7 +276192,7 @@ esy
 wjr
 yjv
 cQQ
-qHR
+mOa
 tAf
 uYS
 uYS
@@ -276599,14 +276424,14 @@ ogJ
 rsM
 gLF
 tmY
-vWJ
+vev
 bEq
 jAE
 pBR
 gHR
 gHR
 vUF
-vev
+qum
 tdt
 ahR
 dlH
@@ -276616,7 +276441,7 @@ bFQ
 iZU
 glD
 idT
-mOa
+sWI
 ave
 kVV
 iQO
@@ -276624,11 +276449,11 @@ bnM
 jjs
 wKV
 nPP
-qHR
+mOa
 rGx
-sKj
-sKj
-sKj
+iQU
+iQU
+iQU
 hfj
 aYM
 stV
@@ -276856,14 +276681,14 @@ jqH
 nwx
 hwm
 rFg
-vWJ
+vev
 kLr
 xYS
 arX
 ldL
 arX
 qzx
-vev
+qum
 kgh
 pFs
 omw
@@ -276873,7 +276698,7 @@ nVH
 iZU
 glD
 idT
-mOa
+sWI
 kNR
 kVV
 cmY
@@ -276881,11 +276706,11 @@ bnM
 jjs
 lZQ
 pTR
-qHR
+mOa
 sXE
-cqK
-xXy
-jFW
+dAO
+gna
+qsR
 cDm
 aYM
 uDj
@@ -277113,14 +276938,14 @@ ogJ
 rsM
 gLF
 tmY
-vWJ
+vev
 xTH
 xYS
 xJk
 fCi
 lIV
 fbE
-vev
+qum
 mNs
 hbw
 xmG
@@ -277130,7 +276955,7 @@ pOY
 iZU
 glD
 idT
-mOa
+sWI
 tXE
 kVV
 iQO
@@ -277138,11 +276963,11 @@ bnM
 jjs
 wKV
 yjv
-qHR
+mOa
 rGx
-sKj
-fiA
-sKj
+iQU
+oEW
+iQU
 hfj
 aYM
 aYM
@@ -277370,14 +277195,14 @@ ogJ
 rsM
 gLF
 snx
-vWJ
+vev
 mTd
 sBj
 kCh
 lIV
 lIV
 uvx
-vev
+qum
 aCt
 iLn
 hZG
@@ -277387,7 +277212,7 @@ qtG
 iZU
 glD
 idT
-mOa
+sWI
 hRj
 iVv
 oIp
@@ -277395,14 +277220,14 @@ gnp
 rFm
 yjv
 iUN
-qHR
-adA
-gpL
+mOa
+ddP
 euR
-gpL
+hAY
+euR
 vBZ
 ewN
-ecL
+iTc
 aYM
 aYM
 aYM
@@ -277627,14 +277452,14 @@ dMk
 bFz
 gLF
 obc
-vWJ
+vev
 wGt
 xYS
 kyp
 viF
 viF
 lIV
-vev
+qum
 uJz
 wFa
 tEm
@@ -277644,28 +277469,28 @@ fEy
 xKT
 xKT
 cpH
-mOa
-mOa
+sWI
+sWI
 ezl
 ezl
 ffY
 ezl
 ezl
+sWI
 mOa
-qHR
-seJ
-pjW
-nfP
-pjW
-seJ
-seJ
-nxW
-pjI
-pjI
-pjI
-pjI
-pjI
-ecL
+qJW
+bLo
+cas
+bLo
+qJW
+qJW
+tvD
+vuM
+vuM
+vuM
+vuM
+vuM
+iTc
 glD
 glD
 glD
@@ -277884,14 +277709,14 @@ iVg
 rsM
 gLF
 obc
-vWJ
-vWJ
-aSD
-vWJ
-vWJ
-vWJ
-vWJ
 vev
+vev
+aSD
+vev
+vev
+vev
+vev
+qum
 tGP
 clL
 qEu
@@ -277901,7 +277726,7 @@ glD
 glD
 glD
 idT
-iaZ
+sjP
 lIH
 pRK
 lHJ
@@ -277909,20 +277734,20 @@ soN
 mCF
 pRK
 fst
-sjP
-iNo
-pzu
-fOY
+haP
+wyq
+mEI
+eOL
 pWs
 kuX
-seJ
-seJ
-seJ
-seJ
-seJ
+qJW
+qJW
+qJW
+qJW
+qJW
 glD
 glD
-qfq
+lxJ
 glD
 glD
 glD
@@ -278141,7 +277966,7 @@ gur
 rsM
 gLF
 tmY
-gwF
+uMk
 vXe
 xnl
 sNa
@@ -278158,7 +277983,7 @@ glD
 glD
 glD
 idT
-iaZ
+sjP
 nna
 pRK
 bDl
@@ -278166,20 +277991,20 @@ sZx
 jnd
 pRK
 cDH
-sjP
-irS
-seA
-piQ
-xNO
-jvO
 haP
+irS
+dDz
+kTd
+xcT
+nLF
+kcX
 ePE
 tVI
 iNI
-seJ
+qJW
 glD
 glD
-qfq
+lxJ
 glD
 glD
 glD
@@ -278398,7 +278223,7 @@ tyJ
 nwx
 wvJ
 rFg
-gwF
+uMk
 vXe
 nfG
 eaS
@@ -278415,7 +278240,7 @@ glD
 glD
 glD
 idT
-iaZ
+sjP
 lIH
 pRK
 bDl
@@ -278423,20 +278248,20 @@ jiJ
 jnd
 pRK
 fst
-sjP
+haP
 xwT
-eIW
-sEK
-seA
-vRD
-xuj
+qnG
+tmE
+dDz
+vox
+jBz
 vMf
 jDf
 iNI
-seJ
+qJW
 glD
 glD
-qfq
+lxJ
 glD
 glD
 glD
@@ -278655,7 +278480,7 @@ gur
 rsM
 gLF
 tmY
-gwF
+uMk
 vXe
 vXe
 sNa
@@ -278672,28 +278497,28 @@ glD
 glD
 glD
 idT
-iaZ
-iaZ
+sjP
+sjP
 wRx
 hhc
 ibh
 vQD
 yei
-iaZ
 sjP
+haP
 afE
-seA
-cqC
-seA
-uxc
-seJ
-seJ
-seJ
-seJ
-seJ
+dDz
+pAs
+dDz
+flV
+qJW
+qJW
+qJW
+qJW
+qJW
 glD
 glD
-qfq
+lxJ
 glD
 glD
 glD
@@ -278912,7 +278737,7 @@ gur
 rsM
 gLF
 obc
-gwF
+uMk
 vXe
 vXe
 sNa
@@ -278929,7 +278754,7 @@ glD
 glD
 glD
 idT
-iaZ
+sjP
 lIH
 pRK
 bDl
@@ -278937,20 +278762,20 @@ fsM
 jnd
 pRK
 fst
-sjP
-wyq
-seA
-piQ
-xNO
-nxn
-dlK
+haP
+dkT
+dDz
+kTd
+xcT
+nUo
+yib
 ePE
 tVI
 iNI
-seJ
+qJW
 glD
 glD
-duK
+urW
 ojM
 ojM
 ojM
@@ -279169,7 +278994,7 @@ gUr
 bFz
 gLF
 obc
-gwF
+uMk
 sNa
 sNa
 sNa
@@ -279186,7 +279011,7 @@ pfr
 glD
 glD
 idT
-iaZ
+sjP
 nna
 pRK
 bDl
@@ -279194,17 +279019,17 @@ jWa
 jnd
 pRK
 cDH
-sjP
-tpS
-seA
-mqb
-seA
-vRD
-xuj
+haP
+jpp
+dDz
+ajG
+dDz
+vox
+jBz
 vMf
 jDf
 iNI
-seJ
+qJW
 glD
 glD
 sFh
@@ -279443,7 +279268,7 @@ sFh
 glD
 glD
 idT
-iaZ
+sjP
 lIH
 pRK
 bDl
@@ -279451,17 +279276,17 @@ nFa
 jnd
 pRK
 fst
-sjP
+haP
 wbU
-seA
-naZ
-seA
-uxc
-seJ
-seJ
-seJ
-seJ
-seJ
+dDz
+kMb
+dDz
+flV
+qJW
+qJW
+qJW
+qJW
+qJW
 glD
 glD
 sFh
@@ -279683,7 +279508,7 @@ aKv
 rsM
 gLF
 tmY
-gwF
+uMk
 vXe
 xnl
 sNa
@@ -279700,25 +279525,25 @@ sFh
 glD
 glD
 idT
-iaZ
-iaZ
+sjP
+sjP
 cyg
 kcT
 bBL
 vQD
 kvH
-iaZ
 sjP
+haP
 lme
-eIW
-jqQ
-xNO
-oow
-yaA
+qnG
+mHZ
+xcT
+uxc
+rEe
 ePE
 tVI
 iNI
-seJ
+qJW
 glD
 glD
 sFh
@@ -279940,7 +279765,7 @@ gvh
 nwx
 wvJ
 rFg
-gwF
+uMk
 vXe
 nfG
 eaS
@@ -279957,7 +279782,7 @@ sFh
 glD
 glD
 idT
-iaZ
+sjP
 lIH
 pRK
 bDl
@@ -279965,17 +279790,17 @@ fTB
 jnd
 pRK
 fst
-sjP
+haP
 wPZ
-seA
-mqb
-seA
-hrm
-xuj
+dDz
+ajG
+dDz
+lxy
+jBz
 vMf
 jDf
 iNI
-seJ
+qJW
 glD
 glD
 sFh
@@ -280197,7 +280022,7 @@ orx
 rsM
 gLF
 tmY
-gwF
+uMk
 vXe
 vXe
 sNa
@@ -280214,7 +280039,7 @@ rVr
 ojM
 ojM
 sMB
-iaZ
+sjP
 nna
 pRK
 bDl
@@ -280222,17 +280047,17 @@ xrx
 jnd
 pRK
 cDH
-sjP
-iNo
-oRc
-fOY
-kcZ
+haP
+wyq
+pzu
+eOL
+oKg
 qwI
-seJ
-seJ
-seJ
-seJ
-seJ
+qJW
+qJW
+qJW
+qJW
+qJW
 glD
 glD
 sFh
@@ -280454,7 +280279,7 @@ orx
 rsM
 gLF
 obc
-gwF
+uMk
 sNa
 sNa
 sNa
@@ -280471,7 +280296,7 @@ idT
 sJG
 sJG
 sJG
-iaZ
+sjP
 lIH
 pRK
 rdU
@@ -280479,15 +280304,15 @@ bTp
 mav
 pRK
 fst
-sjP
-seJ
-seJ
+haP
+qJW
+qJW
 qZh
-seJ
-seJ
-seJ
-jWA
-wyE
+qJW
+qJW
+qJW
+gwr
+cPN
 glD
 glD
 glD
@@ -280711,7 +280536,7 @@ kVM
 xnm
 czy
 vBu
-qum
+irQ
 poh
 ojM
 ojM
@@ -280728,23 +280553,23 @@ kNE
 ojM
 ojM
 dfB
-iaZ
-iaZ
-iaZ
-iaZ
-dGc
-iaZ
-iaZ
-iaZ
 sjP
+sjP
+sjP
+sjP
+dGc
+sjP
+sjP
+sjP
+haP
 glD
 glD
-juI
-jua
-stf
-acu
-hQv
-ihR
+fFu
+jXA
+fgd
+kWl
+lUH
+vVN
 glD
 glD
 glD
@@ -280964,11 +280789,11 @@ tWT
 tWT
 tWT
 nVQ
-mCw
+oxH
 uRZ
 aVb
 uRZ
-qum
+irQ
 sFh
 glD
 glD
@@ -280996,12 +280821,12 @@ bed
 glD
 glD
 glD
-uvE
-jua
-bWB
-gHC
-bWB
-kci
+iRJ
+jXA
+qww
+rHQ
+qww
+aWT
 glD
 glD
 glD
@@ -281253,7 +281078,7 @@ bed
 glD
 poh
 ojM
-baq
+bYT
 ojM
 ojM
 ojM

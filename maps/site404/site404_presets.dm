@@ -194,7 +194,7 @@
 	network = NETWORK_895
 
 /obj/machinery/camera/network/containmentunit/scp2427
-	network = NETWORK_2427
+	network = list(NETWORK_2427)
 
 /datum/map/proc/get_shared_network_access(network)
 	switch(network)
