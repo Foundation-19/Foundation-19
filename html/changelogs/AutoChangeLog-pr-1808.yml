@@ -1,5 +1,0 @@
-author: quadbium
-delete-after: true
-changes:
-  - rscadd: adds a lift version of the cryopod
-  - rscadd: replaces cryopods with lifts
