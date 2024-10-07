@@ -204,87 +204,21 @@
 // Substation SMES
 
 //Standard Performance SMES presets.
-/obj/machinery/power/smes/buildable/preset/site404/standard/empty_off/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/site404/standard/configure_and_install_coils()
 	component_parts += new /obj/item/stock_parts/smes_coil(src)
 	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-
-/obj/machinery/power/smes/buildable/preset/site404/standard/empty_on/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-
-/obj/machinery/power/smes/buildable/preset/site404/standard/full_off/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_fully_charged = TRUE
-
-/obj/machinery/power/smes/buildable/preset/site404/standard/full_on/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	component_parts += new /obj/item/stock_parts/smes_coil(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
 
 // Above-Standard Performance SMES presets.
-/obj/machinery/power/smes/buildable/preset/site404/advanced/empty_off/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/site404/advanced/configure_and_install_coils()
 	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
 	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
 
-/obj/machinery/power/smes/buildable/preset/site404/advanced/empty_on/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
-	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-
-/obj/machinery/power/smes/buildable/preset/site404/advanced/full_off/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
-	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_fully_charged = TRUE
-
-/obj/machinery/power/smes/buildable/preset/site404/advanced/full_on/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
-	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
-
-// Main Engine output SMES
-/obj/machinery/power/smes/buildable/preset/site404/critical/full_off/configure_and_install_coils()
+// Critical Performance SMES.
+/obj/machinery/power/smes/buildable/preset/site404/critical/configure_and_install_coils()
 	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
 	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
 	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
 	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_fully_charged = TRUE
-
-/obj/machinery/power/smes/buildable/preset/site404/critical/full_on/configure_and_install_coils()
-	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
-	component_parts += new /obj/item/stock_parts/smes_coil/super_io(src)
-	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	component_parts += new /obj/item/stock_parts/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
 
 // Override and implement to customize the SMES's loadout
 /obj/machinery/power/smes/buildable/preset/proc/configure_and_install_coils()
