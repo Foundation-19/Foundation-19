@@ -1,0 +1,7 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - bugfix: Fuel injectors can have their tag set with a multitool, allowing full
+      R-UST setup building/restoration midround
+  - bugfix: Pump in R-UST control room has been moved to chamber itself, no longer
+      creating air leak noise
