@@ -1,0 +1,12 @@
+author: checkraisefold
+delete-after: true
+changes:
+  - rscadd: Completely overhauled the fax system to administrators/central offices,
+      making it a much cleaner experience for admins to use, along with adding many
+      more possible office fax locations.
+  - rscadd: Admin paper for faxes now has a fully-featured template system, allowing
+      developers to add many more fax templates down the line with relative ease.
+  - bugfix: Round time is no longer broken when server is hosted on non-UTC system
+      time.
+  - bugfix: ERT spawn with a non-broken loadout.
+  - bugfix: Runtime relating to whenever sounds are played fixed.

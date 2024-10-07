@@ -100,7 +100,8 @@ var/list/ai_verbs_default = list(
 	var/override_CPURate = 0					// Bonus/Penalty CPU generation rate. For use by admins/testers.
 	var/uncardable = 0							// Whether the AI can be carded when malfunctioning.
 	var/hacked_apcs_hidden = 0					// Whether the hacked APCs belonging to this AI are hidden, reduces CPU generation from APCs.
-	var/intercepts_communication = 0			// Whether the AI intercepts fax and emergency transmission communications.
+	/// Whether the AI intercepts fax and emergency transmission communications.
+	var/intercepts_communication = 0
 	var/last_failed_malf_message = null
 	var/last_failed_malf_title = null
 
@@ -328,22 +329,27 @@ var/list/ai_verbs_default = list(
 	set category = "Silicon Commands"
 	set name = "Send Emergency Message"
 
+	var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
+	if(!istype(targetOffsite))
+		return
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
 	if(!is_relay_online())
-		to_chat(usr, SPAN_WARNING("No Emergency Bluespace Relay detected. Unable to transmit message."))
+		to_chat(usr, SPAN_WARNING("Radio antenna not responding. Unable to transmit message."))
 		return
 	if(emergency_message_cooldown)
-		to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
+		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
 		return
-	var/input = tgui_input_text(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement. Abuse will lead to decomission. There is a 30 second delay before you may send another message, be clear, full and concise.", "O5 Emergency Message")
+	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [targetOffsite.name] via encrypted radio frequency. Abuse may lead to decommissioning. There is a 30 second delay before you may send another message; be clear, full and concise.", "Command Emergency Message", "To abort, enter an empty message"))
 	if(!input)
 		return
-	Centcomm_announce(input, usr)
+
+	message_offsite(input, usr, targetOffsite)
+
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
-	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")
+	log_say("[key_name_admin(usr)] has made an emergency AIC [targetOffsite.name] announcement: [input]")
 	emergency_message_cooldown = 1
-	spawn(300)
+	spawn(30 SECONDS)
 		emergency_message_cooldown = 0
 
 

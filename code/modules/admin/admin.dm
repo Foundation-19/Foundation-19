@@ -1255,7 +1255,7 @@ var/global/floorIsLava = 0
 		return
 
 	// Origin
-	var/list/option_list = GLOB.admin_departments.Copy() + GLOB.alldepartments.Copy() + "(Custom)"
+	var/list/option_list = GLOB.alldepartments.Copy() + "(Custom)"
 	var/replyorigin = tgui_input_list(owner, "Please specify who the fax is coming from. Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Origin", option_list)
 	if (!replyorigin || replyorigin == "(Cancel)")
 		return
@@ -1269,6 +1269,8 @@ var/global/floorIsLava = 0
 
 	// Destination
 	var/department = tgui_input_list(owner, "Choose a destination fax", "Fax Target", GLOB.alldepartments)
+	if(!department)
+		return
 
 	// Generate the fax
 	var/obj/item/paper/admin/P = new /obj/item/paper/admin( null ) //hopefully the null loc won't cause trouble for us
@@ -1287,7 +1289,7 @@ var/global/floorIsLava = 0
 
 	var/data = "<center><b>Fax History:</b></center><br>"
 
-	if(GLOB.adminfaxes)
+	if(length(GLOB.adminfaxes))
 		for(var/obj/item/item in GLOB.adminfaxes)
 			data += "[item.name] - <a href='?_src_=holder;AdminFaxView=\ref[item]'>view message</a><br>"
 	else
@@ -1303,11 +1305,9 @@ var/global/floorIsLava = 0
 	P.SetName("[customname]")
 
 	var/shouldStamp = TRUE
-	if(!P.sender) // admin initiated
-		var/need_stamp = alert(src.owner, "Would you like the fax stamped?", "Stamp", "Yes", "No")
-		tgui_alert(src.owner, "Would you like the fax stamped?", "Stamp", list("Yes", "No"))
-		if(need_stamp != "Yes")
-			shouldStamp = FALSE
+	var/need_stamp = tgui_alert(src.owner, "Would you like the fax stamped?", "Stamp", list("Yes", "No"))
+	if(need_stamp != "Yes")
+		shouldStamp = FALSE
 
 	if(shouldStamp)
 		P.stamps += "<hr><i>This paper has been stamped by the [P.origin] Quantum Relay.</i>"
@@ -1336,28 +1336,20 @@ var/global/floorIsLava = 0
 	var/obj/machinery/photocopier/faxmachine/destination = P.destinations[1]
 	rcvdcopy = destination.copy(P, FALSE)
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
+
+	if(P.origin_offsite)
+		SEND_SIGNAL(P.origin_offsite, COMSIG_OFFSITE_FAX_SENT, rcvdcopy, P)
 	GLOB.adminfaxes += rcvdcopy
 	var/success = send_fax_loop(P, P.department, P.origin)
 
 	if(success)
-		to_chat(src.owner, SPAN_NOTICE("Message reply to transmitted successfully."))
-		if(P.sender) // sent as a reply
-			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
-			for(var/client/C in GLOB.admins)
-				if((R_ADMIN|R_MOD) & C.holder.rights)
-					to_chat(C, SPAN_CLASS("log_message","<span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)"))
-		else
-			log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
-			for(var/client/C in GLOB.admins)
-				if((R_ADMIN|R_MOD) & C.holder.rights)
-					to_chat(C, SPAN_CLASS("log_message","<span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)"))
-
+		log_admin("[key_name(src.owner)] has sent a fax message to [P.department]")
+		message_staff("[key_name_admin(src.owner)] has sent a fax message to [P.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)")
 	else
-		to_chat(src.owner, SPAN_WARNING("Message reply failed."))
+		to_chat(src.owner, SPAN_WARNING("Fax transmission failed! Saved to offsite log for recovery of contents."))
 
-	spawn(100)
-		qdel(P)
-		faxreply = null
+	qdel(P)
+	faxreply = null
 	return
 
 /datum/admins/proc/shutdown_server()
