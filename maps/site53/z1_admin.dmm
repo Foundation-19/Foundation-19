@@ -9280,7 +9280,7 @@
 /area/centcom/chaos)
 "xy" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Mobile Task Force Dispatch Control Center"
+	department = "Foundation North American Regional Command"
 	},
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue/border,
@@ -11029,7 +11029,7 @@
 "BW" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
-	department = "Internal Tribunal Department Headquarters"
+	department = "2nd Foundation Tribunal"
 	},
 /turf/simulated/floor/carpet/purple,
 /area/centcom)
@@ -11077,17 +11077,6 @@
 /obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
-"Cb" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/white/border{
-	color = "#561919";
-	dir = 1
-	},
-/obj/machinery/photocopier/faxmachine{
-	department = "Internal Security Department Headquarters"
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/centcom)
 "Cd" = (
 /turf/simulated/wall/r_titanium,
 /area/centcom/chaos)
@@ -15170,7 +15159,7 @@
 "Mn" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/machinery/photocopier/faxmachine{
-	department = "Global Occult Coalition Headquarters"
+	department = "Global Occult Coalition PSYCHE Office"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -16187,16 +16176,6 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/centcom/goc)
-"OU" = (
-/obj/structure/table/standard,
-/obj/machinery/photocopier/faxmachine{
-	department = "Mobile Task Force Dispatch Control Center"
-	},
-/turf/unsimulated/floor{
-	icon = 'icons/turf/flooring/tiles.dmi';
-	icon_state = "techmaint"
-	},
-/area/centcom)
 "OW" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -17016,7 +16995,7 @@
 /area/centcom)
 "Rc" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "Ethics Committee Headquarters"
+	department = "Ethics Committee Central Office"
 	},
 /obj/structure/table/standard,
 /turf/unsimulated/floor{
@@ -19466,17 +19445,6 @@
 	icon_state = "techmaint"
 	},
 /area/centcom)
-"XC" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/white/border{
-	color = "#561919";
-	dir = 1
-	},
-/obj/machinery/photocopier/faxmachine{
-	department = "Administrative Department Headquarters"
-	},
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/centcom)
 "XD" = (
 /obj/effect/floor_decal/corner/white/bordercorner{
 	color = "#00BCBC";
@@ -21431,7 +21399,7 @@ ab
 ab
 ab
 tq
-OU
+wj
 Ma
 Pv
 BZ
@@ -22258,7 +22226,7 @@ Ma
 Ma
 Ma
 tq
-Cb
+Dv
 ur
 Sf
 St
@@ -22441,7 +22409,7 @@ ab
 ab
 ab
 tq
-OU
+wj
 Ma
 Pv
 Je
@@ -23451,7 +23419,7 @@ ab
 ab
 ab
 tq
-OU
+wj
 Ma
 Pv
 Je
@@ -24097,7 +24065,7 @@ eD
 ur
 rA
 OM
-XC
+Dv
 ur
 ur
 ur

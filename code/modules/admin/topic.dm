@@ -1271,44 +1271,12 @@
 		else
 			to_chat(src.owner, "The person you are trying to contact does not have functional radio equipment.")
 
-
-	else if(href_list["SyndicateReply"])
-		var/mob/living/carbon/human/H = locate(href_list["SyndicateReply"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
-			return
-		if(!istype(H.l_ear, /obj/item/device/radio/headset) && !istype(H.r_ear, /obj/item/device/radio/headset))
-			to_chat(usr, "The person you are trying to contact is not wearing a headset")
-			return
-
-		var/input = sanitize(input(src.owner, "Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from a shadowy figure...", ""))
-		if(!input)	return
-
-		to_chat(src.owner, "You sent [input] to [H] via a secure channel.")
-		log_admin("[src.owner] replied to [key_name(H)]'s illegal message with the message [input].")
-		to_chat(H, "You hear something crackle in your headset for a moment before a voice speaks.  \"Please stand by for a message from your benefactor.  Message as follows, agent. <b>\"[input]\"</b>  Message ends.\"")
-
 	else if(href_list["AdminFaxView"])
 		var/obj/item/fax = locate(href_list["AdminFaxView"])
-		if (istype(fax, /obj/item/paper))
-			var/obj/item/paper/P = fax
-			P.show_content(usr, TRUE)
-		else if (istype(fax, /obj/item/photo))
-			var/obj/item/photo/H = fax
-			H.show(usr)
-		else if (istype(fax, /obj/item/paper_bundle))
-			//having multiple people turning pages on a paper_bundle can cause issues
-			//open a browse window listing the contents instead
-			var/data = ""
-			var/obj/item/paper_bundle/B = fax
-
-			for (var/page = 1, page <= B.pages.len, page++)
-				var/obj/pageobj = B.pages[page]
-				data += "<A href='?src=\ref[src];AdminFaxViewPage=[page];paper_bundle=\ref[B]'>Page [page] - [pageobj.name]</A><BR>"
-
-			show_browser(usr, data, "window=[B.name]")
-		else
-			to_chat(usr, SPAN_WARNING("The faxed item is not viewable. This is probably a bug, and should be reported on the tracker. Fax type: [fax ? fax.type : "null"]"))
+		if(!fax)
+			to_chat(usr, SPAN_WARNING("The fax you're trying to view doesn't exist."))
+			return
+		show_fax_admin(fax)
 	else if (href_list["AdminFaxViewPage"])
 		var/page = text2num(href_list["AdminFaxViewPage"])
 		var/obj/item/paper_bundle/bundle = locate(href_list["paper_bundle"])

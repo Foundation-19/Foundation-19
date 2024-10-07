@@ -184,6 +184,7 @@
 		img.pixel_y = copy.offset_y[j]
 		c.add_overlay(img)
 	c.updateinfolinks()
+	c.update_space(c.info)
 	if(need_toner)
 		toner--
 	if(toner == 0)

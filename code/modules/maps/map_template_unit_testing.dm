@@ -1,7 +1,4 @@
 /datum/map_template
-	var/const/NO_APC = 1
-	var/const/NO_VENT = 2
-	var/const/NO_SCRUBBER = 4
 
 	var/list/area_usage_test_exempted_areas = list()
 	var/list/area_usage_test_exempted_root_areas = list()
