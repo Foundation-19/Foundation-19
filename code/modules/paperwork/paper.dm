@@ -314,12 +314,16 @@
 	if(links)
 		var/before = copytext(info_links, 1, textindex)
 		var/after = copytext(info_links, textindex)
+		if(overwrite)
+			var/field_closing = findtext(info_links, ">", field_start)
+			before = copytext(info_links, 1, field_closing + 1)
 		info_links = before + text + after
 	else
 		var/before = copytext(info, 1, textindex)
 		var/after = copytext(info, textindex)
 		if(overwrite)
-			before = copytext(info, 1, field_start) + "<span class=\"paper_field\">"
+			var/field_closing = findtext(info, ">", field_start)
+			before = copytext(info, 1, field_closing + 1)
 		info = before + text + after
 		updateinfolinks()
 
