@@ -666,9 +666,18 @@
 /area/site404/classdzone/atrium
 	name = "CDZ - Atrium"
 
-/area/site404/classdzone/labor/miningbay
-	name = "CDZ - Mining Bay"
+/area/site404/classdzone/labor/mining
 	icon_state = "logisticsdepartment"
+
+/area/site404/classdzone/labor/mining/equipment
+	name = "CDZ - Mining Bay Equipment Storage"
+
+/area/site404/classdzone/labor/mining/refinery
+	name = "CDZ - Mining Bay Refinery"
+
+/area/site404/classdzone/labor/mining/checkpoint
+	name = "CDZ - Mining Bay Security Checkpoint"
+	icon_state = "CDZ"
 
 /area/site404/classdzone/labor/clinic
 	name = "CDZ - Medical Bay"
