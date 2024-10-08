@@ -5868,6 +5868,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "apU" = (
@@ -5876,8 +5879,8 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
@@ -7113,8 +7116,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/engineering/primaryhallway)
 "asL" = (
-/obj/machinery/cryopod,
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "asM" = (
 /obj/effect/paint_stripe/yellow,
@@ -26934,13 +26942,10 @@
 /turf/simulated/floor/tiled/vertical,
 /area/site53/logistics/logistics)
 "ext" = (
-/obj/effect/floor_decal/industrial/firstaid{
-	dir = 4
+/obj/effect/landmark{
+	name = "JoinLateCryo"
 	},
-/obj/effect/floor_decal/corner/lime/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/vertical,
+/turf/simulated/floor/carpet/green,
 /area/site53/surface/cryogenicsprimary)
 "exB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -27149,13 +27154,13 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/entrance_checkpoint)
 "eEc" = (
-/obj/structure/cryofeed{
-	dir = 4
-	},
-/obj/structure/window/basic{
+/obj/effect/floor_decal/corner/lime/border{
 	dir = 8
 	},
-/turf/simulated/floor/greengrid,
+/obj/effect/landmark{
+	name = "JoinLateCryo"
+	},
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "eEi" = (
 /obj/structure/cable/green{
@@ -35759,12 +35764,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/explorers/surrounding)
 "jtv" = (
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
-/obj/machinery/cryopod,
-/turf/simulated/floor/tiled/dark/vertical,
+/obj/effect/floor_decal/industrial/firstaid,
+/obj/machinery/cryopod/living_quarters,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
 "jtM" = (
 /obj/effect/floor_decal/corner/brown/bordercorner{
@@ -36916,21 +36918,14 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/office)
 "jYT" = (
-/obj/effect/floor_decal/industrial/firstaid{
-	dir = 4
-	},
-/obj/effect/landmark{
-	name = "JoinLateCryo"
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
 	},
-/obj/effect/floor_decal/corner/lime/bordercorner{
-	dir = 8
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 10
 	},
-/turf/simulated/floor/tiled/white/corner{
-	dir = 4
-	},
+/obj/machinery/cryopod/living_quarters,
+/turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
 "jZr" = (
 /obj/item/modular_computer/console/preset/civilian{
@@ -41041,10 +41036,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/scp106containment)
 "mji" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/vacant/prototype/control)
 "mjk" = (
@@ -45914,6 +45909,15 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
+"oAb" = (
+/obj/effect/floor_decal/industrial/firstaid{
+	dir = 6
+	},
+/obj/machinery/cryopod/living_quarters,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/surface/cryogenicsprimary)
 "oAo" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/border,
@@ -46133,15 +46137,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "oGl" = (
-/obj/effect/floor_decal/industrial/firstaid{
-	dir = 4
-	},
 /obj/machinery/camera/network/entrance{
 	c_tag = "East Cryogenics";
 	dir = 1
-	},
-/obj/effect/landmark{
-	name = "JoinLateCryo"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner{
 	dir = 1
@@ -50812,16 +50810,10 @@
 	},
 /area/site53/lhcz/hczguardgear)
 "reY" = (
-/obj/structure/cryofeed{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/window/basic{
+/obj/effect/floor_decal/corner/lime/border{
 	dir = 8
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor/tiled/white/vertical,
 /area/site53/surface/cryogenicsprimary)
 "rfa" = (
 /obj/structure/cable/green{
@@ -96069,9 +96061,9 @@ lfB
 aeA
 jYT
 ext
-ext
-ext
-oGl
+ubv
+ubv
+mzB
 aYJ
 ahr
 xVz
@@ -96325,10 +96317,10 @@ aAF
 abB
 aeA
 jtv
-asL
-asL
-asL
-asL
+ext
+ubv
+ubv
+mzB
 aYJ
 bdU
 xVz
@@ -96581,11 +96573,11 @@ aaf
 aAF
 abB
 bdq
-eEc
+oAb
 eEc
 reY
-eEc
-eEc
+asL
+oGl
 aYJ
 sar
 xVz
