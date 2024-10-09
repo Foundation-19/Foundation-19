@@ -261,16 +261,6 @@
 		icon_state = "fnfal-empty"
 	return
 
-/obj/item/material/hatchet/tacknife
-	name = "tactical knife"
-	desc = "You'd be killing loads of people if this was Medal of Valor: Heroes of Space."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "tacknife"
-	item_state = "knife"
-	attack_verb = list("stabbed", "chopped", "cut")
-	applies_material_colour = 1
-//	drawsound = 'sounds/items/unholster_knife.ogg'
-
 /obj/item/gun/projectile/automatic/scp/galil
 	name = "IWI Galil ACE"
 	desc = "An intermediate cartridge infantry assault rifle first produced by and for Israeli Forces. The Foundation found a use for these reliable rifles in the hands of Foundation operatives and guards."

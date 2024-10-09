@@ -825,3 +825,15 @@
 	else if(powerused < 1000000000) //Less than a GW
 		return "[round((powerused * 0.000001),0.001)] MW"
 	return "[round((powerused * 0.000000001),0.0001)] GW"
+
+/proc/count_fields_from_html(t)
+	//Count the fields
+	var/laststart = 1
+	var/fields = 0
+	while(fields < MAX_PAPER_FIELDS)
+		var/i = findtext(t, "<span class=\"paper_field\">", laststart)	//</span>
+		if(i==0)
+			break
+		laststart = i+1
+		fields++
+	return fields

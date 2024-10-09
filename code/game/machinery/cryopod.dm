@@ -36,6 +36,13 @@
 	storage_name = "Robotic Storage Control"
 	allow_items = 0
 
+/obj/machinery/computer/cryopod/living_quarters
+	name = "living quarters oversight console"
+	desc = "An interface between the main ship and the living quarters where the crew lives."
+
+	storage_name = "Living Quarters Oversight Control"
+	allow_items = TRUE
+
 /obj/machinery/computer/cryopod/interface_interact(mob/user)
 	interact(user)
 	return TRUE
@@ -127,6 +134,10 @@
 	build_path = /obj/machinery/computer/cryopod/robot
 	origin_tech = list(TECH_DATA = 3)
 
+/obj/item/circuitboard/living_quarters_cryo
+	name = "Circuit board (Living Quarters Console)"
+	origin_tech = list(TECH_DATA = 3)
+
 //Decorative structures to go alongside cryopods.
 /obj/structure/cryofeed
 
@@ -196,6 +207,19 @@
 	allow_occupant_types = list(/mob/living/silicon/robot)
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 	applies_stasis = 0
+
+/obj/machinery/cryopod/living_quarters
+	name = "living quarters lift"
+	desc = "A lift heading to the living quarters."
+	icon = 'icons/obj/crew_quarters_lift.dmi'
+	icon_state = "lift_open"
+	base_icon_state = "lift_open"
+	occupied_icon_state = "lift_occupied"
+	on_store_message = "has departed for the living quarters."
+	on_store_name = "Living Quarters Oversight"
+
+	on_enter_occupant_message = "The elevator door closes slowly, ready to bring you down to the living quarters."
+	disallow_occupant_types = list(/mob/living/silicon/robot)
 
 /obj/machinery/cryopod/lifepod
 	name = "life pod"

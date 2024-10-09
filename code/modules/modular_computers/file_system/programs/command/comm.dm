@@ -65,7 +65,7 @@
 	data["message_line2"] = msg_line2
 	data["state"] = current_status
 	data["isAI"] = issilicon(usr)
-	data["authenticated"] = is_autenthicated(user)
+	data["authenticated"] = is_authenticated(user)
 	data["boss_short"] = GLOB.using_map.boss_short
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
@@ -111,7 +111,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/datum/nano_module/program/comm/proc/is_autenthicated(mob/user)
+/datum/nano_module/program/comm/proc/is_authenticated(mob/user)
 	if(program)
 		return program.program_has_access(user)
 	return 1
@@ -121,6 +121,27 @@
 		var/datum/computer_file/program/comm/P = program
 		return P.message_core
 	return global_message_listener
+
+/datum/nano_module/program/comm/proc/send_offsite_message(target, datum/offsite/O)
+	if(!is_relay_online())
+		to_chat(usr, SPAN_WARNING("Radio antenna not responding. Unable to transmit message."))
+		return
+	if(centcomm_message_cooldown)
+		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
+		SSnano.update_uis(src)
+		return
+	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [target] via encrypted radio frequency. Abuse may lead to termination of duty. Transmission does not guarantee a response. There is a 30 second delay before you may send another message; be clear, full and concise.", "?? Emergency Message"))
+	if(!input || !can_still_topic())
+		return
+	to_chat(usr, SPAN_NOTICE("Message transmitted."))
+	log_say("[key_name(usr)] has made an announcement to [target]: [input]")
+
+	message_offsite(input, usr, O)
+
+	centcomm_message_cooldown = 1
+	spawn(30 SECOND)//30 second cooldown
+		centcomm_message_cooldown = 0
+
 
 /datum/nano_module/program/comm/Topic(href, href_list)
 	if(..())
@@ -135,7 +156,7 @@
 			current_status = text2num(href_list["target"])
 		if("announce")
 			. = TRUE
-			if(is_autenthicated(user) && !issilicon(usr) && ntn_comm)
+			if(is_authenticated(user) && !issilicon(usr) && ntn_comm)
 				if(user)
 					var/obj/item/card/id/id_card = user.GetIdCard()
 					crew_announcement.announcer = GetNameAndAssignmentFromId(id_card)
@@ -156,41 +177,16 @@
 			. = TRUE
 			if(href_list["target"] == "emagged")
 				if(program)
-					if(is_autenthicated(user) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm)
-						if(centcomm_message_cooldown)
-							to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
-							SSnano.update_uis(src)
-							return
-						var/input = sanitize(input(usr, "Please choose a message to transmit to \[ABNORMAL ROUTING CORDINATES\] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination. Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", "") as null|text)
-						if(!input || !can_still_topic())
-							return 1
-						Syndicate_announce(input, usr)
-						to_chat(usr, SPAN_NOTICE("Message transmitted."))
-						log_say("[key_name(usr)] has made an illegal announcement: [input]")
-						centcomm_message_cooldown = 1
-						spawn(300)//30 second cooldown
-							centcomm_message_cooldown = 0
+					var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_antag_offsite]
+					if(is_authenticated(user) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm && targetOffsite)
+						send_offsite_message("\[ABNORMAL ROUTING COORDINATES\]", targetOffsite)
 			else if(href_list["target"] == "regular")
-				if(is_autenthicated(user) && !issilicon(usr) && ntn_comm)
-					if(centcomm_message_cooldown)
-						to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
-						SSnano.update_uis(src)
-						return
-					if(!is_relay_online())//Contact Centcom has a check, Syndie doesn't to allow for Traitor funs.
-						to_chat(usr, SPAN_WARNING("No Emergency Bluespace Relay detected. Unable to transmit message."))
-						return 1
-					var/input = sanitize(input("Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", "") as null|text)
-					if(!input || !can_still_topic())
-						return 1
-					Centcomm_announce(input, usr)
-					to_chat(usr, SPAN_NOTICE("Message transmitted."))
-					log_say("[key_name(usr)] has made an IA [GLOB.using_map.boss_short] announcement: [input]")
-					centcomm_message_cooldown = 1
-					spawn(300) //30 second cooldown
-						centcomm_message_cooldown = 0
+				var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
+				if(is_authenticated(user) && !issilicon(usr) && ntn_comm && targetOffsite)
+					send_offsite_message(targetOffsite.name, targetOffsite)
 		if("evac")
 			. = TRUE
-			if(is_autenthicated(user))
+			if(is_authenticated(user))
 				var/datum/evacuation_option/selected_evac_option = evacuation_controller.evacuation_options[href_list["target"]]
 				if (isnull(selected_evac_option) || !istype(selected_evac_option))
 					return
@@ -203,7 +199,7 @@
 					evacuation_controller.handle_evac_option(selected_evac_option.option_target, user)
 		if("setstatus")
 			. = TRUE
-			if(is_autenthicated(user) && ntn_cont)
+			if(is_authenticated(user) && ntn_cont)
 				switch(href_list["target"])
 					if("line1")
 						var/linput = reject_bad_text(sanitize(input("Line 1", "Enter Message Text", msg_line1) as text|null, 40), 40)
@@ -221,7 +217,7 @@
 						post_status(href_list["target"])
 		if("setalert")
 			. = TRUE
-			if(is_autenthicated(user) && !issilicon(usr) && ntn_cont && ntn_comm)
+			if(is_authenticated(user) && !issilicon(usr) && ntn_cont && ntn_comm)
 				var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 				var/decl/security_level/target_level = locate(href_list["target"]) in security_state.standard_security_levels
 				if(target_level && security_state.can_switch_to(target_level))
@@ -235,7 +231,7 @@
 			current_status = STATE_DEFAULT
 		if("viewmessage")
 			. = TRUE
-			if(is_autenthicated(user) && ntn_comm)
+			if(is_authenticated(user) && ntn_comm)
 				current_viewing_message_id = text2num(href_list["target"])
 				for(var/list/m in l.messages)
 					if(m["id"] == current_viewing_message_id)
@@ -243,12 +239,12 @@
 				current_status = STATE_VIEWMESSAGE
 		if("delmessage")
 			. = TRUE
-			if(is_autenthicated(user) && ntn_comm && l != global_message_listener)
+			if(is_authenticated(user) && ntn_comm && l != global_message_listener)
 				l.Remove(current_viewing_message)
 			current_status = STATE_MESSAGELIST
 		if("printmessage")
 			. = TRUE
-			if(is_autenthicated(user) && ntn_comm)
+			if(is_authenticated(user) && ntn_comm)
 				if(!program.computer.nano_printer)
 					to_chat(usr, SPAN_WARNING("Missing Hardware: Your computer does not have required hardware to complete this operation."))
 					return
@@ -262,11 +258,11 @@
 			to_chat(usr, SPAN_NOTICE("The console beeps, confirming the signal was sent to have the saferooms bolted."))
 		if("toggle_alert_border")
 			. = TRUE
-			if(is_autenthicated(user) && ntn_comm)
+			if(is_authenticated(user) && ntn_comm)
 				post_status("toggle_alert_border")
 		if("cross_comms")
 			. = TRUE
-			if(is_autenthicated(user))
+			if(is_authenticated(user))
 				if(GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN > world.time)
 					to_chat(user, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
 					return 1
