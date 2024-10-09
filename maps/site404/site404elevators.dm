@@ -23,4 +23,3 @@
 		/area/turbolift/site404/elevator/ez,
 		/area/turbolift/site404/elevator/bridge
 		)
-

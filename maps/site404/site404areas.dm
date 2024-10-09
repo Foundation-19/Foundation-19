@@ -71,8 +71,21 @@
 	dynamic_lighting = 1
 
 //Site 404
+
 /area/site404
 	name = "Site 404 Superstructure"
+
+//Site 404's Shuttle Areas
+
+/area/site404/shuttle/lift106
+	name = "SCP-106 Access Lift"
+	icon_state = "shuttle"
+	requires_power = 0
+
+/area/site404/shuttle/unit106
+	name = "SCP-106 Containment Chamber"
+	icon_state = "shuttle"
+	requires_power = 0
 
 //Site 404 - Adminstration Zone
 /area/site404/administration
@@ -206,6 +219,9 @@
 
 /area/site404/engineering/workshop
 	name = "Engineering Department - Workshop"
+
+/area/site404/engineering/dronebay
+	name = "Engineering Department - Maintenance Drone Bay"
 
 /area/site404/engineering/hallway
 	name = "Engineering Department - Primary Corridor"
@@ -616,10 +632,10 @@
 /area/site404/lightcontainmentzone/humanoidbreakroom
 	name = "LCZ Humanoid Recreation Compartment"
 
-/area/site404/heavycontainmentzone/safestorage
+/area/site404/lightcontainmentzone/safestorage
 	name = "LCZ Safe Object Containment Facilities"
 
-/area/site404/heavycontainmentzone/officebreakroom
+/area/site404/lightcontainmentzone/officebreakroom
 	name = "LCZ Office Worker Breakroom"
 
 /area/site404/lightcontainmentzone/escapepodhall
