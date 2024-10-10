@@ -265,7 +265,7 @@
 			return M
 	return 0
 
-/mob/proc/movement_delay()
+/mob/proc/movement_delay(decl/move_intent/using_intent = move_intent)
 	. = 0
 	if(istype(loc, /turf))
 		var/turf/T = loc
