@@ -93581,10 +93581,6 @@
 	},
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/medical/mentalhealth/isolation)
-"tnQ" = (
-/obj/structure/stairs/north,
-/turf/simulated/floor/tiled/monotile,
-/area/site53/logistics/logistics)
 "tnV" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -207489,9 +207485,9 @@ eVT
 eVT
 eVT
 eVT
-tnQ
-rus
-bhm
+eVT
+eVT
+eVT
 dYu
 hFQ
 gjw
@@ -207746,9 +207742,9 @@ sJg
 wIY
 sJg
 eVT
-tnQ
-rus
-bhm
+eVT
+eVT
+eVT
 dYu
 rbJ
 jUE
