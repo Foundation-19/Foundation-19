@@ -24,20 +24,11 @@
 
 	station_name  = "Foundation Site 53"
 	station_short = "Site 53"
-	dock_name     = "Central Command Depo"
-	boss_name     = "Foundation Central Office"
-	boss_short    = "Central Office"
+	dock_name     = "Emergency Site-91"
+	boss_name     = "Foundation North American Command"
+	boss_short    = "Regional Command"
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
-
-	map_admin_faxes = list(
-		"Foundation Central Office",
-		"UIU Central Office",
-		"GOC Central Office",
-		"Horizon Initiative Central Office ",
-		"Marshall, Carter, and Dark Central Office",
-		"Goldbaker-Reinz Central Office"
-	)
 
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "The outbound train is now boarding at the Train Station. It will depart in approximately %ETD%."
@@ -62,8 +53,6 @@
 		/area/site53/surface = NO_APC,
 		/area/turbolift/site53/surface = NO_APC,
 		/area/turbolift/site53/basement = NO_APC,
-		/area/turbolift/site53/logistics = NO_APC,
-		/area/turbolift/site53/logisticstorage = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/uhcz = NO_APC,
@@ -76,6 +65,9 @@
 		/area/turbolift/site53/gatea = NO_APC,
 		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
+		/area/turbolift/site53/up082 = NO_APC,
+		/area/turbolift/site53/low82 = NO_APC
+
 	)
 
 	away_site_budget = 3
@@ -100,6 +92,9 @@
 		/decl/audio/track/purge_protocol,
 		/decl/audio/track/uiu_spawn_theme,
 		/decl/audio/track/surface_area,
+		/decl/audio/track/goc_spawn_theme2,
+		/decl/audio/track/fall_of_ganzir,
+		/decl/audio/track/the_bookburners_v2
 	)
 
 	available_cultural_info = list(

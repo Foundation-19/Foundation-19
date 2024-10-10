@@ -37,7 +37,6 @@
 	else
 		cut_overlays()
 		set_light(0)		// No glow from closed laptops
-		compile_overlays()
 		icon_state = icon_state_closed
 
 /obj/item/modular_computer/laptop/preset

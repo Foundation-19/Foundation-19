@@ -70,22 +70,6 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
-/area/turbolift/site53/logisticstorage
-	name = "lift (Logistics Storage)"
-	lift_floor_label = "Logistics Storage"
-	lift_floor_name = "Logistics Storage"
-	lift_announce_str = "Arriving at Logistics Storage: Secure Storage."
-	requires_power = 0
-	dynamic_lighting = 1
-
-/area/turbolift/site53/logistics
-	name = "lift (Logistics Loading Pad)"
-	lift_floor_label = "Logistics"
-	lift_floor_name = "Logistics"
-	lift_announce_str = "Arriving at Logistics Loading pad: Loading Docks."
-	requires_power = 0
-	dynamic_lighting = 1
-
 /area/turbolift/site53/robotlwr
 	name = "lift (Lower Robotics)"
 	lift_floor_label = "Lower Robotics"
@@ -118,6 +102,21 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
+/area/turbolift/site53/up082
+	name = "lift (Upper palSCP-082 containmentace)"
+	lift_floor_label = "Upper SCP-082 containment"
+	lift_floor_name = "Upper SCP-082 containment"
+	lift_announce_str = "Arriving at Upper SCP-082 containment."
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/turbolift/site53/low82
+	name = "lift (Lower SCP-082 containment)"
+	lift_floor_label = "Lower SCP-082 containment"
+	lift_floor_name = "Lower SCP-082 containment"
+	lift_announce_str = "Arriving at  Lower SCP-082 containment."
+	requires_power = 0
+	dynamic_lighting = 1
 // SITE 53 TRAM AREA'S
 
 /area/site53/tram/ci
@@ -189,7 +188,6 @@
 	name = "Supply Dock"
 	icon_state = "Sleep"
 	requires_power = 0
-	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // SITE 53 SURFACE AREA'S
@@ -397,12 +395,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
-/area/site53/ulcz/scp2427_3
-	name = "\improper SCP-2427-3"
-	icon_state = "research"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-	sound_env = SMALL_ENCLOSED
-
 /area/site53/ulcz/humanoidcontainment
 	name = "\improper Humanoid Containment"
 	icon_state = "research"
@@ -420,6 +412,33 @@
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
+
+/area/site53/ulcz/scp082
+	name = "\improper SCP-082"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/ulcz/scp082/bedroom
+	name = "\improper SCP-082 Bedroom"
+
+/area/site53/ulcz/scp082/throne
+	name = "\improper SCP-082 Throne Room"
+
+/area/site53/ulcz/scp082/kitchen
+	name = "\improper SCP-082 Kitchen"
+
+/area/site53/ulcz/scp082/bathroom
+	name = "\improper SCP-082 Bathroom"
+
+/area/site53/ulcz/scp082/dining
+	name = "\improper SCP-082 Dining Hall"
+
+/area/site53/ulcz/scp082/recreation
+	name = "\improper SCP-082 Recreation Room"
+
+/area/site53/ulcz/scp082/observation
+	name = "\improper SCP-082 observation"
 
 /area/site53/llcz/scp500
 	name = "\improper SCP-500"
@@ -469,6 +488,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
+/area/site53/llcz/scp5295
+	name = "\improper SCP-5295"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
 /area/site53/llcz/scp263research
 	name = "\improper SCP-263 Research Chamber"
 	icon_state = "research"
@@ -496,6 +521,12 @@
 
 /area/site53/llcz/genstorage1
 	name = "\improper General Storage #1"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
+
+/area/site53/llcz/genstorage2
+	name = "\improper General Storage #2"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
@@ -1219,9 +1250,9 @@
 	icon_state = "quart"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/logistics/logisticsbreak
-	name = "\improper Logistics Surface Area"
-	icon_state = "quart"
+/area/site53/logistics/Lowercommstower
+	name = "\improper Lower Communications Tower"
+	icon_state = "checkpoint1"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/logistics/understorage
@@ -1297,7 +1328,6 @@
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
 	icon_state = "quart"
-	dynamic_lighting = 0
 
 //SCP-106's realm
 /area/pocketdimension

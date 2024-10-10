@@ -39,14 +39,14 @@
 	desc = "A heavy, black long coat with golden markings along the wrists, as well as real genuine bear fur on it. It's woven from the finest cotton, and alloyed with durathread, to make the user comfortable, but durable to many kinds of damage."
 	icon_state = "o5_coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 90, bullet = 90, laser = 90, energy = 90, bomb = 80, bio = 40, rad = 60)
+	armor = list(melee = ARMOR_MELEE_SHIELDED, bullet = ARMOR_BALLISTIC_AP, laser = ARMOR_LASER_HEAVY, energy = ARMOR_ENERGY_SHIELDED, bomb = ARMOR_BOMB_SHIELDED, bio = ARMOR_BIO_RESISTANT, rad = ARMOR_RAD_RESISTANT)
 
 /obj/item/clothing/suit/armor/itd
 	name = "Internal Tribunal Officer's coat"
 	desc = "A heavy, black long coat with silver markings along the wrists, as well as real genuine polar bear fur on it. It's woven from the finest cotton."
 	icon_state = "itd_coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 15, rad = 15)
+	armor = list(melee = ARMOR_MELEE_SMALL, bullet = ARMOR_BALLISTIC_MINOR, laser = ARMOR_LASER_MINOR, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 
 //Chaplain
 /obj/item/clothing/suit/chaplain_hoodie

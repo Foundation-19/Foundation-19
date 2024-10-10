@@ -19,12 +19,12 @@
 	glasses = /obj/item/clothing/glasses/night
 	gloves = /obj/item/clothing/gloves/tactical/scp
 	shoes = /obj/item/clothing/shoes/swat
-	suit_store = /obj/item/gun/projectile/automatic/scp/p90
+	suit_store = /obj/item/gun/projectile/automatic/scp/m16
 	l_pocket = /obj/item/grenade/flashbang
 	r_pocket = /obj/item/grenade/flashbang
 	id_type = /obj/item/card/id/mtf/ninetail
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/p90_mag/ap = 5,/obj/item/ammo_magazine/c45m = 2)
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/plastique = 2,/obj/item/grenade/frag = 1,/obj/item/ammo_magazine/scp/m16_mag = 3,/obj/item/ammo_magazine/c45m = 2)
 
 /decl/hierarchy/outfit/mtf/epsilon_11/breacher
 	name = OUTFIT_JOB_NAME("MTF Epsilon-11 Breacher")
@@ -104,7 +104,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_pocket = null
 	r_pocket = /obj/item/ammo_magazine/scp
 	belt = /obj/item/storage/belt/holster/security/fullmk9
@@ -121,7 +121,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = /obj/item/gun/projectile/automatic/scp/p90
 	r_hand = /obj/item/crowbar/red
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_pocket = null
 	r_pocket = /obj/item/ammo_magazine/scp
 	id_type = /obj/item/card/id/mtf/beta_7

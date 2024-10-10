@@ -100,7 +100,8 @@ var/list/ai_verbs_default = list(
 	var/override_CPURate = 0					// Bonus/Penalty CPU generation rate. For use by admins/testers.
 	var/uncardable = 0							// Whether the AI can be carded when malfunctioning.
 	var/hacked_apcs_hidden = 0					// Whether the hacked APCs belonging to this AI are hidden, reduces CPU generation from APCs.
-	var/intercepts_communication = 0			// Whether the AI intercepts fax and emergency transmission communications.
+	/// Whether the AI intercepts fax and emergency transmission communications.
+	var/intercepts_communication = 0
 	var/last_failed_malf_message = null
 	var/last_failed_malf_title = null
 
@@ -110,7 +111,6 @@ var/list/ai_verbs_default = list(
 	var/multitool_mode = 0
 
 	var/default_ai_icon = /datum/ai_icon/blue
-	var/static/list/custom_ai_icons_by_ckey_and_name
 
 /mob/living/silicon/ai/proc/add_ai_verbs()
 	add_verb(src, ai_verbs_default)
@@ -221,7 +221,6 @@ var/list/ai_verbs_default = list(
 		to_chat(src, "<b>These laws may be changed by other players or by other random events.</b>")
 
 	job = "AIC"
-	setup_icon()
 	eyeobj.possess(src)
 
 /mob/living/silicon/ai/Destroy()
@@ -241,44 +240,6 @@ var/list/ai_verbs_default = list(
 
 	. = ..()
 
-/mob/living/silicon/ai/proc/setup_icon()
-	if(LAZYACCESS(custom_ai_icons_by_ckey_and_name, "[ckey][real_name]"))
-		return
-	var/list/custom_icons = list()
-	LAZYSET(custom_ai_icons_by_ckey_and_name, "[ckey][real_name]", custom_icons)
-
-	var/file = file2text(CUSTOM_ITEM_SYNTH_CONFIG)
-	var/lines = splittext(file, "\n")
-
-	var/custom_index = 1
-	var/custom_icon_states = icon_states(CUSTOM_ITEM_SYNTH)
-
-	for(var/line in lines)
-	// split & clean up
-		var/list/Entry = splittext(line, ":")
-		for(var/i = 1 to Entry.len)
-			Entry[i] = trim(Entry[i])
-
-		if(Entry.len < 2)
-			continue
-		if(Entry.len == 2) // This is to handle legacy entries
-			Entry[++Entry.len] = Entry[1]
-
-		if(Entry[1] == src.ckey && Entry[2] == src.real_name)
-			var/alive_icon_state = "[Entry[3]]-ai"
-			var/dead_icon_state = "[Entry[3]]-ai-crash"
-
-			if(!(alive_icon_state in custom_icon_states))
-				to_chat(src, SPAN_WARNING("Custom display entry found but the icon state '[alive_icon_state]' is missing!"))
-				continue
-
-			if(!(dead_icon_state in custom_icon_states))
-				dead_icon_state = ""
-
-			selected_sprite = new/datum/ai_icon("Custom Icon [custom_index++]", alive_icon_state, dead_icon_state, COLOR_WHITE, CUSTOM_ITEM_SYNTH)
-			custom_icons += selected_sprite
-	update_icon()
-
 /mob/living/silicon/ai/pointed(atom/A as mob|obj|turf in view())
 	set popup_menu = 0
 	set src = usr.contents
@@ -289,8 +250,6 @@ var/list/ai_verbs_default = list(
 	announcement.announcer = pickedName
 	if(eyeobj)
 		eyeobj.SetName("[pickedName] (AI Eye)")
-
-	setup_icon()
 
 /mob/living/silicon/ai/proc/pick_icon()
 	set category = "Silicon Commands"
@@ -311,9 +270,6 @@ var/list/ai_verbs_default = list(
 		var/datum/ai_icon/ai_icon = all_ai_icons[ai_icon_type]
 		if(ai_icon.may_used_by_ai(src))
 			dd_insertObjectList(., ai_icon)
-
-	// Placing custom icons first to have them be at the top
-	. = LAZYACCESS(custom_ai_icons_by_ckey_and_name, "[ckey][real_name]") | .
 
 /mob/living/silicon/ai/var/message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_announcement()
@@ -373,22 +329,27 @@ var/list/ai_verbs_default = list(
 	set category = "Silicon Commands"
 	set name = "Send Emergency Message"
 
+	var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
+	if(!istype(targetOffsite))
+		return
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
 	if(!is_relay_online())
-		to_chat(usr, SPAN_WARNING("No Emergency Bluespace Relay detected. Unable to transmit message."))
+		to_chat(usr, SPAN_WARNING("Radio antenna not responding. Unable to transmit message."))
 		return
 	if(emergency_message_cooldown)
-		to_chat(usr, SPAN_WARNING("Arrays recycling. Please stand by."))
+		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
 		return
-	var/input = tgui_input_text(usr, "Please choose a message to transmit to [GLOB.using_map.boss_short] via quantum entanglement. Abuse will lead to decomission. There is a 30 second delay before you may send another message, be clear, full and concise.", "O5 Emergency Message")
+	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [targetOffsite.name] via encrypted radio frequency. Abuse may lead to decommissioning. There is a 30 second delay before you may send another message; be clear, full and concise.", "Command Emergency Message", "To abort, enter an empty message"))
 	if(!input)
 		return
-	Centcomm_announce(input, usr)
+
+	message_offsite(input, usr, targetOffsite)
+
 	to_chat(usr, SPAN_NOTICE("Message transmitted."))
-	log_say("[key_name_admin(usr)] has made an emergency AIC [GLOB.using_map.boss_short] announcement: [input]")
+	log_say("[key_name_admin(usr)] has made an emergency AIC [targetOffsite.name] announcement: [input]")
 	emergency_message_cooldown = 1
-	spawn(300)
+	spawn(30 SECONDS)
 		emergency_message_cooldown = 0
 
 

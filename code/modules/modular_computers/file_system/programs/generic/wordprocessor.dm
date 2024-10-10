@@ -4,6 +4,7 @@
 	extended_desc = "This program allows the editing and preview of text documents."
 	program_icon_state = "word"
 	program_key_state = "atmos_key"
+	program_menu_icon = "file-signature"
 	size = 4
 	requires_ntnet = FALSE
 	available_on_ntnet = TRUE
@@ -25,7 +26,7 @@
 		return TRUE
 
 /datum/computer_file/program/wordprocessor/proc/save_file(filename)
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
 	var/datum/computer_file/data/F = get_data_file(filename)
@@ -122,7 +123,7 @@
 			var/oldtext = html_decode(loaded_data)
 			oldtext = replacetext(oldtext, "\[br\]", "\n")
 
-			var/newtext = sanitize(replacetext(tgui_input_text(usr, "Editing file '[open_file]'. You may use most tags used in paper formatting:", "Text Editor", oldtext, MAX_TEXTFILE_LENGTH, TRUE), "\n", "\[br\]"), MAX_TEXTFILE_LENGTH)
+			var/newtext = tgui_input_text(usr, "Editing file '[open_file]'. You may use most tags used in paper formatting:", "Text Editor", oldtext, MAX_TEXTFILE_LENGTH, TRUE, trim = FALSE)
 			if(!newtext)
 				return
 			loaded_data = newtext
@@ -133,7 +134,7 @@
 			if(!computer.nano_printer)
 				error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 				return TRUE
-			if(!computer.nano_printer.print_text(pencode2html(loaded_data)))
+			if(!computer.nano_printer.print_text(pencode2html(sanitize(loaded_data, MAX_PAPER_MESSAGE_LEN, FALSE, FALSE, FALSE))))
 				error = "Hardware error: Printer was unable to print the file. It may be out of paper."
 				return TRUE
 			return TRUE
@@ -141,8 +142,8 @@
 /datum/computer_file/program/wordprocessor/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
 	var/list/data = get_header_data()
 
-	var/obj/item/stock_parts/computer/hard_drive/HDD = computer.hard_drive
-	var/obj/item/stock_parts/computer/hard_drive/portable/RHDD = computer.portable_drive
+	var/obj/item/stock_parts/computer/storage/hard_drive/HDD = computer.hard_drive
+	var/obj/item/stock_parts/computer/storage/portable_drive/RHDD = computer.portable_drive
 	data["error"] = null
 	if(error)
 		data["error"] = error

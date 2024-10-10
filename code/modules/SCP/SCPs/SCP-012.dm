@@ -49,13 +49,8 @@
 	return ..()
 
 //Mechanics
-/obj/item/paper/scp012/proc/memetic_effect()
-
-	var/mob/living/carbon/human/H
-	var/obj/item/paper/scp012/A = locate(/obj/item/paper/scp012/) in GLOB.SCP_list
-	if (!A)
-		return
-	if(!H || H.stat == UNCONSCIOUS || !H.can_see(A)) //Unconscious individuals cant keep hurting themselves
+/obj/item/paper/scp012/proc/memetic_effect(mob/living/carbon/human/H)
+	if(!H || H.stat == UNCONSCIOUS || !H.can_see(src)) //Unconscious individuals cant keep hurting themselves
 		return
 
 	if(get_dist(H, src) > 1)

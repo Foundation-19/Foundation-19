@@ -5,8 +5,9 @@
 		"Service" = TRUE
 	)
 	sprites = list(
-		"Basic" = "JanBot2",
-		"Mopbot"  = "janitorrobot",
+		"Android - Basic Janitor"  = "janitorrobot",
+		"Android - Custodian Tech"  = "sanitaryrobot",
+		"Android - Cleaner"  = "cleanerrobot",
 		"Mop Gear Rex" = "mopgearrex"
 	)
 	equipment = list(

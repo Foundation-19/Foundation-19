@@ -100,6 +100,10 @@
 			new /mob/living/carbon/human/scp343 (loc)
 			delete_me = 1
 			return
+		if ("scp082")
+			new /mob/living/carbon/human/scp082 (loc)
+			delete_me = TRUE
+			return
 		if("JoinLateDclass")
 			GLOB.latejoin_dclass += loc
 			delete_me = 1

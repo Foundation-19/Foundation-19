@@ -7,7 +7,7 @@
 	gloves = /obj/item/clothing/gloves/tactical/ci
 	shoes = /obj/item/clothing/shoes/tactical
 	r_hand = null
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_ear = /obj/item/device/radio/headset/ert
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag

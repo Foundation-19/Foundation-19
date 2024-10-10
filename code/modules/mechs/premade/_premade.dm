@@ -27,6 +27,9 @@
 /mob/living/exosuit/premade/proc/spawn_mech_equipment()
 	set waitfor = FALSE
 	install_system(new /obj/item/mech_equipment/light(src), HARDPOINT_HEAD)
+	var/obj/item/mech_equipment/power_cell/holder = new(src)
+	holder.set_power_cell(new /obj/item/cell/high(holder))
+	install_system(holder, HARDPOINT_POWER)
 
 /mob/living/exosuit/premade/random
 	name = "mismatched exosuit"

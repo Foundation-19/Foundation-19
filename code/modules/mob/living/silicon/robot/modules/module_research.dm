@@ -9,7 +9,9 @@
 		NETWORK_RESEARCH
 	)
 	sprites = list(
-		"Droid" = "droid-science"
+		"Droid" = "droid-science",
+		"Android - Scientist" = "scientistrobot",
+		"Android - Senior Scientist" = "seniorscientistrobot"
 	)
 	equipment = list(
 		/obj/item/device/flash,
