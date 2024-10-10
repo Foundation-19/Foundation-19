@@ -385,6 +385,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
+"adK" = (
+/obj/structure/table/rack/shelf,
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site404/logistics/warehouse)
 "adL" = (
 /obj/structure/bookcase/manuals/engineering,
 /turf/simulated/floor/wood/walnut,
@@ -1938,6 +1946,12 @@
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/engineering/atmospherics)
+"ava" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "avc" = (
 /obj/structure/closet/crate/secure/large/reinforced{
 	pixel_x = 4
@@ -2118,6 +2132,13 @@
 "axa" = (
 /turf/simulated/floor/wood/mahogany,
 /area/site404/administration/office/marshalcarterdark)
+"axl" = (
+/obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/eight)
 "axr" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -2333,6 +2354,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/hallway)
+"azG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "azI" = (
 /obj/structure/table/woodentable/mahogany,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -3602,6 +3635,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/chemistry)
+"aPa" = (
+/obj/effect/floor_decal/corner/orange/diagonal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/luxury/lounge1)
 "aPe" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/floor_decal/corner/safe/half,
@@ -5333,6 +5373,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp513)
+"bhY" = (
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/hallway/port)
 "bia" = (
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/containmentchambers/scp173/observation)
@@ -6947,6 +6993,9 @@
 	req_access = list(ACCESS_SECURITY_LVL2);
 	name = "LCZ Cadet Lockers Compartment"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
 "bBS" = (
@@ -7062,6 +7111,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/clinic)
@@ -8051,6 +8103,9 @@
 /area/site404/entrancezone/securityoffice/securitymeetingroom)
 "bPi" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/luxury/lounge1)
 "bPj" = (
@@ -9786,6 +9841,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/small,
 /area/site404/classdzone/security/briefingroom)
+"cgV" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "cgW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10060,6 +10121,13 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/maintenance/fore)
+"cld" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/luxury/lounge1)
 "cll" = (
 /obj/effect/floor_decal/corner/black{
 	dir = 6
@@ -10087,6 +10155,9 @@
 "clu" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
@@ -11018,6 +11089,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/administration/maintenance/portquarter)
+"cuS" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "cuU" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -12274,7 +12353,7 @@
 	name = "SCP-049 Chamber Access Blast Door button";
 	id_tag = "049access";
 	pixel_y = 4;
-	req_access = list(ACCESS_CONTAINMENT_SCP_049)
+	req_access = list(list(ACCESS_SCIENCE_LVL4, ACCESS_SECURITY_LVL3))
 	},
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warning/fulltile,
@@ -12609,11 +12688,20 @@
 /turf/simulated/floor/reinforced,
 /area/site404/containmentchambers/scp096/chamber)
 "cOw" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/maintenance/fore)
 "cOB" = (
@@ -13104,6 +13192,9 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/clinic)
 "cTT" = (
@@ -13130,6 +13221,9 @@
 "cUp" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
@@ -13237,6 +13331,12 @@
 /obj/item/stock_parts/circuitboard/unary_atmos/heater,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/securetechnicalstorage)
+"cVC" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "cVI" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/vending/medical{
@@ -14081,6 +14181,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/virology)
 "ddS" = (
+/obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/seven)
 "ddZ" = (
@@ -14129,6 +14233,13 @@
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site404/entrancezone/waitingroom/upper)
+"del" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/security/controlroom)
 "des" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -14268,7 +14379,24 @@
 /area/site404/containmentchambers/scp999)
 "dfP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/unloadingbay)
 "dfX" = (
@@ -15132,6 +15260,16 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/dockingbay)
+"dqL" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "dqM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -15338,6 +15476,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/site404/engineering/fusionengine/control)
+"dsH" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 18;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "dsI" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -17197,6 +17347,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/hallway/lowerprimary)
+"dNL" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "dNN" = (
 /obj/structure/table/standard,
 /obj/item/stamp/rd,
@@ -17553,6 +17709,18 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site404/heavycontainmentzone/securityoffice/armory)
+"dSG" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "dSH" = (
 /obj/machinery/door/window/brigdoor/westleft{
 	name = "SCP-2398 Containment Unit";
@@ -17769,6 +17937,10 @@
 	},
 /turf/simulated/open,
 /area/site404/containmentchambers/scp106/chamber/uppercontainment)
+"dUC" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "dUE" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/box/detergent,
@@ -18801,6 +18973,9 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/clinic)
 "egS" = (
@@ -19407,6 +19582,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
 /area/site404/containmentchambers/scp017)
+"emW" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "enl" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white/small,
@@ -19536,6 +19718,13 @@
 /obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/wood/ebony,
 /area/site404/containmentchambers/scp049/chamber/quarters)
+"epm" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/luxury/lounge1)
 "epx" = (
 /obj/item/stock_parts/circuitboard/borgupload,
 /obj/item/stock_parts/circuitboard/aicore,
@@ -19887,6 +20076,18 @@
 	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/containmentchambers/scp082/chamber/kitchen)
+"etp" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "etv" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/purple/mono,
@@ -22080,6 +22281,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/shutters{
+	name = "Logistics Warehouse Shutter";
+	id_tag = "warehouse"
+	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/warehouse)
 "eTm" = (
@@ -22425,6 +22630,12 @@
 /obj/effect/floor_decal/corner/blue/three_quarters,
 /turf/simulated/floor/tiled/dark,
 /area/site404/entrancezone/waitingroom/upper)
+"eXk" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "eXw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor/autoset,
@@ -22906,6 +23117,18 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/site404/engineering/fusionengine/control)
+"fda" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 18;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "fdb" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/structure/cable{
@@ -23310,6 +23533,11 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(ACCESS_ENGINEERING_LVL1)
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/site404/administration/maintenance/portbow)
 "fhU" = (
@@ -23434,6 +23662,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/maintenance/starboardquarter)
+"fjc" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "fjl" = (
 /obj/machinery/alarm{
 	pixel_y = 19;
@@ -24430,6 +24668,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
+"fvB" = (
+/obj/item/modular_computer/console/preset/supply_public{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "fvD" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -24444,6 +24691,18 @@
 "fvY" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ENGINEERING_LVL1)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/site404/administration/maintenance/starboardquarter)
@@ -24879,6 +25138,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/securityoffice/hallway)
+"fBJ" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "fBL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -24951,6 +25218,10 @@
 	},
 /turf/simulated/floor/carpet/blue3,
 /area/site404/medical/assistantmedicaldirectoroffice)
+"fCj" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "fCs" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -25565,6 +25836,12 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/port)
+"fIN" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "fIQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -25675,6 +25952,9 @@
 	name = "CDZ Control Room";
 	req_access = list(ACCESS_SECURITY_LVL2)
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/clinic)
 "fKw" = (
@@ -25689,6 +25969,18 @@
 	dir = 1
 	},
 /area/site404/classdzone/labor/kitchen)
+"fKE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "fKP" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -25725,6 +26017,12 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/research/anomaly)
+"fLk" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "fLm" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/administration/holodeck)
@@ -26832,6 +27130,18 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/research/researchdevelopment)
+"gap" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "gaz" = (
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/hallway/port)
@@ -27118,6 +27428,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/heavycontainmentzone/securityoffice/easthall)
+"gdV" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/small,
+/area/site404/classdzone/labor/clinic)
 "geb" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -28398,6 +28714,13 @@
 /obj/effect/floor_decal/corner/research/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/chemistry)
+"gre" = (
+/obj/item/modular_computer/console/preset/supply_public{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown/three_quarters,
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "grl" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -28863,6 +29186,10 @@
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/containmentchambers/scp529)
+"gvv" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "gvx" = (
 /obj/effect/floor_decal/corner/safe/half{
 	dir = 4
@@ -28999,6 +29326,9 @@
 /area/site404/containmentchambers/scp280/observation)
 "gxu" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/four)
 "gxz" = (
@@ -29032,6 +29362,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/observation)
+"gxK" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "gxT" = (
 /obj/structure/table/standard,
 /obj/structure/railing/mapped{
@@ -29319,9 +29655,20 @@
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
 "gBp" = (
-/obj/machinery/computer/gravity_control_computer,
-/turf/simulated/floor/holofloor/reinforced,
-/area/site404/administration/holodeck)
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "gBB" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/six)
@@ -29673,6 +30020,24 @@
 /obj/structure/closet/secure_closet/scientist,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/chemistry)
+"gFv" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "gFx" = (
 /obj/machinery/camera/network/containmentunit/scp280{
 	c_tag = "SCP-280 - Containment Facilities Entrance";
@@ -30225,6 +30590,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/starboard)
 "gMB" = (
@@ -30235,6 +30601,11 @@
 	},
 /obj/structure/disposalpipe/segment/bent{
 	dir = 1
+	},
+/obj/machinery/access_button/airlock_exterior{
+	pixel_x = 24;
+	pixel_y = 24;
+	id_tag = "008_exterior"
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp008/laboratory)
@@ -30336,6 +30707,9 @@
 /area/site404/containmentchambers/scp106/entrance)
 "gND" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/one)
 "gNE" = (
@@ -30672,6 +31046,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/workshop)
+"gSd" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/small,
+/area/site404/classdzone/atrium)
 "gSk" = (
 /obj/effect/floor_decal/spline/fancy/black/corner,
 /turf/simulated/floor/tiled/techmaint,
@@ -31359,6 +31739,14 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site404/administration/office/ethicsrep)
+"haw" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "haC" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/classdzone/security/briefingroom)
@@ -31464,6 +31852,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp049/storage)
+"hbI" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "hbJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -34081,6 +34475,12 @@
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/hydroponics)
+"hFX" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "hGb" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/engineering/auxiliaryreactor)
@@ -34538,6 +34938,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/administration/assemblywaitingroom)
+"hJR" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 18;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "hKg" = (
 /obj/effect/floor_decal/corner/red/half,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -35462,7 +35874,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site404/classdzone/luxury/lounge2)
 "hTF" = (
-/obj/machinery/vending/games,
+/obj/machinery/computer/cryopod/living_quarters{
+	pixel_y = 25
+	},
+/obj/item/stool,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/lockerroom)
 "hTO" = (
@@ -35612,6 +36027,12 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
+"hVf" = (
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/hallway/port)
 "hVr" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -36868,6 +37289,11 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/heavycontainmentzone/guardfacilities)
+"ikb" = (
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/hallway)
 "ike" = (
 /turf/simulated/floor/tiled,
 /area/site404/engineering/assistantengineeringdirectoroffice)
@@ -37386,10 +37812,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/port)
 "ipJ" = (
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
 	},
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled,
 /area/site404/logistics/unloadingbay)
 "ipK" = (
 /obj/effect/floor_decal/corner/orange/bordercorner,
@@ -38110,6 +38537,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/heavycontainmentzone/hallway/central)
+"izk" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "izq" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -38801,6 +39237,10 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/hallway/lowerprimary)
+"iIl" = (
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/lino,
+/area/site404/entrancezone/dormitory)
 "iIp" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -38945,6 +39385,9 @@
 /area/site404/administration/bridge)
 "iJR" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/two)
 "iJV" = (
@@ -39278,6 +39721,24 @@
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/white/small,
 /area/site404/lightcontainmentzone/humanoidcontainment/three)
+"iON" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ENGINEERING_LVL1)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/administration/maintenance/portquarter)
 "iOR" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/briefcase/crimekit{
@@ -40286,6 +40747,14 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/dockingbay)
+"jbz" = (
+/obj/machinery/light,
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "jbB" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -40819,6 +41288,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp008/laboratory)
+"jia" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "jii" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/monofloor,
@@ -43229,6 +43704,9 @@
 /area/site404/engineering/auxiliaryreactor)
 "jHj" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/six)
 "jHk" = (
@@ -43957,6 +44435,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/research/aic/cores/four)
+"jQf" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "jQn" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -45765,6 +46249,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "klN" = (
@@ -46046,6 +46533,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/starboard)
 "kpD" = (
@@ -46090,6 +46578,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/breakroom)
+"kqq" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "kqr" = (
 /obj/effect/floor_decal/industrial/defective/corner{
 	dir = 8
@@ -46899,6 +47393,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/entrancezone/securityoffice/commanderoffice)
+"kyZ" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/classdzone/quarters/hallway)
 "kzi" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -48888,6 +49389,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/unloadingbay)
 "kUt" = (
@@ -49202,6 +49709,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site404/entrancezone/maintenance/portbow)
+"kXf" = (
+/obj/machinery/light/navigation,
+/obj/structure/catwalk,
+/turf/space,
+/area/space)
 "kXg" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -50037,6 +50549,10 @@
 /area/site404/containmentchambers/scp049/chamber/office)
 "lhc" = (
 /obj/structure/table/rack/shelf,
+/obj/machinery/light/small{
+	dir = 8;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/logistics/warehouse)
 "lhj" = (
@@ -50457,8 +50973,17 @@
 /obj/machinery/body_scanconsole{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/classdzone/labor/clinic)
+"lmE" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "lnn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -50521,6 +51046,12 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/site404/engineering/fusionengine/interior)
+"lon" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "lop" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 4
@@ -50827,6 +51358,16 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/lightcontainmentzone/securityoffice/armory)
+"lrM" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "lrO" = (
 /obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
@@ -51311,14 +51852,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/containmentchambers/scp082/janitorial)
 "lzd" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+/obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/wood/bamboo,
-/area/site404/lightcontainmentzone/securityoffice/cadets)
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/seven)
 "lzs" = (
 /obj/structure/sign/scp/euclid_scp,
 /obj/effect/paint_stripe/red,
@@ -51598,6 +52136,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp457)
+"lDa" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/hallway)
 "lDj" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -51692,9 +52236,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/external/glass{
-	req_access = list(list(ACCESS_SCIENCE_LVL4, ACCESS_SECURITY_LVL3));
-	name = "SCP-008 Test Chamber Interior"
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "008_interior"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp008/testroom)
@@ -51923,6 +52466,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/office/A)
+"lHA" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/hallway)
 "lHJ" = (
 /obj/effect/floor_decal/corner/black/half{
 	dir = 1
@@ -52725,6 +53277,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/hallway/port)
+"lQM" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 18;
+	req_access = list("ACCESS_SECURITY_LEVEL1")
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "lQQ" = (
 /turf/simulated/floor/tiled/white/horizontal,
 /area/space)
@@ -54980,6 +55544,9 @@
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/luxury/lounge1)
 "msm" = (
@@ -55210,6 +55777,13 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/space,
 /area/space)
+"muO" = (
+/obj/effect/floor_decal/corner/red/mono,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/security/controlroom)
 "mvf" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -56120,6 +56694,12 @@
 /obj/structure/chair/sofa/corp/left,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/containmentchambers/scp999)
+"mEy" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "mED" = (
 /turf/simulated/floor/wood/maple,
 /area/site404/lightcontainmentzone/hallway/south)
@@ -56405,6 +56985,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	pixel_y = 18;
+	id_tag = "008";
+	tag_exterior_door = "008_exterior";
+	tag_interior_door = "008_interior"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp008/testroom)
 "mIR" = (
@@ -56463,6 +57049,9 @@
 "mJG" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/clinic)
 "mJI" = (
@@ -56522,6 +57111,13 @@
 	dir = 4
 	},
 /area/site404/containmentchambers/scp173/chamber)
+"mKg" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "mKl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -56656,6 +57252,12 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site404/containmentchambers/scp2427/observation)
+"mMF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/orange,
+/area/site404/classdzone/luxury/lounge1)
 "mMG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -58561,6 +59163,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/hallway)
+"niP" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "niV" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -58688,12 +59296,30 @@
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled,
 /area/site404/administration/office/engineering)
-"nke" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
+"nkc" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
+"nke" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/unloadingbay)
@@ -58748,6 +59374,9 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/heavycontainmentzone/maintenance/aft)
 "nkU" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/eight)
 "nli" = (
@@ -60396,6 +61025,13 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site404/medical/psychologistoffice)
+"nEk" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/security/controlroom)
 "nEn" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -61128,6 +61764,9 @@
 /area/site404/entrancezone/dockingbay)
 "nNu" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/three)
 "nNz" = (
@@ -61859,6 +62498,14 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site404/research/robotics/roboticsfabrication)
+"nXe" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "nXj" = (
 /obj/effect/floor_decal/corner/black/three_quarters{
 	dir = 1
@@ -62042,6 +62689,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/unloadingbay)
@@ -63298,6 +63948,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/port)
+"onU" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "onX" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -63428,6 +64084,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/service/kitchen)
+"opl" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "opn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -63810,6 +64470,16 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp008/researchoffice)
+"osP" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/computer/HolodeckControl{
+	linkedholodeck_area = /area/site404/administration/holodeck;
+	lock_access = list()
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/entrancezone/hallway/port)
 "osU" = (
 /obj/structure/table/rack/shelf,
 /obj/item/device/flashlight/upgraded,
@@ -64219,6 +64889,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp049/observation)
+"oxQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/carpet/orange,
+/area/site404/classdzone/luxury/lounge1)
 "oxU" = (
 /turf/simulated/floor/tiled,
 /area/site404/service/archive)
@@ -64662,6 +65338,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp2427/observation)
+"oCY" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/carpet/orange,
+/area/site404/classdzone/luxury/lounge1)
 "oDd" = (
 /obj/effect/floor_decal/corner/yellow/half,
 /obj/effect/floor_decal/spline/fancy/black/corner{
@@ -65560,6 +66242,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "oMU" = (
@@ -65925,6 +66610,13 @@
 	dir = 1
 	},
 /area/site404/lightcontainmentzone/securityoffice/briefingroom)
+"oRZ" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/security/controlroom)
 "oSc" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/red/border{
@@ -66699,6 +67391,10 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/containmentchambers/scp106/chamber/lowercontainment)
 "pal" = (
+/obj/machinery/door/blast/shutters{
+	name = "Logistics Warehouse Shutter";
+	id_tag = "warehouse"
+	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/warehouse)
 "pao" = (
@@ -68106,6 +68802,12 @@
 	dir = 1
 	},
 /area/site404/administration/office/ethicsrep)
+"pqG" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "pqJ" = (
 /obj/effect/floor_decal/corner/safe/half,
 /obj/structure/reagent_dispensers/watertank,
@@ -68944,6 +69646,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/research/robotics/roboticsfabrication)
+"pAJ" = (
+/obj/machinery/door/window/northleft,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/entrancezone/hallway/port)
 "pAO" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/maintenance/aft)
@@ -69649,7 +70355,7 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/administration/customs)
 "pHu" = (
-/obj/machinery/vending/fashionvend,
+/obj/machinery/cryopod/living_quarters,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/lockerroom)
 "pHy" = (
@@ -71681,6 +72387,13 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp096/observation)
+"qgU" = (
+/obj/effect/floor_decal/corner/orange/diagonal,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/luxury/lounge1)
 "qhe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet/brown,
@@ -71771,6 +72484,13 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/north)
+"qiE" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/classdzone/quarters/hallway)
 "qiG" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 8
@@ -72878,6 +73598,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/engineering/hallway)
+"quf" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "quk" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white,
@@ -73137,6 +73863,13 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site404/research/aic/hallway)
+"qxs" = (
+/obj/effect/floor_decal/corner/orange/half,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/classdzone/quarters/hallway)
 "qxJ" = (
 /obj/machinery/door/window/brigdoor/eastleft{
 	name = "SCP-457 Containment Chamber"
@@ -74205,6 +74938,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/humanoidcontainment/four)
+"qKx" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "qKy" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -74308,6 +75047,12 @@
 /obj/item/stack/material/wood/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/containmentchambers/scp457)
+"qMk" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/hallway)
 "qMC" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -76410,6 +77155,14 @@
 "rkV" = (
 /turf/simulated/floor/lino,
 /area/site404/engineering/breakroom)
+"rkW" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "rkX" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/orange/half,
@@ -76626,6 +77379,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled,
 /area/site404/administration/office/goc)
+"rnQ" = (
+/obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/hallway)
 "rnS" = (
 /obj/structure/table/woodentable/walnut,
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -76722,6 +77482,12 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/lockerroom)
+"roK" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "roL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -77432,6 +78198,10 @@
 "rwU" = (
 /obj/structure/closet/secure_closet/hop2,
 /obj/machinery/light,
+/obj/item/storage/belt/general,
+/obj/item/device/megaphone,
+/obj/random/clipboard,
+/obj/random/clipboard,
 /turf/simulated/floor/wood/walnut,
 /area/site404/administration/office/sitemanager)
 "rwV" = (
@@ -77986,6 +78756,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/starboard)
 "rDV" = (
@@ -78140,6 +78911,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp173/observation)
+"rFG" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "rFJ" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset,
@@ -78414,6 +79191,11 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/access_button/airlock_interior{
+	pixel_x = 24;
+	pixel_y = -24;
+	id_tag = "008_interior"
+	},
 /turf/simulated/floor/reinforced,
 /area/site404/containmentchambers/scp008/testroom)
 "rJt" = (
@@ -78880,6 +79662,12 @@
 /obj/structure/cable,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/lightcontainmentzone/securityoffice/riotarmory)
+"rOw" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "rOB" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -79245,6 +80033,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp049/observation)
+"rSo" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "rSr" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -80771,6 +81563,12 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/wood/bamboo,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
 "smc" = (
@@ -80901,6 +81699,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/administration/bridge)
+"snG" = (
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "snI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -80912,6 +81720,12 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site404/service/archive)
+"snT" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "snV" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -81192,6 +82006,7 @@
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/port)
 "srW" = (
@@ -82546,6 +83361,19 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp008/testroom)
+"sFU" = (
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/airlock/security{
+	name = "CDZ Control Room";
+	req_access = list(ACCESS_SECURITY_LVL2)
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/security/controlroom)
 "sGu" = (
 /obj/effect/floor_decal/corner/grey/bordercorner{
 	dir = 8
@@ -83151,7 +83979,9 @@
 /turf/simulated/floor/tiled,
 /area/site404/entrancezone/securityoffice/briefingroom)
 "sOR" = (
-/obj/structure/closet/crate/bin,
+/obj/machinery/vending/games{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/lockerroom)
 "sPd" = (
@@ -83722,6 +84552,12 @@
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/waitingroom/upper)
+"sWb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/atrium)
 "sWi" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white,
@@ -84694,6 +85530,12 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/lightcontainmentzone/hallway/south)
+"tih" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site404/classdzone/quarters/hallway)
 "tio" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -85127,6 +85969,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/site404/administration/groupsofinterestlounge)
+"tox" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "toB" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -86171,6 +87017,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/medical/chemistry)
+"tAL" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "tAW" = (
 /obj/effect/floor_decal/corner/keter/diagonal,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -89375,6 +90225,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/administration/bridge)
+"ulG" = (
+/obj/structure/table/woodentable/walnut,
+/obj/random/clipboard,
+/turf/simulated/floor/wood/walnut,
+/area/site404/administration/office/sitemanager)
 "ulP" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -89574,6 +90429,12 @@
 "unT" = (
 /turf/simulated/floor/tiled/white/small,
 /area/site404/medical/surgery/operatingroom2)
+"unX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "uod" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/button/windowtint{
@@ -89660,6 +90521,10 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/containmentchambers/scp106/chamber/lowercontainment)
+"upu" = (
+/obj/effect/wallframe_spawn/no_grille,
+/turf/simulated/floor/plating,
+/area/site404/logistics/unloadingbay)
 "upA" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -89739,6 +90604,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/research/aic/cores/one)
+"uqu" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "uqx" = (
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/entrancezone/securityoffice/guardfacilities)
@@ -89757,6 +90628,12 @@
 	},
 /turf/simulated/floor/grass,
 /area/site404/medical/psychologistoffice)
+"uqI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "uqK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -90437,6 +91314,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
 "uyu" = (
@@ -90829,8 +91709,17 @@
 /area/site404/entrancezone/dockingbay)
 "uCo" = (
 /obj/machinery/door/firedoor/autoset,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/five)
+"uCr" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "uCw" = (
 /turf/simulated/floor/wood/maple,
 /area/site404/service/baroffice)
@@ -91583,6 +92472,12 @@
 "uKu" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/heavycontainmentzone/hallway/west)
+"uKD" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "uKH" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -92000,6 +92895,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp082/chamber/main)
+"uPI" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/security/controlroom)
 "uPS" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -93092,6 +93994,7 @@
 	dir = 1;
 	icon_state = "bulb1"
 	},
+/obj/machinery/vending/lavatory,
 /turf/simulated/floor/tiled/white/small,
 /area/site404/entrancezone/lockerroom)
 "vcu" = (
@@ -93147,9 +94050,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/external/glass{
-	req_access = list(list(ACCESS_SCIENCE_LVL4, ACCESS_SECURITY_LVL3));
-	name = "SCP-008 Test Chamber Exterior"
+/obj/machinery/door/airlock/external/glass/bolted/cycling{
+	id_tag = "008_exterior"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp008/testroom)
@@ -93451,6 +94353,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "vgo" = (
@@ -93477,20 +94382,11 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/administration/assemblyhall)
 "vgY" = (
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
+/obj/structure/bed/chair/office/dark{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/entrancezone/waitingroom/upper)
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "vhc" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -94122,7 +95018,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/site404/heavycontainmentzone/guardfacilities)
 "vos" = (
-/obj/machinery/vending/lavatory{
+/obj/machinery/vending/fashionvend{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -94714,12 +95610,28 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/hallway/east)
+"vuA" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "vuD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/bamboo,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
+"vuG" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "vuM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -94985,6 +95897,12 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/small,
 /area/site404/engineering/assistantengineeringdirectoroffice)
+"vxV" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "vxW" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/containmentchambers/scp529)
@@ -95049,6 +95967,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/entrancezone/lockerroom)
+"vyJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "vyL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -96626,6 +97553,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
+"vPC" = (
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "vPG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -96721,6 +97654,20 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/morgue/corpsestorage)
+"vQE" = (
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled,
+/area/site404/administration/maintenance/portbow)
 "vQI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -96777,6 +97724,25 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/heavycontainmentzone/safestorage)
+"vRK" = (
+/obj/machinery/button/blast_door{
+	id_tag = "warehouse";
+	name = "Logistics Warehouse Shutter button"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/logistics/warehouse)
+"vRN" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/hallway)
 "vRP" = (
 /obj/effect/floor_decal/corner/euclid{
 	dir = 9
@@ -97939,6 +98905,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp082/lowerhallway)
+"wgD" = (
+/obj/effect/floor_decal/corner/orange/half{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site404/classdzone/quarters/hallway)
 "wgI" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/xenoflora)
@@ -98029,6 +99004,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/clinic)
@@ -98630,6 +99608,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/securityoffice/atrium)
+"wpY" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "wqc" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -99131,6 +100113,12 @@
 	},
 /turf/simulated/floor/tiled/white/small,
 /area/site404/service/kitchen)
+"wuj" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "wut" = (
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp049/maintenance)
@@ -99484,6 +100472,12 @@
 /obj/item/storage/part_replacer,
 /turf/simulated/floor/tiled,
 /area/site404/heavycontainmentzone/substation)
+"wxM" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "wxQ" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -100193,6 +101187,10 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp106/lowerhallway)
+"wEo" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "wEu" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -101606,12 +102604,27 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/hallway/port)
+"wVr" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "wVv" = (
 /obj/machinery/button/blast_door{
 	name = "SCP-049 Chamber Access Blast Door button";
 	id_tag = ("049access");
 	pixel_y = 4;
-	req_access = list(ACCESS_CONTAINMENT_SCP_049)
+	req_access = list(list(ACCESS_SCIENCE_LVL4, ACCESS_SECURITY_LVL3))
 	},
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warning/fulltile,
@@ -101877,6 +102890,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/containmentchambers/scp106/entrance)
+"wYv" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/security/controlroom)
 "wYy" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -102120,7 +103140,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/research{
 	name = "SCP-049 Containment Chamber Entrance Hallway";
-	req_access = list(ACCESS_CONTAINMENT_SCP_049)
+	req_access = list(list(ACCESS_SCIENCE_LVL4, ACCESS_SECURITY_LVL3))
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -102582,6 +103602,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/space)
+"xhc" = (
+/obj/machinery/door/window/northright,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/entrancezone/hallway/port)
 "xhe" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -102662,6 +103686,12 @@
 /obj/effect/floor_decal/industrial/defective/corner,
 /turf/simulated/floor/tiled/skrell/red,
 /area/site404/research/aic/cores/three)
+"xii" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "xin" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -103826,6 +104856,14 @@
 "xvx" = (
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp343)
+"xvz" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "xvO" = (
 /obj/structure/bed/chair/office/comfy/red{
 	dir = 4
@@ -104034,6 +105072,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp280/observation)
+"xxT" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "xyg" = (
 /obj/structure/table/reinforced,
 /obj/item/book/manual/chef_recipes,
@@ -104818,6 +105860,13 @@
 "xIL" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/lightcontainmentzone/officebreakroom)
+"xIP" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/security/controlroom)
 "xIQ" = (
 /obj/machinery/light{
 	dir = 1
@@ -104956,6 +106005,12 @@
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/unloadingbay)
 "xKa" = (
@@ -104968,6 +106023,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp895)
+"xKd" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "xKe" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -105329,6 +106390,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/lowerprimary)
 "xOe" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/site404/administration/maintenance/portbow)
 "xOi" = (
@@ -105372,6 +106438,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/starboard)
 "xOp" = (
@@ -105504,6 +106571,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/research/chemistry)
+"xPA" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "xPV" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -106249,20 +107322,18 @@
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp049/maintenance)
 "xZe" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/table/standard,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/autoset{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/hallway/starboard)
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "xZh" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/grass,
@@ -106892,14 +107963,11 @@
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/service/janitorial)
 "yhp" = (
-/obj/machinery/door/firedoor/autoset,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/entrancezone/hallway/port)
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "yhD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -208712,7 +209780,7 @@ cLy
 aCQ
 byZ
 byZ
-lzd
+hAs
 byZ
 byZ
 vuD
@@ -209451,7 +210519,7 @@ xTg
 xTg
 rUo
 rUo
-rUo
+uqD
 rUo
 rUo
 oYK
@@ -209700,9 +210768,9 @@ jex
 jex
 qBh
 xTg
+fda
 rIS
-rIS
-rIS
+xKd
 rIS
 lEO
 tsk
@@ -209714,9 +210782,9 @@ xOV
 qQA
 eaR
 cdv
+dNL
 cdv
-cdv
-cdv
+snG
 oYK
 wZr
 jex
@@ -209740,7 +210808,7 @@ adt
 adt
 adt
 gmF
-hiq
+sFU
 gmF
 adt
 nDx
@@ -209953,11 +211021,11 @@ xOV
 xOV
 aND
 wZr
-jex
-jex
-qBh
+niP
+unX
+wgD
 uCo
-rIS
+jQf
 rIS
 rIS
 fxN
@@ -209973,11 +211041,11 @@ pqC
 ubV
 cdv
 cdv
-cdv
+wxM
 gND
-wZr
-jex
-jex
+kyZ
+unX
+fIN
 qBh
 fSB
 dvk
@@ -209997,7 +211065,7 @@ vso
 vso
 vso
 bNz
-bNz
+muO
 bNz
 adt
 jsO
@@ -210210,13 +211278,13 @@ xOV
 xOV
 aND
 wZr
-jex
+uqI
 jex
 qBh
 xTg
 rIS
 rIS
-rIS
+rFG
 rIS
 hor
 tsk
@@ -210228,13 +211296,13 @@ xOV
 qQA
 pqC
 cdv
-cdv
+quf
 cdv
 cdv
 oYK
 wZr
 jex
-jex
+uqI
 qBh
 fSB
 bkW
@@ -210254,7 +211322,7 @@ lQA
 lQA
 lQA
 lQA
-lQA
+wYv
 bNz
 adt
 qgG
@@ -210467,9 +211535,9 @@ xOV
 xOV
 aND
 wZr
+uqI
 jex
-jex
-qBh
+qiE
 xTg
 xTg
 neK
@@ -210489,29 +211557,29 @@ oYK
 gPk
 oYK
 oYK
-wZr
+qxs
 jex
-jex
-qBh
+dSG
+wgD
 mJG
 whA
 whA
 bCW
-bqR
+gdV
 lmB
-bqR
+gdV
 egL
 cTO
 cTO
 fKl
-bNz
-lQA
+del
+xIP
 lQA
 psv
 psv
 psv
 lQA
-lQA
+wYv
 bNz
 adt
 jsO
@@ -210724,14 +211792,14 @@ xOV
 xOV
 aND
 wZr
-jex
+uqI
 jex
 qBh
 xTg
 ccd
-rIS
+dUC
 xTg
-rIS
+uKD
 uXH
 tsk
 xOV
@@ -210741,14 +211809,14 @@ xOV
 xOV
 qQA
 kIF
-cdv
+gvv
 oYK
 aNm
-cdv
+gvv
 oYK
 wZr
 jex
-jex
+uqI
 qBh
 fSB
 ekm
@@ -210762,13 +211830,13 @@ jUp
 jUp
 fSB
 vso
-lQA
+wYv
 lQA
 psv
 psv
 psv
 lQA
-lQA
+wYv
 vso
 adt
 vUb
@@ -210981,7 +212049,7 @@ ehr
 qXx
 qXx
 wZr
-jex
+uqI
 jex
 qBh
 xTg
@@ -210989,7 +212057,7 @@ pty
 yfP
 xTg
 xYD
-hor
+xvz
 tsk
 xOV
 xOV
@@ -210997,7 +212065,7 @@ rUo
 xOV
 xOV
 qQA
-pqC
+cuS
 vcI
 oYK
 gHj
@@ -211005,7 +212073,7 @@ lTN
 oYK
 wZr
 jex
-jex
+uqI
 qBh
 fSB
 jUp
@@ -211019,13 +212087,13 @@ jUp
 cHx
 fSB
 vso
-lQA
-lQA
-lQA
-lQA
-lQA
-lQA
-lQA
+oRZ
+uPI
+uPI
+uPI
+uPI
+uPI
+nEk
 vso
 adt
 jsO
@@ -211238,7 +212306,7 @@ mer
 mer
 qXx
 qXx
-jex
+uqI
 jex
 oRi
 xTg
@@ -211248,11 +212316,11 @@ xTg
 xTg
 xTg
 xTg
+uqD
 rUo
+uqD
 rUo
-rUo
-rUo
-rUo
+uqD
 oYK
 oYK
 oYK
@@ -211262,7 +212330,7 @@ oYK
 oYK
 rYS
 jex
-jex
+uqI
 hXv
 ovO
 mqM
@@ -211495,12 +212563,12 @@ lho
 lho
 kpD
 qXx
-jex
+uqI
 jex
 oRi
+dsH
 pnJ
-pnJ
-pnJ
+uCr
 pnJ
 luz
 vze
@@ -211514,12 +212582,12 @@ xOV
 qbY
 wBY
 nYO
+qKx
 nYO
-nYO
-nYO
+lrM
 rYS
 jex
-jex
+uqI
 dOl
 ovO
 ovO
@@ -211752,10 +212820,10 @@ lho
 lho
 lho
 qXx
-jex
-jex
+azG
+unX
 jHj
-pnJ
+xii
 pnJ
 pnJ
 vXF
@@ -211773,10 +212841,10 @@ cRZ
 uLv
 nYO
 nYO
-nYO
+eXk
 iJR
-jex
-jex
+unX
+nkc
 dOl
 wQu
 suQ
@@ -212009,12 +213077,12 @@ lho
 lho
 lho
 ayj
-jex
+uqI
 jex
 oRi
 pnJ
 pnJ
-pnJ
+uqu
 pnJ
 vIz
 vze
@@ -212028,12 +213096,12 @@ xOV
 qbY
 cRZ
 nYO
-nYO
+vxV
 nYO
 nYO
 rYS
 jex
-jex
+uqI
 dOl
 wQu
 vjv
@@ -212266,8 +213334,8 @@ lho
 lho
 lho
 ayj
-jex
-jex
+uqI
+tAL
 oRi
 oRi
 gBB
@@ -212289,8 +213357,8 @@ rYS
 wbk
 rYS
 rYS
-jex
-jex
+mEy
+uqI
 dOl
 wQu
 vjv
@@ -212523,13 +213591,13 @@ lho
 lho
 lho
 qXx
-jex
+uqI
 jex
 oRi
 pMW
-pnJ
+xxT
 oRi
-pnJ
+kqq
 wJr
 vze
 xOV
@@ -212544,10 +213612,10 @@ fgD
 nYO
 rYS
 rtL
-nYO
+rSo
 rYS
 jex
-jex
+uqI
 dOl
 wQu
 suQ
@@ -212780,14 +213848,14 @@ lho
 lho
 pqa
 qXx
-jex
+uqI
 jex
 oRi
 fuv
 qvp
 oRi
 lem
-vIz
+vuG
 vze
 xOV
 rUo
@@ -212797,14 +213865,14 @@ xOV
 rUo
 xOV
 qbY
-cRZ
+vuA
 qlK
 rYS
 hVK
 xBo
 rYS
 jex
-jex
+uqI
 dOl
 dOl
 lvW
@@ -213037,7 +214105,7 @@ mer
 mer
 qXx
 qXx
-jex
+uqI
 jex
 oRi
 oRi
@@ -213047,11 +214115,11 @@ oRi
 oRi
 oRi
 sJY
+uqD
 rUo
+kXf
 rUo
-rUo
-rUo
-rUo
+uqD
 sJY
 rYS
 rYS
@@ -213061,8 +214129,8 @@ rYS
 rYS
 rYS
 jex
-jex
-hXv
+uqI
+ikb
 dOl
 tQH
 kVX
@@ -213293,8 +214361,8 @@ ehr
 ehr
 qXx
 qXx
-wZr
-jex
+qxs
+uqI
 jex
 knJ
 lKo
@@ -213318,7 +214386,7 @@ rUo
 lKo
 knJ
 jex
-jex
+uqI
 qBh
 tAm
 hPt
@@ -213551,7 +214619,7 @@ xOV
 xOV
 aND
 wZr
-jex
+uqI
 jex
 mFX
 aND
@@ -213575,7 +214643,7 @@ xRj
 aND
 mlY
 jex
-jex
+uqI
 qBh
 tAm
 mkd
@@ -213808,31 +214876,31 @@ xOV
 xOV
 aND
 wZr
-jex
-jex
-qBh
-knJ
-jex
-jex
-jex
-jex
-jex
-knJ
-jex
-jex
-jex
-jex
-jex
-knJ
-jex
-jex
-jex
-jex
-jex
-muy
-wZr
-jex
-jex
+vRN
+unX
+wgD
+qMk
+unX
+unX
+unX
+unX
+unX
+lHA
+unX
+unX
+unX
+unX
+unX
+lHA
+unX
+unX
+unX
+unX
+unX
+rnQ
+kyZ
+unX
+etp
 qBh
 aaD
 uaQ
@@ -214065,7 +215133,7 @@ xOV
 xOV
 aND
 wZr
-jex
+uqI
 jex
 qBh
 knJ
@@ -214074,13 +215142,13 @@ jex
 jex
 jex
 jex
-knJ
+tih
 jex
 jex
 jex
 jex
 jex
-knJ
+tih
 jex
 jex
 jex
@@ -214089,7 +215157,7 @@ jex
 muy
 wZr
 jex
-jex
+uqI
 qBh
 aaD
 uaQ
@@ -214322,7 +215390,7 @@ xOV
 xOV
 aND
 wZr
-jex
+uqI
 jex
 aAg
 aND
@@ -214346,7 +215414,7 @@ xRj
 aND
 pWy
 jex
-jex
+uqI
 qBh
 tAm
 hUT
@@ -214578,8 +215646,8 @@ xKH
 xKH
 sJY
 sJY
-wZr
-jex
+qxs
+uqI
 jex
 knJ
 lKo
@@ -214603,7 +215671,7 @@ rUo
 lKo
 knJ
 jex
-jex
+uqI
 qBh
 tAm
 qvb
@@ -214836,7 +215904,7 @@ fUo
 fUo
 sJY
 sJY
-jex
+uqI
 jex
 lLb
 lLb
@@ -214846,11 +215914,11 @@ lLb
 lLb
 lLb
 sJY
+uqD
 rUo
+kXf
 rUo
-rUo
-rUo
-rUo
+uqD
 sJY
 iyA
 iyA
@@ -214860,8 +215928,8 @@ iyA
 iyA
 iyA
 jex
-jex
-hXv
+uqI
+ikb
 dOl
 pWc
 kVX
@@ -215093,12 +216161,12 @@ qeS
 qeS
 cJC
 sJY
-jex
+uqI
 jex
 lLb
 fUS
 fUS
-fUS
+lmE
 fUS
 lbb
 jKT
@@ -215112,12 +216180,12 @@ xOV
 nqn
 ouM
 lgw
-lgw
+snT
 lgw
 lgw
 iyA
 jex
-jex
+uqI
 dOl
 dOl
 lvW
@@ -215350,10 +216418,10 @@ qeS
 qeS
 qeS
 sJY
-jex
-jex
+gap
+unX
 ddS
-fUS
+xPA
 fUS
 fUS
 uXd
@@ -215371,10 +216439,10 @@ qsD
 qgA
 lgw
 lgw
-lgw
+izk
 nNu
-jex
-jex
+unX
+etp
 dOl
 wQu
 suQ
@@ -215607,12 +216675,12 @@ qeS
 qeS
 qeS
 uWI
-jex
+uqI
 jex
 lLb
+lQM
 fUS
-fUS
-fUS
+cVC
 fUS
 lET
 jKT
@@ -215626,12 +216694,12 @@ xOV
 nqn
 qsD
 lgw
+ava
 lgw
-lgw
-lgw
+dqL
 iyA
 jex
-jex
+uqI
 dOl
 wQu
 vjv
@@ -215864,13 +216932,13 @@ qeS
 qeS
 qeS
 uWI
-jex
-jex
+uqI
+tAL
 lLb
 lLb
-ddS
+lzd
 lLb
-ddS
+lzd
 lLb
 lLb
 xOV
@@ -215887,15 +216955,15 @@ iyA
 dyW
 iyA
 iyA
-jex
-jex
+mEy
+uqI
 dOl
 wQu
 vjv
 kVX
 kVX
 kVX
-kVX
+sWb
 vjv
 tuN
 kGv
@@ -216121,13 +217189,13 @@ qeS
 qeS
 qeS
 sJY
-jex
+uqI
 jex
 lLb
 eNw
-fUS
+fCj
 lLb
-fUS
+cgV
 pnQ
 jKT
 xOV
@@ -216139,20 +217207,20 @@ rUo
 xOV
 nqn
 eSO
-lgw
+wEo
 iyA
 ddu
-lgw
+wEo
 iyA
 jex
-jex
+uqI
 dOl
 wQu
 suQ
 vjv
 vjv
 vjv
-vjv
+gSd
 suQ
 aeP
 aad
@@ -216378,14 +217446,14 @@ qeS
 qeS
 txG
 sJY
-jex
+uqI
 jex
 lLb
 cuc
 nKK
 lLb
 tUp
-lET
+haw
 jKT
 xOV
 rUo
@@ -216395,14 +217463,14 @@ xOV
 rUo
 xOV
 nqn
-qsD
+nXe
 jII
 iyA
 fBn
 omM
 iyA
 jex
-jex
+uqI
 dOl
 jtR
 jtR
@@ -216635,7 +217703,7 @@ fUo
 fUo
 sJY
 sJY
-jex
+uqI
 jex
 lLb
 lLb
@@ -216645,11 +217713,11 @@ lLb
 lLb
 lLb
 dZS
+uqD
 rUo
+uqD
 rUo
-rUo
-rUo
-rUo
+uqD
 uYU
 uYU
 uYU
@@ -216659,14 +217727,14 @@ uYU
 uYU
 iyA
 jex
-jex
+uqI
 hXv
 jtR
 gAP
 oEo
 gZi
 wWm
-wWm
+epm
 wWm
 ocD
 oEo
@@ -216892,13 +217960,13 @@ xKH
 sJY
 sJY
 wZr
-jex
+uqI
 jex
 qBh
 dZS
 vEd
 vEd
-vEd
+pqG
 vEd
 fna
 cdY
@@ -216910,20 +217978,20 @@ xOV
 huk
 mid
 daB
-daB
+wuj
 daB
 daB
 uYU
 wVd
 jex
-jex
+uqI
 qBh
 klC
 pWg
 tfq
 tfq
 rqp
-rqp
+aPa
 rqp
 tfq
 tfq
@@ -217149,11 +218217,11 @@ xOV
 xOV
 aND
 wZr
-jex
-jex
-qBh
-nkU
-vEd
+hbI
+unX
+wgD
+axl
+jia
 vEd
 vEd
 cWJ
@@ -217169,18 +218237,18 @@ rYh
 uWe
 daB
 daB
-daB
+roK
 gxu
-wVd
-jex
-jex
+emW
+unX
+etp
 qBh
 klC
 wWm
 rqp
 mYF
 mYF
-mYF
+oxQ
 mYF
 mYF
 rqp
@@ -217410,9 +218478,9 @@ jex
 jex
 qBh
 dZS
+hJR
 vEd
-vEd
-vEd
+rOw
 vEd
 kAl
 cdY
@@ -217424,20 +218492,20 @@ xOV
 huk
 rYh
 daB
+hFX
 daB
-daB
-daB
+fjc
 uYU
 wVd
 jex
-jex
-qBh
+hbI
+wgD
 bPi
-wWm
-rqp
-mYF
-mYF
-mYF
+cld
+qgU
+mMF
+mMF
+oCY
 mYF
 mYF
 rqp
@@ -217665,7 +218733,7 @@ aND
 wZr
 jex
 jex
-qBh
+qiE
 dZS
 dZS
 nkU
@@ -217685,7 +218753,7 @@ uYU
 vrH
 uYU
 uYU
-wVd
+mKg
 jex
 jex
 qBh
@@ -217925,9 +218993,9 @@ jex
 qBh
 dZS
 ldE
-vEd
+tox
 dZS
-vEd
+onU
 vsU
 cdY
 xOV
@@ -217937,10 +219005,10 @@ xOV
 xOV
 huk
 wIg
-daB
+opl
 uYU
 gTr
-daB
+opl
 uYU
 wVd
 jex
@@ -218185,7 +219253,7 @@ wMC
 qHS
 dZS
 cZT
-kAl
+rkW
 cdY
 xOV
 xOV
@@ -218193,7 +219261,7 @@ rUo
 xOV
 xOV
 huk
-rYh
+fBJ
 iLw
 uYU
 rXW
@@ -218446,7 +219514,7 @@ dZS
 dZS
 rUo
 rUo
-rUo
+uqD
 rUo
 rUo
 uYU
@@ -310977,11 +312045,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+oYG
+oYG
+oYG
+oYG
 oYG
 crj
 crj
@@ -311234,11 +312302,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 oYG
 crj
 crj
@@ -311491,11 +312559,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 oYG
 crj
 crj
@@ -311748,11 +312816,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 oYG
 crj
 crj
@@ -312005,11 +313073,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 oYG
 oYG
 oYG
@@ -312262,12 +313330,12 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
 oYG
+crj
+crj
+crj
+crj
+crj
 crj
 crj
 crj
@@ -312519,11 +313587,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 oYG
 dpY
 qOm
@@ -312776,11 +313844,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 oYG
 cuN
 dQx
@@ -313033,11 +314101,11 @@ xOV
 xOV
 xOV
 xOV
-xOV
-xOV
-xOV
-xOV
-xOV
+oYG
+crj
+crj
+crj
+crj
 jDa
 rtX
 rtX
@@ -322034,22 +323102,22 @@ rtX
 rtX
 rtX
 jDa
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
-rtX
+xTn
+jTP
+jTP
+jTP
+jTP
+jTP
+jTP
+jTP
+jTP
+jTP
+jTP
+jTP
 fhQ
 xOe
 xOe
-xOe
+vQE
 xOe
 xOe
 fhQ
@@ -322291,7 +323359,7 @@ rtX
 rtX
 rtX
 jDa
-rtX
+fNw
 rtX
 rtX
 auL
@@ -322306,7 +323374,7 @@ auL
 auL
 auL
 vYk
-ipJ
+nZd
 vYk
 auL
 auL
@@ -322548,7 +323616,7 @@ jDa
 jDa
 jDa
 jDa
-rtX
+fNw
 rtX
 rtX
 auL
@@ -322562,10 +323630,10 @@ aQi
 dmo
 rhg
 xJV
-qpF
-qpF
-qpF
-qpF
+vyJ
+gFv
+fLk
+gre
 auL
 fNw
 fLm
@@ -322575,7 +323643,7 @@ qVB
 qVB
 qVB
 qVB
-iFX
+pEk
 qzK
 mzu
 iQg
@@ -322805,7 +323873,7 @@ rtX
 rtX
 rtX
 rtX
-rtX
+fNw
 rtX
 rtX
 auL
@@ -322818,11 +323886,11 @@ sNr
 sNr
 sNr
 hhA
+yhp
 qpF
+fKE
 qpF
-qpF
-qpF
-qpF
+jbz
 auL
 fNw
 fLm
@@ -322832,7 +323900,7 @@ qVB
 qVB
 qVB
 qVB
-iFX
+pEk
 qzK
 mzu
 iQg
@@ -323062,10 +324130,10 @@ rtX
 rtX
 rtX
 rtX
+fNw
 rtX
 rtX
-rtX
-auL
+upu
 hhA
 sNr
 maZ
@@ -323075,12 +324143,12 @@ sNr
 maZ
 sNr
 hhA
+yhp
 qpF
+fKE
 qpF
-qpF
-qpF
-qpF
-auL
+ipJ
+upu
 fNw
 fLm
 qVB
@@ -323089,7 +324157,7 @@ qVB
 qVB
 qVB
 qVB
-iFX
+pEk
 qzK
 mzu
 iQg
@@ -323319,10 +324387,10 @@ rtX
 rtX
 rtX
 rtX
+fNw
 rtX
 rtX
-rtX
-auL
+upu
 hhA
 sNr
 maZ
@@ -323332,12 +324400,12 @@ sNr
 maZ
 sNr
 hhA
-qpF
-qpF
-qpF
-qpF
-qpF
-auL
+yhp
+gxK
+gBp
+gxK
+lon
+upu
 fNw
 fLm
 qVB
@@ -323576,7 +324644,7 @@ rtX
 rtX
 rtX
 rtX
-rtX
+fNw
 rtX
 rtX
 auL
@@ -323589,11 +324657,11 @@ sNr
 maZ
 sNr
 hhA
-qpF
-qpF
-qpF
-qpF
-qpF
+yhp
+wpY
+xZe
+wpY
+lon
 auL
 fNw
 fLm
@@ -323603,8 +324671,8 @@ qVB
 qVB
 qVB
 qVB
-iFX
-qzK
+pAJ
+hVf
 mzu
 miy
 iFX
@@ -323833,7 +324901,7 @@ rtX
 rtX
 rtX
 rtX
-rtX
+fNw
 rtX
 rtX
 auL
@@ -323846,11 +324914,11 @@ sNr
 maZ
 sNr
 hhA
-qpF
-qpF
-qpF
-qpF
-qpF
+yhp
+wpY
+xZe
+wpY
+lon
 auL
 fNw
 fLm
@@ -323860,8 +324928,8 @@ qVB
 qVB
 qVB
 qVB
-iFX
-qzK
+osP
+rPv
 mzu
 rPv
 lYS
@@ -324090,10 +325158,10 @@ rtX
 rtX
 rtX
 rtX
+fNw
 rtX
 rtX
-rtX
-auL
+upu
 hhA
 sNr
 maZ
@@ -324103,12 +325171,12 @@ sNr
 maZ
 sNr
 hhA
-qpF
-qpF
-qpF
-qpF
-qpF
-auL
+yhp
+vgY
+wVr
+vgY
+lon
+upu
 fNw
 fLm
 qVB
@@ -324117,8 +325185,8 @@ qVB
 qVB
 qVB
 qVB
-iFX
-qzK
+xhc
+bhY
 mzu
 rdy
 iFX
@@ -324347,10 +325415,10 @@ rtX
 rtX
 rtX
 rtX
+fNw
 rtX
 rtX
-rtX
-auL
+upu
 hhA
 sNr
 maZ
@@ -324360,12 +325428,12 @@ sNr
 maZ
 sNr
 hhA
+yhp
 qpF
+fKE
 qpF
-qpF
-qpF
-qpF
-auL
+ipJ
+upu
 fNw
 fLm
 qVB
@@ -324382,7 +325450,7 @@ pEk
 gaz
 dHW
 dfF
-awd
+ulG
 awd
 awd
 llT
@@ -324604,7 +325672,7 @@ rtX
 rtX
 rtX
 rtX
-rtX
+fNw
 rtX
 rtX
 auL
@@ -324617,21 +325685,21 @@ sNr
 sNr
 sNr
 hhA
+yhp
 qpF
+fKE
 qpF
-qpF
-qpF
-qpF
+jbz
 auL
 fNw
 fLm
 qVB
 qVB
-gBp
 qVB
 qVB
 qVB
-iFX
+qVB
+pEk
 qzK
 mzu
 iQg
@@ -324861,7 +325929,7 @@ rtX
 rtX
 rtX
 rtX
-rtX
+fNw
 rtX
 rtX
 auL
@@ -324874,11 +325942,11 @@ aQi
 aQi
 ktY
 tnh
-qpF
+vPC
 nke
 dfP
 kUs
-qpF
+fvB
 auL
 fNw
 fLm
@@ -324888,7 +325956,7 @@ qVB
 qVB
 qVB
 qVB
-iFX
+pEk
 qzK
 mzu
 iQg
@@ -325118,7 +326186,7 @@ jDa
 jDa
 jDa
 jDa
-rtX
+fNw
 rtX
 rtX
 auL
@@ -325145,7 +326213,7 @@ qVB
 qVB
 qVB
 qVB
-iFX
+pEk
 qzK
 mzu
 iQg
@@ -325375,7 +326443,7 @@ rtX
 rtX
 rtX
 rtX
-rtX
+fNw
 rtX
 rtX
 rtX
@@ -325386,13 +326454,13 @@ rtX
 rtX
 rtX
 qVr
-iyo
+lDa
 fBl
 iyo
 oMT
 iyo
 oMT
-iyo
+lDa
 qVr
 fNw
 fLm
@@ -327960,13 +329028,13 @@ gzg
 aLH
 dwC
 eqb
-qsB
+vRK
 aiF
 aiF
-lhc
+adK
 aiF
 aiF
-lhc
+adK
 aiF
 fHT
 qsB
@@ -334117,7 +335185,7 @@ baz
 wAH
 eJx
 tUQ
-yhp
+qsI
 tUQ
 tUQ
 tUQ
@@ -338253,9 +339321,9 @@ wob
 wob
 niE
 niE
-vgY
+pWV
 hUt
-vgY
+pWV
 niE
 niE
 fYc
@@ -338806,7 +339874,7 @@ okk
 okk
 okk
 vhN
-cuN
+iON
 sJY
 aWW
 aWW
@@ -339257,7 +340325,7 @@ ssT
 nyc
 lyI
 tUQ
-yhp
+qsI
 tUQ
 tUQ
 tUQ
@@ -343681,7 +344749,7 @@ sRE
 oQj
 caO
 peQ
-jxM
+iIl
 vUQ
 pMj
 hlT
@@ -345707,7 +346775,7 @@ vFz
 icB
 icB
 vhN
-xZe
+qDB
 vhN
 jlI
 jlI

@@ -29,7 +29,7 @@
 	warmup_time = 10
 	shuttle_area = list(/area/site404/shuttle/lift106)
 	waypoint_station = "nav_106_start"
-	waypoint_offsite = "nav_t106_out"
+	waypoint_offsite = "nav_106_out"
 
 /obj/effect/shuttle_landmark/containment106/start
 	name = "SCP-106 Upper Containment Unit"

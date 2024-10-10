@@ -70,6 +70,18 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
+//Holodeck Areas
+/area/holodeck
+	icon_state = "blue-red2"
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/holodeck/emergency_medical
+	name = "Holodeck - Emergency Medical Program"
+
+/area/holodeck/source_picnicarea
+	name = "Holodeck - Picnic Area"
+
 //Site 404
 
 /area/site404
@@ -142,6 +154,8 @@
 
 /area/site404/administration/holodeck
 	name = "Administration Department - Holodeck"
+	requires_power = 0
+	dynamic_lighting = 1
 
 /area/site404/administration/customs
 	name = "Administration Department - Docking Bay Customs Checkpoint"

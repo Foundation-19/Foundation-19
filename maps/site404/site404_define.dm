@@ -28,14 +28,6 @@
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 
-	map_admin_faxes = list(
-		"Foundation Central Office",
-		"UIU Central Office",
-		"GOC Central Office",
-		"Marshall, Carter, and Dark Central Office",
-		"Goldbaker-Reinz Central Office"
-	)
-
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "The site transport shuttle has docked with the facility. It will depart in approximately %ETD%."
 	shuttle_leaving_dock = "The transport shuttle for off-duty personnel is now departing, and will reach its destination in %ETA%."
@@ -55,6 +47,20 @@
 	apc_test_exempt_areas = list(
 		/area/space = NO_APC
 	)
+
+	holodeck_programs = list(
+		"picnicarea" = /area/holodeck/source_picnicarea,
+		"emergency_medical" = /area/holodeck/emergency_medical
+	)
+
+	holodeck_supported_programs = list(
+		"Foundation Approved Programs" = list(
+		"Picnic Area" = "picnicarea",
+		"Emergency Medical" = "emergency_medical"
+		)
+	)
+
+	holodeck_restricted_programs = list(list())
 
 	away_site_budget = 3
 

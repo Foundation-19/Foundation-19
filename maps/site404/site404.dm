@@ -34,6 +34,7 @@
 	#include "structures/closets/supply.dm"
 
 	#include "site404.dmm"
+	#include "z1_admin.dmm"
 
 	#define using_map_DATUM /datum/map/site404
 
