@@ -21460,10 +21460,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
-"ewi" = (
-/obj/effect/paint_stripe/gray,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site53/ulcz/scp173)
 "ewk" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
@@ -250620,7 +250616,7 @@ nkq
 nkq
 nkq
 nkq
-ewi
+nkq
 egc
 cwG
 dht
