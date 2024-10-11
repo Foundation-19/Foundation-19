@@ -1466,6 +1466,7 @@
 #include "code\modules\admin\smites\fake_bwoink.dm"
 #include "code\modules\admin\smites\gib.dm"
 #include "code\modules\admin\smites\orbital_artillery.dm"
+#include "code\modules\admin\verbs\admincryo.dm"
 #include "code\modules\admin\verbs\adminfun.dm"
 #include "code\modules\admin\verbs\adminhelp.dm"
 #include "code\modules\admin\verbs\adminjump.dm"
