@@ -15,7 +15,7 @@
 	)
 
 	SCP.min_time = 15 MINUTES
-	SCP.min_playercount = 20
+	SCP.min_playercount = 5
 
 	init_skills()
 
