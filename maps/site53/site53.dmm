@@ -61065,9 +61065,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/locker_room)
-"mEp" = (
-/turf/simulated/wall/r_titanium,
-/area/site53/uez/mcrsubstation)
 "mEv" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -279922,7 +279919,7 @@ jck
 qCs
 lgj
 oQb
-mEp
+bGC
 oQb
 adQ
 ihM
@@ -280179,7 +280176,7 @@ xYN
 pSQ
 lgj
 oQb
-mEp
+bGC
 aUz
 adQ
 dny
@@ -280436,7 +280433,7 @@ xYN
 nYX
 lgj
 oQb
-mEp
+bGC
 oQb
 adQ
 ihM
