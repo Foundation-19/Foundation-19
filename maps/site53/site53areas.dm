@@ -193,6 +193,10 @@
 // SITE 53 SURFACE AREA'S
 /area/site53
 	base_turf = /turf/simulated/floor/plating
+	is_outside = FALSE
+
+/area/site53/Initialize()
+	. = ..()
 
 /area/site53/surface/surface
 	name = "Surface"
@@ -203,6 +207,7 @@
 	name = "Surface West"
 	requires_power = 0
 	dynamic_lighting = 0
+	is_outside = TRUE
 
 /area/site53/surface/surface/east
 	name = "Surface East"

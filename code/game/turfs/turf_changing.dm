@@ -41,6 +41,8 @@
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
 	var/old_ao_neighbors = ao_neighbors
+	var/old_outside = is_outside
+	var/old_is_open = is_open()
 
 	if(isspaceturf(N) || isopenspace(N))
 		QDEL_NULL(turf_fire)
@@ -88,12 +90,20 @@
 	if(tell_universe)
 		GLOB.universe.OnTurfChange(W)
 
+	// we check the var rather than the proc, because area outside values usually shouldn't be set on turfs
+	W.last_outside_check = OUTSIDE_UNCERTAIN
+	if(W.is_outside != old_outside)
+		W.set_outside(old_outside, skip_weather_update = TRUE)
+
 	SSair.mark_for_update(src) //handle the addition of the new turf.
 
 	for(var/turf/space/S in range(W,1))
 		S.update_starlight()
 
 	W.post_change()
+
+	W.update_weather(force_update_below = W.is_open() != old_is_open)
+
 	. = W
 
 	W.ao_neighbors = old_ao_neighbors

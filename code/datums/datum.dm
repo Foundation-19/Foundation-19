@@ -11,6 +11,8 @@
 	var/list/list/datum/callback/signal_procs
 	/// Datum level flags
 	var/datum_flags = NONE
+	/// Used to avoid unnecessary refstring creation in Destroy().
+	var/tmp/has_state_machine = FALSE
 
 	/// Status traits attached to this datum. associative list of the form: list(trait name (string) = list(source1, source2, source3,...))
 	var/list/_status_traits

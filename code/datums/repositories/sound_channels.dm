@@ -7,11 +7,11 @@ GLOBAL_VAR_INIT(admin_sound_channel, GLOB.sound_channels.RequestChannel("ADMIN_F
 	var/datum/stack/available_channels
 	var/list/keys_by_channel           // So we know who to blame if we run out
 	var/channel_ceiling	= 1024         // Initial value is the current BYOND maximum number of channels
-
+	var/weather_channel
 /repository/sound_channels/New()
 	..()
 	available_channels = new()
-
+	weather_channel = RequestChannel("WEATHER")
 /repository/sound_channels/proc/RequestChannel(key)
 	. = RequestChannels(key, 1)
 	return LAZYLEN(.) && .[1]
