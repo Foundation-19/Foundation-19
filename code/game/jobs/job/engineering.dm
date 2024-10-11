@@ -342,6 +342,60 @@
 	duties = "Perform constructions and repairs. Manage lower engineers."
 	codex_guides = list("<l>Hacking Wires</l>")
 
+/datum/job/commeng
+	title = "Communications Technician"
+	department = "Engineering"
+	selection_color = "#5b4d20"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Communications Officer"
+	department_flag = ENG
+	economic_power = 5
+	minimal_player_age = 7
+	ideal_character_age = 30
+	requirements = list(EXP_TYPE_ENGINEERING = 300)
+	alt_titles = list(
+		"Communications Programmer",
+		"Communications Dispatcher"
+		)
+	outfit_type = /decl/hierarchy/outfit/job/command/commstech
+	class = CLASS_C
+	hud_icon = "hudcommsprogrammer"
+
+	access = list(
+		ACCESS_COM_COMMS,
+		ACCESS_SCI_COMMS,
+		ACCESS_CIV_COMMS,
+		ACCESS_LOG_COMMS,
+		ACCESS_MED_COMMS,
+		ACCESS_ENG_COMMS,
+		ACCESS_SEC_COMMS,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_ENGINEERING_LVL2,
+		ACCESS_ENGINEERING_LVL3
+	)
+
+	min_skill = list(
+		SKILL_COMPUTER      = SKILL_BASIC,
+		SKILL_CONSTRUCTION  = SKILL_EXPERIENCED,
+		SKILL_ELECTRICAL    = SKILL_BASIC,
+		SKILL_ATMOS         = SKILL_BASIC,
+		SKILL_ENGINES       = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_CONSTRUCTION  = SKILL_MASTER,
+		SKILL_ELECTRICAL    = SKILL_MASTER,
+		SKILL_ATMOS         = SKILL_MASTER,
+		SKILL_ENGINES       = SKILL_MASTER
+	)
+	skill_points = 20
+
+	roleplay_difficulty = "Easy"
+	mechanical_difficulty = "Medium"
+	duties = "Keep communications systems online. Inform the site of on-going threats. Assist the Communications Officer."
+
 /datum/job/eng
 	title = "Engineer"
 	department = "Engineering"
