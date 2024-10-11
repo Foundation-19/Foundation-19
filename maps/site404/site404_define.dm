@@ -4,7 +4,7 @@
 	path = "site404"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 	station_levels = list(1, 2, 3, 4, 5, 6) //These numbers refer to the height variable on the map data landmark,
-	contact_levels = list(1, 2, 3, 4, 5, 6) //Often seen on the bottom left of the map.
+	contact_levels = list(1, 2, 3, 4) //Often seen on the bottom left of the map.
 	sealed_levels = list(1, 2, 3, 4, 5, 6)
 	base_turf_by_z = list(
 		"1" = /turf/space,

@@ -764,6 +764,12 @@
 /area/site404/classdzone/quarters/ten
 	name = "Class-D Quarters - Cell Ten"
 
+/area/site404/classdzone/quarters/eleven
+	name = "Class-D Quarters - Cell Eleven"
+
+/area/site404/classdzone/quarters/twelve
+	name = "Class-D Quarters - Cell Twelve"
+
 /area/site404/classdzone/luxury/hallway
 	name = "CDZ Luxury Zone - Hallway"
 
