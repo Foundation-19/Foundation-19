@@ -25,6 +25,11 @@ backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/back
 backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/sec; \
 backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/storage/backpack/messenger/sec;
 
+#define BACKPACK_OVERRIDE_LCZ \
+backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/rucksack; \
+backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/sec/buttpack; \
+backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/storage/backpack/messenger/sec/backpanel;
+
 #define BACKPACK_OVERRIDE_SECURITY_EXO \
 backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/security/exo; \
 backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/sec/exo; \
