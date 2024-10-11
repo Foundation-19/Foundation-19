@@ -123,7 +123,7 @@
 /mob/living/carbon/human/scp343/handle_breath()
 	return 1
 
-/mob/living/carbon/human/scp343/movement_delay()
+/mob/living/carbon/human/scp343/movement_delay(decl/move_intent/using_intent = move_intent)
 	return 3.0
 
 //TODO: Change pathing of SCPs to no longer be humans so that we dont have to do this bullshit.
