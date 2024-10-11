@@ -56694,11 +56694,6 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
-"lJx" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/medical/infirmary)
 "lJA" = (
 /obj/effect/floor_decal/corner/grey/border,
 /turf/simulated/floor/tiled/white/monotile,
@@ -61070,11 +61065,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/engineering/locker_room)
-"mEp" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/uez/mcrsubstation)
 "mEv" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -78588,11 +78578,6 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
-"qqg" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/medical/mentalhealth/office)
 "qql" = (
 /obj/machinery/light{
 	dir = 8
@@ -83674,11 +83659,6 @@
 /obj/item/device/destTagger,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/logistics/logistics)
-"rpF" = (
-/turf/simulated/mineral{
-	initial_gas = list("oxygen"=21.8366,"nitrogen"=82.1472)
-	},
-/area/site53/medical/surgery/hall)
 "rpM" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -272682,8 +272662,8 @@ mpg
 mpg
 mpg
 mpg
-lJx
-lJx
+wrw
+wrw
 wrw
 vAU
 vAU
@@ -272716,8 +272696,8 @@ dzb
 jwo
 jwo
 wrw
-lJx
-lJx
+wrw
+wrw
 mpg
 mpg
 mpg
@@ -272939,7 +272919,7 @@ mpg
 mpg
 mpg
 mpg
-lJx
+wrw
 dTE
 pLC
 kwa
@@ -272974,7 +272954,7 @@ pGJ
 ved
 pLC
 dTE
-lJx
+wrw
 mpg
 mpg
 mpg
@@ -273196,7 +273176,7 @@ mpg
 mpg
 mpg
 mpg
-lJx
+wrw
 hdD
 pLC
 ird
@@ -273231,7 +273211,7 @@ gck
 kUN
 pLC
 sru
-lJx
+wrw
 mpg
 mpg
 mpg
@@ -273453,7 +273433,7 @@ mpg
 mpg
 mpg
 mpg
-lJx
+wrw
 dTE
 pLC
 ifh
@@ -273488,7 +273468,7 @@ tUM
 ved
 pLC
 dTE
-lJx
+wrw
 mpg
 mpg
 mpg
@@ -273710,8 +273690,8 @@ mpg
 mpg
 mpg
 mpg
-lJx
-lJx
+wrw
+wrw
 wrw
 wrw
 cet
@@ -273744,8 +273724,8 @@ wrw
 wrw
 wrw
 wrw
-lJx
-lJx
+wrw
+wrw
 mpg
 mpg
 mpg
@@ -273969,7 +273949,7 @@ mpg
 mpg
 mpg
 mpg
-qqg
+cet
 hNZ
 dsy
 xEh
@@ -274226,7 +274206,7 @@ mpg
 mpg
 mpg
 mpg
-qqg
+cet
 czc
 hej
 mLR
@@ -274483,7 +274463,7 @@ mpg
 mpg
 mpg
 mpg
-qqg
+cet
 rYC
 hej
 oZh
@@ -274740,7 +274720,7 @@ mpg
 mpg
 mpg
 mpg
-qqg
+cet
 kVU
 dsy
 vaD
@@ -279939,7 +279919,7 @@ jck
 qCs
 lgj
 oQb
-mEp
+bGC
 oQb
 adQ
 ihM
@@ -280196,7 +280176,7 @@ xYN
 pSQ
 lgj
 oQb
-mEp
+bGC
 aUz
 adQ
 dny
@@ -280392,8 +280372,8 @@ mpg
 mpg
 mpg
 mpg
-rpF
-rpF
+gLI
+gLI
 gLI
 gLI
 gLI
@@ -280453,7 +280433,7 @@ xYN
 nYX
 lgj
 oQb
-mEp
+bGC
 oQb
 adQ
 ihM
@@ -280649,7 +280629,7 @@ mpg
 mpg
 mpg
 mpg
-rpF
+gLI
 xmF
 sUW
 bmI
@@ -280906,7 +280886,7 @@ mpg
 mpg
 mpg
 mpg
-rpF
+gLI
 pib
 sUW
 bmI
@@ -281163,7 +281143,7 @@ mpg
 mpg
 mpg
 mpg
-rpF
+gLI
 xmF
 sUW
 bmI
@@ -281420,8 +281400,8 @@ mpg
 mpg
 mpg
 mpg
-rpF
-rpF
+gLI
+gLI
 gLI
 xmj
 swQ
