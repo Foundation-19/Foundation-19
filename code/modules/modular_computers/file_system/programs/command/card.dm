@@ -8,7 +8,8 @@
 	extended_desc = "Program for programming crew ID cards."
 	requires_ntnet = FALSE
 	size = 8
-	var/operating_access_types = ACCESS_TYPE_NONE | ACCESS_TYPE_STATION | ACCESS_TYPE_CENTCOM
+	var/operating_access_types = ACCESS_TYPE_NONE | ACCESS_TYPE_STATION
+
 /datum/nano_module/program/card_mod
 	name = "ID card modification program"
 	var/mod_mode = 1

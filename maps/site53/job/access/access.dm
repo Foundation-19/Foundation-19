@@ -7,7 +7,8 @@
 /datum/access/mtf
 	id = ACCESS_MTF
 	desc = "MTF"
-	region = ACCESS_TYPE_CENTCOM
+	region = ACCESS_REGION_OFFSITE
+	access_type = ACCESS_TYPE_CENTCOM
 
 // D-CLASS WORK
 
