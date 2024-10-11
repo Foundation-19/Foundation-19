@@ -99,6 +99,16 @@
 	icon_state = "shuttle"
 	requires_power = 0
 
+/area/site404/shuttle/emergency
+	name = "Site 404 Personnel Transfer Shuttle"
+	icon_state = "shuttle"
+	requires_power = 0
+
+/area/site404/shuttle/supply
+	name = "Site 404 Logistics Transport Shuttle"
+	icon_state = "shuttle"
+	requires_power = 0
+
 //Site 404 - Adminstration Zone
 /area/site404/administration
 	name = "Site 404 Administration Zone"

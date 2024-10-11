@@ -5,6 +5,7 @@
 	#include "site404elevators.dm"
 	#include "site404_presets.dm"
 	#include "site404shuttles.dm"
+	#include "site404_holodecks.dm"
 
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
@@ -34,7 +35,8 @@
 	#include "structures/closets/supply.dm"
 
 	#include "site404.dmm"
-	#include "z1_admin.dmm"
+	#include "site404_transit.dmm"
+	#include "site404_admin.dmm"
 
 	#define using_map_DATUM /datum/map/site404
 

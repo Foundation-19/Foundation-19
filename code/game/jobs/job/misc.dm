@@ -35,7 +35,7 @@
 
 // LOGISTICS DEPARTMENT
 /datum/job/qm
-	title = "Logistics Officer"
+	title = "Second Officer"
 	department = "Logistics"
 	department_flag = SUP|BUR
 	total_positions = 1
@@ -48,6 +48,7 @@
 	requirements = list("Logistics Specialist" = 300)
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticsofficer
 	hud_icon = "huddeckchief"
+	alt_titles = list("Logistics Officer", "Quartermaster")
 	class = CLASS_B
 
 	access = list(
@@ -90,6 +91,7 @@
 	minimal_player_age = 3
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/command/logisticspecialist
+	alt_titles = list("Cargo Technican")
 	class = CLASS_C
 	hud_icon = "huddecktechnician"
 

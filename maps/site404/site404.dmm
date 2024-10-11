@@ -385,14 +385,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
-"adK" = (
-/obj/structure/table/rack/shelf,
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb1"
-	},
-/turf/simulated/floor/tiled/vertical,
-/area/site404/logistics/warehouse)
 "adL" = (
 /obj/structure/bookcase/manuals/engineering,
 /turf/simulated/floor/wood/walnut,
@@ -884,6 +876,15 @@
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 8
 	},
+/obj/item/clothing/under/gimmick/rank/captain/suit,
+/obj/item/clothing/under/captainformal,
+/obj/item/clothing/under/rank/captain,
+/obj/item/gun/energy/captain,
+/obj/item/clothing/suit/armor/captain,
+/obj/item/clothing/head/collectable/captain,
+/obj/item/clothing/suit/storage/hooded/wintercoat/captain,
+/obj/item/clothing/gloves/captain,
+/obj/item/bedsheet/captain,
 /turf/simulated/floor/wood/mahogany,
 /area/site404/administration/office/sitemanager)
 "akh" = (
@@ -1144,6 +1145,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ADMIN_LVL1)
+	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/hallway)
 "anb" = (
@@ -2822,6 +2826,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/chemistry)
+"aEr" = (
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/hallway/port)
 "aEu" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-895 Containment Facilities";
@@ -3551,6 +3561,12 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/research/xenoarcheology)
+"aNZ" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "aOf" = (
 /obj/structure/table/standard,
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap,
@@ -3867,7 +3883,7 @@
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/table/standard,
 /obj/item/paper{
-	info = "[center][scplogo][h1]SCP-249 Requests Log[/h1][hr][i]Containment protocol states that SCP-249 is restricted to personnel of Clearance Level 2 and above only. Abuse of SCP-249 will not be tolerated, any inappropriate requests or misuse will be dealt with by site security.[/i]All personnel are expected to properly log their interactions with SCP-249 using the sheet below.[table][row][cell]Signature[cell]Request[cell]Outcome[row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][/table]";
+	info = "[center][scplogo][h1]SCP-249 Requests Log[/h1]<hr><i>Containment protocol states that SCP-249 is restricted to personnel of Clearance Level 2 and above only. Abuse of SCP-249 will not be tolerated, any inappropriate requests or misuse will be dealt with by site security.</i>All personnel are expected to properly log their interactions with SCP-249 using the sheet below.[table][row][cell]Signature[cell]Request[cell]Outcome[row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][row][cell][field][cell][field][cell][field][/table]";
 	pixel_y = 4;
 	pixel_x = -4
 	},
@@ -5373,12 +5389,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp513)
-"bhY" = (
-/obj/effect/floor_decal/corner/black/bordercorner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/hallway/port)
 "bia" = (
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/containmentchambers/scp173/observation)
@@ -7990,12 +8000,12 @@
 /turf/simulated/floor/plating,
 /area/site404/engineering/janitorial)
 "bNt" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/machinery/sleeper{
-	dir = 4
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
 	},
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "bNz" = (
 /obj/effect/floor_decal/corner/red/mono,
 /turf/simulated/floor/tiled/white/monotile,
@@ -8236,6 +8246,20 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/research/office/C)
+"bQO" = (
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled,
+/area/site404/administration/maintenance/portbow)
 "bQS" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/walnut,
@@ -9026,6 +9050,10 @@
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
+/obj/machinery/door/airlock/mining{
+	name = "Logistics Unloading Bay";
+	req_access = list(ACCESS_ADMIN_LVL1)
+	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/dockingbay)
 "bYH" = (
@@ -9105,6 +9133,7 @@
 /area/site404/logistics/logisticsoffice)
 "bZq" = (
 /obj/effect/floor_decal/corner/brown/three_quarters,
+/obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "bZC" = (
@@ -11089,14 +11118,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/administration/maintenance/portquarter)
-"cuS" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/one)
 "cuU" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -11817,12 +11838,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/site404/heavycontainmentzone/securityoffice/commanderoffice)
 "cEZ" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/structure/table/reinforced,
-/obj/item/storage/box/handcuffs,
-/obj/item/device/flash,
-/turf/simulated/floor/tiled/dark,
-/area/site404/entrancezone/dockingbay)
+/obj/effect/wallframe_spawn/no_grille,
+/obj/machinery/door/firedoor/autoset,
+/turf/simulated/floor/plating,
+/area/site404/logistics/unloadingbay)
 "cFb" = (
 /obj/structure/table/standard,
 /obj/structure/cable{
@@ -13346,11 +13365,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp008/laboratory)
 "cVM" = (
-/turf/simulated/shuttle/wall{
-	icon_state = "corner_white";
-	dir = 4
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
 	},
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/eight)
 "cVQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -14498,6 +14519,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ADMIN_LVL1)
+	},
 /turf/simulated/floor/plating,
 /area/site404/logistics/warehouse)
 "dgR" = (
@@ -16062,12 +16086,13 @@
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/hallway)
 "dxA" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/structure/bed/chair/shuttle/black{
-	dir = 1
+/obj/structure/table/rack/shelf,
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/vertical,
+/area/site404/logistics/warehouse)
 "dxP" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/structure/bed/chair{
@@ -17321,15 +17346,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/classdzone/labor/kitchen)
 "dNt" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/structure/bed/chair/shuttle/black{
-	dir = 8
+/obj/structure/table/standard,
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Warehouse Port";
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/vertical,
+/area/site404/logistics/warehouse)
 "dNw" = (
 /obj/structure/chair/sofa/corp/left,
 /obj/effect/floor_decal/corner/blue/mono,
@@ -17458,10 +17481,10 @@
 /turf/simulated/floor/carpet/orange,
 /area/site404/lightcontainmentzone/securityoffice/cryogenics)
 "dPj" = (
-/obj/structure/table/steel,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/purple,
 /area/site404/administration/office/tribunal)
 "dPm" = (
@@ -18770,11 +18793,15 @@
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/maintenance/port)
 "efa" = (
-/turf/simulated/shuttle/wall{
-	icon_state = "corner_white";
-	dir = 5
+/obj/structure/window/reinforced{
+	dir = 1
 	},
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/computer/HolodeckControl{
+	linkedholodeck_area = /area/site404/administration/holodeck;
+	lock_access = list()
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/entrancezone/hallway/port)
 "efc" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -19798,6 +19825,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/ai_status_display{
+	pixel_y = -32;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 8
 	},
@@ -19894,6 +19925,16 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/lightcontainmentzone/securityoffice/briefingroom)
+"erm" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/machinery/camera/network/department/logisticsdepartment{
+	dir = 1;
+	c_tag = "Logistics Department - Unloading Bay Aft"
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "erq" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -21104,12 +21145,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp082/upperhallway)
 "eDZ" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/reagent_containers/ivbag/blood/OMinus,
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "eEd" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -21184,6 +21224,13 @@
 "eFn" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/entrancezone/securityoffice/checkpoint)
+"eFw" = (
+/obj/structure/closet/secure_closet/logistics/specialist,
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Locker Room"
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/lockerroom)
 "eFz" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -21632,13 +21679,13 @@
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/containmentchambers/scp173/observation)
 "eKd" = (
-/obj/structure/bed/chair/shuttle/white{
-	dir = 8
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
 	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 8
-	},
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/one)
 "eKD" = (
 /obj/machinery/door/firedoor/autoset{
 	dir = 4
@@ -22070,9 +22117,17 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site404/containmentchambers/scp895)
 "eQp" = (
-/obj/machinery/door/airlock/external/glass,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/entrancezone/dockingbay)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
+	},
+/obj/machinery/door/blast/shutters{
+	name = "Internal Tribunal Officer's Office Viewport Shutter";
+	id_tag = "itowindow";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/site404/administration/office/tribunal)
 "eQM" = (
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
@@ -23394,15 +23449,13 @@
 /area/site404/administration/groupsofinterestlounge)
 "fgw" = (
 /obj/structure/dogbed,
-/obj/effect/landmark{
-	name = "scp529"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/mob/living/simple_animal/friendly/cat/fluff/scp529,
 /turf/simulated/floor/carpet/brown,
 /area/site404/containmentchambers/scp529)
 "fgz" = (
@@ -24668,15 +24721,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
-"fvB" = (
-/obj/item/modular_computer/console/preset/supply_public{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/brown/three_quarters{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "fvD" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
@@ -25138,14 +25182,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/securityoffice/hallway)
-"fBJ" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/four)
 "fBL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -25403,6 +25439,8 @@
 /area/site404/heavycontainmentzone/securityoffice/checkpoint)
 "fDp" = (
 /obj/structure/closet/secure_closet/administration/internaltribunal,
+/obj/item/implantcase/death_alarm,
+/obj/item/implanter,
 /turf/simulated/floor/tiled/dark,
 /area/site404/administration/office/tribunal)
 "fDs" = (
@@ -25423,8 +25461,13 @@
 /turf/simulated/floor/plating,
 /area/site404/research/aic/hallway)
 "fDt" = (
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/two)
 "fDA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -25969,18 +26012,6 @@
 	dir = 1
 	},
 /area/site404/classdzone/labor/kitchen)
-"fKE" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "fKP" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -26017,12 +26048,6 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site404/research/anomaly)
-"fLk" = (
-/obj/effect/floor_decal/corner/brown{
-	dir = 9
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "fLm" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/administration/holodeck)
@@ -27925,6 +27950,7 @@
 /obj/effect/floor_decal/corner/brown/three_quarters{
 	dir = 4
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "giG" = (
@@ -28146,6 +28172,14 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site404/research/xenobiology)
+"gkQ" = (
+/obj/structure/table/standard,
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Warehouse Starboard";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site404/logistics/warehouse)
 "gkS" = (
 /obj/structure/catwalk,
 /obj/structure/closet/firecloset,
@@ -28714,13 +28748,6 @@
 /obj/effect/floor_decal/corner/research/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/chemistry)
-"gre" = (
-/obj/item/modular_computer/console/preset/supply_public{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/brown/three_quarters,
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "grl" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -29197,6 +29224,10 @@
 /obj/effect/floor_decal/corner/safe{
 	dir = 1
 	},
+/obj/machinery/status_display{
+	pixel_y = -32;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
 	},
@@ -29252,6 +29283,10 @@
 "gwu" = (
 /turf/simulated/floor/tiled,
 /area/space)
+"gwv" = (
+/obj/machinery/status_display,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/administration/bridge)
 "gwy" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -29362,12 +29397,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/containmentchambers/scp2427/observation)
-"gxK" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "gxT" = (
 /obj/structure/table/standard,
 /obj/structure/railing/mapped{
@@ -29655,20 +29684,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp049/observation)
 "gBp" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset,
+/turf/simulated/floor/plating,
+/area/site404/administration/office/tribunal)
 "gBB" = (
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/quarters/six)
@@ -30020,24 +30039,6 @@
 /obj/structure/closet/secure_closet/scientist,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/research/chemistry)
-"gFv" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/effect/floor_decal/corner/brown{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "gFx" = (
 /obj/machinery/camera/network/containmentunit/scp280{
 	c_tag = "SCP-280 - Containment Facilities Entrance";
@@ -31347,6 +31348,10 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
+/obj/machinery/status_display{
+	pixel_y = 32;
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/site404/administration/office/sitemanager)
 "gVd" = (
@@ -31479,9 +31484,18 @@
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp280/observation)
 "gXx" = (
-/obj/machinery/computer/shuttle_control/emergency,
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/standard,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "gXC" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/grey/diagonal,
@@ -31511,6 +31525,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/site404/medical/securitystation)
+"gXQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/status_display{
+	pixel_y = 32;
+	pixel_x = -32
+	},
+/turf/simulated/floor/carpet/purple,
+/area/site404/administration/office/tribunal)
 "gXR" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 8
@@ -31599,9 +31623,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/administration/commandlounge)
 "gYY" = (
-/obj/item/modular_computer/console/preset/medical,
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/entrancezone/dockingbay)
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "gZh" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/bed/chair,
@@ -31739,14 +31765,6 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site404/administration/office/ethicsrep)
-"haw" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/seven)
 "haC" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/classdzone/security/briefingroom)
@@ -34974,11 +34992,14 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/heavycontainmentzone/hallway/west)
 "hKz" = (
-/turf/simulated/shuttle/wall{
-	icon_state = "corner_white";
-	dir = 10
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/area/site404/entrancezone/dockingbay)
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "hKD" = (
 /obj/effect/floor_decal/corner/paleblue/half{
 	dir = 4
@@ -35108,13 +35129,13 @@
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site404/entrancezone/securityoffice/briefingroom)
 "hLJ" = (
-/obj/structure/bed/chair/shuttle/white{
-	dir = 4
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
 	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 4
-	},
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/five)
 "hLT" = (
 /turf/simulated/floor/tiled/dark,
 /area/site404/containmentchambers/scp280/observation)
@@ -35448,12 +35469,14 @@
 /turf/simulated/floor/tiled,
 /area/site404/engineering/breakroom)
 "hPP" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/obj/structure/bed/chair/shuttle/black{
-	dir = 8
+/obj/item/modular_computer/console/preset/supply_public{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
-/area/site404/entrancezone/dockingbay)
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "hPR" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/atmospherics/portables_connector,
@@ -36027,12 +36050,6 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
-"hVf" = (
-/obj/effect/floor_decal/corner/black/bordercorner{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/hallway/port)
 "hVr" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -37812,11 +37829,23 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/port)
 "ipJ" = (
-/obj/structure/flora/pottedplant/floorleaf,
-/obj/effect/floor_decal/corner/brown{
-	dir = 10
+/obj/machinery/door/firedoor/autoset{
+	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/mining{
+	name = "Logistics Unloading Bay";
+	req_access = list(ACCESS_ADMIN_LVL1)
+	},
+/turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/unloadingbay)
 "ipK" = (
 /obj/effect/floor_decal/corner/orange/bordercorner,
@@ -39550,11 +39579,11 @@
 /turf/simulated/floor/reinforced,
 /area/site404/heavycontainmentzone/eva)
 "iMe" = (
-/turf/simulated/shuttle/wall{
-	icon_state = "swall";
-	dir = 8
+/obj/structure/flora/pottedplant/floorleaf{
+	pixel_y = 11
 	},
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/dark,
+/area/site404/administration/office/tribunal)
 "iMn" = (
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/structure/cable{
@@ -39721,24 +39750,6 @@
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/white/small,
 /area/site404/lightcontainmentzone/humanoidcontainment/three)
-"iON" = (
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
-	},
-/obj/machinery/door/airlock/maintenance{
-	req_access = list(ACCESS_ENGINEERING_LVL1)
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/site404/administration/maintenance/portquarter)
 "iOR" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/briefcase/crimekit{
@@ -40173,6 +40184,10 @@
 /obj/machinery/door/firedoor/autoset,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/airlock/mining{
+	name = "Logistics Officer's Office";
+	req_access = list(ACCESS_ADMIN_LVL3)
+	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/logisticsofficer)
 "iUt" = (
@@ -40747,14 +40762,6 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/dockingbay)
-"jbz" = (
-/obj/machinery/light,
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/brown{
-	dir = 10
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "jbB" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -40963,12 +40970,9 @@
 /turf/simulated/floor/plating,
 /area/site404/engineering/fusionengine/interior)
 "jef" = (
-/obj/item/modular_computer/console/preset/engineering{
-	dir = 8;
-	icon_state = "console"
-	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/door/window/northleft,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/entrancezone/hallway/port)
 "jek" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -41190,9 +41194,12 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/medical/equipmentstorage)
 "jgZ" = (
-/obj/structure/window/reinforced/tinted/frosted,
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/button/blast_door{
+	id_tag = "warehouse";
+	name = "Logistics Warehouse Shutter button"
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/logistics/warehouse)
 "jha" = (
 /turf/simulated/floor/reinforced,
 /area/site404/engineering/gravitygenerator)
@@ -41706,6 +41713,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/entrancezone/hallway/lowerprimary)
+"jll" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "jlr" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/structure/cable/green{
@@ -42141,12 +42154,11 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
 /obj/structure/cable,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/site404/administration/office/sitemanager)
 "jpK" = (
@@ -43592,6 +43604,12 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/classdzone/labor/hydroponics)
+"jGm" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/hallway)
 "jGo" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -44002,12 +44020,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/eva)
 "jKq" = (
-/obj/structure/plasticflaps/airtight,
-/obj/machinery/conveyor/east{
-	id_tag = "shuttledelivery"
-	},
-/turf/simulated/floor/plating,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "jKv" = (
 /obj/machinery/computer/arcade/orion_trail,
 /turf/simulated/floor/tiled/white/monotile,
@@ -45852,7 +45867,7 @@
 /turf/simulated/floor/tiled/horizontal,
 /area/site404/engineering/assistantengineeringdirectoroffice)
 "kgB" = (
-/obj/structure/table/steel,
+/obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/purple,
 /area/site404/administration/office/tribunal)
 "kgH" = (
@@ -47865,10 +47880,13 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/hallway)
 "kDM" = (
-/obj/effect/floor_decal/corner/keter/mono,
-/obj/machinery/door/unpowered/shuttle,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/three)
 "kDU" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/carpet/magenta,
@@ -48188,7 +48206,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/chemistry)
 "kHF" = (
-/obj/structure/bed/chair/armchair/black{
+/obj/structure/bed/chair/comfy/captain{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
@@ -50584,9 +50602,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/hallway/east)
 "lhz" = (
-/obj/item/modular_computer/console/preset/cardslot/command_sec,
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/seven)
 "lhH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -51046,12 +51068,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/site404/engineering/fusionengine/interior)
-"lon" = (
-/obj/effect/floor_decal/corner/brown{
-	dir = 10
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "lop" = (
 /obj/effect/floor_decal/corner/red/half{
 	dir = 4
@@ -52136,12 +52152,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp457)
-"lDa" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/hallway)
 "lDj" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -52341,7 +52351,10 @@
 /turf/simulated/floor/plating,
 /area/site404/entrancezone/maintenance/portquarter)
 "lFm" = (
-/obj/structure/table/steel,
+/obj/structure/table/woodentable/walnut,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/administration/office/tribunal)
 "lFy" = (
@@ -52385,9 +52398,13 @@
 /turf/simulated/open,
 /area/site404/administration/maintenance/elevator)
 "lGf" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/light,
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "lGl" = (
 /obj/machinery/vitals_monitor,
 /turf/simulated/floor/tiled/white/horizontal,
@@ -54419,6 +54436,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/entrancezone/hallway/starboard)
+"mei" = (
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/four)
 "mej" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -54693,6 +54718,10 @@
 	dir = 1
 	},
 /area/site404/medical/waitingroom)
+"miV" = (
+/obj/effect/shuttle_landmark/emergency/station,
+/turf/simulated/floor/tiled/old_cargo,
+/area/site404/entrancezone/dockingbay)
 "miW" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/safe/half{
@@ -57387,6 +57416,10 @@
 /obj/effect/paint_stripe/green,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/medical/morgue/coroner)
+"mOc" = (
+/obj/machinery/ai_status_display,
+/turf/simulated/wall/r_wall/prepainted,
+/area/site404/administration/bridge)
 "mOf" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green,
@@ -59422,11 +59455,11 @@
 /turf/simulated/floor/plating,
 /area/site404/administration/substation)
 "nlI" = (
-/turf/simulated/shuttle/wall{
-	icon_state = "corner_white";
-	dir = 8
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Unloading Bay Fore"
 	},
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/horizontal,
+/area/site404/logistics/unloadingbay)
 "nmd" = (
 /obj/structure/table/standard,
 /obj/item/stamp/cmo,
@@ -59902,6 +59935,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/research/aic/electrical)
+"nqw" = (
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 4
+	},
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Main Office Port";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site404/logistics/logisticsoffice)
 "nqU" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -60490,6 +60534,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/mining{
+	name = "Logistics Department";
+	req_access = list(ACCESS_ADMIN_LVL1)
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/hallway)
@@ -61121,11 +61169,12 @@
 /turf/simulated/floor/reinforced,
 /area/site404/heavycontainmentzone/humanoidcontainment)
 "nGb" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/bed/roller,
-/obj/structure/iv_drip,
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/standard,
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Logistics Officer Office"
+	},
+/turf/simulated/floor/carpet/brown,
+/area/site404/logistics/logisticsofficer)
 "nGd" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/structure/cable{
@@ -61787,6 +61836,11 @@
 /obj/machinery/light/navigation,
 /turf/space,
 /area/space)
+"nNN" = (
+/obj/structure/table/woodentable/walnut,
+/obj/random/clipboard,
+/turf/simulated/floor/wood/walnut,
+/area/site404/administration/office/sitemanager)
 "nNQ" = (
 /obj/machinery/cryopod{
 	dir = 2
@@ -62498,14 +62552,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/site404/research/robotics/roboticsfabrication)
-"nXe" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/three)
 "nXj" = (
 /obj/effect/floor_decal/corner/black/three_quarters{
 	dir = 1
@@ -62681,8 +62727,11 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/containmentchambers/scp008/laboratory)
 "nZd" = (
-/obj/machinery/door/firedoor/autoset{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -62693,7 +62742,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled,
 /area/site404/logistics/unloadingbay)
 "nZf" = (
 /obj/structure/railing/mapped{
@@ -64470,16 +64519,6 @@
 /obj/effect/paint_stripe/red,
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp008/researchoffice)
-"osP" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/computer/HolodeckControl{
-	linkedholodeck_area = /area/site404/administration/holodeck;
-	lock_access = list()
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/entrancezone/hallway/port)
 "osU" = (
 /obj/structure/table/rack/shelf,
 /obj/item/device/flashlight/upgraded,
@@ -64500,6 +64539,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/securityoffice/securitymeetingroom)
+"ota" = (
+/obj/effect/shuttle_landmark/supply/shuttle/station,
+/turf/simulated/floor/tiled/old_cargo,
+/area/site404/entrancezone/dockingbay)
 "otj" = (
 /obj/effect/floor_decal/corner/orange{
 	dir = 4
@@ -65367,6 +65410,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/mining{
+	name = "Logistics Locker Room";
+	req_access = list(ACCESS_ADMIN_LVL1)
+	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/logistics/lockerroom)
 "oDq" = (
@@ -65785,11 +65832,11 @@
 /turf/simulated/floor/tiled/small,
 /area/site404/heavycontainmentzone/escapepodhall)
 "oIi" = (
-/obj/structure/bed/chair/shuttle/blue{
-	dir = 1
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "oIl" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -67605,6 +67652,9 @@
 /obj/effect/floor_decal/corner/brown/three_quarters{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "pdu" = (
@@ -67722,12 +67772,12 @@
 /turf/simulated/floor/plating,
 /area/site404/containmentchambers/scp106/lowermaintenance)
 "pfk" = (
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 8
+/obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/effect/floor_decal/techfloor/corner,
-/turf/simulated/floor/tiled/dark/horizontal,
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/monofloor,
+/area/site404/logistics/hallway)
 "pfm" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
@@ -68410,6 +68460,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/entrancezone/hallway/starboard)
+"pnk" = (
+/obj/effect/floor_decal/corner/black/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/site404/entrancezone/hallway/port)
 "pnm" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -69646,10 +69702,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site404/research/robotics/roboticsfabrication)
-"pAJ" = (
-/obj/machinery/door/window/northleft,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/entrancezone/hallway/port)
 "pAO" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/maintenance/aft)
@@ -71057,11 +71109,13 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/research/hallway)
 "pOD" = (
-/obj/structure/bed/chair/shuttle/white{
-	dir = 8
+/obj/structure/table/plastic,
+/obj/item/paper{
+	icon_state = "paper_words";
+	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
 	},
-/turf/simulated/floor/tiled/dark/corner,
-/area/site404/entrancezone/dockingbay)
+/turf/simulated/floor/tiled/white,
+/area/site404/classdzone/quarters/six)
 "pOJ" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
@@ -71921,6 +71975,11 @@
 /area/site404/containmentchambers/scp082/chamber/main)
 "qaD" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/shutters{
+	name = "Internal Tribunal Officer's Office Viewport Shutter";
+	id_tag = "itowindow"
+	},
 /turf/simulated/floor/plating,
 /area/site404/administration/office/tribunal)
 "qaE" = (
@@ -72414,10 +72473,10 @@
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
 "qhg" = (
-/obj/structure/table/steel,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/purple,
 /area/site404/administration/office/tribunal)
 "qhp" = (
@@ -73704,6 +73763,9 @@
 	dir = 1
 	},
 /obj/structure/chair/sofa/corp/left,
+/obj/machinery/camera/network/containmentunit/scp529{
+	c_tag = "SCP-529 - Containment Chamber"
+	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/containmentchambers/scp529)
 "qvz" = (
@@ -74009,14 +74071,16 @@
 /turf/simulated/floor/tiled/white/small,
 /area/site404/classdzone/labor/mining/equipment)
 "qAa" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 18;
-	req_access = list("ACCESS_SECURITY_LEVEL1")
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/flora/pottedplant/floorleaf{
+	pixel_y = 11
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/administration/office/tribunal)
@@ -76961,6 +77025,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/airlock/glass/command{
+	req_access = list(ACCESS_ADMIN_LVL5);
+	name = "Internal Tribunal Officer's Office";
+	id_tag = "sitedirectoroffice"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/administration/office/tribunal)
 "rje" = (
@@ -77155,14 +77225,6 @@
 "rkV" = (
 /turf/simulated/floor/lino,
 /area/site404/engineering/breakroom)
-"rkW" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/eight)
 "rkX" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/orange/half,
@@ -77252,7 +77314,7 @@
 /obj/effect/floor_decal/corner/keter/mono,
 /obj/machinery/computer/shuttle_control{
 	dir = 4;
-	shuttle_tag = "SCP-106 Containment Unit";
+	shuttle_tag = "SCP-106 Containment Chamber";
 	name = "SCP-106 Containment Chamber Lift Control"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -82304,6 +82366,7 @@
 	dir = 4
 	},
 /obj/structure/table/rack/shelf,
+/obj/item/storage/box/cdeathalarm_kit,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site404/administration/bridge)
 "svp" = (
@@ -84694,6 +84757,13 @@
 "sYx" = (
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/engineering/auxiliaryreactor)
+"sYM" = (
+/obj/item/modular_computer/console/preset/supply_public{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown/three_quarters,
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "sYT" = (
 /obj/structure/table/plastic,
 /turf/simulated/floor/tiled/white/small,
@@ -90225,11 +90295,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/administration/bridge)
-"ulG" = (
-/obj/structure/table/woodentable/walnut,
-/obj/random/clipboard,
-/turf/simulated/floor/wood/walnut,
-/area/site404/administration/office/sitemanager)
 "ulP" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -90461,6 +90526,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/ai_status_display{
+	pixel_y = -32;
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/site404/administration/office/sitemanager)
 "uoy" = (
@@ -90521,10 +90590,6 @@
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site404/containmentchambers/scp106/chamber/lowercontainment)
-"upu" = (
-/obj/effect/wallframe_spawn/no_grille,
-/turf/simulated/floor/plating,
-/area/site404/logistics/unloadingbay)
 "upA" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -91704,9 +91769,17 @@
 /turf/simulated/floor/wood/walnut,
 /area/site404/service/archive)
 "uCn" = (
-/obj/effect/floor_decal/corner/keter/diagonal,
-/turf/simulated/floor/tiled/dark,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "uCo" = (
 /obj/machinery/door/firedoor/autoset,
 /obj/structure/cable{
@@ -93906,12 +93979,13 @@
 	dir = 1
 	},
 /obj/structure/flora/pottedplant/floorleaf,
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/administration/office/ethicsrep)
@@ -94274,11 +94348,12 @@
 	},
 /area/site404/classdzone/security/briefingroom)
 "vfO" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/holosign/surgery,
-/obj/machinery/door/unpowered/shuttle,
-/turf/simulated/floor/tiled/white/monotile,
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Unloading Bay Access Corridor";
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/hallway)
 "vfR" = (
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/monofloor,
@@ -94382,11 +94457,10 @@
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site404/administration/assemblyhall)
 "vgY" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
+/obj/structure/coatrack,
+/obj/item/clothing/suit/armor/itd,
+/turf/simulated/floor/tiled/dark,
+/area/site404/administration/office/tribunal)
 "vhc" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -95388,12 +95462,20 @@
 /turf/simulated/floor/plating,
 /area/site404/engineering/fusionengine/control)
 "vsS" = (
-/obj/item/modular_computer/console/preset/security{
-	dir = 4;
-	icon_state = "console"
+/obj/structure/bed/chair/office/dark{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "vsU" = (
 /obj/structure/closet,
 /obj/item/tank/emergency/oxygen,
@@ -95610,28 +95692,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site404/heavycontainmentzone/hallway/east)
-"vuA" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/two)
 "vuD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/bamboo,
 /area/site404/lightcontainmentzone/securityoffice/cadets)
-"vuG" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/six)
 "vuM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -95808,6 +95874,9 @@
 /obj/effect/floor_decal/corner/brown/three_quarters{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/site404/logistics/hallway)
 "vwU" = (
@@ -95952,9 +96021,16 @@
 /turf/simulated/floor/tiled/dark/corner,
 /area/site404/service/archive/upper)
 "vyv" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/dark/vertical,
-/area/site404/entrancezone/dockingbay)
+/obj/structure/table/rack/shelf,
+/obj/effect/floor_decal/corner/brown/half{
+	dir = 8
+	},
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Main Office Starboard";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site404/logistics/logisticsoffice)
 "vyF" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -95967,15 +96043,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site404/entrancezone/lockerroom)
-"vyJ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/corner/brown{
-	dir = 9
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "vyL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -96881,13 +96948,23 @@
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/entrancezone/securityoffice/raisa)
 "vIl" = (
-/obj/structure/bed/chair/shuttle/white{
+/obj/machinery/door/firedoor/autoset{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/corner{
-	dir = 1
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(ACCESS_ENGINEERING_LVL1)
 	},
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/site404/administration/maintenance/portquarter)
 "vIz" = (
 /obj/structure/table/plastic,
 /turf/simulated/floor/tiled/white,
@@ -97553,12 +97630,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site404/lightcontainmentzone/hallway/south)
-"vPC" = (
-/obj/effect/floor_decal/corner/brown/three_quarters{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "vPG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -97654,20 +97725,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/medical/morgue/corpsestorage)
-"vQE" = (
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled,
-/area/site404/administration/maintenance/portbow)
 "vQI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -97724,13 +97781,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/heavycontainmentzone/safestorage)
-"vRK" = (
-/obj/machinery/button/blast_door{
-	id_tag = "warehouse";
-	name = "Logistics Warehouse Shutter button"
-	},
-/turf/simulated/wall/r_wall/prepainted,
-/area/site404/logistics/warehouse)
 "vRN" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -99608,10 +99658,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/securityoffice/atrium)
-"wpY" = (
-/obj/structure/table/standard,
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "wqc" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset{
@@ -99821,6 +99867,21 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/site404/heavycontainmentzone/humanoidcontainment)
+"wrJ" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "wrL" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -102353,6 +102414,13 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site404/containmentchambers/scp173/observation)
+"wSf" = (
+/obj/machinery/ai_status_display{
+	pixel_y = 32;
+	pixel_x = 32
+	},
+/turf/simulated/floor/carpet/purple,
+/area/site404/administration/office/tribunal)
 "wSi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -102604,21 +102672,6 @@
 	},
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/entrancezone/hallway/port)
-"wVr" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
 "wVv" = (
 /obj/machinery/button/blast_door{
 	name = "SCP-049 Chamber Access Blast Door button";
@@ -103602,10 +103655,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/space)
-"xhc" = (
-/obj/machinery/door/window/northright,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/site404/entrancezone/hallway/port)
 "xhe" = (
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
@@ -104362,11 +104411,14 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/shuttle/unit106)
 "xqo" = (
-/turf/simulated/shuttle/wall{
-	icon_state = "swall";
-	dir = 4
+/obj/effect/floor_decal/corner/brown{
+	dir = 1
 	},
-/area/site404/entrancezone/dockingbay)
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Logistics Hallway Port"
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/hallway)
 "xqp" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/site404/heavycontainmentzone/maintenance/forea)
@@ -104856,14 +104908,6 @@
 "xvx" = (
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp343)
-"xvz" = (
-/obj/structure/table/plastic,
-/obj/item/paper{
-	icon_state = "paper_words";
-	info = "[center][h1]Welcome to the Siegfried Research Site![/h1][/center]You have been chosen by your government to participate in an international research project to better humanity. You've been brought to this Research Space Station.Rest assured, you're going to be okay. Your contributions to research and humanity will benefit everyone in these trying times. Your efforts will be repaid with great material value.However, this is a long-term research project, and you're going to be here for a while. As you may know, space is dangerous. Please follow the instructions of all staff for your own safety, and participate in any testing or optional work that's provided. Otherwise, the agreement will be invalidated, and your government will retract funding for your return trip to Earth.While you're on our station, we want you to feel comfortable. After all, you're helping humanity! Your room is your own, and you can feel free to rest in it and decorate it as you please. The station is mostly open, but please be mindful of restricted areas, as they house critical components that keep the station running.Have a safe stay here on our station![center]The Siegfried Site Director[/center]"
-	},
-/turf/simulated/floor/tiled/white,
-/area/site404/classdzone/quarters/five)
 "xvO" = (
 /obj/structure/bed/chair/office/comfy/red{
 	dir = 4
@@ -105596,11 +105640,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site404/containmentchambers/scp914)
 "xDw" = (
-/obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/surgery,
-/turf/simulated/floor/tiled/white,
-/area/site404/entrancezone/dockingbay)
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/unloadingbay)
 "xDC" = (
 /obj/machinery/atmospherics/valve/digital/open,
 /turf/simulated/floor/tiled,
@@ -107322,18 +107366,9 @@
 /turf/simulated/floor/tiled,
 /area/site404/containmentchambers/scp049/maintenance)
 "xZe" = (
-/obj/structure/table/standard,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
+/obj/machinery/door/window/northright,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site404/entrancezone/hallway/port)
 "xZh" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/grass,
@@ -107963,11 +107998,10 @@
 /turf/simulated/floor/tiled/monofloor,
 /area/site404/service/janitorial)
 "yhp" = (
-/obj/effect/floor_decal/corner/brown{
-	dir = 5
-	},
-/turf/simulated/floor/tiled,
-/area/site404/logistics/unloadingbay)
+/obj/structure/table/woodentable/mahogany,
+/obj/item/toy/figure/captain,
+/turf/simulated/floor/carpet/blue,
+/area/site404/administration/office/sitemanager)
 "yhD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -108344,6 +108378,16 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site404/entrancezone/securityoffice/guardfacilities)
+"ylz" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 10
+	},
+/obj/machinery/camera/network/department/logisticsdepartment{
+	c_tag = "Logistics Department - Logistics Hallway Starboard";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/site404/logistics/hallway)
 "ylF" = (
 /obj/machinery/light{
 	dir = 8
@@ -212057,7 +212101,7 @@ pty
 yfP
 xTg
 xYD
-xvz
+hLJ
 tsk
 xOV
 xOV
@@ -212065,7 +212109,7 @@ rUo
 xOV
 xOV
 qQA
-cuS
+eKd
 vcI
 oYK
 gHj
@@ -213855,7 +213899,7 @@ fuv
 qvp
 oRi
 lem
-vuG
+pOD
 vze
 xOV
 rUo
@@ -213865,7 +213909,7 @@ xOV
 rUo
 xOV
 qbY
-vuA
+fDt
 qlK
 rYS
 hVK
@@ -217453,7 +217497,7 @@ cuc
 nKK
 lLb
 tUp
-haw
+lhz
 jKT
 xOV
 rUo
@@ -217463,7 +217507,7 @@ xOV
 rUo
 xOV
 nqn
-nXe
+kDM
 jII
 iyA
 fBn
@@ -219253,7 +219297,7 @@ wMC
 qHS
 dZS
 cZT
-rkW
+cVM
 cdY
 xOV
 xOV
@@ -219261,7 +219305,7 @@ rUo
 xOV
 xOV
 huk
-fBJ
+mei
 iLw
 uYU
 rXW
@@ -319510,19 +319554,19 @@ rnj
 grA
 grA
 pRZ
-pjX
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-hKz
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 aif
 aif
 aif
@@ -319544,13 +319588,13 @@ aif
 aif
 aif
 aif
-dyV
-tYZ
-tYZ
-eQp
-tYZ
-tYZ
-mga
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 aif
 aif
 aif
@@ -319767,25 +319811,25 @@ rnj
 grA
 grA
 pRZ
-sZY
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-egS
-dZF
-dZF
-dZF
-dZF
-dZF
-hKz
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 dlc
@@ -319795,25 +319839,25 @@ ona
 jBZ
 grA
 pRZ
-cVM
-dZF
-dZF
-dZF
-iOX
-dZF
-eLv
-bPE
-vIl
-grA
-hLJ
-bPE
-egS
-dZF
-iOX
-dZF
-dZF
-dZF
-mga
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 grA
@@ -320024,25 +320068,25 @@ hNW
 grA
 grA
 pRZ
-sZY
-grA
 aif
 aif
 aif
-grA
-grA
-grA
 aif
 aif
 aif
-grA
-sZY
-fDt
-wca
-wca
-wca
-jgZ
-xUb
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 wca
 tVO
@@ -320052,25 +320096,25 @@ ona
 rFi
 wca
 pRZ
-tYZ
-jBo
-vsS
-vyv
-sZY
-wca
-gRv
-grA
-grA
-grA
-grA
-grA
-gRv
-wca
-kDM
-uCn
-uCn
-dxA
-sZY
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 grA
@@ -320281,25 +320325,25 @@ sVH
 grA
 grA
 pRZ
-sZY
-grA
 aif
 aif
 aif
-grA
-grA
-grA
 aif
 aif
 aif
-grA
-iMe
-fDt
-wca
-wca
-wca
-jgZ
-xUb
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 wca
 lkE
@@ -320309,25 +320353,25 @@ rnv
 lkE
 wca
 pRZ
-tYZ
-lhz
-oIi
-grA
-iMe
-wca
-sZY
-cTJ
-pOD
-grA
-eKd
-cTJ
-sZY
-wca
-sZY
-dNt
-hPP
-cEZ
-sZY
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 grA
@@ -320538,25 +320582,25 @@ sVH
 grA
 grA
 pRZ
-sZY
-grA
 aif
 aif
 aif
-grA
-grA
-grA
 aif
 aif
 aif
-grA
-sVH
-fDt
-wca
-wca
-wca
-pfk
-sZY
+aif
+aif
+aif
+ota
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 wca
 lkE
@@ -320566,25 +320610,25 @@ qZE
 lkE
 wca
 pRZ
-tYZ
-gXx
-grA
-grA
-gRv
-wca
-egS
-dZF
-tYZ
-sVH
-tYZ
-dZF
-eLv
-wca
-egS
-dZF
-dZF
-dZF
-eLv
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+miV
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 grA
@@ -320795,25 +320839,25 @@ sVH
 grA
 grA
 pRZ
-sZY
-grA
 aif
 aif
 aif
-grA
-grA
-grA
 aif
 aif
 aif
-grA
-xqo
-fDt
-wca
-wca
-wca
-jgZ
-bjY
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 wca
 lkE
@@ -320823,25 +320867,25 @@ iug
 lkE
 wca
 pRZ
-tYZ
-gYY
-oIi
-grA
-xqo
-wca
-sZY
-bPE
-vIl
-grA
-hLJ
-bPE
-sZY
-wca
-sZY
-bNt
-nGb
-xDw
-sZY
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 grA
@@ -321052,25 +321096,25 @@ bth
 grA
 grA
 pRZ
-sZY
-grA
 aif
 aif
 aif
-grA
-grA
-grA
 aif
 aif
 aif
-grA
-sZY
-fDt
-wca
-wca
-wca
-jgZ
-bjY
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 wca
 tVO
@@ -321080,25 +321124,25 @@ ona
 rFi
 wca
 pRZ
-tYZ
-jBo
-jef
-vyv
-sZY
-wca
-gRv
-grA
-grA
-grA
-grA
-grA
-gRv
-wca
-vfO
-lGf
-lGf
-eDZ
-sZY
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 grA
@@ -321309,25 +321353,25 @@ rnj
 vOj
 grA
 pRZ
-sZY
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-grA
-egS
-dZF
-dZF
-dZF
-dZF
-dZF
-nlI
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 dlc
@@ -321337,25 +321381,25 @@ ona
 jBZ
 grA
 pRZ
-efa
-dZF
-dZF
-dZF
-kWr
-dZF
-eLv
-cTJ
-pOD
-grA
-eKd
-cTJ
-egS
-dZF
-kWr
-dZF
-dZF
-dZF
-dpq
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 dhP
 grA
 xzn
@@ -321566,19 +321610,19 @@ rnj
 grA
 grA
 pRZ
-epX
-gjx
-jKq
-jKq
-ejJ
-gjx
-sVH
-ejJ
-dZF
-jKq
-jKq
-ejJ
-nlI
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 aif
 aif
 aif
@@ -321600,13 +321644,13 @@ aif
 aif
 aif
 aif
-kfA
-tYZ
-tYZ
-eQp
-tYZ
-tYZ
-dpq
+aif
+aif
+aif
+aif
+aif
+aif
+aif
 aif
 aif
 aif
@@ -323117,7 +323161,7 @@ jTP
 fhQ
 xOe
 xOe
-vQE
+bQO
 xOe
 xOe
 fhQ
@@ -323374,7 +323418,7 @@ auL
 auL
 auL
 vYk
-nZd
+ipJ
 vYk
 auL
 auL
@@ -323630,10 +323674,10 @@ aQi
 dmo
 rhg
 xJV
-vyJ
-gFv
-fLk
-gre
+hKz
+nZd
+jll
+sYM
 auL
 fNw
 fLm
@@ -323886,11 +323930,11 @@ sNr
 sNr
 sNr
 hhA
-yhp
+oIi
 qpF
-fKE
+uCn
 qpF
-jbz
+lGf
 auL
 fNw
 fLm
@@ -324133,7 +324177,7 @@ rtX
 fNw
 rtX
 rtX
-upu
+cEZ
 hhA
 sNr
 maZ
@@ -324143,12 +324187,12 @@ sNr
 maZ
 sNr
 hhA
-yhp
+oIi
 qpF
-fKE
+uCn
 qpF
-ipJ
-upu
+bNt
+cEZ
 fNw
 fLm
 qVB
@@ -324390,7 +324434,7 @@ rtX
 fNw
 rtX
 rtX
-upu
+cEZ
 hhA
 sNr
 maZ
@@ -324400,12 +324444,12 @@ sNr
 maZ
 sNr
 hhA
-yhp
-gxK
-gBp
-gxK
-lon
-upu
+oIi
+aNZ
+wrJ
+aNZ
+xDw
+cEZ
 fNw
 fLm
 qVB
@@ -324657,11 +324701,11 @@ sNr
 maZ
 sNr
 hhA
-yhp
-wpY
-xZe
-wpY
-lon
+oIi
+jKq
+gXx
+jKq
+erm
 auL
 fNw
 fLm
@@ -324671,8 +324715,8 @@ qVB
 qVB
 qVB
 qVB
-pAJ
-hVf
+jef
+pnk
 mzu
 miy
 iFX
@@ -324905,7 +324949,7 @@ fNw
 rtX
 rtX
 auL
-hhA
+nlI
 sNr
 maZ
 sNr
@@ -324914,11 +324958,11 @@ sNr
 maZ
 sNr
 hhA
-yhp
-wpY
-xZe
-wpY
-lon
+oIi
+jKq
+gXx
+jKq
+xDw
 auL
 fNw
 fLm
@@ -324928,7 +324972,7 @@ qVB
 qVB
 qVB
 qVB
-osP
+efa
 rPv
 mzu
 rPv
@@ -325161,7 +325205,7 @@ rtX
 fNw
 rtX
 rtX
-upu
+cEZ
 hhA
 sNr
 maZ
@@ -325171,12 +325215,12 @@ sNr
 maZ
 sNr
 hhA
-yhp
-vgY
-wVr
-vgY
-lon
-upu
+oIi
+eDZ
+vsS
+eDZ
+xDw
+cEZ
 fNw
 fLm
 qVB
@@ -325185,8 +325229,8 @@ qVB
 qVB
 qVB
 qVB
-xhc
-bhY
+xZe
+aEr
 mzu
 rdy
 iFX
@@ -325418,7 +325462,7 @@ rtX
 fNw
 rtX
 rtX
-upu
+cEZ
 hhA
 sNr
 maZ
@@ -325428,12 +325472,12 @@ sNr
 maZ
 sNr
 hhA
-yhp
+oIi
 qpF
-fKE
+uCn
 qpF
-ipJ
-upu
+bNt
+cEZ
 fNw
 fLm
 qVB
@@ -325450,7 +325494,7 @@ pEk
 gaz
 dHW
 dfF
-ulG
+nNN
 awd
 awd
 llT
@@ -325685,11 +325729,11 @@ sNr
 sNr
 sNr
 hhA
-yhp
+oIi
 qpF
-fKE
+uCn
 qpF
-jbz
+lGf
 auL
 fNw
 fLm
@@ -325942,11 +325986,11 @@ aQi
 aQi
 ktY
 tnh
-vPC
+gYY
 nke
 dfP
 kUs
-fvB
+hPP
 auL
 fNw
 fLm
@@ -326200,9 +326244,9 @@ auL
 auL
 auL
 auL
-nZd
+ipJ
 vYk
-nZd
+ipJ
 auL
 auL
 fNw
@@ -326454,13 +326498,13 @@ rtX
 rtX
 rtX
 qVr
-lDa
+jGm
 fBl
 iyo
 oMT
 iyo
 oMT
-lDa
+jGm
 qVr
 fNw
 fLm
@@ -326973,7 +327017,7 @@ caR
 iyo
 caR
 iyo
-iyo
+vfO
 cUp
 qVr
 sIF
@@ -327490,7 +327534,7 @@ qsB
 aiF
 aiF
 lhc
-aiF
+dNt
 aiF
 lhc
 aiF
@@ -328245,7 +328289,7 @@ nFD
 fNw
 rtX
 bqb
-jnY
+eFw
 tog
 mVz
 mVz
@@ -328768,7 +328812,7 @@ mHf
 sfZ
 wCg
 bqb
-aLH
+xqo
 dwC
 eqb
 pal
@@ -329028,13 +329072,13 @@ gzg
 aLH
 dwC
 eqb
-vRK
+jgZ
 aiF
 aiF
-adK
+dxA
 aiF
-aiF
-adK
+gkQ
+dxA
 aiF
 fHT
 qsB
@@ -329546,7 +329590,7 @@ bZq
 aUN
 fir
 bWk
-bWk
+nqw
 jBe
 aEv
 qcV
@@ -330559,7 +330603,7 @@ fNw
 rtX
 rtX
 sey
-qDV
+nGb
 qhz
 jnB
 qDV
@@ -330827,7 +330871,7 @@ xfJ
 nZj
 lVJ
 nZj
-kUt
+ylz
 aUN
 wQA
 lsj
@@ -331603,7 +331647,7 @@ aUN
 pqd
 bXs
 plp
-iuz
+vyv
 iuz
 hdU
 aUN
@@ -331853,7 +331897,7 @@ sey
 sey
 qVr
 iiJ
-iiJ
+pfk
 iiJ
 qVr
 aUN
@@ -339874,7 +339918,7 @@ okk
 okk
 okk
 vhN
-iON
+vIl
 sJY
 aWW
 aWW
@@ -349847,11 +349891,11 @@ ifN
 nDB
 sye
 ukh
+mOc
 ukh
 ukh
 ukh
-ukh
-ukh
+gwv
 ukh
 rBg
 nDB
@@ -350375,8 +350419,8 @@ xef
 xef
 xef
 xef
-qaD
-qaD
+eQp
+eQp
 xhK
 xhK
 xhK
@@ -350883,9 +350927,9 @@ eLO
 wON
 lbw
 nDB
-qaD
+gBp
 lFm
-bLk
+gXQ
 rOU
 pMu
 ftj
@@ -351140,8 +351184,8 @@ lRj
 hdk
 lbw
 nDB
-qaD
-tDN
+gBp
+vgY
 bLk
 vAl
 kgB
@@ -351654,7 +351698,7 @@ lRj
 wON
 lbw
 nDB
-qaD
+gBp
 tDN
 ftj
 kBf
@@ -351911,9 +351955,9 @@ iVf
 wON
 lbw
 nDB
-qaD
+gBp
 lFm
-ftj
+wSf
 yhD
 yej
 ftj
@@ -352170,7 +352214,7 @@ lbw
 kdp
 xef
 xef
-tDN
+iMe
 kgB
 dPj
 kgB
@@ -352431,8 +352475,8 @@ xef
 xef
 xef
 xef
-qaD
-qaD
+eQp
+eQp
 xhK
 xhK
 xhK
@@ -354217,7 +354261,7 @@ xOV
 dHW
 qNx
 vgS
-vHK
+yhp
 kHF
 xjy
 vgS

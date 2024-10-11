@@ -3,15 +3,18 @@
 	full_name = "Foundation Site 404"
 	path = "site404"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
-	station_levels = list(1, 2, 3, 4, 5)
-	contact_levels = list(1, 2, 3, 4, 5)
-	player_levels = list(1, 2, 3, 4, 5)
-	admin_levels = list(6,7)
-	empty_levels = list()
-	accessible_z_levels = list("1"=1,"2"=2,"3"=3,"4"=4, "5"=5)
+	station_levels = list(1, 2, 3, 4, 5, 6) //These numbers refer to the height variable on the map data landmark,
+	contact_levels = list(1, 2, 3, 4, 5, 6) //Often seen on the bottom left of the map.
+	sealed_levels = list(1, 2, 3, 4, 5, 6)
 	base_turf_by_z = list(
-		"1" = /turf/space
+		"1" = /turf/space,
+		"2" = /turf/space,
+		"3" = /turf/space,
+		"4" = /turf/space,
+		"5" = /turf/space,
+		"6" = /turf/space
 	)
+
 	overmap_size = 35
 	overmap_event_areas = 0
 	usable_email_tlds = list("site404.foundation", "security.site404.foundation", "science.site404.foundation", "utility.site404.foundation")
@@ -29,13 +32,13 @@
 	company_short = "Foundation"
 
 	//These should probably be moved into the evac controller...
-	shuttle_docked_message = "The site transport shuttle has docked with the facility. It will depart in approximately %ETD%."
-	shuttle_leaving_dock = "The transport shuttle for off-duty personnel is now departing, and will reach its destination in %ETA%."
-	shuttle_called_message = "The work shift is now ending. The next transport shuttle for off-duty personnel will begin boarding in %ETA%."
+	shuttle_docked_message = "The site transport shuttle has docked with the facility. It will depart in approximately %ETD%"
+	shuttle_leaving_dock = "The transport shuttle for off-duty personnel is now departing, and will reach its destination in %ETA%"
+	shuttle_called_message = "The work shift is now ending. The next transport shuttle for off-duty personnel will begin boarding in %ETA%"
 	shuttle_recall_message = "The work shift has been extended. Please return to your post."
-	emergency_shuttle_docked_message = "The emergency shuttle is now boarding at the Docking Bay. Evacuation is mandatory for all Foundation personnel. It will depart in %ETD%."
+	emergency_shuttle_docked_message = "The emergency shuttle is now boarding at the Docking Bay. Evacuation is mandatory for all Foundation personnel. It will depart in %ETD%"
 	emergency_shuttle_leaving_dock = "The emergency shuttle is departing for Extraction Site 404-B and will arrive in %ETA%. Please cooperate with Responders upon arrival."
-	emergency_shuttle_called_message = "An emergency evacuation has been ordered for this facility. All authorized evacuees must proceed to the Docking Bay within %ETA%."
+	emergency_shuttle_called_message = "An emergency evacuation has been ordered for this facility. All authorized evacuees must proceed to the Docking Bay within %ETA%"
 	emergency_shuttle_recall_message = "The emergency evacuation has been cancelled. Return to your post."
 
 	evac_controller_type = /datum/evacuation_controller/shuttle //The evacuation controller that the map uses, this MUST be defined else the train will not function.
@@ -47,20 +50,6 @@
 	apc_test_exempt_areas = list(
 		/area/space = NO_APC
 	)
-
-	holodeck_programs = list(
-		"picnicarea" = /area/holodeck/source_picnicarea,
-		"emergency_medical" = /area/holodeck/emergency_medical
-	)
-
-	holodeck_supported_programs = list(
-		"Foundation Approved Programs" = list(
-		"Picnic Area" = "picnicarea",
-		"Emergency Medical" = "emergency_medical"
-		)
-	)
-
-	holodeck_restricted_programs = list(list())
 
 	away_site_budget = 3
 
