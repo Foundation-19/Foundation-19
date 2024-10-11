@@ -197,7 +197,7 @@
 /mob/living/carbon/human/scp106/handle_breath()
 	return TRUE
 
-/mob/living/carbon/human/scp106/movement_delay()
+/mob/living/carbon/human/scp106/movement_delay(decl/move_intent/using_intent = move_intent)
 	return 4.0
 
 /* Abilities */

@@ -122,7 +122,7 @@
 		return FALSE
 	return ..()
 
-/mob/living/scp173/movement_delay()
+/mob/living/scp173/movement_delay(decl/move_intent/using_intent = move_intent)
 	return -5
 
 /mob/living/scp173/UnarmedAttack(atom/A)

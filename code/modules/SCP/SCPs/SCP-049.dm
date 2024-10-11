@@ -311,7 +311,7 @@
 /mob/living/carbon/human/scp049/handle_breath()
 	return 1
 
-/mob/living/carbon/human/scp049/movement_delay()
+/mob/living/carbon/human/scp049/movement_delay(decl/move_intent/using_intent = move_intent)
 	return 3.0 - round(anger_timer * 0.03, 0.1)
 
 // Override for footstep volume

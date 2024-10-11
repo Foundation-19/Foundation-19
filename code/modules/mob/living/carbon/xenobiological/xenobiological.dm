@@ -89,7 +89,7 @@
 	regenerate_icons()
 	. = ..()
 
-/mob/living/carbon/slime/movement_delay()
+/mob/living/carbon/slime/movement_delay(decl/move_intent/using_intent = move_intent)
 	if (bodytemperature >= 330.23) // 135 F
 		return -1	// slimes become supercharged at high temperatures
 

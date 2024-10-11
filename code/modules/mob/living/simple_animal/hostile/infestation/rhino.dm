@@ -52,7 +52,7 @@
 		enraged = FALSE
 		visible_message(SPAN_WARNING("\The [src] calms down."))
 
-/mob/living/simple_animal/hostile/infestation/rhino/movement_delay()
+/mob/living/simple_animal/hostile/infestation/rhino/movement_delay(decl/move_intent/using_intent = move_intent)
 	. = ..()
 	. -= enraged * 2
 
