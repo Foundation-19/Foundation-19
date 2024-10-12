@@ -70,29 +70,29 @@
 	name = "Site 404 Personnel Transfer Shuttle"
 	sound_takeoff = 'sounds/effects/engine_startup.ogg'
 	location = 1
-	warmup_time = 10
+	warmup_time = 5
 	shuttle_area = list(/area/site404/shuttle/emergency)
-	waypoint_station = "nav_emergencyshuttle_station"
+	waypoint_station = "nav_emergencyshuttle_onsite"
 	landmark_transition = "nav_emergencyshuttle_transition"
-	waypoint_offsite = "nav_emergencyshuttle_offsite"
+	waypoint_offsite = "nav_emergencyshuttle_central"
 	sound_landing = 'sounds/effects/engine_landing.ogg'
 	landing_message = "A reverb is felt through the station as the docking bay clamps engage."
 	takeoff_message = "A loud clunk is heard as the docking bay clamps disengage."
 
-/obj/effect/shuttle_landmark/emergency/station
+/obj/effect/shuttle_landmark/emergency/onsite
 	name = "Transfer Shuttle Station Docking Pad"
-	landmark_tag = "nav_emergencyshuttle_station"
+	landmark_tag = "nav_emergencyshuttle_onsite"
 	base_turf = /turf/simulated/floor
 	base_area = /area/site404/entrancezone/dockingbay
 
-/obj/effect/shuttle_landmark/emergency/transition
+/obj/effect/shuttle_landmark/transition/emergency
 	name = "Transfer Shuttle Transition"
 	landmark_tag = "nav_emergencyshuttle_transition"
-	base_turf = /turf/simulated/floor
-	base_area = /area/site404/entrancezone/dockingbay
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/site404/shuttle/emergency/transition
 
-/obj/effect/shuttle_landmark/emergency/offsite
+/obj/effect/shuttle_landmark/emergency/central
 	name = "Transfer Shuttle Central Command"
-	landmark_tag = "nav_emergencyshuttle_offsite"
-	base_turf = /turf/simulated/floor/reinforced
+	landmark_tag = "nav_emergencyshuttle_central"
+	base_turf = /turf/simulated/floor
 	base_area = /area/site404/entrancezone/dockingbay

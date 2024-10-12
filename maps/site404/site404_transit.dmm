@@ -1,10 +1,10 @@
 "a" = (/turf/space,/area/space)
 "d" = (/obj/effect/step_trigger/death/train/lost,/turf/space/transit/north,/area/space)
 "h" = (/turf/space/transit/north,/area/space)
-"m" = (/turf/unsimulated/floor/plating,/area/space)
+"m" = (/turf/unsimulated/floor/plating,/area/site404/shuttle/emergency/transition)
 "t" = (/obj/effect/step_trigger/thrower{affect_ghosts = 1; direction = 2; name = "thrower_throwdown"; tiles = 0},/turf/space/transit/north,/area/space)
 "z" = (/turf/unsimulated/map/edge,/area/space)
-"M" = (/obj/effect/shuttle_landmark/emergency/transition,/turf/unsimulated/floor/plating,/area/space)
+"M" = (/obj/effect/shuttle_landmark/transition/emergency,/turf/unsimulated/floor/plating,/area/site404/shuttle/emergency/transition)
 "T" = (/obj/effect/step_trigger/death/train/crushed,/turf/space/transit/north,/area/space)
 "Y" = (/obj/effect/landmark/map_data{height = 5},/turf/unsimulated/map/edge,/area/space)
 

@@ -104,6 +104,11 @@
 	icon_state = "shuttle"
 	requires_power = 0
 
+/area/site404/shuttle/emergency/transition
+	name = "Transfer Shuttle Transition Area"
+	icon_state = "shuttle"
+	requires_power = 0
+
 /area/site404/shuttle/supply
 	name = "Site 404 Logistics Transport Shuttle"
 	icon_state = "shuttle"
@@ -703,6 +708,9 @@
 /area/site404/classdzone/restroom
 	name = "CDZ - Restroom"
 
+/area/site404/classdzone/lounge
+	name = "CDZ - Lounge"
+
 /area/site404/classdzone/atrium
 	name = "CDZ - Atrium"
 
@@ -770,38 +778,14 @@
 /area/site404/classdzone/quarters/twelve
 	name = "Class-D Quarters - Cell Twelve"
 
-/area/site404/classdzone/luxury/hallway
-	name = "CDZ Luxury Zone - Hallway"
-
-/area/site404/classdzone/luxury/lounge1
-	name = "CDZ Luxury Zone - Lounge One"
-
-/area/site404/classdzone/luxury/lounge2
-	name = "CDZ Luxury Zone - Lounge Two"
-
-/area/site404/classdzone/luxury/quarters/one
-	name = "CDZ Luxury Zone - Quarters One"
-
-/area/site404/classdzone/luxury/quarters/two
-	name = "CDZ Luxury Zone - Quarters Two"
-
-/area/site404/classdzone/luxury/quarters/three
-	name = "CDZ Luxury Zone - Quarters Three"
-
-/area/site404/classdzone/luxury/quarters/four
-	name = "CDZ Luxury Zone - Quarters Four"
-
-/area/site404/classdzone/luxury/quarters/five
-	name = "CDZ Luxury Zone - Quarters Five"
-
-/area/site404/classdzone/luxury/quarters/six
-	name = "CDZ Luxury Zone - Quarters Six"
-
 /area/site404/classdzone/security/briefingroom
 	name = "CDZ - Briefing Desk"
 
 /area/site404/classdzone/security/controlroom
 	name = "CDZ - Zone Control Compartment"
+
+/area/site404/classdzone/security/termination
+	name = "CDZ - Brig"
 
 /area/site404/classdzone/security/hallway
 	name = "CDZ - Zone Entrance Hallway"
