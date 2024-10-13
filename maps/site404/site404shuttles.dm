@@ -85,7 +85,7 @@
 	base_turf = /turf/simulated/floor
 	base_area = /area/site404/entrancezone/dockingbay
 
-/obj/effect/shuttle_landmark/transition/emergency
+/obj/effect/shuttle_landmark/emergency/transit
 	name = "Transfer Shuttle Transition"
 	landmark_tag = "nav_emergencyshuttle_transition"
 	base_turf = /turf/unsimulated/floor/plating
