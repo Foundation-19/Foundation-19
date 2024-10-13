@@ -453,6 +453,14 @@
 	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/space)
+"bz" = (
+/obj/effect/bump_teleporter{
+	id = "teleporter1";
+	name = "Bump Teleporter 1";
+	id_target = "teleporter2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/centcom)
 "bF" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/small,
@@ -11159,6 +11167,14 @@
 /obj/structure/window/reinforced/full,
 /turf/unsimulated/floor/plating,
 /area/space)
+"Ur" = (
+/obj/effect/bump_teleporter{
+	id = "teleporter2";
+	name = "Bump Teleporter 2";
+	id_target = "teleporter1"
+	},
+/turf/simulated/floor/tiled/white,
+/area/centcom)
 "Uu" = (
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -18983,7 +18999,7 @@ mD
 Zn
 RR
 oC
-oC
+bz
 lF
 ab
 ab
@@ -19185,7 +19201,7 @@ mD
 CQ
 RR
 oC
-oC
+Ur
 Am
 ab
 ab

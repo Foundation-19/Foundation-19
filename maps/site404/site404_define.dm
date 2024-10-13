@@ -112,6 +112,11 @@
 		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
 
+
+/datum/map/site404/get_map_info()
+	. = list()
+	. +=  "Site 404 is a foundation space station located in Blah Blah distance in Earth's Orbit."
+	return jointext(., "<br>")
 /*
 /datum/map/torch/setup_map()
 	..()

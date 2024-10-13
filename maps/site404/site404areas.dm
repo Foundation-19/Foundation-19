@@ -167,6 +167,36 @@
 /area/site404/administration/assemblywaitingroom
 	name = "Administration Department - Assembly Hall Waiting Room"
 
+/area/site404/administration/communication_satellite
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site404/administration/communication_satellite/entrance
+	name = "Communications Satellite - Entrance Compartment"
+
+/area/site404/administration/communication_satellite/hallway
+	name = "Communications Satellite - Communications Access Corridor"
+
+/area/site404/administration/communication_satellite/habitation
+	name = "Communications Satellite - Habitation Compartment"
+
+/area/site404/administration/communication_satellite/dormitory
+	name = "Communications Satellite - Satellite Dormitory"
+
+/area/site404/administration/communication_satellite/monitoring
+	name = "Communications Satellite - Monitoring Compartment"
+
+/area/site404/administration/communication_satellite/maintenance
+	name = "Communications Satellite - Maintenance Compartment"
+
+/area/site404/administration/communication_satellite/solar/west
+	name = "Communications Satellite - Port Emergency Solar Array"
+
+/area/site404/administration/communication_satellite/solar/east
+	name = "Communications Satellite - Starboard Emergency Solar Array"
+
+/area/site404/administration/communication_satellite/communications
+	name = "Communications Satellite - Communications Compartment"
+
 /area/site404/administration/holodeck
 	name = "Administration Department - Holodeck"
 	requires_power = 0
