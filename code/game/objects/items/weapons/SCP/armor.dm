@@ -7,12 +7,16 @@
 	item_state = "pouchescp"
 
 /obj/item/clothing/accessory/armguards/scp
+	name = "foundation shoulder plates"
 	icon_state = "armguardscp"
 	item_state = "armguardscp"
+	desc = "Grey attachable shoulder guards issued to foundation site security, made with compressed durathread material for lighter weight."
 
 /obj/item/clothing/accessory/legguards/scp
+	name = "foundation knee pads"
 	icon_state = "legguardscp"
 	item_state = "legguardscp"
+	desc = "Black ballstic grade knee pads able to be worn in conjunction with regular foundation site security body armor."
 
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches/scp, /obj/item/clothing/accessory/armor/tag/scp)
