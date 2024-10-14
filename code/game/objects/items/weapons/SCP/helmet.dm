@@ -52,7 +52,7 @@
 
 /obj/item/clothing/head/helmet/scp/security/cadet
 	name = "\improper foundation security trainee helmet"
-	desc = "A light non-descript helmet given to Light Containment Zone cadets, with barely any built-in armor plating, nothing special really."
+	desc = "A light non-descript helmet given to Light Containment cadets, with barely any built-in armor plating, nothing special really."
 	icon_state = "cadethelm"
 	body_parts_covered = HEAD
 	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_SMALL, laser = ARMOR_LASER_SMALL_MID, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
@@ -60,10 +60,15 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = null
 
+/obj/item/clothing/head/helmet/scp/security/cadet/ez
+	name = "\improper foundation security helmet"
+	desc = "A light non-descript helmet given to Entrance Zone personnel, with some decent armor padding, but nothing special really."
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_MID, laser = ARMOR_LASER_SMALL_MID, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
+
 /obj/item/clothing/head/helmet/scp/security/cadet/hat
-	name = "\improper foundation security trainee hat"
-	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums intact."
-	icon_state = "isd_cap"
+	name = "\improper foundation security hat"
+	desc = "A hat given to Entrance Zone agents, it's given light padding to keep those craniums intact."
+	icon_state = "sec_cap"
 	body_parts_covered = HEAD
 	armor = list(melee = ARMOR_MELEE_MID, bullet = ARMOR_BALLISTIC_VVSMALL, laser = ARMOR_LASER_VERY_SMALL, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5

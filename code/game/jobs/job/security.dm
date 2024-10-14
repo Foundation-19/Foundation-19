@@ -82,7 +82,7 @@
 	requirements = list(EXP_TYPE_LCZ = 720)
 	minimal_player_age = 10
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/lightcontainment/lcz_zone_commander
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_zone_commander
 	class = CLASS_B
 	hud_icon = "hudlczcommander"
 
@@ -290,10 +290,10 @@
 	supervisors = "the LCZ Zone Lieutenant"
 	economic_power = 4
 	requirements = list(EXP_TYPE_LCZ = 480)
-	alt_titles = list("LCZ Senior Combat Medic" = /decl/hierarchy/outfit/job/lightcontainment/lcz_medic, "LCZ Senior Riot Control Unit" = /decl/hierarchy/outfit/job/lightcontainment/lcz_riot)
+	alt_titles = list("LCZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Senior Riot Control Unit" = /decl/hierarchy/outfit/job/security/lcz_riot)
 	minimal_player_age = 5
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/lightcontainment/lcz_sergeant
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_sergeant
 	class = CLASS_C
 	hud_icon = "hudlczsarge"
 
@@ -436,11 +436,11 @@
 	supervisors = "the LCZ Sergeants and Zone Lieutenant"
 	economic_power = 4
 	requirements = list(EXP_TYPE_LCZ = 220)
-	alt_titles = list("LCZ Combat Medic" = /decl/hierarchy/outfit/job/lightcontainment/lcz_medic, "LCZ Riot Control Unit" = /decl/hierarchy/outfit/job/lightcontainment/lcz_riot)
+	alt_titles = list("LCZ Combat Medic" = /decl/hierarchy/outfit/job/security/lcz_medic, "LCZ Riot Control Unit" = /decl/hierarchy/outfit/job/security/lcz_riot)
 	minimal_player_age = 0
 	ideal_character_age = 25
 	balance_limited = TRUE
-	outfit_type = /decl/hierarchy/outfit/job/lightcontainment/lcz_guard
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_guard
 	class = CLASS_C
 	hud_icon = "hudlczsenior"
 
@@ -580,7 +580,7 @@
 	minimal_player_age = 0
 	ideal_character_age = 25
 	balance_limited = TRUE
-	outfit_type = /decl/hierarchy/outfit/job/lightcontainment/lcz_cadet
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_cadet
 	class = CLASS_C
 	hud_icon = "hudlczguard"
 
