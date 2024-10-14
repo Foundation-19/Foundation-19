@@ -86,6 +86,16 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
+/obj/item/clothing/head/helmet/scp/hczsecurityofficer/attack_self(mob/user)
+	body_parts_covered ^= EYES|FACE
+	icon_state = initial(icon_state)
+	var/action = "lowers"
+	if (~body_parts_covered & EYES)
+		icon_state += "_up"
+		action = "raises"
+	visible_message(SPAN_ITALIC("\The [user] [action] the visor on \the [src]."), range = 3)
+	update_clothing_icon()
+
 /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	name = "\improper Tactical Security Guard Helmet"
 	desc = "A tactical Foundation SD Guard helmet. It has a yellow poly-carbonate, ballistic visor on it."
@@ -97,6 +107,15 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	action_button_name = "Toggle Visor"
 
+/obj/item/clothing/head/helmet/scp/hczsecurityguard/attack_self(mob/user)
+	body_parts_covered ^= EYES|FACE
+	icon_state = initial(icon_state)
+	var/action = "lowers"
+	if (~body_parts_covered & EYES)
+		icon_state += "_up"
+		action = "raises"
+	visible_message(SPAN_ITALIC("\The [user] [action] the visor on \the [src]."), range = 3)
+	update_clothing_icon()
 
 
 /obj/item/clothing/head/helmet/scp/securitystab
