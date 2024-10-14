@@ -1,6 +1,6 @@
 /obj/item/clothing/head/helmet/scp/security
 	name = "\improper foundation security helmet"
-	desc = "A heavy non-descript helmet with built-in padding, and armor. It has a poly-carbonate yellow riot visor on it."
+	desc = "A heavy non-descript helmet with built-in padding, and armor. It has a yellow poly-carbonate riot visor on it."
 	icon_state = "guard-helm"
 	body_parts_covered = HEAD|FACE|EYES //face shield
 	armor = list(melee = ARMOR_MELEE_MAJOR, bullet = ARMOR_BALLISTIC_MID, laser = ARMOR_LASER_HANDGUNS, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
@@ -63,7 +63,7 @@
 /obj/item/clothing/head/helmet/scp/security/cadet/hat
 	name = "\improper foundation security trainee hat"
 	desc = "A hat given to Entrance Zone probationary agents, it's given light padding to keep those craniums intact."
-	icon_state = "cadethat"
+	icon_state = "isd_cap"
 	body_parts_covered = HEAD
 	armor = list(melee = ARMOR_MELEE_MID, bullet = ARMOR_BALLISTIC_VVSMALL, laser = ARMOR_LASER_VERY_SMALL, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
@@ -72,23 +72,25 @@
 
 /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	name = "\improper Tactical Security Officer Helmet"
-	desc = "The markings on this helmet indicate that it belongs to a SD zone commander."
-	icon_state = "helmet_merc"
+	desc = "The markings on this helmet indicate that it belongs to a SD zone commander. It has a yellow poly-carbonate ballistic visor on it."
+	icon_state = "heavier-guard-helm-hcz"
 	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_VRESISTANT, laser = ARMOR_LASER_MAJOR, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 	cold_protection = HEAD
-	body_parts_covered = HEAD
-	flags_inv = HIDEEARS
+	body_parts_covered = HEAD|FACE|EYES //face shield
+	flags_inv = HIDEEARS|BLOCKHAIR
+	action_button_name = "Toggle Visor"
 
 /obj/item/clothing/head/helmet/scp/hczsecurityguard
 	name = "\improper Tactical Security Guard Helmet"
-	desc = "A tactical Foundation SD Guard helmet."
-	icon_state = "helmet"
+	desc = "A tactical Foundation SD Guard helmet. It has a yellow poly-carbonate, ballistic visor on it."
+	icon_state = "guard-helm-hcz"
 	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_RESISTANT, laser = ARMOR_LASER_MAJOR, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 	cold_protection = HEAD
-	body_parts_covered = HEAD
-	flags_inv = HIDEEARS
+	body_parts_covered = HEAD|FACE|EYES //face shield
+	flags_inv = HIDEEARS|BLOCKHAIR
+	action_button_name = "Toggle Visor"
 
 
 

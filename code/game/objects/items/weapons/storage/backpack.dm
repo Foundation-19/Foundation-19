@@ -529,7 +529,7 @@
 /obj/item/storage/backpack/messenger/sec/backpanel
 	name = "security messenger bag"
 	desc = "A small, tactical backpack worn over one shoulder."
-	icon_state = "courierbagsec"
+	icon_state = "backpanel"
 
 /obj/item/storage/backpack/messenger/sec/exo
 	name = "corporate security messenger bag"

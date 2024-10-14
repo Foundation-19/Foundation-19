@@ -1,8 +1,24 @@
+/obj/item/clothing/suit/armor/pcarrier/scp
+	icon_state = "scpcarrier"
+	item_state = "scpcarrier"
+
+/obj/item/clothing/accessory/storage/pouches/scp
+	icon_state = "pouchescp"
+	item_state = "pouchescp"
+
+/obj/item/clothing/accessory/armguards/scp
+	icon_state = "armguardscp"
+	item_state = "armguardscp"
+
+/obj/item/clothing/accessory/legguards/scp
+	icon_state = "legguardscp"
+	item_state = "legguardscp"
+
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches/scp, /obj/item/clothing/accessory/armor/tag/scp)
 
 /obj/item/clothing/suit/armor/pcarrier/scp/tactical
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches/scp, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards/scp, /obj/item/clothing/accessory/legguards/scp)
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical/mtf, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards, /obj/item/clothing/accessory/storage/pouches/green)

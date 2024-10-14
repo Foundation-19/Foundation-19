@@ -2,10 +2,6 @@
 	..()
 	BACKPACK_OVERRIDE_SECURITY
 
-/decl/hierarchy/outfit/job/lightcontainment/New()
-	..()
-	BACKPACK_OVERRIDE_LCZ
-
 /decl/hierarchy/outfit/job/command/cos
 	name = OUTFIT_JOB_NAME("Guard Commander")
 	uniform = /obj/item/clothing/under/rank/head_of_security/guardcom
@@ -138,7 +134,7 @@
 //Heavy Containment
 /decl/hierarchy/outfit/job/security/hcz_zone_commander
 	name = OUTFIT_JOB_NAME("HCZ Zone Lieutenant")
-	uniform = /obj/item/clothing/under/rank/head_of_security/hcz
+	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl4hcz
@@ -154,7 +150,7 @@
 
 /decl/hierarchy/outfit/job/security/hcz_sergeant
 	name = OUTFIT_JOB_NAME("HCZ Sergeant")
-	uniform = /obj/item/clothing/under/rank/warden/hcz
+	uniform = /obj/item/clothing/under/rank/warden/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -170,7 +166,7 @@
 
 /decl/hierarchy/outfit/job/security/hcz_guard
 	name = OUTFIT_JOB_NAME("HCZ Guard")
-	uniform = /obj/item/clothing/under/rank/security/hcz
+	uniform = /obj/item/clothing/under/rank/security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/junseclvl3hcz
@@ -202,7 +198,7 @@
 //Entrance Zone
 /decl/hierarchy/outfit/job/security/ez_zone_commander
 	name = OUTFIT_JOB_NAME("EZ Zone Supervisor")
-	uniform = /obj/item/clothing/under/rank/head_of_security/ez
+	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl4ez
 	l_ear = /obj/item/device/radio/headset/heads/cos
@@ -218,7 +214,7 @@
 
 /decl/hierarchy/outfit/job/security/ez_sergeant
 	name = OUTFIT_JOB_NAME("EZ Senior Agent")
-	uniform = /obj/item/clothing/under/rank/warden/ez
+	uniform = /obj/item/clothing/under/rank/warden/lcz
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3ez
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
@@ -235,7 +231,7 @@
 
 /decl/hierarchy/outfit/job/security/ez_medic
 	name = OUTFIT_JOB_NAME("EZ Combat Medic")
-	uniform = /obj/item/clothing/under/rank/security/ez
+	uniform = /obj/item/clothing/under/rank/security/lcz
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3ez
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
@@ -252,7 +248,7 @@
 
 /decl/hierarchy/outfit/job/security/ez_guard
 	name = OUTFIT_JOB_NAME("EZ Agent")
-	uniform = /obj/item/clothing/under/rank/security/ez
+	uniform = /obj/item/clothing/under/rank/security/lcz
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3ez
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
@@ -301,7 +297,7 @@
 
 /decl/hierarchy/outfit/job/security/ez_probationary
 	name = OUTFIT_JOB_NAME("EZ Probationary Agent")
-	uniform = /obj/item/clothing/under/rank/security/ez
+	uniform = /obj/item/clothing/under/rank/security/lcz/cadet
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/junseclvl1ez
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
@@ -318,7 +314,7 @@
 //RAISA
 /decl/hierarchy/outfit/job/security/raisa_agent
 	name = OUTFIT_JOB_NAME("RAISA Agent")
-	uniform = /obj/item/clothing/under/rank/security/ez
+	uniform = /obj/item/clothing/under/rank/security/lcz
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/seclvl3raisa
 	l_ear = /obj/item/device/radio/headset/headset_sec_ecz
