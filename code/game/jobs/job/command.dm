@@ -204,7 +204,7 @@
 
 /datum/job/investigationoff
 	title = "Investigation Officer"
-	department = "Entrance Personnel"
+	department = "Civilian"
 	selection_color = "#601c1c"
 	department_flag = COM|BUR
 	total_positions = 1
