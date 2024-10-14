@@ -233,10 +233,10 @@
 	title = "RAISA Agent"
 	department = "Entrance Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC|ECZ|BUR
+	department_flag = SEC|BUR
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the EZ Zone Captain"
+	supervisors = "the Guard Commander"
 	economic_power = 5
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_ENGINEERING = 90, EXP_TYPE_BUR = 60)
 	alt_titles = list()
@@ -383,7 +383,7 @@
 	supervisors = "the EZ Zone Captain"
 	economic_power = 4
 	requirements = list(EXP_TYPE_ECZ = 480)
-	alt_titles = list("Investigation Officer" = /decl/hierarchy/outfit/job/security/ez_sergeant_investigative, "EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
+	alt_titles = list("EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_sergeant
@@ -530,7 +530,7 @@
 	supervisors = "the EZ Sergeant and Zone Captain"
 	economic_power = 4
 	requirements = list(EXP_TYPE_ECZ = 220)
-	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/security/ez_guard_investigative, "EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
+	alt_titles = list("EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_guard
