@@ -20,7 +20,7 @@
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
 //Light Containment
-/decl/hierarchy/outfit/job/lightcontainment/lcz_zone_commander
+/decl/hierarchy/outfit/job/security/lcz_zone_commander
 	name = OUTFIT_JOB_NAME("LCZ Zone Lieutenant")
 	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
@@ -37,7 +37,7 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
-/decl/hierarchy/outfit/job/lightcontainment/lcz_sergeant
+/decl/hierarchy/outfit/job/security/lcz_sergeant
 	name = OUTFIT_JOB_NAME("LCZ Sergeant")
 	uniform = /obj/item/clothing/under/rank/warden/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
@@ -53,7 +53,7 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
-/decl/hierarchy/outfit/job/lightcontainment/lcz_guard
+/decl/hierarchy/outfit/job/security/lcz_guard
 	name = OUTFIT_JOB_NAME("LCZ Guard")
 	uniform = /obj/item/clothing/under/rank/security/lcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
@@ -69,7 +69,7 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
-/decl/hierarchy/outfit/job/lightcontainment/lcz_medic
+/decl/hierarchy/outfit/job/security/lcz_medic
 	name = OUTFIT_JOB_NAME("LCZ Combat Medic")
 	uniform = /obj/item/clothing/under/rank/security/lcz/medic
 	glasses = /obj/item/clothing/glasses/hud/health/visor
@@ -85,7 +85,7 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
 
-/decl/hierarchy/outfit/job/lightcontainment/lcz_riot
+/decl/hierarchy/outfit/job/security/lcz_riot
 	name = OUTFIT_JOB_NAME("LCZ Riot Control Unit")
 	uniform = /obj/item/clothing/under/rank/security/lcz/riot
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
@@ -101,7 +101,7 @@
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
-/decl/hierarchy/outfit/job/lightcontainment/lcz_recontain
+/decl/hierarchy/outfit/job/security/lcz_recontain
 	name = OUTFIT_JOB_NAME("LCZ Recontainment Unit")
 	uniform = /obj/item/clothing/under/rank/security/lcz/recontain
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
@@ -117,10 +117,10 @@
 	mask = /obj/item/clothing/mask/gas/security
 	gloves = /obj/item/clothing/gloves/thick/swat/lcz
 
-/decl/hierarchy/outfit/job/lightcontainment/lcz_cadet
+/decl/hierarchy/outfit/job/security/lcz_cadet
 	name = OUTFIT_JOB_NAME("LCZ Cadet")
 	uniform = /obj/item/clothing/under/rank/security/lcz/cadet
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/vest/scp/medarmor/cadet
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/junseclvl1lcz
@@ -207,8 +207,8 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/clothing/head/beret/sec/corporate/hos = 1)
 	belt = /obj/item/storage/belt/holster/security/fullrhino
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/helmet/scp/security/cadet/hat
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
@@ -224,8 +224,8 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/helmet/scp/security/cadet/hat
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
@@ -241,8 +241,8 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list(/obj/item/storage/firstaid/adv = 1, /obj/item/storage/firstaid/stab = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/helmet/scp/security/cadet/hat
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/latex/nitrile/armored
 
@@ -258,8 +258,8 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	head = /obj/item/clothing/head/helmet/scp/hczsecurityguard
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+	head = /obj/item/clothing/head/helmet/scp/security/cadet/hat
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
@@ -307,7 +307,7 @@
 	r_pocket = /obj/item/melee/telebaton
 	backpack_contents = list()
 	belt = /obj/item/storage/belt/holster/security/fullmk9
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/helmet/scp/security/cadet/hat
 	gloves = /obj/item/clothing/gloves/tactical/scp
 
