@@ -46,45 +46,45 @@
 	worn_state = "lczrecon_guard"
 
 /obj/item/clothing/under/rank/security/lcz/cadet
-	name = "LCZ cadet uniform"
+	name = "Foundation cadet uniform"
 	desc = "A black shortsleeved shirt worn by Cadets still in training, bearing \"Trainee\" on the back of the shirt in white, with the Security Department logo on the shoulder. Also along with this is the LCZ security trousers."
 	icon_state = "lcz_cadet"
 	worn_state = "lcz_cadet"
 
 /obj/item/clothing/under/rank/security/lcz
-	name = "LCZ security uniform"
+	name = "Foundation security uniform"
 	desc = "A white, tactical security uniform with SCP insignia on it, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "lcz_guard"
 	worn_state = "lcz_guard"
 
 /obj/item/clothing/under/rank/warden/lcz
-	name = "LCZ senior security uniform"
+	name = "Foundation senior security uniform"
 	desc = "A white, tactical security uniform with SCP insignia on it. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color on the shoulders and wrists most known for Sergeants."
 	icon_state = "lcz_sergeant"
 	worn_state = "lcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/lcz
-	name = "LCZ lieutenant uniform"
+	name = "Foundation lieutenant uniform"
 	desc = "A white, tactical security uniform with SCP insignia on it, with black shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a command blue color most known for Commanders."
 	icon_state = "lcz_commander"
 	worn_state = "lcz_commander"
 
 // Heavy Containment Zone Uniforms
 /obj/item/clothing/under/rank/security/hcz
-	name = "HCZ Security Jumpsuit"
-	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits."
+	name = "Foundation security uniform"
+	desc = "A grey tactical security uniform with the SCP insignia, with grey shoulder and wrist markings to denote the wearer as a standard Guard. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "hcz_guard"
 	worn_state = "hcz_guard"
 
 /obj/item/clothing/under/rank/warden/hcz
 	name = "HCZ Senior Security Jumpsuit"
-	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a silver badge, and belt buckle, with a dirty rose color most known for Sergeants."
+	desc = "A grey tactical security uniform with the SCP insignia, with dark red shoulder and wrist markings to denote the wearer as a Sergeant. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "hcz_sergeant"
 	worn_state = "hcz_sergeant"
 
 /obj/item/clothing/under/rank/head_of_security/hcz
 	name = "HCZ Lieutenant Jumpsuit"
-	desc = "A black tactical jumpsuit, with dark red shoulder and wrist markings. Weaved with a durable fabric to absorb melee hits. This one has a golden badge, and belt buckle, with a lighter red color most known for Commanders."
+	desc = "A white, tactical security uniform with SCP insignia on it, with blue shoulder and wrist markings to denote the wearer as a Commander. Weaved with a durable fabric to absorb melee hits."
 	icon_state = "hcz_commander"
 	worn_state = "hcz_commander"
 
