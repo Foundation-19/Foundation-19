@@ -50,7 +50,7 @@
 	name = "lift (Light Containment Zone)"
 	lift_floor_label = "Light Containment Zone"
 	lift_floor_name = "Deck 3"
-	lift_announce_str = "Arriving at Light Containment Zone: Objects 012, 013, 066, 113, 131, 151, 173, 216, 247, 263, 343, 513, 527, 999, 2343. Class-D Quarters. Light Humanoid Containment."
+	lift_announce_str = "Arriving at Light Containment Zone: Objects 012, 013, 066, 113, 131, 151, 173, 216, 247, 263, 343, 513, 527, 999, 2020, 2343. Class-D Quarters. Light Humanoid Containment."
 	requires_power = 0
 	dynamic_lighting = 1
 
@@ -1062,6 +1062,10 @@
 /area/site404/containmentchambers/scp106/entrance
 	name = "SCP-106 Containment Facilities Entrance Corridor"
 	icon_state = "HCZscp"
+
+/area/site404/containmentchambers/scp151
+	name = "SCP-151 Containment Chamber"
+	icon_state = "LCZscp"
 
 /area/site404/containmentchambers/scp173/chamber
 	name = "SCP-173 Containment Chamber"

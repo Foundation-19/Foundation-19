@@ -10,6 +10,7 @@
 #define NETWORK_LCZ "Light Containment Zone Network"
 #define NETWORK_012 "SCP-012 CCTV Network"
 #define NETWORK_066 "SCP-066 CCTV Network"
+#define NETWORK_151 "SCP-151 CCTV Network"
 #define NETWORK_173 "SCP-173 CCTV Network"
 #define NETWORK_343 "SCP-343 CCTV Network"
 #define NETWORK_513 "SCP-513 CCTV Network"
@@ -70,10 +71,10 @@
 			(NETWORK_082),
 			(NETWORK_096),
 			(NETWORK_106),
+			(NETWORK_151), // Cognitohazard.
 			(NETWORK_247),
 			(NETWORK_280),
 			(NETWORK_457),
-			(NETWORK_895),
 			(NETWORK_2427)
 		))
 			return ACCESS_SECURITY_LVL3
@@ -93,6 +94,7 @@
 			NETWORK_LCZ, //LCZ Camera Networks below
 			NETWORK_012,
 			NETWORK_066,
+			NETWORK_151,
 			NETWORK_173,
 			NETWORK_343,
 			NETWORK_513,
@@ -144,6 +146,9 @@
 
 /obj/machinery/camera/network/containmentunit/scp012
 	network = list(NETWORK_012)
+
+/obj/machinery/camera/network/containmentunit/scp151
+	network = list(NETWORK_151)
 
 /obj/machinery/camera/network/containmentunit/scp173
 	network = list(NETWORK_173)
