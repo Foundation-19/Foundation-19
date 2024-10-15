@@ -3,7 +3,8 @@
 	full_name = "Foundation Site 404"
 	path = "site404"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
-	station_levels = list(1, 2, 3, 4, 5, 6) //These numbers refer to the height variable on the map data landmark,
+	station_levels = list(1, 2, 3, 4) //These numbers refer to the height variable on the map data landmark,
+	admin_levels = list(5, 6)
 	contact_levels = list(1, 2, 3, 4) //Often seen on the bottom left of the map.
 	sealed_levels = list(1, 2, 3, 4, 5, 6)
 	base_turf_by_z = list(
@@ -115,7 +116,7 @@
 
 /datum/map/site404/get_map_info()
 	. = list()
-	. +=  "Site 404 is a foundation space station located in Blah Blah distance in Earth's Orbit."
+	. +=  "The year is 2089. Wether willingly or not, you're onboard a space station in low Earth orbit with hundreds more flying in orbit the only difference is yours is secretly the hub for the Foundation's top of the line anomolous research. Earth as close as it might seem is far, far away. Don't forget, You're here until the Foundation decides to let you go."
 	return jointext(., "<br>")
 /*
 /datum/map/torch/setup_map()

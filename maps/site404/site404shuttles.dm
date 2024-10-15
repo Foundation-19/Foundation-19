@@ -82,7 +82,7 @@
 /obj/effect/shuttle_landmark/emergency/onsite
 	name = "Transfer Shuttle Station Docking Pad"
 	landmark_tag = "nav_emergencyshuttle_onsite"
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/simulated/floor/tiled/old_cargo
 	base_area = /area/site404/entrancezone/dockingbay
 
 /obj/effect/shuttle_landmark/emergency/transit
@@ -94,5 +94,5 @@
 /obj/effect/shuttle_landmark/emergency/central
 	name = "Transfer Shuttle Central Command"
 	landmark_tag = "nav_emergencyshuttle_central"
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/space
 	base_area = /area/site404/entrancezone/dockingbay

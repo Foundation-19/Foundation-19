@@ -390,6 +390,9 @@
 /area/site404/entrancezone/securityoffice/raisa
 	name = "EZ Security Office - RAISA Agent's Office"
 
+/area/site404/entrancezone/securityoffice/armory
+	name = "EZ Security Office - Entrance Zone Armory"
+
 /area/site404/entrancezone/securityoffice/atrium
 	name = "EZ Security Office - Upper Atrium"
 
@@ -451,6 +454,9 @@
 
 /area/site404/medical/equipmentstorage
 	name = "Medical Department - Equipment Storage"
+
+/area/site404/medical/lockerroom
+	name = "Medical Department - Locker Room"
 
 /area/site404/medical/surgery/operatingroom1
 	name = "Medical Department - Operating Room 1"
