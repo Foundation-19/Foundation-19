@@ -111,3 +111,8 @@
 	var/list/panel_tabs = list()
 	/// list of tabs containing spells and abilities
 	var/list/spell_tabs = list()
+
+
+	/// The direction we WANT to move, based off our keybinds
+	/// Will be updated to be the actual direction later on
+	var/intended_direction = NONE

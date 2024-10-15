@@ -429,7 +429,7 @@
 			stagger_counter = world.time + 5 SECOND
 			current_state = STATE_096_STAGGERED
 
-/mob/living/scp096/movement_delay()
+/mob/living/scp096/movement_delay(decl/move_intent/using_intent = move_intent)
 	return -2
 
 /mob/living/scp096/get_status_tab_items()
