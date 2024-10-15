@@ -1,5 +1,5 @@
 /datum/job/captain
-	title = "Station Commander"
+	title = "Site Director"
 	department = "Command"
 	head_position = TRUE
 	department_flag = COM
@@ -11,7 +11,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/facilitydir
 	class = CLASS_A
 	hud_icon = "hudsitedirector"
-	alt_titles = list("Captain", "Station Director")
 
 	total_positions = 1
 	spawn_positions = 1
@@ -42,7 +41,7 @@
 	return get_all_site_access()
 
 /datum/job/hop
-	title = "First Officer"
+	title = "Site Manager"
 	department = "Command"
 	supervisors = "The Site Director"
 	department_flag = COM|CIV|BUR|SRV
@@ -57,7 +56,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/headofhr
 	class = CLASS_A
 	hud_icon = "hudhumanresources"
-	alt_titles = list("Assistant Station Director", "Human Resources Officer", "Station Manager")
+	alt_titles = list("Assistant Site Director)
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
 
 	access = list(
