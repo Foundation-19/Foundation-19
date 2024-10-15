@@ -134,7 +134,7 @@
 //Heavy Containment
 /decl/hierarchy/outfit/job/security/hcz_zone_commander
 	name = OUTFIT_JOB_NAME("HCZ Zone Lieutenant")
-	uniform = /obj/item/clothing/under/rank/head_of_security/lcz
+	uniform = /obj/item/clothing/under/rank/head_of_security/hcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/zcseclvl4hcz
@@ -150,7 +150,7 @@
 
 /decl/hierarchy/outfit/job/security/hcz_sergeant
 	name = OUTFIT_JOB_NAME("HCZ Sergeant")
-	uniform = /obj/item/clothing/under/rank/warden/lcz
+	uniform = /obj/item/clothing/under/rank/warden/hcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	suit = /obj/item/clothing/suit/armor/pcarrier/scp/tactical
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -166,7 +166,7 @@
 
 /decl/hierarchy/outfit/job/security/hcz_guard
 	name = OUTFIT_JOB_NAME("HCZ Guard")
-	uniform = /obj/item/clothing/under/rank/security/lcz
+	uniform = /obj/item/clothing/under/rank/security/hcz
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/card/id/junseclvl3hcz

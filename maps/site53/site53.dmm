@@ -8682,6 +8682,7 @@
 "bOY" = (
 /obj/structure/closet/secure_closet/guard/zone_commander/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/junofficer/o2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/blue2,
 /area/site53/uhcz/commanderoffice)
 "bPa" = (
@@ -14378,6 +14379,7 @@
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "cXk" = (
@@ -44795,6 +44797,7 @@
 	},
 /obj/effect/floor_decal/corner/red/mono,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "jlx" = (
@@ -60145,6 +60148,7 @@
 /obj/structure/closet/secure_closet/guard/hcz,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "mrt" = (
@@ -77615,6 +77619,7 @@
 	dir = 8
 	},
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "qbP" = (
@@ -94390,6 +94395,7 @@
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/securitypost)
 "try" = (
@@ -96148,6 +96154,7 @@
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/uhcz/securitypost)
 "tJM" = (
@@ -98441,6 +98448,7 @@
 "uiH" = (
 /obj/structure/closet/secure_closet/guard/hcz/sergeant,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/carpet/red,
 /area/site53/lhcz/hczguardgear)
 "uiI" = (
@@ -105400,6 +105408,7 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/red/mono,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/lhcz/hczguardgear)
 "vIk" = (
@@ -112352,6 +112361,7 @@
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -112838,6 +112848,7 @@
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
 	},
@@ -117489,6 +117500,7 @@
 "yjK" = (
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
+/obj/item/clothing/mask/gas/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uhcz/securitypost)
 "yjM" = (
