@@ -9,6 +9,7 @@
 
 #define NETWORK_LCZ "Light Containment Zone Network"
 #define NETWORK_012 "SCP-012 CCTV Network"
+#define NETWORK_066 "SCP-066 CCTV Network"
 #define NETWORK_173 "SCP-173 CCTV Network"
 #define NETWORK_343 "SCP-343 CCTV Network"
 #define NETWORK_513 "SCP-513 CCTV Network"
@@ -50,6 +51,7 @@
 			(NETWORK_EZ),
 			(NETWORK_LCZ),
 			(NETWORK_012),
+			(NETWORK_066),
 			(NETWORK_173),
 			(NETWORK_343),
 			(NETWORK_513),
@@ -88,14 +90,15 @@
 			NETWORK_SCI,
 			NETWORK_MED,
 			NETWORK_SERVICE,
-			NETWORK_LCZ,
+			NETWORK_LCZ, //LCZ Camera Networks below
 			NETWORK_012,
+			NETWORK_066,
 			NETWORK_173,
 			NETWORK_343,
 			NETWORK_513,
 			NETWORK_529,
 			NETWORK_999,
-			NETWORK_HCZ,
+			NETWORK_HCZ, //HCZ Camera Networks below
 			NETWORK_008,
 			NETWORK_017,
 			NETWORK_035,
@@ -171,6 +174,9 @@
 
 /obj/machinery/camera/network/containmentunit/scp049
 	network = list(NETWORK_049)
+
+/obj/machinery/camera/network/containmentunit/scp066
+	network = list(NETWORK_066)
 
 /obj/machinery/camera/network/containmentunit/scp082
 	network = list(NETWORK_082)
