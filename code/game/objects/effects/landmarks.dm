@@ -144,6 +144,11 @@
 	tag = "start*[name]"
 	return 1
 
+/obj/effect/landmark/information
+	name = "Map Information Landmark"
+	icon_state = "information"
+	desc = "Feel free to replace this with any notable map information."
+
 //Costume spawner landmarks
 /obj/effect/landmark/costume/New() //costume spawner, selects a random subclass and disappears
 
