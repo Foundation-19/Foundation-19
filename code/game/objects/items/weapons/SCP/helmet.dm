@@ -78,7 +78,7 @@
 /obj/item/clothing/head/helmet/scp/hczsecurityofficer
 	name = "\improper Tactical Security Officer Helmet"
 	desc = "The markings on this helmet indicate that it belongs to a SD zone commander. It has a yellow poly-carbonate ballistic visor on it."
-	icon_state = "heavier-guard-helm-hcz"
+	icon_state = "heavier-guard-helm"
 	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_VRESISTANT, laser = ARMOR_LASER_MAJOR, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 	cold_protection = HEAD
