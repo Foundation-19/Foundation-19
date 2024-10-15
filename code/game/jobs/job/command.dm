@@ -56,7 +56,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/command/headofhr
 	class = CLASS_A
 	hud_icon = "hudhumanresources"
-	alt_titles = list("Assistant Site Director)
+	alt_titles = list("Assistant Site Director")
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_BUR = 300)
 
 	access = list(
