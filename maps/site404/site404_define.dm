@@ -4,9 +4,9 @@
 	path = "site404"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 	station_levels = list(1, 2, 3, 4) //These numbers refer to the height variable on the map data landmark,
-	admin_levels = list(5, 6)
-	contact_levels = list(1, 2, 3, 4) //Often seen on the bottom left of the map.
-	sealed_levels = list(1, 2, 3, 4, 5, 6)
+	admin_levels = list(5, 6)         //Often seen on the bottom left of the map.
+	contact_levels = list(1, 2, 3, 4)
+	sealed_levels = list(1, 2, 3, 4)
 	base_turf_by_z = list(
 		"1" = /turf/space,
 		"2" = /turf/space,
@@ -26,9 +26,9 @@
 
 	station_name  = "Foundation Site 404"
 	station_short = "Site 404"
-	dock_name     = "Central Command Depo"
-	boss_name     = "Foundation Central Office"
-	boss_short    = "Central Office"
+	dock_name     = "Foundation Orbital Waystation"
+	boss_name     = "Foundation Ground Control Office"
+	boss_short    = "Ground Control"
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
 

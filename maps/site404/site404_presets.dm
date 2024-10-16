@@ -1,6 +1,7 @@
 #define NETWORK_ADMIN "Administration Department Network"
 #define NETWORK_ENGINE "Engineering Department Network"
 #define NETWORK_LOGISTICS "Logistics Department Network"
+#define THUNDER "Miscellaneous Circuit Network"
 
 #define NETWORK_EZ "Entrance Zone Network"
 #define NETWORK_SCI "Research Department Network"
@@ -84,6 +85,7 @@
 /datum/map/site404
 	// Networks that will show up as options in the camera monitor program
 	station_networks = list(
+			NETWORK_THUNDER,
 			NETWORK_ADMIN,
 			NETWORK_ENGINE,
 			NETWORK_LOGISTICS,
