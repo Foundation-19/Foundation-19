@@ -411,7 +411,6 @@
 	accuracy_power = 7
 	accuracy = 2
 	bulk = GUN_BULK_RIFLE
-	wielded_item_state = null
 	mag_insert_sound = 'sounds/weapons/guns/interaction/ltrifle_magin.ogg'
 	mag_remove_sound = 'sounds/weapons/guns/interaction/ltrifle_magout.ogg'
 
