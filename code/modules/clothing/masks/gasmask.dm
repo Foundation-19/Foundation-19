@@ -293,7 +293,7 @@
 	desc = "A top-grade tactical gas mask that encrypts your voice and can strike fear through those it who see it, oh wait, it's just a redesign of the standard-issue staff gasmask. Can be connected to an air supply.."
 	icon_state = "sec-mask"
 	item_state = "sec-mask"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
 		melee = ARMOR_MELEE_SMALL,
