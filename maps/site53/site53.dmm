@@ -53111,7 +53111,7 @@
 /area/site53/reswing/lowres/xenobotany)
 "kTZ" = (
 /obj/machinery/door/airlock/command{
-	name = "Internal Investigation Officer's Offfice";
+	name = "Internal Investigation Officer's Office";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
 /obj/structure/cable/green{
@@ -61146,10 +61146,6 @@
 /obj/effect/floor_decal/corner/paleblue/bordercee,
 /turf/simulated/floor/tiled/white,
 /area/site53/llcz/dclass/medicalpost/surgery)
-"mDg" = (
-/obj/effect/paint_stripe/blue,
-/turf/space,
-/area/site53/uez/equipmentroom)
 "mDl" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/exoplanet/grass,
@@ -352631,7 +352627,7 @@ nQC
 abM
 emj
 tgo
-mDg
+xXt
 abM
 abM
 abM
@@ -353145,7 +353141,7 @@ tny
 abM
 emj
 vAf
-mDg
+xXt
 beN
 sTi
 tUj
@@ -353916,7 +353912,7 @@ aio
 xXt
 ejT
 wHP
-mDg
+xXt
 qnz
 okc
 mkl
