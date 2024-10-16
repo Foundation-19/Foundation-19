@@ -151,15 +151,15 @@
 	acid_resistance = 5
 
 /obj/item/clothing/head/hcz_hazmat
-	name = "combat hazmat helmet"
+	name = "foundation MOPP hood"
 	icon_state = "hcz-hazard-helmet"
 	item_state = "hcz-hazard-helmet"
-	desc = "A helmet that protects the head and face from biological comtaminants, heavy acids, high temperatures, and bullets."
+	desc = "A hood and gas mask that protects the head and face from biological comtaminants, heavy acids, and high temperatures."
 	permeability_coefficient = 0
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
-		bullet = ARMOR_BALLISTIC_PISTOL,
-		laser = ARMOR_LASER_HANDGUNS,
+		bullet = bullet = ARMOR_BALLISTIC_VVSMALL,
+		laser = ARMOR_LASER_VERY_SMALL,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
@@ -175,7 +175,7 @@
 	acid_resistance = 6
 
 /obj/item/clothing/suit/hcz_hazmat
-	name = "combat hazmat suit"
+	name = "foundation MOPP suit"
 	desc = "An armored suit that protects against biological contamination, heavy acids, and high temperatures."
 	icon_state = "hcz-hazard"
 	item_state = "hcz-hazard"
