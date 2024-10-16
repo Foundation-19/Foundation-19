@@ -3586,6 +3586,7 @@
 #include "maps\site404\job\research.dm"
 #include "maps\site404\job\security.dm"
 #include "maps\site404\job\silicon.dm"
+#include "maps\site404\outfits\jobs\security.dm"
 #include "maps\test\test.dmm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\maps.dm"

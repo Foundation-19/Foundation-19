@@ -421,6 +421,104 @@
 	)
 	skill_points = 21
 //##
+//CONTAINMENT SPECIALISTS
+//##
+
+/datum/job/lczcontainmentspecialist
+	title = "LCZ Containment Specialist"
+	department = "Light Containment Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|LCZ
+	total_positions = 1
+	spawn_positions = 1
+	duties = "<big><b>As the Light Containment Zone Containment Specialist, you are in charge of three main tasks.<br><br> 1) Engaging sentient anomalies.<br> 2) Keeping your zone knowledgable on the currently active anomalies.<br> 3) Leading containment efforts.<br><br> However, you are not a security guard and are expected to not place yourself in harms way.</b></big>"
+	supervisors = "the LCZ Zone Lieutenant"
+	economic_power = 4
+	requirements = list(EXP_TYPE_LCZ = 480)
+	alt_titles = list("LCZ AEED Agent", "LCZ Containment Liaison")
+	minimal_player_age = 5
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/lcz_containment_specialist
+	class = CLASS_C
+	hud_icon = "hudlczcontainmentspecialist"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3,
+		ACCESS_DCLASS_KITCHEN,
+		ACCESS_DCLASS_BOTANY,
+		ACCESS_DCLASS_MINING,
+		ACCESS_DCLASS_JANITORIAL,
+		ACCESS_DCLASS_MEDICAL,
+		ACCESS_DCLASS_LUXURY
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+	skill_points = 17
+
+/datum/job/hczcontainmentspecialist
+	title = "HCZ Containment Specialist"
+	department = "Heavy Containment Personnel"
+	selection_color = "#601c1c"
+	department_flag = SEC|HCZ
+	total_positions = 1
+	spawn_positions = 1
+	duties = "<big><b>As the Heavy Containment Zone Containment Specialist, you are in charge of three main tasks.<br><br> 1) Engaging sentient anomalies.<br> 2) Keeping your zone knowledgable on the currently active anomalies.<br> 3) Leading containment efforts.<br><br> However, you are not a security guard and are expected to not place yourself in harms way.</b></big>"
+	supervisors = "the HCZ Zone Lieutenant"
+	economic_power = 4
+	requirements = list(EXP_TYPE_HCZ = 480)
+	alt_titles = list("HCZ AEED Agent", "HCZ Containment Liaison")
+	minimal_player_age = 5
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/security/hcz_containment_specialist
+	class = CLASS_C
+	hud_icon = "hudhczcontainmentspecialist"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SCIENCE_LVL2,
+		ACCESS_SCIENCE_LVL3
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_BASIC,
+	    SKILL_FORENSICS   = SKILL_BASIC
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_TRAINED
+	)
+	skill_points = 17
+
+//##
 //JUNIOR OFFICER
 //##
 
