@@ -89,8 +89,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -251,8 +250,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/monotile,
@@ -1406,8 +1404,7 @@
 	c_tag = "SCP-1102-RU Security Checkpoint Office"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 4
@@ -2260,8 +2257,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "axm" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/safe/bordercorner,
 /obj/machinery/light{
@@ -2913,8 +2909,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -5583,8 +5578,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -7330,8 +7324,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -7674,8 +7667,7 @@
 /area/site53/uhcz/scp096)
 "bFg" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/sign/directions/ez{
 	dir = 8;
@@ -8467,8 +8459,7 @@
 	pixel_x = -32
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -8555,8 +8546,7 @@
 /area/site53/llcz/mine/unexplored)
 "bNO" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/sign/directions/ez{
 	dir = 1;
@@ -9680,8 +9670,7 @@
 /area/site53/lhcz/scp1102room)
 "cbe" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -10475,8 +10464,7 @@
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
@@ -10683,8 +10671,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -10732,8 +10719,7 @@
 /area/site53/engineering/server_room)
 "clH" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/camera/network/lcz,
 /obj/machinery/power/apc/hyper{
@@ -10747,8 +10733,7 @@
 /area/site53/llcz/dclass/armory)
 "clU" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/light{
 	dir = 4
@@ -12477,8 +12462,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -13611,8 +13595,7 @@
 /area/site53/lowertrams/brownline)
 "cQh" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -14435,8 +14418,7 @@
 /area/site53/llcz/dclass/luxuryhall)
 "cXU" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/corner{
@@ -14847,8 +14829,7 @@
 /area/site53/uez/equipmentroom)
 "ddk" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/light{
 	dir = 8
@@ -14917,8 +14898,7 @@
 "ddS" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "SCP914Lock";
@@ -17147,8 +17127,7 @@
 /area/site53/llcz/scp263)
 "dBC" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -17783,8 +17762,7 @@
 /area/site53/lowertrams/hub)
 "dHX" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/lhcz/hallway)
@@ -18037,8 +18015,7 @@
 /area/site53/ulcz/scp999)
 "dKf" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/light{
 	dir = 8
@@ -19028,8 +19005,7 @@
 /area/site53/llcz/dclass/checkpointoverlook)
 "dVe" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/button/blast_door{
@@ -19590,8 +19566,7 @@
 "eag" = (
 /obj/effect/floor_decal/corner/blue/bordercorner,
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -19646,8 +19621,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -19823,8 +19797,7 @@
 /area/site53/logistics/logisticsofficer)
 "ecu" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/sign/directions/ez{
 	dir = 8;
@@ -19963,8 +19936,7 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/light{
 	dir = 1
@@ -21311,8 +21283,7 @@
 /area/site53/logistics/logistics)
 "esM" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -26505,8 +26476,7 @@
 	},
 /obj/item/device/flashlight/lamp,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -27242,8 +27212,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/checkequip)
@@ -27397,8 +27366,7 @@
 /area/site53/upper_surface/breachshelter)
 "fHZ" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/sign/directions/ez{
 	pixel_y = 25;
@@ -28791,8 +28759,7 @@
 /area/site53/ulcz/scp999)
 "fUY" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/monotile,
@@ -29050,8 +29017,7 @@
 /area/site53/lowertrams/hub)
 "fXu" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/closet/hydrant{
 	pixel_y = 32
@@ -29270,8 +29236,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/dclass/armory)
@@ -30538,8 +30503,7 @@
 /area/chapel)
 "gnn" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/light{
 	dir = 4
@@ -31361,8 +31325,7 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -31751,8 +31714,7 @@
 /obj/item/clothing/glasses/blindfold,
 /obj/item/clothing/glasses/blindfold,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -33472,8 +33434,7 @@
 "gTw" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp294)
@@ -33802,8 +33763,7 @@
 	pixel_y = 25
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/photocopier{
 	pixel_y = 4
@@ -34664,8 +34624,7 @@
 /area/site53/medical/mentalhealth/office)
 "hen" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -35331,8 +35290,7 @@
 /area/site53/ulcz/scp914)
 "hjM" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
@@ -35882,8 +35840,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/light{
 	dir = 1
@@ -37279,8 +37236,7 @@
 /area/site53/medical/infirmreception/waiting)
 "hGy" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 4
@@ -39082,8 +39038,7 @@
 /area/site53/ulcz/humanoidcontainment)
 "hYU" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner{
@@ -39362,8 +39317,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL3")
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/blast_door{
@@ -40031,8 +39985,7 @@
 "imo" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -41657,8 +41610,7 @@
 "iFc" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -44946,8 +44898,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -47087,8 +47038,7 @@
 "jIP" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -47864,8 +47814,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -48436,8 +48385,7 @@
 /area/site53/medical/infirmary)
 "jVZ" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -48559,8 +48507,7 @@
 /area/site53/ulcz/scp151)
 "jXA" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/closet/hydrant{
 	pixel_y = 32
@@ -48680,8 +48627,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -50393,14 +50339,11 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp151)
 "krf" = (
-/obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
-	},
-/turf/simulated/floor/tiled/dark/corner{
+/obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
-/area/site53/uez/equipmentroom)
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/lhcz/hallway)
 "krj" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -52319,8 +52262,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
@@ -54343,8 +54285,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -55441,8 +55382,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/one,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -56621,8 +56561,7 @@
 /area/site53/surface/bunker)
 "lGc" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 1
@@ -58067,8 +58006,7 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -60139,8 +60077,7 @@
 /area/site53/uhcz/securitypost)
 "mre" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
@@ -60350,8 +60287,7 @@
 "mta" = (
 /obj/structure/flora/pottedplant,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -60972,8 +60908,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/machinery/light{
 	dir = 8
@@ -62164,8 +62099,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/primaryhallway)
@@ -62241,8 +62175,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -63311,8 +63244,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "mYg" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner{
@@ -63413,8 +63345,7 @@
 /area/site53/surface/surface/east)
 "mZN" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/closet/hydrant{
 	pixel_y = 32
@@ -65189,8 +65120,7 @@
 /area/site53/engineering/maintenance/upperselfdestruct)
 "nti" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/light{
 	dir = 1
@@ -66024,8 +65954,7 @@
 	pixel_y = 23
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/light{
 	dir = 4
@@ -66743,8 +66672,7 @@
 /area/site53/engineering/atmos)
 "nLR" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -66989,8 +66917,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "LCZ RU";
@@ -67099,8 +67026,7 @@
 "nQj" = (
 /obj/effect/floor_decal/corner/orange/border,
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/dclass/checkpoint)
@@ -67957,8 +67883,7 @@
 "nZA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
@@ -68209,8 +68134,7 @@
 	ailock = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -68969,8 +68893,7 @@
 	pixel_y = 23
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -71044,8 +70967,7 @@
 /area/site53/ulcz/office)
 "oMd" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -71365,8 +71287,7 @@
 /area/site53/medical/chemistry)
 "oOL" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -73485,8 +73406,7 @@
 /area/site53/engineering/server_room)
 "pio" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/light{
 	dir = 4
@@ -73834,8 +73754,7 @@
 /area/site53/llcz/dclass/checkcryo)
 "pno" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -74227,8 +74146,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -74725,8 +74643,7 @@
 /area/site53/lowertrams/hczmaint)
 "pyC" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -74863,8 +74780,7 @@
 	c_tag = "SCP-500 Security Checkpoint Office"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 4
@@ -75870,8 +75786,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -76094,8 +76009,7 @@
 /area/site53/lowertrams/brownline)
 "pLz" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 8
@@ -76271,8 +76185,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
@@ -76880,8 +76793,7 @@
 /area/site53/medical/infirmary)
 "pUH" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/lowertrams/hub)
@@ -78510,8 +78422,7 @@
 /area/vacant/prototype/engine)
 "qmm" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner{
@@ -78872,8 +78783,7 @@
 /area/site53/uez/commandpanicbunker)
 "qpj" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/corner{
@@ -79199,8 +79109,7 @@
 /area/site53/medical/equipstorage)
 "qsI" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/closet/secure_closet/cadet/lcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted,
@@ -79236,8 +79145,7 @@
 /area/site53/lowertrams/hczmaint/south)
 "qth" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/hallways)
@@ -80523,8 +80431,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 8
@@ -85570,8 +85477,7 @@
 /area/site53/ulcz/scp914)
 "rEv" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	dir = 1
@@ -85598,8 +85504,7 @@
 /area/site53/ulcz/hallways)
 "rEM" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 8
@@ -85760,8 +85665,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/uez/hallway)
@@ -86976,8 +86880,7 @@
 /area/site53/llcz/scp012)
 "rSB" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -87097,8 +87000,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -88812,8 +88714,7 @@
 "smc" = (
 /obj/structure/flora/pottedplant,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -89274,8 +89175,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL2")
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ Checkpoint Northern Window";
@@ -89700,8 +89600,7 @@
 /area/site53/engineering/atmos)
 "suw" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/white/corner{
@@ -90014,8 +89913,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/lhcz/hczguardgear)
@@ -90105,8 +90003,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -91344,8 +91241,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "sMl" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -91952,8 +91848,7 @@
 /area/site53/uez/hallway)
 "sSF" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/sign/directions/ez{
 	pixel_y = 25
@@ -92302,8 +92197,7 @@
 /area/site53/medical/equipstorage)
 "sWi" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -93771,8 +93665,7 @@
 /area/site53/uhcz/hallways)
 "tkA" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/bordercorner,
 /obj/structure/cable{
@@ -94390,8 +94283,7 @@
 /area/site53/llcz/dclass/luxuryhall)
 "trs" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
@@ -94446,8 +94338,7 @@
 /area/site53/maintenance/surfacewest)
 "tsB" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/closet/secure_closet{
 	icon_closed = "sec";
@@ -96566,8 +96457,7 @@
 "tPu" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -96784,8 +96674,7 @@
 /area/site53/engineering/atmos)
 "tQP" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/monotile,
@@ -96950,8 +96839,7 @@
 /area/site53/lhcz/hczguardgear)
 "tSH" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -97162,8 +97050,7 @@
 /obj/item/storage/mre/random,
 /obj/item/storage/mre/random,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/light{
 	dir = 4
@@ -97231,8 +97118,7 @@
 /area/site53/llcz/dclass/primaryhallway)
 "tVH" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/camera/network/hcz,
 /obj/structure/closet/hydrant{
@@ -97365,8 +97251,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -97460,8 +97345,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/horizontal,
 /area/site53/lowertrams/hub)
@@ -97828,8 +97712,7 @@
 /area/site53/science/seniorresearcherc)
 "ubY" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/checkequip)
@@ -98663,8 +98546,7 @@
 /area/site53/uez/equipmentroom)
 "ukG" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/sign/directions/ez{
 	pixel_y = 25
@@ -99311,8 +99193,7 @@
 "uqJ" = (
 /obj/structure/closet/secure_closet/guard/lcz/sergeant,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/item/ammo_magazine/scp/p90_mag,
 /obj/item/ammo_magazine/scp/p90_mag,
@@ -100990,8 +100871,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -102871,8 +102751,7 @@
 	req_access = list("ACCESS_SECURITY_LEVEL1")
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "ULCZ Exit Point";
@@ -103694,8 +103573,7 @@
 /area/site53/surface/surface/west)
 "vmX" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/white/corner{
@@ -107607,8 +107485,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -108720,8 +108597,7 @@
 /area/site53/engineering/atmos)
 "wtJ" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/machinery/camera/network/scp049{
 	dir = 8;
@@ -109471,8 +109347,7 @@
 "wCj" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/entrance_checkpoint)
@@ -109808,8 +109683,7 @@
 	pixel_y = 23
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 8
@@ -110302,8 +110176,7 @@
 /area/site53/llcz/checkequip)
 "wLi" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/scp1507observation)
@@ -110440,8 +110313,7 @@
 /obj/structure/table/reinforced,
 /obj/item/folder/red,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -112356,8 +112228,7 @@
 /area/site53/llcz/checkequip)
 "xgY" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
@@ -112527,8 +112398,7 @@
 /area/site53/llcz/dclass/briefing)
 "xiA" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp294)
@@ -112575,8 +112445,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
@@ -112843,8 +112712,7 @@
 /area/site53/uez/equipmentroom)
 "xkT" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/closet/secure_closet/cadet/hcz,
 /obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2,
@@ -114032,8 +113900,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
@@ -114957,8 +114824,7 @@
 "xIL" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "049surgeryview";
@@ -115251,8 +115117,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -115767,8 +115632,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/white/monotile,
@@ -116491,8 +116355,7 @@
 /area/site53/uez/equipmentroom)
 "xYG" = (
 /obj/effect/floor_decal/corner/red/bordercorner{
-	dir = 4;
-	color = "#2B0F42"
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/hallways)
@@ -117537,8 +117400,7 @@
 /area/site53/lhcz/hallway)
 "yjQ" = (
 /obj/effect/floor_decal/corner/red/border{
-	dir = 5;
-	color = "#2B0F42"
+	dir = 5
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/corner{
@@ -117644,8 +117506,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red/border{
-	dir = 9;
-	color = "#2B0F42"
+	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
@@ -162401,7 +162262,7 @@ hfE
 hio
 lqn
 tea
-qWN
+krf
 xao
 iiR
 hio
@@ -164970,14 +164831,14 @@ tea
 cTe
 hio
 qeD
-qWN
+krf
 bQh
 bQh
 bQh
 rFd
 riE
 hio
-qWN
+krf
 kqq
 iiR
 hio
@@ -165228,7 +165089,7 @@ hio
 hio
 hio
 mZN
-qWN
+krf
 bQh
 rFd
 cwb
@@ -169812,7 +169673,7 @@ oJj
 qHt
 tzn
 uZK
-qWN
+krf
 bQh
 nKi
 bQh
@@ -169826,7 +169687,7 @@ tea
 tea
 hio
 qeD
-qWN
+krf
 bQh
 lgG
 bQh
@@ -170070,7 +169931,7 @@ tzn
 tzn
 hio
 jXA
-qWN
+krf
 nKi
 rFd
 cwb
@@ -170084,7 +169945,7 @@ hio
 hio
 hio
 tVH
-qWN
+krf
 lgG
 rFd
 cwb
@@ -351502,7 +351363,7 @@ xXt
 tDH
 hGI
 aDj
-krf
+ckl
 jbS
 kRG
 tpF
