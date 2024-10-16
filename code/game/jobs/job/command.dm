@@ -215,7 +215,7 @@
 	requirements = list(EXP_TYPE_ECZ = 480)
 	minimal_player_age = 5
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/security/ez_sergeant_investigative
+	outfit_type = /decl/hierarchy/outfit/job/civ/investigativeoff
 	class = CLASS_C
 	hud_icon = "hudinvestigation"
 
@@ -266,7 +266,7 @@
 	requirements = list(EXP_TYPE_ECZ = 220)
 	minimal_player_age = 0
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/security/ez_guard_investigative
+	outfit_type = /decl/hierarchy/outfit/job/civ/investigative
 	class = CLASS_C
 	hud_icon = "hudinvestigation"
 

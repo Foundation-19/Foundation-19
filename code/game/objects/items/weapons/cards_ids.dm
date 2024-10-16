@@ -589,6 +589,20 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 		ACCESS_DCLASS_LUXURY
 	)
 
+/obj/item/card/id/seclvl3io
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/investigationoff
+
+/obj/item/card/id/seclvl3ia
+	name = "security ID"
+	desc = "A dark blue ID. Looks important. The person wearing it not so much."
+	icon_state = "securitylvl3"
+	item_state = "Sec_ID3"
+	job_access_type = /datum/job/investigation
+
 // Riot Control Unit Sergeant
 /obj/item/card/id/seclvl2lczdivision2
 	name = "security ID"
