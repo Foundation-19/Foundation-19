@@ -158,7 +158,7 @@
 	permeability_coefficient = 0
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
-		bullet = bullet = ARMOR_BALLISTIC_VVSMALL,
+		bullet = ARMOR_BALLISTIC_VVSMALL,
 		laser = ARMOR_LASER_VERY_SMALL,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_RESISTANT,
