@@ -1,8 +1,28 @@
+/obj/item/clothing/suit/armor/pcarrier/scp
+	icon_state = "scpcarrier"
+	item_state = "scpcarrier"
+
+/obj/item/clothing/accessory/storage/pouches/scp
+	icon_state = "pouchescp"
+	item_state = "pouchescp"
+
+/obj/item/clothing/accessory/armguards/scp
+	name = "foundation shoulder plates"
+	icon_state = "armguardscp"
+	item_state = "armguardscp"
+	desc = "Grey attachable shoulder guards issued to foundation site security, made with compressed durathread material for lighter weight."
+
+/obj/item/clothing/accessory/legguards/scp
+	name = "foundation knee pads"
+	icon_state = "legguardscp"
+	item_state = "legguardscp"
+	desc = "Black ballstic grade knee pads able to be worn in conjunction with regular foundation site security body armor."
+
 /obj/item/clothing/suit/armor/pcarrier/scp/medium
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches/scp, /obj/item/clothing/accessory/armor/tag/scp)
 
 /obj/item/clothing/suit/armor/pcarrier/scp/tactical
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards)
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches/scp, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards/scp, /obj/item/clothing/accessory/legguards/scp)
 
 /obj/item/clothing/suit/armor/pcarrier/green/scp/mtf_epsilon
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical/mtf, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/scp, /obj/item/clothing/accessory/armguards, /obj/item/clothing/accessory/legguards, /obj/item/clothing/accessory/storage/pouches/green)
@@ -131,15 +151,15 @@
 	acid_resistance = 5
 
 /obj/item/clothing/head/hcz_hazmat
-	name = "combat hazmat helmet"
+	name = "foundation MOPP hood"
 	icon_state = "hcz-hazard-helmet"
 	item_state = "hcz-hazard-helmet"
-	desc = "A helmet that protects the head and face from biological comtaminants, heavy acids, high temperatures, and bullets."
+	desc = "A hood and gas mask that protects the head and face from biological comtaminants, heavy acids, and high temperatures."
 	permeability_coefficient = 0
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
-		bullet = ARMOR_BALLISTIC_PISTOL,
-		laser = ARMOR_LASER_HANDGUNS,
+		bullet = ARMOR_BALLISTIC_VVSMALL,
+		laser = ARMOR_LASER_VERY_SMALL,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_SHIELDED,
@@ -155,7 +175,7 @@
 	acid_resistance = 6
 
 /obj/item/clothing/suit/hcz_hazmat
-	name = "combat hazmat suit"
+	name = "foundation MOPP suit"
 	desc = "An armored suit that protects against biological contamination, heavy acids, and high temperatures."
 	icon_state = "hcz-hazard"
 	item_state = "hcz-hazard"
