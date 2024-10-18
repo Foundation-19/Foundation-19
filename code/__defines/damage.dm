@@ -24,10 +24,10 @@
 #define	DAM_BULLET_500SW 55 //.500 S&W Magnum
 
 #define	DAM_BULLET_5MMR 40 // 5mmr
-#define	DAM_BULLET_A556X45 45 // 5.56x45mm
-#define	DAM_BULLET_A556X45NPC 35 //5.56x45mm cyborgs and NPC's
+#define	DAM_BULLET_A556X45 40 // 5.56x45mm
+#define	DAM_BULLET_A556X45NPC 30 //5.56x45mm cyborgs and NPC's
 #define	DAM_BULLET_7MMR 45 // 7mmr
-#define	DAM_BULLET_A762X39 50 // 7.62x39mm
+#define	DAM_BULLET_A762X39 45 // 7.62x39mm
 #define	DAM_BULLET_A762X51 55 // 7.62x51mm NATO
 #define	DAM_BULLET_A762X54 55 // 7.62x54mmR
 #define	DAM_BULLET_10X24 22 // 10x24mmR
