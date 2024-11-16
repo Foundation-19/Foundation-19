@@ -16,6 +16,7 @@
 	. = ..()
 	if(!pizza_preferences)
 		pizza_preferences = list()
+
 // Description when examined
 /obj/item/pizzabox/scp458/examine(mob/user)
 	. = ..()
