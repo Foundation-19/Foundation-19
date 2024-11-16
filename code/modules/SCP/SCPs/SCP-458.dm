@@ -20,6 +20,7 @@
 /obj/item/pizzabox/scp458/examine(mob/user)
 	. = ..()
 	. += "<span class='info'>It seems to be an ordinary pizza box, but you can feel a faint warmth coming from inside.</span>"
+
 /obj/item/pizzabox/scp458/attack_self(mob/living/user)
 	QDEL_NULL(pizza)
 	if(ishuman(user))
