@@ -11,6 +11,7 @@
 		/obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza = 0.8
 	)
 	var/static/list/pizza_preferences
+
 /obj/item/pizzabox/scp458/Initialize()
 	. = ..()
 	if(!pizza_preferences)
