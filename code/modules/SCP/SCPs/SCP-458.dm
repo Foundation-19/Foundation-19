@@ -25,7 +25,8 @@
 	if(ishuman(user))
 		attune_pizza(user)
 	. = ..()
-/obj/item/pizzabox/scp458/proc/attune_pizza(mob/living/carbon/human/noms) //tonight on "proc names I never thought I'd type"
+
+/obj/item/pizzabox/scp458/proc/attune_pizza(mob/living/carbon/human/noms)
 	if(!pizza_preferences[noms.ckey])
 		pizza_preferences[noms.ckey] = pickweight(pizza_types)
 	var/obj/item/pizza_type = pizza_preferences[noms.ckey]
