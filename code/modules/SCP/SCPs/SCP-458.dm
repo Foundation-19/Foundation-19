@@ -3,11 +3,13 @@
 	desc = "A seemingly ordinary pizza box that is anomalously capable of producing an infinite amount of pizza."
 	w_class = ITEM_SIZE_NORMAL
 
+	// Pizza types are weighted by their chance to be someone's favorite
 	var/list/pizza_types = list(
 		/obj/item/reagent_containers/food/snacks/sliceable/pizza/meatpizza = 1,
 		/obj/item/reagent_containers/food/snacks/sliceable/pizza/mushroompizza = 1,
 		/obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita = 1,
-		/obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza = 0.8) //pizzas here are weighted by chance to be someone's favorite
+		/obj/item/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza = 0.8
+	)
 	var/static/list/pizza_preferences
 /obj/item/pizzabox/scp458/Initialize()
 	. = ..()
