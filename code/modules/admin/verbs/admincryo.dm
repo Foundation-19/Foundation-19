@@ -1,7 +1,7 @@
 /client/proc/cmd_admin_cryo(mob/living/M as mob in GLOB.living_mob_list_)
 	set category = "Special Verbs"
-
 	set name = "Admin Cryo"
+
 	if(!check_rights(R_MOD))
 		src << "Only moderators may use this command."
 		return
