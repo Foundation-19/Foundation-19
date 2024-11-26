@@ -30,7 +30,6 @@
 			if(M.mind)
 				if(M.mind.assigned_job)
 					M.mind.assigned_job.clear_slot()
-
 				if(M.mind.objectives.len)
 					M.mind.objectives = null
 					M.mind.special_role = null
