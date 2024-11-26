@@ -45,8 +45,6 @@
 			if(R)
 				qdel(R)
 
-
-			// remove the mob from client2mob
 			// Delete the mob.
 			var/mob/observer/ghost/g = find_dead_player(M.last_ckey, TRUE)
 			M.ckey = null
