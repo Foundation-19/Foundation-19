@@ -12,9 +12,9 @@
 	var/confirm = alert(src, "You will be removing [M] from the round, are you sure?", "Message", "Yes", "No")
 	if(confirm != "Yes")
 		return
+
 	if (usr.client)
 		if(usr.client.holder)
-
 			for(var/obj/item/card/id/Z in M)
 				qdel(Z)
 			for(var/obj/item/device/pda/Y in M)
