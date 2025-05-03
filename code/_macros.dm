@@ -120,7 +120,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 #define to_world_log(message)                 to_target(world.log, message)
 #define sound_to(target, sound)               to_target(target, sound)
 #define image_to(target, image)               to_target(target, image)
-#define show_browser(target, content, title)  to_target(target, browse(content, title))
+#define show_browser(target, content, title)  to_target(target, browse(HTML_SKELETON(content), title))
 #define close_browser(target, title)          to_target(target, browse(null, title))
 #define send_rsc(target, content, title)      to_target(target, browse_rsc(content, title))
 #define send_link(target, url)                to_target(target, link(url))

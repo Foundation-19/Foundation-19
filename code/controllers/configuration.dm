@@ -242,6 +242,8 @@ var/list/gamemode_cache = list()
 
 	var/asset_cdn_url
 
+	var/storage_cdn_iframe = "https://foundation-19.github.io/Foundation-19/iframe.html"
+
 	var/bccm = FALSE
 
 	var/use_timelocks = FALSE
@@ -834,6 +836,9 @@ var/list/gamemode_cache = list()
 							value += "/"
 						asset_cdn_url = value
 
+				if("storage_cdn_iframe")
+					storage_cdn_iframe = value
+
 				if ("use_panic_bunker")
 					config.panic_bunker = 1
 
@@ -922,6 +927,8 @@ var/list/gamemode_cache = list()
 	fps = round(fps)
 	if(fps <= 0)
 		fps = initial(fps)
+
+	Master.OnConfigLoad()
 
 /datum/configuration/proc/loadsql(filename)  // -- TLE
 	var/list/Lines = file2list(filename)
