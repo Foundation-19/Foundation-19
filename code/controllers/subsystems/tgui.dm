@@ -33,6 +33,23 @@ SUBSYSTEM_DEF(tgui)
 	polyfill = "<script>\n[polyfill]\n</script>"
 	basehtml = replacetextEx(basehtml, "<!-- tgui:inline-polyfill -->", polyfill)
 
+	var/storage_iframe = GLOB.config.storage_cdn_iframe
+	if(storage_iframe && storage_iframe != /datum/configuration::storage_cdn_iframe)
+		basehtml = replacetextEx(basehtml, "tgui:storagecdn", storage_iframe)
+		return
+
+	if(GLOB.config.asset_transport == "webroot")
+		var/datum/asset_transport/webroot/webroot = SSassets.transport
+
+		var/datum/asset_cache_item/item = webroot.register_asset("iframe.html", file("tgui/public/iframe.html"))
+		basehtml = replacetext(basehtml, "tgui:storagecdn", webroot.get_asset_url("iframe.html", item))
+		return
+
+	if(!storage_iframe)
+		return
+
+	basehtml = replacetextEx(basehtml, "tgui:storagecdn", storage_iframe)
+
 /datum/controller/subsystem/tgui/Shutdown()
 	close_all_uis()
 
