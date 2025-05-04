@@ -928,8 +928,6 @@ var/list/gamemode_cache = list()
 	if(fps <= 0)
 		fps = initial(fps)
 
-	Master.OnConfigLoad()
-
 /datum/configuration/proc/loadsql(filename)  // -- TLE
 	var/list/Lines = file2list(filename)
 	for(var/t in Lines)
