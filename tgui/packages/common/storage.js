@@ -66,18 +66,18 @@ class HubStorageBackend {
   }
 
   async get(key) {
-    const value = await window.hubStorage.getItem('aurora-' + key);
+    const value = await window.hubStorage.getItem('f19-' + key);
     if (typeof value === 'string') {
       return JSON.parse(value);
     }
   }
 
   async set(key, value) {
-    window.hubStorage.setItem('aurora-' + key, JSON.stringify(value));
+    window.hubStorage.setItem('f19-' + key, JSON.stringify(value));
   }
 
   async remove(key) {
-    window.hubStorage.removeItem('aurora-' + key);
+    window.hubStorage.removeItem('f19-' + key);
   }
 
   async clear() {
