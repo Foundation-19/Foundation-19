@@ -1423,9 +1423,4 @@ If it ever becomes necesary to get a more performant REF(), this lies here in wa
 ```
 */
 /proc/REF(datum/input)
-	if(istype(input) && (input.datum_flags & DF_USE_TAG))
-		if(input.tag)
-			return "\[[url_encode(input.tag)]\]"
-		crash_with("A ref was requested of an object with DF_USE_TAG set but no tag: [input]")
-		input.datum_flags &= ~DF_USE_TAG
-	return "\ref[input]"
+	return ref(input)
