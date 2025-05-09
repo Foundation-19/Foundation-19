@@ -445,7 +445,7 @@ var/global/floorIsLava = 0
 		<A href='byond://?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>
 		"}
 
-	show_browser(usr, dat, "window=admin2;size=210x280")
+	show_browser(usr, HTML_SKELETON(dat), "window=admin2;size=210x280")
 	return
 
 /datum/admins/proc/Secrets(datum/admin_secret_category/active_category = null)
