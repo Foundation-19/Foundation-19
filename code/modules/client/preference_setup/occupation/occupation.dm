@@ -297,7 +297,8 @@
 		for(i=1, i <= length(S.levels), i++)
 			var/level_name = S.levels[i]
 			HTML +=	"<br><b>[level_name]</b>: [S.levels[level_name]]<br>"
-		show_browser(user, jointext(HTML, null), "window=\ref[user]skillinfo")
+		HTML = jointext(HTML, null)
+		show_browser(user, HTML_SKELETON(HTML), "window=\ref[user]skillinfo")
 
 	else if(href_list["job_info"])
 
