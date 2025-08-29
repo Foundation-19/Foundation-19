@@ -195,8 +195,50 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/stack/tile/small/dark
-	name = "dark vertical tiles"
+	name = "dark small tiles"
 	singular_name = "dark small tile"
+	icon_state = "fr_tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/halfsplit
+	name = "steel halfsplit tiles"
+	singular_name = "steel halfsplit tile"
+	icon_state = "tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/halfsplit/white
+	name = "white halfsplit tiles"
+	singular_name = "white halfsplit tile"
+	icon_state = "tile_white"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/halfsplit/dark
+	name = "dark halfsplit tiles"
+	singular_name = "dark halfsplit tile"
+	icon_state = "fr_tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/herringbone
+	name = "steel herringbone tiles"
+	singular_name = "steel herringbone tile"
+	icon_state = "tile"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/herringbone/white
+	name = "white herringbone tiles"
+	singular_name = "white herringbone tile"
+	icon_state = "tile_white"
+	matter = list(MATERIAL_STEEL = 450)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/obj/item/stack/tile/herringbone/dark
+	name = "dark herringbone tiles"
+	singular_name = "dark herringbone tile"
 	icon_state = "fr_tile"
 	matter = list(MATERIAL_STEEL = 450)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE

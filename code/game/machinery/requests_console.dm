@@ -244,3 +244,6 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	announcement.announcer = ""
 	if(mainmenu)
 		screen = RCS_MAINMENU
+
+/obj/machinery/requests_console/command
+	announcementConsole = 1

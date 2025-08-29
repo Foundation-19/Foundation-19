@@ -646,14 +646,14 @@
 /obj/effect/floor_decal/corner/grey/full
 	icon_state = "corner_white_full"
 
-/obj/effect/floor_decal/corner/white/border
-	icon_state = "bordercolor"
-
 /obj/effect/floor_decal/corner/grey/half
 	icon_state = "bordercolorhalf"
 
 /obj/effect/floor_decal/corner/grey/mono
 	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/white/border
+	icon_state = "bordercolor"
 
 /obj/effect/floor_decal/corner/white/bordercorner
 	icon_state = "bordercolorcorner"
