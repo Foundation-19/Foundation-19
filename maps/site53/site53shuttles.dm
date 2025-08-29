@@ -102,7 +102,7 @@
 	name = "Unknown Location"
 	landmark_tag = "nav_vessel_out"
 	base_turf = /turf/simulated/floor/beach/water/ocean
-	base_area = /area/site53/surface/surface/east
+	base_area = /area/site53/town
 
 /obj/effect/shuttle_landmark/transit/vesseltransit
 	name = "In transit"
