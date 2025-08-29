@@ -151,6 +151,12 @@
 	worn_state = "912_bdu"
 	accessories = /obj/item/clothing/accessory/storage/holster/thigh
 
+/obj/item/clothing/under/police
+	name = "police uniform"
+	desc = "A slightly outdated police uniform worn by Anchorage Police officers, with the APD patch on the left shoulder, and a rank patch on the right."
+	icon_state = "police"
+	worn_state = "police"
+
 /obj/item/clothing/under/space
 	name = "\improper NASA jumpsuit"
 	desc = "It has a NASA logo on it and is made of space-proofed materials."

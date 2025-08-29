@@ -219,30 +219,6 @@
 	icon_base = "dark_small"
 	build_type = /obj/item/stack/tile/small/dark
 
-/decl/flooring/tiling/halfsplit
-	icon_base = "steel_splitside"
-	build_type = /obj/item/stack/tile/halfsplit
-
-/decl/flooring/tiling/halfsplit/white
-	icon_base = "steel_splitside"
-	build_type = /obj/item/stack/tile/halfsplit/white
-
-/decl/flooring/tiling/halfsplit/dark
-	icon_base = "steel_splitside"
-	build_type = /obj/item/stack/tile/halfsplit/dark
-
-/decl/flooring/tiling/herringbone
-	icon_base = "steel_herringbone"
-	build_type = /obj/item/stack/tile/herringbone
-
-/decl/flooring/tiling/herringbone/white
-	icon_base = "steel_herringbone"
-	build_type = /obj/item/stack/tile/herringbone/white
-
-/decl/flooring/tiling/herringbone/dark
-	icon_base = "steel_herringbone"
-	build_type = /obj/item/stack/tile/herringbone/dark
-
 /decl/flooring/tiling/mono
 	icon_base = "monotile"
 	build_type = /obj/item/stack/tile/mono

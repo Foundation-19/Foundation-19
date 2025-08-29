@@ -284,36 +284,6 @@
 	icon_state = "dark_small"
 	initial_flooring = /decl/flooring/tiling/small/dark
 
-/turf/simulated/floor/tiled/halfsplit
-	name = "floor"
-	icon_state = "steel_splitside"
-	initial_flooring = /decl/flooring/tiling/halfsplit
-
-/turf/simulated/floor/tiled/white/halfsplit
-	name = "floor"
-	icon_state = "white_splitside"
-	initial_flooring = /decl/flooring/tiling/halfsplit/white
-
-/turf/simulated/floor/tiled/dark/halfsplit
-	name = "floor"
-	icon_state = "dark_splitside"
-	initial_flooring = /decl/flooring/tiling/halfsplit/dark
-
-/turf/simulated/floor/tiled/herringbone
-	name = "floor"
-	icon_state = "steel_herringbone"
-	initial_flooring = /decl/flooring/tiling/herringbone
-
-/turf/simulated/floor/tiled/white/herringbone
-	name = "floor"
-	icon_state = "white_herringbone"
-	initial_flooring = /decl/flooring/tiling/herringbone/white
-
-/turf/simulated/floor/tiled/dark/herringbone
-	name = "floor"
-	icon_state = "dark_herringbone"
-	initial_flooring = /decl/flooring/tiling/herringbone/dark
-
 // MONOTILES
 
 /turf/simulated/floor/tiled/monotile
