@@ -15,12 +15,51 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"ah" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 5
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "aj" = (
 /obj/structure/bed/chair/office/comfy/black{
 	dir = 1
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/hotel)
+"ak" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "A.E.S. Parallax Armory";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"aq" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
+"at" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "au" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -30,6 +69,40 @@
 "av" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"aw" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/machinery/body_scan_display{
+	pixel_y = -32
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"aD" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shipclassd";
+	name = "A.E.S. Parallax Subject Containment Lockdown Shutters"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"aI" = (
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 5
+	},
+/obj/item/storage/firstaid/combat,
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
 "aL" = (
 /obj/effect/floor_decal/corner/black/bordercee{
 	dir = 8
@@ -53,6 +126,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"aP" = (
+/turf/simulated/floor,
+/area/centcom/vesselevent)
+"aT" = (
+/turf/unsimulated/wall{
+	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
+	icon = 'icons/obj/doors/secure/door.dmi';
+	icon_state = "closed";
+	name = "Commander's Office"
+	},
+/area/centcom/vesselevent)
 "aW" = (
 /obj/structure/table/rack,
 /obj/item/reagent_containers/food/drinks/bottle/wine,
@@ -73,6 +158,18 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"bf" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/wood/ebony/corner{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "bh" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/light,
@@ -87,6 +184,12 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/sheriff)
+"bm" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "br" = (
 /obj/machinery/mining/brace{
 	dir = 8;
@@ -134,6 +237,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"bE" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/vesselevent)
 "bH" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
@@ -145,6 +254,9 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/hotel)
+"bI" = (
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "bM" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 5
@@ -163,6 +275,38 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/town/truck)
+"bV" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
+"bY" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 6
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
+"ca" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/vesselevent)
+"cd" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 10
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
 "ce" = (
 /obj/effect/floor_decal/spline/wood/walnut{
 	dir = 9
@@ -179,6 +323,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"cl" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/machinery/power/smes/buildable/preset/on_full,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "cm" = (
 /obj/machinery/power/smes/buildable/preset/on_full{
 	icon = 'icons/obj/stationobjs.dmi';
@@ -191,6 +344,13 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/hotel)
+"co" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/sleeper,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "cz" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
@@ -203,6 +363,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"cC" = (
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "cF" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/device/flashlight/lamp,
@@ -214,14 +377,109 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/truck)
+"cK" = (
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/structure/table/rack/gunrack,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/gun/projectile/pistol/glock,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "cL" = (
 /obj/structure/ore_box,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"cM" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"cQ" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/closet/secure_closet/engineering_welding,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"cU" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/civilian{
+	name = "A.E.S. Parallax Briefing Room"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "cX" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"da" = (
+/obj/machinery/door/airlock/multi_tile/glass/civilian{
+	name = "A.E.S. Parallax Subject Containment";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shipclassd";
+	name = "A.E.S. Parallax Subject Containment Lockdown Shutters"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"dc" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 8
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"dd" = (
+/obj/structure/table/reinforced,
+/obj/random/clipboard,
+/obj/item/folder/blue,
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 1
+	},
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
+"de" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
+"df" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "dg" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/spline/wood{
@@ -238,6 +496,18 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/ciheli)
+"dm" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor{
+	icon = 'icons/turf/floors.dmi'
+	},
+/area/centcom/vesselevent)
 "dq" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/item/reagent_containers/food/drinks/bottle/small/beer{
@@ -275,6 +545,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/hotel)
+"dF" = (
+/obj/item/modular_computer/console/preset/cardslot/command_sec{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "dH" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 4
@@ -289,6 +565,12 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town)
+"dL" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 1
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "dO" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 9
@@ -304,6 +586,10 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/wood,
 /area/site53/town/bar)
+"dU" = (
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor,
+/area/centcom/vesselevent)
 "ee" = (
 /obj/structure/hygiene/shower{
 	dir = 8
@@ -324,6 +610,23 @@
 /obj/item/ammo_magazine/scp/a380,
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"ei" = (
+/obj/machinery/vending/soda{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"eu" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "ey" = (
 /obj/effect/floor_decal/spline/wood/walnut{
 	dir = 8
@@ -334,6 +637,39 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town)
+"eA" = (
+/obj/effect/floor_decal/spline/wood/mahogany/corner{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 32;
+	pixel_x = 32
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"eF" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
+"eG" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"eI" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 10
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/tram/vessel)
 "eL" = (
 /turf/space,
 /area/space)
@@ -343,6 +679,15 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/gas)
+"eT" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "eU" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood{
@@ -375,10 +720,38 @@
 /obj/structure/flora/pottedplant/floorleaf,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/hotel)
+"eZ" = (
+/obj/machinery/light,
+/obj/machinery/vending/hotfood{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"ff" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/medical{
+	name = "A.E.S. Parallax Medical Clinic"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"fn" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 10
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "fo" = (
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/town/sheriff)
+"fp" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/vesselevent/exterior)
 "fq" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/effect/floor_decal/spline/wood{
@@ -387,6 +760,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/bar)
+"fs" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"ft" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "fv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/green,
@@ -395,6 +788,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/bar)
+"fy" = (
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
 "fF" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood{
@@ -436,17 +832,85 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"gl" = (
+/turf/unsimulated/wall{
+	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
+	icon = 'icons/obj/doors/secure/door.dmi';
+	icon_state = "closed";
+	name = "Equipment Room"
+	},
+/area/centcom/vesselevent)
+"gm" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"go" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/computer/shuttle_control{
+	shuttle_tag = "A.E.S. Parallax";
+	name = "Boat Control Console"
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "gr" = (
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"gv" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 4
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"gw" = (
+/obj/effect/floor_decal/corner/research/mono,
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/l3closet/scientist,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/tram/vessel)
+"gy" = (
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	pixel_x = -24
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "gz" = (
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/house)
+"gD" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/vesselevent/exterior)
 "gH" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/effect/floor_decal/spline/wood{
@@ -469,6 +933,36 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/small,
 /area/site53/town/house2)
+"gV" = (
+/obj/effect/floor_decal/corner/grey/bordercorner,
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"gX" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"hb" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
+"hd" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "hk" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -491,6 +985,22 @@
 "ht" = (
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/gas)
+"hv" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/organ_printer/robot/mapped,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
+"hw" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "hx" = (
 /obj/machinery/door/window/brigdoor/southright{
 	name = "Cockpit"
@@ -521,6 +1031,15 @@
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/town/truck)
+"hF" = (
+/turf/unsimulated/wall{
+	desc = "That looks like it doesn't open easily.";
+	icon = 'icons/obj/doors/rapid_pdoor.dmi';
+	icon_state = "pdoor1";
+	name = "Facility Tunnel";
+	dir = 4
+	},
+/area/centcom/vesselevent)
 "hG" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -559,6 +1078,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/site53/town/bar)
+"hV" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/structure/iv_drip,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "ia" = (
 /obj/effect/floor_decal/spline/wood/mahogany/corner{
 	dir = 4
@@ -597,6 +1123,16 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/hotel)
+"it" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "iz" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -615,6 +1151,12 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/gas)
+"iI" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "iK" = (
 /obj/structure/janitorialcart,
 /obj/item/mop,
@@ -633,10 +1175,63 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/sheriff)
+"iR" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner{
+	dir = 8
+	},
+/obj/structure/sign/electrical{
+	pixel_y = -32
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"iT" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/power/port_gen/pacman/super/potato/reactor,
+/obj/structure/cable/cyan{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"iU" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 9
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"iV" = (
+/obj/effect/floor_decal/spline/wood/ebony,
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
 "iX" = (
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"iY" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 1;
+	icon_state = "console"
+	},
+/obj/machinery/newscaster{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "iZ" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 9
@@ -681,6 +1276,18 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/town/ciheli)
+"ju" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
 "jv" = (
 /obj/item/stack/material/wood/ten,
 /turf/simulated/floor/tiled/small,
@@ -700,6 +1307,37 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/shuttle/black,
 /area/site53/town/ciheli)
+"jC" = (
+/obj/effect/floor_decal/corner/keter/bordercorner,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"jJ" = (
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shipclassd";
+	name = "A.E.S. Parallax Subject Containment Lockdown Shutters"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"jL" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"jM" = (
+/obj/structure/bed/chair/armchair/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "jN" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -719,10 +1357,23 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"jT" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 6
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "jX" = (
 /obj/item/stack/material/wood/ten,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"ka" = (
+/obj/effect/floor_decal/corner/paleblue/bordercorner,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "kc" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 4
@@ -738,6 +1389,21 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"kd" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 4
+	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"ke" = (
+/obj/effect/floor_decal/corner/orange/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "kh" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 4
@@ -757,6 +1423,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/town/ciheli)
+"kk" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "ko" = (
 /obj/structure/table/gamblingtable,
 /obj/item/deck/cards,
@@ -783,6 +1464,17 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/gas)
+"kv" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "kw" = (
 /turf/simulated/floor/exoplanet/water/shallow,
 /area/site53/town)
@@ -795,6 +1487,19 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"kC" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
+"kE" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 5
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "kF" = (
 /obj/item/material/shard,
 /turf/simulated/floor/exoplanet/grass,
@@ -812,6 +1517,16 @@
 /obj/structure/bed/chair/office/comfy/black,
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"kT" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "shipadmin";
+	name = "Administration Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "kY" = (
 /obj/effect/floor_decal/spline/wood/mahogany,
 /turf/simulated/floor/wood/mahogany,
@@ -838,6 +1553,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"lj" = (
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
+"lq" = (
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/vesselevent/exterior)
 "lr" = (
 /obj/structure/table/gamblingtable,
 /obj/item/deck/cards,
@@ -850,6 +1571,23 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"lu" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 5
+	},
+/obj/structure/bookcase/manuals/xenoarchaeology,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"lw" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
 "ly" = (
 /obj/machinery/mining/brace{
 	dir = 4;
@@ -865,6 +1603,39 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"lB" = (
+/obj/effect/floor_decal/corner/keter/bordercee{
+	dir = 8
+	},
+/obj/machinery/vending/weaponry/lcz/nonlethal{
+	name = "\improper Ghost-1 Non-Lethal AutoEquipment Device";
+	density = 0;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
+"lC" = (
+/obj/machinery/door/airlock/glass/command{
+	name = "A.E.S. Parallax Administration"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shipadmin";
+	name = "A.E.S. Parallax Administration Lockdown Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"lD" = (
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"lH" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/centcom/vesselevent)
 "lL" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -875,12 +1646,30 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/house)
+"lO" = (
+/obj/structure/railing/mapped{
+	dir = 8;
+	color = "#e3994e"
+	},
+/turf/simulated/floor/wood/yew,
+/area/centcom/vesselevent/exterior)
+"lP" = (
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/item/modular_computer/tablet/lease/preset/command,
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "lS" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/small,
 /area/site53/town/house2)
+"lY" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/folder,
+/obj/item/pen,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "ma" = (
 /obj/effect/floor_decal/spline/wood/mahogany{
 	dir = 10
@@ -888,6 +1677,25 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"md" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/obj/machinery/body_scanconsole{
+	dir = 8
+	},
+/obj/machinery/newscaster{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
+"mg" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/rack/shelf,
+/obj/item/inducer,
+/obj/item/inducer,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
 "mh" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
@@ -911,6 +1719,17 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/town/ciheli)
+"mq" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "mr" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
@@ -963,6 +1782,19 @@
 /obj/item/gun/projectile/revolver/mateba,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/town/sheriff)
+"mK" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"mL" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/wood/walnut,
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "mO" = (
 /obj/item/handcuffs,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -980,6 +1812,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"mT" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/machinery/optable,
+/obj/machinery/vending/wallmed1{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "na" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/device/flashlight/lamp,
@@ -1019,6 +1861,9 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/hotel)
+"nz" = (
+/turf/simulated/floor/wood/yew,
+/area/centcom/vesselevent/exterior)
 "nC" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/effect/floor_decal/spline/wood{
@@ -1033,9 +1878,58 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/house)
+"nK" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/table/rack,
+/obj/item/ammo_casing/shotgun/flash,
+/obj/item/ammo_casing/shotgun/flash,
+/obj/item/ammo_casing/shotgun/flash,
+/obj/item/ammo_casing/shotgun/flash,
+/obj/item/gun/projectile/flare/loaded,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
+"nL" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"nO" = (
+/turf/simulated/floor/tiled/monotile,
+/area/centcom/vesselevent)
+"nR" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/polarized,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"nS" = (
+/obj/effect/floor_decal/industrial/warning/cee{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/site53/tram/vessel)
 "nU" = (
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"nV" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"nW" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "oa" = (
 /obj/machinery/light{
 	dir = 4
@@ -1045,6 +1939,21 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"of" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 6
+	},
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/storage/box/cdeathalarm_kit{
+	pixel_y = 8;
+	pixel_x = 6
+	},
+/obj/item/implantcase/death_alarm{
+	pixel_y = -1;
+	pixel_x = -6
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
 "og" = (
 /obj/machinery/door/unpowered/simple/walnut{
 	dir = 4;
@@ -1055,6 +1964,24 @@
 "on" = (
 /turf/simulated/floor/wood,
 /area/site53/town)
+"oo" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"or" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/tram/vessel)
 "oy" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -1069,6 +1996,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/small,
 /area/site53/town/bar)
+"oD" = (
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
 "oE" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/spline/wood/ebony{
@@ -1106,16 +2037,55 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/shuttle/black,
 /area/site53/town/ciheli)
+"oL" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 10
+	},
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"oM" = (
+/obj/machinery/door/airlock/medical{
+	name = "A.E.S. Parallax Operating Room"
+	},
+/obj/machinery/holosign/surgery{
+	dir = 8;
+	id_tag = "shipsurgery"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "oO" = (
 /obj/structure/flora/tree/bigtree,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"oP" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
 "oQ" = (
 /obj/structure/table/gamblingtable,
 /obj/item/storage/pill_bottle/dice,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"oT" = (
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/machinery/vending/security{
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "oW" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 10
@@ -1133,10 +2103,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"pa" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/random/mre/dessert,
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
+"pb" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "pj" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"pk" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/vesselevent/exterior)
 "pm" = (
 /obj/structure/bed/padded,
 /obj/effect/decal/cleanable/dirt,
@@ -1161,12 +2147,25 @@
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town)
+"pJ" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/random/mre/dessert,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "pL" = (
 /obj/effect/floor_decal/spline/wood/mahogany{
 	dir = 8
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"pN" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"pR" = (
+/obj/effect/floor_decal/spline/wood/ebony,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "pS" = (
 /obj/structure/bed/chair/office/comfy/black{
 	dir = 8
@@ -1181,6 +2180,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"pZ" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/closet/secure_closet/engineering_electrical,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"qa" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "qb" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/table/rack/shelf,
@@ -1213,6 +2221,12 @@
 /obj/structure/bookcase,
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"qf" = (
+/obj/effect/floor_decal/corner/research/border,
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "qi" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
@@ -1229,10 +2243,21 @@
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/town/truck)
+"qs" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/anomaly_container,
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/tram/vessel)
 "qt" = (
 /obj/machinery/light,
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/gas)
+"qv" = (
+/obj/effect/floor_decal/spline/wood/ebony/corner,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "qx" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/device/flashlight/lamp/green{
@@ -1240,6 +2265,12 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/gas)
+"qy" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/structure/table/reinforced,
+/obj/item/folder/yellow,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "qA" = (
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/sheriff)
@@ -1250,6 +2281,28 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/bar)
+"qE" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 6
+	},
+/obj/machinery/light,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"qF" = (
+/obj/machinery/light,
+/obj/machinery/vending/cola{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"qH" = (
+/obj/structure/bed/chair,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "qK" = (
 /obj/effect/floor_decal/spline/wood/mahogany{
 	dir = 10
@@ -1266,6 +2319,28 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"qN" = (
+/obj/machinery/button/blast_door{
+	id_tag = "shipclassd";
+	name = "Subject Containment Lockdown Control";
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/effect/floor_decal/corner/grey/bordercorner,
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"qO" = (
+/obj/structure/hygiene/shower{
+	pixel_y = 17
+	},
+/obj/structure/curtain/open/shower,
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled/small,
+/area/site53/tram/vessel)
 "qQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1290,6 +2365,30 @@
 "qV" = (
 /turf/simulated/wall/r_wall,
 /area/site53/town/house)
+"qY" = (
+/obj/effect/floor_decal/corner/keter/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/centcom/vesselevent)
+"qZ" = (
+/obj/structure/bed/chair/padded/blue{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/tram/vessel)
+"ra" = (
+/obj/effect/floor_decal/spline/wood/mahogany/corner,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"rc" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "rd" = (
 /obj/structure/table/standard,
 /obj/item/toy/desk/fan,
@@ -1300,6 +2399,12 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/site53/town/ciheli)
+"rj" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 8
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "rk" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 4
@@ -1319,6 +2424,16 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"ro" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
 "rw" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
@@ -1350,6 +2465,39 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"rH" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "shipclassd";
+	name = "A.E.S. Parallax Subject Containment Lockdown Shutters"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"rI" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/structure/cable/cyan{
+	icon_state = "2-8";
+	d1 = 2;
+	d2 = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
+"rL" = (
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "rM" = (
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/site53/town/gas)
@@ -1373,12 +2521,36 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/house)
+"sh" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/centcom/vesselevent)
+"si" = (
+/obj/structure/anomaly_container,
+/turf/simulated/floor/tiled/steel_ridged,
+/area/site53/tram/vessel)
+"sj" = (
+/obj/structure/bed/chair/comfy/blue{
+	dir = 8
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
 "sq" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"ss" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
 "sv" = (
 /obj/structure/stasis_cage,
 /turf/simulated/floor/exoplanet/barren,
@@ -1389,6 +2561,27 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/house)
+"sL" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/folder/blue,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"sM" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"sN" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "sO" = (
 /obj/structure/table/rack,
 /obj/item/reagent_containers/food/drinks/bottle/space_mountain_wind,
@@ -1405,12 +2598,24 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"sV" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 9
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "sX" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/hotel)
+"sY" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
 "sZ" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
@@ -1449,6 +2654,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"ti" = (
+/obj/effect/floor_decal/corner/orange{
+	dir = 9
+	},
+/obj/machinery/light,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
 "tl" = (
 /obj/effect/floor_decal/spline/wood/walnut{
 	dir = 4
@@ -1466,6 +2679,26 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/hotel)
+"tr" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
+"ts" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/vending/tool,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
 "tv" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
@@ -1512,17 +2745,56 @@
 	},
 /turf/simulated/floor/carpet/green,
 /area/site53/town/sheriff)
+"tP" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/turf/simulated/floor/tiled/corner,
+/area/site53/tram/vessel)
 "tU" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/toy/desk/fan,
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/hotel)
+"tV" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_y = 32;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
 "tW" = (
 /obj/machinery/door/unpowered/simple/walnut{
 	name = "Lobby"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/hotel)
+"tY" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "tZ" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/structure/barricade,
@@ -1558,6 +2830,22 @@
 "uo" = (
 /turf/simulated/wall/r_wall,
 /area/site53/town/sheriff)
+"uq" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"ur" = (
+/obj/effect/floor_decal/spline/wood/ebony/corner{
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "us" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/small,
@@ -1566,6 +2854,13 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"uA" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "uC" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
@@ -1593,12 +2888,35 @@
 /obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/site53/town/ciheli)
+"uK" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 1
+	},
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "uL" = (
 /obj/machinery/door/unpowered/simple/walnut{
 	name = "Staff Backroom"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/gas)
+"uM" = (
+/obj/effect/floor_decal/spline/wood/walnut/cee{
+	dir = 1
+	},
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "uP" = (
 /turf/unsimulated/mineral,
 /area/space)
@@ -1608,10 +2926,31 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/gas)
+"uV" = (
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 9
+	},
+/obj/machinery/newscaster{
+	pixel_x = -32
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
 "uW" = (
 /obj/item/stack/material/plasteel,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"uY" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "uZ" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/table/rack/shelf,
@@ -1627,6 +2966,15 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/town/bar)
+"vb" = (
+/obj/effect/floor_decal/corner/keter/bordercorner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "vc" = (
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /obj/machinery/light,
@@ -1650,6 +2998,12 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"vl" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
 "vm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1672,6 +3026,17 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"vE" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "vL" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -1771,6 +3136,28 @@
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"wv" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 9
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"wz" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/centcom/vesselevent)
 "wA" = (
 /obj/item/stack/material/rods,
 /obj/item/stack/cable_coil,
@@ -1786,10 +3173,22 @@
 	},
 /turf/simulated/floor/carpet/red,
 /area/site53/town/bar)
+"wD" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "wE" = (
 /obj/effect/floor_decal/spline/wood/ebony,
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/hotel)
+"wH" = (
+/obj/effect/floor_decal/spline/wood/ebony,
+/obj/machinery/light,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "wJ" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 4
@@ -1832,6 +3231,39 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"wY" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"xf" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/paper_bin{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/stamp/denied{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/stamp/approved{
+	pixel_y = 5;
+	pixel_x = 8
+	},
+/obj/item/stamp/captain{
+	name = "Deputy Director's rubber stamp";
+	pixel_x = 8;
+	pixel_y = -2;
+	icon_state = "stamp-hop"
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
 "xg" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 8
@@ -1846,9 +3278,35 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"xl" = (
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/structure/table/rack/shelf,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "xq" = (
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"xt" = (
+/obj/item/modular_computer/console/preset/cardslot/command{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
 "xu" = (
 /obj/structure/grille{
 	health_max = null;
@@ -1901,6 +3359,21 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town)
+"xQ" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/organ_printer/flesh/mapped{
+	max_stored_matter = 9000;
+	stored_matter = 9000
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
+"xR" = (
+/obj/structure/table/standard,
+/obj/random/single/playing_cards,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "xU" = (
 /turf/unsimulated/wall{
 	color = "#000000";
@@ -1911,12 +3384,25 @@
 "xV" = (
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/gas)
+"xW" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/folder/red,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "xY" = (
 /obj/effect/floor_decal/spline/wood/walnut{
 	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/hotel)
+"xZ" = (
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "ya" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 10
@@ -1924,6 +3410,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"yd" = (
+/obj/effect/floor_decal/corner/grey/border,
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"yf" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier/faxmachine{
+	department = "A.E.S. Parallax Bridge";
+	send_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "yj" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light,
@@ -1964,6 +3470,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"yF" = (
+/obj/structure/bed/padded,
+/obj/structure/bed/padded{
+	pixel_y = 10
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"yH" = (
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/tram/vessel)
 "yL" = (
 /turf/simulated/floor/tiled/white,
 /area/site53/town/bar)
@@ -1985,6 +3501,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/bar)
+"yT" = (
+/obj/effect/floor_decal/corner/blue/bordercorner,
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "yW" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 6
@@ -1993,6 +3518,75 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/bar)
+"yZ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"za" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 6
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"zb" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/structure/closet/l3closet/dclass,
+/obj/effect/floor_decal/industrial/outline{
+	color = "#E5511B"
+	},
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/suit/bio_suit/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/head/bio_hood/dclass,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"zd" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 32;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
 "zf" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -2005,6 +3599,15 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/town/truck)
+"zo" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "zq" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood{
@@ -2013,6 +3616,41 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"zr" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/structure/reagent_dispensers/coolanttank,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
+"zs" = (
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/centcom/vesselevent)
+"zw" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "zA" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
@@ -2020,17 +3658,61 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"zC" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 9
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "zD" = (
 /obj/structure/table/woodentable,
 /obj/item/stack/material/phoron/fifty,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"zE" = (
+/obj/structure/railing/mapped{
+	color = "#e3994e"
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	color = "#e3994e"
+	},
+/turf/simulated/floor/wood/yew,
+/area/centcom/vesselevent/exterior)
+"zF" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 6
+	},
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "zL" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/phoron/fifty,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/small,
 /area/site53/town/bar)
+"zO" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/centcom/vesselevent)
+"zQ" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
 "zR" = (
 /obj/structure/bed/padded,
 /obj/structure/bed/padded{
@@ -2044,14 +3726,92 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"zS" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/cyan,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"zX" = (
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "zZ" = (
 /obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/hotel)
+"Aa" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
+"Ab" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "Ad" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"Ae" = (
+/obj/machinery/door/airlock/command{
+	name = "A.E.S. Parallax Squad Leader Office";
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"Af" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/item/modular_computer/console/preset/medical{
+	dir = 1
+	},
+/obj/structure/filingcabinet/wallcabinet{
+	pixel_y = -23
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
+"Ah" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"Ak" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/corner,
+/area/site53/tram/vessel)
 "Al" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /turf/simulated/floor/plating,
@@ -2060,6 +3820,9 @@
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"Ap" = (
+/turf/unsimulated/wall,
+/area/site53/tram/vessel)
 "Aq" = (
 /obj/machinery/door/unpowered/simple/mahogany{
 	dir = 4;
@@ -2067,6 +3830,16 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/bar)
+"At" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "shipclassd";
+	name = "Subject Containment Lockdown Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "Av" = (
 /obj/effect/paint_stripe/paleblue,
 /obj/machinery/button/blast_door{
@@ -2107,6 +3880,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/town/truck)
+"AJ" = (
+/obj/effect/floor_decal/corner/orange/bordercee{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "AL" = (
 /obj/structure/curtain/open/shower,
 /obj/structure/hygiene/shower{
@@ -2115,6 +3897,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/fisherman)
+"AM" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/storage/box/handcuffs,
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"AN" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 6
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "AP" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -2125,6 +3928,20 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/house2)
+"AT" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "AU" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/structure/closet/crate/bin,
@@ -2162,6 +3979,36 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"Be" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
+"Bi" = (
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"Bu" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/wood/ebony/corner{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"Bx" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 6
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "BA" = (
 /obj/machinery/vending/tool{
 	dir = 8
@@ -2169,6 +4016,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/hotel)
+"BD" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "BG" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
@@ -2200,11 +4051,36 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"BZ" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8;
+	icon_state = "console"
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "Ca" = (
 /obj/effect/wallframe_spawn/reinforced/no_grille,
 /obj/structure/barricade,
 /turf/simulated/floor/plating,
 /area/site53/town/house2)
+"Cb" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
+"Cc" = (
+/obj/structure/bed/chair/armchair/blue{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "Cd" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -2215,6 +4091,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/ciheli)
+"Ci" = (
+/obj/effect/floor_decal/spline/wood/walnut/cee,
+/obj/structure/filingcabinet{
+	pixel_x = -10
+	},
+/obj/structure/filingcabinet,
+/obj/structure/filingcabinet{
+	pixel_x = 10
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "Cj" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
@@ -2239,6 +4129,14 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town)
+"Cu" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/rack/shelf,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
 "Cw" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -2248,12 +4146,35 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"CA" = (
+/obj/effect/shuttle_landmark/vessel/start,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
+"CE" = (
+/obj/structure/railing/mapped{
+	color = "#e3994e"
+	},
+/turf/simulated/floor/wood/yew,
+/area/centcom/vesselevent/exterior)
 "CL" = (
 /obj/machinery/door/unpowered/simple/glass{
 	name = "Gas Station"
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/gas)
+"CN" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "CP" = (
 /obj/structure/table/woodentable,
 /obj/item/stack/material/steel/fifty,
@@ -2261,6 +4182,40 @@
 /obj/item/stack/material/steel/ten,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"CQ" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/obj/machinery/newscaster{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"CR" = (
+/obj/item/paper_bin{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/obj/item/stamp/denied{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/stamp/approved{
+	pixel_y = 5;
+	pixel_x = 8
+	},
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/item/stamp/captain{
+	name = "Director's rubber stamp";
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "CT" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/chewables/candy/cookies{
@@ -2326,6 +4281,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"Dn" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 9
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/centcom/vesselevent)
 "Du" = (
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /obj/structure/mopbucket,
@@ -2336,6 +4303,21 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"DA" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 1
+	},
+/obj/machinery/requests_console{
+	department = "A.E.S. Parallax";
+	departmentType = 5;
+	pixel_x = -32;
+	name = "A.E.S. Parallax Requests Console";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "DB" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood{
@@ -2373,6 +4355,21 @@
 	},
 /turf/simulated/floor/tiled/small,
 /area/site53/town/house2)
+"DM" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"DS" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/machinery/power/port_gen/pacman/super/potato/reactor,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
 "DU" = (
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/house)
@@ -2382,6 +4379,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"Ed" = (
+/obj/structure/table/reinforced,
+/obj/item/device/radio/intercom{
+	pixel_y = -2
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
+"Ef" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
 "Eg" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/flora/pottedplant/deskfern{
@@ -2389,6 +4400,29 @@
 	},
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/gas)
+"El" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/surgery{
+	pixel_y = 10
+	},
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/suit/surgicalapron,
+/obj/machinery/button/windowtint{
+	pixel_x = 24;
+	pixel_y = 6
+	},
+/obj/machinery/button/holosign{
+	id_tag = "shipsurgery";
+	pixel_x = 24;
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "Em" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 1;
@@ -2403,6 +4437,26 @@
 "Ep" = (
 /turf/simulated/wall/r_wall,
 /area/site53/town/house2)
+"Es" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 6
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"Ex" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 1
+	},
+/obj/structure/filingcabinet/wallcabinet{
+	pixel_y = -23
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "Ez" = (
 /obj/machinery/button/blast_door{
 	id_tag = "ruincihelicopter-right";
@@ -2428,6 +4482,19 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/gas)
+"EB" = (
+/obj/effect/floor_decal/corner/grey/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"EC" = (
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 4
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
 "EG" = (
 /obj/structure/table/woodentable,
 /obj/structure/flora/pottedplant/deskfern{
@@ -2467,6 +4534,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/hotel)
+"EX" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "EZ" = (
 /obj/effect/floor_decal/spline/wood/mahogany,
 /obj/structure/bed/chair/wood/mahogany{
@@ -2475,6 +4548,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"Fd" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/structure/cable/cyan{
+	icon_state = "2-4";
+	d1 = 2;
+	d2 = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "Fg" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/food/drinks/bottle/cola{
@@ -2494,6 +4582,31 @@
 /obj/machinery/light/small/red,
 /turf/simulated/wall/r_wall,
 /area/site53/town/truck)
+"Fk" = (
+/obj/effect/floor_decal/corner/blue/border,
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"Fl" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 6
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"Fn" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 4
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	pixel_x = 24;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Fo" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
@@ -2504,6 +4617,15 @@
 "Fq" = (
 /turf/simulated/wall/r_wall,
 /area/site53/town)
+"Fs" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "Fz" = (
 /obj/effect/floor_decal/spline/wood/cee{
 	dir = 4
@@ -2533,6 +4655,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"FD" = (
+/obj/machinery/bodyscanner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/tram/vessel)
 "FE" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 4
@@ -2543,12 +4671,94 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/hotel)
+"FG" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 5
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
+"FJ" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "FL" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"FO" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor{
+	icon = 'icons/turf/floors.dmi'
+	},
+/area/centcom/vesselevent)
+"FP" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Train Access"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/vesselevent)
+"FQ" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
+"FR" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/obj/item/stack/material/uranium{
+	amount = 50;
+	name = "uranium"
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"FT" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier/faxmachine{
+	department = "A.E.S. Parallax Science Lab";
+	send_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
+"FU" = (
+/obj/effect/floor_decal/corner/research/mono,
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/l3closet/scientist,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/tram/vessel)
 "FW" = (
 /obj/structure/bookcase,
 /obj/effect/floor_decal/spline/wood/cee{
@@ -2559,12 +4769,30 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"FX" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
 "FY" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/bar)
+"FZ" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 4
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"Gb" = (
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "Gc" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/table/rack/shelf,
@@ -2590,6 +4818,23 @@
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town)
+"Gj" = (
+/obj/machinery/vending/snack{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"Gl" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "Go" = (
 /obj/structure/table/rack,
 /obj/item/stack/material/phoron/fifty,
@@ -2640,6 +4885,23 @@
 /obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/site53/town/ciheli)
+"GL" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/airlock/glass/research{
+	name = "A.E.S. Parallax Research Lead's Office"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"GO" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "GP" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -2661,6 +4923,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town)
+"Ha" = (
+/obj/effect/floor_decal/spline/wood/mahogany,
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"Hc" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "Hh" = (
 /obj/structure/bed,
 /obj/effect/floor_decal/spline/wood{
@@ -2671,6 +4946,27 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"Hn" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
+"Hr" = (
+/obj/effect/floor_decal/spline/wood/mahogany/cee{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "ezguard1";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_closed = "ezguard";
+	icon_locked = "ezguard1";
+	icon_off = "ezguardoff";
+	icon_opened = "ezopen";
+	name = "Director's locker";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "Ht" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
@@ -2684,6 +4980,9 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"HA" = (
+/turf/simulated/floor/beach/water/ocean,
+/area/centcom/vesselevent/exterior)
 "HB" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
@@ -2694,6 +4993,93 @@
 /obj/effect/paint/green,
 /turf/simulated/wall/r_wall/prepainted,
 /area/site53/town/ciheli)
+"HH" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 8
+	},
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "ezjunior1";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_closed = "ezjunior";
+	icon_locked = "ezjunior1";
+	icon_off = "ezjunioroff";
+	icon_opened = "ezopen";
+	name = "Deputy Director's locker";
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"HI" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
+"HJ" = (
+/obj/machinery/door/airlock/glass/command{
+	name = "A.E.S. Parallax Bridge";
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shiplockdown";
+	name = "A.E.S. Parallax Lockdown Shutters"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"HN" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "mtf1";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_closed = "mtf";
+	icon_locked = "mtf1";
+	icon_off = "mtfoff";
+	icon_opened = "mtfopen";
+	name = "Task Force Agent's locker";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/melee/baton/loaded,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/material/knife/combat,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/gun/projectile/automatic/scp/mp5,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
+"HO" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/blue,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/tram/vessel)
 "HR" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/door/blast/shutters/open{
@@ -2704,11 +5090,43 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/truck)
+"HV" = (
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "HY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/bar)
+"Ig" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 10
+	},
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/structure/filingcabinet/wallcabinet{
+	pixel_y = -23
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/button/blast_door{
+	id_tag = "shipteamleader";
+	name = "Privacy Shutters Control";
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
+"Ij" = (
+/obj/structure/bed/chair/comfy/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"Il" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 8
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "Im" = (
 /obj/effect/floor_decal/corner/black/bordercee,
 /turf/simulated/floor/tiled,
@@ -2741,6 +5159,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"Ix" = (
+/obj/effect/floor_decal/corner/keter/border,
+/obj/structure/table/rack,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "Iz" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/green{
@@ -2764,11 +5188,43 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/hotel)
+"IH" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
+"IL" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/vending/mredispenser{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "IN" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"IO" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/closet/radiation,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"IP" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "IQ" = (
 /obj/item/stack/material/rods,
 /obj/structure/girder/displaced,
@@ -2777,6 +5233,16 @@
 "IR" = (
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"IT" = (
+/obj/machinery/door/airlock/command{
+	name = "A.E.S. Parallax Deputy Director's Office";
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "IU" = (
 /obj/machinery/door/unpowered/simple/silver{
 	dir = 4;
@@ -2784,6 +5250,27 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/hotel)
+"IV" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/wood/walnut/corner,
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"IZ" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 10
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"Jc" = (
+/obj/effect/floor_decal/corner/yellow/bordercee,
+/turf/simulated/floor/tiled/vertical,
+/area/site53/tram/vessel)
 "Jh" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/green{
@@ -2792,6 +5279,11 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/hotel)
+"Jl" = (
+/obj/effect/floor_decal/corner/grey/border,
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "Jm" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/effect/floor_decal/spline/wood/ebony{
@@ -2828,6 +5320,25 @@
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/town/truck)
+"Js" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 5
+	},
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/ammo_magazine/box/a556{
+	pixel_y = 7
+	},
+/obj/item/ammo_magazine/box/a556{
+	pixel_y = 17
+	},
+/obj/item/storage/lockbox/loyalty{
+	pixel_y = -8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
 "Jt" = (
 /obj/structure/table/rack/shelf,
 /obj/item/reagent_containers/food/snacks/pokey,
@@ -2841,6 +5352,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"Ju" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Jv" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 6
@@ -2848,6 +5365,14 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"Jw" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/research{
+	name = "A.E.S. Parallax Anomaly Storage";
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "Jx" = (
 /turf/simulated/wall/r_wall,
 /area/site53/town/hotel)
@@ -2887,6 +5412,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"JC" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/centcom/vesselevent)
+"JE" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 9
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/centcom/vesselevent)
 "JI" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/paleblue/bordercee{
@@ -2894,11 +5436,57 @@
 	},
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/town/truck)
+"JK" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 9
+	},
+/obj/structure/table/woodentable_reinforced/ebony,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
 "JL" = (
 /obj/structure/coatrack,
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"JN" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"JR" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 10
+	},
+/obj/structure/sign/warning/science/anomalous_materials{
+	dir = 1;
+	pixel_y = -32;
+	pixel_x = -32
+	},
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/tram/vessel)
+"JU" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/defibrillator/loaded,
+/obj/item/auto_cpr,
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
+"JY" = (
+/obj/structure/bed/chair/comfy/blue{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
 "JZ" = (
 /obj/effect/floor_decal/spline/wood/cee{
 	dir = 8
@@ -2940,6 +5528,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"Kv" = (
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/burn,
+/obj/item/storage/firstaid/burn,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "Kz" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 9
@@ -2964,6 +5562,33 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/fisherman)
+"KR" = (
+/obj/structure/bed/chair/armchair/black{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
+"Lb" = (
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 1
+	},
+/obj/machinery/status_display{
+	pixel_y = 32;
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
+"Lc" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 9
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/white/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "Ld" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood{
@@ -2985,25 +5610,114 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"Lp" = (
+/obj/effect/floor_decal/corner/keter/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/keter/bordercorner,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Lq" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"Ls" = (
+/obj/effect/floor_decal/corner/orange/border,
+/obj/effect/floor_decal/corner/grey/bordercorner{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
+"Lw" = (
+/obj/effect/floor_decal/spline/wood/ebony/corner{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
+"Lx" = (
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 4
+	},
+/obj/effect/floor_decal/spline/wood/bamboo{
+	dir = 8
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
 "LB" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 6
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"LC" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/device/megaphone,
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
 "LF" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/small,
 /area/site53/town/bar)
+"LG" = (
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "LH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"LL" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 8
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -23
+	},
+/obj/machinery/papershredder,
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"LO" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"LP" = (
+/obj/effect/floor_decal/corner/yellow/border,
+/obj/machinery/power/smes/buildable/preset/on_full,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/tram/vessel)
 "LQ" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/chewables/candy/gum{
@@ -3022,6 +5736,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"LX" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "LZ" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 5
@@ -3031,6 +5754,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"Md" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/obj/item/modular_computer/console/preset/aislot/research{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
+"Mj" = (
+/obj/effect/floor_decal/spline/wood/mahogany/corner{
+	dir = 1
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "Mo" = (
 /turf/simulated/floor/tiled/small,
 /area/site53/town/house2)
@@ -3066,6 +5804,13 @@
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"Mw" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 5
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
 "Mx" = (
 /obj/effect/floor_decal/corner/black/bordercee{
 	dir = 4
@@ -3073,10 +5818,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"Mz" = (
+/obj/effect/floor_decal/corner/blue/border,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"MC" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 8
+	},
+/obj/machinery/newscaster{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
 "ME" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"MH" = (
+/obj/effect/floor_decal/corner/orange/border,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "MI" = (
 /obj/structure/bed/chair/wood/mahogany,
 /obj/effect/decal/cleanable/dirt,
@@ -3090,12 +5852,59 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"MS" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"MT" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/centcom/vesselevent)
+"MU" = (
+/obj/effect/floor_decal/corner/yellow/bordercorner,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"MX" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	id_tag = "shipteamleader";
+	name = "Office Privacy Shutters"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"Nb" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/item/modular_computer/console/preset/security{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
 "Nd" = (
 /obj/effect/floor_decal/spline/wood/walnut/corner{
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/hotel)
+"Ni" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/item/modular_computer/console/preset/cardslot/command,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "Nm" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
@@ -3113,6 +5922,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"Np" = (
+/obj/machinery/door/airlock/engineering{
+	name = "A.E.S. Parallax Engineering Bay";
+	req_access = list("ACCESS_ENGINEERING_LEVEL1")
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "Ns" = (
 /obj/structure/table/gamblingtable,
 /obj/effect/decal/cleanable/dirt,
@@ -3164,6 +5981,16 @@
 "ND" = (
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town)
+"NF" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 10
+	},
+/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/corner,
+/area/centcom/vesselevent)
 "NK" = (
 /obj/effect/floor_decal/spline/wood/mahogany,
 /obj/effect/decal/cleanable/dirt,
@@ -3182,6 +6009,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"NV" = (
+/obj/machinery/door/airlock/command{
+	name = "A.E.S. Parallax Director's Office";
+	req_access = list("ACCESS_ADMIN_LEVEL5")
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "NW" = (
 /obj/effect/floor_decal/spline/wood/mahogany{
 	dir = 4
@@ -3220,6 +6057,10 @@
 "Oh" = (
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/site53/town)
+"Ol" = (
+/obj/structure/railing/mapped,
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/vesselevent/exterior)
 "Om" = (
 /obj/effect/floor_decal/spline/wood/ebony/cee,
 /obj/machinery/light,
@@ -3263,6 +6104,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"Oz" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 10
+	},
+/obj/machinery/vitals_monitor,
+/turf/simulated/floor/tiled/white/corner,
+/area/site53/tram/vessel)
+"OE" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/machinery/vending/classdwater{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "OK" = (
 /obj/structure/barricade,
 /turf/simulated/floor/exoplanet/barren,
@@ -3293,6 +6150,21 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet/brown,
 /area/site53/town/hotel)
+"OP" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/wallframe_spawn/reinforced/polarized,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"OT" = (
+/obj/machinery/door/airlock/multi_tile/glass/civilian{
+	name = "A.E.S. Parallax Subject Containment";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "OU" = (
 /obj/effect/floor_decal/spline/wood/mahogany{
 	dir = 1
@@ -3306,12 +6178,56 @@
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town)
+"OY" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "mtf1";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_closed = "mtf";
+	icon_locked = "mtf1";
+	icon_off = "mtfoff";
+	icon_opened = "mtfopen";
+	name = "Task Force Agent's locker";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/gun/projectile/pistol/glock,
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/melee/baton/loaded,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/material/knife/combat,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/gun/projectile/automatic/scp/mp5,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "OZ" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/exoplanet/water/shallow,
 /area/site53/town)
+"Pb" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 5
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/centcom/vesselevent)
 "Pc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/r_wall,
@@ -3332,6 +6248,12 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/gas)
+"Ph" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
 "Pj" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -3377,6 +6299,25 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"PP" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/titanium/fifty,
+/obj/item/stack/material/titanium/fifty,
+/obj/item/stack/material/titanium/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/item/stack/material/glass/reinforced/fifty,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
 "PR" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 10
@@ -3393,6 +6334,22 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"PV" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/sleeper,
+/obj/machinery/body_scan_display{
+	pixel_y = 20
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
+"PZ" = (
+/obj/machinery/door/airlock/civilian{
+	name = "A.E.S. Parallax Subject Containment"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "Qb" = (
 /obj/structure/grille{
 	health_max = null;
@@ -3401,12 +6358,25 @@
 /obj/effect/paint/green,
 /turf/simulated/floor/plating,
 /area/site53/town/ciheli)
+"Qg" = (
+/obj/effect/floor_decal/corner/keter/bordercorner,
+/turf/simulated/floor/tiled/corner{
+	dir = 8
+	},
+/area/centcom/vesselevent)
 "Qh" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town)
+"Qm" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "Qn" = (
 /obj/structure/bed/chair/armchair/red{
 	dir = 4
@@ -3420,6 +6390,25 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/plating,
 /area/site53/town/ciheli)
+"Qu" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/device/multitool,
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
+"Qv" = (
+/obj/item/modular_computer/console/preset/cardslot/command{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "Qw" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 10
@@ -3427,6 +6416,13 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/hotel)
+"QA" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 9
+	},
+/obj/item/modular_computer/console/preset/security,
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
 "QC" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 6
@@ -3448,6 +6444,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"QH" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 1
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"QK" = (
+/obj/effect/floor_decal/spline/wood/walnut/cee{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "QO" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 4
@@ -3465,6 +6476,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/site53/town/sheriff)
+"QR" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/obj/item/storage/pill_bottle/dice,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "QU" = (
 /obj/effect/floor_decal/corner/black/border{
 	dir = 4
@@ -3499,9 +6518,45 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"Ru" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
+"RB" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shipadmin";
+	name = "A.E.S. Parallax Administration Lockdown Shutters"
+	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"RC" = (
+/obj/effect/floor_decal/corner/keter/border,
+/turf/simulated/floor/tiled/horizontal,
+/area/centcom/vesselevent)
 "RE" = (
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"RG" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/vending/engivend{
+	dir = 1;
+	req_access = list()
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/centcom/vesselevent)
 "RI" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -3544,6 +6599,12 @@
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood,
 /area/site53/town/hotel)
+"Sa" = (
+/obj/machinery/door/airlock/hatch/maintenance{
+	name = "Maintenance Storage"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/vesselevent)
 "Sb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3555,6 +6616,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"Sg" = (
+/obj/effect/floor_decal/corner/research/bordercee{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "Sh" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
@@ -3567,6 +6634,27 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"Sl" = (
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 4;
+	icon_state = "shutter0";
+	id_tag = "shipclassd";
+	name = "A.E.S. Parallax Subject Containment Lockdown Shutters"
+	},
+/obj/structure/table/marble,
+/obj/machinery/door/window/brigdoor/westright{
+	name = "A.E.S. Parallax Subject Containment Desk";
+	req_access = list("ACCESS_SECURITY_LEVEL3")
+	},
+/obj/machinery/door/window/brigdoor/eastleft{
+	req_access = list("ACCESS_SECURITY_LEVEL3");
+	name = "A.E.S. Parallax Subject Containment Desk"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
 "Sm" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -3587,6 +6675,22 @@
 	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/town/house)
+"St" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/storage/toolbox/emergency,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/gun/projectile/flare/loaded,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "Sx" = (
 /obj/structure/showcase{
 	desc = "An expensive set of avionics and controls to allow a trained pilot to fly even more effectively or allow an untrained pilot to operate the heli. Too bad this heli is broken down.";
@@ -3623,12 +6727,28 @@
 "SE" = (
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town)
+"SF" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "shiplockdown";
+	name = "Ship Ladder Access Control";
+	pixel_y = 2;
+	req_access = list("ACCESS_ADMIN_LEVEL4")
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "SH" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"SP" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/corner,
+/area/centcom/vesselevent)
 "SR" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 1
@@ -3636,6 +6756,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"SV" = (
+/obj/effect/floor_decal/spline/wood/ebony/corner{
+	dir = 4
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
 "SX" = (
 /obj/structure/showcase{
 	desc = "An expensive set of avionics and controls to allow a trained pilot to fly even more effectively or allow an untrained pilot to operate the heli. Too bad this heli is broken down.";
@@ -3656,6 +6782,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/fisherman)
+"Tc" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
 "Tg" = (
 /obj/machinery/light{
 	dir = 4
@@ -3669,18 +6802,42 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"Tk" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Briefing Room"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/vesselevent)
 "Tl" = (
 /obj/effect/floor_decal/corner/paleblue/bordercee{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/town/truck)
+"To" = (
+/obj/effect/floor_decal/corner/research/bordercorner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/grey/bordercorner,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Tq" = (
 /obj/machinery/vending/boozeomat{
 	req_access = list()
 	},
 /turf/simulated/wall/r_wall,
 /area/site53/town/bar)
+"Tr" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"Ts" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
 "Tu" = (
 /turf/simulated/wall/wood,
 /area/site53/town/fisherman)
@@ -3701,6 +6858,24 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/gas)
+"Tz" = (
+/obj/effect/floor_decal/corner/blue/border,
+/obj/structure/flora/pottedplant/floorleaf,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
+"TA" = (
+/obj/effect/floor_decal/corner/yellow/bordercee{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/vertical,
+/area/site53/tram/vessel)
+"TB" = (
+/obj/effect/floor_decal/corner/research/border,
+/obj/effect/floor_decal/corner/research/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "TC" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood{
@@ -3769,6 +6944,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"TU" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 4
+	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "TV" = (
 /obj/machinery/light{
 	dir = 4
@@ -3829,6 +7013,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/ciheli)
+"Us" = (
+/obj/effect/floor_decal/spline/wood/bamboo,
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -32
+	},
+/obj/machinery/light,
+/turf/simulated/floor/wood/bamboo,
+/area/site53/tram/vessel)
+"Uu" = (
+/obj/machinery/door/blast/regular/open{
+	id_tag = "shiplockdown";
+	name = "A.E.S. Parallax Ladder Access Blast Door";
+	icon_state = "pdoor0";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"Uv" = (
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "Uy" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
@@ -3844,6 +7049,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/town/sheriff)
+"Uz" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
+"UB" = (
+/obj/effect/floor_decal/spline/wood/walnut,
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "UD" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -3856,6 +7071,16 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/tiled/dark,
 /area/site53/town/ciheli)
+"UG" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 6
+	},
+/obj/structure/table/rack,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 1
+	},
+/area/site53/tram/vessel)
 "UK" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/structure/flora/pottedplant/deskfern{
@@ -3887,6 +7112,64 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood,
 /area/site53/town/house)
+"UR" = (
+/obj/effect/floor_decal/spline/wood/ebony{
+	dir = 5
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "mtfsenior1";
+	icon = 'icons/obj/sec-lockers_new.dmi';
+	icon_closed = "mtfsenior";
+	icon_locked = "mtfsenior1";
+	icon_off = "mtfsenioroff";
+	icon_opened = "mtfopen";
+	name = "Task Force Leader's locker";
+	req_access = list("ACCESS_SECURITY_LEVEL4")
+	},
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/ammo_magazine/box/a9mm,
+/obj/item/ammo_magazine/box/a556,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/ammo_magazine/scp/a9mm,
+/obj/item/gun/projectile/pistol/glock/spec,
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/mask/gas/mtf,
+/obj/item/melee/baton/loaded,
+/obj/item/crowbar/emergency_forcing_tool,
+/obj/item/material/knife/combat,
+/obj/item/clothing/accessory/storage/black_vest,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/ammo_magazine/scp/m16_mag,
+/obj/item/gun/projectile/automatic/scp/m4a1,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood/ebony,
+/area/site53/tram/vessel)
+"UT" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 4
+	},
+/area/centcom/vesselevent)
+"UU" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/item/folder/white,
+/obj/item/pen,
+/turf/simulated/floor/wood/ebony,
+/area/centcom/vesselevent)
+"UW" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/concrete,
+/area/centcom/vesselevent/exterior)
 "UX" = (
 /obj/structure/railing/mapped{
 	color = "#e3994e";
@@ -3894,6 +7177,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/site53/town)
+"UZ" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Vb" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
@@ -3908,6 +7197,28 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"Ve" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
+"Vf" = (
+/obj/effect/floor_decal/spline/wood/mahogany/cee,
+/obj/structure/filingcabinet{
+	pixel_x = -10
+	},
+/obj/structure/filingcabinet,
+/obj/structure/filingcabinet{
+	pixel_x = 10
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
 "Vh" = (
 /obj/structure/flora/pottedplant/floorleaf,
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
@@ -3915,16 +7226,69 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"Vj" = (
+/turf/unsimulated/wall{
+	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
+	icon = 'icons/obj/doors/secure/door.dmi';
+	icon_state = "closed";
+	name = "Bunks"
+	},
+/area/centcom/vesselevent)
 "Vk" = (
 /obj/machinery/mining/drill,
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/town/cave)
+"Vl" = (
+/obj/effect/floor_decal/corner/yellow/mono,
+/obj/structure/closet/radiation,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/tram/vessel)
+"Vm" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "Vp" = (
 /obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/sheriff)
+"Vr" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4;
+	icon_state = "bordercolor"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"Vt" = (
+/obj/effect/floor_decal/spline/wood/mahogany{
+	dir = 9
+	},
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/site53/tram/vessel)
+"Vu" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 9
+	},
+/obj/structure/table/rack/shelf,
+/obj/item/storage/box/flashbangs,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 8
+	},
+/area/site53/tram/vessel)
 "Vv" = (
 /obj/machinery/button/blast_door{
 	id_tag = "ruincihelicopter-left";
@@ -3941,11 +7305,58 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/hotel)
+"VC" = (
+/turf/unsimulated/wall{
+	desc = "A secure airlock. Doesn't look like you can get through easily.";
+	dir = 4;
+	icon = 'icons/obj/doors/secure/door.dmi';
+	icon_state = "closed";
+	name = "Medical Clinic"
+	},
+/area/centcom/vesselevent)
 "VE" = (
 /obj/structure/bed/chair/wood/mahogany,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"VI" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Dispatch Facility Alpha-32"
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/centcom/vesselevent)
+"VL" = (
+/obj/effect/floor_decal/corner/keter/bordercorner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"VP" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter0";
+	id_tag = "shiplockdown";
+	name = "A.E.S. Parallax Lockdown Shutters"
+	},
+/turf/simulated/floor,
+/area/site53/tram/vessel)
+"VQ" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor{
+	icon = 'icons/turf/floors.dmi'
+	},
+/area/centcom/vesselevent)
 "VS" = (
 /obj/effect/floor_decal/spline/wood/walnut{
 	dir = 10
@@ -3956,12 +7367,32 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood/walnut,
 /area/site53/town/gas)
+"VV" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 9
+	},
+/obj/structure/closet/crate/bin,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
 "VW" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 6
 	},
 /turf/simulated/floor/wood,
 /area/site53/town/house2)
+"Wh" = (
+/obj/effect/floor_decal/corner/research/bordercorner,
+/obj/effect/floor_decal/corner/grey/bordercorner{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Wl" = (
 /obj/machinery/power/smes/buildable/preset/on_full{
 	icon = 'icons/obj/stationobjs.dmi';
@@ -3975,6 +7406,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/small,
 /area/site53/town/bar)
+"Wm" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/obj/structure/bed/chair/armchair/black{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "Wp" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/effect/floor_decal/spline/wood/ebony{
@@ -4030,12 +7473,28 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"WN" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/item/modular_computer/console/preset/cardslot/command,
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "WS" = (
 /obj/effect/floor_decal/spline/wood/ebony{
 	dir = 1
 	},
 /turf/simulated/floor/wood/ebony,
 /area/site53/town/sheriff)
+"WT" = (
+/obj/structure/table/woodentable_reinforced/mahogany,
+/obj/structure/flora/pottedplant/deskfern{
+	pixel_y = 13
+	},
+/turf/simulated/floor/carpet/blue,
+/area/site53/tram/vessel)
 "WV" = (
 /obj/machinery/door/unpowered/simple/walnut{
 	dir = 4;
@@ -4057,6 +7516,20 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/town/sheriff)
+"Xd" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 5
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "Xe" = (
 /obj/structure/bed/chair/office{
 	dir = 8
@@ -4067,6 +7540,12 @@
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"Xl" = (
+/obj/effect/floor_decal/corner/orange/three_quarters{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/old_tile,
+/area/centcom/vesselevent)
 "Xm" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/item/stack/material/wood/ten,
@@ -4107,6 +7586,33 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"Xq" = (
+/obj/machinery/newscaster{
+	pixel_y = 32;
+	pixel_x = 32
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/site53/tram/vessel)
+"Xw" = (
+/obj/effect/floor_decal/spline/wood/walnut{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/wood/walnut,
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_y = 28
+	},
+/turf/simulated/floor/wood/walnut,
+/area/site53/tram/vessel)
+"XA" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/obj/machinery/status_display{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
 "XC" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 5
@@ -4128,6 +7634,18 @@
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/site53/town/gas)
+"XI" = (
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/photocopier{
+	pixel_y = 4
+	},
+/turf/simulated/floor/tiled/dark/corner{
+	dir = 4
+	},
+/area/site53/tram/vessel)
 "XK" = (
 /obj/item/stack/material/plasteel,
 /turf/simulated/floor/exoplanet/barren,
@@ -4145,6 +7663,17 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/house)
+"Yd" = (
+/obj/effect/floor_decal/corner/keter/border,
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
+"Yk" = (
+/obj/structure/table/woodentable_reinforced/walnut,
+/turf/simulated/floor/carpet/green,
+/area/centcom/vesselevent)
 "Yp" = (
 /obj/structure/railing/mapped{
 	color = "#e3994e"
@@ -4163,6 +7692,11 @@
 	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/town/house)
+"YD" = (
+/obj/structure/table/reinforced,
+/obj/item/device/megaphone,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "YE" = (
 /obj/item/stool/bar/padded,
 /obj/effect/floor_decal/spline/wood/mahogany{
@@ -4188,6 +7722,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/mahogany,
 /area/site53/town/bar)
+"YJ" = (
+/obj/machinery/door/airlock/research{
+	name = "A.E.S. Parallax Science Lab";
+	req_access = list("ACCESS_SCIENCE_LEVEL1")
+	},
+/turf/simulated/floor/tiled/dark/small,
+/area/site53/tram/vessel)
+"YT" = (
+/obj/effect/floor_decal/corner/research/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/tram/vessel)
 "YZ" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/green,
@@ -4211,6 +7758,14 @@
 /obj/item/stack/material/uranium/ten,
 /turf/simulated/floor/exoplanet/grass,
 /area/site53/town)
+"Zl" = (
+/obj/effect/floor_decal/corner/keter/bordercorner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/corner{
+	dir = 1
+	},
+/area/centcom/vesselevent)
 "Zm" = (
 /obj/structure/table/woodentable_reinforced/mahogany,
 /obj/machinery/chemical_dispenser/bar_alc/full{
@@ -4250,6 +7805,30 @@
 	},
 /turf/simulated/floor/exoplanet/water/shallow,
 /area/site53/town)
+"Zz" = (
+/turf/unsimulated/wall,
+/area/centcom/vesselevent)
+"ZB" = (
+/obj/effect/floor_decal/corner/keter/mono,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/item/ammo_magazine/scp/smgm9mm,
+/obj/structure/table/rack/shelf,
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/tram/vessel)
 "ZE" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/wood,
@@ -4267,6 +7846,34 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/site53/town/bar)
+"ZK" = (
+/obj/effect/floor_decal/corner/grey/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner,
+/obj/structure/sign/radiation{
+	pixel_y = -32
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/corner,
+/area/site53/tram/vessel)
+"ZT" = (
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/tram/vessel)
+"ZW" = (
+/obj/effect/floor_decal/corner/research/border{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/vertical,
+/area/site53/tram/vessel)
 "ZY" = (
 /obj/machinery/light{
 	dir = 4
@@ -50300,96 +53907,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 eL
 eL
 eL
@@ -50552,96 +54159,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -50804,96 +54411,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -51056,96 +54663,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -51308,96 +54915,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -51560,96 +55167,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -51812,96 +55419,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -52064,96 +55671,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+hF
+hF
+hF
+hF
+hF
+hF
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -52316,96 +55923,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+VQ
+JE
+SP
+mK
+oD
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -52568,96 +56175,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+JC
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+mK
+Tc
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -52820,96 +56427,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+RC
+mK
+vl
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -53072,96 +56679,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+RC
+mK
+pN
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -53324,96 +56931,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+mK
+ei
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+Zz
+Zz
+Zz
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -53576,96 +57183,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+dm
+ca
+RC
+mK
+eZ
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+ts
+zs
+RG
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -53828,96 +57435,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+JC
+aP
+aP
+aP
+aP
+aP
+Zz
+bE
+RC
+mK
+pN
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+Cu
+zs
+PP
+Zz
+gD
+gD
+gD
+UW
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -54080,96 +57687,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+VQ
+ca
+RC
+mK
+vl
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+mg
+zs
+nK
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -54332,96 +57939,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+mK
+vl
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+Zz
+gl
+Zz
+Zz
+uP
+uP
+Zz
+Qu
+zs
+Cb
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -54584,96 +58191,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+Uz
+qE
+Zz
+Zz
+Zz
+Zz
+VC
+Zz
+Zz
+Zz
+Zz
+Zz
+Dn
+MT
+NF
+Zz
+Zz
+Zz
+Zz
+Zz
+Sa
+Zz
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -54836,96 +58443,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+qY
+MT
+SP
+dU
+zO
+wz
+MT
+MT
+MT
+wz
+MT
+MT
+MT
+Zl
+nO
+qY
+MT
+MT
+wz
+MT
+MT
+MT
+SP
+dU
+lq
+lq
+lq
+lq
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+lO
+zE
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -55088,96 +58695,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+JC
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+nO
+nO
+RC
+FP
+bE
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+nO
+RC
+VI
+lq
+lq
+lq
+lq
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+CE
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -55340,96 +58947,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+Qg
+lH
+sh
+dU
+UT
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+lH
+sh
+dU
+lq
+lq
+lq
+lq
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nz
+nS
+nz
+CE
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -55592,96 +59199,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+Xl
+ti
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+Vj
+Zz
+Zz
+Zz
+Zz
+Zz
+dU
+dU
+Tk
+dU
+dU
+Zz
+Zz
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -55844,96 +59451,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+mK
+vl
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+sV
+Ab
+rj
+rj
+rj
+rj
+rj
+Ab
+fn
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Vu
+gm
+CQ
+Wm
+gm
+gm
+Ls
+da
+AJ
+OT
+uY
+IL
+uq
+OE
+de
+Ap
+Ap
+Ap
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -56096,96 +59703,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+dm
+ca
+RC
+mK
+vl
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+DM
+DM
+DM
+cC
+DM
+DM
+DM
+pR
+dU
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+xl
+ZB
+oT
+gy
+cK
+Ap
+AM
+Gb
+YD
+dF
+Ed
+Gb
+MH
+jJ
+ke
+HV
+EX
+Gb
+Gb
+Gb
+MH
+Ap
+qH
+JN
+Ap
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -56348,96 +59955,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+JC
+aP
+aP
+aP
+aP
+aP
+Zz
+bE
+RC
+mK
+pN
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+lY
+pb
+pJ
+cC
+eG
+pb
+xW
+pR
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+JK
+Ig
+Ap
+Ve
+Ju
+Ju
+Ju
+sY
+Ap
+zb
+Gb
+Gb
+Gb
+Gb
+Gb
+qN
+Ap
+lw
+Ap
+Hc
+at
+BD
+Vm
+MH
+PZ
+bI
+yF
+Ap
+iT
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -56600,96 +60207,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+VQ
+ca
+RC
+mK
+qF
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+DM
+DM
+DM
+cC
+DM
+DM
+DM
+pR
+dU
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+QA
+Lw
+iV
+Ae
+gX
+jC
+UZ
+Lp
+AN
+Ap
+Qm
+BD
+BD
+Gb
+BD
+BD
+Jl
+aD
+LO
+nV
+xZ
+at
+BD
+Vm
+MH
+Ap
+Ap
+Ap
+Ap
+wv
+tP
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -56852,96 +60459,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+mK
+Gj
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+zo
+eG
+sL
+pb
+cC
+pJ
+UU
+pb
+wH
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+UR
+SV
+iV
+MX
+gX
+Ix
+HN
+Yd
+HN
+Ap
+Fs
+hb
+hb
+Gb
+hb
+hb
+yd
+aD
+wY
+xR
+Gb
+at
+BD
+Vm
+MH
+Ap
+qH
+JN
+Ap
+Aa
+FQ
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -57104,96 +60711,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+RC
+mK
+pN
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+qv
+MS
+MS
+MS
+MS
+MS
+ur
+pR
+dU
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+Ap
+Ap
+AT
+Nb
+Ap
+Ap
+Js
+of
+Ap
+gX
+Ix
+HN
+Yd
+HN
+Ap
+Qm
+BD
+BD
+Gb
+BD
+BD
+Jl
+aD
+QR
+BD
+Gb
+at
+BD
+Vm
+MH
+PZ
+bI
+yF
+Ap
+kv
+eF
+Ak
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -57356,96 +60963,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+FO
+bE
+RC
+mK
+vl
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+pR
+pa
+Ts
+Yk
+LC
+ss
+dL
+pR
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+Ap
+Ap
+St
+nW
+mq
+Af
+Ap
+Ap
+Ap
+Ap
+vE
+UG
+HN
+lB
+OY
+Ap
+Xd
+Fn
+gv
+bm
+gv
+Fn
+za
+aD
+HI
+LX
+ZT
+ZT
+ZT
+ZT
+Ah
+Ap
+Ap
+Ap
+Ap
+zw
+Ij
+iY
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -57608,96 +61215,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+JC
+aP
+aP
+aP
+aP
+aP
+FO
+ca
+RC
+mK
+Tc
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+pR
+Ef
+lj
+KR
+lj
+Ef
+dL
+pR
+dU
+lq
+lq
+lq
+Ol
+HA
+Ap
+Ap
+yf
+Lb
+Gb
+Gb
+Fk
+Ap
+Ap
+Uu
+Ap
+ak
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+lw
+cU
+lw
+Ap
+Ap
+Ap
+Ap
+rH
+rH
+Sl
+rH
+rH
+Ap
+Ap
+Ap
+Ap
+Ap
+kv
+lD
+wD
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -57860,96 +61467,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+aP
+aP
+aP
+aP
+aP
+aP
+dm
+Pb
+sh
+mK
+oD
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+dL
+pR
+lj
+lj
+lj
+lj
+lj
+dL
+pR
+Zz
+lq
+lq
+lq
+Ol
+HA
+Ap
+Ni
+DA
+Gb
+At
+Gb
+Tz
+VP
+yZ
+hw
+VL
+Ju
+vb
+XA
+hw
+hw
+FX
+RB
+eu
+gm
+gm
+gm
+gm
+gm
+eT
+jL
+gm
+gm
+gm
+gm
+gm
+ZK
+Ap
+Vl
+IO
+Ap
+rI
+zS
+cl
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -58112,96 +61719,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+Zz
+hF
+hF
+hF
+hF
+hF
+hF
+Zz
+Zz
+Zz
+Zz
+Zz
+Zz
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+Mw
+Bu
+dc
+dc
+dc
+dc
+dc
+bf
+jT
+Zz
+lq
+lq
+lq
+Ol
+HA
+Ap
+go
+jM
+Gb
+kT
+Gb
+Mz
+HJ
+tY
+Gb
+Gb
+Gb
+Gb
+Gb
+Gb
+Gb
+Mz
+lC
+iI
+Gb
+Gb
+CA
+Gb
+Gb
+Gb
+Gb
+Gb
+Gb
+Gb
+Gb
+Gb
+qa
+Np
+Jc
+TA
+Np
+kC
+lD
+zr
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -58364,96 +61971,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+Zz
+Zz
+Zz
+Zz
+aT
+Zz
+Zz
+Zz
+Zz
+Zz
+lq
+lq
+lq
+Ol
+HA
+Ap
+WN
+zd
+Gb
+SF
+Gb
+Tz
+VP
+Gl
+fs
+fs
+fs
+Vr
+fs
+fs
+fs
+hd
+RB
+Ru
+bm
+EB
+IP
+gV
+bm
+bm
+Wh
+nL
+To
+bm
+bm
+bm
+iR
+Ap
+pZ
+cQ
+Ap
+Fd
+zS
+LP
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -58616,96 +62223,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+lq
+lq
+lq
+Ol
+HA
+Ap
+Ap
+XI
+tV
+Gb
+Gb
+Fk
+Ap
+Ap
+Ap
+NV
+Ap
+Ap
+Ap
+Ap
+IT
+Ap
+Ap
+Ap
+Ap
+lw
+ff
+lw
+Ap
+Ap
+Ap
+YJ
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+kk
+lD
+qy
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -58868,96 +62475,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+Ap
+Ap
+ft
+Be
+yT
+Ex
+Ap
+zC
+uA
+Il
+it
+IZ
+Ap
+VV
+rc
+LL
+oL
+Ap
+iU
+zQ
+zQ
+zQ
+or
+Ap
+qO
+Sg
+FU
+Ap
+uV
+Lx
+cd
+Ap
+Ap
+Ap
+Ap
+kv
+Ij
+iY
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -59120,96 +62727,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+lq
+lq
+lq
+Ol
+HA
+HA
+HA
+Ap
+Ap
+CN
+BZ
+Ap
+Ap
+uK
+ra
+FZ
+kd
+Fl
+Ap
+QH
+Bi
+Bi
+UB
+Ap
+xQ
+yH
+FD
+yH
+Kv
+Ap
+qO
+TB
+gw
+Ap
+dd
+sj
+Us
+Ap
+Ap
+Ap
+Ap
+kv
+MU
+LG
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -59372,96 +62979,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+fp
+fp
+fp
+pk
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+Vt
+Mj
+Ha
+WT
+rL
+CR
+Ap
+IV
+Tr
+TU
+Es
+Ap
+co
+ka
+md
+Ph
+df
+Ap
+qO
+YT
+FU
+Ap
+aI
+EC
+bY
+Ap
+si
+si
+Ap
+Aa
+FQ
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -59624,96 +63231,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+kE
+eA
+Ha
+lP
+Cc
+Qv
+Ap
+mL
+bV
+oP
+xf
+Ap
+JU
+FJ
+Ap
+oM
+OP
+Ap
+Ap
+YJ
+Ap
+Ap
+lw
+GL
+lw
+Ap
+qs
+qs
+Ap
+ah
+FR
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -59876,96 +63483,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+lu
+zF
+zX
+Uv
+Uv
+Ap
+Xw
+Hn
+JY
+xt
+Ap
+PV
+FJ
+nR
+oo
+Oz
+Ap
+Lc
+IH
+IH
+MC
+IH
+IH
+JR
+Jw
+sN
+eI
+Ap
+DS
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -60128,96 +63735,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+Hr
+Vf
+Ap
+QK
+Xq
+fy
+fy
+Ap
+hv
+FJ
+nR
+hV
+mT
+Ap
+FT
+yH
+HO
+qZ
+yH
+qZ
+qf
+Ap
+GO
+sM
+Ap
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -60380,96 +63987,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+Zz
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+Ap
+uM
+HH
+Ci
+Ap
+FG
+Bx
+nR
+El
+aw
+Ap
+aq
+ZW
+ro
+Md
+tr
+ju
+cM
+Ap
+Ap
+Ap
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -60632,96 +64239,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+Ap
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -60884,96 +64491,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -61136,96 +64743,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -61388,96 +64995,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -61640,96 +65247,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -61892,96 +65499,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -62144,96 +65751,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -62396,96 +66003,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -62648,96 +66255,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -62900,96 +66507,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -63152,96 +66759,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -63404,96 +67011,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -63656,96 +67263,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -63908,96 +67515,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -64160,96 +67767,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -64412,96 +68019,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -64664,96 +68271,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -64916,96 +68523,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -65168,96 +68775,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -65420,96 +69027,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -65672,96 +69279,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -65924,96 +69531,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+uP
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+HA
+Di
 eL
 eL
 eL
@@ -66176,96 +69783,96 @@ eL
 eL
 eL
 eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 eL
 eL
 eL

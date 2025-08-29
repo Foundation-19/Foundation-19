@@ -1371,6 +1371,12 @@
 	name = "\improper Senior Researcher's Office C"
 	icon_state = "research"
 
+/area/site53/engineering/engine_smes
+	name = "\improper Engineering SMES"
+	icon_state = "engine_smes"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 //Logistics
 /area/quartermaster/hangar
 	name ="\improper Logistics Hangar"
