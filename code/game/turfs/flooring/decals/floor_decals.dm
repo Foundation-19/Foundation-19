@@ -1404,3 +1404,102 @@
 
 /obj/effect/floor_decal/stoneborder/corner
 	icon_state = "stoneborder_c"
+
+/obj/effect/floor_decal/spline/wood
+	name = "siding - wood"
+	color = "#B78D61"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/three_quarters
+	icon_state = "siding_wood_full"
+
+/obj/effect/floor_decal/spline/wood/walnut
+	name = "siding - walnut wood"
+	color = "#443127"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/walnut/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/walnut/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/walnut/three_quarters
+	icon_state = "siding_wood_full"
+
+/obj/effect/floor_decal/spline/wood/mahogany
+	name = "siding - mahogany wood"
+	color = "#632620"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/mahogany/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/mahogany/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/mahogany/three_quarters
+	icon_state = "siding_wood_full"
+
+/obj/effect/floor_decal/spline/wood/ebony
+	name = "siding - ebony wood"
+	color = "#281D1A"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/ebony/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/ebony/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/ebony/three_quarters
+	icon_state = "siding_wood_full"
+
+/obj/effect/floor_decal/spline/wood/maple
+	name = "siding - maple wood"
+	color = "#B7A58B"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/maple/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/maple/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/maple/three_quarters
+	icon_state = "siding_wood_full"
+
+/obj/effect/floor_decal/spline/wood/yew
+	name = "siding - yew wood"
+	color = "#C68445"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/yew/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/yew/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/yew/three_quarters
+	icon_state = "siding_wood_full"
+
+/obj/effect/floor_decal/spline/wood/bamboo
+	name = "siding - bamboo wood"
+	color = "#CEBCA7"
+	icon_state = "siding_wood"
+
+/obj/effect/floor_decal/spline/wood/bamboo/corner
+	icon_state = "siding_wood_corner"
+
+/obj/effect/floor_decal/spline/wood/bamboo/cee
+	icon_state = "siding_wood_end"
+
+/obj/effect/floor_decal/spline/wood/bamboo/three_quarters
+	icon_state = "siding_wood_full"
+
