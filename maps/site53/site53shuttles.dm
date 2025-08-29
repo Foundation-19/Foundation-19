@@ -90,7 +90,7 @@
 	waypoint_station = "nav_vessel_start"
 	landmark_transition = "nav_vessel_transition"
 	waypoint_offsite = "nav_vessel_out"
-	move_time = 300
+	move_time = 15
 
 /obj/effect/shuttle_landmark/vessel/start
 	name = "Dispatch Facility Alpha-32"
