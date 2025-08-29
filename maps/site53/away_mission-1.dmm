@@ -2434,6 +2434,18 @@
 	},
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/tram/vessel)
+"rp" = (
+/obj/effect/floor_decal/corner/keter/border,
+/obj/structure/table/rack,
+/obj/structure/window/reinforced,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/suit/armor/mtftactical,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/tram/vessel)
 "rw" = (
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
@@ -4965,6 +4977,10 @@
 	name = "Director's locker";
 	req_access = list("ACCESS_ADMIN_LEVEL5")
 	},
+/obj/item/clothing/under/suit_jacket/really_black,
+/obj/item/clothing/suit/armor/itd{
+	name = "Officer's coat"
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/site53/tram/vessel)
 "Ht" = (
@@ -5012,6 +5028,10 @@
 	},
 /obj/machinery/status_display{
 	pixel_x = 32
+	},
+/obj/item/clothing/under/suit_jacket/really_black,
+/obj/item/clothing/suit/armor/itd{
+	name = "Officer's coat"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/site53/tram/vessel)
@@ -5073,6 +5093,9 @@
 /obj/item/ammo_magazine/scp/smgm9mm,
 /obj/item/ammo_magazine/scp/smgm9mm,
 /obj/item/gun/projectile/automatic/scp/mp5,
+/obj/item/clothing/under/mtf/ghost1,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/vessel)
 "HO" = (
@@ -5163,6 +5186,12 @@
 /obj/effect/floor_decal/corner/keter/border,
 /obj/structure/table/rack,
 /obj/structure/window/reinforced,
+/obj/item/clothing/head/helmet/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
 /turf/simulated/floor/tiled/dark/horizontal,
 /area/site53/tram/vessel)
 "Iz" = (
@@ -6209,6 +6238,9 @@
 /obj/item/ammo_magazine/scp/smgm9mm,
 /obj/item/gun/projectile/automatic/scp/mp5,
 /obj/machinery/light,
+/obj/item/clothing/under/mtf/ghost1,
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/head/helmet/mtftactical,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/tram/vessel)
 "OZ" = (
@@ -7077,6 +7109,12 @@
 	},
 /obj/structure/table/rack,
 /obj/structure/window/reinforced,
+/obj/item/clothing/suit/armor/mtfscout,
+/obj/item/clothing/suit/armor/mtfscout,
+/obj/item/clothing/suit/armor/mtfscout,
+/obj/item/clothing/suit/armor/mtfscout,
+/obj/item/clothing/suit/armor/mtfscout,
+/obj/item/clothing/suit/armor/mtfscout,
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 1
 	},
@@ -7147,6 +7185,10 @@
 /obj/machinery/status_display{
 	pixel_y = 32
 	},
+/obj/item/clothing/suit/armor/mtftactical,
+/obj/item/clothing/head/helmet/scp/security/mtftactical,
+/obj/item/clothing/head/beret/mtf/ghost1,
+/obj/item/clothing/under/mtf/ghost1,
 /turf/simulated/floor/wood/ebony,
 /area/site53/tram/vessel)
 "UT" = (
@@ -60765,7 +60807,7 @@ Js
 of
 Ap
 gX
-Ix
+rp
 HN
 Yd
 HN
