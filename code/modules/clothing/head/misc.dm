@@ -394,3 +394,8 @@
 	name = "police cap"
 	desc = "An outdated police cap, usually worn by law enforcement. It still smells of gunpowder, it has an Anchorage Police Department badge on it."
 	icon_state = "policehat"
+
+/obj/item/clothing/head/sheriff
+	name = "sheriff's campaign cover"
+	desc = "A dusty green campaign cover with a sheriff's badge on the front. Usually found worn by the local sheriff's office."
+	icon_state = "sheriffhat"
