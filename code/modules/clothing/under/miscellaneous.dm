@@ -163,7 +163,7 @@
 	icon_state = "sheriff"
 	worn_state = "sheriff"
 
-/obj/item/clothing/head/beret/mtf/ghost1
+/obj/item/clothing/under/mtf/ghost1
 	name = "'Phantom Current' combat uniform"
 	desc = "Some combat-wear worn by MTF field agents, it's a dusty light blue field combat suit, with a dark grey torso. It involves a tactical belt, and a Ghost-1 emblem patch on one of the shoulder."
 	icon_state = "mtf_ghost1"

@@ -400,7 +400,7 @@
 	desc = "A dusty green campaign cover with a sheriff's badge on the front. Usually found worn by the local sheriff's office."
 	icon_state = "sheriffhat"
 
-/obj/item/clothing/under/mtf/ghost1
+/obj/item/clothing/head/beret/mtf/ghost1
 	name = "'Phantom Current' combat beret"
 	desc = "A heavily padded dusty light blue beret worn by MTF field agents, it has a golden MTF Ghost-1 badge on the front of it. It's got heavy armor padding, surprisingly more armored than a helmet however doesn't cover as much. The predicament of fashion and defense is always an issue."
 	icon_state = "ghost1_beret"
