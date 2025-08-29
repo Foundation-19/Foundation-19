@@ -1908,6 +1908,7 @@
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8
 	},
+/obj/structure/ladder/vesselevent2,
 /turf/simulated/floor,
 /area/site53/tram/vessel)
 "nU" = (
@@ -5055,12 +5056,6 @@
 	req_access = list("ACCESS_ADMIN_LEVEL4")
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters/open{
-	dir = 2;
-	icon_state = "shutter0";
-	id_tag = "shiplockdown";
-	name = "A.E.S. Parallax Lockdown Shutters"
-	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/tram/vessel)
 "HN" = (
@@ -7061,6 +7056,7 @@
 	icon_state = "pdoor0";
 	dir = 4
 	},
+/obj/structure/ladder/vesselevent,
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/tram/vessel)
 "Uv" = (
@@ -7379,12 +7375,6 @@
 "VP" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/shutters/open{
-	dir = 2;
-	icon_state = "shutter0";
-	id_tag = "shiplockdown";
-	name = "A.E.S. Parallax Lockdown Shutters"
-	},
 /turf/simulated/floor,
 /area/site53/tram/vessel)
 "VQ" = (
