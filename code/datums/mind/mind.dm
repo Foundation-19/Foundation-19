@@ -130,7 +130,7 @@
 	out += "<br><a href='byond://?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
 	out += "<b>Ambitions:</b> [ambitions ? ambitions : "None"] <a href='byond://?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 
-	show_browser(HTML_SKELETON(usr), out, "window=edit_memory[src]")
+	show_browser(usr, HTML_SKELETON(out), "window=edit_memory[src]")
 
 /datum/mind/Topic(href, href_list)
 
