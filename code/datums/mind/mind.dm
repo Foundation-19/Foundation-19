@@ -105,7 +105,7 @@
 		alert("Not before round-start!", "Alert")
 		return
 
-	var/out = "<meta http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'/><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
+	var/out = "<B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
 	out += "Mind currently owned by key: [key] [active?"(synced)":"(not synced)"]<br>"
 	out += "Assigned role: [assigned_role]. <a href='byond://?src=\ref[src];role_edit=1'>Edit</a><br>"
 	out += "<hr>"
@@ -130,7 +130,7 @@
 	out += "<br><a href='byond://?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
 	out += "<b>Ambitions:</b> [ambitions ? ambitions : "None"] <a href='byond://?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 
-	show_browser(usr, out, "window=edit_memory[src]")
+	show_browser(HTML_SKELETON(usr), out, "window=edit_memory[src]")
 
 /datum/mind/Topic(href, href_list)
 
