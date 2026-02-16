@@ -42,6 +42,8 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define iscorgi(A) istype(A, /mob/living/simple_animal/friendly/corgi)
 
+#define isovermind(A) (istype(A, /mob/camera/blob))
+
 #define is_drone(A) istype(A, /mob/living/silicon/robot/drone)
 
 #define isEye(A) istype(A, /mob/observer/eye)
