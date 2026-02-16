@@ -82,6 +82,34 @@
 	base_turf = /turf/unsimulated/floor/plating
 	base_area = /area/space
 
+/datum/shuttle/autodock/ferry/vessel
+	name = "A.E.S. Parallax"
+	sound_takeoff = 'sounds/effects/boatlaunch.ogg'
+	warmup_time = 14
+	shuttle_area = list(/area/site53/tram/vessel)
+	waypoint_station = "nav_vessel_start"
+	landmark_transition = "nav_vessel_transition"
+	waypoint_offsite = "nav_vessel_out"
+	move_time = 15
+
+/obj/effect/shuttle_landmark/vessel/start
+	name = "Dispatch Facility Alpha-32"
+	landmark_tag = "nav_vessel_start"
+	base_turf = /turf/simulated/floor/beach/water/ocean
+	base_area = /area/centcom/vesselevent/exterior
+
+/obj/effect/shuttle_landmark/vessel/out
+	name = "Unknown Location"
+	landmark_tag = "nav_vessel_out"
+	base_turf = /turf/simulated/floor/beach/water/ocean
+	base_area = /area/site53/town
+
+/obj/effect/shuttle_landmark/transit/vesseltransit
+	name = "In transit"
+	landmark_tag = "nav_vessel_transition"
+	base_turf = /turf/unsimulated/floor/plating
+	base_area = /area/space
+
 /datum/shuttle/autodock/ferry/emergency/train //The transfer/escape train
 	name = "Foundation Main Train"
 	sound_takeoff = 'sounds/effects/TrainLeavingSite.ogg'

@@ -154,6 +154,30 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/centcom/goc/exterior
+	name = "Global Occult Coalition Headquarters Exterior"
+	icon_state = "Sleep"
+	dynamic_lighting = 0
+
+/area/centcom/vesselevent
+	name = "Dispatch Facility Alpha-32"
+	icon_state = "Sleep"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/centcom/vesselevent/exterior
+	name = "Dispatch Facility Alpha-32 Exterior"
+	icon_state = "Sleep"
+	dynamic_lighting = 0
+
+/area/site53/tram/vessel
+	name = "A.E.S. Parallax"
+	icon_state = "Sleep"
+	requires_power = 1
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 /area/site53/tram/scpcar
 	name = "Car"
 	icon_state = "Sleep"
@@ -216,34 +240,63 @@
 
 /area/site53/surface/surface/caves
 	name = "Surface Caverns"
+
+/area/site53/town
+	name = "Small Town"
+	icon_state = "unknown"
+	requires_power = 0
+	dynamic_lighting = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/town/fisherman
+	name = "Fisherman's Hut"
+	icon_state = "unknown"
 	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/bar
-	name = "Away Bar"
+/area/site53/town/gas
+	name = "Gas Station"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/hall
-	name = "Away Village Hall"
+/area/site53/town/hotel
+	name = "Hotel"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/check
-	name = "Away Checkpoint"
+/area/site53/town/house
+	name = "House"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/storage
-	name = "Away Storage 1"
+/area/site53/town/house2
+	name = "Boarded Up House"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/storage2
-	name = "Away Storage 2"
+/area/site53/town/bar
+	name = "Bar"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/hotel
-	name = "Away Hotel"
+/area/site53/town/sheriff
+	name = "Sheriff's Office"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/house1
-	name = "Away House 1"
+/area/site53/town/ciheli
+	name = "Crashed Heli"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/house2
-	name = "Away House 2"
+/area/site53/town/truck
+	name = "Broken Down Truck"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
-/area/site53/surface/surface/away/house3
-	name = "Away House 3"
+/area/site53/town/cave
+	name = "Cave"
+	icon_state = "unknown"
+	dynamic_lighting = 1
 
 /area/site53/surface/cryogenicsprimary
 	name = "\improper Primary Cryogenic Storage"
@@ -1087,12 +1140,6 @@
 	ambience = list('sounds/ambience/signal.ogg')
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/site53/engineering/engine_smes
-	name = "\improper Engineering SMES"
-	icon_state = "engine_smes"
-	sound_env = SMALL_ENCLOSED
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/site53/engineering/biosupplies
 	name = "\improper Engineering Bio supplies"
 	icon_state = "engine_smes"
@@ -1323,6 +1370,12 @@
 /area/site53/science/seniorresearcherc
 	name = "\improper Senior Researcher's Office C"
 	icon_state = "research"
+
+/area/site53/engineering/engine_smes
+	name = "\improper Engineering SMES"
+	icon_state = "engine_smes"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Logistics
 /area/quartermaster/hangar
