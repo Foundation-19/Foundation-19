@@ -174,13 +174,13 @@
 	glasses = /obj/item/clothing/glasses/hud/security/night
 	shoes = /obj/item/clothing/shoes/swat
 	suit_store = null
-	r_hand = /obj/item/gun/projectile/automatic/t12
+	r_hand = /obj/item/gun/projectile/automatic/g36
 	l_hand = null
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/grenade/flashbang/clusterbang //gods must be strong
 	id_type = /obj/item/card/id/mtf/alpha
 	belt = /obj/item/storage/belt/holster/security/tactical
-	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/t12 = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 5, /obj/item/crowbar/red = 1) //Breach and clear.
+	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/ammo_magazine/scp/m16_mag = 5, /obj/item/plastique = 2, /obj/item/grenade/frag = 5, /obj/item/crowbar/red = 1) //Breach and clear.
 
 /decl/hierarchy/outfit/mtf/omega1 // Laws Left Hand
 	name = OUTFIT_JOB_NAME("MTF Omega-1 Enforcement")

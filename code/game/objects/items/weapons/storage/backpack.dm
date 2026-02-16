@@ -381,6 +381,15 @@
 		slot_r_hand_str = "securitypack",
 		)
 
+/obj/item/storage/backpack/satchel/sec/buttpack
+	name = "guard buttpack"
+	desc = "An attachable pack compatible with Foundation Security rigs."
+	icon_state = "buttpack"
+	item_state_slots = list(
+		slot_l_hand_str = "buttpack",
+		slot_r_hand_str = "buttpack",
+		)
+
 /obj/item/storage/backpack/satchel/sec/exo
 	name = "corporate security satchel"
 	desc = "A robust satchel for corporate security-related needs. This one is in EXO colors."
@@ -516,6 +525,11 @@
 	name = "security messenger bag"
 	desc = "A small, tactical backpack worn over one shoulder."
 	icon_state = "courierbagsec"
+
+/obj/item/storage/backpack/messenger/sec/backpanel
+	name = "security messenger bag"
+	desc = "A small, tactical backpack worn over one shoulder."
+	icon_state = "backpanel"
 
 /obj/item/storage/backpack/messenger/sec/exo
 	name = "corporate security messenger bag"

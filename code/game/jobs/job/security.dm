@@ -7,7 +7,7 @@
 	supervisors = "the Site Director"
 	req_admin_notify = 1
 	economic_power = 10
-	requirements = list("LCZ Zone Junior Lieutenant" = 240, "HCZ Zone Senior Lieutenant" = 240, "EZ Zone Supervisor" = 240)
+	requirements = list("LCZ Zone Junior Lieutenant" = 240, "HCZ Zone Senior Lieutenant" = 240, "EZ Zone Captain" = 240)
 	total_positions = 1
 	spawn_positions = 1
 	alt_titles = list("Security Chief", "Head of Security")
@@ -168,7 +168,7 @@
 	duties = "Manage the Heavy Containment Zone. Keep track of potential and on-going containment breaches."
 
 /datum/job/ltofficerez
-	title = "EZ Zone Supervisor"
+	title = "EZ Zone Captain"
 	department = "Entrance Personnel"
 	selection_color = "#8e2929"
 	department_flag = SEC|ECZ
@@ -233,10 +233,10 @@
 	title = "RAISA Agent"
 	department = "Entrance Personnel"
 	selection_color = "#601c1c"
-	department_flag = SEC|ECZ|BUR
+	department_flag = SEC|BUR
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the EZ Supervisor"
+	supervisors = "the Guard Commander"
 	economic_power = 5
 	requirements = list(EXP_TYPE_COMMAND = 120, EXP_TYPE_SECURITY = 180, EXP_TYPE_ENGINEERING = 90, EXP_TYPE_BUR = 60)
 	alt_titles = list()
@@ -373,17 +373,17 @@
 	skill_points = 21
 
 /datum/job/ncoofficerez
-	title = "EZ Senior Agent"
+	title = "EZ Sergeant"
 	department = "Entrance Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ
 	total_positions = 2
 	spawn_positions = 2
 	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
-	supervisors = "the EZ Zone Supervisor"
+	supervisors = "the EZ Zone Captain"
 	economic_power = 4
 	requirements = list(EXP_TYPE_ECZ = 480)
-	alt_titles = list("Investigation Officer" = /decl/hierarchy/outfit/job/security/ez_sergeant_investigative, "EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
+	alt_titles = list("EZ Senior Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 5
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_sergeant
@@ -520,17 +520,17 @@
 
 /datum/job/enlistedofficerez
 
-	title = "EZ Agent"
+	title = "EZ Guard"
 	department = "Entrance Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ
 	total_positions = 6
 	spawn_positions = 6
-	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
-	supervisors = "the EZ Senior Agents and Zone Supervisor"
+	//duties = "<big><b>As a regular Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the EZ Sergeant and Zone Captain"
 	economic_power = 4
 	requirements = list(EXP_TYPE_ECZ = 220)
-	alt_titles = list("Investigation Agent" = /decl/hierarchy/outfit/job/security/ez_guard_investigative, "EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
+	alt_titles = list("EZ Combat Medic" = /decl/hierarchy/outfit/job/security/ez_medic)
 	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/security/ez_guard
@@ -587,6 +587,7 @@
 	access = list(
 		ACCESS_SEC_COMMS,
 		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
 		ACCESS_SCIENCE_LVL1,
 		ACCESS_SCIENCE_LVL2,
 		ACCESS_DCLASS_KITCHEN,
@@ -655,14 +656,14 @@
 	skill_points = 15
 
 /datum/job/guardez
-	title = "EZ Probationary Agent"
+	title = "EZ Cadet"
 	department = "Entrance Personnel"
 	selection_color = "#601c1c"
 	department_flag = SEC|ECZ
 	total_positions = 6
 	spawn_positions = 6
 	//duties = "<big><b>As the Junior Agent you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
-	supervisors = "the EZ Security and Zone Supervisor"
+	supervisors = "the EZ Security and Zone Captain"
 	economic_power = 4
 	minimal_player_age = 0
 	ideal_character_age = 25
