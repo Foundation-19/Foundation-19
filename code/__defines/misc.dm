@@ -259,3 +259,23 @@
 #define FACILITY_EVACUATED 1
 #define FACILITY_DESTROYED_NUKE 2
 #define FACILITY_DESTROYED_SELF_DESTRUCT 3
+
+//Turf/area values for 'this space is outside' checks
+#define OUTSIDE_AREA null
+#define OUTSIDE_NO   FALSE
+#define OUTSIDE_YES  TRUE
+#define OUTSIDE_UNCERTAIN null
+
+// Weather exposure values for being rained on or hailed on.
+#define WEATHER_IGNORE   -1
+#define WEATHER_EXPOSED   0
+#define WEATHER_ROOFED    1
+#define WEATHER_PROTECTED 2
+
+// arbitrary low pressure bound for wind weather effects
+#define MIN_WIND_PRESSURE 10
+
+
+#define TYPE_IS_ABSTRACT(D) (initial(D.abstract_type) == D)
+#define TYPE_IS_SPAWNABLE(D) (!TYPE_IS_ABSTRACT(D) && initial(D.is_spawnable_type))
+#define INSTANCE_IS_ABSTRACT(D) (D.abstract_type == D.type)

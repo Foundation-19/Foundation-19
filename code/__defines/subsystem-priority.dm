@@ -25,6 +25,7 @@
 #define SS_PRIORITY_INPUT          20  // Input things.
 #define SS_PRIORITY_ALARM          20  // Alarm processing.
 #define SS_PRIORITY_EVENT          20  // Event processing and queue handling.
+#define SS_PRIORITY_VIS_CONTENTS   20  // Queued vis_contents updates.
 #define SS_PRIORITY_SHUTTLE        20  // Shuttle movement.
 #define SS_PRIORITY_CIRCUIT_COMP   20  // Processing circuit component do_work.
 #define SS_PRIORITY_TEMPERATURE    20  // Cooling and heating of atoms.
@@ -40,6 +41,7 @@
 #define SS_PRIORITY_ZCOPY          10  // Builds appearances for Z-Mimic.
 #define SS_PRIORITY_PROJECTILES    10  // Projectile processing!
 #define SS_PRIORITY_PING           10  // Pong!
+#define SS_PRIORITY_WEATHER			10 // Weather processing.
 
 // SS_BACKGROUND
 #define SS_PRIORITY_OBJECTS       100  // processing_objects processing.

@@ -7,6 +7,7 @@
 	var/global/global_uid = 0
 	var/uid
 	var/area_flags
+	var/tmp/is_outside = OUTSIDE_NO
 
 /area/New()
 	icon_state = ""
@@ -41,6 +42,7 @@
 /proc/ChangeArea(turf/T, area/A)
 	if(!istype(A))
 		CRASH("Area change attempt failed: invalid area supplied.")
+	var/old_outside = T.is_outside()
 	var/area/old_area = get_area(T)
 	if(old_area == A)
 		return
@@ -48,14 +50,18 @@
 	if(old_area)
 		old_area.Exited(T, A)
 		for(var/atom/movable/AM in T)
-			old_area.Exited(AM, A)  // Note: this _will_ raise exited events.
+			old_area.Exited(AM, A)
 	A.Entered(T, old_area)
 	for(var/atom/movable/AM in T)
-		A.Entered(AM, old_area) // Note: this will _not_ raise moved or entered events. If you change this, you must also change everything which uses them.
+		A.Entered(AM, old_area)
 
 	for(var/obj/machinery/M in T)
 		M.area_changed(old_area, A) // They usually get moved events, but this is the one way an area can change without triggering one.
 
+	T.last_outside_check = OUTSIDE_UNCERTAIN
+	var/outside_changed = T.is_outside() != old_outside
+	if(T.is_outside == OUTSIDE_AREA && outside_changed)
+		T.update_weather()
 /area/proc/get_contents()
 	return contents
 
