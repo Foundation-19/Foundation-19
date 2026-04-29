@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: gen-assets
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: Generate static assets
         run: |
           mv tgui/public/ assets
