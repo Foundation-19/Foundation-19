@@ -1,6 +1,6 @@
 /proc/count_drones()
 	var/drones = 0
-	for(var/mob/living/silicon/robot/drone/D in world)
+	for(var/mob/living/silicon/robot/drone/D in GLOB.living_mob_list_)
 		if(D.key && D.client)
 			drones++
 	return drones
@@ -8,6 +8,8 @@
 /obj/machinery/drone_fabricator
 	name = "drone fabricator"
 	desc = "A large automated factory for producing maintenance drones."
+	icon = 'icons/obj/machines/drone_fab.dmi'
+	icon_state = "drone_fab_idle"
 	appearance_flags = 0
 
 	density = TRUE
@@ -20,9 +22,6 @@
 	var/produce_drones = 1
 	var/time_last_drone = 500
 	var/drone_type = /mob/living/silicon/robot/drone
-
-	icon = 'icons/obj/machines/drone_fab.dmi'
-	icon_state = "drone_fab_idle"
 
 /obj/machinery/drone_fabricator/derelict
 	name = "construction drone fabricator"
@@ -56,7 +55,7 @@
 /obj/machinery/drone_fabricator/examine(mob/user)
 	. = ..()
 	if(produce_drones && drone_progress >= 100 && isghost(user) && config.allow_drone_spawn && count_drones() < config.max_maint_drones)
-		to_chat(user, "<BR><B>A drone is prepared. Select 'Join As Drone' from the Ghost tab to spawn as a maintenance drone.</B>")
+		to_chat(user, "<BR><B>A drone is prepared. Select 'Join As Drone' from the Ghost tab or click on it to spawn as a maintenance drone.</B>")
 
 /obj/machinery/drone_fabricator/proc/create_drone(client/player)
 
@@ -69,18 +68,30 @@
 	if(player && !isghost(player.mob))
 		return
 
-	visible_message("\The [src] churns and grinds as it lurches into motion, disgorging a shiny new drone after a few moments.")
+	var/mob/living/silicon/robot/drone/D = drone_type
+	visible_message("\The [src] churns and grinds as it lurches into motion, disgorging a shiny new [initial(D.name)] after a few moments.")
 	flick("h_lathe_leave",src)
 	drone_progress = 0
 	time_last_drone = world.time
 
-	var/mob/living/silicon/robot/drone/new_drone = new drone_type(get_turf(src))
+	var/mob/living/silicon/robot/drone/new_drone = new D(get_turf(src))
 	if(player)
-		announce_ghost_joinleave(player, 0, "They have taken control over a maintenance drone.")
-		if(player.mob && player.mob.mind) player.mob.mind.reset()
+		announce_ghost_joinleave(player, 0, "They have taken control over a [initial(D.name)].")
+		if(player.mob && player.mob.mind)
+			player.mob.mind.reset()
 		new_drone.transfer_personality(player)
 
 	return new_drone
+
+/obj/machinery/drone_fabricator/Click(location, control, params)
+	if(!isghost(usr))
+		return ..()
+
+	var/list/modifiers = params2list(params)
+	if(modifiers["shift"])
+		return ..()
+
+	try_drone_spawn(usr, src)
 
 /mob/observer/ghost/verb/join_as_drone()
 	set category = "Ghost"
@@ -126,9 +137,11 @@
 		if(!choice || !all_fabricators[choice])
 			return
 		fabricator = all_fabricators[choice]
+	var/mob/living/silicon/robot/drone/D = fabricator.drone_type
+	if(alert(usr, "Do you wish to respawn as a [initial(D.name)]?",, "Yes", "No") != "Yes")
+		return
 
 	if(user && fabricator && !((fabricator.stat & NOPOWER) || !fabricator.produce_drones || fabricator.drone_progress < 100))
-		log_and_message_staff("has joined the round as a maintenance drone.")
-		fabricator.create_drone(user.client)
-		return 1
+		log_and_message_admins("has joined the round as a [initial(D.name)].")
+		return TRUE
 	return

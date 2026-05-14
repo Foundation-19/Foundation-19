@@ -64,7 +64,7 @@
 	return ..()
 
 // Infestation moves faster on their territory
-/mob/living/simple_animal/hostile/infestation/movement_delay()
+/mob/living/simple_animal/hostile/infestation/movement_delay(decl/move_intent/using_intent = move_intent)
 	. = ..()
 	var/turf/simulated/floor/F = get_turf(src)
 	if(!istype(F))

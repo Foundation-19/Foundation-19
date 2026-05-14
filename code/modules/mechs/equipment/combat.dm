@@ -5,6 +5,7 @@
 	holding_type = /obj/item/gun/energy/taser/carbine/mounted/mech
 	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND)
 	restricted_software = list(MECH_SOFTWARE_WEAPONS)
+	equipment_flags = ME_ENGINE_POWERED | ME_BYPASS_INTERFACE | ME_CELL_POWERED
 
 /obj/item/mech_equipment/mounted_system/taser/MouseDragInteraction(src_object, over_object, src_location, over_location, src_control, over_control, params, mob/user)
 	. = ..()
@@ -19,12 +20,14 @@
 	desc = "An exosuit-mounted ion rifle. Handle with care."
 	icon_state = "mech_ionrifle"
 	holding_type = /obj/item/gun/energy/ionrifle/mounted/mech
+	equipment_flags = ME_ENGINE_POWERED | ME_BYPASS_INTERFACE | ME_CELL_POWERED
 
 /obj/item/mech_equipment/mounted_system/taser/laser
 	name = "\improper CH-PS \"Immolator\" laser"
 	desc = "An exosuit-mounted laser rifle. Handle with care."
 	icon_state = "mech_lasercarbine"
 	holding_type = /obj/item/gun/energy/laser/mounted/mech
+	equipment_flags = ME_ENGINE_POWERED | ME_BYPASS_INTERFACE | ME_CELL_POWERED
 
 /obj/item/gun/energy/taser/carbine/mounted/mech
 	use_external_power = TRUE
@@ -125,7 +128,7 @@
 		return
 	if((world.time - last_recharge) < cooldown)
 		return
-	var/obj/item/cell/cell = owner.get_cell()
+	var/obj/item/cell/cell = get_cell()
 
 	var/actual_required_power = Clamp(max_charge - charge, 0, charging_rate)
 
@@ -146,6 +149,7 @@
 	layer = ABOVE_HUMAN_LAYER
 	var/north_layer = MECH_UNDER_LAYER
 	plane = DEFAULT_PLANE
+	vis_flags = VIS_INHERIT_PLANE
 	pixel_x = 8
 	pixel_y = 4
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -462,8 +466,9 @@
 	playsound(src.loc, 'sounds/weapons/flash.ogg', 100, 1)
 	var/flash_time = (rand(flash_min, flash_max) - 1) SECONDS
 
-	var/obj/item/cell/C = owner.get_cell()
-	C.use(active_power_use * CELLRATE)
+	var/obj/item/cell/C = owner.get_cell(FALSE, ME_ANY_POWER)
+	if(!C?.use(active_power_use * CELLRATE))
+		return
 
 	for (var/mob/living/O in oviewers(flash_range, owner))
 		if(istype(O))

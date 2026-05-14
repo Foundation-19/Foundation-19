@@ -61,8 +61,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/company_short = "BM"
 	var/system_name = "Uncharted System"
 
-	var/list/map_admin_faxes = list()
-
 	var/shuttle_docked_message
 	var/shuttle_leaving_dock
 	var/shuttle_called_message

@@ -13,14 +13,14 @@
 #define LAZYREMOVE(L, I) if(L) { L -= I; if(!length(L)) { L = null; } }
 /// Adds I to L, initalizing L if necessary
 #define LAZYADD(L, I) if(!L) { L = list(); } L += I;
-/// Adds to the item K the value V, if the list is null it will initialize it
+/// Adds I to L if L doesn't already contain I, initializing L if necessary
+#define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
+/// Adds V to L with the key K, initializing L if necessary.
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += V;
 /// This is used to add onto lazy assoc list when the value you're adding is a /list/. This one has extra safety over lazyaddassoc because the value could be null (and thus cant be used to += objects)
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 /// Insert I into L at position X, initalizing L if necessary
 #define LAZYINSERT(L, I, X) if(!L) { L = list(); } L.Insert(X, I);
-/// Adds I to L, initalizing L if necessary, if I is not already in L
-#define LAZYOR(L, I) if(!L) { L = list(); } L |= I;
 /// Sets L[A] to I, initalizing L if necessary
 #define LAZYSET(L, A, I) if(!L) { L = list(); } L[A] = I;
 /// Reads I from L safely - Works with both associative and traditional lists.

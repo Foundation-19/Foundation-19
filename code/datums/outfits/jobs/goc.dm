@@ -39,7 +39,7 @@
 	head = /obj/item/clothing/head/helmet/scp/security/goc
 	suit = /obj/item/clothing/suit/armor/goc
 	r_hand = /obj/item/gun/launcher/grenade/thumper // LEEEET'S DO IIIT
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_pocket = /obj/item/plastique
 	r_pocket = /obj/item/card/emag
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/fragshells = 5,/obj/item/clothing/accessory/storage/bandolier = 1)
@@ -59,7 +59,7 @@
 	head = /obj/item/clothing/head/beret/goc/lead
 	suit = /obj/item/clothing/suit/armor/goc/heavy
 	r_hand = /obj/item/gun/projectile/automatic/scp/ak742
-	l_hand = /obj/item/material/hatchet/tacknife
+	l_hand = /obj/item/material/knife/combat
 	l_pocket = /obj/item/grenade/frag
 	r_pocket = /obj/item/card/emag
 	backpack_contents = list(/obj/item/storage/box/ifak = 1,/obj/item/storage/box/handcuffs = 1,/obj/item/ammo_magazine/scp/ak/big = 3)

@@ -59,3 +59,17 @@
 		"storage2" =     list("loc" = ui_storage2,  "name" = "Right Pocket", "slot" = slot_r_store,   "state" = "pocket"),
 		"belt" =         list("loc" = ui_belt,      "name" = "Belt",         "slot" = slot_belt,      "state" = "belt")
 		)
+
+/datum/hud_data/scp082
+	has_a_intent = TRUE
+	has_m_intent = TRUE
+	has_warnings = TRUE
+	has_pressure = TRUE
+	has_nutrition = TRUE
+	has_bodytemp = TRUE
+	has_hands = TRUE
+	has_drop = TRUE
+	has_throw = TRUE
+	has_resist = TRUE
+	has_internals = TRUE
+	gear = list()

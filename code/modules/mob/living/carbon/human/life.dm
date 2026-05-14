@@ -906,16 +906,6 @@
 						bodytemp.icon_state = "temp-1"
 					else
 						bodytemp.icon_state = "temp0"
-
-		switch(nutrition)
-			if(450 to INFINITY)
-				throw_alert(ALERT_NUTRITION, /atom/movable/screen/alert/fat)
-			if(350 to 450)
-				clear_alert(ALERT_NUTRITION)
-			if(150 to 350)
-				throw_alert(ALERT_NUTRITION, /atom/movable/screen/alert/hungry)
-			else
-				throw_alert(ALERT_NUTRITION, /atom/movable/screen/alert/starving)
 	return 1
 
 /mob/living/carbon/human/handle_random_events()

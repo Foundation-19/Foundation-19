@@ -6,13 +6,12 @@
 	station_levels = list(1,2,3,4)
 	contact_levels = list(1,2,3,4)
 	player_levels = list(1,2,3,4)
-	admin_levels = list(5,6,7)
-	empty_levels = list()
-	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1)
+	sealed_levels = list(1,2,3,4)
 	base_turf_by_z = list(
 		"1" = /turf/simulated/floor/exoplanet/desert,
 		"2" = /turf/simulated/floor/exoplanet/desert,
 		"3" = /turf/simulated/floor/exoplanet/snow,
+		"4" = /turf/simulated/floor/exoplanet/snow,
 	)
 	overmap_size = 35
 	overmap_event_areas = 0
@@ -24,19 +23,11 @@
 
 	station_name  = "Foundation Site 53"
 	station_short = "Site 53"
-	dock_name     = "Central Command Depo"
-	boss_name     = "Foundation Central Office"
-	boss_short    = "Central Office"
+	dock_name     = "Emergency Site-91"
+	boss_name     = "Foundation North American Command"
+	boss_short    = "Regional Command"
 	company_name  = "SCP Foundation"
 	company_short = "Foundation"
-
-	map_admin_faxes = list(
-		"Foundation Central Office",
-		"UIU Central Office",
-		"GOC Central Office",
-		"Marshall, Carter, and Dark Central Office",
-		"Goldbaker-Reinz Central Office"
-	)
 
 	//These should probably be moved into the evac controller...
 	shuttle_docked_message = "The outbound train is now boarding at the Train Station. It will depart in approximately %ETD%."
@@ -61,8 +52,6 @@
 		/area/site53/surface = NO_APC,
 		/area/turbolift/site53/surface = NO_APC,
 		/area/turbolift/site53/basement = NO_APC,
-		/area/turbolift/site53/logistics = NO_APC,
-		/area/turbolift/site53/logisticstorage = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/scp106obs = NO_APC,
 		/area/turbolift/site53/uhcz = NO_APC,
@@ -75,6 +64,9 @@
 		/area/turbolift/site53/gatea = NO_APC,
 		/area/turbolift/site53/hub = NO_APC,
 		/area/centcom/goc = NO_APC,
+		/area/turbolift/site53/up082 = NO_APC,
+		/area/turbolift/site53/low82 = NO_APC
+
 	)
 
 	away_site_budget = 3

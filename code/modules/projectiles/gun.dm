@@ -202,7 +202,7 @@
 		if(prob(30))
 			toggle_safety()
 			return 1
-	if(MUTATION_HULK in M.mutations)
+	if((MUTATION_HULK in M.mutations) || HAS_TRAIT(user, TRAIT_FATFINGERS))
 		balloon_alert(M, "fingers too big!")
 		to_chat(M, SPAN_DANGER("Your fingers are too big for the trigger guard!"))
 		return 0

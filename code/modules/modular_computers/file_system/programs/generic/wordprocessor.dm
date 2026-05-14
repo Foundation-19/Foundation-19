@@ -123,7 +123,7 @@
 			var/oldtext = html_decode(loaded_data)
 			oldtext = replacetext(oldtext, "\[br\]", "\n")
 
-			var/newtext = sanitize(replacetext(tgui_input_text(usr, "Editing file '[open_file]'. You may use most tags used in paper formatting:", "Text Editor", oldtext, MAX_TEXTFILE_LENGTH, TRUE), "\n", "\[br\]"), MAX_TEXTFILE_LENGTH)
+			var/newtext = tgui_input_text(usr, "Editing file '[open_file]'. You may use most tags used in paper formatting:", "Text Editor", oldtext, MAX_TEXTFILE_LENGTH, TRUE, trim = FALSE)
 			if(!newtext)
 				return
 			loaded_data = newtext
@@ -134,7 +134,7 @@
 			if(!computer.nano_printer)
 				error = "Missing Hardware: Your computer does not have the required hardware to complete this operation."
 				return TRUE
-			if(!computer.nano_printer.print_text(pencode2html(loaded_data)))
+			if(!computer.nano_printer.print_text(pencode2html(sanitize(loaded_data, MAX_PAPER_MESSAGE_LEN, FALSE, FALSE, FALSE))))
 				error = "Hardware error: Printer was unable to print the file. It may be out of paper."
 				return TRUE
 			return TRUE

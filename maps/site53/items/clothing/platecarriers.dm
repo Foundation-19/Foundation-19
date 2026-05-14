@@ -3,13 +3,13 @@
 	name = "medium armor plate"
 	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
 	icon_state = "armor_medium"
-	armor = list(melee = 40, bullet = 50, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_PISTOL, laser = ARMOR_LASER_HANDGUNS, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/mtfheavy //BULLDOZER IN THE HOUSE
 	name = "combined heavy assault helmet"
 	desc = "A quad-layered heavy composite helmet with titanium strut supports made solely so it doesn't crush one's heavy with the weight."
 	icon_state = "mtf-heavy-helmet"
-	armor = list(melee = 100, bullet = 100, laser = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
+	armor = list(melee = ARMOR_MELEE_SHIELDED, bullet = ARMOR_BALLISTIC_HEAVY, laser = ARMOR_LASER_HEAVY, energy = ARMOR_ENERGY_SHIELDED, bomb = ARMOR_BOMB_SHIELDED, bio = ARMOR_BIO_SHIELDED, rad = ARMOR_RAD_SHIELDED)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
@@ -25,7 +25,7 @@
 	desc = "An armored helmet usually worn by Mobile Task Forces, dawned with SCP logos, and insignia."
 	icon_state = "mtf-tactical-helmet"
 	body_parts_covered = HEAD|EYES
-	armor = list(melee = 60, bullet = 80, laser = 65, energy = 15, bomb = 60, bio = 20, rad = 15)
+	armor = list(melee = ARMOR_MELEE_SMALL_HIGH, bullet = ARMOR_BALLISTIC_RIFLE, laser = ARMOR_LASER_MAJOR, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 	cold_protection = HEAD
 	flags_inv = HIDEEARS|BLOCKHAIR
@@ -35,7 +35,7 @@
 	name = "tactical helmet"
 	desc = "An armored helmet usually worn by Mobile Task Forces, dawned with SCP logos, and insignia."
 	icon_state = "mtf-bland-helmet"
-	armor = list(melee = 50, bullet = 75, laser = 70, energy = 25, bomb = 50, bio = 35, rad = 15)
+	armor = list(melee = ARMOR_MELEE_MAJOR, bullet = ARMOR_BALLISTIC_VRESISTANT, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 	cold_protection = HEAD
 	flags_inv = HIDEEARS|BLOCKHAIR
 	body_parts_covered = HEAD
@@ -53,7 +53,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	cold_protection = HEAD
 	item_flags = ITEM_FLAG_THICKMATERIAL|ITEM_FLAG_PHORONGUARD|ITEM_FLAG_AIRTIGHT
-	armor = list(melee = 100, bullet = 100, laser = 100, energy = 100, bomb = 100, bio = 100, rad = 100)
+	armor = list(melee = ARMOR_MELEE_SHIELDED, bullet = ARMOR_BALLISTIC_HEAVY, laser = ARMOR_LASER_HEAVY, energy = ARMOR_ENERGY_SHIELDED, bomb = ARMOR_BOMB_SHIELDED, bio = ARMOR_BIO_SHIELDED, rad = ARMOR_RAD_SHIELDED)
 
 /obj/item/clothing/suit/armor/mtftactical
 	name = "tactical vest"
@@ -61,7 +61,7 @@
 	icon_state = "mtf-tactical"
 	item_state = "mtf-tactical"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 60, bullet = 80, laser = 65, energy = 15, bomb = 60, bio = 20, rad = 15)
+	armor = list(melee = ARMOR_MELEE_SMALL_HIGH, bullet = ARMOR_BALLISTIC_RIFLE, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 
 /obj/item/clothing/suit/armor/mtfmedic
 	name = "tactical medical vest"
@@ -69,7 +69,7 @@
 	icon_state = "mtf-medic"
 	item_state = "mtf-medic"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 55, bullet = 75, laser = 70, energy = 25, bomb = 50, bio = 35, rad = 15)
+	armor = list(melee = ARMOR_MELEE_MAJOR, bullet = ARMOR_BALLISTIC_VRESISTANT, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 
 /obj/item/clothing/suit/armor/mtfmedium
 	name = "heavy tactical vest"
@@ -77,7 +77,7 @@
 	icon_state = "mtf-medium"
 	item_state = "mtf-medium"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HANDS
-	armor = list(melee = 70, bullet = 85, laser = 75, energy = 15, bomb = 70, bio = 25, rad = 15)
+	armor = list(melee = ARMOR_MELEE_VERY_HIGH, bullet = ARMOR_BALLISTIC_RIFLE, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 
 /obj/item/clothing/suit/armor/mtfscout
 	name = "compact scout vest"
@@ -85,7 +85,7 @@
 	icon_state = "mtf-scout"
 	item_state = "mtf-scout"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 45, bullet = 55, laser = 45, energy = 15, bomb = 45, bio = 15, rad = 15)
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_PISTOL, laser = ARMOR_LASER_HANDGUNS_PLUS, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 
 /obj/item/clothing/suit/armor/mtfalpha1
 	name = "'Red Right Hand' heavy compact vest"
@@ -93,7 +93,7 @@
 	icon_state = "mtf-alpha1"
 	item_state = "mtf-alpha1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 80, bullet = 95, laser = 80, energy = 25, bomb = 70, bio = 25, rad = 15)
+	armor = list(melee = ARMOR_MELEE_VERY_VERY_HIGH, bullet = ARMOR_BALLISTIC_AP, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 
 /obj/item/clothing/suit/armor/mtfomega1
 	name = "'Laws Left Hand' heavy compact vest"
@@ -101,7 +101,7 @@
 	icon_state = "mtf-omega1"
 	item_state = "mtf-omega1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 80, bullet = 95, laser = 80, energy = 25, bomb = 70, bio = 25, rad = 15)
+	armor = list(melee = ARMOR_MELEE_VERY_VERY_HIGH, bullet = ARMOR_BALLISTIC_AP, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_RESISTANT, bio = ARMOR_BIO_SMALL, rad = ARMOR_RAD_MINOR)
 
 //GOC
 /obj/item/clothing/suit/armor/goc
@@ -110,7 +110,7 @@
 	icon_state = "goc_vest"
 	item_state = "goc_vest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(melee = 90, bullet = 90, laser = 65, energy = 15, bomb = 80)
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_PISTOLP, laser = ARMOR_LASER_HANDGUNS_PLUS, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_PADDED)
 	allowed = list(/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight, /obj/item/gun/launcher/grenade/thumper)
 
 /obj/item/clothing/suit/armor/goc/heavy
@@ -119,4 +119,4 @@
 	icon_state = "goc_heavy_vest"
 	item_state = "goc_heavy_vest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	armor = list(melee = 95, bullet = 95, laser = 65, energy = 15, bomb = 90)
+	armor = list(melee = ARMOR_MELEE_SHIELDED, bullet = ARMOR_BALLISTIC_HEAVY, laser = ARMOR_LASER_RIFLES, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_ENERGY_SHIELDED)

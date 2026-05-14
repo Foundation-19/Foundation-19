@@ -9,6 +9,7 @@
 	var/max_fall_damage = 30
 	var/mech_turn_sound = 'sounds/mecha/mechturn.ogg'
 	var/mech_step_sound = 'sounds/mecha/mechstep.ogg'
+	var/movement_flags = 0
 
 /obj/item/mech_component/propulsion/Destroy()
 	QDEL_NULL(motivator)

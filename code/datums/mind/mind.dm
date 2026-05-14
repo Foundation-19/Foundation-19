@@ -61,7 +61,7 @@
 
 	var/list/initial_email_login = list("login" = "", "password" = "")
 
-
+	var/ambitions
 
 /datum/mind/New(key)
 	src.key = key
@@ -105,9 +105,9 @@
 		alert("Not before round-start!", "Alert")
 		return
 
-	var/out = "<meta http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'/><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
+	var/out = "<B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
 	out += "Mind currently owned by key: [key] [active?"(synced)":"(not synced)"]<br>"
-	out += "Assigned role: [assigned_role]. <a href='?src=\ref[src];role_edit=1'>Edit</a><br>"
+	out += "Assigned role: [assigned_role]. <a href='byond://?src=\ref[src];role_edit=1'>Edit</a><br>"
 	out += "<hr>"
 	out += "Factions and special roles:<br><table>"
 	var/list/all_antag_types = GLOB.all_antag_types_
@@ -121,15 +121,16 @@
 		var/num = 1
 		for(var/datum/objective/O in objectives)
 			out += "<b>Objective #[num]:</b> [O.explanation_text] "
-			out += " <a href='?src=\ref[src];obj_delete=\ref[O]'>\[remove\]</a><br>"
+			out += " <a href='byond://?src=\ref[src];obj_delete=\ref[O]'>\[remove\]</a><br>"
 			num++
-		out += "<br><a href='?src=\ref[src];obj_announce=1'>\[announce objectives\]</a>"
+		out += "<br><a href='byond://?src=\ref[src];obj_announce=1'>\[announce objectives\]</a>"
 
 	else
 		out += "None."
-	out += "<br><a href='?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
+	out += "<br><a href='byond://?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
+	out += "<b>Ambitions:</b> [ambitions ? ambitions : "None"] <a href='byond://?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 
-	show_browser(usr, out, "window=edit_memory[src]")
+	show_browser(usr, HTML_SKELETON(out), "window=edit_memory[src]")
 
 /datum/mind/Topic(href, href_list)
 
@@ -309,6 +310,16 @@
 		if(!istype(objective))	return
 		objectives -= objective
 
+	else if (href_list["amb_edit"])
+		var/datum/mind/mind = locate(href_list["amb_edit"])
+		if(!mind)
+			return
+		var/new_ambition = input("Enter a new ambition", "Memory", mind.ambitions) as null|message
+		if(isnull(new_ambition))
+			return
+		if(mind)
+			mind.ambitions = sanitize(new_ambition)
+			mind.current << "<span class='warning'>Your ambitions have been changed by higher powers, they are now: [mind.ambitions]</span>"
 	else if(href_list["implant"])
 		var/mob/living/carbon/human/H = current
 

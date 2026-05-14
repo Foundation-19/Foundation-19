@@ -7,6 +7,7 @@
 	move_delay = 4
 	turn_delay = 1
 	power_use = 25
+	movement_flags = PF_OMNI_STRAFE
 
 /obj/item/mech_component/propulsion/tracks
 	name = "tracks"
@@ -20,6 +21,7 @@
 	color = COLOR_WHITE
 	mech_turn_sound = 'sounds/mecha/mechmove04.ogg'
 	mech_step_sound = 'sounds/machines/engine.ogg'
+	movement_flags = PF_STRAIGHT_STRAFE
 
 /obj/item/mech_component/chassis/pod
 	name = "spherical exosuit chassis"
@@ -31,7 +33,7 @@
 	icon_state = "pod_body"
 	max_damage = 90
 	power_use = 5
-	has_hardpoints = list(HARDPOINT_BACK)
+	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_POWER, HARDPOINT_BACKUP_POWER)
 	desc = "The NanoTrasen Katamari series cockpits have won a massive tender by SCG few years back. No one is sure why, but these terrible things keep popping up on every government facility."
 
 /obj/item/mech_component/chassis/pod/Initialize()

@@ -99,6 +99,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax,
+	/client/proc/open_offsite_panel,
 	/client/proc/check_fax_history,
 	/client/proc/cmd_admin_notarget
 )
@@ -303,6 +304,7 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
+	/client/proc/open_offsite_panel,
 	/client/proc/check_fax_history,
 	/datum/admins/proc/paralyze_mob, // right-click paralyze ,
 	/client/proc/cmd_admin_say,
@@ -565,6 +567,16 @@ var/list/admin_verbs_mentors = list(
 
 #undef MAX_WARNS
 #undef AUTOBANTIME
+
+/client/proc/open_offsite_panel()
+	set category = "Special Verbs"
+	set name = "Offsite Panel"
+	set desc = "Opens the offsite management panel."
+
+	if(!length(SSoffsites.offsites) || !mob) return
+	if(!check_rights(R_ADMIN|R_MOD)) return
+
+	SSoffsites.tgui_interact(mob)
 
 /client/proc/drop_bomb() // Some admin dickery that can probably be done better -- TLE
 	set category = "Special Verbs"

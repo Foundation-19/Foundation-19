@@ -38,6 +38,7 @@ Tracy.exe
 
 # VisualStudioCode
 *.code-workspace
+*tools/CreditsTool
 
 # swap
 [._]*.s[a-v][a-z]

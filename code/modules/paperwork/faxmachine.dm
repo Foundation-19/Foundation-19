@@ -2,7 +2,6 @@ GLOBAL_LIST_EMPTY(allfaxes)
 GLOBAL_LIST_EMPTY(alldepartments)
 
 GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
-GLOBAL_LIST_EMPTY(admin_departments)
 
 /obj/machinery/photocopier/faxmachine
 	name = "fax machine"
@@ -22,29 +21,19 @@ GLOBAL_LIST_EMPTY(admin_departments)
 /obj/machinery/photocopier/faxmachine/Initialize()
 	. = ..()
 
-	if(!length(GLOB.admin_departments))
-		if(length(GLOB.using_map?.map_admin_faxes))
-			GLOB.admin_departments = GLOB.using_map.map_admin_faxes.Copy()
-		else
-			GLOB.admin_departments = list("[station_name()] Head Office", "[station_name()] Supply")
-
 	if(!destination)
-		if(length(GLOB.admin_departments))
-			destination = GLOB.admin_departments[1]
+		var/datum/offsite/initialOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
+		if(initialOffsite)
+			destination = initialOffsite.name
 		else if(length(GLOB.alldepartments))
 			destination = pick(GLOB.alldepartments)
 
 	GLOB.allfaxes += src
 
-	if(department && !(("[department]" in GLOB.alldepartments) || ("[department]" in GLOB.admin_departments)))
+	if(department && !(("[department]" in GLOB.alldepartments) || SSoffsites.offsites_by_name["[department]"]))
 		GLOB.alldepartments |= department
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/O as obj, mob/user as mob)
-	if(istype(O, /obj/item/paper))
-		var/obj/item/paper/P = O
-		if(!P.readable)
-			to_chat(user, SPAN_NOTICE("\The [src] beeps. Error, invalid document detected."))
-			return
 	if(istype(O, /obj/item/card/id))
 		if(!user.unEquip(O, src))
 			return
@@ -55,15 +44,15 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		if(!emagged)
 			to_chat(user, SPAN_WARNING("\The [src]'s department configuration is vendor locked."))
 			return
-		var/list/option_list = GLOB.alldepartments.Copy() + GLOB.admin_departments.Copy() + "(Custom)" + "(Cancel)"
-		var/new_department = input(user, "Which department do you want to tag this fax machine as? Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Machine Department Tag") as null|anything in option_list
-		if(!new_department || new_department == department || new_department == "(Cancel)" || !CanUseTopic(user) || !Adjacent(user))
+		var/list/option_list = GLOB.alldepartments.Copy() + "(Custom)"
+		var/new_department = tgui_input_list(user, "Which department do you want to tag this fax machine as? Choose '(Custom)' to enter a custom department.", "Fax Machine Department Tag", option_list, department)
+		if(!new_department || new_department == department || !CanUseTopic(user) || !Adjacent(user))
 			return
 		if(new_department == "(Custom)")
-			new_department = input(user, "Which department do you want to tag this fax machine as?", "Fax Machine Department Tag", department) as text|null
+			new_department = tgui_input_text(user, "Which department do you want to tag this fax machine as?", "Fax Machine Department Tag", department)
 			if(!new_department || new_department == department || !CanUseTopic(user) || !Adjacent(user))
 				return
-		if(new_department == "Unknown" || new_department == "(Custom)" || new_department == "(Cancel)")
+		if(new_department == "Unknown" || new_department == "(Custom)")
 			to_chat(user, SPAN_WARNING("Invalid department tag selected."))
 			return
 		department = new_department
@@ -127,7 +116,7 @@ GLOBAL_LIST_EMPTY(admin_departments)
 /obj/machinery/photocopier/faxmachine/OnTopic(mob/user, href_list, state)
 	if(href_list["send"])
 		if(copyitem)
-			if(destination in GLOB.admin_departments)
+			if(SSoffsites.offsites_by_name[destination])
 				send_admin_fax(user, destination)
 			else
 				sendfax(destination)
@@ -153,7 +142,13 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		return TOPIC_REFRESH
 
 	if(href_list["dept"])
-		var/desired_destination = input(user, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + GLOB.admin_departments)
+		var/list/allTargets = list()
+		allTargets |= GLOB.alldepartments
+		for(var/D in SSoffsites.offsites_by_name)
+			if(!is_abstract(SSoffsites.offsites_by_name[D]))
+				allTargets |= D
+
+		var/desired_destination = tgui_input_list(user, "Which department?", "Choose a department", allTargets, destination)
 		if(desired_destination && CanInteract(user, state))
 			destination = desired_destination
 		return TOPIC_REFRESH
@@ -217,6 +212,10 @@ GLOBAL_LIST_EMPTY(admin_departments)
 	if(stat & (BROKEN|NOPOWER))
 		return
 
+	var/datum/offsite/destinationOffsite = SSoffsites.offsites_by_name[destination]
+	if(!destinationOffsite)
+		return
+
 	use_power_oneoff(200)
 
 	//recieved copies should not use toner since it's being used by admins only.
@@ -232,24 +231,14 @@ GLOBAL_LIST_EMPTY(admin_departments)
 		return
 
 	rcvdcopy.forceMove(null) //hopefully this shouldn't cause trouble
-	GLOB.adminfaxes += rcvdcopy
 
-	var/mob/intercepted = check_for_interception()
+	if(!fax_offsite(rcvdcopy, sender, destinationOffsite, department))
+		// interception!
+		visible_message("[src] beeps, \"Message transmitted successfully.\"")
+		return
 
-	message_admins(sender, "[uppertext(destination)] FAX[intercepted ? "(Intercepted by [intercepted])" : null]", rcvdcopy, destination ? destination : "UNKNOWN")
 	send_fax_loop(copyitem, destination, department) // Forward to any listening fax machines
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
-
-
-/obj/machinery/photocopier/faxmachine/proc/message_admins(mob/sender, faxname, obj/item/sent, reply_type)
-	var/msg = "<span class='notice'><b><font color='#006100'>[faxname]: </font>[get_options_bar(sender, 2,1,1)]"
-	msg += "(<A HREF='?_src_=holder;take_ic=\ref[sender]'>TAKE</a>) (<a href='?_src_=holder;FaxReply=\ref[sender];originfax=\ref[src];replyorigin=[reply_type]'>REPLY</a>)</b>: "
-	msg += "Receiving '[sent.name]' via secure connection ... <a href='?_src_=holder;AdminFaxView=\ref[sent]'>view message</a></span>"
-
-	for(var/client/C in GLOB.admins)
-		if(check_rights((R_ADMIN|R_MOD),0,C))
-			to_chat(C, msg)
-			sound_to(C, 'sounds/machines/dotprinter.ogg')
 
 /// Retrieves a list of all fax machines matching the given department tag.
 /proc/get_fax_machines_by_department(department)

@@ -294,6 +294,22 @@
 	build_path = /obj/item/mech_component/propulsion/tracks
 	req_tech = list(TECH_MATERIAL = 4)
 
+/datum/design/item/mechfab/exosuit/engine
+	name = "exosuit engine"
+	id = "exoengine"
+	time = 40
+	materials = list(MATERIAL_PLASTEEL = 5000, MATERIAL_ALUMINIUM = 2000, MATERIAL_GLASS = 2000, MATERIAL_PLASTIC = 1000)
+	build_path = /obj/item/mech_equipment/engine
+	req_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 2, TECH_POWER = 2)
+
+/datum/design/item/mechfab/exosuit/auxiliary
+	name = "exosuit backup cell"
+	id = "exobackupcell"
+	time = 40
+	materials = list(MATERIAL_ALUMINIUM = 2000, MATERIAL_GLASS = 2000, MATERIAL_PLASTIC = 1000)
+	build_path = /obj/item/mech_equipment/power_auxiliary
+	req_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 2, TECH_POWER = 2)
+
 /datum/design/item/mechfab/exosuit/sphere_torso
 	name = "spherical chassis"
 	id = "sphere_body"

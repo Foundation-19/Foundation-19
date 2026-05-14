@@ -265,7 +265,7 @@
 			return M
 	return 0
 
-/mob/proc/movement_delay()
+/mob/proc/movement_delay(decl/move_intent/using_intent = move_intent)
 	. = 0
 	if(istype(loc, /turf))
 		var/turf/T = loc
@@ -316,7 +316,7 @@
 	if((is_blind()) || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
 	if(origin)
-		if(!(origin in view(7, src)))
+		if(!(get_turf(origin) in view(7, src)))
 			return FALSE
 	return TRUE
 
@@ -1030,6 +1030,11 @@
 	face_current_direction()
 
 /mob/proc/face_current_direction()
+	if(istype(loc, /mob/living/exosuit))
+		var/mob/living/exosuit/owner = loc
+		owner?.strafing.toggled()
+		return
+
 	if(!facing_dir)
 		set_face_dir(dir)
 	else

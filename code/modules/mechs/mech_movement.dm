@@ -98,7 +98,7 @@
 		to_chat(mover, SPAN_WARNING("Maintenance protocols are in effect."))
 		exosuit.SetMoveCooldown(3)
 		return MOVEMENT_STOP
-	var/obj/item/cell/C = exosuit.get_cell()
+	var/obj/item/cell/C = exosuit.get_cell(FALSE , ME_CELL_POWERED | ME_ENGINE_POWERED)
 	if(!C || !C.check_charge(exosuit.legs.power_use * CELLRATE))
 		to_chat(mover, SPAN_WARNING("The power indicator flashes briefly."))
 		exosuit.SetMoveCooldown(3) //On fast exosuits this got annoying fast
@@ -125,17 +125,28 @@
 	if(direction & (UP|DOWN))
 		var/txt_dir = direction & UP ? "upwards" : "downwards"
 		exosuit.visible_message(SPAN_NOTICE("\The [exosuit] moves [txt_dir]."))
-
-	if(exosuit.dir != moving_dir && !(direction & (UP|DOWN)))
-		playsound(exosuit.loc, exosuit.legs.mech_turn_sound, 40,1)
-		exosuit.setDir(moving_dir)
-		exosuit.SetMoveCooldown(exosuit.legs.turn_delay)
-	else
-		exosuit.SetMoveCooldown(exosuit.legs ? exosuit.legs.move_delay : 3)
-		var/turf/target_loc = get_step(exosuit, direction)
-		if(target_loc && exosuit.legs && exosuit.legs.can_move_on(exosuit.loc, target_loc) && exosuit.MayEnterTurf(target_loc))
-			exosuit.Move(target_loc)
+	var/moveCooldown = exosuit.legs ? exosuit.legs.move_delay : 3
+	if(exosuit.dir != direction)
+		if(!(direction & (UP|DOWN)))
+			if(exosuit.mech_flags & MF_STRAFING)
+				var/strafe_flags = exosuit.legs.movement_flags
+				if(direction == reverse_direction(exosuit.dir) && !(strafe_flags & PF_STRAIGHT_STRAFE) || ((direction & (turn(exosuit.dir,90)|turn(exosuit.dir,-90))) && !(strafe_flags & PF_SIDE_STRAFE)))
+					playsound(exosuit.loc, exosuit.legs.mech_turn_sound, 40,1)
+					exosuit.setDir(moving_dir)
+					exosuit.SetMoveCooldown(exosuit.legs.turn_delay)
+					return MOVEMENT_HANDLED
+				moveCooldown *= STRAFING_DELAY_MULTIPLIER
+			else
+				playsound(exosuit.loc, exosuit.legs.mech_turn_sound, 40,1)
+				exosuit.setDir(moving_dir)
+				exosuit.SetMoveCooldown(exosuit.legs.turn_delay)
+				return MOVEMENT_HANDLED
+	exosuit.SetMoveCooldown(moveCooldown)
+	var/turf/target_loc = get_step(exosuit, direction)
+	if(target_loc && exosuit.legs && exosuit.legs.can_move_on(exosuit.loc, target_loc) && exosuit.MayEnterTurf(target_loc))
+		exosuit.Move(target_loc)
 	return MOVEMENT_HANDLED
+
 /datum/movement_handler/mob/space/exosuit
 	expected_host_type = /mob/living/exosuit
 

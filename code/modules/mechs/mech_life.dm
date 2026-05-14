@@ -13,13 +13,11 @@
 		update_pilots()
 
 	if(radio)
-		radio.on = (head && head.radio && head.radio.is_functional() && get_cell())
+		radio.on = (head && head.radio && head.radio.is_functional() && get_cell(FALSE, ME_ANY_POWER))
 
 	body.update_air(hatch_closed && use_air)
 
-	var/powered = FALSE
-	if(get_cell())
-		powered = get_cell().drain_power(0, 0, calc_power_draw()) > 0
+	var/powered = get_cell(FALSE, ME_ANY_POWER)?.drain_power(0, 0, calc_power_draw()) > 0
 
 	if(!powered)
 		//Shut down all systems
@@ -30,7 +28,11 @@
 			var/obj/item/mech_equipment/M = hardpoints[hardpoint]
 			if(istype(M) && M.active && M.passive_power_use)
 				M.deactivate()
-
+	else
+		if(hardpoints[HARDPOINT_BACKUP_POWER])
+			var/obj/item/mech_equipment/power_auxiliary/hungry = hardpoints[HARDPOINT_BACKUP_POWER]
+			if((hungry.internal_cell.maxcharge - hungry.internal_cell.charge) > 10)
+				hungry.internal_cell?.give(get_cell(FALSE, ME_ENGINE_POWERED | ME_CELL_POWERED)?.drain_power(0,0, 5 KILOWATTS))
 
 	updatehealth()
 	if(health <= 0 && stat != DEAD)
@@ -47,10 +49,20 @@
 	lying = FALSE // Fuck off, carp.
 	handle_vision(powered)
 
-/mob/living/exosuit/get_cell(force)
+/mob/living/exosuit/get_cell(force, power_flags)
 	RETURN_TYPE(/obj/item/cell)
 	if(power == MECH_POWER_ON || force) //For most intents we can assume that a powered off exosuit acts as if it lacked a cell
-		return body ? body.cell : null
+		if((power_flags & ME_CELL_POWERED && mech_flags & MF_CELL_POWERED) || force == 2)
+			var/obj/item/mech_equipment/power_cell/provider = hardpoints[HARDPOINT_POWER]
+			if(provider)
+				return provider.internal_cell
+		if((power_flags & ME_ENGINE_POWERED && mech_flags & MF_ENGINE_POWERED) || force == 2)
+			var/obj/item/mech_equipment/engine/provider = hardpoints[HARDPOINT_POWER]
+			if(provider)
+				return provider.internal_cell
+		if(power_flags & ME_AUXILIARY_POWERED && mech_flags & MF_AUXILIARY_POWERED)
+			var/obj/item/mech_equipment/power_auxiliary/provider = hardpoints[HARDPOINT_BACKUP_POWER]
+			return provider.internal_cell
 	return null
 
 /mob/living/exosuit/proc/calc_power_draw()
@@ -158,7 +170,7 @@
 /mob/living/exosuit/proc/update_hud_alerts()
 	for(var/mob/pilot as anything in pilots)
 
-		var/obj/item/cell/cell = get_cell(TRUE)
+		var/obj/item/cell/cell = get_cell(TRUE, ME_ANY_POWER)
 
 		if(cell)
 			var/cellcharge = cell.charge/cell.maxcharge

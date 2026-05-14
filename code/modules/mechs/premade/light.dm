@@ -44,6 +44,7 @@
 	power_use = 5
 	desc = "These Odysseus series legs are built from lightweight flexible polymers, making them capable of handling falls from up to 120 meters in 1g environments. Provided that the exosuit lands on its feet."
 	max_fall_damage = 0
+	movement_flags = PF_SIDE_STRAFE
 
 /obj/item/mech_component/propulsion/light/handle_vehicle_fall()
 	..()
@@ -75,7 +76,7 @@
 	icon_state = "light_body"
 	max_damage = 75
 	power_use = 5
-	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER)
+	has_hardpoints = list(HARDPOINT_BACK, HARDPOINT_LEFT_SHOULDER, HARDPOINT_POWER, HARDPOINT_BACKUP_POWER)
 	desc = "The Veymed Odysseus series cockpits combine ultralight materials and clear aluminium laminates to provide an optimized cockpit experience."
 	climb_time = 15
 

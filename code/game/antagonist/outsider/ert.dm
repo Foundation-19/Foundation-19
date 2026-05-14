@@ -44,12 +44,5 @@ GLOBAL_DATUM_INIT(ert, /datum/antagonist/ert, new)
 
 	//Special radio setup
 	player.add_language(LANGUAGE_ENGLISH)
-	player.equip_to_slot_or_store_or_drop(new /obj/item/device/radio/headset/ert(src), slot_l_ear)
-	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/under/mtf(src), slot_w_uniform)
-	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/shoes/swat(src), slot_shoes)
-	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/gloves/thick/swat(src), slot_gloves)
-	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/head/helmet/scp/security/mtftactical(player), slot_head)
-	player.equip_to_slot_or_store_or_drop(new /obj/item/clothing/suit/armor/mtftactical(player), slot_wear_suit)
-
-	create_id(role_text, player)
+	dressup_human(player, outfits_decls_by_type_[/decl/hierarchy/outfit/mtf/epsilon_11/agent], TRUE)
 	return 1

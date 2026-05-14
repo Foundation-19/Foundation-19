@@ -29,5 +29,11 @@
 		else
 			user.Move(get_step(src, movement_dir), movement_dir)
 
-	user.next_move_dir_add = 0
-	user.next_move_dir_sub = 0
+	user.next_move_dir_add = NONE
+	user.next_move_dir_sub = NONE
+
+/client/proc/calculate_move_dir()
+	var/movement_dir = NONE
+	for(var/_key in keys_held)
+		movement_dir |= movement_keys[_key]
+	intended_direction = movement_dir

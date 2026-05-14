@@ -182,6 +182,9 @@
 /// Called on `/client` after `/datum/preferences/setup` has completed with prefs datum as argument.
 #define COMSIG_CLIENT_PREFS_LOADED "client_prefs_loaded"
 
+/// Called on '/datum/offsite' after `/datum/admins/proc/faxCallback` has sent a fax with a copy of the fax and the original adminpaper as argument.
+#define COMSIG_OFFSITE_FAX_SENT "offsite_fax_sent"
+
 /*
 *	Atom
 */

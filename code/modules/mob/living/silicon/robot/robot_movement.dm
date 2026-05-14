@@ -17,7 +17,7 @@
 
 
  //No longer needed, but I'll leave it here incase we plan to re-use it.
-/mob/living/silicon/robot/movement_delay()
+/mob/living/silicon/robot/movement_delay(decl/move_intent/using_intent = move_intent)
 	var/tally = ..() //Incase I need to add stuff other than "speed" later
 
 	tally += speed

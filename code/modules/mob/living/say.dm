@@ -294,6 +294,8 @@ var/list/channel_to_radio_key = new
 	speech_bubble.layer = layer
 	speech_bubble.plane = plane
 	speech_bubble.alpha = 0
+	speech_bubble.pixel_x = speech_bubble_pixel_x_offset
+	speech_bubble.pixel_y = speech_bubble_pixel_y_offset
 	// VOREStation Port - Attempt Multi-Z Talking
 	// for (var/atom/movable/AM in get_above_oo())
 	// 	var/turf/ST = get_turf(AM)
@@ -350,9 +352,9 @@ var/list/channel_to_radio_key = new
 		log_say("[name]/[key] : [message]")
 
 	flick_overlay(speech_bubble, speech_bubble_recipients, 50)
-	animate(speech_bubble, alpha = 255, time = 10, easing = CIRCULAR_EASING)
-	animate(time = 20)
-	animate(alpha = 0, pixel_y = 12, time = 20, easing = CIRCULAR_EASING)
+	animate(speech_bubble, alpha = 255, time = 1 SECOND, easing = CIRCULAR_EASING)
+	animate(time = 2 SECONDS)
+	animate(alpha = 0, pixel_y = speech_bubble.pixel_y + 12, time = 2 SECONDS, easing = CIRCULAR_EASING)
 
 	return 1
 

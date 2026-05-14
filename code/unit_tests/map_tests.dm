@@ -28,11 +28,11 @@
 		var/bad_msg = "--------------- [A.name]([A.type])"
 
 		var/exemptions = get_exemptions(A)
-		if(!A.apc && !(exemptions & GLOB.using_map.NO_APC))
+		if(!A.apc && !(exemptions & NO_APC))
 			var/turf/T = pick_area_turf(A)
 			log_bad("[bad_msg] lacks an APC. Area Z: [A.z] Random area turf: [T.x],[T.y],[T.z].")
 			area_good = 0
-		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
+		else if(A.apc && (exemptions & NO_APC))
 			log_bad("[bad_msg] is not supposed to have an APC. APC location: [A.apc.x], [A.apc.y], [A.apc.z].")
 			area_good = 0
 

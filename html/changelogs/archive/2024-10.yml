@@ -1,0 +1,18 @@
+2024-10-07:
+  checkraisefold:
+  - bugfix: Fuel injectors can have their tag set with a multitool, allowing full
+      R-UST setup building/restoration midround
+  - bugfix: Pump in R-UST control room has been moved to chamber itself, no longer
+      creating air leak noise
+  - rscadd: Completely overhauled the fax system to administrators/central offices,
+      making it a much cleaner experience for admins to use, along with adding many
+      more possible office fax locations.
+  - rscadd: Admin paper for faxes now has a fully-featured template system, allowing
+      developers to add many more fax templates down the line with relative ease.
+  - bugfix: Round time is no longer broken when server is hosted on non-UTC system
+      time.
+  - bugfix: ERT spawn with a non-broken loadout.
+  - bugfix: Runtime relating to whenever sounds are played fixed.
+  quadbium:
+  - rscadd: adds a lift version of the cryopod
+  - rscadd: replaces cryopods with lifts

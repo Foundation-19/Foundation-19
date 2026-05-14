@@ -201,7 +201,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners += listener
 
 	RegisterSignal(listener, COMSIG_MOVED, TYPE_PROC_REF(/datum/sound_token, PrivUpdateListenerLoc))
-	RegisterSignal(listener, COMSIG_PARENT_QDELETING, src, TYPE_PROC_REF(/datum/sound_token, PrivRemoveListener))
+	RegisterSignal(listener, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/sound_token, PrivRemoveListener))
 
 	PrivUpdateListenerLoc(listener, FALSE)
 

@@ -361,7 +361,7 @@
 	icon_state = "alpha-beret"
 	item_state = "alpha-beret"
 	body_parts_covered = HEAD
-	armor = list(melee = 90, bullet = 90, laser = 90, energy = 95, bomb = 90, bio = 90, rad = 0)
+	armor = list(melee = ARMOR_MELEE_SHIELDED, bullet = ARMOR_BALLISTIC_AP, laser = ARMOR_LASER_HEAVY, energy = ARMOR_ENERGY_SHIELDED, bomb = ARMOR_BOMB_SHIELDED, bio = ARMOR_BIO_SHIELDED, rad = 0)
 
 //GOC
 /obj/item/clothing/head/helmet/scp/goc
@@ -370,7 +370,7 @@
 	icon_state = "goc_helm"
 	item_state = "goc_helm"
 	body_parts_covered = HEAD
-	armor = list(melee = 40, bullet = 90, laser = 50,energy = 25, bomb = 40)
+	armor = list(melee = ARMOR_MELEE_VVRESISTANT, bullet = ARMOR_BALLISTIC_RIFLE, laser = ARMOR_LASER_MAJOR, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED)
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/helmet/scp/security/goc
@@ -378,7 +378,7 @@
 	desc = "A cyan helmet with an added bulletproof visor, with the United Nations' initials on the front. A lightweight helmet for their superior military forces ranks."
 	icon_state = "goc_helmet"
 	body_parts_covered = HEAD|FACE|EYES //face shield
-	armor = list(melee = 50, bullet = 100, laser = 50,energy = 25, bomb = 30, bio = 10, rad = 10)
+	armor = list(melee = ARMOR_MELEE_MAJOR, bullet = ARMOR_BALLISTIC_HEAVY, laser = ARMOR_LASER_MAJOR, energy = ARMOR_ENERGY_SMALL, bomb = ARMOR_BOMB_PADDED, bio = ARMOR_BIO_MINOR, rad = ARMOR_RAD_MINOR)
 	acid_resistance = 1.5
 	flags_inv = HIDEEARS
 	action_button_name = "Toggle Visor"

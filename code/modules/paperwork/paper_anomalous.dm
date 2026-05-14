@@ -3,14 +3,6 @@
 	color = COLOR_PALE_BLUE_GRAY
 	var/cooldown
 
-/obj/item/paper/self_writing/on_update_icon()
-	if(icon_state == "paper_talisman" || is_memo)
-		return
-	else if(info)
-		icon_state = "paper_words"
-	else
-		icon_state = "paper"
-
 /obj/item/paper/self_writing/afterattack(atom/A, mob/user, proximity)
 	if(!proximity)
 		return

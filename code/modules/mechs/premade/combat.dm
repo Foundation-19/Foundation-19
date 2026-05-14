@@ -53,6 +53,7 @@
 	move_delay = 3
 	turn_delay = 2
 	power_use = 20
+	movement_flags = PF_OMNI_STRAFE
 
 /obj/item/mech_component/sensors/combat
 	name = "combat sensors"
