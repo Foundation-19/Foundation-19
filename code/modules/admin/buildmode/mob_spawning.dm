@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 /datum/build_mode/mob_mode/Help()
 	to_chat(user, SPAN_NOTICE(help_text))
 
-/datum/build_mode/mob_mode/ui_interact(mob/user, ui_key = "mob_spawner", datum/nanoui/ui = null, force_open = 1, master_ui = null, datum/topic_state/state = GLOB.default_state)
+/datum/build_mode/mob_mode/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
 	. = ..()
 
 	if (!current_turf || !current_area)
@@ -65,6 +65,19 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 		if (ui)
 			ui.close()
 		return
+
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "MobSpawning", src.name, 425, 600, state = state)
+		ui.open()
+
+/datum/build_mode/mob_mode/tgui_data(mob/user)
+	if (!current_turf || !current_area)
+		return list()
+
+	var/datum/mob_spawner/spawner = GLOB.mob_spawners[current_turf]
+	if (!spawner)
+		return list()
 
 	var/data[0]
 	data["area"] = current_area
@@ -79,28 +92,21 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 	data["faction"] = spawner.faction
 	data["spawn_count"] = spawner.spawn_count
 	data["paused"] = spawner.paused
+	return data
 
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "mob_mode.tmpl", src.name, 425, 600, master_ui = master_ui, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/datum/build_mode/mob_mode/CanUseTopic(mob/user)
+/datum/build_mode/mob_mode/tgui_status(mob/user)
 	if (!is_admin(user))
 		return STATUS_CLOSE
 	return ..()
 
-/datum/build_mode/mob_mode/Topic(user, href_list)
+/datum/build_mode/mob_mode/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	..()
 	var/datum/mob_spawner/spawner = GLOB.mob_spawners[current_turf]
 
 	if (!spawner)
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["pick"])
+	if (action == "pick")
 		var/type = input("Search for a mob", "Mob") as text
 		var/list/types = typesof(/mob/living/simple_animal)
 		var/list/matches = new()
@@ -116,85 +122,85 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 			if (chosen && !(chosen in spawner.mobs))
 				spawner.mobs |= chosen
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["remove"])
+	if (action == "remove")
 		var/chosen = input("Choose mob to remove", "Mob") as null | anything in spawner.mobs
 
 		if (chosen)
 			spawner.mobs -= chosen
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["set_spawn_count"])
+	if (action == "set_spawn_count")
 		var/count = input("Set how many mobs will spawn:", "Mob Spawner") as num | null
 
 		if (!isnull(count))
 			spawner.spawn_count = count
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["set_spawn_interval"])
+	if (action == "set_spawn_interval")
 		var/count = input("Set the interval mobs spawn on (in seconds):", "Mob Spawner") as num | null
 
 		if (!isnull(count))
 			spawner.interval = count SECONDS
 			spawner.next_spawn_time = 0
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["set_spawn_time_variation"])
+	if (action == "set_spawn_time_variation")
 		var/count = input("Set the random max variation of the spawn interval:", "Mob Spawner") as num | null
 
 		if (count)
 			spawner.variation = count SECONDS
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["set_radius"])
+	if (action == "set_radius")
 		var/radius = input("Set the radius mobs can spawn in:", "Mob Spawner") as num | null
 
 		if (!isnull(radius))
 			spawner.radius = radius
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["atmos_immune"])
+	if (action == "atmos_immune")
 		spawner.atmos_immune = !spawner.atmos_immune
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["set_faction"])
+	if (action == "set_faction")
 
-		if (href_list["set_faction"] == "reset")
+		if (params["set_faction"] == "reset")
 			spawner.faction = null
 
-			return TOPIC_HANDLED
+			return TRUE
 
 		var/faction = input("Enter a faction name, leave blank to set it to default", "Mob Spawner") as text | null
 
 		if (faction)
 			spawner.faction = faction
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["add_message"])
+	if (action == "add_message")
 		var/message = input("Enter a VISIBLE message to display alongside spawning mobs:", "Mob Spawner") as text | null
 
 		if (message)
 			spawner.messages += message
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["remove_message"])
+	if (action == "remove_message")
 		var/message = input("Choose a message to remove:", "Mob Spawner") as null | anything in spawner.messages
 
 		if (message)
 			spawner.messages -= message
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["set_span_class"])
+	if (action == "set_span_class")
 		var/list/classes = list(
 			"italic",
 			"bold",
@@ -213,9 +219,9 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 		if (class)
 			spawner.message_class = class
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["pause"])
+	if (action == "pause")
 		spawner.paused = !spawner.paused
 
 		if (spawner.paused)
@@ -223,16 +229,16 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 		else
 			START_PROCESSING(SSprocessing, spawner)
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["delete"])
-		var/datum/nanoui/ui = SSnano.try_update_ui(user, src, "mob_spawner", null)
-		if (ui)
-			ui.close()
+	if (action == "delete")
+		var/datum/tgui/close_ui = SStgui.try_update_ui(usr, src, null)
+		if (close_ui)
+			close_ui.close()
 
 		qdel(GLOB.mob_spawners[current_turf])
 
-		return TOPIC_HANDLED
+		return TRUE
 
 /datum/build_mode/mob_mode/OnClick(atom/object, list/pa)
 	current_area = get_area(object)
@@ -270,7 +276,7 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 			to_chat(user, "Spawner pasted in area [current_area].")
 
 	else if (pa["left"])
-		ui_interact(user)
+		tgui_interact(user)
 
 	else if (pa["right"])
 		if (spawner)

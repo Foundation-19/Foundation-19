@@ -168,11 +168,17 @@
 		icon_state = "[use_power ? "on" : "off"]"
 
 /obj/machinery/atmospherics/binary/oxyregenerator/interface_interact(user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/atmospherics/binary/oxyregenerator/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/atmospherics/binary/oxyregenerator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OxyRegenerator", "Oxygen Regeneration System", 440, 300)
+		ui.open()
+
+/obj/machinery/atmospherics/binary/oxyregenerator/tgui_data(mob/user)
+	var/list/data = list()
 	data["on"] = use_power ? 1 : 0
 	data["powerSetting"] = power_setting
 	data["gasProcessed"] = last_flow_rate
@@ -181,27 +187,21 @@
 	data["tankPressure"] = round(inner_tank.return_pressure())
 	data["targetPressure"] = round(target_pressure)
 	data["phase"] = phase
-	if (inner_tank.total_moles > 0)
+	if(inner_tank.total_moles > 0)
 		data["co2"] = round(100 * inner_tank.gas[GAS_CO2]/inner_tank.total_moles)
 		data["o2"] = round(100 * inner_tank.gas[GAS_OXYGEN]/inner_tank.total_moles)
 	else
 		data["co2"] = 0
 		data["o2"] = 0
-		// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "oxyregenerator.tmpl", "Oxygen Regeneration System", 440, 300)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/obj/machinery/atmospherics/binary/oxyregenerator/Topic(href, href_list)
+/obj/machinery/atmospherics/binary/oxyregenerator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if(href_list["toggleStatus"])
+		return TRUE
+	if(action == "toggleStatus")
 		update_use_power(!use_power)
 		update_icon()
-		return 1
-	if(href_list["setPower"]) //setting power to 0 is redundant anyways
-		power_setting = between(1, text2num(href_list["setPower"]), 5)
-		return 1
+		return TRUE
+	if(action == "setPower")
+		power_setting = between(1, text2num(params["setPower"]), 5)
+		return TRUE

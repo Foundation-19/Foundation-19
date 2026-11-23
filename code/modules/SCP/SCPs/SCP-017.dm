@@ -8,7 +8,7 @@
 	response_disarm = "tries to push away"
 	response_harm = "tries to punch"
 
-	can_escape = TRUE //snip snip
+	can_escape = TRUE
 	pass_flags = PASS_FLAG_TABLE
 	density = FALSE
 
@@ -29,19 +29,47 @@
 
 	can_bleed = FALSE
 
-	//Config
-
-	///lumcount required for something to be considered a shadow
 	var/shadow_threshold = 0.35
+	var/spawn_area
+	var/light_damage_per_tick = 10
+	var/containment_alert_cooldown = 60 SECONDS
+	var/last_containment_alert = 0
 
 /mob/living/simple_animal/hostile/scp017/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"shambling void", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_KETER, //Obj Class
-		"017", //Numerical Designation
+		src,
+		"shambling void",
+		SCP_KETER,
+		"017",
 	)
+	spawn_area = get_area(src)
+
+/mob/living/simple_animal/hostile/scp017/Life()
+	. = ..()
+	if(!.)
+		return
+	check_containment_status()
+	var/turf/T = get_turf(src)
+	if(T && T.luminosity > 0)
+		adjustBruteLoss(light_damage_per_tick * (T.luminosity / 10))
+
+/mob/living/simple_animal/hostile/scp017/proc/check_containment_status()
+	if(!SCP || !SCP.research)
+		return
+	var/area/current = get_area(src)
+	var/in_containment = (current == spawn_area)
+	if(in_containment && SCP.research.containment_status == SCP_BREACHED)
+		SCP.research.set_containment_status(SCP_CONTAINED)
+	else if(!in_containment && SCP.research.containment_status != SCP_BREACHED)
+		SCP.research.set_containment_status(SCP_BREACHED)
+		if(world.time > last_containment_alert + containment_alert_cooldown)
+			last_containment_alert = world.time
+			priority_announcement.Announce(
+				"ALERT: SCP-017 has been detected outside its containment zone. All personnel are advised to restore lighting in affected corridors immediately.",
+				"SCP-017 Containment Breach",
+				'sounds/effects/siren.ogg'
+			)
 
 //Datum proc overrides and defines
 /datum/ai_holder/simple_animal/melee/scp017

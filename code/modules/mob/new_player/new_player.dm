@@ -15,11 +15,17 @@
 	var/totalPlayers = 0
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
+	var/datum/new_player_panel/npp = null
 
 /mob/new_player/Initialize()
 	add_verb(src, /mob/proc/toggle_antag_pool)
 	if(length(GLOB.new_player))
 		forceMove(pick(GLOB.new_player))
+	npp = new(src)
+	return ..()
+
+/mob/new_player/Destroy()
+	QDEL_NULL(npp)
 	return ..()
 
 /mob/new_player/get_status_tab_items()
@@ -55,14 +61,101 @@
 		if(player.ready)
 			totalPlayersReady++
 
-/mob/new_player/Topic(href, href_list) // This is a full override; does not call parent.
+/mob/new_player/tgui_state(mob/user)
+	return GLOB.always_tgui_state
+
+/mob/new_player/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "LateJoin", "Choose Profession", 450, 640)
+		ui.open()
+
+/mob/new_player/tgui_data(mob/user)
+	var/list/data = list()
+
+	data["round_duration"] = DisplayTimeText(world.time - SSticker.round_start_time)
+	data["station_name"] = station_name()
+
+	if(evacuation_controller.has_evacuated())
+		data["evacuation_status"] = "evacuated"
+	else if(evacuation_controller.is_evacuating())
+		if(evacuation_controller.emergency_evacuation)
+			data["evacuation_status"] = "emergency"
+		else
+			data["evacuation_status"] = "transfer"
+
+	data["show_invalid_jobs"] = show_invalid_jobs
+	data["player_name"] = client.prefs.be_random_name ? "friend" : client.prefs.real_name
+
+	var/list/categories = list()
+	var/list/hidden_reasons = list()
+
+	for(var/datum/job/job in SSjobs.primary_job_datums)
+		if(!job.is_available(client) && !show_invalid_jobs)
+			for(var/raisin in job.get_unavailable_reasons(client))
+				hidden_reasons[raisin] = TRUE
+			continue
+
+		var/list/job_data = list()
+		job_data["title"] = job.title
+		job_data["available"] = job.is_available(client)
+		job_data["head_position"] = job.head_position
+		job_data["current_positions"] = job.current_positions
+		job_data["total_positions"] = job.total_positions
+
+		var/list/reasons = job.get_unavailable_reasons(client)
+		if(length(reasons))
+			job_data["unavailable_reasons"] = reasons
+
+		var/category_key = job.department ? job.department : "No Department"
+		if(!categories[category_key])
+			categories[category_key] = list()
+		if(job.head_position)
+			var/list/cat = categories[category_key]
+			cat.Insert(1, list(job_data))
+		else
+			categories[category_key] += list(job_data)
+
+		if(!job.is_available(client))
+			for(var/raisin in job.get_unavailable_reasons(client))
+				hidden_reasons[raisin] = TRUE
+
+	data["categories"] = categories
+	data["hidden_reasons"] = hidden_reasons
+
+	var/list/submaps = list()
+	for(var/thing in SSmapping.submaps)
+		var/datum/submap/submap = thing
+		if(submap && submap.available())
+			var/list/submap_data = list()
+			submap_data["name"] = submap.name
+			submap_data["descriptor"] = submap.archetype.descriptor
+			var/list/submap_jobs = list()
+			for(var/otherthing in submap.jobs)
+				var/datum/job/job = submap.jobs[otherthing]
+				if(!job.is_available(client) && !show_invalid_jobs)
+					continue
+				var/list/job_data = list()
+				job_data["title"] = otherthing
+				job_data["available"] = job.is_available(client)
+				job_data["current_positions"] = job.current_positions
+				job_data["total_positions"] = job.total_positions
+				submap_jobs += list(job_data)
+			submap_data["jobs"] = submap_jobs
+			if(length(submap_jobs))
+				submaps += list(submap_data)
+	data["submaps"] = submaps
+
+	return data
+
+/mob/new_player/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(usr != src)
 		return TOPIC_NOACTION
 	if(!client)
 		return TOPIC_NOACTION
 
-	if(href_list["SelectedJob"])
-		var/datum/job/job = SSjobs.get_by_title(href_list["SelectedJob"])
+	if(action == "SelectedJob")
+		var/datum/job/job = SSjobs.get_by_title(params["SelectedJob"])
 
 		if(!SSjobs.check_general_join_blockers(src, job))
 			return FALSE
@@ -84,22 +177,26 @@
 		else if(job.title in client.prefs.job_low)
 			should_warn = FALSE
 		else if(job.is_restricted(client.prefs))
-			should_warn = FALSE // If it isn't available there will be its own message.
+			should_warn = FALSE
 
 		if(should_warn)
 			if(tgui_alert(client, "You don't have any preferences set for [job.title]. Are you sure you want to join as it?", "Confirm Job Selection", list("Yes", "No")) != "Yes")
 				return FALSE
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
-		return
+		return TRUE
 
-	if(href_list["invalid_jobs"])
+	if(action == "invalid_jobs")
 		show_invalid_jobs = !show_invalid_jobs
-		LateChoices() // Update the window
+		return TRUE
 
-	if(!ready && href_list["preference"])
+	if(!ready && action == "preference")
 		if(client)
-			client.prefs.process_link(src, href_list)
+			client.prefs.process_link(src, params)
+		return TRUE
+
+/mob/new_player/proc/LateChoices()
+	tgui_interact(src)
 
 /mob/new_player/proc/AttemptLateSpawn(datum/job/job, spawning_at)
 	if(src != usr)
@@ -182,94 +279,11 @@
 	if(GAME_STATE == RUNLEVEL_GAME)
 		if(character.mind.role_alt_title)
 			rank = character.mind.role_alt_title
-		// can't use their name here, since cyborg namepicking is done post-spawn, so we'll just say "A new Cyborg has arrived"/"A new Android has arrived"/etc.
 		GLOB.global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived"].", "Arrivals Announcement Computer")
 
-/mob/new_player/proc/LateChoices()
-	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
-	var/list/header = list("<html><body><center>")
-
-	header += "<b>Welcome, [name].<br></b>"
-	header += "Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]<br>"
-
-	if(evacuation_controller.has_evacuated())
-		header += "<font color='red'><b>\The [station_name()] has been evacuated.</b></font><br>"
-	else if(evacuation_controller.is_evacuating())
-		if(evacuation_controller.emergency_evacuation) // Emergency shuttle is past the point of no recall
-			header += "<font color='red'>\The [station_name()] is currently undergoing evacuation procedures.</font><br>"
-		else                                           // Crew transfer initiated
-			header += "<font color='red'>\The [station_name()] is currently undergoing crew transfer procedures.</font><br>"
-
-	var/list/dat = list()
-	dat += "Choose from the following open/valid positions:<br>"
-	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs</a><br>"
-	dat += "<table>"
-	dat += "<tr><td colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
-
-	// TORCH JOBS
-	var/list/job_summaries = list()
-	var/list/hidden_reasons = list()
-	for(var/datum/job/job in SSjobs.primary_job_datums)
-		var/summary = job.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[job.title]", show_invalid_jobs)
-		if(summary)
-			var/summary_key = (job.department ? job.department : "No Department")
-			var/list/existing_summaries = job_summaries[summary_key]
-			if(!existing_summaries)
-				existing_summaries = list()
-				job_summaries[summary_key] = existing_summaries
-			if(job.head_position)
-				existing_summaries.Insert(1, summary)
-			else
-				existing_summaries.Add(summary)
-		else
-			for(var/raisin in job.get_unavailable_reasons(client))
-				hidden_reasons[raisin] = TRUE
-
-	var/added_job = FALSE
-	if(length(job_summaries))
-		for(var/job_category in job_summaries)
-			if(length(job_summaries[job_category]))
-				// TODO: use bgcolor='[job_dept.display_color]' when less pastel/bright colours are chosen.
-				dat += "<tr><td bgcolor='#333333' colspan = 3><b><font color = '#ffffff'><center>[job_category]</center></font></b></td></tr>"
-				dat += job_summaries[job_category]
-				added_job = TRUE
-
-	if(!added_job)
-		dat += "<tr><td>No available positions.</td></tr>"
-	// END TORCH JOBS
-
-	// SUBMAP JOBS
-	for(var/thing in SSmapping.submaps)
-		var/datum/submap/submap = thing
-		if(submap && submap.available())
-			dat += "<tr><td colspan = 3><b>[submap.name] ([submap.archetype.descriptor]):</b></td></tr>"
-			job_summaries = list()
-			for(var/otherthing in submap.jobs)
-				var/datum/job/job = submap.jobs[otherthing]
-				var/summary = job.get_join_link(client, "byond://?src=\ref[submap];joining=\ref[src];join_as=[otherthing]", show_invalid_jobs)
-				if(summary && summary != "")
-					LAZYADD(job_summaries, summary)
-				else
-					for(var/raisin in job.get_unavailable_reasons(client))
-						hidden_reasons[raisin] = TRUE
-
-			if(LAZYLEN(job_summaries))
-				dat += job_summaries
-			else
-				dat += "No available positions."
-	// END SUBMAP JOBS
-
-	dat += "</table></center>"
-	if(LAZYLEN(hidden_reasons))
-		var/list/additional_dat = list("<br><b>Some roles have been hidden from this list for the following reasons:</b><br>")
-		for(var/raisin in hidden_reasons)
-			additional_dat += "[raisin]<br>"
-		additional_dat += "<br>"
-		dat = additional_dat + dat
-	dat = header + dat
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 450, 640)
-	popup.set_content(jointext(dat, null))
-	popup.open(0)
+/mob/new_player/proc/setupcharacter()
+	client.prefs.open_setup_window(src)
+	return TRUE
 
 /mob/new_player/proc/create_character(turf/spawn_turf)
 	spawning = TRUE
@@ -345,7 +359,7 @@
 	return FALSE
 
 /mob/new_player/proc/close_spawn_windows()
-	close_browser(src, "window=latechoices") //closes late choices window
+	SStgui.close_user_uis(src)
 
 /mob/new_player/proc/check_species_allowed(datum/species/S, show_alert = TRUE)
 	if(!S.is_available_for_join() && !has_admin_rights())

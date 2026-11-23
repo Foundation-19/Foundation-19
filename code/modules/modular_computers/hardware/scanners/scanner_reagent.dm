@@ -15,5 +15,5 @@
 	var/dat = reagent_scan_results(target)
 	if(driver && driver.using_scanner)
 		driver.data_buffer = jointext(dat, "\[br\]")
-		SSnano.update_uis(driver.NM)
+		SStgui.update_uis(driver.NM)
 	to_chat(user, "<span class = 'notice'>[jointext(dat, "<br>")]</span>")

@@ -34,26 +34,22 @@ var/global/list/default_pai_software = list()
 	return r
 
 /mob/living/silicon/pai/proc/paiInterface()
-	ui_interact(src)
+	tgui_interact(src)
 
-/mob/living/silicon/pai/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/mob/living/silicon/pai/tgui_interact(mob/user, datum/tgui/ui)
 	if(user != src)
-		if(ui) ui.set_status(STATUS_CLOSE, 0)
+		if(ui) ui.close()
 		return
 
-	if(ui_key != "main")
-		var/datum/pai_software/S = software[ui_key]
-		if(S && !S.toggle)
-			S.on_ui_interact(src, ui, force_open)
-		else
-			if(ui) ui.set_status(STATUS_CLOSE, 0)
-		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "PAIMain", "pAI Software Interface", 450, 600)
+		ui.open()
 
+/mob/living/silicon/pai/tgui_data(mob/user)
 	var/data[0]
 
-	// Software we have bought
 	var/bought_software[0]
-	// Software we have not bought
 	var/not_bought_software[0]
 
 	for(var/key in pai_software_by_key)
@@ -72,7 +68,6 @@ var/global/list/default_pai_software = list()
 	data["not_bought"] = not_bought_software
 	data["available_ram"] = ram
 
-	// Emotions
 	var/emotions[0]
 	for(var/name in pai_emotions)
 		var/emote[0]
@@ -83,43 +78,38 @@ var/global/list/default_pai_software = list()
 	data["emotions"] = emotions
 	data["current_emotion"] = card.current_emotion
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "pai_interface.tmpl", "pAI Software Interface", 450, 600)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/mob/living/silicon/pai/OnSelfTopic(href_list, topic_status)
-	if (topic_status == STATUS_INTERACTIVE)
-		if(href_list["software"])
-			var/soft = href_list["software"]
-			var/datum/pai_software/S = software[soft]
-			if(S.toggle)
-				S.toggle(src)
-			else
-				ui_interact(src, ui_key = soft)
-			return TOPIC_HANDLED
+/mob/living/silicon/pai/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-		else if(href_list["stopic"])
-			var/soft = href_list["stopic"]
-			var/datum/pai_software/S = software[soft]
-			if(S)
-				return S.Topic(list2params(href_list), href_list)
+	if(action == "software")
+		var/soft = params["software"]
+		var/datum/pai_software/S = software[soft]
+		if(S.toggle)
+			S.toggle(src)
+		else
+			S.tgui_interact(src)
+		return TRUE
 
-		else if(href_list["purchase"])
-			var/soft = href_list["purchase"]
-			var/datum/pai_software/S = pai_software_by_key[soft]
-			if(S && (ram >= S.ram_cost))
-				ram -= S.ram_cost
-				software[S.id] = S
-				S.on_purchase(src)
-			return TOPIC_HANDLED
+	if(action == "stopic")
+		var/soft = params["stopic"]
+		var/datum/pai_software/S = software[soft]
+		if(S)
+			return S.tgui_act(action, params, ui, state)
 
-		else if(href_list["image"])
-			var/img = text2num(href_list["image"])
-			if(1 <= img && img <= pai_emotions.len)
-				card.setEmotion(img)
-			return TOPIC_HANDLED
+	if(action == "purchase")
+		var/soft = params["purchase"]
+		var/datum/pai_software/S = pai_software_by_key[soft]
+		if(S && (ram >= S.ram_cost))
+			ram -= S.ram_cost
+			software[S.id] = S
+			S.on_purchase(src)
+		return TRUE
 
-	return ..()
+	if(action == "image")
+		var/img = text2num(params["image"])
+		if(1 <= img && img <= pai_emotions.len)
+			card.setEmotion(img)
+		return TRUE

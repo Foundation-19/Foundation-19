@@ -17,6 +17,16 @@
 	var/fatally_errored = FALSE
 	var/message_queue
 	var/sent_assets = list()
+	/// Set when this window was deliberately suspended by its previous owner.
+	/// The page keeps sending 'suspend' until acknowledged; once we reuse the
+	/// window for a NEW ui, stale suspend echoes from the old page must be
+	/// ignored or they kill the fresh UI.
+	var/suspend_ownership = null
+	/// TRUE when the loaded page belongs to a PREVIOUS ui (suspended or hard-
+	/// closed). A newly locked ui must re-browse (initialize) instead of reusing
+	/// the stale page — otherwise the old interface renders/actions inside the
+	/// new ui's lock.
+	var/needs_fresh_page = FALSE
 	// Vars passed to initialize proc (and saved for later)
 	var/initial_strict_mode
 	var/initial_fancy
@@ -75,6 +85,7 @@
 	src.initial_inline_css = inline_css
 	status = TGUI_WINDOW_LOADING
 	fatally_errored = FALSE
+	world.log << "TGUI-TRACE initialize [id] (re-browse)"
 	// Build window options
 	var/options = "file=[id].html;can_minimize=0;auto_format=0;"
 	// Remove titlebar and resize handles for a fancy window
@@ -114,6 +125,14 @@
 		html = replacetextEx(html, "<!-- tgui:inline-css -->", inline_css)
 	// Open the window
 	client << browse(HTML_SKELETON(html), "window=[id];[options]")
+	// If this window was previously suspended, the JS layer hid it
+	// ('is-visible' false). BYOND 516 Chromium throttles JS in hidden browser
+	// controls, so a freshly browsed page in a hidden window never runs and
+	// never sends 'ready' — the zombie check then kills it. Make the window
+	// visible again so the new page actually lives. (A deferred re-show also
+	// guards against the old page's suspend handler hiding it late.)
+	winset(client, id, "is-visible=true")
+	addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 0.5 SECONDS)
 	// Detect whether the control is a browser
 	is_browser = winexists(client, id) == "BROWSER"
 	// Instruct the client to signal UI when the window is closed.
@@ -185,6 +204,10 @@
 	// Clean up assets sent by tgui datum which requested the lock
 	if(locked)
 		sent_assets = list()
+		// Remember who owned us at release time; if this window was suspended
+		// right after (can_be_suspended path), the ownership mark lets
+		// on_message() discard stale suspend echoes from the dead page.
+		suspend_ownership = locked_by
 	locked = FALSE
 	locked_by = null
 
@@ -227,11 +250,24 @@
 			context = "[id]/close (suspending)",
 			window = src)
 		status = TGUI_WINDOW_READY
+		suspend_ownership = locked_by || suspend_ownership
+		needs_fresh_page = TRUE
 		send_message("suspend")
+		// The old page will process the suspend and hide the window
+		// (backendSuspendSuccess -> winset is-visible false). If its suspend
+		// interval keeps retrying, that hide can land AFTER initialize()
+		// re-shows the window for the next UI — leaving a fresh, live page
+		// trapped in an invisible window. Schedule a re-show that wins.
+		addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 3 SECONDS)
 		return
 	log_tgui(client,
 		context = "[id]/close",
 		window = src)
+	// Hard close: the page is about to unload and its unload handler WILL emit
+	// suspend echoes for up to 2s. Stamp ownership so on_message can discard
+	// those echoes when a new UI claims this window in the meantime.
+	suspend_ownership = locked_by || suspend_ownership
+	needs_fresh_page = TRUE
 	release_lock()
 	status = TGUI_WINDOW_CLOSED
 	message_queue = null
@@ -335,8 +371,17 @@
  * Callback for handling incoming tgui messages.
  */
 /datum/tgui_window/proc/on_message(type, payload, href_list)
+	world.log << "TGUI-TRACE msg [id] type=[type] locked=[locked ? locked_by : "null"]"
+	// BYOND 516 race: winexists() may run before the browser control finishes
+	// creating, misdetecting runtime browse() windows as non-browser and
+	// routing every output to a control that doesn't exist. Re-check the
+	// moment the page proves it's alive by sending a message.
+	if(!is_browser && winexists(client, id) == "BROWSER")
+		is_browser = TRUE
 	// Status can be READY if user has refreshed the window.
 	if(type == "ready" && status == TGUI_WINDOW_READY)
+		// A fresh page is alive; any pending stale-suspend ownership is moot.
+		suspend_ownership = null
 		// Resend the assets
 		for(var/asset in sent_assets)
 			send_asset(asset)
@@ -348,6 +393,12 @@
 	if(status != TGUI_WINDOW_READY)
 		status = TGUI_WINDOW_READY
 		flush_message_queue()
+	needs_fresh_page = FALSE
+	// If this is the first time we see the page alive and the output control
+	// was just corrected (516 winexists race), push a fresh full update so the
+	// UI renders even if the original payload went to a dead control.
+	if(type == "ready" && locked_by && !locked_by.initialized)
+		locked_by.send_update(force = TRUE)
 	// Pass message to UI that requested the lock
 	if(locked && locked_by)
 		var/prevent_default = locked_by.on_message(type, payload, href_list)
@@ -365,6 +416,18 @@
 		if("ping")
 			send_message("ping/reply", payload)
 		if("suspend")
+			// Stale-suspend guard: any page we close (hard or suspend) keeps
+			// emitting 'suspend' for up to 2s from its unload handler. If a NEW
+			// ui has claimed the window since (lock owner differs from the
+			// suspend originator), the echo belongs to the DEAD page — ignore
+			// it, otherwise it would suspend/close the fresh UI. The dead
+			// page's suspend handler ALSO re-hides the window (winset
+			// is-visible false lands after initialize re-showed it), which
+			// traps the live new page invisible. Reclaim visibility.
+			if(locked_by && locked_by != suspend_ownership)
+				winset(client, id, "is-visible=true")
+				return
+			suspend_ownership = null
 			close(can_be_suspended = TRUE)
 		if("close")
 			close(can_be_suspended = FALSE)
@@ -372,6 +435,14 @@
 			client << link(href_list["url"])
 		if("cacheReloaded")
 			reinitialize()
+
+/datum/tgui_window/proc/ensure_visible(client/C)
+	if(!C || !status)
+		return
+	// Only force-show if a UI is actually holding the lock (someone is using
+	// this window). Suspended-but-unused windows stay hidden for pooling.
+	if(locked && locked_by && C.mob)
+		winset(C, id, "is-visible=true")
 
 /datum/tgui_window/proc/set_mouse_macro()
 	if(mouse_event_macro_set)

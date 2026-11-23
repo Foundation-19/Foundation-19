@@ -27,7 +27,7 @@
 /obj/item/mech_equipment/sleeper/attack_self(mob/user)
 	. = ..()
 	if(.)
-		sleeper.ui_interact(user)
+		sleeper.tgui_interact(user)
 
 /obj/item/mech_equipment/sleeper/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/reagent_containers/glass))
@@ -66,10 +66,10 @@
 	interact_offline = TRUE
 	stat_immune = NOPOWER
 
-/obj/machinery/sleeper/mounted/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.mech_state)
+/obj/machinery/sleeper/mounted/tgui_interact(mob/user, datum/tgui/ui)
 	. = ..()
 
-/obj/machinery/sleeper/mounted/nano_host()
+/obj/machinery/sleeper/mounted/tgui_host()
 	var/obj/item/mech_equipment/sleeper/S = loc
 	if(istype(S))
 		return S.owner

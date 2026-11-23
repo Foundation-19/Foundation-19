@@ -174,11 +174,11 @@ var/list/gamemode_cache = list()
 	// Event settings
 	var/expected_round_length = 3 HOURS
 	/// If the first delay has a custom start time
-	var/static/list/event_first_run = list(EVENT_LEVEL_MUNDANE = null, EVENT_LEVEL_MODERATE = null, EVENT_LEVEL_MAJOR = list("lower" = 80 MINUTES, "upper" = 100 MINUTES))
+	var/static/list/event_first_run = alist(EVENT_LEVEL_MUNDANE = null, EVENT_LEVEL_MODERATE = null, EVENT_LEVEL_MAJOR = list("lower" = 80 MINUTES, "upper" = 100 MINUTES))
 	/// The lowest delay until next event
-	var/static/list/event_delay_lower = list(EVENT_LEVEL_MUNDANE = 10 MINUTES, EVENT_LEVEL_MODERATE = 30 MINUTES, EVENT_LEVEL_MAJOR = 50 MINUTES)
+	var/static/list/event_delay_lower = alist(EVENT_LEVEL_MUNDANE = 10 MINUTES, EVENT_LEVEL_MODERATE = 30 MINUTES, EVENT_LEVEL_MAJOR = 50 MINUTES)
 	/// The upper delay until next event
-	var/static/list/event_delay_upper = list(EVENT_LEVEL_MUNDANE = 15 MINUTES, EVENT_LEVEL_MODERATE = 45 MINUTES, EVENT_LEVEL_MAJOR = 70 MINUTES)
+	var/static/list/event_delay_upper = alist(EVENT_LEVEL_MUNDANE = 15 MINUTES, EVENT_LEVEL_MODERATE = 45 MINUTES, EVENT_LEVEL_MAJOR = 70 MINUTES)
 
 	var/abandon_allowed = 1
 	var/ooc_allowed = 1

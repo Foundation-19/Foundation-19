@@ -86,11 +86,17 @@
 
 
 /obj/structure/janitorialcart/attack_hand(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return
 
-/obj/structure/janitorialcart/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/structure/janitorialcart/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Janicart", "Janitorial cart", 240, 160)
+		ui.open()
+
+/obj/structure/janitorialcart/tgui_data(mob/user)
+	var/data = list()
 	data["name"] = capitalize(name)
 	data["bag"] = mybag ? capitalize(mybag.name) : null
 	data["mop"] = mymop ? capitalize(mymop.name) : null
@@ -98,21 +104,20 @@
 	data["replacer"] = myreplacer ? capitalize(myreplacer.name) : null
 	data["signs"] = signs ? "[signs] sign\s" : null
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "janitorcart.tmpl", "Janitorial cart", 240, 160)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
-/obj/structure/janitorialcart/Topic(href, href_list)
+/obj/structure/janitorialcart/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
 	if(!in_range(src, usr))
-		return
+		return TRUE
 	if(!isliving(usr))
-		return
+		return TRUE
 	var/mob/living/user = usr
 
-	if(href_list["take"])
-		switch(href_list["take"])
+	if(action == "take")
+		switch(params["take"])
 			if("garbage")
 				if(mybag)
 					user.put_in_hands(mybag)
@@ -145,7 +150,7 @@
 						signs = 0
 
 	update_icon()
-	updateUsrDialog()
+	return TRUE
 
 
 /obj/structure/janitorialcart/on_update_icon()

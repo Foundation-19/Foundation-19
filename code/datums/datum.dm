@@ -42,7 +42,6 @@
 	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	weakref = null // Clear this reference to ensure it's kept for as brief duration as possible.
 
-	SSnano.close_uis(src)
 	SStgui.close_uis(src)
 
 	var/list/timers = active_timers

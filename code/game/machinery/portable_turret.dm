@@ -190,12 +190,22 @@ var/list/turret_icons
 
 	return 0
 
+/obj/machinery/porta_turret/proc/HasController()
+	var/area/A = get_area(src)
+	return A?.turret_controls.len > 0
+
 /obj/machinery/porta_turret/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/porta_turret/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/porta_turret/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "TurretControl", "Turret Controls")
+		ui.open()
+
+/obj/machinery/porta_turret/tgui_data(mob/user)
+	var/list/data = list()
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
 	data["enabled"] = enabled
@@ -203,65 +213,50 @@ var/list/turret_icons
 	data["lethal"] = lethal
 
 	if(data["access"])
-		var/settings[0]
-		settings[++settings.len] = list("category" = "Neutralize All Non-Synthetics", "setting" = "check_synth", "value" = check_synth)
-		settings[++settings.len] = list("category" = "Check Weapon Authorization", "setting" = "check_weapons", "value" = check_weapons)
-		settings[++settings.len] = list("category" = "Check Security Records", "setting" = "check_records", "value" = check_records)
-		settings[++settings.len] = list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest)
-		settings[++settings.len] = list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access)
-		settings[++settings.len] = list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies)
+		var/list/settings = list()
+		settings += list(list("category" = "Neutralize All Non-Synthetics", "setting" = "check_synth", "value" = check_synth))
+		settings += list(list("category" = "Check Weapon Authorization", "setting" = "check_weapons", "value" = check_weapons))
+		settings += list(list("category" = "Check Security Records", "setting" = "check_records", "value" = check_records))
+		settings += list(list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest))
+		settings += list(list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access))
+		settings += list(list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies))
 		data["settings"] = settings
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "turret_control.tmpl", "Turret Controls", 500, 300)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/obj/machinery/porta_turret/proc/HasController()
-	var/area/A = get_area(src)
-	return A?.turret_controls.len > 0
-
-/obj/machinery/porta_turret/CanUseTopic(mob/user)
+/obj/machinery/porta_turret/tgui_status(mob/user, datum/tgui_state/state)
 	if(HasController())
 		to_chat(user, SPAN_NOTICE("Turrets can only be controlled using the assigned turret controller."))
 		return STATUS_CLOSE
-
 	if(isLocked(user))
 		return STATUS_CLOSE
-
 	if(!anchored)
-		to_chat(usr, SPAN_NOTICE("\The [src] has to be secured first!"))
+		to_chat(user, SPAN_NOTICE("\The [src] has to be secured first!"))
 		return STATUS_CLOSE
-
 	return ..()
 
-
-/obj/machinery/porta_turret/Topic(href, href_list)
+/obj/machinery/porta_turret/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
-	if(href_list["command"] && href_list["value"])
-		var/value = text2num(href_list["value"])
-		if(href_list["command"] == "enable")
+	var/value = text2num(params["value"])
+	switch(action)
+		if("enable")
 			enabled = value
-		else if(href_list["command"] == "lethal")
+		if("lethal")
 			lethal = value
-		else if(href_list["command"] == "check_synth")
+		if("check_synth")
 			check_synth = value
-		else if(href_list["command"] == "check_weapons")
+		if("check_weapons")
 			check_weapons = value
-		else if(href_list["command"] == "check_records")
+		if("check_records")
 			check_records = value
-		else if(href_list["command"] == "check_arrest")
+		if("check_arrest")
 			check_arrest = value
-		else if(href_list["command"] == "check_access")
+		if("check_access")
 			check_access = value
-		else if(href_list["command"] == "check_anomalies")
+		if("check_anomalies")
 			check_anomalies = value
-
-		return 1
+	return TRUE
 
 /obj/machinery/porta_turret/power_change()
 	if(powered())

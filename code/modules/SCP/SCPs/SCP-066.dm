@@ -32,15 +32,16 @@
 
 	var/emote_passive_track = 0
 	var/emote_harmful_track = 0
+	var/spawn_area
 
 
 /mob/living/simple_animal/friendly/retaliate/scp066/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"ball of yarn", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"066", //Numerical Designation
+		src,
+		"ball of yarn",
+		SCP_EUCLID,
+		"066",
 		SCP_PLAYABLE|SCP_MEMETIC
 	)
 
@@ -50,6 +51,7 @@
 	SCP.compInit()
 
 	add_language(LANGUAGE_ENGLISH)
+	spawn_area = get_area(src)
 
 		// emotes
 	add_verb(src, list(
@@ -167,6 +169,21 @@
 		playsound(src, 'sounds/scp/066/BeethovenLOUD.ogg', 40)
 		show_sound_effect(loc, src)
 		emote_harmful_track = world.time
+		if(SCP && SCP.research && istype(loc, /obj/structure/scp_soundproof_locker))
+			visible_message(SPAN_WARNING("The soundproof locker muffles the noise!"))
+		else if(SCP && SCP.research && scp066_in_stabilizer_field(src))
+			visible_message(SPAN_WARNING("A nearby harmonic stabilizer absorbs the escalation - the noise collapses into harmless static!"))
+			playsound(src, 'sounds/scp/066/BeethovenLOUD.ogg', 20, TRUE)
+		else if(SCP && SCP.research)
+			for(var/mob/living/carbon/human/H in hearers(7, src))
+				if(!H.SCP)
+					H.ear_damage += 5
+					H.Stun(3)
+					to_chat(H, SPAN_DANGER("The deafening noise overwhelms you!"))
+			for(var/mob/living/carbon/human/sec in GLOB.human_mob_list)
+				var/datum/job/job = SSjobs.get_by_title(sec.job)
+				if(job && (job.department_flag & (COM|SCI|SEC)))
+					to_chat(sec, SPAN_WARNING("<b>ALERT:</b> SCP-066 has produced a deafening noise event!"))
 		return TRUE
 	else
 		to_chat(usr, SPAN_WARNING("You are on cooldown!"))

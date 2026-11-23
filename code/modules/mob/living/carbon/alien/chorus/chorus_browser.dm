@@ -15,21 +15,19 @@
 	nano_data = list("buildings" = buildings, "selected" = null, "has_selected" = FALSE, "resources" = rscs)
 
 /mob/living/carbon/alien/chorus/proc/open_building_menu()
-	ui_interact(src)
+	tgui_interact(src)
 
-/mob/living/carbon/alien/chorus/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, uistate = GLOB.self_state)
+/mob/living/carbon/alien/chorus/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/uistate = GLOB.self_state)
 	if(selected_building)
 		nano_data["has_selected"] = TRUE
 		nano_data["selected"] = selected_building.get_nano_data(src)
 	else
 		nano_data["has_selected"] = FALSE
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, nano_data, force_open)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "chorus.tmpl", "Chorus Menu" , 650, 600, state = uistate)
-		ui.set_initial_data(nano_data)
+		ui = new(user, src, "ChorusBrowser", "Chorus Menu", 650, 600, state = uistate)
 		ui.open()
-		ui.set_auto_update(TRUE)
 
 /mob/living/carbon/alien/chorus/proc/update_nano_resource(datum/chorus_resource/resource)
 	for(var/i in 1 to length(nano_data["resources"]))

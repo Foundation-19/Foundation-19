@@ -45,11 +45,7 @@
 		container =  RC
 		update_icon()
 		to_chat(user, SPAN_NOTICE("You set \the [RC] on \the [src]."))
-		SSnano.update_uis(src) // update all UIs attached to src
-
-	else
-		..()
-	return
+		SStgui.update_uis(src)
 
 /obj/machinery/chemical_dispenser/proc/eject_beaker(mob/user)
 	if(!container)
@@ -59,16 +55,25 @@
 	container = null
 	update_icon()
 
-/obj/machinery/chemical_dispenser/ui_interact(mob/user, ui_key = "main",datum/nanoui/ui = null, force_open = 1)
-	// this is the data which will be sent to the ui
-	var/data[0]
+/obj/machinery/chemical_dispenser/interface_interact(mob/user)
+	tgui_interact(user)
+	return TRUE
+
+/obj/machinery/chemical_dispenser/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ChemicalDispenser", ui_title)
+		ui.open()
+
+/obj/machinery/chemical_dispenser/tgui_data(mob/user)
+	var/list/data = list()
 	data["amount"] = amount
 	data["isBeakerLoaded"] = container ? 1 : 0
 	data["glass"] = accept_drinking
-	var beakerD[0]
+	var/list/beakerD = list()
 	if(container && container.reagents && container.reagents.reagent_list.len)
 		for(var/datum/reagent/R in container.reagents.reagent_list)
-			beakerD[++beakerD.len] = list("name" = R.name, "volume" = R.volume)
+			beakerD.Add(list(list("name" = R.name, "volume" = R.volume)))
 	data["beakerContents"] = beakerD
 
 	if(container)
@@ -78,60 +83,42 @@
 		data["beakerCurrentVolume"] = null
 		data["beakerMaxVolume"] = null
 
-	var chemicals[0]
+	var/list/chemicals = list()
 	for(var/label in disp_reagents)
-		chemicals[++chemicals.len] = list("label" = label)
+		chemicals.Add(list(list("label" = label)))
 	data["chemicals"] = chemicals
+	return data
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "chem_disp.tmpl", ui_title, 390, 680)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/chemical_dispenser/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-/obj/machinery/chemical_dispenser/OnTopic(mob/user, href_list)
-	if(href_list["amount"])
-		amount = round(text2num(href_list["amount"]), 1) // round to nearest 1
-		amount = max(0, min(120, amount)) // Since the user can actually type the commands himself, some sanity checking
-		return TOPIC_REFRESH
-
-	if(href_list["dispense"])
-		var/label = href_list["dispense"]
-		if(!user.skill_check(core_skill, SKILL_BASIC) && prob(25))
-			label = pick(disp_reagents)
-		if(disp_reagents[label] && container && container.is_open_container())
-			var/datum/reagent/R = disp_reagents[label]
-			var/mult = 1 + (-0.5 + round(rand(), 0.1))*(user.skill_fail_chance(core_skill, 0.3, SKILL_TRAINED))
-			container.reagents.add_reagent(R, amount*mult)
-			var/contaminants_left = rand(0, max(SKILL_TRAINED - user.get_skill_value(core_skill), 0)) * can_contaminate
-			var/choices = disp_reagents.Copy()
-			while(length(choices) && contaminants_left)
-				var/chosen_label = pick_n_take(choices)
-				var/datum/reagent/choice = disp_reagents[chosen_label]
-				if(choice == R)
-					continue
-				container.reagents.add_reagent(choice, round(rand()*amount/5, 0.1))
-				contaminants_left--
-			return TOPIC_REFRESH
-		return TOPIC_HANDLED
-
-	else if(href_list["ejectBeaker"])
-		eject_beaker(user)
-		return TOPIC_REFRESH
-
-
-
-/obj/machinery/chemical_dispenser/AltClick(mob/user)
-	if(CanDefaultInteract(user))
-		eject_beaker(user)
-	else
-		..()
-
-/obj/machinery/chemical_dispenser/interface_interact(mob/user)
-	ui_interact(user)
-	return TRUE
+	switch(action)
+		if("amount")
+			amount = round(text2num(params["amount"]), 1)
+			amount = max(0, min(120, amount))
+			return TRUE
+		if("dispense")
+			var/label = params["dispense"]
+			if(!usr.skill_check(core_skill, SKILL_BASIC) && prob(25))
+				label = pick(disp_reagents)
+			if(disp_reagents[label] && container && container.is_open_container())
+				var/datum/reagent/R = disp_reagents[label]
+				var/mult = 1 + (-0.5 + round(rand(), 0.1))*(usr.skill_fail_chance(core_skill, 0.3, SKILL_TRAINED))
+				container.reagents.add_reagent(R, amount*mult)
+				var/contaminants_left = rand(0, max(SKILL_TRAINED - usr.get_skill_value(core_skill), 0)) * can_contaminate
+				var/choices = disp_reagents.Copy()
+				while(length(choices) && contaminants_left)
+					var/chosen_label = pick_n_take(choices)
+					var/datum/reagent/choice = disp_reagents[chosen_label]
+					if(choice == R)
+						continue
+					container.reagents.add_reagent(choice, round(rand()*amount/5, 0.1))
+					contaminants_left--
+			return TRUE
+		if("ejectBeaker")
+			eject_beaker(usr)
+			return TRUE
 
 /obj/machinery/chemical_dispenser/on_update_icon()
 	cut_overlays()

@@ -10,7 +10,7 @@
 		to_chat(user, SPAN_NOTICE("You load the [I.name] into the storage compartment."));\
 		##slot = I;\
 		update_icon();\
-		SSnano.update_uis(src);\
+		SStgui.update_uis(src);\
 		return\
 	}
 
@@ -107,7 +107,7 @@
 			panelopen = !panelopen
 			playsound(loc, 'sounds/items/Screwdriver.ogg', 100, 1)
 			to_chat(user, SPAN_NOTICE("You [panelopen ? "open" : "close"] the unit's maintenance panel."))
-			SSnano.update_uis(src)
+			SStgui.update_uis(src)
 			update_icon()
 		 return
 	if(isCrowbar(I))
@@ -116,7 +116,7 @@
 			if(do_after(user, 7 SECONDS, src, bonus_percentage = 25))
 				isopen = TRUE
 				to_chat(user, SPAN_NOTICE("You pry the unit open."))
-				SSnano.update_uis(src)
+				SStgui.update_uis(src)
 				update_icon()
 		else if(islocked)
 			to_chat(user, SPAN_WARNING("You can't pry the unit open, it's locked!"))
@@ -145,7 +145,7 @@
 			isopen = FALSE
 			add_fingerprint(user)
 			qdel(G)
-			SSnano.update_uis(src)
+			SStgui.update_uis(src)
 			update_icon()
 		return
 
@@ -155,80 +155,80 @@
 	TRY_INSERT_SUIT_PIECE(tank, tank)
 	TRY_INSERT_SUIT_PIECE(mask, clothing/mask)
 	update_icon()
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 /obj/machinery/suit_storage_unit/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/suit_storage_unit/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/list/data = list()
+/obj/machinery/suit_storage_unit/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SuitStorageUnit", "Suit Storage Unit")
+		ui.open()
 
+/obj/machinery/suit_storage_unit/tgui_data(mob/user)
+	var/list/data = list()
 	data["panelopen"] = panelopen
 	data["open"] = isopen
 	data["locked"] = islocked
 	data["uv"] = isUV
 	data["superuv"] = issuperUV
 	data["safeties"] = safetieson
-	data["helmet"] = helmet
-	data["suit"] = suit
-	data["boots"] = boots
-	data["tank"] = tank
-	data["mask"] = mask
+	data["helmet"] = helmet ? helmet.name : null
+	data["suit"] = suit ? suit.name : null
+	data["boots"] = boots ? boots.name : null
+	data["tank"] = tank ? tank.name : null
+	data["mask"] = mask ? mask.name : null
+	data["occupant"] = occupant ? TRUE : FALSE
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "suit_storage_unit.tmpl", "Suit Storage Unit", 400, 500)
-		ui.set_initial_data(data)
-		ui.open()
+/obj/machinery/suit_storage_unit/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-/obj/machinery/suit_storage_unit/CanUseTopic(mob/user)
-	if(!ISADVANCEDTOOLUSER(user))
-		return STATUS_CLOSE
-	return ..()
-
-/obj/machinery/suit_storage_unit/OnTopic(user, list/href_list, datum/topic_state/state)
-	if(href_list["toggleUV"])
-		toggleUV(user)
-		return TOPIC_REFRESH
-	if(href_list["togglesafeties"])
-		togglesafeties(user)
-		return TOPIC_REFRESH
-	if(href_list["dispense_helmet"])
-		dispense_helmet()
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["dispense_suit"])
-		dispense_suit()
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["dispense_boots"])
-		dispense_boots()
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["dispense_tank"])
-		dispense_tank()
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["dispense_mask"])
-		dispense_mask()
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["toggle_open"])
-		toggle_open(user)
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["toggle_lock"])
-		toggle_lock(user)
-		return TOPIC_REFRESH
-	if(href_list["start_UV"])
-		start_UV(user)
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["eject_guy"])
-		eject_occupant(user)
-		update_icon()
-		return TOPIC_REFRESH
+	switch(action)
+		if("toggleUV")
+			toggleUV(usr)
+			return TRUE
+		if("togglesafeties")
+			togglesafeties(usr)
+			return TRUE
+		if("dispense_helmet")
+			dispense_helmet()
+			update_icon()
+			return TRUE
+		if("dispense_suit")
+			dispense_suit()
+			update_icon()
+			return TRUE
+		if("dispense_boots")
+			dispense_boots()
+			update_icon()
+			return TRUE
+		if("dispense_tank")
+			dispense_tank()
+			update_icon()
+			return TRUE
+		if("dispense_mask")
+			dispense_mask()
+			update_icon()
+			return TRUE
+		if("toggle_open")
+			toggle_open(usr)
+			update_icon()
+			return TRUE
+		if("toggle_lock")
+			toggle_lock(usr)
+			return TRUE
+		if("start_UV")
+			start_UV(usr)
+			update_icon()
+			return TRUE
+		if("eject_guy")
+			eject_occupant(usr)
+			update_icon()
+			return TRUE
 
 /obj/machinery/suit_storage_unit/proc/dispense_helmet()
 	dispense_clothing(helmet)
@@ -318,7 +318,7 @@
 	isUV = TRUE
 	update_use_power(POWER_USE_ACTIVE)
 	update_icon()
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 	var/datum/callback/uvburn = CALLBACK(src, PROC_REF(uv_burn))
 	addtimer(uvburn, 5 SECONDS)
@@ -371,7 +371,7 @@
 			mask.clean()
 	update_use_power(POWER_USE_IDLE)
 	update_icon()
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 /obj/machinery/suit_storage_unit/proc/eject_occupant(mob/user)
 	if(islocked)
@@ -395,7 +395,7 @@
 		return
 	eject_occupant(usr)
 	add_fingerprint(usr)
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 	update_icon()
 
 /obj/machinery/suit_storage_unit/verb/move_inside()
@@ -423,7 +423,7 @@
 		isopen = FALSE
 		update_icon()
 		add_fingerprint(usr)
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 
 #undef TRY_INSERT_SUIT_PIECE
 #undef dispense_clothing

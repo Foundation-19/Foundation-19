@@ -120,54 +120,48 @@ Thus, the two variables affect pump operation are set in New():
 	else
 		return air2
 
-/obj/machinery/atmospherics/binary/pump/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/atmospherics/binary/pump/tgui_interact(mob/user, datum/tgui/ui)
 	if(stat & (BROKEN|NOPOWER))
 		return
 
-	// this is the data which will be sent to the ui
-	var/data[0]
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "GasPump", name, 470, 290)
+		ui.open()
 
-	data = list(
-		"on" = use_power,
-		"pressure_set" = round(target_pressure*100),	//Nano UI can't handle rounded non-integers, apparently.
-		"max_pressure" = max_pressure_setting,
-		"last_flow_rate" = round(last_flow_rate*10),
-		"last_power_draw" = round(last_power_draw),
-		"max_power_draw" = power_rating,
-	)
-
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "gas_pump.tmpl", name, 470, 290)
-		ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
-		ui.open()					// open the new ui window
-		ui.set_auto_update(1)		// auto update every Master Controller tick
+/obj/machinery/atmospherics/binary/pump/tgui_data(mob/user)
+	var/list/data = list()
+	data["on"] = use_power
+	data["pressure_set"] = round(target_pressure*100)
+	data["max_pressure"] = max_pressure_setting
+	data["last_flow_rate"] = round(last_flow_rate*10)
+	data["last_power_draw"] = round(last_power_draw)
+	data["max_power_draw"] = power_rating
+	return data
 
 /obj/machinery/atmospherics/binary/pump/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/atmospherics/binary/pump/Topic(href,href_list)
-	if((. = ..())) return
+/obj/machinery/atmospherics/binary/pump/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-	if(href_list["power"])
+	if(action == "power")
 		update_use_power(!use_power)
-		. = 1
+		. = TRUE
 
-	switch(href_list["set_press"])
-		if ("min")
+	switch(params["set_press"])
+		if("min")
 			target_pressure = 0
-			. = 1
-		if ("max")
+			. = TRUE
+		if("max")
 			target_pressure = max_pressure_setting
-			. = 1
-		if ("set")
+			. = TRUE
+		if("set")
 			var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure control",src.target_pressure) as num
 			src.target_pressure = between(0, new_pressure, max_pressure_setting)
-			. = 1
+			. = TRUE
 
 	if(.)
 		src.update_icon()

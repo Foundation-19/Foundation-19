@@ -8,6 +8,7 @@
 	bound_height = 64
 	anchored = TRUE
 	density = TRUE
+	req_access = list(ACCESS_SCIENCE_LVL3)
 
 	var/current_mode = MODE_ONE_TO_ONE
 	/// When TRUE - cannot be interacted with at all
@@ -103,10 +104,15 @@
 	return ..()
 
 /obj/structure/scp_914/proc/CanOperate(mob/user)
-	if(!ishuman(user)) // Silently forbid them from operating it
+	if(!ishuman(user))
 		return FALSE
 
-	if(user.SCP) // Some SCPs are humans, for whatever reason
+	if(user.SCP)
+		return FALSE
+
+	var/obj/item/card/id/id = user.GetIdCard()
+	if(!id || !id.check_access(req_access))
+		to_chat(user, SPAN_WARNING("Access denied. Swipe your ID card to operate SCP-914."))
 		return FALSE
 
 	if(processing)

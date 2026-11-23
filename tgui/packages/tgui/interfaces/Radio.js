@@ -1,133 +1,92 @@
-import { map } from 'common/collections';
-import { toFixed } from 'common/math';
-
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NumberInput, Section } from '../components';
-import { RADIO_CHANNELS } from '../constants';
+import { Box, Button, LabeledList, Section, NumberInput } from '../components';
 import { Window } from '../layouts';
 
 export const Radio = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    freqlock,
-    frequency,
-    minFrequency,
-    maxFrequency,
-    listening,
-    broadcasting,
-    command,
-    useCommand,
+    power,
+    mic_status,
+    speaker,
+    freq,
+    default_freq,
+    rawfreq,
+    charge,
+    mic_cut,
+    spk_cut,
+    chan_list,
+    chan_list_len,
+    useSyndMode,
+    has_loudspeaker,
+    loudspeaker,
+    has_subspace,
     subspace,
-    subspaceSwitchable,
   } = data;
-  const tunedChannel = RADIO_CHANNELS.find(
-    (channel) => channel.freq === frequency,
-  );
-  const channels = map((value, key) => ({
-    name: key,
-    status: !!value,
-  }))(data.channels);
-  // Calculate window height
-  let height = 106;
-  if (subspace) {
-    if (channels.length > 0) {
-      height += channels.length * 21 + 6;
-    } else {
-      height += 24;
-    }
-  }
   return (
-    <Window width={360} height={height}>
-      <Window.Content>
+    <Window width={400} height={430}>
+      <Window.Content scrollable>
         <Section>
           <LabeledList>
+            <LabeledList.Item label="Power">
+              <Button selected={power} onClick={() => act('power')}>
+                {power ? "On" : "Off"}
+              </Button>
+            </LabeledList.Item>
+            <LabeledList.Item label="Microphone">
+              <Button selected={mic_status} disabled={mic_cut} onClick={() => act('talk')}>
+                {mic_cut ? "CUT" : mic_status ? "On" : "Off"}
+              </Button>
+            </LabeledList.Item>
+            <LabeledList.Item label="Speaker">
+              <Button selected={speaker} disabled={spk_cut} onClick={() => act('listen')}>
+                {spk_cut ? "CUT" : speaker ? "On" : "Off"}
+              </Button>
+            </LabeledList.Item>
             <LabeledList.Item label="Frequency">
-              {(freqlock && (
-                <Box inline color="light-gray">
-                  {toFixed(frequency / 10, 1) + ' kHz'}
-                </Box>
-              )) || (
-                <NumberInput
-                  animate
-                  unit="kHz"
-                  step={0.2}
-                  stepPixelSize={10}
-                  minValue={minFrequency / 10}
-                  maxValue={maxFrequency / 10}
-                  value={frequency / 10}
-                  format={(value) => toFixed(value, 1)}
-                  onDrag={(e, value) =>
-                    act('frequency', {
-                      adjust: value - frequency / 10,
-                    })
-                  }
-                />
-              )}
-              {tunedChannel && (
-                <Box inline color={tunedChannel.color} ml={2}>
-                  [{tunedChannel.name}]
-                </Box>
-              )}
+              {freq} kHz
+              <Button ml={1} onClick={() => act('freq', { freq: -2 })}>-</Button>
+              <Button ml={1} onClick={() => act('freq', { freq: 2 })}>+</Button>
+              {!!default_freq && <Button ml={1} onClick={() => act('default_freq')}>Reset</Button>}
             </LabeledList.Item>
-            <LabeledList.Item label="Audio">
-              <Button
-                textAlign="center"
-                width="37px"
-                icon={listening ? 'volume-up' : 'volume-mute'}
-                selected={listening}
-                onClick={() => act('listen')}
-              />
-              <Button
-                textAlign="center"
-                width="37px"
-                icon={broadcasting ? 'microphone' : 'microphone-slash'}
-                selected={broadcasting}
-                onClick={() => act('broadcast')}
-              />
-              {!!command && (
-                <Button
-                  ml={1}
-                  icon="bullhorn"
-                  selected={useCommand}
-                  content={`High volume ${useCommand ? 'ON' : 'OFF'}`}
-                  onClick={() => act('command')}
-                />
-              )}
-              {!!subspaceSwitchable && (
-                <Button
-                  ml={1}
-                  icon="bullhorn"
-                  selected={subspace}
-                  content={`Subspace Tx ${subspace ? 'ON' : 'OFF'}`}
-                  onClick={() => act('subspace')}
-                />
-              )}
-            </LabeledList.Item>
-            {!!subspace && (
-              <LabeledList.Item label="Channels">
-                {channels.length === 0 && (
-                  <Box inline color="bad">
-                    No encryption keys installed.
-                  </Box>
-                )}
-                {channels.map((channel) => (
-                  <Box key={channel.name}>
-                    <Button
-                      icon={channel.status ? 'check-square-o' : 'square-o'}
-                      selected={channel.status}
-                      content={channel.name}
-                      onClick={() =>
-                        act('channel', {
-                          channel: channel.name,
-                        })
-                      }
-                    />
-                  </Box>
-                ))}
+            {!!charge && <LabeledList.Item label="Battery">{charge}</LabeledList.Item>}
+            {!!has_loudspeaker && (
+              <LabeledList.Item label="Loudspeaker">
+                <Button selected={loudspeaker} onClick={() => act('shutup', { shutup: loudspeaker ? 0 : 1 })}>
+                  {loudspeaker ? "On" : "Off"}
+                </Button>
+              </LabeledList.Item>
+            )}
+            {!!has_subspace && (
+              <LabeledList.Item label="Subspace">
+                <Button selected={subspace} onClick={() => act('mode', { mode: subspace ? 0 : 1 })}>
+                  {subspace ? "On" : "Off"}
+                </Button>
               </LabeledList.Item>
             )}
           </LabeledList>
         </Section>
+        {!!chan_list && chan_list_len > 0 && (
+          <Section title="Channels">
+            {chan_list.map((ch, i) => (
+              <Box key={i} mb={1}>
+                {!!ch.sec_channel_listen ? (
+                  <Button onClick={() => act('listen', { ch_name: ch.chan })}>
+                    {ch.chan} {ch.sec_channel_listen ? "[Locked]" : ""}
+                  </Button>
+                ) : (
+                  <Button selected={!ch.sec_channel_listen} onClick={() => act('listen', { ch_name: ch.chan })}>
+                    {ch.chan}
+                  </Button>
+                )}
+                {!!ch.sec_channel && (
+                  <Button ml={1} icon={ch.sec_channel_listen ? "lock" : "unlock"} onClick={() => act('listen', { ch_name: ch.chan })}>
+                    Listen
+                  </Button>
+                )}
+              </Box>
+            ))}
+          </Section>
+        )}
       </Window.Content>
     </Window>
   );

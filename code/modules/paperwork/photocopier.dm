@@ -16,87 +16,81 @@
 	var/maxcopies = 10	//how many copies can be copied at once- idea shamelessly stolen from bs12's copier!
 
 /obj/machinery/photocopier/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/photocopier/interact(mob/user)
-	user.set_machine(src)
+/obj/machinery/photocopier/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Photocopier", "Photocopier", 380, 320)
+		ui.open()
 
-	var/dat = "Photocopier<BR><BR>"
+/obj/machinery/photocopier/tgui_data(mob/user)
+	var/list/data = list()
+	data["has_item"] = copyitem ? TRUE : FALSE
 	if(copyitem)
-		dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><BR>"
-		if(toner)
-			dat += "<a href='byond://?src=\ref[src];copy=1'>Copy</a><BR>"
-			dat += "Printing: [copies] copies."
-			dat += "<a href='byond://?src=\ref[src];min=1'>-</a> "
-			dat += "<a href='byond://?src=\ref[src];add=1'>+</a><BR><BR>"
-	else if(toner)
-		dat += "Please insert something to copy.<BR><BR>"
-	if(istype(user,/mob/living/silicon))
-		dat += "<a href='byond://?src=\ref[src];aipic=1'>Print photo from database</a><BR><BR>"
-	dat += "Current toner level: [toner]"
-	if(!toner)
-		dat +="<BR>Please insert a new toner cartridge!"
-	show_browser(user, dat, "window=copier")
-	onclose(user, "copier")
-	return
+		data["item_name"] = copyitem.name
+	data["copies"] = copies
+	data["max_copies"] = maxcopies
+	data["toner"] = toner
+	data["can_copy"] = copyitem && toner > 0
+	data["is_silicon"] = istype(user, /mob/living/silicon)
+	return data
 
-/obj/machinery/photocopier/OnTopic(user, href_list, state)
-	if(href_list["copy"])
-		for(var/i = 0, i < copies, i++)
-			if(toner <= 0)
-				break
-			if (istype(copyitem, /obj/item/paper))
-				copy(copyitem, 1)
-				sleep(15)
-			else if (istype(copyitem, /obj/item/photo))
-				photocopy(copyitem)
-				sleep(15)
-			else if (istype(copyitem, /obj/item/paper_bundle))
-				var/obj/item/paper_bundle/B = bundlecopy(copyitem)
-				sleep(15*B.pages.len)
-			else
-				to_chat(user, SPAN_WARNING("\The [copyitem] can't be copied by \the [src]."))
-				break
-
-			use_power_oneoff(active_power_usage)
-		return TOPIC_REFRESH
-
-	if(href_list["remove"])
-		OnRemove(user)
-		return TOPIC_REFRESH
-
-	if(href_list["min"])
-		if(copies > 1)
-			copies--
-		return TOPIC_REFRESH
-
-	else if(href_list["add"])
-		if(copies < maxcopies)
-			copies++
-		return TOPIC_REFRESH
-
-	if(href_list["aipic"])
-		if(!istype(user,/mob/living/silicon)) return
-
-		if(toner >= 5)
-			var/mob/living/silicon/tempAI = user
-			var/obj/item/device/camera/siliconcam/camera = tempAI.silicon_camera
-
-			if(!camera)
+/obj/machinery/photocopier/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(stat & (BROKEN|NOPOWER))
+		return
+	. = TRUE
+	switch(action)
+		if("copy")
+			if(!copyitem || toner <= 0)
 				return
-			var/obj/item/photo/selection = camera.selectpicture()
-			if (!selection)
-				return
-
-			var/obj/item/photo/p = photocopy(selection)
-			if (p.desc == "")
-				p.desc += "Copied by [tempAI.name]"
-			else
-				p.desc += " - Copied by [tempAI.name]"
-			toner -= 5
-			sleep(15)
-		return TOPIC_REFRESH
+			for(var/i = 0, i < copies, i++)
+				if(toner <= 0)
+					break
+				if (istype(copyitem, /obj/item/paper))
+					copy(copyitem, 1)
+					sleep(15)
+				else if (istype(copyitem, /obj/item/photo))
+					photocopy(copyitem)
+					sleep(15)
+				else if (istype(copyitem, /obj/item/paper_bundle))
+					var/obj/item/paper_bundle/B = bundlecopy(copyitem)
+					sleep(15*B.pages.len)
+				else
+					to_chat(usr, SPAN_WARNING("\The [copyitem] can't be copied by \the [src]."))
+					break
+				use_power_oneoff(active_power_usage)
+		if("remove")
+			OnRemove(usr)
+		if("min")
+			if(copies > 1)
+				copies--
+		if("add")
+			if(copies < maxcopies)
+				copies++
+		if("aipic")
+			if(!istype(usr, /mob/living/silicon))
+				return FALSE
+			if(toner >= 5)
+				var/mob/living/silicon/tempAI = usr
+				var/obj/item/device/camera/siliconcam/camera = tempAI.silicon_camera
+				if(!camera)
+					return
+				var/obj/item/photo/selection = camera.selectpicture()
+				if (!selection)
+					return
+				var/obj/item/photo/p = photocopy(selection)
+				if (p.desc == "")
+					p.desc += "Copied by [tempAI.name]"
+				else
+					p.desc += " - Copied by [tempAI.name]"
+				toner -= 5
+				sleep(15)
+		else
+			return FALSE
 
 /obj/machinery/photocopier/proc/OnRemove(mob/user)
 	if(copyitem)
@@ -112,7 +106,7 @@
 			copyitem = O
 			to_chat(user, SPAN_NOTICE("You insert \the [O] into \the [src]."))
 			flick(insert_anim, src)
-			updateUsrDialog()
+			SStgui.update_uis(src)
 		else
 			to_chat(user, SPAN_NOTICE("There is already something in \the [src]."))
 	else if(istype(O, /obj/item/device/toner))
@@ -123,7 +117,7 @@
 			var/obj/item/device/toner/T = O
 			toner += T.toner_amount
 			qdel(O)
-			updateUsrDialog()
+			SStgui.update_uis(src)
 		else
 			to_chat(user, SPAN_NOTICE("This cartridge is not yet ready for replacement! Use up the rest of the toner."))
 	else ..()

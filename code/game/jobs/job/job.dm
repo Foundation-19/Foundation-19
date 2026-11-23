@@ -156,7 +156,7 @@
 		H.mind.mana.mana_level = H.mind.mana.mana_level_max
 		H.mind.mana.mana_recharge_speed *= 2
 	if(prob(higher_spell_points_chance))
-		H.mind.mana.spell_points += pickweight(1 = 30, 2 = 12, 3 = 4, 4 = 1)
+		H.mind.mana.spell_points += pickweight(alist(1 = 30, 2 = 12, 3 = 4, 4 = 1))
 
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title)
 	if(outfit)

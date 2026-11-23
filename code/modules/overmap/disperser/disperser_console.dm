@@ -122,12 +122,18 @@
 	var/obj/structure/closet/C = locate() in get_turf(back)
 	return C
 
-/obj/machinery/computer/ship/disperser/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = TRUE)
+/obj/machinery/computer/ship/disperser/tgui_interact(mob/user, datum/tgui/ui)
 	if(!linked)
 		display_reconnect_dialog(user, "disperser synchronization")
 		return
 
-	var/data[0]
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "DisperserConsole", "[linked.name] obstruction field disperser control", 400, 550)
+		ui.open()
+
+/obj/machinery/computer/ship/disperser/tgui_data(mob/user)
+	var/list/data = list()
 
 	if (!link_parts())
 		data["faillink"] = TRUE
@@ -139,61 +145,54 @@
 		data["range"] = range
 		data["next_shot"] = round(get_next_shot_seconds())
 		data["nopower"] = !data["faillink"] && (!front.powered() || !middle.powered() || !back.powered())
-		data["skill"] = user.get_skill_value(core_skill) > skill_offset
+		data["skill"] = usr.get_skill_value(core_skill) > skill_offset
 
-		var/charge = SPAN_BOLD("UNKNOWN ERROR")
-		switch(get_charge_type())
-			if(OVERMAP_WEAKNESS_NONE)
-				charge = "[SPAN_BOLD("ERROR")]: No valid charge detected."
-			if(OVERMAP_WEAKNESS_DROPPOD)
-				charge = "HERMES"
-			else
-				var/obj/structure/ship_munition/disperser_charge/B = get_charge()
-				charge = B.chargedesc
-		data["chargeload"] = charge
+		data["chargeload"] = "No charge detected."
+		var/charge_type = get_charge_type()
+		if(charge_type == OVERMAP_WEAKNESS_NONE)
+			data["chargeload"] = "ERROR: No valid charge detected."
+		else if(charge_type == OVERMAP_WEAKNESS_DROPPOD)
+			data["chargeload"] = "HERMES"
+		else
+			var/obj/structure/ship_munition/disperser_charge/B = get_charge()
+			if(B)
+				data["chargeload"] = B.chargedesc
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "disperser.tmpl", "[linked.name] obstruction field disperser control", 400, 550)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/obj/machinery/computer/ship/disperser/OnTopic(mob/user, list/href_list, state)
-	. = ..()
-	if(.)
-		return
+/obj/machinery/computer/ship/disperser/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
 	if(!linked)
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["choose"])
-		overmapdir = sanitize_integer(text2num(href_list["choose"]), 0, 9, 0)
+	if (action == "choose")
+		overmapdir = sanitize_integer(text2num(params["choose"]), 0, 9, 0)
 		reset_calibration()
 
-	if(href_list["calibration"])
+	if(action == "calibration")
 		var/input = input("0-9", "disperser calibration", 0) as num|null
-		if(!isnull(input)) //can be zero so we explicitly check for null
-			var/calnum = sanitize_integer(text2num(href_list["calibration"]), 0, caldigit)//sanitiiiiize
-			calibration[calnum + 1] = sanitize_integer(input, 0, 9, 0)//must add 1 because nanoui indexes from 0
+		if(!isnull(input))
+			var/calnum = sanitize_integer(text2num(params["calibration"]), 0, caldigit)
+			calibration[calnum + 1] = sanitize_integer(input, 0, 9, 0)
 
-	if(href_list["skill_calibration"])
-		for(var/i = 1 to min(caldigit, user.get_skill_value(core_skill) - skill_offset))
+	if(action == "skill_calibration")
+		for(var/i = 1 to min(caldigit, usr.get_skill_value(core_skill) - skill_offset))
 			calibration[i] = calexpected[i]
 
-	if(href_list["strength"])
+	if(action == "strength")
 		var/input = input("1-5", "disperser strength", 1) as num|null
-		if(input && CanInteract(user, state))
+		if(input && CanInteract(usr, state))
 			strength = sanitize_integer(input, 1, 5, 1)
 			middle.idle_power_usage = strength * range * 100
 
-	if(href_list["range"])
+	if(action == "range")
 		var/input = input("1-5", "disperser radius", 1) as num|null
-		if(input && CanInteract(user, state))
+		if(input && CanInteract(usr, state))
 			range = sanitize_integer(input, 1, 5, 1)
 			middle.idle_power_usage = strength * range * 100
 
-	if(href_list["fire"])
-		fire(user)
+	if(action == "fire")
+		fire(usr)
 
-	return TOPIC_REFRESH
+	return TRUE

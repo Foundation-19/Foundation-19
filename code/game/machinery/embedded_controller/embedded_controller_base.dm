@@ -25,13 +25,13 @@
 		program.receive_signal(signal, receive_method, receive_param)
 			//spawn(5) program.process() //no, program.process sends some signals and machines respond and we here again and we lag -rastaf0
 
-/obj/machinery/embedded_controller/Topic(href, href_list)
+/obj/machinery/embedded_controller/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return
+		return TRUE
 	if(usr)
 		usr.set_machine(src)
 	if(program)
-		return program.receive_user_command(href_list["command"]) // Any further sanitization should be done in here.
+		return program.receive_user_command(action)
 
 /obj/machinery/embedded_controller/Process()
 	if(program)
@@ -40,7 +40,7 @@
 	update_icon()
 
 /obj/machinery/embedded_controller/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/embedded_controller/radio

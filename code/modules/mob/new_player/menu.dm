@@ -14,30 +14,12 @@
 	using.hud_ref = weakref(src)
 	adding += using
 
-	using = new /atom/movable/screen/new_player/selection/join_game(src)
-	using.hud_ref = weakref(src)
-	adding += using
-
-	using = new /atom/movable/screen/new_player/selection/settings(src)
-	using.hud_ref = weakref(src)
-	adding += using
-
-	using = new /atom/movable/screen/new_player/selection/manifest(src)
-	using.hud_ref = weakref(src)
-	adding += using
-
-	using = new /atom/movable/screen/new_player/selection/observe(src)
-	using.hud_ref = weakref(src)
-	adding += using
-
 	mymob.client.screen = list()
 	mymob.client.screen += adding
 
 /atom/movable/screen/new_player
 	icon = 'icons/misc/hudmenu.dmi'
 	layer = HUD_ABOVE_ITEM_LAYER
-
-//I am way too lazy to port map specific lobby screens since I heavily doubt we'll ever use them.
 
 /atom/movable/screen/new_player/title
 	name = "Lobby art"
@@ -70,113 +52,6 @@
 			cycle_lobby_screen(lobby_screens)
 	else
 		addtimer(CALLBACK(src, PROC_REF(cycle_lobby_screen), lobby_screens), lobby_transition_delay, TIMER_UNIQUE | TIMER_CLIENT_TIME | TIMER_OVERRIDE)
-
-/atom/movable/screen/new_player/selection/New(datum/hud/H)
-	color = null
-	hud_ref = weakref(H)
-	return ..()
-
-/atom/movable/screen/new_player/selection/MouseEntered(location, control, params)
-	animate(src, color = color_rotation(30), time = 3)
-	return ..()
-
-/atom/movable/screen/new_player/selection/MouseExited(location, control, params)
-	animate(src, color = null, time = 3)
-	return ..()
-
-/atom/movable/screen/new_player/selection/join_game
-	name = "Join Game"
-	icon_state = "unready"
-	screen_loc = "NORTH, CENTER-7"
-
-/atom/movable/screen/new_player/selection/join_game/Initialize()
-	. = ..()
-	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, PROC_REF(update_lobby_icon))
-	update_lobby_icon()
-
-/atom/movable/screen/new_player/selection/join_game/Click()
-	var/datum/hud/hud = hud_ref.resolve()
-	if(!istype(hud))
-		return
-	var/mob/new_player/player = hud.mymob
-	sound_to(player, 'sounds/effects/menu_click.ogg')
-
-	if(!check_rights(R_ADMIN|R_MOD, FALSE, player) && GAME_STATE > RUNLEVEL_LOBBY)
-		var/dsdiff = config.respawn_menu_delay MINUTES - (world.time - player.respawned_time)
-		if(dsdiff > 0)
-			to_chat(player, SPAN_WARNING("You must wait [time2text(dsdiff, "mm:ss")] before rejoining."))
-			return
-
-	if(GAME_STATE <= RUNLEVEL_LOBBY)
-		player.ready = !player.ready
-		to_chat(player, SPAN_NOTICE("You are now [player.ready ? "ready" : "not ready"]."))
-
-	else
-		player.LateChoices() //show the latejoin job selection menu
-
-	update_lobby_icon()
-
-/atom/movable/screen/new_player/selection/join_game/proc/update_lobby_icon()
-	SIGNAL_HANDLER
-
-	var/datum/hud/hud = hud_ref.resolve()
-	if(!istype(hud))
-		return
-	var/mob/new_player/player = hud.mymob
-
-	if(GAME_STATE <= RUNLEVEL_LOBBY)
-		if(player.ready)
-			icon_state = "ready"
-		else
-			icon_state = "unready"
-	else
-		icon_state = "joingame"
-
-/atom/movable/screen/new_player/selection/settings
-	name = "Setup"
-	icon_state = "setup"
-	screen_loc = "NORTH-1,CENTER-7"
-
-/atom/movable/screen/new_player/selection/settings/Click()
-	var/datum/hud/hud = hud_ref.resolve()
-	if(!istype(hud))
-		return
-	var/mob/new_player/player = hud.mymob
-	sound_to(player, 'sounds/effects/menu_click.ogg')
-	player.setupcharacter()
-
-/mob/new_player/proc/setupcharacter()
-	client.prefs.open_setup_window(src) //see code\modules\client\preferences.dm
-	return TRUE
-
-/atom/movable/screen/new_player/selection/manifest
-	name = "Crew Manifest"
-	icon_state = "manifest"
-	screen_loc = "NORTH-2,CENTER-7"
-
-/atom/movable/screen/new_player/selection/manifest/Click()
-	var/datum/hud/hud = hud_ref.resolve()
-	if(!istype(hud))
-		return
-	var/mob/new_player/player = hud.mymob
-	sound_to(player, 'sounds/effects/menu_click.ogg')
-	if(GAME_STATE != (RUNLEVEL_GAME || RUNLEVEL_POSTGAME))
-		to_chat(player, SPAN_WARNING("The game hasn't started yet!"))
-		return
-	player.ViewManifest() //see code\modules\mob\new_player\new_player.dm
-
-/atom/movable/screen/new_player/selection/observe
-	name = "Observe"
-	icon_state = "observe"
-	screen_loc = "NORTH-3,CENTER-7"
-
-/atom/movable/screen/new_player/selection/observe/Click()
-	var/datum/hud/hud = hud_ref.resolve()
-	if(!istype(hud))
-		return
-	var/mob/new_player/player = hud.mymob
-	sound_to(player, 'sounds/effects/menu_click.ogg')
-	player.new_player_observe()
 
 /mob/new_player/proc/new_player_observe()
 	if(GAME_STATE < RUNLEVEL_LOBBY)

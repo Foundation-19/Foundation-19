@@ -27,113 +27,113 @@
 			if(laws.selectable)
 				player_laws += laws
 
-/datum/nano_module/law_manager/Topic(href, href_list)
+/datum/nano_module/law_manager/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
-	if(href_list["set_view"])
-		current_view = text2num(href_list["set_view"])
-		return 1
+	if(action == "set_view")
+		current_view = text2num(params["set_view"])
+		return TRUE
 
-	if(href_list["law_channel"])
-		if(href_list["law_channel"] in owner.law_channels())
-			owner.lawchannel = href_list["law_channel"]
-		return 1
+	if(action == "law_channel")
+		if(params["law_channel"] in owner.law_channels())
+			owner.lawchannel = params["law_channel"]
+		return TRUE
 
-	if(href_list["state_law"])
-		var/datum/ai_law/AL = locate(href_list["ref"]) in owner.laws.all_laws()
+	if(action == "state_law")
+		var/datum/ai_law/AL = locate(params["ref"]) in owner.laws.all_laws()
 		if(AL)
-			var/state_law = text2num(href_list["state_law"])
+			var/state_law = text2num(params["state_law"])
 			owner.laws.set_state_law(AL, state_law)
-		return 1
+		return TRUE
 
-	if(href_list["add_zeroth_law"])
+	if(action == "add_zeroth_law")
 		if(zeroth_law && is_admin(usr) && !owner.laws.zeroth_law)
 			owner.set_zeroth_law(zeroth_law)
-		return 1
+		return TRUE
 
-	if(href_list["add_ion_law"])
+	if(action == "add_ion_law")
 		if(ion_law && is_malf(usr))
 			owner.add_ion_law(ion_law)
-		return 1
+		return TRUE
 
-	if(href_list["add_inherent_law"])
+	if(action == "add_inherent_law")
 		if(inherent_law && is_malf(usr))
 			owner.add_inherent_law(inherent_law)
-		return 1
+		return TRUE
 
-	if(href_list["add_supplied_law"])
+	if(action == "add_supplied_law")
 		if(supplied_law && supplied_law_position >= 1 && MIN_SUPPLIED_LAW_NUMBER <= MAX_SUPPLIED_LAW_NUMBER && is_malf(usr))
 			owner.add_supplied_law(supplied_law_position, supplied_law)
-		return 1
+		return TRUE
 
-	if(href_list["change_zeroth_law"])
+	if(action == "change_zeroth_law")
 		var/new_law = sanitize(input("Enter new law Zero. Leaving the field blank will cancel the edit.", "Edit Law", zeroth_law))
 		if(new_law && new_law != zeroth_law && can_still_topic())
 			zeroth_law = new_law
-		return 1
+		return TRUE
 
-	if(href_list["change_ion_law"])
+	if(action == "change_ion_law")
 		var/new_law = sanitize(input("Enter new ion law. Leaving the field blank will cancel the edit.", "Edit Law", ion_law))
 		if(new_law && new_law != ion_law && can_still_topic())
 			ion_law = new_law
-		return 1
+		return TRUE
 
-	if(href_list["change_inherent_law"])
+	if(action == "change_inherent_law")
 		var/new_law = sanitize(input("Enter new inherent law. Leaving the field blank will cancel the edit.", "Edit Law", inherent_law))
 		if(new_law && new_law != inherent_law && can_still_topic())
 			inherent_law = new_law
-		return 1
+		return TRUE
 
-	if(href_list["change_supplied_law"])
+	if(action == "change_supplied_law")
 		var/new_law = sanitize(input("Enter new supplied law. Leaving the field blank will cancel the edit.", "Edit Law", supplied_law))
 		if(new_law && new_law != supplied_law && can_still_topic())
 			supplied_law = new_law
-		return 1
+		return TRUE
 
-	if(href_list["change_supplied_law_position"])
+	if(action == "change_supplied_law_position")
 		var/new_position = input(usr, "Enter new supplied law position between 1 and [MAX_SUPPLIED_LAW_NUMBER], inclusive. Inherent laws at the same index as a supplied law will not be stated.", "Law Position", supplied_law_position) as num|null
 		if(isnum(new_position) && can_still_topic())
 			supplied_law_position = Clamp(new_position, 1, MAX_SUPPLIED_LAW_NUMBER)
-		return 1
+		return TRUE
 
-	if(href_list["edit_law"])
+	if(action == "edit_law")
 		if(is_malf(usr))
-			var/datum/ai_law/AL = locate(href_list["edit_law"]) in owner.laws.all_laws()
+			var/datum/ai_law/AL = locate(params["edit_law"]) in owner.laws.all_laws()
 			if(AL)
 				var/new_law = sanitize(input(usr, "Enter new law. Leaving the field blank will cancel the edit.", "Edit Law", AL.law))
 				if(new_law && new_law != AL.law && is_malf(usr) && can_still_topic())
 					log_and_message_staff("has changed a law of [owner] from '[AL.law]' to '[new_law]'")
 					AL.law = new_law
-			return 1
+			return TRUE
 
-	if(href_list["delete_law"])
+	if(action == "delete_law")
 		if(is_malf(usr))
-			var/datum/ai_law/AL = locate(href_list["delete_law"]) in owner.laws.all_laws()
+			var/datum/ai_law/AL = locate(params["delete_law"]) in owner.laws.all_laws()
 			if(AL && is_malf(usr))
 				owner.delete_law(AL)
-		return 1
+		return TRUE
 
-	if(href_list["state_laws"])
+	if(action == "state_laws")
 		owner.statelaws(owner.laws)
-		return 1
+		return TRUE
 
-	if(href_list["state_law_set"])
-		var/datum/ai_laws/ALs = locate(href_list["state_law_set"]) in (is_admin(usr) ? admin_laws : player_laws)
+	if(action == "state_law_set")
+		var/datum/ai_laws/ALs = locate(params["state_law_set"]) in (is_admin(usr) ? admin_laws : player_laws)
 		if(ALs)
 			owner.statelaws(ALs)
-		return 1
+		return TRUE
 
-	if(href_list["transfer_laws"])
+	if(action == "transfer_laws")
 		if(is_malf(usr))
-			var/datum/ai_laws/ALs = locate(href_list["transfer_laws"]) in (is_admin(usr) ? admin_laws : player_laws)
+			var/datum/ai_laws/ALs = locate(params["transfer_laws"]) in (is_admin(usr) ? admin_laws : player_laws)
 			if(ALs)
 				log_and_message_staff("has transfered the [ALs.name] laws to [owner].")
 				ALs.sync(owner, 0)
 				current_view = 0
-		return 1
+		return TRUE
 
-	if(href_list["notify_laws"])
+	if(action == "notify_laws")
 		to_chat(owner, SPAN_DANGER("Law Notice"))
 		owner.laws.show_laws(owner)
 		if(isAI(owner))
@@ -143,13 +143,20 @@
 				R.laws.show_laws(R)
 		if(usr != owner)
 			to_chat(usr, SPAN_NOTICE("Laws displayed."))
-		return 1
+		return TRUE
 
-	return 0
+	return FALSE
 
-/datum/nano_module/law_manager/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/datum/nano_module/law_manager/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
 	owner.lawsync()
+
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "LawManager", sanitize("[src] - [owner]"), 800, is_malf(user) ? 600 : 400, state = state)
+		ui.open()
+
+/datum/nano_module/law_manager/tgui_data(mob/user)
+	var/data[0]
 
 	data["ion_law_nr"] = ionnum()
 	data["ion_law"] = ion_law
@@ -176,12 +183,7 @@
 	data["channels"] = channels
 	data["law_sets"] = package_multiple_laws(data["isAdmin"] ? admin_laws : player_laws)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "law_manager.tmpl", sanitize("[src] - [owner]"), 800, is_malf(user) ? 600 : 400, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /datum/nano_module/law_manager/proc/package_laws(list/data, field, list/datum/ai_law/laws)
 	var/packaged_laws[0]

@@ -21,27 +21,31 @@
 	skillset = null
 	. = ..()
 
-/datum/nano_module/skill_ui/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.self_state)
+/datum/nano_module/skill_ui/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.self_state)
 	if(!skillset)
 		return
-	var/list/data = skillset.get_nano_data(hide_unskilled)
-	data += get_data()
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		ui = new(user, src, ui_key, template, "Skills", 600, 900, src, state = state)
-		ui.set_initial_data(data)
+		ui = new(user, src, "SkillUI", "Skills", 600, 900, src, state = state)
 		ui.open()
 
-/datum/nano_module/skill_ui/Topic(href, href_list)
-	if(..())
-		return 1
-	if(!skillset || !skillset.owner)
-		return 1 // This probably means that we are being deleted but fielding badly timed user input or similar.
+/datum/nano_module/skill_ui/tgui_data(mob/user)
+	if(!skillset)
+		return list()
+	var/list/data = skillset.get_nano_data(hide_unskilled)
+	data += get_data()
+	return data
 
-	if(href_list["toggle_hide_unskilled"])
+/datum/nano_module/skill_ui/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(!skillset || !skillset.owner)
+		return TRUE
+
+	if(action == "toggle_hide_unskilled")
 		hide_unskilled = !hide_unskilled
-		return 1
+		return TRUE
 
 /datum/nano_module/skill_ui/proc/get_data()
 	return list()
@@ -132,48 +136,48 @@ The generic antag version.
 		selection_data += list(level_data)
 	.["selection_data"] = selection_data
 
-/datum/nano_module/skill_ui/antag/Topic(href, href_list)
+/datum/nano_module/skill_ui/antag/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 	if(!skillset || !skillset.owner)
-		return 1 // This probably means that we are being deleted but fielding badly timed user input or similar.
+		return TRUE
 
-	if(href_list["add_skill"])
+	if(action == "add_skill")
 		if(!can_choose())
-			return 1
-		var/level = text2num(href_list["add_skill"])
+			return TRUE
+		var/level = text2num(params["add_skill"])
 		var/list/choices = list()
 		for(var/decl/hierarchy/skill/S in GLOB.skills)
 			if(can_select(S.type, level))
 				choices[S.name] = S.type
 		var/choice = input(usr, "Which skill would you like to add?", "Add Skill") as null|anything in choices
 		if(!can_choose() || !choices[choice])
-			return 1
+			return TRUE
 		if(!can_select(choices[choice], level))
-			return 1
+			return TRUE
 		select(choices[choice], level)
 		skillset.refresh_uis()
-		return 1
-	if(href_list["remove_skill"])
+		return TRUE
+	if(action == "remove_skill")
 		if(!can_choose())
-			return 1
-		var/skill_path = locate(href_list["remove_skill"])
+			return TRUE
+		var/skill_path = locate(params["remove_skill"])
 		deselect(skill_path)
 		skillset.refresh_uis()
-		return 1
-	if(href_list["submit"])
+		return TRUE
+	if(action == "submit")
 		if(!can_choose())
-			return 1
+			return TRUE
 		if(alert(usr, "Are you sure you want to commit this selection? You won't be able to change it again.", "Warning", "Yes", "No")=="No")
-			return 1
+			return TRUE
 		if(!can_choose())
-			return 1
+			return TRUE
 		commit()
-		return 1
-	if(href_list["admin_reset"])
+		return TRUE
+	if(action == "admin_reset")
 		if(usr.client)
 			usr.client.adminhelp("I am requesting an antag skill selection reset.")
-		return 1
+		return TRUE
 
 /datum/nano_module/skill_ui/antag/proc/can_choose()
 	return !skillset.owner.too_many_buffs(buff_type)
@@ -241,72 +245,72 @@ Admin version, with debugging options.
 /datum/nano_module/skill_ui/admin
 	template = "skill_ui_admin.tmpl"
 
-/datum/nano_module/skill_ui/admin/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.admin_state)
-	..() //Uses different default state.
-
-/datum/nano_module/skill_ui/admin/get_data()
+/datum/nano_module/skill_ui/admin/tgui_data(mob/user)
 	. = ..()
 	.["antag_buff"] = length(skillset.owner.fetch_buffs_of_type(/datum/skill_buff/antag))
 	.["antag"] = skillset.owner && skillset.owner.mind && player_is_antag(skillset.owner.mind)
 
-/datum/nano_module/skill_ui/admin/Topic(href, href_list)
-	if(..())
-		return 1
-	if(href_list["close"]) // This is called when the window is closed; we've signed up to get notified of it.
-		qdel(src)
-		return 1
-	if(!check_rights(R_ADMIN|R_MOD, 0, usr))
-		return 1
+/datum/nano_module/skill_ui/admin/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.admin_state)
+	..()
 
-	if(href_list["reset_antag"])
+/datum/nano_module/skill_ui/admin/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(action == "close")
+		qdel(src)
+		return TRUE
+	if(!check_rights(R_ADMIN|R_MOD, 0, usr))
+		return TRUE
+
+	if(action == "reset_antag")
 		for(var/datum/skill_buff/buff in skillset.owner.fetch_buffs_of_type(/datum/skill_buff/antag))
 			buff.remove()
 		log_and_message_staff("SKILLS: [key_name_admin(skillset.owner)] has been granted a reset of antag skills.")
-		return 1
-	if(href_list["reset_buffs"])
+		return TRUE
+	if(action == "reset_buffs")
 		for(var/datum/skill_buff/buff in skillset.owner.fetch_buffs_of_type(/datum/skill_buff))
 			buff.remove()
 		log_and_message_staff("SKILLS: All skill buffs have been removed from [key_name_admin(skillset.owner)].")
-		return 1
-	if(href_list["reset_hard"])
+		return TRUE
+	if(action == "reset_hard")
 		log_and_message_staff("SKILLS: The skillset of [key_name_admin(skillset.owner)] has been reset.")
-		skillset.owner.reset_skillset() // This will delete the NM and wipe all references.
-		return 1
-	if(href_list["prefs"])
+		skillset.owner.reset_skillset()
+		return TRUE
+	if(action == "prefs")
 		var/my_client = skillset.owner.client
 		if(!my_client)
 			to_chat(usr, "Mob client not found.")
-			return 1
+			return TRUE
 		var/datum/job/job = skillset.owner.mind && SSjobs.get_by_title(skillset.owner.mind.assigned_role)
 		if(!job)
 			to_chat(usr, "Valid job not found.")
-			return 1
+			return TRUE
 		skillset.obtain_from_client(job, my_client)
 		log_and_message_staff("SKILLS: The job skills for [key_name_admin(skillset.owner)] have been imported.")
-		return 1
-	if(href_list["antag"])
+		return TRUE
+	if(action == "antag")
 		var/datum/antagonist/antag = skillset.owner.mind && player_is_antag(skillset.owner.mind)
 		if(!antag)
 			to_chat(usr, "Mob lacks valid antag status.")
-			return 1
+			return TRUE
 		if(!istype(antag.skill_setter))
 			to_chat(usr, "Antag has no skill setter assigned.")
-			return 1
+			return TRUE
 		antag.skill_setter.initialize_skills(skillset)
 		log_and_message_staff("SKILLS: The antag skills for [key_name_admin(skillset.owner)] have been re-initialized.")
-		return 1
-	if(href_list["refresh"])
+		return TRUE
+	if(action == "refresh")
 		skillset.refresh_uis()
-		return 1
+		return TRUE
 
-	if(href_list["value_hit"])
-		var/skill_type = locate(href_list["skill"])
+	if(action == "value_hit")
+		var/skill_type = locate(params["skill"])
 		if(!skill_type)
-			return 1
-		var/new_val = sanitize_integer(text2num(href_list["value_hit"]), SKILL_MIN, SKILL_MAX, SKILL_MIN)
+			return TRUE
+		var/new_val = sanitize_integer(text2num(params["value_hit"]), SKILL_MIN, SKILL_MAX, SKILL_MIN)
 		var/old_val = skillset.get_value(skill_type)
 		if(new_val == old_val)
-			return 1
+			return TRUE
 		var/datum/skill_buff/admin/buff
 		var/buffs = skillset.owner.fetch_buffs_of_type(/datum/skill_buff/admin, 0)
 		if(length(buffs))
@@ -318,7 +322,7 @@ Admin version, with debugging options.
 			buff_list[skill_type] = new_val - old_val
 			skillset.owner.buff_skill(buff_list, buff_type = /datum/skill_buff/admin)
 		log_and_message_staff("SKILLS: The skill values of [key_name_admin(skillset.owner)] have been altered.")
-		return 1
+		return TRUE
 
 /datum/skill_buff/admin
 	limit = 1

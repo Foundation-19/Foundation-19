@@ -12,20 +12,73 @@
 	hud_type = /datum/hud/slime
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	universal_speak = 1	// 999 can understand and speak every language, although his text gets altered
+	universal_speak = 1
 	speak_emote = list("blubbers", "glubs")
+
+	var/spawn_area
+	var/morale_aura_range = 5
+	var/morale_buff_cooldown = 30 SECONDS
+	var/last_morale_buff = 0
+	var/calm_aura_range = 4
+	var/calm_cooldown = 60 SECONDS
+	var/last_calm_attempt = 0
 
 /mob/living/scp999/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"orange slime", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"999", //Numerical Designation
+		src,
+		"orange slime",
+		SCP_SAFE,
+		"999",
 		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
 
 	SCP.min_time = 5 MINUTES
+	spawn_area = get_area(src)
+
+/mob/living/scp999/Life()
+	. = ..()
+	if(. && !stat)
+		apply_morale_aura()
+		try_calm_nearby_scp()
+
+/mob/living/scp999/proc/apply_morale_aura()
+	if(world.time < last_morale_buff + morale_buff_cooldown)
+		return
+	last_morale_buff = world.time
+	for(var/mob/living/carbon/human/H in range(morale_aura_range, src))
+		if(H.SCP)
+			continue
+		if(H.stat)
+			continue
+		H.adjust_hallucination(-5, 0)
+		H.adjust_drugginess(-2 SECONDS)
+		H.adjust_confusion(-2 SECONDS)
+		H.adjust_dizzy_up_to(-5 SECONDS, 0)
+
+/mob/living/scp999/proc/try_calm_nearby_scp()
+	if(world.time < last_calm_attempt + calm_cooldown)
+		return
+	last_calm_attempt = world.time
+	for(var/mob/living/M in range(calm_aura_range, src))
+		if(!M.SCP || M == src)
+			continue
+		if(M.SCP.designation == "999")
+			continue
+		if(ismob(M) && M.SCP.research && M.SCP.research.containment_status == SCP_BREACHED)
+			if(prob(10))
+				visible_message(SPAN_NOTICE("[src] nuzzles against [M] soothingly!"))
+				if(iscarbon(M))
+					var/mob/living/carbon/LM = M
+					LM.adjust_hallucination(-10, 0)
+				if(isliving(M))
+					var/mob/living/LL = M
+					LL.Weaken(3)
+					LL.visible_message(SPAN_NOTICE("[M] seems to calm down momentarily near [src]."))
+				if(M.SCP.designation == "049" && ishuman(M))
+					to_chat(M, SPAN_NOTICE("The Pestilence... it feels less pressing near this creature."))
+				if(M.SCP.designation == "082")
+					to_chat(M, SPAN_NOTICE("You feel... less hungry. For now."))
 
 //Mechanics
 

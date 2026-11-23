@@ -412,6 +412,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "939"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/uhcz/generalpurpose3)
 "aei" = (
@@ -6762,6 +6765,9 @@
 /obj/effect/floor_decal/corner/safe/bordercorner{
 	dir = 1
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "912"
+	},
 /turf/simulated/floor/tiled/white/corner{
 	dir = 1
 	},
@@ -7710,6 +7716,9 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 6
 	},
+/obj/structure/scp_containment_safe/scp113{
+	stored_item_type = /obj/item/scp113
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
 "bFK" = (
@@ -8461,7 +8470,6 @@
 /area/site53/lhcz/hczguardgear)
 "bNs" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/scp513,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -9313,6 +9321,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/item/modular_computer/tablet/preset/scp_research,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "bXd" = (
@@ -11052,6 +11061,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/item/device/scp_containment_meter,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "cpu" = (
@@ -11885,6 +11895,9 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "263"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp263)
 "cyB" = (
@@ -12479,6 +12492,9 @@
 "cEw" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 1
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "513"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp513)
@@ -17350,6 +17366,9 @@
 "dEM" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "106"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/site53/uhcz/scp106containment)
@@ -23388,6 +23407,9 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 9
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "914"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/ulcz/scp914)
 "eSy" = (
@@ -26111,6 +26133,9 @@
 /turf/simulated/floor/exoplanet/desert,
 /area/site53/llcz/mine/unexplored)
 "fwv" = (
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "999"
+	},
 /turf/simulated/floor/tiled/dark/small,
 /area/site53/ulcz/scp999)
 "fwK" = (
@@ -27429,6 +27454,9 @@
 /area/site53/ulcz/hallways)
 "fJN" = (
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "247"
+	},
 /turf/simulated/floor/exoplanet/barren,
 /area/site53/uhcz/scp247containment)
 "fJO" = (
@@ -30288,6 +30316,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "895"
+	},
 /turf/simulated/floor/tiled/dark/vertical,
 /area/site53/lhcz/scp895)
 "glT" = (
@@ -30676,6 +30707,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/ulcz/humanoidcontainment)
 "gqN" = (
+/obj/item/device/scp_anomaly_scanner,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "gqS" = (
@@ -33273,6 +33305,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
+/obj/structure/scp_soundproof_locker/scp066,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp066)
 "gTr" = (
@@ -34511,6 +34544,9 @@
 "hev" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 4
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "216"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp216)
@@ -37491,6 +37527,9 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 9
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "500"
+	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
 	},
@@ -37969,6 +38008,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "1102"
 	},
 /turf/simulated/floor/tiled/vertical,
 /area/site53/lhcz/scp1102room)
@@ -38853,6 +38895,7 @@
 /obj/effect/landmark/start{
 	name = "Junior Robotics Technician"
 	},
+/obj/machinery/scp_research_console,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/lowres/researchoffices)
 "hYF" = (
@@ -40322,6 +40365,9 @@
 /area/site53/upper_surface/entrancehallway)
 "iso" = (
 /obj/effect/floor_decal/snow,
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "1507"
+	},
 /turf/simulated/floor/exoplanet/concrete,
 /area/site53/uhcz/scp1507containment)
 "isH" = (
@@ -43374,6 +43420,9 @@
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 1
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "008"
+	},
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/uhcz/scp8containment)
 "iXy" = (
@@ -45670,6 +45719,10 @@
 "jxn" = (
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 5
+	},
+/obj/structure/scp_soundproof_locker{
+	scp_designation = "513";
+	stored_item_type = /obj/item/scp513
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp513)
@@ -49044,6 +49097,9 @@
 /obj/effect/floor_decal/corner/keter/bordercorner{
 	dir = 8
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "457"
+	},
 /turf/simulated/floor/tiled/dark/corner{
 	dir = 4
 	},
@@ -50157,6 +50213,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9;
 	icon_state = "warning"
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "151"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp151)
@@ -55757,6 +55816,7 @@
 /obj/item/stack/material/plasteel/ten,
 /obj/item/stack/material/steel/fifty,
 /obj/item/stack/material/steel/fifty,
+/obj/item/device/floodlight,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/engineering/containment_engineer)
 "lyq" = (
@@ -56611,6 +56671,7 @@
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 5
 	},
+/obj/item/clothing/mask/scp035,
 /turf/simulated/floor/tiled/corner{
 	dir = 4
 	},
@@ -58083,6 +58144,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/item/device/floodlight,
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/engineering/containment_engineer)
 "lYo" = (
@@ -59215,6 +59277,9 @@
 "mkB" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "066"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp066)
@@ -64074,6 +64139,7 @@
 /obj/effect/landmark/start{
 	name = "Researcher"
 	},
+/obj/machinery/scp_research_console,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/researchanddevelopment)
 "nlt" = (
@@ -67267,6 +67333,9 @@
 /area/site53/llcz/scp5295)
 "nVg" = (
 /obj/effect/floor_decal/corner/euclid/bordercorner,
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "082"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/ulcz/scp082)
 "nVq" = (
@@ -70284,6 +70353,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "049"
+	},
 /turf/simulated/floor/lino,
 /area/site53/lhcz/scp049containment)
 "oHE" = (
@@ -73254,6 +73326,9 @@
 /area/site53/upper_surface/breachshelter)
 "pke" = (
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/scp_containment_safe/scp012{
+	stored_item_type = /obj/item/paper/scp012
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "pki" = (
@@ -74172,6 +74247,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/scp939,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
 "pvU" = (
@@ -75782,6 +75858,9 @@
 "pLT" = (
 /obj/effect/floor_decal/corner/keter/border{
 	dir = 9
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "035"
 	},
 /turf/simulated/floor/tiled/corner{
 	dir = 8
@@ -77726,6 +77805,9 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "113"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp113)
 "qgQ" = (
@@ -78943,6 +79025,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "173"
+	},
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
 "qtN" = (
@@ -79549,6 +79634,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/surface/surface/west)
 "qAQ" = (
+/obj/item/device/scp_containment_meter,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/researchanddevelopment)
 "qAR" = (
@@ -80655,6 +80741,7 @@
 /area/site53/lowertrams/brownline)
 "qOf" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/item/device/floodlight,
 /turf/simulated/floor/plating,
 /area/site53/engineering/containment_engineer)
 "qOg" = (
@@ -86813,6 +86900,9 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 6
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "2398"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp2398)
@@ -93153,7 +93243,6 @@
 /area/site53/llcz/dclass/medicalpost)
 "tjt" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/paper/scp012,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp012)
 "tjA" = (
@@ -97366,6 +97455,9 @@
 /area/site53/llcz/dclass/medicalpost)
 "ucU" = (
 /obj/effect/floor_decal/corner/euclid/border,
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "012"
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp012)
 "ucX" = (
@@ -97984,6 +98076,9 @@
 /obj/effect/floor_decal/corner/euclid/border{
 	dir = 6
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "096"
+	},
 /turf/simulated/floor/tiled/corner{
 	dir = 1
 	},
@@ -98163,6 +98258,7 @@
 	dir = 1;
 	icon_state = "warningcorner"
 	},
+/obj/structure/scp078,
 /turf/simulated/floor/reinforced,
 /area/site53/uhcz/generalpurpose3)
 "uly" = (
@@ -102153,6 +102249,9 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "131-A"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp131)
@@ -108539,6 +108638,9 @@
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
 	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "013"
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/scp013)
 "wys" = (
@@ -109661,6 +109763,9 @@
 "wKZ" = (
 /obj/effect/floor_decal/corner/safe/border{
 	dir = 10
+	},
+/obj/machinery/scp_containment_monitor{
+	scp_designation = "294"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/llcz/scp294)
@@ -112269,6 +112374,7 @@
 /obj/effect/floor_decal/corner/research/border{
 	dir = 4
 	},
+/obj/item/device/scp_anomaly_scanner,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/researchanddevelopment)
 "xlz" = (
@@ -113469,7 +113575,6 @@
 /area/site53/logistics/logistics)
 "xyK" = (
 /obj/structure/table/reinforced,
-/obj/item/scp113,
 /obj/item/clothing/gloves/latex,
 /obj/effect/floor_decal/corner/safe/mono,
 /turf/simulated/floor/tiled/monotile,

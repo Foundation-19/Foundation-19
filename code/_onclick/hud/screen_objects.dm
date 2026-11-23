@@ -12,15 +12,28 @@
 	plane = HUD_PLANE
 	layer = HUD_BASE_LAYER
 	appearance_flags = NO_CLIENT_COLOR
-	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
-	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
+	var/obj/master = null
+	var/globalscreen = FALSE
 	var/weakref/hud_ref
-	//var/datum/hud/hud
+	var/assigned_map
+	var/del_on_map_removal = TRUE
 
 /atom/movable/screen/Destroy()
 	master = null
 	hud_ref = null
 	return ..()
+
+/atom/movable/screen/proc/set_position(x, y, px = 0, py = 0)
+	if(assigned_map)
+		screen_loc = "[assigned_map]:[x]:[px],[y]:[py]"
+	else
+		screen_loc = "[x]:[px],[y]:[py]"
+
+/atom/movable/screen/proc/fill_rect(x1, y1, x2, y2)
+	if(assigned_map)
+		screen_loc = "[assigned_map]:[x1],[y1] to [x2],[y2]"
+	else
+		screen_loc = "[x1],[y1] to [x2],[y2]"
 
 /atom/movable/screen/text
 	icon = null

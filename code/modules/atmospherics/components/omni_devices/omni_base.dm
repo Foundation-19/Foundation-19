@@ -103,7 +103,7 @@
 		qdel(src)
 
 /obj/machinery/atmospherics/omni/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/atmospherics/omni/proc/build_icons()

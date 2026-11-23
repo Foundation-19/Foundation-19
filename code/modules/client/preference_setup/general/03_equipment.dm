@@ -95,6 +95,101 @@
 	pref.sensor_setting = sanitize_inlist(pref.sensor_setting, SUIT_SENSOR_MODES, get_key_by_index(SUIT_SENSOR_MODES, 0))
 	pref.sensors_locked = sanitize_bool(pref.sensors_locked, FALSE)
 
+/datum/category_item/player_setup_item/physical/equipment/get_setup_data(mob/user)
+	var/list/data = list()
+
+	var/list/underwear_items = list()
+	for(var/datum/category_group/underwear/UWC in GLOB.underwear.categories)
+		var/item_name = (pref.all_underwear && pref.all_underwear[UWC.name]) ? pref.all_underwear[UWC.name] : "None"
+		var/list/underwear_entry = list("category" = UWC.name, "selected" = item_name)
+		var/datum/category_item/underwear/UWI = UWC.items_by_name[item_name]
+		if(UWI)
+			var/list/tweaks = list()
+			for(var/datum/gear_tweak/gt in UWI.tweaks)
+				tweaks += list(list("ref" = "\ref[gt]", "label" = gt.get_contents(get_underwear_metadata(UWC.name, gt))))
+			underwear_entry["tweaks"] = tweaks
+		var/list/available = list()
+		for(var/datum/category_item/underwear/opt in UWC.items)
+			available += opt.name
+		underwear_entry["options"] = available
+		underwear_items += list(underwear_entry)
+	data["underwear"] = underwear_items
+
+	data["backpack"] = pref.backpack.name
+	var/list/backpack_options = list()
+	for(var/bp_name in backpacks_by_name)
+		backpack_options += bp_name
+	data["backpack_options"] = backpack_options
+
+	var/list/bp_tweaks = list()
+	for(var/datum/backpack_tweak/bt in pref.backpack.tweaks)
+		bp_tweaks += list(list("ref" = "\ref[bt]", "label" = bt.get_ui_content(get_backpack_metadata(pref.backpack, bt))))
+	data["backpack_tweaks"] = bp_tweaks
+
+	data["sensor_setting"] = pref.sensor_setting
+	data["sensor_options"] = SUIT_SENSOR_MODES
+	data["sensors_locked"] = pref.sensors_locked
+
+	return data
+
+/datum/category_item/player_setup_item/physical/equipment/act_setup(action, list/params, mob/user)
+
+	if(action == "change_underwear")
+		var/datum/category_group/underwear/UWC = GLOB.underwear.categories_by_name[params["category"]]
+		if(!UWC)
+			return FALSE
+		var/datum/category_item/underwear/selected_underwear = tgui_input_list(user, "Choose underwear:", CHARACTER_PREFERENCE_INPUT_TITLE, UWC.items, pref.all_underwear[UWC.name])
+		if(selected_underwear && CanUseTopic(user))
+			pref.all_underwear[UWC.name] = selected_underwear.name
+		return TRUE
+
+	else if(action == "underwear_tweak")
+		var/underwear = params["underwear"]
+		if(!(underwear in pref.all_underwear))
+			return FALSE
+		var/datum/gear_tweak/gt = locate(params["tweak_ref"])
+		if(!gt)
+			return FALSE
+		var/new_metadata = gt.get_metadata(user, get_underwear_metadata(underwear, gt))
+		if(new_metadata)
+			set_underwear_metadata(underwear, gt, new_metadata)
+			return TRUE
+		return FALSE
+
+	else if(action == "change_backpack")
+		var/new_backpack = tgui_input_list(user, "Choose backpack style:", CHARACTER_PREFERENCE_INPUT_TITLE, backpacks_by_name, pref.backpack)
+		if(!isnull(new_backpack) && CanUseTopic(user))
+			pref.backpack = backpacks_by_name[new_backpack]
+			return TRUE
+		return FALSE
+
+	else if(action == "backpack_tweak")
+		var/backpack_name = params["backpack"]
+		if(!(backpack_name in backpacks_by_name))
+			return FALSE
+		var/decl/backpack_outfit/bo = backpacks_by_name[backpack_name]
+		var/datum/backpack_tweak/bt = locate(params["tweak_ref"]) in bo.tweaks
+		if(!bt)
+			return FALSE
+		var/new_metadata = bt.get_metadata(user, get_backpack_metadata(bo, bt))
+		if(new_metadata)
+			set_backpack_metadata(bo, bt, new_metadata)
+			return TRUE
+		return FALSE
+
+	else if(action == "change_sensor_setting")
+		var/switchMode = tgui_input_list(user, "Select a sensor mode:", "Suit Sensor Mode", SUIT_SENSOR_MODES, pref.sensor_setting)
+		if(!switchMode || !CanUseTopic(user))
+			return FALSE
+		pref.sensor_setting = switchMode
+		return TRUE
+
+	else if(action == "toggle_sensors_locked")
+		pref.sensors_locked = !pref.sensors_locked
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/physical/equipment/content()
 	. = list()
 	. += "<b>Equipment:</b><br>"

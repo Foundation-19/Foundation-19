@@ -187,7 +187,7 @@
 
 	idle_threads.Add(active_program)
 	active_program.program_state = PROGRAM_STATE_BACKGROUND // Should close any existing UIs
-	SSnano.close_uis(active_program.NM ? active_program.NM : active_program)
+	SStgui.close_uis(active_program.NM ? active_program.NM : active_program)
 	SStgui.close_uis(active_program.TM ? active_program.TM : active_program)
 	active_program = null
 	update_icon()
@@ -232,11 +232,11 @@
 
 /obj/item/modular_computer/proc/update_uis()
 	if(active_program) //Should we update program ui or computer ui?
-		SSnano.update_uis(active_program)
+		SStgui.update_uis(active_program)
 		if(active_program.NM)
-			SSnano.update_uis(active_program.NM)
+			SStgui.update_uis(active_program.NM)
 	else
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 
 /obj/item/modular_computer/proc/check_update_ui_need()
 	var/ui_update_needed = 0

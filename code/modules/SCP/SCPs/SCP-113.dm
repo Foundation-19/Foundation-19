@@ -14,11 +14,20 @@
 /obj/item/scp113/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"red piece of quartz", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"113", //Numerical Designation
+		src,
+		"red piece of quartz",
+		SCP_SAFE,
+		"113",
 	)
+
+/obj/item/scp113/forceMove(atom/dest)
+	. = ..()
+	if(istype(loc, /obj/structure/scp_containment_safe) || istype(loc, /obj/structure/scp_containment_locker))
+		if(SCP && SCP.research)
+			SCP.research.set_containment_status(SCP_CONTAINED)
+	else if(!istype(dest, /obj/structure/scp_containment_safe) && !istype(dest, /obj/structure/scp_containment_locker))
+		if(SCP && SCP.research && SCP.research.containment_status == SCP_CONTAINED)
+			SCP.research.set_containment_status(SCP_BREACHED)
 
 //Mechanics
 
@@ -85,4 +94,4 @@
 			return
 
 	H.humanStageHandler.setStage("113_effect", 0)
-	effect(H)
+	addtimer(CALLBACK(src, PROC_REF(effect), H), 0.5 SECONDS)

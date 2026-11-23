@@ -24,6 +24,8 @@
 	var/current_code = 0
 	/// Assoc list of codes in use and items stored in them.
 	var/list/all_codes = list()
+	/// Codes that research has identified as "dimensionally resonant" (always yield contents)
+	var/list/resonant_codes = list()
 
 	/* Note: If editing, please keep the descending order by groups. More common items should be at the top. */
 	// Unsorted
@@ -129,11 +131,20 @@
 /obj/structure/scp216/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"safe", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"216", //Numerical Designation
+		src,
+		"safe",
+		SCP_SAFE,
+		"216",
 	)
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
+	build_resonant_codes()
+
+/obj/structure/scp216/forceMove(atom/dest)
+	var/atom/old_loc = loc
+	. = ..()
+	if(loc != old_loc && SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_BREACHED)
 
 /obj/structure/scp216/Destroy()
 	LAZYCLEARLIST(all_codes) // Forever gone
@@ -211,11 +222,22 @@
 		if(!in_range(src, user))
 			return
 		RetrieveItem(user, A, current_code)
+		attack_hand(user)
 
 /obj/structure/scp216/proc/GenerateRandomItemsAt(code)
 	if(!(num2text(code, 7) in all_codes) || !islist(all_codes[num2text(code, 7)]))
 		all_codes[num2text(code, 7)] = list()
-	if(!(prob(generate_chance)))
+	var/gen_chance = generate_chance
+	var/research_tier = SCP && SCP.research ? SCP.research.research_level : 0
+	// Tier unlocks: T1 +5%, T2 +10%, T3 +15%, T4 guarantees generation (dimensional insight)
+	if(research_tier >= 4)
+		gen_chance = 100
+	else
+		gen_chance += research_tier * 5
+	// Resonant codes identified by research always yield contents
+	if(num2text(code, 7) in resonant_codes)
+		gen_chance = 100
+	if(!(prob(gen_chance)))
 		return
 	for(var/i = 1 to rand(1, max_items_generated))
 		var/chosen_atom = pickweight(random_items)
@@ -230,7 +252,25 @@
 	if(!user.unEquip(A, src))
 		return
 	all_codes[num2text(code_loc, 7)] += A
-	attack_hand(user)
+
+GLOBAL_LIST_INIT(scp216_known_codes, null)
+
+/obj/structure/scp216/proc/build_resonant_codes()
+	GLOB.scp216_known_codes = null
+	resonant_codes.Cut()
+	for(var/i = 1 to 12)
+		resonant_codes += "[rand(0, 9999999)]"
+
+/proc/get_scp216_known_codes(tier)
+	if(!GLOB.scp216_known_codes && tier > 0)
+		for(var/obj/structure/scp216/S in GLOB.SCP_list)
+			if(!length(S.resonant_codes))
+				S.build_resonant_codes()
+			GLOB.scp216_known_codes = S.resonant_codes
+			break
+	if(GLOB.scp216_known_codes)
+		return GLOB.scp216_known_codes.Copy(1, min(tier * 3, length(GLOB.scp216_known_codes)) + 1)
+	return null
 
 /obj/structure/scp216/proc/RetrieveItem(mob/living/carbon/human/user, atom/movable/A, code_loc = 0)
 	if(!locate(A) in all_codes[num2text(code_loc, 7)])

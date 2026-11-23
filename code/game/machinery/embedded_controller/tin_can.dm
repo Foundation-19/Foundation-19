@@ -16,7 +16,13 @@
 	cycle_to_external_air = TRUE // Some kind of legacy var needed for proper init
 	scrubber_assist = TRUE
 
-/obj/machinery/embedded_controller/radio/airlock/tin_can/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
+/obj/machinery/embedded_controller/radio/airlock/tin_can/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "TinCan", name, 470, 290)
+		ui.open()
+
+/obj/machinery/embedded_controller/radio/airlock/tin_can/tgui_data(mob/user)
 	var/list/data = list()
 	var/datum/computer/file/embedded_program/airlock/tin_can/our_program = program
 	data = list(
@@ -25,12 +31,7 @@
 		"state" = our_program.state
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "tin_can.tmpl", name, 470, 290, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 // We piggyback off this for the utility procs and data aquisition, mostly
 /datum/computer/file/embedded_program/airlock/tin_can

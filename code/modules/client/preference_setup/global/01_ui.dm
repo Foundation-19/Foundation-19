@@ -31,6 +31,69 @@
 	pref.ooccolor			= sanitize_hexcolor(pref.ooccolor, initial(pref.ooccolor))
 	pref.clientfps	   		= sanitize_integer(pref.clientfps, CLIENT_MIN_FPS, CLIENT_MAX_FPS, initial(pref.clientfps))
 
+/datum/category_item/player_setup_item/player_global/ui/get_setup_data(mob/user)
+	var/list/data = list()
+	data["UI_style"] = pref.UI_style
+	data["UI_style_color"] = pref.UI_style_color
+	data["UI_style_alpha"] = pref.UI_style_alpha
+	data["ooccolor"] = pref.ooccolor
+	data["ooccolor_is_default"] = (pref.ooccolor == initial(pref.ooccolor))
+	data["can_select_ooc_color"] = can_select_ooc_color(user)
+	data["clientfps"] = pref.clientfps
+	data["UI_styles"] = all_ui_styles
+	return data
+
+/datum/category_item/player_setup_item/player_global/ui/act_setup(action, list/params, mob/user)
+
+	if(action == "select_style")
+		var/UI_style_new = input(user, "Choose UI style.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.UI_style) as null|anything in all_ui_styles
+		if(!UI_style_new || !CanUseTopic(user)) return FALSE
+		pref.UI_style = UI_style_new
+		return TRUE
+
+	else if(action == "select_color")
+		var/UI_style_color_new = input(user, "Choose UI color, dark colors are not recommended!", "Global Preference", pref.UI_style_color) as color|null
+		if(isnull(UI_style_color_new) || !CanUseTopic(user)) return FALSE
+		pref.UI_style_color = UI_style_color_new
+		return TRUE
+
+	else if(action == "select_alpha")
+		var/UI_style_alpha_new = input(user, "Select UI alpha (transparency) level, between 50 and 255.", "Global Preference", pref.UI_style_alpha) as num|null
+		if(isnull(UI_style_alpha_new) || (UI_style_alpha_new < 50 || UI_style_alpha_new > 255) || !CanUseTopic(user)) return FALSE
+		pref.UI_style_alpha = UI_style_alpha_new
+		return TRUE
+
+	else if(action == "select_ooc_color")
+		var/new_ooccolor = input(user, "Choose OOC color:", "Global Preference") as color|null
+		if(new_ooccolor && can_select_ooc_color(user) && CanUseTopic(user))
+			pref.ooccolor = new_ooccolor
+			return TRUE
+		return FALSE
+
+	else if(action == "select_fps")
+		var/version_message
+		if(user.client && user.client.byond_version < 511)
+			version_message = "\nYou need to be using byond version 511 or later to take advantage of this feature, your version of [user.client.byond_version] is too low"
+		if(world.byond_version < 511)
+			version_message += "\nThis server does not currently support client side fps. You can set now for when it does."
+		var/new_fps = input(user, "Choose your desired fps.[version_message]\n(0 = synced with server tick rate (currently:[world.fps]))", "Global Preference") as num|null
+		if(isnum(new_fps) && CanUseTopic(user))
+			pref.clientfps = Clamp(new_fps, CLIENT_MIN_FPS, CLIENT_MAX_FPS)
+			var/mob/target_mob = preference_mob()
+			if(target_mob && target_mob.client)
+				target_mob.client.apply_fps(pref.clientfps)
+			return TRUE
+		return FALSE
+
+	else if(action == "reset")
+		switch(params["reset"])
+			if("ui") pref.UI_style_color = initial(pref.UI_style_color)
+			if("alpha") pref.UI_style_alpha = initial(pref.UI_style_alpha)
+			if("ooc") pref.ooccolor = initial(pref.ooccolor)
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/player_global/ui/content(mob/user)
 	. += "<b>UI Settings</b><br>"
 	. += "<b>UI Style:</b> <a href='byond://?src=\ref[src];select_style=1'><b>[pref.UI_style]</b></a><br>"

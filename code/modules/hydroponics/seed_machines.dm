@@ -47,7 +47,7 @@
 		finished_task()
 
 /obj/machinery/botany/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/botany/proc/finished_task()
@@ -119,11 +119,17 @@
 	var/datum/seed/genetics // Currently scanned seed genetic structure.
 	var/degradation = 0     // Increments with each scan, stops allowing gene mods after a certain point.
 
-/obj/machinery/botany/extractor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/botany/extractor/tgui_interact(mob/user, datum/tgui/ui)
 
 	if(!user)
 		return
 
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "SeedMachine", "Lysis-isolation Centrifuge UI", 470, 450)
+		ui.open()
+
+/obj/machinery/botany/extractor/tgui_data(mob/user)
 	var/list/data = list()
 
 	var/list/geneMasks = SSplants.gene_masked_list
@@ -150,21 +156,14 @@
 	else
 		data["hasGenetics"] = 0
 		data["sourceName"] = 0
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "botany_isolator.tmpl", "Lysis-isolation Centrifuge UI", 470, 450)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/obj/machinery/botany/Topic(href, href_list)
-
+/obj/machinery/botany/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
-	if(href_list["eject_packet"])
-		if(!seed) return
+	if(action == "eject_packet")
+		if(!seed) return TRUE
 		seed.dropInto(loc)
 
 		if(seed.seed.name == "new line" || isnull(SSplants.seeds[seed.seed.name]))
@@ -177,8 +176,8 @@
 
 		seed = null
 
-	if(href_list["eject_disk"])
-		if(!loaded_disk) return
+	if(action == "eject_disk")
+		if(!loaded_disk) return TRUE
 		loaded_disk.dropInto(loc)
 		visible_message("[icon2html(src, viewers(get_turf(src)))] [src] beeps and spits out [loaded_disk].")
 		loaded_disk = null
@@ -186,18 +185,17 @@
 	usr.set_machine(src)
 	src.add_fingerprint(usr)
 
-/obj/machinery/botany/extractor/Topic(href, href_list)
-
+/obj/machinery/botany/extractor/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
 	var/mob/user = usr
 	user.set_machine(src)
 	src.add_fingerprint(user)
 
-	if(href_list["scan_genome"])
+	if(action == "scan_genome")
 
-		if(!seed) return
+		if(!seed) return TRUE
 
 		last_action = world.time
 		active = 1
@@ -209,23 +207,23 @@
 		qdel(seed)
 		seed = null
 
-	if(href_list["get_gene"])
+	if(action == "get_gene")
 
-		if(!genetics || !loaded_disk) return
+		if(!genetics || !loaded_disk) return TRUE
 
 		last_action = world.time
 		active = 1
 
-		var/datum/plantgene/P = genetics.get_gene(href_list["get_gene"])
-		if(!P) return
+		var/datum/plantgene/P = genetics.get_gene(params["get_gene"])
+		if(!P) return TRUE
 		loaded_disk.genes += P
 
 		loaded_disk.genesource = "[genetics.display_name]"
 		if(!genetics.roundstart)
 			loaded_disk.genesource += " (variety #[genetics.uid])"
 
-		loaded_disk.name += " ([SSplants.gene_tag_masks[href_list["get_gene"]]], #[genetics.uid])"
-		loaded_disk.desc += " The label reads \'gene [SSplants.gene_tag_masks[href_list["get_gene"]]], sampled from [genetics.display_name]\'."
+		loaded_disk.name += " ([SSplants.gene_tag_masks[params["get_gene"]]], #[genetics.uid])"
+		loaded_disk.desc += " The label reads \'gene [SSplants.gene_tag_masks[params["get_gene"]]], sampled from [genetics.display_name]\'."
 		eject_disk = 1
 
 		degradation += rand(20,60)
@@ -235,13 +233,12 @@
 			genetics = null
 			degradation = 0
 
-	if(href_list["clear_buffer"])
-		if(!genetics) return
+	if(action == "clear_buffer")
+		if(!genetics) return TRUE
 		genetics = null
 		degradation = 0
 
-	src.updateUsrDialog()
-	return
+	return TRUE
 
 // Fires an extracted trait into another packet of seeds with a chance
 // of destroying it based on the size/complexity of the plasmid.
@@ -250,11 +247,17 @@
 	icon_state = "traitgun"
 	disk_needs_genes = 1
 
-/obj/machinery/botany/editor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/botany/editor/tgui_interact(mob/user, datum/tgui/ui)
 
 	if(!user)
 		return
 
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "SeedEditor", "Bioballistic Delivery UI", 470, 450)
+		ui.open()
+
+/obj/machinery/botany/editor/tgui_data(mob/user)
 	var/list/data = list()
 
 	data["activity"] = active
@@ -283,20 +286,14 @@
 	else
 		data["loaded"] = 0
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "botany_editor.tmpl", "Bioballistic Delivery UI", 470, 450)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/obj/machinery/botany/editor/Topic(href, href_list)
-
+/obj/machinery/botany/editor/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
-	if(href_list["apply_gene"])
-		if(!loaded_disk || !seed) return
+	if(action == "apply_gene")
+		if(!loaded_disk || !seed) return TRUE
 
 		last_action = world.time
 		active = 1

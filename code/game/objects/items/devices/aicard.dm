@@ -12,9 +12,15 @@
 
 /obj/item/aicard/attack_self(mob/user)
 
-	ui_interact(user)
+	tgui_interact(user)
 
-/obj/item/aicard/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.inventory_state)
+/obj/item/aicard/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.inventory_state)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "AICard", "[name]", 600, 400, state = state)
+		ui.open()
+
+/obj/item/aicard/tgui_data(mob/user)
 	var/data[0]
 	data["has_ai"] = carded_ai != null
 	if(carded_ai)
@@ -32,24 +38,19 @@
 		data["laws"] = laws
 		data["has_laws"] = laws.len
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "aicard.tmpl", "[name]", 600, 400, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/obj/item/aicard/Topic(href, href_list, state)
+/obj/item/aicard/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
 	if(!carded_ai)
-		return 1
+		return TRUE
 
 	var/user = usr
-	if (href_list["wipe"])
+	if (action == "wipe")
 		var/confirm = alert("Are you sure you want to wipe this card's memory? This cannot be undone once started.", "Confirm Wipe", "Yes", "No")
-		if(confirm == "Yes" && (CanUseTopic(user, state) == STATUS_INTERACTIVE))
+		if(confirm == "Yes" && (tgui_status(user, state) == STATUS_INTERACTIVE))
 			admin_attack_log(user, carded_ai, "Wiped using \the [src.name]", "Was wiped with \the [src.name]", "used \the [src.name] to wipe")
 			flush = 1
 			to_chat(carded_ai, "Your core files are being wiped!")
@@ -58,16 +59,16 @@
 				carded_ai.updatehealth()
 				sleep(10)
 			flush = 0
-	if (href_list["radio"])
-		carded_ai.ai_radio.disabledAi = text2num(href_list["radio"])
+	if (action == "radio")
+		carded_ai.ai_radio.disabledAi = text2num(params["radio"])
 		to_chat(carded_ai, SPAN_WARNING("Your Subspace Transceiver has been [carded_ai.ai_radio.disabledAi ? "disabled" : "enabled"]!"))
 		to_chat(user, SPAN_NOTICE("You [carded_ai.ai_radio.disabledAi ? "disable" : "enable"] the AI's Subspace Transceiver."))
-	if (href_list["wireless"])
-		carded_ai.control_disabled = text2num(href_list["wireless"])
+	if (action == "wireless")
+		carded_ai.control_disabled = text2num(params["wireless"])
 		to_chat(carded_ai, SPAN_WARNING("Your wireless interface has been [carded_ai.control_disabled ? "disabled" : "enabled"]!"))
 		to_chat(user, SPAN_NOTICE("You [carded_ai.control_disabled ? "disable" : "enable"] the AI's wireless interface."))
 		update_icon()
-	return 1
+	return TRUE
 
 /obj/item/aicard/on_update_icon()
 	cut_overlays()

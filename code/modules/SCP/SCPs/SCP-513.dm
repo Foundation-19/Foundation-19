@@ -5,6 +5,9 @@
 
 	icon_state = "mindfuckcowbell"
 
+	var/contained = FALSE
+	var/obj/structure/scp_soundproof_locker/containing_locker
+
 	//Config
 
 	///Hallucination Cooldown
@@ -13,10 +16,10 @@
 /obj/item/scp513/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"rusty cowbell", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"513", //Numerical Designation
+		src,
+		"rusty cowbell",
+		SCP_EUCLID,
+		"513",
 		SCP_MEMETIC
 	)
 
@@ -30,15 +33,49 @@
 
 /obj/item/scp513/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	if(containing_locker)
+		containing_locker = null
 	return ..()
+
+/obj/item/scp513/forceMove(atom/dest)
+	. = ..()
+	check_containment()
+
+/obj/item/scp513/proc/check_containment()
+	if(istype(loc, /obj/structure/scp_soundproof_locker))
+		if(!contained)
+			contained = TRUE
+			containing_locker = loc
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_CONTAINED)
+	else
+		if(contained)
+			contained = FALSE
+			containing_locker = null
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_BREACHED)
 
 //Mechanics
 
 /obj/item/scp513/proc/ring(mob/living/user)
 	visible_message(SPAN_DANGER(SPAN_ITALIC("\The [src] rings, sending chills to your very bone.")))
 	playsound(src, pick('sounds/scp/513/Bell1.ogg', 'sounds/scp/513/Bell2.ogg'), 50, TRUE)
+	if(containing_locker && containing_locker.soundproof)
+		return
+	for(var/mob/living/carbon/human/H in hearers(7, src))
+		if(wearing_scp_acoustic_dampener(H))
+			continue
+		if(!H.humanStageHandler.getStage("513_victim"))
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_BREACHED)
+				for(var/mob/living/carbon/human/sec in GLOB.human_mob_list)
+					var/datum/job/job = SSjobs.get_by_title(sec.job)
+					if(job && (job.department_flag & (COM|SCI|SEC)))
+						to_chat(sec, SPAN_DANGER("<b>CONTAINMENT ALERT:</b> SCP-513 has been rung outside containment!"))
 
 /obj/item/scp513/proc/effect(mob/living/carbon/human/H)
+	if(wearing_scp_acoustic_dampener(H))
+		return
 	if(!H.humanStageHandler.getStage("513_victim"))
 		H.humanStageHandler.setStage("513_victim", 1)
 		return
@@ -180,5 +217,13 @@
 
 	attack_cooldown_track = world.time
 
-/mob/living/scp513_1/Bump(atom/movable/AM, yes) //This makes it so we dont interact with the world since we are supposed to be more of a hallucination
+/mob/living/scp513_1/Bump(atom/movable/AM, yes)
 	return
+
+/mob/living/carbon/human/proc/cure_scp513()
+	if(!humanStageHandler.getStage("513_victim"))
+		return FALSE
+	humanStageHandler.setStage("513_victim", 0)
+	humanStageHandler.setStage("513_hallucinating", 0)
+	to_chat(src, SPAN_NOTICE("The presence watching you fades away... You feel safe again."))
+	return TRUE

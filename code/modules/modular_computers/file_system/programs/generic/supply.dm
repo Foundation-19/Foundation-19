@@ -44,7 +44,13 @@
 	var/notifications_enabled = FALSE
 	var/admin_access = list(ACCESS_CARGO, ACCESS_MAILSORTING)
 
-/datum/nano_module/supply/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/datum/nano_module/supply/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Supply", name)
+		ui.open()
+
+/datum/nano_module/supply/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 	var/is_admin = check_access(user, admin_access)
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
@@ -110,12 +116,7 @@
 				data["is_NTOS"] = istype(nano_host(), /obj/item/modular_computer) // Can we even use notifications?
 				data["notifications_enabled"] = notifications_enabled
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "supply.tmpl", name, 1050, 800, state = state)
-		ui.set_auto_update(1)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 // Supply the order ID and where to look. This is just to reduce copypaste code.
 /datum/nano_module/supply/proc/find_order_by_id(order_id, list/find_in)
@@ -123,48 +124,47 @@
 		if(SO.ordernum == order_id)
 			return SO
 
-/datum/nano_module/supply/Topic(href, href_list)
-	var/mob/user = usr
+/datum/nano_module/supply/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 
-	if(href_list["select_category"])
+	if(action == "select_category")
 		clear_order_contents()
-		selected_category = href_list["select_category"]
+		selected_category = params["select_category"]
 		return 1
 
-	if(href_list["set_screen"])
+	if(action == "set_screen")
 		clear_order_contents()
-		screen = text2num(href_list["set_screen"])
+		screen = text2num(params["set_screen"])
 		return 1
 
-	if(href_list["show_contents"])
-		generate_order_contents(href_list["show_contents"])
+	if(action == "show_contents")
+		generate_order_contents(params["show_contents"])
 
-	if(href_list["hide_contents"])
+	if(action == "hide_contents")
 		clear_order_contents()
 
-	if(href_list["order"])
+	if(action == "order")
 		clear_order_contents()
-		var/decl/hierarchy/supply_pack/P = locate(href_list["order"]) in SSsupply.master_supply_list
+		var/decl/hierarchy/supply_pack/P = locate(params["order"]) in SSsupply.master_supply_list
 		if(!istype(P))
 			return 1
 
 		if((P.hidden || P.contraband || !P.sec_available()) && !emagged)
 			return 1
 
-		var/reason = sanitize(input(user,"Reason:","Why do you require this item?","") as null|text,,0)
+		var/reason = sanitize(input(usr,"Reason:","Why do you require this item?","") as null|text,,0)
 		if(!reason)
 			return 1
 
 		var/idname = "*None Provided*"
 		var/idrank = "*None Provided*"
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
+		if(ishuman(usr))
+			var/mob/living/carbon/human/H = usr
 			idname = H.get_authentification_name()
 			idrank = H.get_assignment()
-		else if(issilicon(user))
-			idname = user.real_name
+		else if(issilicon(usr))
+			idname = usr.real_name
 
 		SSsupply.ordernum++
 
@@ -177,31 +177,31 @@
 		O.comment = "#[O.ordernum]"
 		SSsupply.requestlist += O
 
-		if(can_print() && alert(user, "Would you like to print a confirmation receipt?", "Print receipt?", "Yes", "No") == "Yes")
-			print_order(O, user)
+		if(can_print() && alert(usr, "Would you like to print a confirmation receipt?", "Print receipt?", "Yes", "No") == "Yes")
+			print_order(O, usr)
 		return 1
 
-	if(href_list["print_summary"])
+	if(action == "print_summary")
 		if(!can_print())
 			return
-		print_summary(user)
+		print_summary(usr)
 
 	// Items requiring cargo access go below this entry. Other items go above.
 	if(!check_access(ACCESS_CARGO))
 		return 1
 
-	if(href_list["launch_shuttle"])
+	if(action == "launch_shuttle")
 		var/datum/shuttle/autodock/ferry/supply/shuttle = SSsupply.shuttle
 		if(!shuttle)
-			to_chat(user, SPAN_WARNING("Error connecting to the shuttle."))
+			to_chat(usr, SPAN_WARNING("Error connecting to the shuttle."))
 			return
 		if(shuttle.at_station())
 			if (shuttle.forbidden_atoms_check())
 				to_chat(usr, SPAN_WARNING("For safety reasons the automated supply shuttle cannot transport live organisms, classified nuclear weaponry or homing beacons."))
 			else
-				shuttle.launch(user)
+				shuttle.launch(usr)
 		else
-			shuttle.launch(user)
+			shuttle.launch(usr)
 			var/datum/radio_frequency/frequency = radio_controller.return_frequency(1435)
 			if(!frequency)
 				return
@@ -213,8 +213,8 @@
 			frequency.post_signal(src, status_signal)
 		return 1
 
-	if(href_list["approve_order"])
-		var/id = text2num(href_list["approve_order"])
+	if(action == "approve_order")
+		var/id = text2num(params["approve_order"])
 		var/datum/supply_order/SO = find_order_by_id(id, SSsupply.requestlist)
 		if(SO)
 			if(SO.object.cost >= SSsupply.points)
@@ -225,48 +225,48 @@
 				SSsupply.points -= SO.object.cost
 
 		else
-			to_chat(user, SPAN_WARNING("Could not find order number [id] to approve."))
+			to_chat(usr, SPAN_WARNING("Could not find order number [id] to approve."))
 
 		return 1
 
-	if(href_list["deny_order"])
-		var/id = text2num(href_list["deny_order"])
+	if(action == "deny_order")
+		var/id = text2num(params["deny_order"])
 		var/datum/supply_order/SO = find_order_by_id(id, SSsupply.requestlist)
 		if(SO)
 			SSsupply.requestlist -= SO
 		else
-			to_chat(user, SPAN_WARNING("Could not find order number [id] to deny."))
+			to_chat(usr, SPAN_WARNING("Could not find order number [id] to deny."))
 
 		return 1
 
-	if(href_list["cancel_order"])
-		var/id = text2num(href_list["cancel_order"])
+	if(action == "cancel_order")
+		var/id = text2num(params["cancel_order"])
 		var/datum/supply_order/SO = find_order_by_id(id, SSsupply.shoppinglist)
 		if(SO)
 			SSsupply.shoppinglist -= SO
 			SSsupply.points += SO.object.cost
 		else
-			to_chat(user, SPAN_WARNING("Could not find order number [id] to cancel."))
+			to_chat(usr, SPAN_WARNING("Could not find order number [id] to cancel."))
 
 		return 1
 
-	if(href_list["delete_order"])
-		var/id = text2num(href_list["delete_order"])
+	if(action == "delete_order")
+		var/id = text2num(params["delete_order"])
 		var/datum/supply_order/SO = find_order_by_id(id, SSsupply.donelist)
 		if(SO)
 			SSsupply.donelist -= SO
 		else
-			to_chat(user, SPAN_WARNING("Could not find order number [id] to delete."))
+			to_chat(usr, SPAN_WARNING("Could not find order number [id] to delete."))
 
 		return 1
 
-	if(href_list["print_receipt"])
+	if(action == "print_receipt")
 		if(!can_print())
-			to_chat(user, SPAN_WARNING("No printer connected to print receipts."))
+			to_chat(usr, SPAN_WARNING("No printer connected to print receipts."))
 			return 1
 
-		var/id = text2num(href_list["print_receipt"])
-		var/list_id = text2num(href_list["list_id"])
+		var/id = text2num(params["print_receipt"])
+		var/list_id = text2num(params["list_id"])
 		var/list/list_to_search
 		switch(list_id)
 			if(SUPPLY_LIST_ID_CART)
@@ -276,18 +276,18 @@
 			if(SUPPLY_LIST_ID_DONE)
 				list_to_search = SSsupply.donelist
 			else
-				to_chat(user, SPAN_WARNING("Invalid list ID for order number [id]. Receipt not printed."))
+				to_chat(usr, SPAN_WARNING("Invalid list ID for order number [id]. Receipt not printed."))
 				return 1
 
 		var/datum/supply_order/SO = find_order_by_id(id, list_to_search)
 		if(SO)
-			print_order(SO, user)
+			print_order(SO, usr)
 		else
-			to_chat(user, SPAN_WARNING("Could not find order number [id] to print receipt."))
+			to_chat(usr, SPAN_WARNING("Could not find order number [id] to print receipt."))
 
 		return 1
 
-	if(href_list["toggle_notifications"])
+	if(action == "toggle_notifications")
 		notifications_enabled = !notifications_enabled
 		return 1
 

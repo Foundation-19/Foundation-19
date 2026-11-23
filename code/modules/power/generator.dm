@@ -87,7 +87,7 @@
 		stored_energy = 0
 		return
 
-	updateDialog()
+	SStgui.update_uis(src)
 
 	var/datum/gas_mixture/air1 = circ1.return_transfer_air()
 	var/datum/gas_mixture/air2 = circ2.return_transfer_air()
@@ -176,25 +176,29 @@
 	return ..()
 
 /obj/machinery/power/generator/interface_interact(mob/user)
-	if(!circ1 || !circ2) //Just incase the middle part of the TEG was not wrenched last.
+	if(!circ1 || !circ2)
 		reconnect()
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/power/generator/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	// this is the data which will be sent to the ui
+/obj/machinery/power/generator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "PowerGenerator", "Thermoelectric Generator", 450, 500)
+		ui.open()
+
+/obj/machinery/power/generator/tgui_data(mob/user)
 	var/vertical = 0
 	if (dir == NORTH || dir == SOUTH)
 		vertical = 1
 
-	var/data[0]
+	var/list/data = list()
 	data["totalOutput"] = effective_gen/1000
 	data["maxTotalOutput"] = max_power/1000
 	data["thermalOutput"] = last_thermal_gen/1000
 	data["circConnected"] = 0
 
 	if(circ1)
-		//The one on the left (or top)
 		data["primaryDir"] = vertical ? "top" : "left"
 		data["primaryOutput"] = last_circ1_gen/1000
 		data["primaryFlowCapacity"] = circ1.volume_capacity_used*100
@@ -204,7 +208,6 @@
 		data["primaryOutletTemperature"] = circ1.air2.temperature
 
 	if(circ2)
-		//Now for the one on the right (or bottom)
 		data["secondaryDir"] = vertical ? "bottom" : "right"
 		data["secondaryOutput"] = last_circ2_gen/1000
 		data["secondaryFlowCapacity"] = circ2.volume_capacity_used*100
@@ -217,20 +220,7 @@
 		data["circConnected"] = 1
 	else
 		data["circConnected"] = 0
-
-
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "generator.tmpl", "Thermoelectric Generator", 450, 500)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/power/generator/verb/rotate_clock()
 	set category = "Object"

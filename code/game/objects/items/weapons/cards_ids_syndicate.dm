@@ -30,19 +30,24 @@
 			to_chat(user, SPAN_NOTICE("The microscanner activates as you pass it over the ID, copying its access."))
 
 /obj/item/card/id/syndicate/attack_self(mob/user as mob)
-	// We use the fact that registered_name is not unset should the owner be vaporized, to ensure the id doesn't magically become unlocked.
 	if(!registered_user && register_user(user))
 		to_chat(user, SPAN_NOTICE("The microscanner marks you as its owner, preventing others from accessing its internals."))
 	if(registered_user == user)
 		switch(alert("Would you like edit the ID, or show it?","Show or Edit?", "Edit","Show"))
 			if("Edit")
-				ui_interact(user)
+				tgui_interact(user)
 			if("Show")
 				..()
 	else
 		..()
 
-/obj/item/card/id/syndicate/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/item/card/id/syndicate/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "SyndicateCard", "Agent id", 600, 400)
+		ui.open()
+
+/obj/item/card/id/syndicate/tgui_data(mob/user)
 	var/data[0]
 	var/entries[0]
 	entries[++entries.len] = list("name" = "Age", 				"value" = age)
@@ -61,11 +66,7 @@
 	data["electronic_warfare"] = electronic_warfare
 	data["entries"] = entries
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "agent_id_card.tmpl", "Agent id", 600, 400)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /obj/item/card/id/syndicate/proc/register_user(mob/user)
 	if(!istype(user) || user == registered_user)
@@ -82,45 +83,45 @@
 	UnregisterSignal(registered_user, COMSIG_PARENT_QDELETING)
 	registered_user = null
 
-/obj/item/card/id/syndicate/CanUseTopic(mob/user, datum/topic_state/state, href_list)
-	if(!(href_list && href_list["look_at_id"]) && (user != registered_user))
+/obj/item/card/id/syndicate/tgui_status(mob/user, datum/tgui_state/state, list/params)
+	if(!(params && params["look_at_id"]) && (user != registered_user))
 		return STATUS_CLOSE
 	return ..()
 
-/obj/item/card/id/syndicate/Topic(href, href_list, datum/topic_state/state)
+/obj/item/card/id/syndicate/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
 	var/user = usr
-	if(href_list["electronic_warfare"])
-		electronic_warfare = text2num(href_list["electronic_warfare"])
+	if(action == "electronic_warfare")
+		electronic_warfare = text2num(params["electronic_warfare"])
 		to_chat(user, SPAN_NOTICE("Electronic warfare [electronic_warfare ? "enabled" : "disabled"]."))
-	else if(href_list["set"])
-		switch(href_list["set"])
+	else if(action == "set")
+		switch(params["set"])
 			if("Age")
 				var/new_age = input(user,"What age would you like to put on this card?","Agent Card Age", age) as null|num
-				if(!isnull(new_age) && CanUseTopic(user, state))
+				if(!isnull(new_age) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					if(new_age < 0)
 						age = initial(age)
 					else
 						age = new_age
 					to_chat(user, SPAN_NOTICE("Age has been set to '[age]'."))
-					. = 1
+					. = TRUE
 			if("Prefix")
 				var/new_prefix = sanitizeSafe(input(user,"What title prefix would you like to put on this card?","Agent Card Prefix", age) as text, MAX_NAME_LEN)
-				if(!isnull(new_prefix) && CanUseTopic(user, state))
+				if(!isnull(new_prefix) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					formal_name_prefix = new_prefix
 					to_chat(user, SPAN_NOTICE("Title prefix has been set to '[formal_name_prefix]'."))
-					. = 1
+					. = TRUE
 			if("Suffix")
 				var/new_suffix = sanitizeSafe(input(user,"What title suffix would you like to put on this card?","Agent Card Suffix", age) as text, MAX_NAME_LEN)
-				if(!isnull(new_suffix) && CanUseTopic(user, state))
+				if(!isnull(new_suffix) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					formal_name_suffix = new_suffix
 					to_chat(user, SPAN_NOTICE("Title suffix has been set to '[formal_name_suffix]'."))
-					. = 1
+					. = TRUE
 			if("Appearance")
 				var/datum/card_state/choice = input(user, "Select the appearance for this card.", "Agent Card Appearance") as null|anything in id_card_states()
-				if(choice && CanUseTopic(user, state))
+				if(choice && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.icon_state = choice.icon_state
 					src.name = choice.examine_name
 					src.item_state = choice.item_state
@@ -129,13 +130,13 @@
 					src.extra_details = choice.extra_details
 					update_icon()
 					to_chat(usr, SPAN_NOTICE("Appearance changed to [choice]."))
-					. = 1
+					. = TRUE
 			if("Assignment")
 				var/new_job = sanitize(input(user,"What assignment would you like to put on this card?\nChanging assignment will not grant or remove any access levels.","Agent Card Assignment", assignment) as null|text)
-				if(!isnull(new_job) && CanUseTopic(user, state))
+				if(!isnull(new_job) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.assignment = new_job
 					to_chat(user, SPAN_NOTICE("Occupation changed to '[new_job]'."))
-					. = 1
+					. = TRUE
 			if("Blood Type")
 				var/default = blood_type
 				if(default == initial(blood_type) && ishuman(user))
@@ -143,10 +144,10 @@
 					if(H.dna)
 						default = H.dna.b_type
 				var/new_blood_type = sanitize(input(user,"What blood type would you like to be written on this card?","Agent Card Blood Type",default) as null|text)
-				if(!isnull(new_blood_type) && CanUseTopic(user, state))
+				if(!isnull(new_blood_type) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.blood_type = new_blood_type
 					to_chat(user, SPAN_NOTICE("Blood type changed to '[new_blood_type]'."))
-					. = 1
+					. = TRUE
 			if("DNA Hash")
 				var/default = dna_hash
 				if(default == initial(dna_hash) && ishuman(user))
@@ -154,10 +155,10 @@
 					if(H.dna)
 						default = H.dna.unique_enzymes
 				var/new_dna_hash = sanitize(input(user,"What DNA hash would you like to be written on this card?","Agent Card DNA Hash",default) as null|text)
-				if(!isnull(new_dna_hash) && CanUseTopic(user, state))
+				if(!isnull(new_dna_hash) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.dna_hash = new_dna_hash
 					to_chat(user, SPAN_NOTICE("DNA hash changed to '[new_dna_hash]'."))
-					. = 1
+					. = TRUE
 			if("Fingerprint Hash")
 				var/default = fingerprint_hash
 				if(default == initial(fingerprint_hash) && ishuman(user))
@@ -165,28 +166,28 @@
 					if(H.dna)
 						default = md5(H.dna.uni_identity)
 				var/new_fingerprint_hash = sanitize(input(user,"What fingerprint hash would you like to be written on this card?","Agent Card Fingerprint Hash",default) as null|text)
-				if(!isnull(new_fingerprint_hash) && CanUseTopic(user, state))
+				if(!isnull(new_fingerprint_hash) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.fingerprint_hash = new_fingerprint_hash
 					to_chat(user, SPAN_NOTICE("Fingerprint hash changed to '[new_fingerprint_hash]'."))
-					. = 1
+					. = TRUE
 			if("Name")
 				var/new_name = sanitizeName(input(user,"What name would you like to put on this card?","Agent Card Name", registered_name) as null|text, allow_numbers=TRUE)
-				if(!isnull(new_name) && CanUseTopic(user, state))
+				if(!isnull(new_name) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.registered_name = new_name
 					to_chat(user, SPAN_NOTICE("Name changed to '[new_name]'."))
-					. = 1
+					. = TRUE
 			if("Photo")
 				set_id_photo(user)
 				to_chat(user, SPAN_NOTICE("Photo changed."))
-				. = 1
+				. = TRUE
 			if("Sex")
 				var/new_sex = sanitize(input(user,"What sex would you like to put on this card?","Agent Card Sex", sex) as null|text)
-				if(!isnull(new_sex) && CanUseTopic(user, state))
+				if(!isnull(new_sex) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					src.sex = new_sex
 					to_chat(user, SPAN_NOTICE("Sex changed to '[new_sex]'."))
-					. = 1
+					. = TRUE
 			if("Factory Reset")
-				if(alert("This will factory reset the card, including access and owner. Continue?", "Factory Reset", "No", "Yes") == "Yes" && CanUseTopic(user, state))
+				if(alert("This will factory reset the card, including access and owner. Continue?", "Factory Reset", "No", "Yes") == "Yes" && tgui_status(user, state) == STATUS_INTERACTIVE)
 					age = initial(age)
 					formal_name_prefix = initial(formal_name_prefix)
 					formal_name_suffix = initial(formal_name_suffix)
@@ -206,17 +207,16 @@
 					sex = initial(sex)
 					class = initial(class)
 					to_chat(user, SPAN_NOTICE("All information has been deleted from \the [src]."))
-					. = 1
+					. = TRUE
 			if("Class")
 				var/list/classes = list(CLASS_A, CLASS_B, CLASS_C, CLASS_D, CLASS_E)
 				var/new_class = sanitize(input(user,"What class would you like to put on this card?","Agent Card Branch") as null|anything in classes)
-				if(!isnull(new_class) && CanUseTopic(user, state))
+				if(!isnull(new_class) && tgui_status(user, state) == STATUS_INTERACTIVE)
 					class = new_class
 					to_chat(user, SPAN_NOTICE("Class changed to '[class]'."))
-					. = 1
+					. = TRUE
 
-	// Always update the UI, or buttons will spin indefinitely
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 // Fine - Turns into emag.
 /obj/item/card/id/syndicate/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)

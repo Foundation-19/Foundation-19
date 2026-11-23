@@ -21,31 +21,40 @@
 
 /obj/machinery/body_scan_display/proc/add_new_scan(list/scan)
 	bodyscans += list(scan.Copy())
-	updateUsrDialog()
+	SStgui.update_uis(src)
 
-/obj/machinery/body_scan_display/OnTopic(mob/user as mob, href_list)
-	if(href_list["view"])
-		var/selection = text2num(href_list["view"])
+/obj/machinery/body_scan_display/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
+	if(action == "view")
+		var/selection = text2num(params["view"])
 		if(is_valid_index(selection, bodyscans))
 			selected = selection
-			return TOPIC_REFRESH
-		return TOPIC_HANDLED
-	if(href_list["delete"])
-		var/selection = text2num(href_list["delete"])
+		return TRUE
+
+	if(action == "delete")
+		var/selection = text2num(params["delete"])
 		if(!is_valid_index(selection, bodyscans))
-			return TOPIC_HANDLED
+			return TRUE
 		if(selected == selection)
 			selected = 0
 		else if(selected > selection)
 			selected--
 		bodyscans -= list(bodyscans[selection])
-		return TOPIC_REFRESH
+		return TRUE
 
 /obj/machinery/body_scan_display/interface_interact(user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/body_scan_display/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open=1)
+/obj/machinery/body_scan_display/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BodyScanDisplay", "Body Scan Display Console", 600, 800)
+		ui.open()
+
+/obj/machinery/body_scan_display/tgui_data(mob/user)
 	var/list/data = list()
 	data["scans"] = bodyscans
 	data["selected"] = selected
@@ -58,8 +67,4 @@
 		data["scan_header"] = "&nbsp;"
 		data["scan_health"] = "&nbsp;"
 		data["scan_body"] = "&nbsp;"
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "body_scan_display.tmpl", "Body Scan Display Console", 600, 800)
-		ui.set_initial_data(data)
-		ui.open()
+	return data

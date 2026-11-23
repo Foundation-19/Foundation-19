@@ -81,12 +81,17 @@
 	update_icon()
 
 /obj/machinery/atmospherics/unary/heater/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/atmospherics/unary/heater/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	// this is the data which will be sent to the ui
-	var/data[0]
+/obj/machinery/atmospherics/unary/heater/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "HeatSource", "Gas Heating System", 440, 300)
+		ui.open()
+
+/obj/machinery/atmospherics/unary/heater/tgui_data(mob/user)
+	var/list/data = list()
 	data["on"] = use_power ? 1 : 0
 	data["gasPressure"] = round(air_contents.return_pressure())
 	data["gasTemperature"] = round(air_contents.temperature)
@@ -99,34 +104,22 @@
 	if(air_contents.temperature > (T20C+40))
 		temp_class = "bad"
 	data["gasTemperatureClass"] = temp_class
+	return data
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "freezer.tmpl", "Gas Heating System", 440, 300)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
-
-/obj/machinery/atmospherics/unary/heater/Topic(href, href_list)
+/obj/machinery/atmospherics/unary/heater/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if(href_list["toggleStatus"])
+		return TRUE
+	if(action == "toggleStatus")
 		update_use_power(!use_power)
 		update_icon()
-	if(href_list["temp"])
-		var/amount = text2num(href_list["temp"])
+	if(action == "temp")
+		var/amount = text2num(params["temp"])
 		if(amount > 0)
 			set_temperature = min(set_temperature + amount, max_temperature)
 		else
 			set_temperature = max(set_temperature + amount, 0)
-	if(href_list["setPower"]) //setting power to 0 is redundant anyways
-		var/new_setting = between(0, text2num(href_list["setPower"]), 100)
+	if(action == "setPower")
+		var/new_setting = between(0, text2num(params["setPower"]), 100)
 		set_power_level(new_setting)
 
 	add_fingerprint(usr)

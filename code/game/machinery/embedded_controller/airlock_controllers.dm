@@ -24,18 +24,23 @@
 	dummy_terminals.Cut()
 	return ..()
 
-/obj/machinery/embedded_controller/radio/airlock/CanUseTopic(mob/user)
+/obj/machinery/embedded_controller/radio/airlock/tgui_status(mob/user, datum/tgui_state/state)
 	if(!allowed(user))
 		return min(STATUS_UPDATE, ..())
 	else
 		return ..()
 
-//Advanced airlock controller for when you want a more versatile airlock controller - useful for turning simple access control rooms into airlocks
 /obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller
 	name = "Advanced Airlock Controller"
 
-/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AdvancedAirlockConsole", name, 470, 290)
+		ui.open()
+
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller/tgui_data(mob/user)
+	var/list/data = list()
 
 	data = list(
 		"chamber_pressure" = round(program.memory["chamber_sensor_pressure"]),
@@ -46,20 +51,20 @@
 		"secure" = program.memory["secure"]
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "advanced_airlock_console.tmpl", name, 470, 290, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-//Airlock controller for airlock control - most airlocks on the station use this
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller
 	name = "Airlock Controller"
 	tag_secure = 1
 
-/obj/machinery/embedded_controller/radio/airlock/airlock_controller/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SimpleAirlockConsole", name, 470, 290)
+		ui.open()
+
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller/tgui_data(mob/user)
+	var/list/data = list()
 
 	data = list(
 		"chamber_pressure" = round(program.memory["chamber_sensor_pressure"]),
@@ -68,21 +73,21 @@
 		"processing" = program.memory["processing"],
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "simple_airlock_console.tmpl", name, 470, 290, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-//Access controller for door control - used in virology and the like
 /obj/machinery/embedded_controller/radio/airlock/access_controller
 	icon = 'icons/obj/airlock_machines.dmi'
 	name = "Access Controller"
 	tag_secure = 1
 
-/obj/machinery/embedded_controller/radio/airlock/access_controller/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/obj/machinery/embedded_controller/radio/airlock/access_controller/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "DoorAccessConsole", name, 330, 220)
+		ui.open()
+
+/obj/machinery/embedded_controller/radio/airlock/access_controller/tgui_data(mob/user)
+	var/list/data = list()
 
 	data = list(
 		"exterior_status" = program.memory["exterior_status"],
@@ -90,9 +95,4 @@
 		"processing" = program.memory["processing"]
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "door_access_console.tmpl", name, 330, 220, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data

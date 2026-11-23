@@ -122,22 +122,28 @@
  *
  *  See NanoUI documentation for details.
  */
-/obj/machinery/biogenerator/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	user.set_machine(src)
+/obj/machinery/biogenerator/tgui_interact(mob/user, datum/tgui/ui)
+	var/list/data = tgui_data(user)
+	ui = SStgui.try_update_ui(user, src, ui, data)
+	if(!ui)
+		ui = new(user, src, "Biogenerator", "Biogenerator", 440, 600)
+		ui.open()
+
+/obj/machinery/biogenerator/tgui_data(mob/user)
 	var/list/data = list()
 	data["state"] = state
 	var/name
 	var/cost
 	var/type_name
 	var/path
-	if (state == BG_READY)
+	if(state == BG_READY)
 		data["points"] = points
 		var/list/listed_types = list()
-		for(var/c_type =1 to products.len)
+		for(var/c_type = 1 to products.len)
 			type_name = products[c_type]
 			var/list/current_content = products[type_name]
 			var/list/listed_products = list()
-			for(var/c_product =1 to current_content.len)
+			for(var/c_product = 1 to current_content.len)
 				path = current_content[c_product]
 				var/atom/A = path
 				name = initial(A.name)
@@ -150,39 +156,38 @@
 				"type_name" = type_name,
 				"products" = listed_products)))
 		data["types"] = listed_types
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "biogenerator.tmpl", "Biogenerator", 440, 600)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
-/obj/machinery/biogenerator/OnTopic(user, href_list)
-	switch (href_list["action"])
+/obj/machinery/biogenerator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
+	switch(action)
 		if("activate")
 			activate()
 		if("detach")
 			if(beaker)
-				beaker.dropInto(src.loc)
+				beaker.dropInto(loc)
 				beaker = null
 				state = BG_NO_BEAKER
 				update_icon()
 		if("create")
-			if (state == BG_PROCESSING)
-				return TOPIC_REFRESH
-			var/type = href_list["type"]
-			var/product_index = text2num(href_list["product_index"])
-			if (isnull(products[type]))
-				return TOPIC_REFRESH
+			if(state == BG_PROCESSING)
+				return TRUE
+			var/type = params["type"]
+			var/product_index = text2num(params["product_index"])
+			if(isnull(products[type]))
+				return TRUE
 			var/list/sub_products = products[type]
-			if (product_index < 1 || product_index > sub_products.len)
-				return TOPIC_REFRESH
+			if(product_index < 1 || product_index > sub_products.len)
+				return TRUE
 			create_product(type, sub_products[product_index])
 		if("return")
 			state = BG_READY
-	return TOPIC_REFRESH
+	return TRUE
 
 /obj/machinery/biogenerator/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/biogenerator/proc/activate()
@@ -201,7 +206,7 @@
 		qdel(I)
 	if(S)
 		state = BG_PROCESSING
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		update_icon()
 		playsound(src.loc, 'sounds/machines/blender.ogg', 50, 1)
 		show_sound_effect(src.loc)
@@ -218,7 +223,7 @@
 	var/cost = products[type][path]
 	cost = round(cost/build_eff)
 	points -= cost
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 	update_icon()
 	sleep(30)
 	var/atom/movable/result = new path

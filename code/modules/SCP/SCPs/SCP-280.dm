@@ -13,7 +13,7 @@
 	response_disarm = "tries to push away"
 	response_harm = "tries to punch"
 
-	can_escape = TRUE //snip snip
+	can_escape = TRUE
 	pass_flags = PASS_FLAG_TABLE
 	density = FALSE
 
@@ -28,23 +28,24 @@
 	health = 400
 
 	ai_holder_type = /datum/ai_holder/simple_animal/melee/scp280
-	say_list_type = /datum/say_list/scp017 //they have like the same saylist so...
+	say_list_type = /datum/say_list/scp017
 
 	natural_weapon = /obj/item/natural_weapon/claws/strong
 
-	//Mechanics
-
-	///Our damage message cooldown
 	var/damage_message_cooldown
+	var/spawn_area
+	var/containment_alert_cooldown = 60 SECONDS
+	var/last_containment_alert = 0
 
 /mob/living/simple_animal/hostile/scp280/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"dark mass", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_KETER, //Obj Class
-		"280" //Numerical Designation
+		src,
+		"dark mass",
+		SCP_KETER,
+		"280"
 	)
+	spawn_area = get_area(src)
 
 //AI stuff
 
@@ -122,6 +123,8 @@
 	if(lumcount >= 0.6)
 		ai_holder.set_stance(STANCE_FLEE)
 
+	check_containment_status()
+
 //Overrides
 
 /mob/living/simple_animal/hostile/scp280/bullet_act(obj/item/projectile/Proj)
@@ -166,3 +169,27 @@
 	else
 		forceMove(new_target_turf)
 		health = maxHealth
+		if(SCP && SCP.research)
+			SCP.research.set_containment_status(SCP_BREACHED)
+			var/area/relocation_area = get_area(new_target_turf)
+			for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+				var/datum/job/job = SSjobs.get_by_title(H.job)
+				if(job && (job.department_flag & (COM|SCI|SEC)))
+					to_chat(H, SPAN_DANGER("<b>ALERT:</b> SCP-280 has relocated to: [relocation_area ? relocation_area.name : "unknown location"]"))
+
+/mob/living/simple_animal/hostile/scp280/proc/check_containment_status()
+	if(!SCP || !SCP.research)
+		return
+	var/area/current = get_area(src)
+	var/in_containment = (current == spawn_area)
+	if(in_containment && SCP.research.containment_status == SCP_BREACHED)
+		SCP.research.set_containment_status(SCP_CONTAINED)
+	else if(!in_containment && SCP.research.containment_status != SCP_BREACHED)
+		SCP.research.set_containment_status(SCP_BREACHED)
+		if(world.time > last_containment_alert + containment_alert_cooldown)
+			last_containment_alert = world.time
+			priority_announcement.Announce(
+				"ALERT: SCP-280 has been detected outside its containment zone. All personnel are advised to restore lighting in affected corridors immediately.",
+				"SCP-280 Containment Breach",
+				'sounds/effects/siren.ogg'
+			)

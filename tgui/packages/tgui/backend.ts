@@ -124,12 +124,31 @@ export const backendMiddleware = (store) => {
     const { type, payload } = action;
 
     if (type === 'update') {
+      // A live 'update' means THIS page instance is the active one. If a
+      // stale suspend interval survived a page replacement (the control's
+      // JS context persists across re-browse in BYOND 516), kill it and
+      // restore visibility — otherwise the ghost interval keeps hiding
+      // every new page loaded into this window.
+      if (suspendInterval) {
+        clearInterval(suspendInterval);
+        suspendInterval = undefined;
+        Byond.winset(Byond.windowId, {
+          'is-visible': true,
+        });
+      }
       store.dispatch(backendUpdate(payload));
       return;
     }
 
     if (type === 'suspend') {
-      store.dispatch(backendSuspendSuccess());
+      // Only honor the suspend if we actually requested one ourselves.
+      // Stale echoes from a previous page's interval arrive here too; the
+      // server-side ownership guard already filters most, but a fresh page
+      // receiving a leftover interval tick must NOT hide itself.
+      if (suspendInterval) {
+        store.dispatch(backendSuspendSuccess());
+        return;
+      }
       return;
     }
 

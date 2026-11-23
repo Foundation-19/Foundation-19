@@ -64,11 +64,17 @@
 	. = ..()
 
 /obj/machinery/organ_printer/interface_interact(mob/living/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/organ_printer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null)
-	var/data = list()
+/obj/machinery/organ_printer/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OrganPrinter", name, 550, 700)
+		ui.open()
+
+/obj/machinery/organ_printer/tgui_data(mob/user)
+	var/list/data = list()
 
 	data["special_data"] = get_special_data()
 	data["print_time"] = print_delay / 10
@@ -77,8 +83,8 @@
 	data["printing"] = printing
 
 	data["product_list"] = list()
-	if (products)
-		for (var/V in products)
+	if(products)
+		for(var/V in products)
 			var/product_data = list()
 			product_data["product"] = V
 			product_data["req_matter"] = products[V][2]
@@ -86,13 +92,7 @@
 			product_data["can_print"] = can_print(V)
 			data["product_list"] += list(product_data)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
-	if(!ui)
-		ui = new(user, src, ui_key, "bioprinter.tmpl", name, 550, 700)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.auto_update_layout = TRUE
-		ui.set_auto_update(1)
+	return data
 
 /// Attempts to run special logic for this item, such as turning it into matter or giving DNA samples. Return TRUE if you want to interrupt the normal attackby.
 /obj/machinery/organ_printer/proc/process_item(obj/item/I, mob/living/user)
@@ -143,16 +143,19 @@
 		ui_interact(user) // Refresh the window if we're still nearby
 	return print_organ(choice)
 
-/obj/machinery/organ_printer/OnTopic(mob/user, href_list, datum/topic_state/state)
-	if (href_list["to_print"])
-		if (operable() && !printing)
-			visible_message(SPAN_NOTICE("\The [src] begins printing \the [parse_zone(href_list["to_print"])]."))
-			stored_matter -= products[href_list["to_print"]][2]
+/obj/machinery/organ_printer/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
+	if(action == "to_print")
+		if(operable() && !printing)
+			visible_message(SPAN_NOTICE("\The [src] begins printing \the [parse_zone(params["to_print"])]."))
+			stored_matter -= products[params["to_print"]][2]
 			update_use_power(POWER_USE_ACTIVE)
 			printing = TRUE
 			update_icon()
-			addtimer(CALLBACK(src, PROC_REF(attempt_to_print), href_list["to_print"], user), print_delay)
-			return TOPIC_REFRESH
+			addtimer(CALLBACK(src, PROC_REF(attempt_to_print), params["to_print"], usr), print_delay)
+			return TRUE
 
 
 

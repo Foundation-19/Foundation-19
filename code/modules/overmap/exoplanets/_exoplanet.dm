@@ -64,7 +64,7 @@ GLOBAL_VAR_INIT(number_of_planetoids, 0)
 	var/list/spawned_features
 
 	//Either a type or a list of types and weights. You must include all types if it's a list
-	var/list/habitability_distribution = list(
+	var/list/habitability_distribution = alist(
 		HABITABILITY_IDEAL = 10,
 		HABITABILITY_OKAY = 40,
 		HABITABILITY_BAD = 50

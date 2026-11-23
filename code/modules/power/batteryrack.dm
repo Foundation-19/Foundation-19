@@ -187,8 +187,14 @@
 		celldiff = min(min(celldiff, most.charge), least.maxcharge - least.charge)
 		least.give(most.use(celldiff))
 
-/obj/machinery/power/smes/batteryrack/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/power/smes/batteryrack/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "BatteryRack", "Cell Rack PSU", 500, 430)
+		ui.open()
+
+/obj/machinery/power/smes/batteryrack/tgui_data(mob/user)
+	var/list/data = list()
 
 	data["mode"] = mode
 	data["transfer_max"] = max_transfer_rate
@@ -201,26 +207,20 @@
 	var/list/cells = list()
 	var/cell_index = 1
 	for(var/obj/item/cell/C in internal_cells)
-		var/list/cell[0]
+		var/list/cell = list()
 		cell["slot"] = cell_index
 		cell["used"] = 1
 		cell["percentage"] = round(C.percent(), 0.01)
 		cell_index++
 		cells += list(cell)
 	while(cell_index <= PSU_MAXCELLS)
-		var/list/cell[0]
+		var/list/cell = list()
 		cell["slot"] = cell_index
 		cell["used"] = 0
 		cell_index++
 		cells += list(cell)
 	data["cells_list"] = cells
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "psu.tmpl", "Cell Rack PSU", 500, 430)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/power/smes/batteryrack/dismantle()
 	for(var/obj/item/cell/C in internal_cells)
@@ -238,7 +238,7 @@
 			to_chat(user, "\The [src] has no empty slot for \the [W]")
 
 /obj/machinery/power/smes/batteryrack/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/power/smes/batteryrack/inputting()
@@ -247,31 +247,28 @@
 /obj/machinery/power/smes/batteryrack/outputting()
 	return
 
-/obj/machinery/power/smes/batteryrack/Topic(href, href_list)
-	// ..() would respond to those topic calls, but we don't want to use them at all.
-	// Calls to these shouldn't occur anyway, due to usage of different nanoUI, but
-	// it's here in case someone decides to try hrefhacking/modified templates.
-	if(href_list["input"] || href_list["output"])
-		return 1
+/obj/machinery/power/smes/batteryrack/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(params["input"] || params["output"])
+		return TRUE
 
 	if(..())
-		return 1
-	if( href_list["disable"] )
+		return TRUE
+	if( action == "disable" )
 		update_io(0)
-		return 1
-	else if( href_list["enable"] )
-		update_io(between(1, text2num(href_list["enable"]), 3))
-		return 1
-	else if( href_list["equaliseon"] )
+		return TRUE
+	else if( action == "enable" )
+		update_io(between(1, text2num(params["enable"]), 3))
+		return TRUE
+	else if( action == "equaliseon" )
 		equalise = 1
-		return 1
-	else if( href_list["equaliseoff"] )
+		return TRUE
+	else if( action == "equaliseoff" )
 		equalise = 0
-		return 1
-	else if( href_list["ejectcell"] )
-		var/slot_number = text2num(href_list["ejectcell"])
+		return TRUE
+	else if( action == "ejectcell" )
+		var/slot_number = text2num(params["ejectcell"])
 		if(slot_number != Clamp(round(slot_number), 1, length(internal_cells)))
-			return 1
+			return TRUE
 		var/obj/item/cell/C = internal_cells[slot_number]
 
 		C.dropInto(loc)
@@ -279,4 +276,4 @@
 		update_icon()
 		RefreshParts()
 		update_maxcharge()
-		return 1
+		return TRUE

@@ -101,9 +101,15 @@
 	if(b_stat)
 		wires.Interact(user)
 
-	return ui_interact(user)
+	return tgui_interact(user)
 
-/obj/item/device/radio/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
+/obj/item/device/radio/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Radio", "[name]", 400, 430, state = state)
+		ui.open()
+
+/obj/item/device/radio/tgui_data(mob/user)
 	var/data[0]
 
 	data["power"] = on
@@ -127,11 +133,7 @@
 	if(syndie)
 		data["useSyndMode"] = 1
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "radio_basic.tmpl", "[name]", 400, 430, state = state)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /obj/item/device/radio/proc/list_channels(mob/user)
 	return list_internal_channels(user)
@@ -215,20 +217,20 @@
 		return STATUS_CLOSE
 	return ..()
 
-/obj/item/device/radio/Topic(href, href_list)
+/obj/item/device/radio/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
 
 	usr.set_machine(src)
-	if (href_list["track"])
-		var/mob/target = locate(href_list["track"])
-		var/mob/living/silicon/ai/A = locate(href_list["track2"])
+	if (action == "track")
+		var/mob/target = locate(params["track"])
+		var/mob/living/silicon/ai/A = locate(params["track2"])
 		if(A && target)
 			A.ai_actual_track(target)
 		. = TRUE
 
-	else if (href_list["freq"])
-		var/new_frequency = (frequency + text2num(href_list["freq"]))
+	else if (action == "freq")
+		var/new_frequency = (frequency + text2num(params["freq"]))
 		if ((new_frequency < PUBLIC_LOW_FREQ || new_frequency > PUBLIC_HIGH_FREQ))
 			new_frequency = sanitize_frequency(new_frequency)
 		set_frequency(new_frequency)
@@ -236,20 +238,20 @@
 			if(hidden_uplink.check_trigger(usr, frequency, traitor_frequency))
 				close_browser(usr, "window=radio")
 		. = TRUE
-	else if (href_list["default_freq"])
+	else if (action == "default_freq")
 		reset_frequency()
 		if(hidden_uplink)
 			if(hidden_uplink.check_trigger(usr, frequency, traitor_frequency))
 				close_browser(usr, "window=radio")
 		. = TRUE
-	else if (href_list["power"])
+	else if (action == "power")
 		TogglePower()
 		. = TRUE
-	else if (href_list["talk"])
+	else if (action == "talk")
 		ToggleBroadcast()
 		. = TRUE
-	else if (href_list["listen"])
-		var/chan_name = href_list["ch_name"]
+	else if (action == "listen")
+		var/chan_name = params["ch_name"]
 		if (!chan_name)
 			ToggleReception()
 		else
@@ -258,15 +260,15 @@
 			else
 				channels[chan_name] |= FREQ_LISTENING
 		. = TRUE
-	else if(href_list["spec_freq"])
-		var freq = href_list["spec_freq"]
+	else if(action == "spec_freq")
+		var/freq = params["spec_freq"]
 		if(has_channel_access(usr, freq))
 			set_frequency(text2num(freq))
 		. = TRUE
-	if(href_list["nowindow"]) // here for pAIs, maybe others will want it, idk
+	if(params["nowindow"])
 		return TRUE
 
-	if(href_list["remove_cell"])
+	if(action == "remove_cell")
 		if(cell)
 			var/mob/user = usr
 			user.put_in_hands(cell)
@@ -275,7 +277,7 @@
 		return TRUE
 
 	if(.)
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 
 // needs fixes later on, but at least its more optimized
 /obj/item/device/radio/proc/autosay(message, from, channel) //BS12 EDIT
@@ -740,11 +742,11 @@
 
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
 
-/obj/item/device/radio/borg/Topic(href, href_list)
+/obj/item/device/radio/borg/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if (href_list["mode"])
-		var/enable_subspace_transmission = text2num(href_list["mode"])
+		return TRUE
+	if (action == "mode")
+		var/enable_subspace_transmission = text2num(params["mode"])
 		if(enable_subspace_transmission != subspace_transmission)
 			subspace_transmission = !subspace_transmission
 			if(subspace_transmission)
@@ -752,13 +754,13 @@
 			else
 				to_chat(usr, SPAN_NOTICE("Subspace Transmission is disabled"))
 
-			if(subspace_transmission == 0)//Simple as fuck, clears the channel list to prevent talking/listening over them if subspace transmission is disabled
+			if(subspace_transmission == 0)
 				channels = list()
 			else
 				recalculateChannels()
-		. = 1
-	if (href_list["shutup"]) // Toggle loudspeaker mode, AKA everyone around you hearing your radio.
-		var/do_shut_up = text2num(href_list["shutup"])
+		. = TRUE
+	if (action == "shutup")
+		var/do_shut_up = text2num(params["shutup"])
 		if(do_shut_up != shut_up)
 			shut_up = !shut_up
 			if(shut_up)
@@ -767,10 +769,10 @@
 			else
 				canhear_range = 3
 				to_chat(usr, SPAN_NOTICE("Loadspeaker enabled."))
-		. = 1
+		. = TRUE
 
 	if(.)
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 
 /obj/item/device/radio/borg/interact(mob/user as mob)
 	if(!on)
@@ -778,7 +780,13 @@
 
 	. = ..()
 
-/obj/item/device/radio/borg/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/item/device/radio/borg/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Radio", "[name]", 400, 430)
+		ui.open()
+
+/obj/item/device/radio/borg/tgui_data(mob/user)
 	var/data[0]
 
 	data["mic_status"] = broadcasting
@@ -799,11 +807,7 @@
 	data["has_subspace"] = 1
 	data["subspace"] = subspace_transmission
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "radio_basic.tmpl", "[name]", 400, 430)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /obj/item/device/radio/proc/config(op)
 	if(radio_controller)
@@ -928,5 +932,5 @@
 		if(istype(exosuit) && exosuit.head && exosuit.head.radio && exosuit.head.radio.is_functional())
 			return ..()
 
-/obj/item/device/radio/exosuit/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.mech_state)
+/obj/item/device/radio/exosuit/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.mech_state)
 	. = ..()

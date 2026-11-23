@@ -107,16 +107,22 @@
 	src.updateDialog()
 
 /obj/machinery/portable_atmospherics/powered/pump/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/portable_atmospherics/powered/pump/ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=1)
-	var/list/data[0]
+/obj/machinery/portable_atmospherics/powered/pump/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "PortablePump", "Portable Pump")
+		ui.open()
+
+/obj/machinery/portable_atmospherics/powered/pump/tgui_data(mob/user)
+	var/list/data = list()
 	var/obj/item/cell/cell = get_cell()
 	data["portConnected"] = connected_port ? 1 : 0
 	data["tankPressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)
 	data["targetpressure"] = round(target_pressure)
-	data["pump_dir"] = direction_out
+	data["pumpDir"] = direction_out
 	data["minpressure"] = round(pressuremin)
 	data["maxpressure"] = round(pressuremax)
 	data["powerDraw"] = round(last_power_draw)
@@ -125,32 +131,31 @@
 	data["on"] = (use_power == POWER_USE_ACTIVE) ? 1 : 0
 
 	data["hasHoldingTank"] = holding ? 1 : 0
-	if (holding)
+	if(holding)
 		data["holdingTank"] = list("name" = holding.name, "tankPressure" = round(holding.air_contents.return_pressure() > 0 ? holding.air_contents.return_pressure() : 0))
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "portpump.tmpl", "Portable Pump", 480, 410, state = GLOB.physical_state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/portable_atmospherics/powered/pump/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-/obj/machinery/portable_atmospherics/powered/pump/OnTopic(user, href_list)
-	if(href_list["power"])
-		update_use_power(use_power == POWER_USE_ACTIVE ? POWER_USE_IDLE : POWER_USE_ACTIVE)
-		. = TOPIC_REFRESH
-	if(href_list["direction"])
-		direction_out = !direction_out
-		. = TOPIC_REFRESH
-	if (href_list["remove_tank"])
-		if(holding)
-			holding.dropInto(loc)
-			holding = null
-		. = TOPIC_REFRESH
-	if (href_list["pressure_adj"])
-		var/diff = text2num(href_list["pressure_adj"])
-		target_pressure = min(10*ONE_ATMOSPHERE, max(0, target_pressure+diff))
-		. = TOPIC_REFRESH
-
-	if(.)
-		update_icon()
+	switch(action)
+		if("power")
+			update_use_power(use_power == POWER_USE_ACTIVE ? POWER_USE_IDLE : POWER_USE_ACTIVE)
+			update_icon()
+			return TRUE
+		if("direction")
+			direction_out = !direction_out
+			update_icon()
+			return TRUE
+		if("remove_tank")
+			if(holding)
+				holding.dropInto(loc)
+				holding = null
+			update_icon()
+			return TRUE
+		if("pressure_adj")
+			var/diff = text2num(params["pressure_adj"])
+			target_pressure = min(10*ONE_ATMOSPHERE, max(0, target_pressure+diff))
+			update_icon()
+			return TRUE

@@ -30,7 +30,13 @@
 		deselect_shield()
 	return shields
 
-/datum/nano_module/shields_monitor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/shields_monitor/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "ShieldsMonitor", name)
+		ui.open()
+
+/datum/nano_module/shields_monitor/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	if (active)
@@ -73,27 +79,20 @@
 			shields_info.Add(temp)
 		data["shields"] = shields_info
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "shields_monitor.tmpl", "Shield Generators Monitoring", 400, 500, state = state)
-		if(host.update_layout())
-			ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/datum/nano_module/shields_monitor/Topic(href, href_list)
+/datum/nano_module/shields_monitor/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
-	if( href_list["refresh"] )
+	if( action == "refresh" )
 		get_shields()
 		return 1
-	if( href_list["return"] )
+	if( action == "return" )
 		deselect_shield()
 		return 1
-	if( href_list["ref"] )
+	if( action == "ref" )
 		var/list/shields = get_shields()
-		var/obj/machinery/power/shield_generator/S = locate(href_list["ref"]) in shields
+		var/obj/machinery/power/shield_generator/S = locate(params["ref"]) in shields
 		if(S)
 			deselect_shield()
 			RegisterSignal(S, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/nano_module/shields_monitor, deselect_shield))
@@ -106,4 +105,4 @@
 	UnregisterSignal(active, COMSIG_PARENT_QDELETING)
 	active = null
 	if(source) // source is only set if called by the shield destroyed event, which is the only time we want to update the UI
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)

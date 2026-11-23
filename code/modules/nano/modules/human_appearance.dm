@@ -35,111 +35,118 @@
 		langs = owner.generate_valid_languages()
 
 
-/datum/nano_module/appearance_changer/Topic(href, list/href_list, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/appearance_changer/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	. = ..()
 	if (.)
 		return
 	if (QDELETED(owner))
 		return
 
-	if (href_list["race"] && (flags & APPEARANCE_RACE) && (!races || (href_list["race"] in races)))
-		owner.change_species(href_list["race"])
+	if (action == "race" && (flags & APPEARANCE_RACE) && (!races || (params["race"] in races)))
+		owner.change_species(params["race"])
 		generate_data()
 		return TRUE
 
-	if (href_list["gender"] && (flags & APPEARANCE_GENDER) && (href_list["gender"] in owner.species.genders))
-		owner.change_gender(href_list["gender"])
+	if (action == "gender" && (flags & APPEARANCE_GENDER) && (params["gender"] in owner.species.genders))
+		owner.change_gender(params["gender"])
 		generate_data()
 		return TRUE
 
-	if (href_list["skin_tone"] && (flags & APPEARANCE_SKIN) && (owner.species.appearance_flags & HAS_A_SKIN_TONE))
+	if (action == "skin_tone" && (flags & APPEARANCE_SKIN) && (owner.species.appearance_flags & HAS_A_SKIN_TONE))
 		var/high = owner.species.max_skin_tone()
-		var/data = input(usr, "Skin Tone:\n1 (pale) ~ [high] (dark)", "Skin Tone", 35 - owner.s_tone) as null | num
-		if (isnull(data) || !can_still_topic(state))
+		var/dat = input(usr, "Skin Tone:\n1 (pale) ~ [high] (dark)", "Skin Tone", 35 - owner.s_tone) as null | num
+		if (isnull(dat) || !can_still_topic(state))
 			return
-		data = 35 - max(min(round(data), high), 1)
-		return owner.change_skin_tone(data)
+		dat = 35 - max(min(round(dat), high), 1)
+		return owner.change_skin_tone(dat)
 
-	if (href_list["skin_color"] && (flags & APPEARANCE_SKIN) && (owner.species.appearance_flags & HAS_SKIN_COLOR))
+	if (action == "skin_color" && (flags & APPEARANCE_SKIN) && (owner.species.appearance_flags & HAS_SKIN_COLOR))
 		var/color = rgb(owner.r_skin, owner.g_skin, owner.b_skin)
-		var/data = input(usr, "Skin Color:", "Skin Color", color) as null | color
-		if (isnull(data) || !can_still_topic(state))
+		var/dat = input(usr, "Skin Color:", "Skin Color", color) as null | color
+		if (isnull(dat) || !can_still_topic(state))
 			return
-		color = rgb2num(data)
+		color = rgb2num(dat)
 		if (owner.change_skin_color(arglist(color)))
 			if (flags & APPEARANCE_DNA2)
 				owner.update_dna()
 			return TRUE
 		return
 
-	if (href_list["hair"] && (flags & APPEARANCE_HEAD) && (href_list["hair"] in heads))
-		if (owner.change_hair(href_list["hair"]))
+	if (action == "hair" && (flags & APPEARANCE_HEAD) && (params["hair"] in heads))
+		if (owner.change_hair(params["hair"]))
 			if (flags & APPEARANCE_DNA2)
 				owner.update_dna()
 			return TRUE
 		return
 
-	if (href_list["hair_color"] && (flags & APPEARANCE_HEAD_COLOR))
+	if (action == "hair_color" && (flags & APPEARANCE_HEAD_COLOR))
 		var/color = rgb(owner.r_hair, owner.g_hair, owner.b_hair)
-		var/data = input(usr, "Hair Color:", "Hair Color", color) as null | color
-		if (isnull(data) || !can_still_topic(state))
+		var/dat = input(usr, "Hair Color:", "Hair Color", color) as null | color
+		if (isnull(dat) || !can_still_topic(state))
 			return
-		color = rgb2num(data)
+		color = rgb2num(dat)
 		if (owner.change_hair_color(arglist(color)))
 			if (flags & APPEARANCE_DNA2)
 				owner.update_dna()
 			return TRUE
 		return
 
-	if (href_list["facial_hair"] && (flags & APPEARANCE_FACE) && (href_list["facial_hair"] in faces))
-		if (owner.change_facial_hair(href_list["facial_hair"]))
+	if (action == "facial_hair" && (flags & APPEARANCE_FACE) && (params["facial_hair"] in faces))
+		if (owner.change_facial_hair(params["facial_hair"]))
 			if (flags & APPEARANCE_DNA2)
 				owner.update_dna()
 			return TRUE
 		return
 
-	if (href_list["facial_hair_color"] && (flags & APPEARANCE_FACE_COLOR))
+	if (action == "facial_hair_color" && (flags & APPEARANCE_FACE_COLOR))
 		var/color = rgb(owner.r_facial, owner.g_facial, owner.b_facial)
-		var/data = input(usr, "Facial Hair Color:", "Facial Hair Color", color) as null | color
-		if (isnull(data) || !can_still_topic(state))
+		var/dat = input(usr, "Facial Hair Color:", "Facial Hair Color", color) as null | color
+		if (isnull(dat) || !can_still_topic(state))
 			return
-		color = rgb2num(data)
+		color = rgb2num(dat)
 		if (owner.change_facial_hair_color(arglist(color)))
 			if (flags & APPEARANCE_DNA2)
 				owner.update_dna()
 			return TRUE
 		return
 
-	if (href_list["eye_color"] && (flags & APPEARANCE_EYES))
+	if (action == "eye_color" && (flags & APPEARANCE_EYES))
 		var/color = rgb(owner.r_eyes, owner.g_eyes, owner.b_eyes)
-		var/data = input(usr, "Eye Color:", "Eye Color", color) as null | color
-		if (isnull(data) || !can_still_topic(state))
+		var/dat = input(usr, "Eye Color:", "Eye Color", color) as null | color
+		if (isnull(dat) || !can_still_topic(state))
 			return
-		color = rgb2num(data)
+		color = rgb2num(dat)
 		if (owner.change_eye_color(arglist(color)))
 			if (flags & APPEARANCE_DNA2)
 				owner.update_dna()
 			return TRUE
 		return
 
-	if (href_list["language"] && (flags & APPEARANCE_LANG))
-		if (href_list["language_mode"] == "add")
+	if (action == "language" && (flags & APPEARANCE_LANG))
+		if (params["language_mode"] == "add")
 			if ((~flags & APPEARANCE_LANG_ANY_NUMBER) && length(owner.languages) >= MAX_LANGUAGES)
 				return
-			if ((~flags & APPEARANCE_LANG_ANY_ORIGIN) && !(href_list["language"] in langs))
+			if ((~flags & APPEARANCE_LANG_ANY_ORIGIN) && !(params["language"] in langs))
 				return
-			if (owner.add_language(href_list["language"]))
+			if (owner.add_language(params["language"]))
 				return TRUE
 			return
 		else
-			owner.remove_language(href_list["language"])
+			owner.remove_language(params["language"])
 			return TRUE
 
 
-/datum/nano_module/appearance_changer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = TRUE, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/appearance_changer/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
 	if (QDELETED(owner) || !owner.species)
 		return
 
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (ui)
+		return
+	ui = new(user, src, "HumanAppearance", "[src]", 800, 450, state = state)
+	ui.open()
+
+/datum/nano_module/appearance_changer/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	data["specimen"] = owner.species.name
@@ -184,10 +191,4 @@
 		for (var/lang_key in lang_list)
 			entries += list(list("language" = lang_key, "selected" = (lang_list[lang_key] in owner.languages)))
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (ui)
-		return
-	ui = new(user, src, ui_key, "appearance_changer.tmpl", "[src]", 800, 450, state = state)
-	ui.set_initial_data(data)
-	ui.open()
-	ui.set_auto_update(TRUE)
+	return data

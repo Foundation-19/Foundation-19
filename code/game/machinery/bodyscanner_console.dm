@@ -62,15 +62,23 @@
 	return ..()
 
 /obj/machinery/body_scanconsole/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/body_scanconsole/CanUseTopic(mob/user)
+/obj/machinery/body_scanconsole/tgui_status(mob/user, datum/tgui_state/state)
 	if(!connected)
 		return STATUS_CLOSE
 	return ..()
 
-/obj/machinery/body_scanconsole/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/body_scanconsole/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BodyScanner", "Body Scanner", 600, 800)
+		ui.open()
+
+/obj/machinery/body_scanconsole/tgui_data(mob/user)
+	var/list/data = list()
+
 	if(connected && connected.occupant)
 		data["scanEnabled"] = TRUE
 		if(ishuman(connected.occupant))
@@ -89,69 +97,68 @@
 		data["html_scan_health"] = display_medical_data_health(data["scan"], user.get_skill_value(SKILL_MEDICAL))
 		data["html_scan_body"] = display_medical_data_body(data["scan"], user.get_skill_value(SKILL_MEDICAL))
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "body_scanner.tmpl", "Body Scanner", 600, 800)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
-/obj/machinery/body_scanconsole/OnTopic(mob/user, href_list)
-	if(href_list["scan"])
-		if (!connected.occupant)
-			to_chat(user, SPAN_WARNING("[icon2html(src, user)]The body scanner is empty."))
-			return TOPIC_REFRESH
-		if (!istype(connected.occupant))
-			to_chat(user, SPAN_WARNING("[icon2html(src, user)]The body scanner cannot scan that lifeform."))
-			return TOPIC_REFRESH
+/obj/machinery/body_scanconsole/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
+	if(action == "scan")
+		if(!connected.occupant)
+			to_chat(usr, SPAN_WARNING("[icon2html(src, usr)]The body scanner is empty."))
+			return TRUE
+		if(!istype(connected.occupant))
+			to_chat(usr, SPAN_WARNING("[icon2html(src, usr)]The body scanner cannot scan that lifeform."))
+			return TRUE
 		data["printEnabled"] = TRUE
 		data["eraseEnabled"] = TRUE
 		data["pushEnabled"] = TRUE
 		data["scan"] = connected.occupant.get_raw_medical_data(TRUE)
-		data["html_scan_header"] = display_medical_data_header(data["scan"], user.get_skill_value(SKILL_MEDICAL))
-		data["html_scan_health"] = display_medical_data_health(data["scan"], user.get_skill_value(SKILL_MEDICAL))
-		data["html_scan_body"] = display_medical_data_body(data["scan"], user.get_skill_value(SKILL_MEDICAL))
+		data["html_scan_header"] = display_medical_data_header(data["scan"], usr.get_skill_value(SKILL_MEDICAL))
+		data["html_scan_health"] = display_medical_data_health(data["scan"], usr.get_skill_value(SKILL_MEDICAL))
+		data["html_scan_body"] = display_medical_data_body(data["scan"], usr.get_skill_value(SKILL_MEDICAL))
 
 		stored_scan_subject = connected.occupant
-		user.visible_message(
-			SPAN_NOTICE("\The [user] performs a scan of \the [connected.occupant] using \the [initial(connected.name)]."),
+		usr.visible_message(
+			SPAN_NOTICE("\The [usr] performs a scan of \the [connected.occupant] using \the [initial(connected.name)]."),
 			SPAN_NOTICE("You run a full-body diagnostic of \the [connected.occupant] using \the [initial(connected.name)]."),
 			SPAN_ITALIC("You hear a series of beeps, followed by a deep humming sound.")
 		)
 		playsound(connected.loc, 'sounds/machines/medbayscanner.ogg', 50)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if (href_list["print"])
-		if (!data["scan"])
-			to_chat(user, SPAN_WARNING("[icon2html(src, user)]Error: No scan stored."))
-			return TOPIC_REFRESH
+	if(action == "print")
+		if(!data["scan"])
+			to_chat(usr, SPAN_WARNING("[icon2html(src, usr)]Error: No scan stored."))
+			return TRUE
 		var/list/scan = data["scan"]
 		new /obj/item/paper/bodyscan(loc, "Printout error.", "Body scan report - [stored_scan_subject]", scan.Copy())
 		var/obj/item/organ/internal/heart/heart_organ = connected.occupant?.internal_organs_by_name[BP_HEART]
 		if(istype(heart_organ) && (heart_organ.SCP?.designation == "3349-1"))
 			new /obj/item/paper/scp3349_ekg(loc, "<img src = scp3349_ekg.png>", "EKG report - [stored_scan_subject]")
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["push"])
+	if(action == "push")
 		if(!connected_displays.len && !FindDisplays())
-			to_chat(user, SPAN_WARNING("[icon2html(src, user)]Error: No configured displays detected."))
-			return TOPIC_REFRESH
+			to_chat(usr, SPAN_WARNING("[icon2html(src, usr)]Error: No configured displays detected."))
+			return TRUE
 		for(var/obj/machinery/body_scan_display/D in connected_displays)
 			D.add_new_scan(data["scan"])
-		user.visible_message(
-			SPAN_NOTICE("\The [user] keys a command into \the [src]."),
+		usr.visible_message(
+			SPAN_NOTICE("\The [usr] keys a command into \the [src]."),
 			SPAN_NOTICE("The console beeps, confirming it has successfully sent the scan to the connected displays."),
 			SPAN_ITALIC("You hear someone typing on a terminal, then a beep.")
 		)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["erase"])
+	if(action == "erase")
 		data["scan"] = null
 		data["html_scan"] = null
 		stored_scan_subject = null
 		data["eraseEnabled"] = FALSE
 		data["printEnabled"] = FALSE
 		data["pushEnabled"] = FALSE
-		return TOPIC_REFRESH
+		return TRUE
 
 /obj/machinery/body_scanconsole/state_transition(decl/machine_construction/default/new_state)
 	. = ..()

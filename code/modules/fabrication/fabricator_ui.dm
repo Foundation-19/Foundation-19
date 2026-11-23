@@ -1,7 +1,12 @@
 #define PRINT_MULTIPLIER_DIVISOR 5
 
-/obj/machinery/fabricator/ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=1)
+/obj/machinery/fabricator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "Fabricator", "[capitalize(name)]", 480, 410)
+		ui.open()
 
+/obj/machinery/fabricator/tgui_data(mob/user)
 	var/list/data = list()
 
 	data["category"] =   show_category
@@ -77,15 +82,10 @@
 					build_option["multipliers"] += list(list("label" = "x[mult]", "multiplier" = mult))
 			data["build_options"] += list(build_option)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "fabricator.tmpl", "[capitalize(name)]", 480, 410, state = GLOB.physical_state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/fabricator/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 #undef PRINT_MULTIPLIER_DIVISOR
