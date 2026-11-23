@@ -16,7 +16,7 @@ jobs:
   DreamChecker:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install Tools
         run: |
           pip3 install setuptools
@@ -39,7 +39,7 @@ jobs:
   Code:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install Dependencies
         run: sudo apt-get install -y uchardet
       - name: Run Tests
@@ -67,7 +67,7 @@ jobs:
       matrix:
         map_path: [site53]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Run Tests
         env:
           TEST: MAP
