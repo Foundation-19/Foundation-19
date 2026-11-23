@@ -445,6 +445,8 @@
 	cam["x"] = get_x(src)
 	cam["y"] = get_y(src)
 	cam["z"] = get_z(src)
+	var/area/A = get_area(src)
+	cam["area"] = A ? A.name : "Unknown"
 	return cam
 
 /obj/machinery/camera/proc/tgui_structure()

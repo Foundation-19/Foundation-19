@@ -28,6 +28,7 @@ export const Photocopier = (props, context) => {
     toner,
     can_copy,
     is_silicon,
+    templates = [],
   } = data;
 
   return (
@@ -95,6 +96,24 @@ export const Photocopier = (props, context) => {
                 onClick={() => act('aipic')} />
             </Section>
           )}
+
+          <Section title="Form Templates" style={term({ border: `1px solid ${C.border}`, marginTop: '8px' })}>
+            <Box style={term({ color: C.textDim, fontSize: '10px', marginBottom: '6px' })}>
+              PRINTS A BLANK FORM — 1 TONER UNIT EACH
+            </Box>
+            <Box style={{ columns: '2', columnGap: '8px' }}>
+              {templates.map((t, i) => (
+                <Box key={i} style={{ breakInside: 'avoid', marginBottom: '3px' }}>
+                  <Button
+                    fluid
+                    content={t.name}
+                    disabled={toner <= 0}
+                    onClick={() => act('print_template', { template: t.name })}
+                    style={term({ fontSize: '11px', textAlign: 'left' })} />
+                </Box>
+              ))}
+            </Box>
+          </Section>
 
           <Section title="Toner" style={term({ border: `1px solid ${C.border}` })}>
             <ProgressBar

@@ -15,6 +15,28 @@
 	var/toner = 30 //how much toner is left! woooooo~
 	var/maxcopies = 10	//how many copies can be copied at once- idea shamelessly stolen from bs12's copier!
 
+	// Blank Foundation form templates the copier can print directly.
+	var/list/form_templates = list(
+		"Blank Paper"						= /obj/item/paper,
+		"Incident Report"					= /obj/item/paper/foundation/incident_report,
+		"SCP Testing Request"				= /obj/item/paper/foundation/testing_request,
+		"Test Authorization"				= /obj/item/paper/foundation/test_authorization,
+		"Test Result Report"				= /obj/item/paper/foundation/test_result,
+		"Cross-SCP Interaction Report"		= /obj/item/paper/foundation/cross_scp_interaction_report,
+		"Amnesticization Record"			= /obj/item/paper/foundation/amnestic_record,
+		"Containment Breach Report"			= /obj/item/paper/foundation/breach_report,
+		"D-Class Transfer Order"			= /obj/item/paper/foundation/dclass_transfer,
+		"SCP Document Template"				= /obj/item/paper/foundation/scp_document,
+		"Budget Request"					= /obj/item/paper/foundation/budget_request,
+		"Ethics Violation Report"			= /obj/item/paper/foundation/ethics_violation,
+		"Ethics Test Oversight"				= /obj/item/paper/foundation/ethics_test_oversight,
+		"Psychological Evaluation"			= /obj/item/paper/foundation/psych_evaluation,
+		"Anomalous Investigation Report"	= /obj/item/paper/foundation/investigation_report,
+		"Intelligence Report"				= /obj/item/paper/foundation/intel_report,
+		"GOI Communique"					= /obj/item/paper/foundation/goi_communique,
+		"Research Summary"					= /obj/item/paper/foundation/research_summary,
+	)
+
 /obj/machinery/photocopier/interface_interact(mob/user)
 	tgui_interact(user)
 	return TRUE
@@ -35,6 +57,10 @@
 	data["toner"] = toner
 	data["can_copy"] = copyitem && toner > 0
 	data["is_silicon"] = istype(user, /mob/living/silicon)
+	var/list/templates = list()
+	for(var/form_name in form_templates)
+		templates += list(list("name" = form_name))
+	data["templates"] = templates
 	return data
 
 /obj/machinery/photocopier/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
@@ -71,6 +97,19 @@
 		if("add")
 			if(copies < maxcopies)
 				copies++
+		if("print_template")
+			var/form_name = params["template"]
+			var/form_type = form_templates[form_name]
+			if(!form_type || toner <= 0)
+				return
+			var/obj/item/paper/P = new form_type(loc)
+			if(istype(P) && !istype(P, /obj/item/paper/foundation))
+				P.SetName("paper") // blank stock shouldn't be called "photocopier paper"
+			toner--
+			if(toner == 0)
+				visible_message(SPAN_NOTICE("A red light on \the [src] flashes, indicating that it is out of toner."))
+			use_power_oneoff(active_power_usage)
+			sleep(15)
 		if("aipic")
 			if(!istype(usr, /mob/living/silicon))
 				return FALSE
