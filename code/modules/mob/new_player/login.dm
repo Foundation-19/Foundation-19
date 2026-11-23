@@ -19,7 +19,13 @@
 		ADD_SORTED(GLOB.player_list, src, GLOBAL_PROC_REF(cmp_mob_key))
 
 	if(!SScharacter_setup.initialized)
+		// Queued for deferred login. Also attempt it immediately: clients that
+		// stayed connected through a server restart re-login mid-initialization,
+		// and waiting for the Initialize flush can leave them without a lobby
+		// menu if their handshake isn't ready yet. The queue retry (SS fire)
+		// covers the remainder.
 		SScharacter_setup.newplayers_requiring_init += src
+		deferred_login()
 	else
 		deferred_login()
 
