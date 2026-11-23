@@ -226,7 +226,7 @@
 	return amount - use_power_oneoff(amount)
 
 /obj/machinery/power/smes/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/power/smes/attackby(obj/item/W as obj, mob/user as mob)
@@ -250,9 +250,14 @@
 			damage = 0
 		return TRUE
 
-/obj/machinery/power/smes/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	// this is the data which will be sent to the ui
-	var/data[0]
+/obj/machinery/power/smes/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Smes", "SMES Unit")
+		ui.open()
+
+/obj/machinery/power/smes/tgui_data(mob/user)
+	var/list/data = list()
 	data["nameTag"] = name_tag
 	data["storedCapacity"] = Percentage()
 	data["storedCapacityAbs"] = round(charge/1000, 0.1)
@@ -268,62 +273,50 @@
 	data["outputLoad"] = round(output_used/1000, 0.1)
 	data["failTime"] = failure_timer * 2
 	data["outputting"] = outputting
-
-
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "smes.tmpl", "SMES Unit", 540, 380)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/power/smes/proc/Percentage()
 	if(!capacity)
 		return 0
 	return round(100.0*charge/capacity, 0.1)
 
-/obj/machinery/power/smes/Topic(href, href_list)
+/obj/machinery/power/smes/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
-	if( href_list["cmode"] )
-		inputting(!input_attempt)
-		update_icon()
-		return 1
-	else if( href_list["online"] )
-		outputting(!output_attempt)
-		update_icon()
-		return 1
-	else if( href_list["reboot"] )
-		failure_timer = 0
-		update_icon()
-		return 1
-	else if( href_list["input"] )
-		switch( href_list["input"] )
-			if("min")
-				input_level = 0
-			if("max")
-				input_level = input_level_max
-			if("set")
-				input_level = (input(usr, "Enter new input level (0-[input_level_max/1000] kW)", "SMES Input Power Control", input_level/1000) as num) * 1000
-		input_level = max(0, min(input_level_max, input_level))	// clamp to range
-		return 1
-	else if( href_list["output"] )
-		switch( href_list["output"] )
-			if("min")
-				output_level = 0
-			if("max")
-				output_level = output_level_max
-			if("set")
-				output_level = (input(usr, "Enter new output level (0-[output_level_max/1000] kW)", "SMES Output Power Control", output_level/1000) as num) * 1000
-		output_level = max(0, min(output_level_max, output_level))	// clamp to range
-		return 1
+	switch(action)
+		if("cmode")
+			inputting(!input_attempt)
+			update_icon()
+			return TRUE
+		if("online")
+			outputting(!output_attempt)
+			update_icon()
+			return TRUE
+		if("reboot")
+			failure_timer = 0
+			update_icon()
+			return TRUE
+		if("input")
+			switch(params["input"])
+				if("min")
+					input_level = 0
+				if("max")
+					input_level = input_level_max
+				if("set")
+					input_level = (input(usr, "Enter new input level (0-[input_level_max/1000] kW)", "SMES Input Power Control", input_level/1000) as num) * 1000
+			input_level = max(0, min(input_level_max, input_level))
+			return TRUE
+		if("output")
+			switch(params["output"])
+				if("min")
+					output_level = 0
+				if("max")
+					output_level = output_level_max
+				if("set")
+					output_level = (input(usr, "Enter new output level (0-[output_level_max/1000] kW)", "SMES Output Power Control", output_level/1000) as num) * 1000
+			output_level = max(0, min(output_level_max, output_level))
+			return TRUE
 
 
 /obj/machinery/power/smes/proc/energy_fail(duration)

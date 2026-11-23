@@ -73,11 +73,13 @@
 /obj/scp263/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"old telivision", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"263", //Numerical Designation
+		src,
+		"old telivision",
+		SCP_EUCLID,
+		"263",
 	)
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
 
 	current_scp263_1 = new /mob/living/carbon/scp263_1(src)
 	questions_and_answers_copy = questions_and_answers.Copy()

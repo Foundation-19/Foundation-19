@@ -835,7 +835,7 @@ default behaviour is:
 		return 0
 	return 1
 
-/mob/living/proc/do_possession(mob/observer/ghost/possessor)
+/mob/living/do_possession(mob/observer/ghost/possessor)
 
 	if(!(istype(possessor) && possessor.ckey))
 		return 0

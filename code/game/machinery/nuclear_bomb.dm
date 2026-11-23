@@ -43,7 +43,7 @@ var/bomb_set
 		playsound(loc, 'sounds/items/timer.ogg', 50)
 		if(timeleft <= 0)
 			addtimer(CALLBACK(src, PROC_REF(explode)), 0)
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 
 /obj/machinery/nuclearbomb/attackby(obj/item/O as obj, mob/user as mob, params)
 	if(isScrewdriver(O))
@@ -160,11 +160,17 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb/interface_interact(mob/user as mob)
 	if(extended && !panel_open)
-		ui_interact(user)
+		tgui_interact(user)
 		return TRUE
 
-/obj/machinery/nuclearbomb/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/nuclearbomb/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "NuclearBomb", "Nuke Control Panel")
+		ui.open()
+
+/obj/machinery/nuclearbomb/tgui_data(mob/user)
+	var/list/data = list()
 	data["hacking"] = 0
 	data["auth"] = is_auth(user)
 	data["moveable_anchor"] = !istype(src, /obj/machinery/nuclearbomb/station)
@@ -189,13 +195,7 @@ var/bomb_set
 		data["message"] = code
 		if(yes_code)
 			data["message"] = "*****"
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "nuclear_bomb.tmpl", "Nuke Control Panel", 300, 510)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/nuclearbomb/verb/toggle_deployable()
 	set category = "Object"
@@ -220,11 +220,11 @@ var/bomb_set
 		return 1
 	return 0
 
-/obj/machinery/nuclearbomb/Topic(href, href_list)
+/obj/machinery/nuclearbomb/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
-	if(href_list["auth"])
+	if(action == "auth")
 		if(auth)
 			auth.forceMove(loc)
 			yes_code = 0
@@ -233,68 +233,73 @@ var/bomb_set
 			var/obj/item/I = usr.get_active_hand()
 			if(istype(I, /obj/item/disk/nuclear))
 				if(!usr.unEquip(I, src))
-					return 1
+					return TRUE
 				auth = I
+		return TRUE
+
 	if(is_auth(usr))
-		if(href_list["type"])
-			if(href_list["type"] == "E")
+		if(action == "type")
+			if(params["type"] == "E")
 				if(code == r_code)
 					yes_code = 1
 					code = null
 					log_and_message_staff("has armed \the [src]")
 				else
 					code = "ERROR"
+			else if(params["type"] == "R")
+				yes_code = 0
+				code = null
 			else
-				if(href_list["type"] == "R")
-					yes_code = 0
-					code = null
+				var/lastentered = "[params["type"]]"
+				if(text2num(lastentered) == null)
+					log_and_message_staff("tried to exploit a nuclear bomb by entering non-numerical codes")
 				else
-					lastentered = text("[]", href_list["type"])
-					if(text2num(lastentered) == null)
-						log_and_message_staff("tried to exploit a nuclear bomb by entering non-numerical codes")
-					else
-						code += lastentered
-						if(length(code) > 5)
-							code = "ERROR"
-		if(yes_code)
-			if(href_list["time"])
+					code += lastentered
+					if(length(code) > 5)
+						code = "ERROR"
+			return TRUE
+
+	if(yes_code)
+		switch(action)
+			if("time")
 				if(timing)
 					to_chat(usr, SPAN_WARNING("Cannot alter the timing during countdown."))
 					return
-
-				var/time = text2num(href_list["time"])
+				var/time = text2num(params["time"])
 				timeleft += time
 				timeleft = Clamp(timeleft, minTime, maxTime)
-			if(href_list["timer"])
+				return TRUE
+			if("timer")
 				if(timing == -1)
-					return 1
+					return TRUE
 				if(!anchored)
 					to_chat(usr, SPAN_WARNING("\The [src] needs to be anchored."))
-					return 1
+					return TRUE
 				if(safety)
 					to_chat(usr, SPAN_WARNING("The safety is still on."))
-					return 1
+					return TRUE
 				if(wires.is_cut(WIRE_BOMB_TIMING))
 					to_chat(usr, SPAN_WARNING("Nothing happens, something might be wrong with the wiring."))
-					return 1
+					return TRUE
 				if(!timing && !safety)
 					start_bomb()
 				else
 					check_cutoff()
-			if(href_list["safety"])
-				if (wires.is_cut(WIRE_BOMB_SAFETY))
+				return TRUE
+			if("safety")
+				if(wires.is_cut(WIRE_BOMB_SAFETY))
 					to_chat(usr, SPAN_WARNING("Nothing happens, something might be wrong with the wiring."))
-					return 1
+					return TRUE
 				safety = !safety
 				if(safety)
 					secure_device()
 				update_icon()
-			if(href_list["anchor"])
+				return TRUE
+			if("anchor")
 				if(removal_stage == 5)
 					anchored = FALSE
 					visible_message(SPAN_WARNING("\The [src] makes a highly unpleasant crunching noise. It looks like the anchoring bolts have been cut."))
-					return 1
-
+					return TRUE
 				if(!isinspace())
 					anchored = !anchored
 					if(anchored)
@@ -304,7 +309,8 @@ var/bomb_set
 						visible_message(SPAN_WARNING("The anchoring bolts slide back into the depths of \the [src]."))
 				else
 					to_chat(usr, SPAN_WARNING("There is nothing to anchor to!"))
-	return 1
+				return TRUE
+	return TRUE
 
 /obj/machinery/nuclearbomb/proc/start_bomb()
 	timing = 1

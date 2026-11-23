@@ -16,7 +16,7 @@
 		if(I.hidden_uplink && I.hidden_uplink.active) //No metagaming by using this on every PDA around just to see if it gets used up.
 			I.hidden_uplink.uses += amount
 			I.hidden_uplink.update_nano_data()
-			SSnano.update_uis(I.hidden_uplink)
+			SStgui.update_uis(I.hidden_uplink)
 			use(amount)
 			to_chat(user, SPAN_NOTICE("You slot \the [src] into \the [I] and charge its internal uplink."))
 

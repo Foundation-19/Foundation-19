@@ -26,7 +26,13 @@ The answer was five and a half years -ZeroBits
 	var/obj/machinery/libraryscanner/scanner
 	var/sort_by = "id"
 
-/datum/nano_module/library/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/library/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Library", "Library Program")
+		ui.open()
+
+/datum/nano_module/library/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	if(error_message)
@@ -55,34 +61,29 @@ The answer was five and a half years -ZeroBits
 		data["book_list"] = all_entries
 		data["scanner"] = istype(scanner)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "library.tmpl", "Library Program", 575, 700, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
-/datum/nano_module/library/Topic(href, href_list)
+/datum/nano_module/library/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if(href_list["viewbook"])
-		view_book(href_list["viewbook"])
-		return 1
-	if(href_list["viewid"])
+		return TRUE
+	if(action == "viewbook")
+		view_book(params["viewbook"])
+		return TRUE
+	if(action == "viewid")
 		view_book(tgui_input_number(usr, "Enter USBN", "USBN Input"))
-		return 1
-	if(href_list["closebook"])
+		return TRUE
+	if(action == "closebook")
 		current_book = null
-		return 1
-	if(href_list["connectscanner"])
+		return TRUE
+	if(action == "connectscanner")
 		if(!nano_host())
-			return 1
+			return TRUE
 		for(var/d in GLOB.cardinal)
 			var/obj/machinery/libraryscanner/scn = locate(/obj/machinery/libraryscanner, get_step(nano_host(), d))
 			if(scn && scn.anchored)
 				scanner = scn
-				return 1
-	if(href_list["uploadbook"])
+				return TRUE
+	if(action == "uploadbook")
 		if(!scanner || !scanner.anchored)
 			scanner = null
 			error_message = "Hardware Error: No scanner detected. Unable to access cache."
@@ -140,7 +141,7 @@ The answer was five and a half years -ZeroBits
 
 		return 0
 
-	if(href_list["printbook"])
+	if(action == "printbook")
 		if(!current_book)
 			error_message = "Software Error: Unable to print; book not found."
 			return 1
@@ -164,15 +165,15 @@ The answer was five and a half years -ZeroBits
 		//Regular printing
 		print_text("<i>Author: [current_book["author"]]<br>USBN: [current_book["id"]]</i><br><h3>[current_book["title"]]</h3><br>[current_book["content"]]", usr)
 		return 1
-	if(href_list["sortby"])
+	if(action == "sortby")
 		var/list/can_sort_by = list("id", "category", "title", "author")
-		var/sort_by = href_list["sortby"]
+		var/sort_by = params["sortby"]
 		if(!(sort_by in can_sort_by))
 			return 1
 
 		src.sort_by = sort_by
 		return 1
-	if(href_list["reseterror"])
+	if(action == "reseterror")
 		if(error_message)
 			current_book = null
 			scanner = null

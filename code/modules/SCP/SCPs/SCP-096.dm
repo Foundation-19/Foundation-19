@@ -449,6 +449,8 @@
 	. = ..()
 	if(!istype(user, /mob/living/scp096))
 		var/mob/living/scp096/scp_to_trigger = locate(/mob/living/scp096) in GLOB.SCP_list
+		if(!scp_to_trigger)
+			return
 		if(get_dist(user, src) <= 1 && isliving(user))
 			scp_to_trigger.trigger(user)
 			to_chat(user, SPAN_DANGER("You catch [scp_to_trigger]"))

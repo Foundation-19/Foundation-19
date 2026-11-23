@@ -44,6 +44,36 @@
 	pref.lastchangelog	= sanitize_text(pref.lastchangelog, initial(pref.lastchangelog))
 	pref.default_slot	= sanitize_integer(pref.default_slot, 1, config.character_slots, initial(pref.default_slot))
 
+/datum/category_item/player_setup_item/player_global/settings/get_setup_data(mob/user)
+	var/list/data = list()
+	var/list/pref_entries = list()
+	var/mob/pref_mob = preference_mob()
+	for(var/cp in get_client_preferences())
+		var/datum/client_preference/client_pref = cp
+		if(!client_pref.may_set(pref_mob))
+			continue
+		var/selected_option = pref_mob.get_preference_value(client_pref.key)
+		pref_entries += list(list(
+			"description" = client_pref.description,
+			"key" = client_pref.key,
+			"options" = client_pref.options,
+			"selected" = selected_option
+		))
+	data["preferences"] = pref_entries
+	return data
+
+/datum/category_item/player_setup_item/player_global/settings/act_setup(action, list/params, mob/user)
+
+	if(action == "set_pref")
+		var/key = params["key"]
+		var/value = params["value"]
+		var/mob/pref_mob = preference_mob()
+		if(pref_mob.set_preference(key, value))
+			return TRUE
+		return FALSE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/player_global/settings/content(mob/user)
 	. = list()
 	. += "<b>Preferences</b><br>"
@@ -87,8 +117,6 @@
 			return prefs.preference_values[cp.key]
 		else
 			return null
-	else
-		log_error("Client is lacking preferences: [log_info_line(src)]")
 
 /client/proc/set_preference(preference, set_preference)
 	var/datum/client_preference/cp = get_client_preference(preference)

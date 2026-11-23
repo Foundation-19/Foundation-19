@@ -10,4 +10,4 @@
 
 	if(dat && driver && driver.using_scanner)
 		driver.data_buffer = html2pencode(dat)
-		SSnano.update_uis(driver.NM)
+		SStgui.update_uis(driver.NM)

@@ -27,11 +27,22 @@
 /obj/item/clothing/mask/smokable/cigarette/scp420J/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"radical blunt", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"420-J" //Numerical Designation
+		src,
+		"radical blunt",
+		SCP_SAFE,
+		"420-J",
 	)
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
+
+/obj/item/clothing/mask/smokable/cigarette/scp420J/forceMove(atom/dest)
+	var/atom/old_loc = loc
+	. = ..()
+	if(old_loc && istype(old_loc, /obj/structure/scp_containment_safe) && !(istype(loc, /obj/structure/scp_containment_safe)))
+		if(SCP && SCP.research)
+			SCP.research.set_containment_status(SCP_BREACHED)
+	else if(istype(loc, /obj/structure/scp_containment_safe) && SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
 
 /obj/item/clothing/mask/smokable/cigarette/scp420J/Process()
 	. = ..()

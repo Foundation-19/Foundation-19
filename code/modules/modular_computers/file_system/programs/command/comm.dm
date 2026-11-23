@@ -43,12 +43,17 @@
 	..()
 	crew_announcement.newscast = 1
 
-/datum/nano_module/program/comm/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/comm/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CommConsole", name)
+		ui.open()
 
+/datum/nano_module/program/comm/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	if(program)
-		data["net_comms"] = !!program.get_signal(NTNET_COMMUNICATION) //Double !! is needed to get 1 or 0 answer
+		data["net_comms"] = !!program.get_signal(NTNET_COMMUNICATION)
 		data["net_syscont"] = !!program.get_signal(NTNET_SYSTEMCONTROL)
 		if(program.computer)
 			data["emagged"] = program.computer.computer_emagged
@@ -104,12 +109,7 @@
 			processed_evac_options[++processed_evac_options.len] = option
 	data["evac_options"] = processed_evac_options
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "communication.tmpl", name, 550, 420, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /datum/nano_module/program/comm/proc/is_authenticated(mob/user)
 	if(program)
@@ -128,7 +128,7 @@
 		return
 	if(centcomm_message_cooldown)
 		to_chat(usr, SPAN_WARNING("Supercapacitors recharging. Please stand by."))
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		return
 	var/input = sanitize(tgui_input_text(usr, "Please type a message to transmit to [target] via encrypted radio frequency. Abuse may lead to termination of duty. Transmission does not guarantee a response. There is a 30 second delay before you may send another message; be clear, full and concise.", "?? Emergency Message"))
 	if(!input || !can_still_topic())
@@ -143,22 +143,21 @@
 		centcomm_message_cooldown = 0
 
 
-/datum/nano_module/program/comm/Topic(href, href_list)
+/datum/nano_module/program/comm/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	var/mob/user = usr
+		return TRUE
 	var/ntn_comm = program ? !!program.get_signal(NTNET_COMMUNICATION) : 1
 	var/ntn_cont = program ? !!program.get_signal(NTNET_SYSTEMCONTROL) : 1
 	var/datum/comm_message_listener/l = obtain_message_listener()
-	switch(href_list["action"])
+	switch(action)
 		if("sw_menu")
 			. = TRUE
-			current_status = text2num(href_list["target"])
+			current_status = text2num(params["target"])
 		if("announce")
 			. = TRUE
-			if(is_authenticated(user) && !issilicon(usr) && ntn_comm)
-				if(user)
-					var/obj/item/card/id/id_card = user.GetIdCard()
+			if(is_authenticated(usr) && !issilicon(usr) && ntn_comm)
+				if(usr)
+					var/obj/item/card/id/id_card = usr.GetIdCard()
 					crew_announcement.announcer = GetNameAndAssignmentFromId(id_card)
 				else
 					crew_announcement.announcer = "Unknown"
@@ -167,40 +166,40 @@
 					return TRUE
 				var/input = tgui_input_text(usr, "Please write a message to announce to the [station_name()].", "Priority Announcement")
 				if(!input || !can_still_topic())
-					return 1
+					return TRUE
 				var/affected_zlevels = GetConnectedZlevels(get_host_z())
 				crew_announcement.Announce(input, zlevels = affected_zlevels)
 				announcment_cooldown = 1
-				spawn(600)//One minute cooldown
+				spawn(600)
 					announcment_cooldown = 0
 		if("message")
 			. = TRUE
-			if(href_list["target"] == "emagged")
+			if(params["target"] == "emagged")
 				if(program)
 					var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_antag_offsite]
-					if(is_authenticated(user) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm && targetOffsite)
+					if(is_authenticated(usr) && program.computer.computer_emagged && !issilicon(usr) && ntn_comm && targetOffsite)
 						send_offsite_message("\[ABNORMAL ROUTING COORDINATES\]", targetOffsite)
-			else if(href_list["target"] == "regular")
+			else if(params["target"] == "regular")
 				var/datum/offsite/targetOffsite = SSoffsites.offsites[SSoffsites.default_offsite]
-				if(is_authenticated(user) && !issilicon(usr) && ntn_comm && targetOffsite)
+				if(is_authenticated(usr) && !issilicon(usr) && ntn_comm && targetOffsite)
 					send_offsite_message(targetOffsite.name, targetOffsite)
 		if("evac")
 			. = TRUE
-			if(is_authenticated(user))
-				var/datum/evacuation_option/selected_evac_option = evacuation_controller.evacuation_options[href_list["target"]]
+			if(is_authenticated(usr))
+				var/datum/evacuation_option/selected_evac_option = evacuation_controller.evacuation_options[params["target"]]
 				if (isnull(selected_evac_option) || !istype(selected_evac_option))
 					return
-				if (!selected_evac_option.silicon_allowed && issilicon(user))
+				if (!selected_evac_option.silicon_allowed && issilicon(usr))
 					return
 				if (selected_evac_option.needs_syscontrol && !ntn_cont)
 					return
 				var/confirm = alert("Are you sure you want to [selected_evac_option.option_desc]?", name, "No", "Yes")
 				if (confirm == "Yes" && can_still_topic())
-					evacuation_controller.handle_evac_option(selected_evac_option.option_target, user)
+					evacuation_controller.handle_evac_option(selected_evac_option.option_target, usr)
 		if("setstatus")
 			. = TRUE
-			if(is_authenticated(user) && ntn_cont)
-				switch(href_list["target"])
+			if(is_authenticated(usr) && ntn_cont)
+				switch(params["target"])
 					if("line1")
 						var/linput = reject_bad_text(sanitize(input("Line 1", "Enter Message Text", msg_line1) as text|null, 40), 40)
 						if(can_still_topic())
@@ -212,39 +211,39 @@
 					if("message")
 						post_status("message", msg_line1, msg_line2)
 					if("image")
-						post_status("image", href_list["image"])
+						post_status("image", params["image"])
 					else
-						post_status(href_list["target"])
+						post_status(params["target"])
 		if("setalert")
 			. = TRUE
-			if(is_authenticated(user) && !issilicon(usr) && ntn_cont && ntn_comm)
+			if(is_authenticated(usr) && !issilicon(usr) && ntn_cont && ntn_comm)
 				var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-				var/decl/security_level/target_level = locate(href_list["target"]) in security_state.standard_security_levels
+				var/decl/security_level/target_level = locate(params["target"]) in security_state.standard_security_levels
 				if(target_level && security_state.can_switch_to(target_level))
 					var/confirm = alert("Are you sure you want to change the alert level to [target_level.name]?", name, "No", "Yes")
 					if(confirm == "Yes" && can_still_topic())
 						if(security_state.set_security_level(target_level))
 							SSstatistics.add_field(target_level.type,1)
 			else
-				to_chat(usr, "You press the button, but a red light flashes and nothing happens.") //This should never happen
+				to_chat(usr, "You press the button, but a red light flashes and nothing happens.")
 
 			current_status = STATE_DEFAULT
 		if("viewmessage")
 			. = TRUE
-			if(is_authenticated(user) && ntn_comm)
-				current_viewing_message_id = text2num(href_list["target"])
+			if(is_authenticated(usr) && ntn_comm)
+				current_viewing_message_id = text2num(params["target"])
 				for(var/list/m in l.messages)
 					if(m["id"] == current_viewing_message_id)
 						current_viewing_message = m
 				current_status = STATE_VIEWMESSAGE
 		if("delmessage")
 			. = TRUE
-			if(is_authenticated(user) && ntn_comm && l != global_message_listener)
+			if(is_authenticated(usr) && ntn_comm && l != global_message_listener)
 				l.Remove(current_viewing_message)
 			current_status = STATE_MESSAGELIST
 		if("printmessage")
 			. = TRUE
-			if(is_authenticated(user) && ntn_comm)
+			if(is_authenticated(usr) && ntn_comm)
 				if(!program.computer.nano_printer)
 					to_chat(usr, SPAN_WARNING("Missing Hardware: Your computer does not have required hardware to complete this operation."))
 					return
@@ -258,32 +257,31 @@
 			to_chat(usr, SPAN_NOTICE("The console beeps, confirming the signal was sent to have the saferooms bolted."))
 		if("toggle_alert_border")
 			. = TRUE
-			if(is_authenticated(user) && ntn_comm)
+			if(is_authenticated(usr) && ntn_comm)
 				post_status("toggle_alert_border")
 		if("cross_comms")
 			. = TRUE
-			if(is_authenticated(user))
+			if(is_authenticated(usr))
 				if(GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN > world.time)
-					to_chat(user, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
-					return 1
+					to_chat(usr, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
+					return TRUE
 				var/list/payload = list()
 				var/network_name = config.cross_comms_network
 				if(network_name)
 					payload["network"] = network_name
-				payload["message_sender_ckey"] = user.ckey
+				payload["message_sender_ckey"] = usr.ckey
 
 				var/destination = input(usr, "Pick destination.", "Priority Announcement") in (config.cross_servers + "all")
 				if(!destination || !can_still_topic())
-					return 1
+					return TRUE
 
 				var/message = sanitize(input(usr, "Please write a message to announce to the destination.", "Priority Announcement") as null|message, encode = FALSE, extra = FALSE)
 				if(!message || !can_still_topic())
-					return 1
+					return TRUE
 
-				// Double check to prevent people from "saving" the window with input to ignore the cooldown
 				if(GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN > world.time)
-					to_chat(user, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
-					return 1
+					to_chat(usr, SPAN_WARNING("A message was sent too recently! Wait for [round((GLOB.last_cross_comms_message_time + CROSSCOMMS_COOLDOWN - world.time) / 10)] seconds before trying again!"))
+					return TRUE
 
 				send2otherserver(station_name(), message, "Comms_Console", destination == "all" ? null : list(destination), additional_data = payload)
 				command_announcement.Announce(message, "Outgoing message to allied station")

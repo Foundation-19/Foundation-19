@@ -15,7 +15,13 @@
 	var/is_centcom = 0
 	var/show_assignments = 0
 
-/datum/nano_module/program/card_mod/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/card_mod/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "CardMod", name)
+		ui.open()
+
+/datum/nano_module/program/card_mod/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 	var/obj/item/stock_parts/computer/card_slot/card_slot = program.computer.card_slot
 
@@ -27,7 +33,7 @@
 	data["have_printer"] = program.computer.nano_printer
 	data["authenticated"] = program.program_has_access(user)
 	if(!data["have_id_slot"] || !data["have_printer"])
-		mod_mode = 0 //We can't modify IDs when there is no card reader
+		mod_mode = 0
 	if(card_slot)
 		var/obj/item/card/id/id_card = card_slot.stored_card
 		data["has_id"] = !!id_card
@@ -82,12 +88,7 @@
 					"accesses" = accesses)))
 			data["regions"] = regions
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "identification_computer.tmpl", name, 600, 700, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /datum/nano_module/program/card_mod/proc/format_jobs(list/jobs)
 	var/obj/item/card/id/id_card = program.computer.card_slot?.stored_card
@@ -104,23 +105,22 @@
 	return null
 
 
-/datum/computer_file/program/card_mod/Topic(href, href_list)
+/datum/computer_file/program/card_mod/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 
-	var/mob/user = usr
-	var/obj/item/card/id/user_id_card = user?.GetIdCard()
+	var/obj/item/card/id/user_id_card = usr?.GetIdCard()
 	var/obj/item/card/id/id_card = computer?.card_slot?.stored_card
 	var/datum/nano_module/program/card_mod/module = NM
 
 	if (!user_id_card || !id_card || !module)
 		return
 
-	switch(href_list["action"])
+	switch(action)
 		if("switchm")
-			if(href_list["target"] == "mod")
+			if(params["target"] == "mod")
 				module.mod_mode = 1
-			else if (href_list["target"] == "manifest")
+			else if (params["target"] == "manifest")
 				module.mod_mode = 0
 		if("togglea")
 			if(module.show_assignments)
@@ -131,9 +131,9 @@
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer.nano_printer) //This option should never be called if there is no printer
+			if(computer.nano_printer)
 				if(module.mod_mode)
-					if(program_has_access(user, 1))
+					if(program_has_access(usr, 1))
 						var/contents = {"<h4>Access Report</h4>
 									<u>Prepared By:</u> [user_id_card.registered_name ? user_id_card.registered_name : "Unknown"]<br>
 									<u>For:</u> [id_card.registered_name ? id_card.registered_name : "Unregistered"]<br>
@@ -164,14 +164,14 @@
 						return
 		if("eject")
 			if(computer.card_slot?.stored_card)
-				computer.card_slot.eject_id(user)
+				computer.card_slot.eject_id(usr)
 			else
-				computer.card_slot?.insert_id(user.get_active_hand(), user)
+				computer.card_slot?.insert_id(usr.get_active_hand(), usr)
 		if("terminate")
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer && program_has_access(user, 1))
+			if(computer && program_has_access(usr, 1))
 				id_card.assignment = "Terminated"
 				remove_nt_access(id_card)
 				callHook("terminate_employee", list(id_card))
@@ -179,8 +179,8 @@
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer && program_has_access(user, 1))
-				if(href_list["name"])
+			if(computer && program_has_access(usr, 1))
+				if(params["name"])
 					var/temp_name = sanitizeName(input("Enter name.", "Name", id_card.registered_name),allow_numbers=TRUE)
 					if(temp_name)
 						id_card.registered_name = temp_name
@@ -188,24 +188,23 @@
 						id_card.formal_name_prefix = initial(id_card.formal_name_prefix)
 					else
 						to_chat(usr, SPAN_WARNING("Invalid name entered!"))
-				else if(href_list["account"])
+				else if(params["account"])
 					var/account_num = text2num(input("Enter account number.", "Account", id_card.associated_account_number))
 					id_card.associated_account_number = account_num
-				else if(href_list["elogin"])
+				else if(params["elogin"])
 					var/email_login = input("Enter email login.", "Email login", id_card.associated_email_login["login"])
 					id_card.associated_email_login["login"] = email_login
-				else if(href_list["epswd"])
+				else if(params["epswd"])
 					var/email_password = input("Enter email password.", "Email password")
 					id_card.associated_email_login["password"] = email_password
 		if("assign")
 			if(!authorized(user_id_card))
 				to_chat(usr, SPAN_WARNING("Access denied."))
 				return
-			if(computer && program_has_access(user, 1) && id_card)
-				var/t1 = href_list["assign_target"]
+			if(computer && program_has_access(usr, 1) && id_card)
+				var/t1 = params["assign_target"]
 				if(t1 == "Custom")
 					var/temp_t = sanitize(input("Enter a custom job assignment.","Assignment", id_card.assignment), 45)
-					//let custom jobs function as an impromptu alt title, mainly for sechuds
 					if(temp_t)
 						id_card.assignment = temp_t
 				else
@@ -231,9 +230,9 @@
 
 				callHook("reassign_employee", list(id_card))
 		if("access")
-			if(href_list["allowed"] && computer && program_has_access(user, 1) && id_card)
-				var/access_type = href_list["access_target"]
-				var/access_allowed = text2num(href_list["allowed"])
+			if(params["allowed"] && computer && program_has_access(usr, 1) && id_card)
+				var/access_type = params["access_target"]
+				var/access_allowed = text2num(params["allowed"])
 				if(access_type in get_access_ids(operating_access_types))
 					for(var/access in user_id_card.access)
 						var/region_type = get_access_region_by_id(access_type)
@@ -245,7 +244,7 @@
 	if(id_card)
 		id_card.SetName(text("[id_card.registered_name]'s ID Card ([id_card.assignment])"))
 
-	SSnano.update_uis(NM)
+	SStgui.update_uis(NM)
 	return 1
 
 /datum/computer_file/program/card_mod/proc/remove_nt_access(obj/item/card/id/id_card)

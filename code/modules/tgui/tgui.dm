@@ -89,12 +89,12 @@
 		return FALSE
 	opened_at = world.time
 	window.acquire_lock(src)
-	if(!window.is_ready())
+	if(!window.is_ready() || window.needs_fresh_page)
 		window.initialize(
 			strict_mode = TRUE,
 			fancy = user.client.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES,
 			assets = list(
-				get_asset_datum(/datum/asset/simple/tgui),
+				get_asset_datum(/datum/asset/simple/tgui_v2),
 			))
 	else
 		window.send_message("ping")
@@ -124,8 +124,6 @@
 	if(closing)
 		return
 	closing = TRUE
-	// If we don't have window_id, open proc did not have the opportunity
-	// to finish, therefore it's safe to skip this whole block.
 	if(window)
 		// Windows you want to keep are usually blue screens of death
 		// and we want to keep them around, to allow user to read
@@ -215,7 +213,9 @@
  * optional force bool Send an update even if UI is not interactive.
  */
 /datum/tgui/proc/send_update(custom_data, force)
-	if(!user.client || !initialized || closing)
+	if(!user.client)
+		return
+	if(!initialized || closing)
 		return
 	var/should_update_data = force || status >= UI_UPDATE
 	window.send_message("update", get_payload(
@@ -238,18 +238,18 @@
 		"refreshing" = refreshing,
 		"window" = list(
 			"key" = window_key,
-			"fancy" = user.client.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES,
-			"locked" = user.client.get_preference_value(/datum/client_preference/lock_tgui) == GLOB.PREF_YES,
+			"fancy" = user.client ? (user.client.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES) : FALSE,
+			"locked" = user.client ? (user.client.get_preference_value(/datum/client_preference/lock_tgui) == GLOB.PREF_YES) : FALSE,
 		),
-		"client" = list(
-			"ckey" = user.client.ckey,
-			"address" = user.client.address,
-			"computer_id" = user.client.computer_id,
-		),
-		"user" = list(
-			"name" = "[user]",
-			"observer" = isobserver(user),
-		),
+	)
+	json_data["client"] = list(
+		"ckey" = user.client.ckey,
+		"address" = user.client.address,
+		"computer_id" = user.client.computer_id,
+	)
+	json_data["user"] = list(
+		"name" = "[user]",
+		"observer" = isobserver(user),
 	)
 	var/data = custom_data || with_data && src_object.tgui_data(user)
 	if(data)
@@ -310,14 +310,16 @@
  * Callback for handling incoming tgui messages.
  */
 /datum/tgui/proc/on_message(type, list/payload, list/href_list)
-	// Pass act type messages to tgui_act
 	if(type && copytext(type, 1, 5) == "act/")
 		var/act_type = copytext(type, 5)
 		log_tgui(user, "Action: [act_type] [href_list["payload"]]",
 			window = window,
 			src_object = src_object)
 		process_status()
-		if(src_object.tgui_act(act_type, payload, src, state))
+		if(!user || !user.client)
+			return FALSE
+		var/act_result = src_object.tgui_act(act_type, payload, src, state)
+		if(act_result)
 			SStgui.update_uis(src_object)
 		return FALSE
 	switch(type)

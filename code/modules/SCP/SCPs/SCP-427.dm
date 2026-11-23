@@ -28,6 +28,9 @@
 	var/datum/sound_token/sound_token_transform
 	var/sound_id_transform
 	var/transform_sound = 'sounds/scp/427/transform.ogg'
+	var/safe_use_mode = FALSE
+	var/safe_use_timer_id
+	var/safe_use_duration = 60 SECONDS
 
 /obj/item/clothing/accessory/scp_427/Initialize()
 	. = ..()
@@ -141,12 +144,44 @@
 			sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, effect_sound, 20, 2)
 		else
 			sound_token.Unpause()
+		if(safe_use_mode)
+			to_chat(user, SPAN_NOTICE("Safe use mode active - \the [src] will auto-close after [safe_use_duration/10] seconds."))
+			safe_use_timer_id = addtimer(CALLBACK(src, PROC_REF(safe_auto_close)), safe_use_duration, TIMER_STOPPABLE)
 	else
 		icon_state = "[base_icon_state]"
 		STOP_PROCESSING(SSobj, src)
 		sound_token.Pause()
 		if(sound_token_transform)
 			sound_token_transform.Pause()
+		if(safe_use_timer_id)
+			deltimer(safe_use_timer_id)
+			safe_use_timer_id = null
+
+/obj/item/clothing/accessory/scp_427/proc/safe_auto_close()
+	if(!open)
+		return
+	open = FALSE
+	icon_state = "[base_icon_state]"
+	STOP_PROCESSING(SSobj, src)
+	if(sound_token)
+		sound_token.Pause()
+	if(sound_token_transform)
+		sound_token_transform.Pause()
+	safe_use_timer_id = null
+	visible_message(SPAN_NOTICE("\The [src] clicks closed automatically."))
+	if(ismob(loc))
+		to_chat(loc, SPAN_NOTICE("\The [src] has auto-closed. Safe use duration exceeded."))
+
+/obj/item/clothing/accessory/scp_427/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/card/id))
+		var/obj/item/card/id/id = W
+		if(id.check_access(ACCESS_SCIENCE_LVL3))
+			safe_use_mode = !safe_use_mode
+			to_chat(user, SPAN_NOTICE("You [safe_use_mode ? "enable" : "disable"] safe use mode on \the [src]."))
+		else
+			to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
+		return
+	. = ..()
 
 // Coarse, 1:1 - Turns into SCP 500
 // Fine, Very Fine - Turns into the monster

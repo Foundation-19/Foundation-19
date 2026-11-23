@@ -43,6 +43,39 @@
 			G.activate(user)
 			return TOPIC_REFRESH
 
+/obj/machinery/computer/fusion/gyrotron/handle_fusion_topic(list/href_list, action)
+	var/obj/machinery/power/emitter/gyrotron/G = locate(href_list["machine"])
+	if(!istype(G))
+		return FALSE
+
+	var/datum/local_network/lan = get_local_network()
+	var/list/gyrotrons = lan ? lan.get_devices(/obj/machinery/power/emitter/gyrotron) : null
+	if(!lan || !gyrotrons || !gyrotrons[G])
+		return FALSE
+
+	if(action == "modifypower")
+		var/new_val = input(usr, "Enter new emission power level (1 - 50)", "Modifying power level", G.mega_energy) as num
+		if(!new_val)
+			to_chat(usr, SPAN_WARNING("That's not a valid number."))
+			return FALSE
+		G.mega_energy = Clamp(new_val, 1, 50)
+		G.change_power_consumption(G.mega_energy * 1500, POWER_USE_ACTIVE)
+		return TRUE
+
+	if(action == "modifyrate")
+		var/new_val = input(usr, "Enter new emission delay between 2 and 10 seconds.", "Modifying emission rate", G.rate) as num
+		if(!new_val)
+			to_chat(usr, SPAN_WARNING("That's not a valid number."))
+			return FALSE
+		G.rate = Clamp(new_val, 2, 10)
+		return TRUE
+
+	if(action == "toggle")
+		G.activate(usr)
+		return TRUE
+
+	return FALSE
+
 /obj/machinery/computer/fusion/gyrotron/build_ui_data()
 	. = ..()
 	var/datum/extension/local_network_member/fusion = get_extension(src, /datum/extension/local_network_member)

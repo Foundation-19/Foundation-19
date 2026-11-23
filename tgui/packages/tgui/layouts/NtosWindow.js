@@ -26,6 +26,9 @@ export const NtosWindow = (props, context) => {
     PC_haslight,
     PC_lighton,
   } = data;
+  if (!theme && !PC_device_theme) {
+    theme = 'scp_terminal';
+  }
   if (config.window?.size) {
     width = config.window.size[0];
     height = config.window.size[1];
@@ -52,7 +55,7 @@ export const NtosWindow = (props, context) => {
               {PC_stationtime}
             </Box>
             <Box inline italic mr={2} opacity={0.33}>
-              {(PC_device_theme === 'syndicate' && 'Syndix') || 'NtOS'}
+              {(PC_device_theme === 'syndicate' && 'Syndix') || (PC_device_theme === 'scp_terminal' && 'SCiPNet') || 'NtOS'}
             </Box>
           </div>
           <div className="NtosHeader__right">

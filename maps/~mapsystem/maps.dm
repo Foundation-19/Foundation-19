@@ -154,7 +154,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
 
-	var/access_modify_region = list(
+	var/access_modify_region = alist(
 		ACCESS_REGION_SECURITY = list(ACCESS_HOS, ACCESS_CHANGE_IDS),
 		ACCESS_REGION_MEDBAY = list(ACCESS_CMO, ACCESS_CHANGE_IDS),
 		ACCESS_REGION_RESEARCH = list(ACCESS_RD, ACCESS_CHANGE_IDS),

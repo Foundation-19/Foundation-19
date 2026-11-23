@@ -19,11 +19,11 @@
 /datum/nano_module/program/uplink
 	name = "TaxQuickly 1.45b"
 
-/datum/nano_module/program/uplink/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, master_ui = null, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/uplink/tgui_interact(mob/user, datum/tgui/ui)
 	var/datum/computer_file/program/uplink/prog = program
 	if(istype(program.computer) && program.computer.hidden_uplink && prog.password)
 		if(prog.authenticated)
-			if(!CanInteract(user, state))
+			if(!CanInteract(user, GLOB.default_state))
 				return
 			if(tgui_alert(user, "Resume or close and secure?", name, list("Resume", "Close")) == "Resume")
 				program.computer.hidden_uplink.trigger(user)

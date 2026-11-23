@@ -25,7 +25,13 @@
 		max(min(1 + GLOB.musical_config.song_editor_lines_per_page * (page_num-1), src.song.lines.len), 1),
 		min(GLOB.musical_config.song_editor_lines_per_page * page_num, src.song.lines.len))
 
-/datum/nano_module/song_editor/ui_interact(mob/user, ui_key = "song_editor", datum/nanoui/ui = null, force_open = 0)
+/datum/nano_module/song_editor/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "SongEditor", "Song Editor", 550, 600)
+		ui.open()
+
+/datum/nano_module/song_editor/tgui_data(mob/user)
 	var/list/data = list()
 
 	var/current_page = src.current_page()
@@ -39,25 +45,18 @@
 	data["show_help"] = src.show_help
 	data["page_num"] = current_page
 	data["page_offset"] = GLOB.musical_config.song_editor_lines_per_page * (current_page-1)
+	return data
 
-	ui =  SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new (user, src, ui_key, "song_editor.tmpl", "Song Editor", 550, 600)
-		ui.set_initial_data(data)
-		ui.open()
-
-
-/datum/nano_module/song_editor/Topic(href, href_list)
+/datum/nano_module/song_editor/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if (..())
-		return 1
+		return TRUE
 
-	var/target = href_list["target"]
-	var/value = text2num(href_list["value"])
-	if (href_list["value"] && !isnum(value))
+	var/value = text2num(params["value"])
+	if (params["value"] && !isnum(value))
 		to_chat(usr, "Non-numeric value was supplied")
-		return 0
+		return FALSE
 
-	switch (target)
+	switch (action)
 		if("newline")
 			var/newline = html_encode(input(usr, "Enter your line: ") as text|null)
 			if(!newline)
@@ -69,8 +68,6 @@
 			src.song.lines.Add(newline)
 
 		if("deleteline")
-			// This could kill the server if the synthesizer was playing, props to BeTePb
-			// Impossible to do now. Dumbing down this section.
 			var/num = round(value)
 			if(num > src.song.lines.len || num < 1)
 				return
@@ -103,4 +100,4 @@
 		if ("first_page")
 			src.page = 1
 
-	return 1
+	return TRUE

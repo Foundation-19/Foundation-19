@@ -59,14 +59,14 @@
 		target_access = null
 		reset()
 
-/datum/computer_file/program/access_decrypter/Topic(href, href_list)
+/datum/computer_file/program/access_decrypter/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 	operator_skill = usr.get_skill_value(SKILL_COMPUTER)
-	if(href_list["PRG_reset"])
+	if(action == "PRG_reset")
 		reset()
 		return 1
-	if(href_list["PRG_execute"])
+	if(action == "PRG_execute")
 		if(running)
 			return 1
 		var/obj/item/stock_parts/computer/processor_unit/CPU = computer.processor_unit
@@ -78,7 +78,7 @@
 			message = "RFID card is not present in the device. Operation aborted."
 			return
 
-		var/access = href_list["PRG_execute"]
+		var/access = params["PRG_execute"]
 		var/obj/item/card/id/id_card = RFID.stored_card
 		if(access in id_card.access)
 			return 1
@@ -108,13 +108,21 @@
 /datum/nano_module/program/access_decrypter
 	name = "SCiPnet Access Decrypter"
 
-/datum/nano_module/program/access_decrypter/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/access_decrypter/tgui_interact(mob/user, datum/tgui/ui)
 	if(!ntnet_global)
 		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "AccessDecrypter", name)
+		ui.open()
+
+/datum/nano_module/program/access_decrypter/tgui_data(mob/user)
+	if(!ntnet_global)
+		return list()
 	var/datum/computer_file/program/access_decrypter/PRG = program
 	var/list/data = list()
 	if(!istype(PRG))
-		return
+		return data
 	data = PRG.get_header_data()
 
 	var/obj/item/stock_parts/computer/card_slot/RFID = PRG.computer.card_slot
@@ -124,7 +132,6 @@
 		data["running"] = 1
 		data["rate"] = PRG.get_speed()
 
-		// Stolen from DOS traffic generator, generates strings of 1s and 0s
 		var/percentage = (PRG.progress / PRG.target_progress) * 100
 		var/list/strings[0]
 		for(var/j, j<10, j++)
@@ -151,10 +158,4 @@
 				"accesses" = accesses)))
 		data["regions"] = regions
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "access_decrypter.tmpl", "NTNet Access Decrypter", 550, 400, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data

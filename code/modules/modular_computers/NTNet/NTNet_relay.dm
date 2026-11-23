@@ -60,44 +60,44 @@
 		update_icon()
 		ntnet_global.add_log("Quantum relay switched from overload recovery mode to normal operation mode.")
 
-/obj/machinery/ntnet_relay/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/obj/machinery/ntnet_relay/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "NTNetRelay", "SCiPnet Quantum Relay")
+		ui.open()
+
+/obj/machinery/ntnet_relay/tgui_data(mob/user)
 	var/list/data = list()
 	data["enabled"] = enabled
 	data["dos_capacity"] = dos_capacity
 	data["dos_overload"] = dos_overload
 	data["dos_crashed"] = dos_failure
 	data["portable_drive"] = !!get_component_of_type(/obj/item/stock_parts/computer/storage/portable_drive)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "ntnet_relay.tmpl", "SCiPnet Quantum Relay", 500, 300, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/ntnet_relay/interface_interact(mob/living/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/ntnet_relay/Topic(href, href_list)
+/obj/machinery/ntnet_relay/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
-	if(href_list["restart"])
+	if(action == "restart")
 		dos_overload = 0
 		dos_failure = 0
 		update_icon()
 		ntnet_global.add_log("Quantum relay manually restarted from overload recovery mode to normal operation mode.")
 		return 1
-	else if(href_list["toggle"])
+	else if(action == "toggle")
 		enabled = !enabled
 		ntnet_global.add_log("Quantum relay manually [enabled ? "enabled" : "disabled"].")
 		update_icon()
 		return 1
-	else if(href_list["purge"])
+	else if(action == "purge")
 		ntnet_global.banned_nids.Cut()
 		ntnet_global.add_log("Manual override: Network blacklist cleared.")
 		return 1
-	else if(href_list["eject_drive"] && uninstall_component(/obj/item/stock_parts/computer/storage/portable_drive))
+	else if(action == "eject_drive" && uninstall_component(/obj/item/stock_parts/computer/storage/portable_drive))
 		visible_message("[icon2html(src, viewers(get_turf(src)))] [src] beeps and ejects its portable disk.")
 
 /obj/machinery/ntnet_relay/New()

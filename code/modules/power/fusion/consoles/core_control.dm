@@ -32,6 +32,36 @@
 				C.set_strength(C.field_strength + val)
 			return TOPIC_REFRESH
 
+/obj/machinery/computer/fusion/core_control/handle_fusion_topic(list/href_list, action)
+	var/obj/machinery/power/fusion_core/C = locate(href_list["machine"])
+	if(!istype(C))
+		return FALSE
+
+	var/datum/local_network/lan = get_local_network()
+	if(!lan || !lan.is_connected(C))
+		return FALSE
+
+	if(!C.check_core_status())
+		return FALSE
+
+	if(action == "toggle_active")
+		if(!C.Startup())
+			if(!C.owned_field.is_shutdown_safe())
+				if(alert(usr, "Shutting down this fusion core without proper safety procedures will cause serious damage, do you wish to continue?", "Shut Down?", "Yes", "No") == "No")
+					return FALSE
+			C.Shutdown()
+		return TRUE
+
+	if(action == "str")
+		var/val = text2num(href_list["str"])
+		if(!val)
+			C.set_strength(input(usr, "Enter the new field power density (W.m^-3)", "Fusion Control", C.field_strength) as num)
+		else
+			C.set_strength(C.field_strength + val)
+		return TRUE
+
+	return FALSE
+
 /obj/machinery/computer/fusion/core_control/build_ui_data()
 	. = ..()
 	var/datum/extension/local_network_member/fusion = get_extension(src, /datum/extension/local_network_member)
@@ -50,14 +80,11 @@
 			core["instability"] = C.owned_field ? "[C.owned_field.percent_unstable * 100]%" : "Field offline."
 			core["temperature"] = C.owned_field ? "[C.owned_field.plasma_temperature + 295]K" : "Field offline."
 			core["powerstatus"] = "[C.avail()]/[C.active_power_usage] W"
-			var/fuel_string = "<table width = '100%'>"
+			var/list/fuel_list = list()
 			if(C.owned_field && LAZYLEN(C.owned_field.reactants))
 				for(var/reactant in C.owned_field.reactants)
-					fuel_string += "<tr><td>[reactant]</td><td>[C.owned_field.reactants[reactant]]</td></tr>"
-			else
-				fuel_string += "<tr><td colspan = 2>Nothing.</td></tr>"
-			fuel_string += "</table>"
-			core["fuel"] = fuel_string
+					fuel_list += list(list("name" = "[reactant]", "amount" = "[C.owned_field.reactants[reactant]]"))
+			core["fuel"] = fuel_list
 
 			cores += list(core)
 	.["cores"] = cores

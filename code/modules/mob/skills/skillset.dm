@@ -151,8 +151,8 @@
 		return
 	if(!NM)
 		NM = new nm_type(owner)
-	NM.ui_interact(owner)
+	NM.tgui_interact(owner)
 
 /datum/skillset/proc/refresh_uis()
 	for(var/nano_module in nm_viewing)
-		SSnano.update_uis(nano_module)
+		SStgui.update_uis(nano_module)

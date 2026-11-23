@@ -52,6 +52,42 @@
 	for(var/token in tokens)
 		W.write(token, pref.cultural_info[token])
 
+/datum/category_item/player_setup_item/background/culture/get_setup_data(mob/user)
+	var/list/data = list()
+	var/list/culture_entries = list()
+	for(var/token in tokens)
+		var/list/valid_values
+		GET_ALLOWED_VALUES(valid_values, token)
+		var/list/value_list = list()
+		for(var/V in valid_values)
+			value_list += V
+		culture_entries += list(list(
+			"token" = token,
+			"label" = tokens[token],
+			"current" = pref.cultural_info[token],
+			"hidden" = hidden[token],
+			"expanded" = expanded[token],
+			"values" = value_list
+		))
+	data["cultures"] = culture_entries
+	return data
+
+/datum/category_item/player_setup_item/background/culture/act_setup(action, list/params, mob/user)
+
+	for(var/token in tokens)
+		if(action == "toggle_verbose_[token]")
+			hidden[token] = !hidden[token]
+			return TRUE
+		if(action == "expand_options_[token]")
+			expanded[token] = !expanded[token]
+			return TRUE
+		if(action == "set_token_entry_[token]")
+			var/new_val = params["value"]
+			pref.cultural_info[token] = html_decode(replacetext(new_val, "PLUS", "+"))
+			return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/background/culture/content()
 	. = list()
 	for(var/token in tokens)

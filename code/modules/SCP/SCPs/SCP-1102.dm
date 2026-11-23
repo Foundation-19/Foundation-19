@@ -11,11 +11,22 @@
 /obj/item/storage/briefcase/scp1102ru/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"old plastic case", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"1102-RU" //Numerical Designation
+		src,
+		"old plastic case",
+		SCP_SAFE,
+		"1102-RU",
 	)
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
+
+/obj/item/storage/briefcase/scp1102ru/forceMove(atom/dest)
+	var/atom/old_loc = loc
+	. = ..()
+	if(old_loc && istype(old_loc, /obj/structure/scp_containment_safe) && !(istype(loc, /obj/structure/scp_containment_safe)))
+		if(SCP && SCP.research)
+			SCP.research.set_containment_status(SCP_BREACHED)
+	else if(istype(loc, /obj/structure/scp_containment_safe) && SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
 
 //Overrides
 

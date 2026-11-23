@@ -36,6 +36,13 @@
 
 	// Mob preview
 	var/icon/preview_icon = null
+	/// Set when a preference change may alter the preview; consumed by tgui_data.
+	var/preview_dirty = TRUE
+	/// Bumped each time a new preview PNG is pushed to the client; used as a
+	/// cache-busting query string so the browser reloads the image.
+	var/preview_asset_version = 0
+	/// 1 = north, 2 = west, 3 = south (facings for the preview icon)
+	var/preview_dir_index = 1
 
 	var/client/client = null
 	var/client_ckey = null
@@ -92,48 +99,159 @@
 		load_failed = "{[stage]} [E]"
 		throw E
 
-/datum/preferences/proc/get_content(mob/user)
-	if(!SScharacter_setup.initialized)
-		return
-	if(!user || !user.client)
-		return
+/datum/preferences/tgui_state(mob/user)
+	return GLOB.always_tgui_state
 
-	var/dat = "<center>"
+/datum/preferences/tgui_close(mob/user)
+	preview_icon = null
+	if(istype(user, /mob/new_player))
+		var/mob/new_player/np = user
+		np.npp?.open()
+	return ..()
 
-	if(is_guest)
-		dat += "Please create an account to save your preferences. If you have an account and are seeing this, please adminhelp for assistance."
-	else if(load_failed)
-		dat += "Loading your savefile failed. Please adminhelp for assistance."
+/datum/preferences/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		var/list/existing_uis = user.tgui_open_uis.Copy()
+		for(var/datum/tgui/other_ui in existing_uis)
+			other_ui.close(can_be_suspended = FALSE)
+		ui = new(user, src, "CharacterSetup", "SCP PERSONNEL CONFIGURATION TERMINAL v5.0", 800, 600)
+		ui.open()
+		preview_dirty = TRUE
+	return
+
+/datum/preferences/tgui_data(mob/user)
+	var/list/data = list()
+
+	data["is_guest"] = is_guest
+	data["load_failed"] = load_failed
+	data["default_slot"] = default_slot
+
+	if(!is_guest && !load_failed)
+		var/list/slots = list()
+		for(var/i = 1, i <= config.character_slots, i++)
+			var/name = (slot_names && slot_names[get_slot_key(i)]) || "Character[i]"
+			slots += list(list("slot" = i, "name" = name, "selected" = (i == default_slot)))
+		data["slots"] = slots
+
+	if(player_setup)
+		data["selected_tab"] = player_setup.selected_category?.name
+		var/list/tabs = list()
+		for(var/datum/category_group/player_setup_category/PS in player_setup.categories)
+			tabs += PS.name
+		data["tabs"] = tabs
+		var/list/raw_data = player_setup.get_category_data(user)
+		var/list/flat_data = list()
+		for(var/cat_name in raw_data)
+			var/list/cat_items = raw_data[cat_name]
+			for(var/item_name in cat_items)
+				flat_data[item_name] = cat_items[item_name]
+		data["tab_data"] = flat_data
+
+	// Icon-based preview: render the character into a PNG, push it to the
+	// client's rsc cache, and let the frontend <img> it. No map elements,
+	// no black backdrops, browser-scaled crisply.
+	if(preview_dirty)
+		preview_dirty = FALSE
+		try
+			update_preview_icon()
+			preview_asset_version++
+			send_rsc(user, preview_icon, "charpreview.png")
+		catch(var/exception/E)
+			log_game("Character preview render failed: [E]")
+	if(preview_icon)
+		data["preview_png"] = "charpreview.png?v=[preview_asset_version]"
 	else
-		dat += "Slot - "
-		dat += "<a href='byond://?src=\ref[src];load=1'>Load slot</a> - "
-		dat += "<a href='byond://?src=\ref[src];save=1'>Save slot</a> - "
-		dat += "<a href='byond://?src=\ref[src];resetslot=1'>Reset slot</a> - "
-		dat += "<a href='byond://?src=\ref[src];reload=1'>Reload slot</a>"
+		data["preview_png"] = null
+	data["preview_options"] = list("Naked", "Underwear", "Loadout", "Job Gear")
+	data["preview_selection"] = "Naked"
+	if(equip_preview_mob & 1)
+		data["preview_selection"] = "Loadout"
+	else if(equip_preview_mob & 2)
+		data["preview_selection"] = "Job Gear"
 
-	dat += "<br>"
-	dat += player_setup.header()
-	dat += "<br><HR></center>"
-	dat += player_setup.content(user)
-	return dat
+	return data
+
+/datum/preferences/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
+	if(action == "save")
+		save_preferences()
+		save_character()
+		return TRUE
+
+	if(action == "reload")
+		load_preferences()
+		load_character()
+		sanitize_preferences()
+		preview_dirty = TRUE
+		return TRUE
+
+	if(action == "load")
+		if(!IsGuestKey(usr.key))
+			open_load_dialog(usr)
+		return TRUE
+
+	if(action == "changeslot")
+		var/slot = text2num(params["slot"])
+		if(slot)
+			load_character(slot)
+			sanitize_preferences()
+			preview_dirty = TRUE
+			close_load_dialog(usr)
+		return TRUE
+
+	if(action == "resetslot")
+		if(real_name != input("This will reset the current slot. Enter the character's full name to confirm."))
+			return FALSE
+		load_character(SAVE_RESET)
+		sanitize_preferences()
+		preview_dirty = TRUE
+		return TRUE
+
+	if(action == "tab")
+		if(player_setup && params["tab"])
+			for(var/datum/category_group/player_setup_category/PS in player_setup.categories)
+				if(PS.name == params["tab"])
+					player_setup.selected_category = PS
+					break
+		return TRUE
+
+	if(action == "rotate")
+		preview_dir_index = (preview_dir_index % 3) + 1
+		preview_dirty = TRUE
+		return TRUE
+
+	if(action == "set_preview_pref")
+		var/value = params["value"]
+		equip_preview_mob = 3
+		if(value == "Naked")
+			equip_preview_mob = 0
+		else if(value == "Underwear")
+			equip_preview_mob = 0
+		else if(value == "Loadout")
+			equip_preview_mob = 1
+		else if(value == "Job Gear")
+			equip_preview_mob = 2
+		preview_dirty = TRUE
+		return TRUE
+
+	if(player_setup)
+		. = player_setup.tgui_act(action, params, ui, state)
+		if(.)
+			preview_dirty = TRUE
+		return .
+
+	return FALSE
 
 /datum/preferences/proc/open_setup_window(mob/user)
 	if (!SScharacter_setup.initialized)
 		return
-	var/datum/browser/popup = new(user, "preferences_browser", "Character Setup", 1200, 800, src)
-	var/content = {"
-	<script type='text/javascript'>
-		function update_content(data){
-			document.getElementById('content').innerHTML = data;
-		}
-	</script>
-	<div id='content'>[get_content(user)]</div>
-	"}
-	popup.set_content(content)
-	popup.open()
+	tgui_interact(user)
 
 /datum/preferences/proc/update_setup_window(mob/user)
-	send_output(user, url_encode(get_content(user)), "preferences_browser.browser:update_content")
+	SStgui.update_uis(src)
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
 
@@ -146,42 +264,6 @@
 		else
 			to_chat(user, SPAN_DANGER("The forum URL is not set in the server configuration."))
 			return
-	update_setup_window(usr)
-	return 1
-
-/datum/preferences/Topic(href, list/href_list)
-	if(..())
-		return 1
-
-	if(href_list["save"])
-		save_preferences()
-		save_character()
-	else if(href_list["reload"])
-		load_preferences()
-		load_character()
-		sanitize_preferences()
-	else if(href_list["load"])
-		if(!IsGuestKey(usr.key))
-			open_load_dialog(usr, href_list["details"])
-			return 1
-	else if(href_list["changeslot"])
-		load_character(text2num(href_list["changeslot"]))
-		sanitize_preferences()
-		close_load_dialog(usr)
-
-		if (winget(usr, "preferences_browser", "is-visible") == "true")
-			open_setup_window(usr)
-
-		if (href_list["details"])
-			return 1
-	else if(href_list["resetslot"])
-		if(real_name != input("This will reset the current slot. Enter the character's full name to confirm."))
-			return 0
-		load_character(SAVE_RESET)
-		sanitize_preferences()
-	else
-		return 0
-
 	update_setup_window(usr)
 	return 1
 

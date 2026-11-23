@@ -19,20 +19,20 @@
 	use_power = POWER_USE_OFF	//Draws directly from power net. Does not use APC power.
 	active_power_usage = 1200
 
-/obj/machinery/shieldwallgen/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/obj/machinery/shieldwallgen/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "ShieldWallGen", "Shielding", 800, 500)
+		ui.open()
+
+/obj/machinery/shieldwallgen/tgui_data(mob/user)
 	var/list/data = list()
 	data["draw"] = round(power_draw)
 	data["power"] = round(storedpower)
 	data["maxpower"] = round(max_stored_power)
 	data["current_draw"] = ((between(500, max_stored_power - storedpower, power_draw)) + power ? active_power_usage : 0)
 	data["online"] = active == 2 ? 1 : 0
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "shield.tmpl", "Shielding", 800, 500, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/shieldwallgen/on_update_icon()
 //	if(stat & BROKEN) -TODO: Broken icon
@@ -41,23 +41,23 @@
 	else
 		icon_state = "Shield_Gen +a"
 
-/obj/machinery/shieldwallgen/OnTopic(mob/user, href_list)
-	if(href_list["toggle"])
+/obj/machinery/shieldwallgen/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(action == "toggle")
 		if(src.active >= 1)
 			src.active = 0
 			update_icon()
 
-			user.visible_message("\The [user] turned the shield generator off.", \
+			usr.visible_message("\The [usr] turned the shield generator off.", \
 				"You turn off the shield generator.", \
 				"You hear heavy droning fade out.")
 			for(var/dir in list(1,2,4,8)) src.cleanup(dir)
 		else
 			src.active = 1
 			update_icon()
-			user.visible_message("\The [user] turned the shield generator on.", \
+			usr.visible_message("\The [usr] turned the shield generator on.", \
 				"You turn on the shield generator.", \
 				"You hear heavy droning.")
-		return TOPIC_REFRESH
+		return TRUE
 
 /obj/machinery/shieldwallgen/ex_act(severity)
 	switch(severity)
@@ -92,7 +92,7 @@
 	return ..()
 
 /obj/machinery/shieldwallgen/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/shieldwallgen/proc/power()

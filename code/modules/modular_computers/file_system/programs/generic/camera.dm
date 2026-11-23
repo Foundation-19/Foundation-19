@@ -42,7 +42,16 @@
 	var/obj/machinery/camera/current_camera = null
 	var/current_network = null
 
-/datum/nano_module/program/camera_monitor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/datum/nano_module/program/camera_monitor/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CameraConsole", "Camera Monitoring")
+		ui.open()
+
+	user.machine = nano_host()
+	user.reset_view(current_camera)
+
+/datum/nano_module/program/camera_monitor/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	data["current_camera"] = current_camera ? current_camera.nano_structure() : null
@@ -62,18 +71,7 @@
 	if(current_network)
 		data["cameras"] = camera_repository.cameras_in_network(current_network)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "sec_camera.tmpl", "Camera Monitoring", 900, 800, state = state)
-		// ui.auto_update_layout = 1 // Disabled as with suit sensors monitor - breaks the UI map. Re-enable once it's fixed somehow.
-
-		ui.add_template("mapContent", "sec_camera_map_content.tmpl")
-		ui.add_template("mapHeader", "sec_camera_map_header.tmpl")
-		ui.set_initial_data(data)
-		ui.open()
-
-	user.machine = nano_host()
-	user.reset_view(current_camera)
+	return data
 
 // Intended to be overriden by subtypes to manually add non-station networks to the list.
 /datum/nano_module/program/camera_monitor/proc/modify_networks_list(list/networks)
@@ -86,12 +84,12 @@
 
 	return check_access(user, ACCESS_SECURITY) || check_access(user, network_access)
 
-/datum/nano_module/program/camera_monitor/Topic(href, href_list)
+/datum/nano_module/program/camera_monitor/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 
-	if(href_list["switch_camera"])
-		var/obj/machinery/camera/C = locate(href_list["switch_camera"]) in cameranet.cameras
+	if(action == "switch_camera")
+		var/obj/machinery/camera/C = locate(params["switch_camera"]) in cameranet.cameras
 		if(!C)
 			return
 		if(!(current_network in C.network))
@@ -106,15 +104,14 @@
 		switch_to_camera(usr, C)
 		return 1
 
-	else if(href_list["switch_network"])
-		// Either security access, or access to the specific camera network's department is required in order to access the network.
-		if(can_access_network(usr, get_camera_access(href_list["switch_network"])))
-			current_network = href_list["switch_network"]
+	else if(action == "switch_network")
+		if(can_access_network(usr, get_camera_access(params["switch_network"])))
+			current_network = params["switch_network"]
 		else
 			to_chat(usr, "\The [nano_host()] shows an \"Network Access Denied\" error message.")
 		return 1
 
-	else if(href_list["reset"])
+	else if(action == "reset")
 		reset_current()
 		usr.reset_view(current_camera)
 		return 1

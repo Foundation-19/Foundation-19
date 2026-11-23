@@ -14,14 +14,20 @@
 /datum/nano_module/forceauthorization/
 	name = "Use of Force Authorization Manager"
 
-/datum/nano_module/forceauthorization/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/forceauthorization/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "ForceAuthorization", name)
+		ui.open()
+
+/datum/nano_module/forceauthorization/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	data["registered_guns"] = list()
 	data["unregistered_guns"] = list()
 	var/atom/movable/AM = nano_host()
 	if(!istype(AM))
-		return
+		return data
 	var/list/zlevels = GetConnectedZlevels(AM.z)
 	for(var/obj/item/gun/G in GLOB.secure_weapons)
 		var/out_of_range = FALSE
@@ -45,21 +51,16 @@
 		else
 			data["unregistered_guns"] += list(list("name" = "[G]", "ref" = "\ref[G]", "modes" = modes, "area" = area_name, "out_of_range" = out_of_range))
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "forceauthorization.tmpl", name, 700, 450, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
-/datum/nano_module/forceauthorization/Topic(href, href_list)
+/datum/nano_module/forceauthorization/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
 
-	if(href_list["gun"] && ("authorize" in href_list) && href_list["mode"])
-		var/obj/item/gun/G = locate(href_list["gun"]) in GLOB.secure_weapons
-		var/do_authorize = text2num(href_list["authorize"])
-		var/mode = text2num(href_list["mode"])
+	if(action == "authorize" && params["gun"] && params["mode"])
+		var/obj/item/gun/G = locate(params["gun"]) in GLOB.secure_weapons
+		var/do_authorize = text2num(params["authorize"])
+		var/mode = text2num(params["mode"])
 		return isnum(do_authorize) && isnum(mode) && G?.authorize(mode, do_authorize)
 
 	return FALSE

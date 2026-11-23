@@ -10,48 +10,50 @@
 	machine_desc = "A control console that maintains a radio link with ship synthetics. Allows remote monitoring of them, as well as locking down their movement systems."
 
 /obj/machinery/computer/robotics/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/robotics/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/computer/robotics/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "RobotComputer", "Robotic Control Console", 400, 500)
+		ui.open()
+
+/obj/machinery/computer/robotics/tgui_data(mob/user)
 	var/data[0]
 	data["robots"] = get_cyborgs(user)
 	data["is_ai"] = issilicon(user)
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "robot_control.tmpl", "Robotic Control Console", 400, 500)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/obj/machinery/computer/robotics/CanUseTopic(user)
+/obj/machinery/computer/robotics/tgui_status(mob/user)
 	if(!allowed(user))
 		to_chat(user, SPAN_WARNING("Access Denied"))
 		return STATUS_CLOSE
 	return ..()
 
-/obj/machinery/computer/robotics/OnTopic(mob/user, href_list)
+/obj/machinery/computer/robotics/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	// Locks or unlocks the cyborg
-	if (href_list["lockdown"])
-		var/mob/living/silicon/robot/target = get_cyborg_by_name(href_list["lockdown"])
+	if (action == "lockdown")
+		var/mob/living/silicon/robot/target = get_cyborg_by_name(params["lockdown"])
 		if(!target || !istype(target))
-			return TOPIC_HANDLED
+			return TRUE
 
-		if(isAI(user) && (target.connected_ai != user))
-			to_chat(user, SPAN_WARNING("Access Denied. This robot is not linked to you."))
-			return TOPIC_HANDLED
+		if(isAI(usr) && (target.connected_ai != usr))
+			to_chat(usr, SPAN_WARNING("Access Denied. This robot is not linked to you."))
+			return TRUE
 
-		if(isrobot(user))
-			to_chat(user, SPAN_WARNING("Access Denied."))
-			return TOPIC_HANDLED
+		if(isrobot(usr))
+			to_chat(usr, SPAN_WARNING("Access Denied."))
+			return TRUE
 
 		var/choice = input("Really [target.lockcharge ? "unlock" : "lockdown"] [target.name] ?") in list ("Yes", "No")
 		if(choice != "Yes")
-			return TOPIC_HANDLED
+			return TRUE
 
 		if(!target || !istype(target))
-			return TOPIC_HANDLED
+			return TRUE
 
 		if(target.SetLockdown(!target.lockcharge))
 			log_and_message_staff("[target.lockcharge ? "locked down" : "released"] [target.name]!")
@@ -60,38 +62,38 @@
 			else
 				to_chat(target, SPAN_NOTICE("Your lockdown has been lifted!"))
 		else
-			to_chat(user, SPAN_WARNING("ERROR: Lockdown attempt failed."))
-		. = TOPIC_REFRESH
+			to_chat(usr, SPAN_WARNING("ERROR: Lockdown attempt failed."))
+		return TRUE
 
 	// Remotely hacks the cyborg. Only antag AIs can do this and only to linked cyborgs.
-	else if (href_list["hack"])
-		var/mob/living/silicon/robot/target = get_cyborg_by_name(href_list["hack"])
+	else if (action == "hack")
+		var/mob/living/silicon/robot/target = get_cyborg_by_name(params["hack"])
 		if(!target || !istype(target))
-			return TOPIC_HANDLED
+			return TRUE
 
 		// Antag AI checks
-		if(!istype(user, /mob/living/silicon/ai) || !(user.mind.special_role && user.mind.original == user))
-			to_chat(user, SPAN_WARNING("Access Denied"))
-			return TOPIC_HANDLED
+		if(!istype(usr, /mob/living/silicon/ai) || !(usr.mind.special_role && usr.mind.original == usr))
+			to_chat(usr, SPAN_WARNING("Access Denied"))
+			return TRUE
 
 		if(target.emagged)
-			to_chat(user, "Robot is already hacked.")
-			return TOPIC_HANDLED
+			to_chat(usr, "Robot is already hacked.")
+			return TRUE
 
 		var/choice = input("Really hack [target.name]? This cannot be undone.") in list("Yes", "No")
 		if(choice != "Yes")
-			return TOPIC_HANDLED
+			return TRUE
 
 		if(!target || !istype(target))
-			return TOPIC_HANDLED
+			return TRUE
 
 		log_and_message_staff("emagged [target.name] using robotic console!")
 		target.emagged = TRUE
 		to_chat(target, SPAN_NOTICE("Failsafe protocols overriden. New tools available."))
-		. = TOPIC_REFRESH
+		return TRUE
 
-	else if (href_list["message"])
-		var/mob/living/silicon/robot/target = get_cyborg_by_name(href_list["message"])
+	else if (action == "message")
+		var/mob/living/silicon/robot/target = get_cyborg_by_name(params["message"])
 		if(!target || !istype(target))
 			return
 
@@ -102,7 +104,7 @@
 		log_and_message_staff("sent message '[message]' to [target.name] using robotics control console!")
 		to_chat(target, SPAN_NOTICE("New remote message received using R-SSH protocol:"))
 		to_chat(target, message)
-		. = TOPIC_REFRESH
+		return TRUE
 
 // Proc: get_cyborgs()
 // Parameters: 1 (operator - mob which is operating the console.)

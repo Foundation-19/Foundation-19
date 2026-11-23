@@ -32,20 +32,19 @@
 		LAZYREMOVE(connected_group.news_programs, src)
 	. = ..()
 
-/datum/nano_module/program/newscast/Topic(href, href_list)
+/datum/nano_module/program/newscast/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
 
-	if (href_list["view_channel"])
-		// We cache a byond text ref of the selected channel, and use it here to get a proper DM pointer to that channel
-		var/datum/feed_channel/new_feed = locate(href_list["view_channel"]) in connected_group.network_channels
+	if (action == "view_channel")
+		var/datum/feed_channel/new_feed = locate(params["view_channel"]) in connected_group.network_channels
 		if (istype(new_feed))
-			active_channel = new_feed // and then if it's valid, it becomes our new active channel
+			active_channel = new_feed
 			prog_state = NEWSCAST_VIEW_CHANNEL
 		return TRUE
 
-	else if (href_list["view_photo"])
-		var/datum/feed_message/story = locate(href_list["view_photo"]) in active_channel.messages
+	else if (action == "view_photo")
+		var/datum/feed_message/story = locate(params["view_photo"]) in active_channel.messages
 		if (istype(story) && story.img)
 			send_rsc(usr, story.img, "tmp_photo.png")
 			var/output = "<html><head><title>photo - [story.author]</title></head>"
@@ -55,36 +54,42 @@
 			show_browser(usr, output, "window=book; size=192x192]")
 		return TRUE
 
-	else if (href_list["toggle_notifs"])
+	else if (action == "toggle_notifs")
 		notifs_enabled = !notifs_enabled
 		return TRUE
 
-	else if (href_list["return_to_home"])
+	else if (action == "return_to_home")
 		active_channel = null
 		prog_state = NEWSCAST_HOME
 		return TRUE
 
 	return FALSE
 
-/datum/nano_module/program/newscast/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/datum/nano_module/program/newscast/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "News", name)
+		ui.open()
+
+/datum/nano_module/program/newscast/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	var/datum/computer_file/program/newscast/prog = program
 	var/turf/T = get_turf(prog.computer)
-	if (!connected_group) // Look for a network connected to these z-levels
+	if (!connected_group)
 		for (var/datum/feed_network/G in news_network)
 			if (T.z in G.z_levels)
 				connected_group = G
 				LAZYADD(G.news_programs, src)
 				break
-	else if (!(T.z in connected_group.z_levels)) // Lose our tracked group if we leave the network range but still have a connection
+	else if (!(T.z in connected_group.z_levels))
 		prog.computer.visible_message("Newscaster connection lost. Attempting to re-establish.")
 		LAZYREMOVE(connected_group.news_programs, src)
 		connected_group = null
 
-	if (!connected_group) // If we still fail to find a network, throw an error with no other data
+	if (!connected_group)
 		data["has_network"] = FALSE
-	else // Otherwise, gather the data from the network
+	else
 		data["has_network"] = TRUE
 		data["notifs_enabled"] = notifs_enabled
 		data["prog_state"] = prog_state
@@ -95,7 +100,7 @@
 		Stories may not be published or viewed while the D-Notice is in effect. For further information, please contact the network administrator or a security representative.</font>"
 
 		data["channels"] = list()
-		data["active_channels"] = list() // There will only ever be one active channel, but we use this for unified handling in nanoUI
+		data["active_channels"] = list()
 		for(var/datum/feed_channel/channel in connected_group.network_channels)
 			var/list/channel_data = list()
 			channel_data["name"] = channel.channel_name
@@ -119,20 +124,14 @@
 				story["body"] = message.body
 				story["timestamp"] = message.time_stamp
 				story["has_photo"] = message.img != null
-				if (user && message.img) // user check here to avoid runtimes
+				if (user && message.img)
 					var/resource_name = "newscaster_photo_[sanitize(feed.channel_name)]_[i].png"
 					SSassets.transport.send_assets(user.client, SSassets.cache[resource_name])
 					story["photo_dat"] = "<img src='[resource_name]' width='180'><br>"
 				story["story_ref"] = "\ref[message]"
 				data["active_stories"] += list(story)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "newscast.tmpl", name, 450, 600, state = state)
-		ui.auto_update_layout = 1
-		ui.set_auto_update(1)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 #undef NEWSCAST_HOME
 #undef NEWSCAST_VIEW_CHANNEL

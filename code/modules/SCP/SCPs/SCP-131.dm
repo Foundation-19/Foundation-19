@@ -7,6 +7,7 @@
 	maxHealth = 150
 	health = 150
 	pass_flags = PASS_FLAG_TABLE
+	var/spawn_area
 
 	species_language = LANGUAGE_EYEPOD
 	only_species_language = 1
@@ -55,6 +56,9 @@
 	)
 
 	SCP.min_time = 5 MINUTES
+	spawn_area = get_area(src)
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
 
 	add_language(LANGUAGE_EYEPOD)
 	add_verb(src, /mob/living/proc/ventcrawl)
@@ -139,6 +143,13 @@
 /mob/living/simple_animal/friendly/scp131/Life()
 	. = ..()
 
+	if(SCP && SCP.research && spawn_area)
+		var/area/current = get_area(src)
+		if(current == spawn_area && SCP.research.containment_status == SCP_BREACHED)
+			SCP.research.set_containment_status(SCP_CONTAINED)
+		else if(current != spawn_area && SCP.research.containment_status != SCP_BREACHED)
+			SCP.research.set_containment_status(SCP_BREACHED)
+
 	if(friend)
 		if(can_see(friend))
 			friend_last_seen = world.time
@@ -160,6 +171,8 @@
 
 		if((isscp173(scpInView)) && friend && can_see(friend))
 			face_atom(scpInView)
+			if(prob(15))
+				to_chat(friend, SPAN_WARNING("\The [src] babbles urgently, staring at \the [scpInView]!"))
 			return
 		else
 			ai_holder.give_target(scpInView)

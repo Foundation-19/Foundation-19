@@ -10,11 +10,9 @@
 	var/shuttle_tag  // Used to coordinate data in shuttle controller.
 	var/hacked = 0   // Has been emagged, no access restrictions.
 
-	var/ui_template = "shuttle_control_console.tmpl"
-
 
 /obj/machinery/computer/shuttle_control/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/computer/shuttle_control/proc/get_ui_data(datum/shuttle/autodock/shuttle)
@@ -66,49 +64,53 @@
 		return FALSE
 	return TRUE
 
-/obj/machinery/computer/shuttle_control/proc/handle_topic_href(datum/shuttle/autodock/shuttle, list/href_list, user)
+/obj/machinery/computer/shuttle_control/proc/handle_topic_href(datum/shuttle/autodock/shuttle, action, list/params, user)
 	if(!istype(shuttle))
-		return TOPIC_NOACTION
+		return FALSE
 
-	if(href_list["move"])
+	if(action == "move")
 		if(can_move(shuttle, user))
 			shuttle.launch(src)
-			return TOPIC_REFRESH
-		return TOPIC_HANDLED
+		return TRUE
 
-	if(href_list["force"])
+	if(action == "force")
 		if(can_move(shuttle, user))
 			shuttle.force_launch(src)
-			return TOPIC_REFRESH
-		return TOPIC_HANDLED
+		return TRUE
 
-	if(href_list["cancel"])
+	if(action == "cancel")
 		shuttle.cancel_launch(src)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["set_codes"])
+	if(action == "set_codes")
 		var/newcode = input("Input new docking codes", "Docking codes", shuttle.docking_codes) as text|null
 		if (newcode && CanInteract(usr, GLOB.default_state))
 			shuttle.set_docking_codes(uppertext(newcode))
-		return TOPIC_REFRESH
+		return TRUE
 
-/obj/machinery/computer/shuttle_control/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+	return FALSE
+
+/obj/machinery/computer/shuttle_control/tgui_interact(mob/user, datum/tgui/ui)
 	var/datum/shuttle/autodock/shuttle = SSshuttle.shuttles[shuttle_tag]
 	if (!istype(shuttle))
 		to_chat(user,SPAN_WARNING("Unable to establish link with the shuttle."))
 		return
 
-	var/list/data = get_ui_data(shuttle)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, ui_template, "[shuttle_tag] Shuttle Control", 470, 450)
-		ui.set_initial_data(data)
+		ui = new(user, src, "ShuttleConsole", "[shuttle_tag] Shuttle Control", 470, 450)
 		ui.open()
-		ui.set_auto_update(1)
 
-/obj/machinery/computer/shuttle_control/OnTopic(user, href_list)
-	return handle_topic_href(SSshuttle.shuttles[shuttle_tag], href_list, user)
+/obj/machinery/computer/shuttle_control/tgui_data(mob/user)
+	var/datum/shuttle/autodock/shuttle = SSshuttle.shuttles[shuttle_tag]
+	if(!istype(shuttle))
+		return list()
+	return get_ui_data(shuttle)
+
+/obj/machinery/computer/shuttle_control/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	return handle_topic_href(SSshuttle.shuttles[shuttle_tag], action, params, usr)
 
 /obj/machinery/computer/shuttle_control/emag_act(remaining_charges, mob/user)
 	if (!hacked)

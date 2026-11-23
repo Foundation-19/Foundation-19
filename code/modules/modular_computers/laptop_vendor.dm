@@ -182,70 +182,76 @@
 
 
 
-/obj/machinery/lapvend/Topic(href, href_list)
+/obj/machinery/lapvend/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 
-	if(href_list["pick_device"])
-		if(state) // We've already picked a device type
+	if(action == "pick_device")
+		if(src.state)
 			return 0
-		devtype = text2num(href_list["pick_device"])
+		devtype = text2num(params["pick_device"])
 		state = 1
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["clean_order"])
+	if(action == "clean_order")
 		reset_order()
 		return 1
-	if((state != 1) && devtype) // Following IFs should only be usable when in the Select Loadout mode
+	if((state != 1) && devtype)
 		return 0
-	if(href_list["confirm_order"])
-		state = 2 // Wait for ID swipe for payment processing
+	if(action == "confirm_order")
+		state = 2
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_cpu"])
-		dev_cpu = text2num(href_list["hw_cpu"])
+	if(action == "hw_cpu")
+		dev_cpu = text2num(params["hw_cpu"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_battery"])
-		dev_battery = text2num(href_list["hw_battery"])
+	if(action == "hw_battery")
+		dev_battery = text2num(params["hw_battery"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_disk"])
-		dev_disk = text2num(href_list["hw_disk"])
+	if(action == "hw_disk")
+		dev_disk = text2num(params["hw_disk"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_netcard"])
-		dev_netcard = text2num(href_list["hw_netcard"])
+	if(action == "hw_netcard")
+		dev_netcard = text2num(params["hw_netcard"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_tesla"])
-		dev_tesla = text2num(href_list["hw_tesla"])
+	if(action == "hw_tesla")
+		dev_tesla = text2num(params["hw_tesla"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_nanoprint"])
-		dev_nanoprint = text2num(href_list["hw_nanoprint"])
+	if(action == "hw_nanoprint")
+		dev_nanoprint = text2num(params["hw_nanoprint"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_card"])
-		dev_card = text2num(href_list["hw_card"])
+	if(action == "hw_card")
+		dev_card = text2num(params["hw_card"])
 		fabricate_and_recalc_price(0)
 		return 1
-	if(href_list["hw_aislot"])
-		dev_aislot = text2num(href_list["hw_aislot"])
+	if(action == "hw_aislot")
+		dev_aislot = text2num(params["hw_aislot"])
 		fabricate_and_recalc_price(0)
 		return 1
 	return 0
 
 /obj/machinery/lapvend/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/lapvend/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/lapvend/tgui_interact(mob/user, datum/tgui/ui)
 	if(stat & (BROKEN | NOPOWER | MAINT))
 		if(ui)
 			ui.close()
 		return 0
 
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "LaptopVendor", "Personal Computer Vendor")
+		ui.open()
+
+/obj/machinery/lapvend/tgui_data(mob/user)
 	var/list/data[0]
 	data["state"] = state
 	if(state == 1)
@@ -261,12 +267,7 @@
 	if(state == 1 || state == 2)
 		data["totalprice"] = total_price
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "computer_fabricator.tmpl", "Personal Computer Vendor", 500, 400)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 
 /obj/machinery/lapvend/attackby(obj/item/W as obj, mob/user as mob)

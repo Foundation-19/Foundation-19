@@ -130,6 +130,24 @@ The entrant issued this permit is granted access to the zone listed.
 [hr][b]Recommended Actions:[/b] [field]
 [b]Ethics Liason Signature:[/b]"}
 
+/datum/computer_file/data/text/paperwork/area_access_pass
+	filename = "AreaAccessPass"
+	stored_data = @{"[center][h1]Area Access Pass[/h1]
+[seclogo]
+[b]Secure. Contain. Protect.[/b][/center]
+[hr][small][i]This document authorizes the bearer to access the areas listed below. Present this pass at designated checkpoints. Unauthorized duplication or forgery is a Class-B infraction.[/i][/small]
+[hr][b]Bearer (name and rank):[/b] [field]
+[b]Assignment or D-Class Designation:[/b] [field]
+[hr][b]Authorized Areas:[/b]
+[list][*]Gate A
+[*]Gate B
+[*]Light Containment Zone[/list]
+[hr][b]Reason for Access:[/b] [field]
+[b]Valid From:[/b] [field]
+[b]Valid Until:[/b] [field]
+[hr][b]Issuing Officer (name and rank):[/b] [field]
+[b]Authorizing Signature:[/b] [field]"}
+
 // LOGISTICS
 
 /datum/computer_file/data/text/paperwork/material_inventory

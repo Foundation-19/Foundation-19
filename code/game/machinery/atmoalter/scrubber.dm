@@ -91,11 +91,17 @@
 	src.updateDialog()
 
 /obj/machinery/portable_atmospherics/powered/scrubber/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/portable_atmospherics/powered/scrubber/ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=1)
-	var/list/data[0]
+/obj/machinery/portable_atmospherics/powered/scrubber/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "PortableScrubber", "Portable Scrubber")
+		ui.open()
+
+/obj/machinery/portable_atmospherics/powered/scrubber/tgui_data(mob/user)
+	var/list/data = list()
 	var/obj/item/cell/cell = get_cell()
 	data["portConnected"] = connected_port ? 1 : 0
 	data["tankPressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)
@@ -108,33 +114,30 @@
 	data["on"] = (use_power == POWER_USE_ACTIVE) ? 1 : 0
 
 	data["hasHoldingTank"] = holding ? 1 : 0
-	if (holding)
+	if(holding)
 		data["holdingTank"] = list("name" = holding.name, "tankPressure" = round(holding.air_contents.return_pressure() > 0 ? holding.air_contents.return_pressure() : 0))
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "portscrubber.tmpl", "Portable Scrubber", 480, 400, state = GLOB.physical_state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/portable_atmospherics/powered/scrubber/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-
-/obj/machinery/portable_atmospherics/powered/scrubber/OnTopic(user, href_list)
-	if(href_list["power"])
-		update_use_power(use_power == POWER_USE_ACTIVE ? POWER_USE_IDLE : POWER_USE_ACTIVE)
-		. = TOPIC_REFRESH
-	if (href_list["remove_tank"])
-		if(holding)
-			holding.dropInto(loc)
-			holding = null
-		. = TOPIC_REFRESH
-	if (href_list["volume_adj"])
-		var/diff = text2num(href_list["volume_adj"])
-		volume_rate = Clamp(volume_rate+diff, minrate, maxrate)
-		. = TOPIC_REFRESH
-
-	if(.)
-		update_icon()
+	switch(action)
+		if("power")
+			update_use_power(use_power == POWER_USE_ACTIVE ? POWER_USE_IDLE : POWER_USE_ACTIVE)
+			update_icon()
+			return TRUE
+		if("remove_tank")
+			if(holding)
+				holding.dropInto(loc)
+				holding = null
+			update_icon()
+			return TRUE
+		if("volume_adj")
+			var/diff = text2num(params["volume_adj"])
+			volume_rate = Clamp(volume_rate+diff, minrate, maxrate)
+			update_icon()
+			return TRUE
 
 
 //Broken scrubber Used in hanger atmoshperic storage

@@ -27,7 +27,7 @@
 		return ..()
 
 /obj/machinery/computer/fusion/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/computer/fusion/proc/build_ui_data()
@@ -38,12 +38,25 @@
 	data["name"] = name
 	. = data
 
-/obj/machinery/computer/fusion/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/computer/fusion/tgui_data(mob/user)
+	return build_ui_data()
+
+/obj/machinery/computer/fusion/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	// Legacy OnTopic hrefs reused as tgui actions: machine + sub-actions.
+	var/href_list = params
+	if(action == "toggle_active" || action == "str" || action == "toggle" || action == "modifypower" || action == "modifyrate" || action == "toggle_injecting" || action == "injection_rate" || action == "global_toggle")
+		return handle_fusion_topic(href_list, action)
+	return FALSE
+
+/obj/machinery/computer/fusion/proc/handle_fusion_topic(list/href_list, action)
+	// Implemented by subtypes.
+	return FALSE
+
+/obj/machinery/computer/fusion/tgui_interact(mob/user, datum/tgui/ui)
 	if(ui_template)
-		var/list/data = build_ui_data()
-		ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+		ui = SStgui.try_update_ui(user, src, ui)
 		if (!ui)
-			ui = new(user, src, ui_key, ui_template, name, 400, 600)
-			ui.set_initial_data(data)
+			ui = new(user, src, "FusionConsole", name, 400, 600)
 			ui.open()
-			ui.set_auto_update(1)

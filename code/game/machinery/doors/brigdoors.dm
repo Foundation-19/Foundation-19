@@ -150,12 +150,17 @@
 	return max(timer_duration - (world.time - activation_time), 0) / 10
 
 /obj/machinery/door_timer/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/door_timer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/list/data = list()
+/obj/machinery/door_timer/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BrigTimer", name)
+		ui.open()
 
+/obj/machinery/door_timer/tgui_data(mob/user)
+	var/list/data = list()
 	var/timeval = timing ? timeleft() : timer_duration / 10
 	data["timing"] = timing
 	data["minutes"] = round(timeval/60)
@@ -172,50 +177,42 @@
 			break
 	src.can_flash = can_flash
 	data["flash"] = can_flash
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "brig_timer.tmpl", name, 270, 150)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/door_timer/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(!allowed(usr))
+		return
 
-/obj/machinery/door_timer/CanUseTopic(user, state)
-	if(!allowed(user))
-		return STATUS_UPDATE
-	return ..()
-
-/obj/machinery/door_timer/OnTopic(mob/user, list/href_list, state)
-	if (href_list["toggle"])
-		if(timing)
-			timer_end()
-		else
-			timer_start()
-			if(timer_duration > 20 MINUTES)
-				log_and_message_staff("has started a brig timer over 20 minutes in length!")
-				have_logged = TRUE
-		. =  TOPIC_REFRESH
-
-	if (href_list["flash"])
-		. =  TOPIC_REFRESH
-		if(!can_flash)
-			return
-
-		for(var/weakref/flash_ref as anything in flashers)
-			var/obj/machinery/flasher/flasher = flash_ref.resolve()
-			if(!flasher)
-				flashers -= flash_ref
-				continue
-			flasher.flash()
-
-	if (href_list["adjust"])
-		. = TOPIC_REFRESH
-		if(timing)
-			return
-		timer_duration += text2num(href_list["adjust"])
-		timer_duration = Clamp(timer_duration, 0, 30 MINUTES)
-
-	update_icon()
+	switch(action)
+		if("toggle")
+			if(timing)
+				timer_end()
+			else
+				timer_start()
+				if(timer_duration > 20 MINUTES)
+					log_and_message_staff("has started a brig timer over 20 minutes in length!")
+					have_logged = TRUE
+			update_icon()
+			return TRUE
+		if("flash")
+			if(!can_flash)
+				return
+			for(var/weakref/flash_ref as anything in flashers)
+				var/obj/machinery/flasher/flasher = flash_ref.resolve()
+				if(!flasher)
+					flashers -= flash_ref
+					continue
+				flasher.flash()
+			return TRUE
+		if("adjust")
+			if(timing)
+				return
+			timer_duration += text2num(params["adjust"])
+			timer_duration = Clamp(timer_duration, 0, 30 MINUTES)
+			update_icon()
+			return TRUE
 
 
 //icon update function

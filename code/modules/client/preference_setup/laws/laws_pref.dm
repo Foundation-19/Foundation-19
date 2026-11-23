@@ -31,6 +31,41 @@
 	else
 		pref.is_shackled = sanitize_bool(pref.is_shackled, initial(pref.is_shackled))
 
+/datum/category_item/player_setup_item/law_pref/get_setup_data(mob/user)
+	var/list/data = list()
+	var/datum/species/species = all_species[pref.species]
+	data["has_posibrain"] = !!(species && species.has_organ[BP_POSIBRAIN])
+	data["is_shackled"] = pref.is_shackled
+	data["laws"] = pref.laws ? pref.laws.Copy() : list()
+	return data
+
+/datum/category_item/player_setup_item/law_pref/act_setup(action, list/params, mob/user)
+
+	if(action == "toggle_shackle")
+		pref.is_shackled = !pref.is_shackled
+		return TRUE
+
+	else if(action == "lawsets")
+		var/list/valid_lawsets = list()
+		var/list/all_lawsets = subtypesof(/datum/ai_laws)
+		for(var/law_set_type in all_lawsets)
+			var/datum/ai_laws/ai_laws = law_set_type
+			var/ai_law_name = initial(ai_laws.name)
+			if(initial(ai_laws.shackles))
+				ADD_SORTED(valid_lawsets, ai_law_name, GLOBAL_PROC_REF(cmp_text_asc))
+				valid_lawsets[ai_law_name] = law_set_type
+		var/chosen_lawset = input(user, "Choose a law set:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.laws) as null|anything in valid_lawsets
+		if(chosen_lawset)
+			var/path = valid_lawsets[chosen_lawset]
+			var/datum/ai_laws/lawset = new path()
+			var/list/datum/ai_law/laws = lawset.all_laws()
+			pref.laws.Cut()
+			for(var/datum/ai_law/law in laws)
+				pref.laws += sanitize_text("[law.law]", default="")
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/law_pref/content()
 	. = list()
 	var/datum/species/species = all_species[pref.species]

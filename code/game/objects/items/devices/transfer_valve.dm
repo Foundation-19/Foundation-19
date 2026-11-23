@@ -44,7 +44,7 @@
 
 		update_icon()
 
-		SSnano.update_uis(src) // update all UIs attached to src
+		SStgui.update_uis(src) // update all UIs attached to src
 //TODO: Have this take an assemblyholder
 	else if(isassembly(item))
 		var/obj/item/device/assembly/A = item
@@ -65,7 +65,7 @@
 		message_staff("[key_name_admin(user)] attached a [item] to a transfer valve. [ADMIN_JMP(location)]")
 		log_game("[key_name_admin(user)] attached a [item] to a transfer valve.")
 		attacher = user
-		SSnano.update_uis(src) // update all UIs attached to src
+		SStgui.update_uis(src) // update all UIs attached to src
 	return
 
 
@@ -76,51 +76,45 @@
 
 
 /obj/item/device/transfer_valve/attack_self(mob/user as mob)
-	ui_interact(user)
+	tgui_interact(user)
 
-/obj/item/device/transfer_valve/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/item/device/transfer_valve/tgui_interact(mob/user, datum/tgui/ui)
 
-	// this is the data which will be sent to the ui
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "TransferValve", "Tank Transfer Valve", 460, 280)
+		ui.open()
+
+/obj/item/device/transfer_valve/tgui_data(mob/user)
 	var/data[0]
 	data["attachmentOne"] = tank_one ? tank_one.name : null
 	data["attachmentTwo"] = tank_two ? tank_two.name : null
 	data["valveAttachment"] = attached_device ? attached_device.name : null
 	data["valveOpen"] = valve_open ? 1 : 0
+	return data
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "transfer_valve.tmpl", "Tank Transfer Valve", 460, 280)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		//ui.set_auto_update(1)
-
-/obj/item/device/transfer_valve/Topic(href, href_list)
-	..()
+/obj/item/device/transfer_valve/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if ( usr.stat || usr.restrained() )
-		return 0
+		return FALSE
 	if (src.loc != usr)
-		return 0
-	if(tank_one && href_list["tankone"])
+		return FALSE
+	if(tank_one && action == "tankone")
 		remove_tank(tank_one)
-	else if(tank_two && href_list["tanktwo"])
+	else if(tank_two && action == "tanktwo")
 		remove_tank(tank_two)
-	else if(href_list["open"])
+	else if(action == "open")
 		toggle_valve()
 	else if(attached_device)
-		if(href_list["rem_device"])
+		if(action == "rem_device")
 			attached_device.dropInto(loc)
 			attached_device:holder = null
 			attached_device = null
 			update_icon()
-		if(href_list["device"])
+		if(action == "device")
 			attached_device.attack_self(usr)
-	return 1 // Returning 1 sends an update to attached UIs
+	return TRUE
 
 /obj/item/device/transfer_valve/process_activation(obj/item/device/D)
 	if(toggle)

@@ -72,11 +72,17 @@
 	speed = T / 2 // 1 -> 3
 
 /obj/machinery/robotics_fabricator/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/robotics_fabricator/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/robotics_fabricator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "RoboticsFabricator", "Exosuit Fabricator UI", 800, 600)
+		ui.open()
+
+/obj/machinery/robotics_fabricator/tgui_data(mob/user)
+	var/list/data = list()
 
 	var/datum/design/current = queue.len ? queue[1] : null
 	if(current)
@@ -100,40 +106,35 @@
 	if(current)
 		data["builtperc"] = round((progress / current.time) * 100)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "mechfab.tmpl", "Exosuit Fabricator UI", 800, 600)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/obj/machinery/robotics_fabricator/Topic(href, href_list)
+/obj/machinery/robotics_fabricator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return
+		return TRUE
 
-	if(href_list["build"])
-		add_to_queue(text2num(href_list["build"]))
+	if(action == "build")
+		add_to_queue(text2num(params["build"]))
 
-	if(href_list["remove"])
-		remove_from_queue(text2num(href_list["remove"]))
+	if(action == "remove")
+		remove_from_queue(text2num(params["remove"]))
 
-	if(href_list["category"])
-		if(href_list["category"] in categories)
-			category = href_list["category"]
+	if(action == "category")
+		if(params["category"] in categories)
+			category = params["category"]
 
-	if(href_list["manufacturer"])
-		if(href_list["manufacturer"] in all_robolimbs)
-			manufacturer = href_list["manufacturer"]
+	if(action == "manufacturer")
+		if(params["manufacturer"] in all_robolimbs)
+			manufacturer = params["manufacturer"]
 
-	if(href_list["eject"])
-		eject_materials(href_list["eject"], text2num(href_list["amount"]))
+	if(action == "eject")
+		eject_materials(params["eject"], text2num(params["amount"]))
 
-	if(href_list["sync"])
+	if(action == "sync")
 		sync()
 	else
 		sync_message = ""
 
-	return 1
+	return TRUE
 
 /obj/machinery/robotics_fabricator/components_are_accessible(path)
 	return !busy && ..()

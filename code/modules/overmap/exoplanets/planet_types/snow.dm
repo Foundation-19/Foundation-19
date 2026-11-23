@@ -10,7 +10,7 @@
 	map_generators = list(/datum/random_map/noise/exoplanet/snow, /datum/random_map/noise/ore/poor)
 	surface_color = "#e8faff"
 	water_color = "#b5dfeb"
-	habitability_distribution = list(HABITABILITY_IDEAL = 30, HABITABILITY_OKAY = 50, HABITABILITY_BAD = 10)
+	habitability_distribution = alist(HABITABILITY_IDEAL = 30, HABITABILITY_OKAY = 50, HABITABILITY_BAD = 10)
 	has_trees = TRUE
 	flora_diversity = 4
 	fauna_types = list(/mob/living/simple_animal/hostile/retaliate/beast/samak, /mob/living/simple_animal/hostile/retaliate/beast/diyaab, /mob/living/simple_animal/hostile/retaliate/beast/shantak)

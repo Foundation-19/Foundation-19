@@ -21,6 +21,67 @@
 		if(!(role in special_roles))
 			pref.be_special_role -= role
 
+/datum/category_item/player_setup_item/antagonism/candidacy/get_setup_data(mob/user)
+	var/list/data = list()
+	var/list/antag_entries = list()
+	var/list/all_antag_types = GLOB.all_antag_types_
+	for(var/antag_type in all_antag_types)
+		var/datum/antagonist/antag = all_antag_types[antag_type]
+		var/is_banned = jobban_isbanned(preference_mob(), antag.id) || (antag.id == MODE_MALFUNCTION && jobban_isbanned(preference_mob(), "AIC"))
+		antag_entries += list(list(
+			"name" = antag.role_text,
+			"id" = antag.id,
+			"banned" = is_banned,
+			"enabled" = (antag.id in pref.be_special_role)
+		))
+
+	var/list/ghost_entries = list()
+	var/list/ghost_traps = get_ghost_traps()
+	for(var/ghost_trap_key in ghost_traps)
+		var/datum/ghosttrap/ghost_trap = ghost_traps[ghost_trap_key]
+		if(!ghost_trap.list_as_special_role)
+			continue
+		var/is_banned = banned_from_ghost_role(preference_mob(), ghost_trap)
+		var/is_whitelisted = ghost_trap.assess_whitelist(user)
+		ghost_entries += list(list(
+			"name" = ghost_trap.ghost_trap_role,
+			"id" = ghost_trap.pref_check,
+			"banned" = is_banned,
+			"whitelisted" = is_whitelisted,
+			"enabled" = (ghost_trap.pref_check in pref.be_special_role)
+		))
+
+	data["antag_roles"] = antag_entries
+	data["ghost_roles"] = ghost_entries
+	return data
+
+/datum/category_item/player_setup_item/antagonism/candidacy/act_setup(action, list/params, mob/user)
+
+	if(action == "add_special")
+		var/id = params["id"]
+		if(!(id in valid_special_roles(FALSE)))
+			return FALSE
+		pref.be_special_role |= id
+		return TRUE
+
+	if(action == "del_special")
+		var/id = params["id"]
+		if(!(id in valid_special_roles(FALSE)))
+			return FALSE
+		pref.be_special_role -= id
+		return TRUE
+
+	if(action == "select_all")
+		var/selection = text2num(params["selection"])
+		var/list/roles = valid_special_roles(FALSE)
+		for(var/id in roles)
+			switch(selection)
+				if(0) pref.be_special_role -= id
+				if(1) pref.be_special_role |= id
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/antagonism/candidacy/content(mob/user)
 	. = list()
 	. += "<b>Special Role Availability:</b><br>"

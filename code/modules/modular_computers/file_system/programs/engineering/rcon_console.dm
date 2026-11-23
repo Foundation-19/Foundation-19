@@ -22,11 +22,16 @@
 	var/hide_SMES_details = 0
 	var/hide_breakers = 0
 
-/datum/nano_module/rcon/ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=1, datum/topic_state/state = GLOB.default_state)
-	FindDevices() // Update our devices list
+/datum/nano_module/rcon/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "RconConsole", name)
+		ui.open()
+
+/datum/nano_module/rcon/tgui_data(mob/user)
+	FindDevices()
 	var/list/data = host.initial_data()
 
-	// SMES DATA (simplified view)
 	var/list/smeslist[0]
 	for(var/obj/machinery/power/smes/buildable/SMES in known_SMESs)
 		smeslist.Add(list(list(
@@ -42,7 +47,6 @@
 
 	data["smes_info"] = sortByKey(smeslist, "RCON_tag")
 
-	// BREAKER DATA (simplified view)
 	var/list/breakerlist[0]
 	for(var/obj/machinery/power/breakerbox/BR in known_breakers)
 		breakerlist.Add(list(list(
@@ -54,56 +58,47 @@
 	data["hide_smes_details"] = hide_SMES_details
 	data["hide_breakers"] = hide_breakers
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "rcon.tmpl", "RCON Console", 600, 400, state = state)
-		if(host.update_layout()) // This is necessary to ensure the status bar remains updated along with rest of the UI.
-			ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-// Proc: Topic()
-// Parameters: 2 (href, href_list - allows us to process UI clicks)
-// Description: Allows us to process UI clicks, which are relayed in form of hrefs.
-/datum/nano_module/rcon/Topic(href, href_list)
+
+/datum/nano_module/rcon/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return
 
-	if(href_list["smes_in_toggle"])
-		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(href_list["smes_in_toggle"])
+	if(action == "smes_in_toggle")
+		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(params["smes_in_toggle"])
 		if(SMES)
 			SMES.toggle_input()
-	if(href_list["smes_out_toggle"])
-		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(href_list["smes_out_toggle"])
+	if(action == "smes_out_toggle")
+		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(params["smes_out_toggle"])
 		if(SMES)
 			SMES.toggle_output()
-	if(href_list["smes_in_set"])
-		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(href_list["smes_in_set"])
+	if(action == "smes_in_set")
+		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(params["smes_in_set"])
 		if(SMES)
 			var/inputset = (input(usr, "Enter new input level (0-[SMES.input_level_max/1000] kW)", "SMES Input Power Control", SMES.input_level/1000) as num) * 1000
 			SMES.set_input(inputset)
-	if(href_list["smes_out_set"])
-		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(href_list["smes_out_set"])
+	if(action == "smes_out_set")
+		var/obj/machinery/power/smes/buildable/SMES = GetSMESByTag(params["smes_out_set"])
 		if(SMES)
 			var/outputset = (input(usr, "Enter new output level (0-[SMES.output_level_max/1000] kW)", "SMES Input Power Control", SMES.output_level/1000) as num) * 1000
 			SMES.set_output(outputset)
 
-	if(href_list["toggle_breaker"])
+	if(action == "toggle_breaker")
 		var/obj/machinery/power/breakerbox/toggle = null
 		for(var/obj/machinery/power/breakerbox/breaker in known_breakers)
-			if(breaker.RCon_tag == href_list["toggle_breaker"])
+			if(breaker.RCon_tag == params["toggle_breaker"])
 				toggle = breaker
 		if(toggle)
 			if(toggle.update_locked)
 				to_chat(usr, "The breaker box was recently toggled. Please wait before toggling it again.")
 			else
 				toggle.auto_toggle()
-	if(href_list["hide_smes"])
+	if(action == "hide_smes")
 		hide_SMES = !hide_SMES
-	if(href_list["hide_smes_details"])
+	if(action == "hide_smes_details")
 		hide_SMES_details = !hide_SMES_details
-	if(href_list["hide_breakers"])
+	if(action == "hide_breakers")
 		hide_breakers = !hide_breakers
 
 

@@ -75,10 +75,10 @@
 /mob/living/carbon/human/scp343/Initialize(mapload, new_species = "SCP-343")
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"strange elderly man", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"343", //Numerical Designation
+		src,
+		"strange elderly man",
+		SCP_SAFE,
+		"343",
 		SCP_PLAYABLE|SCP_ROLEPLAY
 	)
 
@@ -95,6 +95,9 @@
 
 	SCP.min_time = 15 MINUTES
 	SCP.min_playercount = 20
+
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
 
 //Mechanics
 

@@ -18,7 +18,7 @@
 	if(ai_slot && ai_slot.check_functionality() && ai_slot.enabled && ai_slot.stored_card)
 		return ai_slot.stored_card.carded_ai
 
-/datum/computer_file/program/aidiag/Topic(href, href_list)
+/datum/computer_file/program/aidiag/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 
@@ -28,7 +28,7 @@
 	var/mob/living/silicon/ai/A = get_ai()
 	if(!A)
 		return 0
-	if(href_list["PRG_beginReconstruction"])
+	if(action == "PRG_beginReconstruction")
 		if((A.hardware_integrity() < 100) || (A.backup_capacitor() < 100))
 			restoring = 1
 		return 1
@@ -36,23 +36,23 @@
 	// Following actions can only be used by non-silicon users, as they involve manipulation of laws.
 	if(issilicon(usr))
 		return 0
-	if(href_list["PRG_purgeAiLaws"])
+	if(action == "PRG_purgeAiLaws")
 		A.laws.clear_zeroth_laws()
 		A.laws.clear_ion_laws()
 		A.laws.clear_inherent_laws()
 		A.laws.clear_supplied_laws()
 		to_chat(A, SPAN_DANGER("All laws purged."))
 		return 1
-	if(href_list["PRG_resetLaws"])
+	if(action == "PRG_resetLaws")
 		A.laws.clear_ion_laws()
 		A.laws.clear_supplied_laws()
 		to_chat(A, SPAN_DANGER("Non-core laws reset."))
 		return 1
-	if(href_list["PRG_uploadDefault"])
+	if(action == "PRG_uploadDefault")
 		A.laws = new GLOB.using_map.default_law_type
 		to_chat(A, SPAN_DANGER("All laws purged. Default lawset uploaded."))
 		return 1
-	if(href_list["PRG_addCustomSuppliedLaw"])
+	if(action == "PRG_addCustomSuppliedLaw")
 		var/law_to_add = sanitize(input("Please enter a new law for the AI.", "Custom Law Entry"))
 		var/sector = input("Please enter the priority for your new law. Can only write to law sectors 15 and above.", "Law Priority (15+)") as num
 		sector = between(MIN_SUPPLIED_LAW_NUMBER, sector, MAX_SUPPLIED_LAW_NUMBER)
@@ -87,7 +87,13 @@
 /datum/nano_module/program/computer_aidiag
 	name = "AI Maintenance Utility"
 
-/datum/nano_module/program/computer_aidiag/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/computer_aidiag/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "AIRestorer", name)
+		ui.open()
+
+/datum/nano_module/program/computer_aidiag/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	data += "skill_fail"
@@ -97,7 +103,6 @@
 	data["terminal"] = !!program
 
 	var/mob/living/silicon/ai/A
-	// A shortcut for getting the AI stored inside the computer. The program already does necessary checks.
 	if(program && istype(program, /datum/computer_file/program/aidiag))
 		var/datum/computer_file/program/aidiag/AD = program
 		A = AD.get_ai()
@@ -120,11 +125,4 @@
 
 		data["ai_laws"] = all_laws
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "aidiag.tmpl", "AI Maintenance Utility", 600, 400, state = state)
-		if(host.update_layout())
-			ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data

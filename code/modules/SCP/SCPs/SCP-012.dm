@@ -6,6 +6,9 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 	show_title = FALSE
 
+	var/contained = FALSE
+	var/obj/structure/scp_containment_safe/containing_safe
+
 	//Config
 
 	///How long for an effect to happen
@@ -26,15 +29,15 @@
 	START_PROCESSING(SSobj, src)
 
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"On Mount Golgotha", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"012", //Numerical Designation
-		SCP_MEMETIC //Meta Flags, refer to code/_defines/SCP.dm
+		src,
+		"On Mount Golgotha",
+		SCP_EUCLID,
+		"012",
+		SCP_MEMETIC
 	)
 
-	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED //Memetic flags determine required factors for a human to be affected
-	SCP.memetic_proc = TYPE_PROC_REF(/obj/item/paper/scp012, memetic_effect) //proc to be called for the effect an affected individual should recieve
+	SCP.memeticFlags = MVISUAL|MAUDIBLE|MSYNCED
+	SCP.memetic_proc = TYPE_PROC_REF(/obj/item/paper/scp012, memetic_effect)
 	SCP.memetic_sounds = list('sounds/scp/012/012.ogg')
 	SCP.compInit()
 
@@ -46,17 +49,48 @@
 
 /obj/item/paper/scp012/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	if(containing_safe)
+		containing_safe.stored_item = null
+		containing_safe = null
 	return ..()
+
+/obj/item/paper/scp012/forceMove(atom/dest)
+	. = ..()
+	check_containment()
+
+/obj/item/paper/scp012/proc/check_containment()
+	if(istype(loc, /obj/structure/scp_containment_safe))
+		if(!contained)
+			contained = TRUE
+			containing_safe = loc
+			if(sound_token)
+				sound_token.Stop()
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_CONTAINED)
+	else
+		if(contained)
+			contained = FALSE
+			containing_safe = null
+			if(sound_token)
+				sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, looping_sound, looping_sound_volume, 24, 3)
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_BREACHED)
+				for(var/mob/living/carbon/human/H in viewers(7, src))
+					var/datum/job/job = SSjobs.get_by_title(H.job)
+					if(job && (job.department_flag & (COM|SCI|SEC)))
+						to_chat(H, SPAN_DANGER("<b>CONTAINMENT ALERT:</b> SCP-012 has been removed from containment!"))
 
 //Mechanics
 /obj/item/paper/scp012/proc/memetic_effect(mob/living/carbon/human/H)
-	if(!H || H.stat == UNCONSCIOUS || !H.can_see(src)) //Unconscious individuals cant keep hurting themselves
+	if(contained)
+		return
+	if(!H || H.stat == UNCONSCIOUS || !H.can_see(src))
 		return
 
 	if(get_dist(H, src) > 1)
 		step_to(H, src)
 		H.Stun(2)
-	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS) //Last part is so that this can run for all affected humans without worrying about cooldown
+	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS)
 		H.Stun(60)
 		if(prob(60) && H.getBruteLoss())
 			H.visible_message(SPAN_WARNING("[H] smears [H.p_their()] blood on \"[name]\", writing musical notes..."))
@@ -73,12 +107,12 @@
 				H.visible_message(SPAN_NOTICE("[H] looks at the \"[name]\" and cries."))
 				playsound(H, "sounds/voice/emotes/[gender2text(H.gender)]_cry[pick(list("1","2"))].ogg", 100)
 		effect_cooldown_counter = world.time
-	if(!H || H.stat == UNCONSCIOUS) //Unconscious individuals cant keep hurting themselves
+	if(!H || H.stat == UNCONSCIOUS)
 		return
 	if(get_dist(H, src) > 1)
 		step_to(H, src)
 		H.Stun(2)
-	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS) //Last part is so that this can run for all affected humans without worrying about cooldown
+	else if(((world.time - effect_cooldown_counter) > effect_cooldown) || abs((world.time - effect_cooldown_counter) - effect_cooldown) < 0.1 SECONDS)
 		H.Stun(60)
 		if(prob(60) && H.getBruteLoss())
 			H.visible_message(SPAN_WARNING("[H] smears [H.p_their()] blood on \"[name]\", writing musical notes..."))
@@ -99,8 +133,10 @@
 // Overrides
 
 /obj/item/paper/scp012/Process()
+	if(contained)
+		return
 	SCP.meme_comp.check_viewers()
-	SCP.meme_comp.activate_memetic_effects() //Memetic effects are synced because of how we handle sound
+	SCP.meme_comp.activate_memetic_effects()
 
 // Very Fine - Deletes itself and forces every mob on z level to bleed temporarily while playing the silly music
 /obj/item/paper/scp012/Conversion914(mode = MODE_ONE_TO_ONE, mob/user = usr)

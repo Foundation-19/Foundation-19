@@ -27,9 +27,15 @@
 /datum/build_mode/atmosphere/Help()
 	to_chat(user, SPAN_NOTICE(help_text))
 
-/datum/build_mode/atmosphere/ui_interact(mob/user, ui_key = "atmosphere_editor", datum/nanoui/ui = null, force_open = 1, master_ui = null, datum/topic_state/state = GLOB.default_state)
+/datum/build_mode/atmosphere/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
 	. = ..()
 
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "BuildModeAtmos", src.name, 425, 600, state = state)
+		ui.open()
+
+/datum/build_mode/atmosphere/tgui_data(mob/user)
 	var/data[0]
 	data["total_moles"] = enviroment.total_moles
 	data["temperature"] = enviroment.temperature
@@ -48,20 +54,14 @@
 				title += "(CONTAINER)"
 
 	data["title"] = title
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "atmosphere_editor.tmpl", src.name, 425, 600, master_ui = master_ui, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/datum/build_mode/atmosphere/CanUseTopic(mob/user)
+/datum/build_mode/atmosphere/tgui_status(mob/user)
 	if (!is_admin(user))
 		return STATUS_CLOSE
 	return ..()
 
-/datum/build_mode/atmosphere/Topic(user, href_list)
+/datum/build_mode/atmosphere/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	var/list/atmospheres = list()
 
 	switch (mode)
@@ -71,15 +71,15 @@
 		if (MODE_SINGLE)
 			atmospheres += selected_object.return_air()
 
-	if (href_list["change_mode"])
+	if (action == "change_mode")
 		var/new_mode = input("Change editor mode", "Change Mode") as null | anything in list(MODE_AREA, MODE_SINGLE)
 
 		if (new_mode)
 			mode = new_mode
 
-		return TOPIC_HANDLED
+		return TRUE
 
-	if (href_list["temperature"])
+	if (action == "temperature")
 		var/temp = input("Set Temperature (Kelvin)", "Temperature") as num | null
 
 		if (!isnull(temp))
@@ -87,9 +87,9 @@
 				G.temperature = temp
 				G.update_values()
 
-		. = TOPIC_HANDLED
+		. = TRUE
 
-	if (href_list["moles_total"])
+	if (action == "moles_total")
 		var/moles = input("Add/Subtract Moles", "Moles") as num | null
 
 		if (!isnull(moles))
@@ -97,10 +97,10 @@
 				for (var/g in G.gas)
 					G.adjust_gas(g, moles)
 
-		. = TOPIC_HANDLED
+		. = TRUE
 
-	if (href_list["modify_gas"])
-		var/gas_id = href_list["modify_gas"]
+	if (action == "modify_gas")
+		var/gas_id = params["modify_gas"]
 		var/moles = input("Set [gas_id]'s Mole Count]", "Moles") as num | null
 
 		if (!isnull(moles))
@@ -110,9 +110,9 @@
 				gases[gas_id] = moles
 				G.update_values()
 
-		. = TOPIC_HANDLED
+		. = TRUE
 
-	if (href_list["add_gas"])
+	if (action == "add_gas")
 		var/gas = input("Add a gas", "Gas") as null | anything in valid_gases
 
 		if (gas)
@@ -123,9 +123,9 @@
 					G.gas[gas] = moles
 					G.update_values()
 
-		. = TOPIC_HANDLED
+		. = TRUE
 
-	if (href_list["remove_gas"])
+	if (action == "remove_gas")
 		var/gas = input("Remove a gas from the mix", "Remove Gas") as null | anything in enviroment.gas
 
 		if (gas)
@@ -133,10 +133,10 @@
 				G.gas[gas] = 0
 				G.update_values()
 
-		. = TOPIC_HANDLED
+		. = TRUE
 
-	if (href_list["set_predefined_atmos"])
-		var/option = href_list["set_predefined_atmos"]
+	if (action == "set_predefined_atmos")
+		var/option = params["set_predefined_atmos"]
 		var/list/gasses = list()
 		var/temperature
 
@@ -154,11 +154,10 @@
 					G.gas = gasses.Copy()
 					G.adjust_gas_temp(new_gas, gasses[new_gas], temperature)
 
-		. = TOPIC_HANDLED
+		. = TRUE
 
 
 	if (mode == MODE_AREA && env_area.planetary_surface)
-		//exoplanets will slowly reset their atmosphere to default if we don't update it
 		var/obj/effect/overmap/visitable/sector/exoplanet/E = map_sectors["[env_area.z]"]
 		if (istype(E))
 			E.atmosphere.gas = enviroment.gas.Copy()
@@ -175,7 +174,7 @@
 		if (MODE_SINGLE)
 			enviroment = object.return_air()
 
-	ui_interact(user)
+	tgui_interact(user)
 
 /datum/build_mode/atmosphere/proc/is_atmos_container(atom/object)
 	var/list/container_types = list(

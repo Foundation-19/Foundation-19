@@ -26,6 +26,65 @@
 	W.write("memory", pref.memory)
 	W.write("email_pass", pref.email_pass)
 
+/datum/category_item/player_setup_item/background/records/get_setup_data(mob/user)
+	var/list/data = list()
+	data["public_record"] = pref.public_record
+	data["med_record"] = pref.med_record
+	data["sec_record"] = pref.sec_record
+	data["gen_record"] = pref.gen_record
+	data["memory"] = pref.memory
+	data["email_pass"] = pref.email_pass
+	data["records_banned"] = jobban_isbanned(user, "Records")
+	return data
+
+/datum/category_item/player_setup_item/background/records/act_setup(action, list/params, mob/user)
+
+	if(action == "set_public_record")
+		var/new_public = sanitize(input(user, "Enter general public record information here.", CHARACTER_PREFERENCE_INPUT_TITLE, html_decode(pref.public_record)) as message|null, MAX_PAPER_MESSAGE_LEN, extra = 0)
+		if(!isnull(new_public) && !jobban_isbanned(user, "Records") && CanUseTopic(user))
+			pref.public_record = new_public
+		return TRUE
+
+	else if(action == "set_medical_records")
+		var/new_medical = sanitize(input(user, "Enter medical information here.", CHARACTER_PREFERENCE_INPUT_TITLE, html_decode(pref.med_record)) as message|null, MAX_PAPER_MESSAGE_LEN, extra = 0)
+		if(!isnull(new_medical) && !jobban_isbanned(user, "Records") && CanUseTopic(user))
+			pref.med_record = new_medical
+		return TRUE
+
+	else if(action == "set_general_records")
+		var/new_general = sanitize(input(user, "Enter employment information here.", CHARACTER_PREFERENCE_INPUT_TITLE, html_decode(pref.gen_record)) as message|null, MAX_PAPER_MESSAGE_LEN, extra = 0)
+		if(!isnull(new_general) && !jobban_isbanned(user, "Records") && CanUseTopic(user))
+			pref.gen_record = new_general
+		return TRUE
+
+	else if(action == "set_security_records")
+		var/sec_medical = sanitize(input(user, "Enter security information here.", CHARACTER_PREFERENCE_INPUT_TITLE, html_decode(pref.sec_record)) as message|null, MAX_PAPER_MESSAGE_LEN, extra = 0)
+		if(!isnull(sec_medical) && !jobban_isbanned(user, "Records") && CanUseTopic(user))
+			pref.sec_record = sec_medical
+		return TRUE
+
+	else if(action == "set_memory")
+		var/memes = sanitize(input(user, "Enter memorized information here.", CHARACTER_PREFERENCE_INPUT_TITLE, html_decode(pref.memory)) as message|null, MAX_PAPER_MESSAGE_LEN, extra = 0)
+		if(!isnull(memes) && CanUseTopic(user))
+			pref.memory = memes
+		return TRUE
+
+	else if(action == "set_email_pass")
+		var/value = input(user, "Enter email password:", "Email Password", pref.email_pass) as text
+		if(isnull(value) || !CanUseTopic(user))
+			return FALSE
+		if(value != "")
+			var/clean = sanitize(value)
+			var/chars = length(clean)
+			if(chars < 4 || chars > 16)
+				to_chat(user, SPAN_WARNING("Invalid Email Password '[clean]': must be 4..16 safe glyphs."))
+				return FALSE
+			value = clean
+		pref.email_pass = value
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/background/records/content(mob/user)
 	. = list()
 

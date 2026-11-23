@@ -113,11 +113,17 @@
 		return 1
 
 /obj/machinery/turretid/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/turretid/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/turretid/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "TurretControl", "Turret Controls")
+		ui.open()
+
+/obj/machinery/turretid/tgui_data(mob/user)
+	var/list/data = list()
 	data["access"] = !isLocked(user)
 	data["locked"] = locked
 	data["enabled"] = enabled
@@ -125,57 +131,49 @@
 	data["lethal"] = lethal
 
 	if(data["access"])
-		var/settings[0]
-		settings[++settings.len] = list("category" = "Neutralize All Non-Synthetics", "setting" = "check_synth", "value" = check_synth)
-		settings[++settings.len] = list("category" = "Check Weapon Authorization", "setting" = "check_weapons", "value" = check_weapons)
-		settings[++settings.len] = list("category" = "Check Security Records", "setting" = "check_records", "value" = check_records)
-		settings[++settings.len] = list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest)
-		settings[++settings.len] = list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access)
-		settings[++settings.len] = list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies)
+		var/list/settings = list()
+		settings += list(list("category" = "Neutralize All Non-Synthetics", "setting" = "check_synth", "value" = check_synth))
+		settings += list(list("category" = "Check Weapon Authorization", "setting" = "check_weapons", "value" = check_weapons))
+		settings += list(list("category" = "Check Security Records", "setting" = "check_records", "value" = check_records))
+		settings += list(list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest))
+		settings += list(list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access))
+		settings += list(list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies))
 		data["settings"] = settings
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "turret_control.tmpl", "Turret Controls", 500, 300)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/obj/machinery/turretid/Topic(href, href_list)
+/obj/machinery/turretid/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 
+	var/value = text2num(params["value"])
+	var/log_action = null
+	var/list/toggle = list("disabled", "enabled")
 
-	if(href_list["command"] && href_list["value"])
-		var/log_action = null
-
-		var/list/toggle = list("disabled","enabled")
-
-		var/value = text2num(href_list["value"])
-		if(href_list["command"] == "enable")
+	switch(action)
+		if("enable")
 			enabled = value
 			log_action = "[toggle[enabled+1]] the turrets"
-		else if(href_list["command"] == "lethal")
+		if("lethal")
 			lethal = value
 			log_action = "[toggle[lethal+1]] the turrets lethal mode."
-		else if(href_list["command"] == "check_synth")
+		if("check_synth")
 			check_synth = value
-		else if(href_list["command"] == "check_weapons")
+		if("check_weapons")
 			check_weapons = value
-		else if(href_list["command"] == "check_records")
+		if("check_records")
 			check_records = value
-		else if(href_list["command"] == "check_arrest")
+		if("check_arrest")
 			check_arrest = value
-		else if(href_list["command"] == "check_access")
+		if("check_access")
 			check_access = value
-		else if(href_list["command"] == "check_anomalies")
+		if("check_anomalies")
 			check_anomalies = value
 
-		if(!isnull(log_action))
-			log_and_message_staff("has [log_action]", usr, loc)
+	if(!isnull(log_action))
+		log_and_message_staff("has [log_action]", usr, loc)
 
-		updateTurrets()
-		return 1
+	updateTurrets()
+	return TRUE
 
 /obj/machinery/turretid/proc/updateTurrets()
 	var/datum/turret_checks/TC = new

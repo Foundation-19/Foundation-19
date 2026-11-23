@@ -1,3 +1,5 @@
+var/global/decl/appearance_handler/bluelady_appearance_handler = new /decl/appearance_handler()
+
 /obj/item/clothing/mask/smokable/cigarette/bluelady
 	name = "'Blue Lady' cigarette"
 	brand = "\improper Blue Lady"
@@ -6,10 +8,7 @@
 	filling = list(/datum/reagent/medicine/fluff/tobacco = 1)
 	hidden_from_codex = TRUE
 
-	//Mechanical
-
-	///Appearance Handler
-	var/decl/appearance_handler/bl_handle = new /decl/appearance_handler()
+	var/contained = FALSE
 
 	///Humans who have smoked 013, helps us prevent it from extinguishing if someone is still undergoing the effects
 	var/list/weakref/affected
@@ -17,13 +16,29 @@
 /obj/item/clothing/mask/smokable/cigarette/bluelady/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"'Blue Lady' cigarette", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"013", //Numerical Designation
+		src,
+		"'Blue Lady' cigarette",
+		SCP_SAFE,
+		"013",
 	)
 
 	LAZYINITLIST(affected)
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/forceMove(atom/dest)
+	. = ..()
+	check_containment()
+
+/obj/item/clothing/mask/smokable/cigarette/bluelady/proc/check_containment()
+	if(istype(loc, /obj/structure/scp_containment_locker) || istype(loc, /obj/structure/scp_containment_safe) || istype(loc, /obj/item/storage/fancy/cigarettes/bluelady))
+		if(!contained)
+			contained = TRUE
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_CONTAINED)
+	else
+		if(contained)
+			contained = FALSE
+			if(SCP && SCP.research)
+				SCP.research.set_containment_status(SCP_BREACHED)
 
 //Mechanics
 
@@ -42,15 +57,15 @@
 		if(2)
 			to_chat(H, SPAN_NOTICE("You remember now, you were looking in the mirror as you painted your lips blue."))
 			addtimer(CALLBACK(src, PROC_REF(update_013_status), H), 1 MINUTES)
-			bl_handle.AddAltAppearance(H, get_bluelady_image(H), list(H))
+			bluelady_appearance_handler.AddAltAppearance(H, get_bluelady_image(H), list(H))
 		if(3)
 			to_chat(H, SPAN_NOTICE("Briefly, she fades from your mind. You miss her already."))
 			addtimer(CALLBACK(src, PROC_REF(update_013_status), H), 2 MINUTE)
-			bl_handle.RemoveAltAppearance(H)
+			bluelady_appearance_handler.RemoveAltAppearance(H)
 		if(4)
 			to_chat(H, SPAN_NOTICE("You put the blue dress on, that's all you can recall. How did you get here?"))
 			addtimer(CALLBACK(src, PROC_REF(update_013_status), H), 3 MINUTE)
-			bl_handle.AddAltAppearance(H, get_bluelady_image(H), list(H))
+			bluelady_appearance_handler.AddAltAppearance(H, get_bluelady_image(H), list(H))
 		if(5)
 			to_chat(H, SPAN_NOTICE("Who were you? You try to remember in more detail..."))
 			addtimer(CALLBACK(src, PROC_REF(update_013_status), H), 1 MINUTE)
@@ -112,3 +127,20 @@
 	desc = "A packet of six Blue Lady cigarettes. The SCP logo is stamped on the paper."
 
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/bluelady = 6)
+
+/mob/living/carbon/human/proc/cure_bluelady(cure_level)
+	var/current_stage = humanStageHandler.getStage("BlueLady")
+	if(!current_stage)
+		return FALSE
+	bluelady_appearance_handler.RemoveAltAppearance(src)
+	if(cure_level >= 3)
+		humanStageHandler.setStage("BlueLady", 0)
+		to_chat(src, SPAN_NOTICE("Your mind clears completely. The Blue Lady is gone."))
+		return TRUE
+	if(current_stage <= cure_level * 2)
+		humanStageHandler.setStage("BlueLady", 0)
+		to_chat(src, SPAN_NOTICE("Your recent memories seem to clear... The Blue Lady fades."))
+		return TRUE
+	humanStageHandler.adjustStage("BlueLady", -(cure_level * 2))
+	to_chat(src, SPAN_NOTICE("Some of the Blue Lady's grip loosens... but she's still there."))
+	return FALSE

@@ -622,18 +622,18 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if(!LAZYLEN(selected_scp_string))
 			return
 
-		var/mob/living/selected_scp = scp_type_ref_list[selected_scp_string]
+		var/atom/selected_scp = scp_type_ref_list[selected_scp_string]
 		var/agreement = tgui_alert(src, "Warning! SCPs are likley to spend a long amount of time within their containment chamber and are not guaranteed to be let out![(selected_scp.SCP.metaFlags & SCP_ROLEPLAY) ? " Additionally, this is a roleplay oriented SCP. That means you are expected to behave like the SCP would in lore, and failing to do so would result in ban from playing roleplay SCPs." : ""]", "Are you sure?", list("Yes","No"))
 		if(!LAZYLEN(agreement) || (agreement == "No"))
 			return
-		if(!canBecomeSCP(selected_scp)) //This is incase something changes while we are waiting for a response from the ghost
+		if(!canBecomeSCP(selected_scp))
 			to_chat(src, SPAN_WARNING("SCP-[selected_scp.SCP.designation] is no longer avalible!"))
 			return
 		selected_scp.do_possession(src)
 	else
 		to_chat(src, SPAN_WARNING("There are no SCPs avalible yet! Keep in mind that not all SCPs are avalible round start and more may become avalible as the round goes on!"))
 
-/mob/observer/ghost/proc/canBecomeSCP(mob/PossibleSCP)
+/mob/observer/ghost/proc/canBecomeSCP(atom/PossibleSCP)
 	var/datum/scp/PSCP = PossibleSCP.SCP
 	if(!(PSCP.metaFlags & SCP_PLAYABLE))
 		return FALSE
@@ -641,7 +641,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	if(!PSCP.has_minimum_players())
 		return FALSE
-	if(PossibleSCP.client)
+	if(ismob(PossibleSCP))
+		var/mob/M = PossibleSCP
+		if(M.client || M.stat == DEAD)
+			return FALSE
+	if(PSCP.possessed)
 		return FALSE
 	if((PSCP.classification == SCP_SAFE))
 		if(jobban_isbanned(src, "Safe SCP"))
@@ -649,7 +653,5 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		if(jobban_isbanned(src,"Non-Safe SCP"))
 			return FALSE
-	if(PossibleSCP.stat == DEAD)
-		return FALSE
 
 	return TRUE

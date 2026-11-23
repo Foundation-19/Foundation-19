@@ -30,7 +30,7 @@
 		driver.data_buffer = data
 
 	to_chat(user, "You scan \the [target] with [src].")
-	SSnano.update_uis(driver.NM)
+	SStgui.update_uis(driver.NM)
 
 /obj/item/stock_parts/computer/scanner/paper/do_on_attackby(mob/user, atom/target)
 	do_on_afterattack(user, target, TRUE)

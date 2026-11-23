@@ -174,69 +174,60 @@
 	return
 
 /obj/machinery/atmospherics/binary/passive_gate/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return
 
-/obj/machinery/atmospherics/binary/passive_gate/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	// this is the data which will be sent to the ui
-	var/data[0]
+/obj/machinery/atmospherics/binary/passive_gate/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "PassiveGate", name, 470, 370)
+		ui.open()
 
-	data = list(
-		"on" = unlocked,
-		"pressure_set" = round(target_pressure*100),	//Nano UI can't handle rounded non-integers, apparently.
-		"max_pressure" = max_pressure_setting,
-		"input_pressure" = round(air1.return_pressure()*100),
-		"output_pressure" = round(air2.return_pressure()*100),
-		"regulate_mode" = regulate_mode,
-		"set_flow_rate" = round(set_flow_rate*10),
-		"last_flow_rate" = round(last_flow_rate*10),
-	)
+/obj/machinery/atmospherics/binary/passive_gate/tgui_data(mob/user)
+	var/list/data = list()
+	data["on"] = unlocked
+	data["pressure_set"] = round(target_pressure*100)
+	data["max_pressure"] = max_pressure_setting
+	data["input_pressure"] = round(air1.return_pressure()*100)
+	data["output_pressure"] = round(air2.return_pressure()*100)
+	data["regulate_mode"] = regulate_mode
+	data["set_flow_rate"] = round(set_flow_rate*10)
+	data["last_flow_rate"] = round(last_flow_rate*10)
+	return data
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "pressure_regulator.tmpl", name, 470, 370)
-		ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
-		ui.open()					// open the new ui window
-		ui.set_auto_update(1)		// auto update every Master Controller tick
+/obj/machinery/atmospherics/binary/passive_gate/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-
-/obj/machinery/atmospherics/binary/passive_gate/Topic(href,href_list)
-	if(..()) return 1
-
-	if(href_list["toggle_valve"])
+	if(action == "toggle_valve")
 		unlocked = !unlocked
 
-	if(href_list["regulate_mode"])
-		switch(href_list["regulate_mode"])
-			if ("off") regulate_mode = REGULATE_NONE
-			if ("input") regulate_mode = REGULATE_INPUT
-			if ("output") regulate_mode = REGULATE_OUTPUT
+	if(action == "regulate_mode")
+		switch(params["regulate_mode"])
+			if("off") regulate_mode = REGULATE_NONE
+			if("input") regulate_mode = REGULATE_INPUT
+			if("output") regulate_mode = REGULATE_OUTPUT
 
-	switch(href_list["set_press"])
-		if ("min")
+	switch(params["set_press"])
+		if("min")
 			target_pressure = 0
-		if ("max")
+		if("max")
 			target_pressure = max_pressure_setting
-		if ("set")
+		if("set")
 			var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure Control",src.target_pressure) as num
 			src.target_pressure = between(0, new_pressure, max_pressure_setting)
 
-	switch(href_list["set_flow_rate"])
-		if ("min")
+	switch(params["set_flow_rate"])
+		if("min")
 			set_flow_rate = 0
-		if ("max")
+		if("max")
 			set_flow_rate = air1.volume
-		if ("set")
+		if("set")
 			var/new_flow_rate = input(usr,"Enter new flow rate limit (0-[air1.volume]kPa)","Flow Rate Control",src.set_flow_rate) as num
 			src.set_flow_rate = between(0, new_flow_rate, air1.volume)
 
-	usr.set_machine(src)	//Is this even needed with NanoUI?
 	src.update_icon()
 	src.add_fingerprint(usr)
-	return
 
 /obj/machinery/atmospherics/binary/passive_gate/attackby(obj/item/W as obj, mob/user as mob)
 	if(!isWrench(W))
