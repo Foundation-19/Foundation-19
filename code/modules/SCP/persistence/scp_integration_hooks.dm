@@ -42,18 +42,15 @@ var/list/scp_breach_cooldown = list()
 		SSscp_persistence.manager.active_breaches++
 		SSscp_persistence.manager.global_containment_stability = max(0, SSscp_persistence.manager.global_containment_stability - 10)
 
-	// Site-wide announcement — Safe-class escapes are non-events, log quietly.
-	var/scp_class = null
+	// Site-wide announcement
+	var/is_keter = FALSE
 	if(scp_atom && scp_atom.SCP)
-		scp_class = scp_atom.SCP.classification
-	if(scp_class != SCP_SAFE)
-		priority_announcement.Announce(
-			"Containment breach detected in [breach_zone]. SCP-[designation][scp_class == SCP_KETER ? " (Keter-class)" : ""] is no longer in its designated containment zone. All personnel are advised to exercise caution.",
-			"SCP-[designation] Containment Breach Alert",
-			'sounds/effects/siren.ogg'
-		)
-	else
-		log_game("SCP Breach (Safe-class, no announcement): [designation] at [breach_zone]")
+		is_keter = (scp_atom.SCP.classification == SCP_KETER)
+	priority_announcement.Announce(
+		"Containment breach detected in [breach_zone]. SCP-[designation][is_keter ? " (Keter-class)" : ""] is no longer in its designated containment zone. All personnel are advised to exercise caution.",
+		"SCP-[designation] Containment Breach Alert",
+		'sounds/effects/siren.ogg'
+	)
 
 	// Codex: anyone nearby records the breach observation.
 	if(scp_atom)

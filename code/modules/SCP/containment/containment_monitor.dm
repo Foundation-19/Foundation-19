@@ -84,11 +84,6 @@
 	var/datum/scp/scp_datum = linked_zone.linked_scp
 	var/desg = scp_datum ? scp_datum.designation : linked_zone.scp_designation
 	var/class = scp_datum ? scp_datum.classification : "Unknown"
-	// Safe-class escapes are non-events; log quietly instead of siren-announcing.
-	if(class != SCP_KETER && class != SCP_EUCLID)
-		log_game("SCP Containment Monitor: SCP-[desg] ([class]) left its zone in [linked_zone.zone_area ? linked_zone.zone_area.name : "unknown area"] (no alert: Safe-class).")
-		addtimer(CALLBACK(src, PROC_REF(clear_alert)), alert_cooldown)
-		return
 	priority_announcement.Announce(
 		"Containment breach detected in [linked_zone.zone_area ? linked_zone.zone_area.name : "unknown area"]. SCP-[desg] ([class]) is no longer in its designated containment zone. All personnel are advised to exercise caution.",
 		"SCP-[desg] Containment Breach Alert",

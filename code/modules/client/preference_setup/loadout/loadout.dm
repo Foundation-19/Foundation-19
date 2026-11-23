@@ -141,18 +141,15 @@ var/list/gear_datums = list()
 			var/datum/gear/G = LC.gear[gear_name]
 			if(!(gear_name in valid_gear_choices()))
 				continue
-			var/selected = (G.display_name in pref.gear_list[pref.gear_slot])
-			var/list/gear_entry = list(
+			gear_entries += list(list(
 				"name" = G.display_name,
 				"cost" = G.cost,
 				"ref" = "\ref[G]",
-				"selected" = selected,
+				"selected" = (G.display_name in pref.gear_list[pref.gear_slot]),
 				"description" = G.get_description(get_gear_metadata(G, 1))
-			)
+			))
 			// Per-gear accessory options (color/path tweaks) for the TGUI dropdown.
-			// Only exposed for selected gear: get_tweak_metadata() creates metadata
-			// entries for unselected gear, which would mark them as selected.
-			if(selected && LAZYLEN(G.gear_tweaks))
+			if(LAZYLEN(G.gear_tweaks))
 				var/list/tweaks_out = list()
 				for(var/datum/gear_tweak/tweak in G.gear_tweaks)
 					var/list/tweak_data = list(
@@ -167,16 +164,9 @@ var/list/gear_datums = list()
 							options_list += list(list("name" = path_name, "value" = path_name))
 						tweak_data["options"] = options_list
 						var/current = get_tweak_metadata(G, tweak)
-						// get_default() returns the type path, not the display name.
-						if(!(current in PT.valid_paths))
-							for(var/path_name in PT.valid_paths)
-								if(PT.valid_paths[path_name] == current)
-									current = path_name
-									break
 						tweak_data["current"] = current
 					tweaks_out += list(tweak_data)
-				gear_entry["tweaks"] = tweaks_out
-			gear_entries += list(gear_entry)
+				gear_entries[list(gear_entries.len)]["tweaks"] = tweaks_out
 		categories += list(list("name" = category, "cost" = cat_cost, "gear" = gear_entries))
 	data["categories"] = categories
 	data["current_tab"] = current_tab
