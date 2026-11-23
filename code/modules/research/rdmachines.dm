@@ -45,3 +45,10 @@ var/list/default_material_composition = list(MATERIAL_STEEL = 0, MATERIAL_ALUMIN
 		if(!reagents.has_reagent(C, D.chemicals[C]))
 			ret += C
 	return english_list(ret)
+
+/obj/machinery/r_n_d/interface_interact(mob/user)
+	if(!linked_console)
+		to_chat(user, SPAN_NOTICE("\The [src] must be linked to an R&D console to be operated."))
+		return TRUE
+	linked_console.interact(user)
+	return TRUE

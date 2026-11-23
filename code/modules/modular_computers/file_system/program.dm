@@ -238,7 +238,7 @@
 			ui.close()
 		return computer.tgui_interact(user)
 	if(istype(NM))
-		NM.ui_interact(user)
+		NM.tgui_interact(user)
 		return 0
 	if(istype(TM))
 		TM.tgui_interact(user)
