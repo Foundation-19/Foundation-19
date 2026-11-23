@@ -71,7 +71,7 @@
 /datum/preferences/proc/get_skill_row_data(datum/job/job, decl/hierarchy/skill/S)
 	var/list/row = list()
 	row["name"] = S.name
-	row["skill_ref"] = "[S.type]"
+	row["skill_ref"] = "\ref[S]"
 	var/min = get_min_skill(job, S)
 	var/allocation = skills_allocated[job]
 	row["current"] = min + (allocation ? (allocation[S] || 0) : 0)
