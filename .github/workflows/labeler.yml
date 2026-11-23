@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: Check for merge conflict
-      uses: eps1lon/actions-label-merge-conflict@1df065ebe6e3310545d4f4c4e862e43bdca146f0
+      uses: eps1lon/actions-label-merge-conflict@0273be72a0bbd58fcd71d0d6c02c209b50d1e5e1
       with:
         dirtyLabel: "Merge Conflict"
         repoToken: "${{ secrets.GITHUB_TOKEN }}"
