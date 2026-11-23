@@ -121,4 +121,4 @@
 	if(tgui_subsystem)
 		tgui_subsystem.tgui_interact(usr)
 	else
-		nano_subsystem.ui_interact(usr, state = ui_state)
+		nano_subsystem.tgui_interact(usr)
