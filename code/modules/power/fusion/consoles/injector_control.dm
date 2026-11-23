@@ -4,41 +4,42 @@
 	icon_screen = "fuel_screen"
 	ui_template = "fusion_injector_control.tmpl"
 
-/obj/machinery/computer/fusion/fuel_control/OnTopic(mob/user, href_list, datum/topic_state/state)
+/obj/machinery/computer/fusion/fuel_control/handle_fusion_topic(list/href_list, action)
 	var/datum/local_network/lan = get_local_network()
+	if(!lan)
+		return FALSE
 	var/list/fuel_injectors = lan.get_devices(/obj/machinery/fusion_fuel_injector)
 
-	if(href_list["global_toggle"])
-		if(!lan || !fuel_injectors)
-			return TOPIC_NOACTION
-
+	if(action == "global_toggle")
+		if(!fuel_injectors)
+			return FALSE
 		for(var/obj/machinery/fusion_fuel_injector/F in fuel_injectors)
 			if(F.injecting)
 				F.StopInjecting()
 			else
 				F.BeginInjecting()
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["toggle_injecting"] || href_list["injection_rate"])
-		var/obj/machinery/fusion_fuel_injector/I = locate((href_list["toggle_injecting"] || href_list["machine"]))
-		if(!istype(I) || !lan || !fuel_injectors || !fuel_injectors[I])
-			return TOPIC_NOACTION
+	if(action == "toggle_injecting" || action == "injection_rate")
+		var/obj/machinery/fusion_fuel_injector/I = locate(href_list["machine"])
+		if(!istype(I) || !fuel_injectors || !fuel_injectors[I])
+			return FALSE
 
-		if(href_list["toggle_injecting"])
+		if(action == "toggle_injecting")
 			if(I.injecting)
 				I.StopInjecting()
 			else
 				I.BeginInjecting()
 
-		if(href_list["injection_rate"])
-			var/new_injection_rate = input("Enter a new injection rate between 0 and 100", "Modifying injection rate", I.injection_rate) as num
-			if(!istype(I))
-				return TOPIC_NOACTION
+		if(action == "injection_rate")
+			var/new_injection_rate = input(usr, "Enter a new injection rate between 0 and 100", "Modifying injection rate", I.injection_rate * 100) as num
 			if(!new_injection_rate)
-				to_chat(user, SPAN_WARNING("That's not a valid injection rate."))
-				return TOPIC_NOACTION
+				to_chat(usr, SPAN_WARNING("That's not a valid injection rate."))
+				return FALSE
 			I.injection_rate = Clamp(new_injection_rate, 0, 100) / 100
-		return TOPIC_REFRESH
+		return TRUE
+
+	return FALSE
 
 /obj/machinery/computer/fusion/fuel_control/build_ui_data()
 	. = ..()

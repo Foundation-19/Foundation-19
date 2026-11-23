@@ -44,6 +44,66 @@
 	// In case of overlap, all affected prefixes are given their default key
 	reset_duplicate_keys()
 
+/datum/category_item/player_setup_item/player_global/prefixes/get_setup_data(mob/user)
+	var/list/data = list()
+	var/list/prefix_entries = list()
+	for(var/prefix_name in prefix_by_name)
+		var/decl/prefix/prefix_instance = prefix_by_name[prefix_name]
+		prefix_entries += list(list(
+			"name" = prefix_instance.name,
+			"current_key" = pref.prefix_keys_by_type[prefix_instance.type],
+			"default_key" = prefix_instance.default_key,
+			"is_locked" = prefix_instance.is_locked,
+			"ref" = "\ref[prefix_instance]"
+		))
+	data["prefixes"] = prefix_entries
+	return data
+
+/datum/category_item/player_setup_item/player_global/prefixes/act_setup(action, list/params, mob/user)
+
+	if(action == "change_prefix")
+		var/decl/prefix/prefix_instance = locate(params["prefix_ref"])
+		if(!istype(prefix_instance) || prefix_instance.is_locked)
+			return FALSE
+		var/keys_in_use = list()
+		for(var/prefix_type in pref.prefix_keys_by_type)
+			if(prefix_type == prefix_instance.type) continue
+			keys_in_use += pref.prefix_keys_by_type[prefix_type]
+		var/new_key = input(user, "Enter a single special character. The following characters are already in use as prefixes: [jointext(keys_in_use, " ")]", CHARACTER_PREFERENCE_INPUT_TITLE, pref.prefix_keys_by_type[prefix_instance.type]) as null|text
+		if(!new_key || new_key == pref.prefix_keys_by_type[prefix_instance.type] || !CanUseTopic(user))
+			return FALSE
+		if(length(new_key) != 1)
+			alert(user, "Only single characters are allowed.", "Error", "Ok")
+			return FALSE
+		if(contains_az09(new_key))
+			alert(user, "Only special characters are allowed.", "Error", "Ok")
+			return FALSE
+		if(new_key == " ")
+			alert(user, "The space character is not allowed.", "Error", "Ok")
+			return FALSE
+		pref.prefix_keys_by_type[prefix_instance.type] = new_key
+		for(var/prefix_type in pref.prefix_keys_by_type)
+			if(prefix_type == prefix_instance.type) continue
+			var/prefix_key = pref.prefix_keys_by_type[prefix_type]
+			if(prefix_key == new_key)
+				var/decl/prefix/pi = decls_repository.get_decl(prefix_type)
+				pref.prefix_keys_by_type[pi.type] = pi.default_key
+		reset_duplicate_keys()
+		if(pref.prefix_keys_by_type[prefix_instance.type] != new_key)
+			alert(user, "The selected key is already the default key for another prefix.", "Error", "Ok")
+			return FALSE
+		return TRUE
+
+	else if(action == "reset_prefix")
+		var/decl/prefix/prefix_instance = locate(params["prefix_ref"])
+		if(!istype(prefix_instance))
+			return FALSE
+		pref.prefix_keys_by_type[prefix_instance.type] = prefix_instance.default_key
+		reset_duplicate_keys()
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/player_global/prefixes/content(mob/user)
 	. += "<b>Prefix Keys:</b><br>"
 	. += "<table>"

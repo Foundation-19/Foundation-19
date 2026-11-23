@@ -96,19 +96,14 @@
 	mannequin.delete_inventory(TRUE)
 	dress_preview_mob(mannequin)
 
-	preview_icon = icon('icons/effects/128x48.dmi', bgstate)
-	preview_icon.Scale(48+32, 16+32)
+	// Single large facing for the TGUI Visual Record panel.
+	// 1 = north (back), 2 = west (side), 3 = south (front).
+	var/facing = NORTH
+	switch(preview_dir_index)
+		if(2) facing = WEST
+		if(3) facing = SOUTH
+	mannequin.dir = facing
+	var/icon/stamp = getFlatIcon(mannequin, facing, always_use_defdir = 1)
 
-	mannequin.dir = NORTH
-	var/icon/stamp = getFlatIcon(mannequin, NORTH, always_use_defdir = 1)
-	preview_icon.Blend(stamp, ICON_OVERLAY, 25, 17)
-
-	mannequin.dir = WEST
-	stamp = getFlatIcon(mannequin, WEST, always_use_defdir = 1)
-	preview_icon.Blend(stamp, ICON_OVERLAY, 1, 9)
-
-	mannequin.dir = SOUTH
-	stamp = getFlatIcon(mannequin, SOUTH, always_use_defdir = 1)
-	preview_icon.Blend(stamp, ICON_OVERLAY, 49, 1)
-
+	preview_icon = stamp
 	preview_icon.Scale(preview_icon.Width() * 2, preview_icon.Height() * 2) // Scaling here to prevent blurring in the browser.

@@ -39,6 +39,58 @@
 		for(var/entry in GLOB.default_uplink_source_priority)
 			pref.uplink_sources += decls_repository.get_decl(entry)
 
+/datum/category_item/player_setup_item/antagonism/basic/get_setup_data(mob/user)
+	var/list/data = list()
+	var/list/sources = list()
+	for(var/entry in pref.uplink_sources)
+		var/decl/uplink_source/US = entry
+		sources += list(list("name" = US.name, "desc" = US.desc || "", "ref" = "\ref[US]"))
+	data["uplink_sources"] = sources
+	data["has_sources"] = pref.uplink_sources.len > 0
+	data["exploit_record"] = pref.exploit_record
+	data["records_banned"] = jobban_isbanned(user, "Records")
+	return data
+
+/datum/category_item/player_setup_item/antagonism/basic/act_setup(action, list/params, mob/user)
+
+	if(action == "add_source")
+		var/source_selection = input(user, "Select Uplink Source to Add", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in (list_values(uplink_sources_by_name) - pref.uplink_sources)
+		if(source_selection && CanUseTopic(user))
+			pref.uplink_sources |= source_selection
+			return TRUE
+		return FALSE
+
+	if(action == "remove_source")
+		var/decl/uplink_source/US = locate(params["source_ref"]) in pref.uplink_sources
+		if(US && pref.uplink_sources.Remove(US))
+			return TRUE
+		return FALSE
+
+	if(action == "move_source_up")
+		var/decl/uplink_source/US = locate(params["source_ref"]) in pref.uplink_sources
+		if(!US) return FALSE
+		var/index = list_find(pref.uplink_sources, US)
+		if(index <= 1) return FALSE
+		pref.uplink_sources.Swap(index, index - 1)
+		return TRUE
+
+	if(action == "move_source_down")
+		var/decl/uplink_source/US = locate(params["source_ref"]) in pref.uplink_sources
+		if(!US) return FALSE
+		var/index = list_find(pref.uplink_sources, US)
+		if(index >= pref.uplink_sources.len) return FALSE
+		pref.uplink_sources.Swap(index, index + 1)
+		return TRUE
+
+	if(action == "exploitable_record")
+		var/exploitmsg = sanitize(input(user, "Set exploitable information about you here.", "Exploitable Information", html_decode(pref.exploit_record)) as message|null, MAX_PAPER_MESSAGE_LEN, extra = 0)
+		if(!isnull(exploitmsg) && !jobban_isbanned(user, "Records") && CanUseTopic(user))
+			pref.exploit_record = exploitmsg
+			return TRUE
+		return FALSE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/antagonism/basic/content(mob/user)
 	. +="<b>Antag Setup:</b><br>"
 	. +="Uplink Source Priority: <a href='byond://?src=\ref[src];add_source=1'>Add</a><br>"

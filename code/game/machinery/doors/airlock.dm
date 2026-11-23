@@ -777,38 +777,92 @@ About the new airlock wires panel:
 	return
 
 /obj/machinery/door/airlock/attack_robot(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 
 /obj/machinery/door/airlock/attack_ai(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 
 /obj/machinery/door/airlock/attack_ghost(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 
-/obj/machinery/door/airlock/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/obj/machinery/door/airlock/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Airlock", "Airlock Controls")
+		ui.open()
 
-	data["main_power_loss"]		= round(main_power_lost_until 	> 0 ? max(main_power_lost_until - world.time,	0) / 10 : main_power_lost_until,	1)
-	data["backup_power_loss"]	= round(backup_power_lost_until	> 0 ? max(backup_power_lost_until - world.time,	0) / 10 : backup_power_lost_until,	1)
-	data["electrified"] 		= round(electrified_until		> 0 ? max(electrified_until - world.time, 	0) / 10 	: electrified_until,		1)
+/obj/machinery/door/airlock/tgui_data(mob/user)
+	var/list/data = list()
+
+	data["main_power_loss"] = round(main_power_lost_until > 0 ? max(main_power_lost_until - world.time, 0) / 10 : main_power_lost_until, 1)
+	data["backup_power_loss"] = round(backup_power_lost_until > 0 ? max(backup_power_lost_until - world.time, 0) / 10 : backup_power_lost_until, 1)
+	data["electrified"] = round(electrified_until > 0 ? max(electrified_until - world.time, 0) / 10 : electrified_until, 1)
 	data["open"] = !density
 
-	var/commands[0]
-	commands[++commands.len] = list("name" = "IdScan",					"command"= "idscan",				"active" = !aiDisabledIdScanner,	"enabled" = "Enabled",	"disabled" = "Disable",		"danger" = 0, "act" = 1)
-	commands[++commands.len] = list("name" = "Bolts",					"command"= "bolts",					"active" = !locked,					"enabled" = "Raised ",	"disabled" = "Dropped",		"danger" = 0, "act" = 0)
-	commands[++commands.len] = list("name" = "Lights",					"command"= "lights",				"active" = lights,					"enabled" = "Enabled",	"disabled" = "Disable",		"danger" = 0, "act" = 1)
-	commands[++commands.len] = list("name" = "Safeties",				"command"= "safeties",				"active" = safe,					"enabled" = "Nominal",	"disabled" = "Overridden",	"danger" = 1, "act" = 0)
-	commands[++commands.len] = list("name" = "Timing",					"command"= "timing",				"active" = normalspeed,				"enabled" = "Nominal",	"disabled" = "Overridden",	"danger" = 1, "act" = 0)
-	commands[++commands.len] = list("name" = "Door State",				"command"= "open",					"active" = density,					"enabled" = "Closed",	"disabled" = "Opened", 		"danger" = 0, "act" = 0)
+	var/list/commands = list()
+	commands += list(list("name" = "IdScan", "command" = "idscan", "active" = !aiDisabledIdScanner, "enabled" = "Enabled", "disabled" = "Disable", "danger" = 0, "act" = 1))
+	commands += list(list("name" = "Bolts", "command" = "bolts", "active" = !locked, "enabled" = "Raised ", "disabled" = "Dropped", "danger" = 0, "act" = 0))
+	commands += list(list("name" = "Lights", "command" = "lights", "active" = lights, "enabled" = "Enabled", "disabled" = "Disable", "danger" = 0, "act" = 1))
+	commands += list(list("name" = "Safeties", "command" = "safeties", "active" = safe, "enabled" = "Nominal", "disabled" = "Overridden", "danger" = 1, "act" = 0))
+	commands += list(list("name" = "Timing", "command" = "timing", "active" = normalspeed, "enabled" = "Nominal", "disabled" = "Overridden", "danger" = 1, "act" = 0))
+	commands += list(list("name" = "Door State", "command" = "open", "active" = density, "enabled" = "Closed", "disabled" = "Opened", "danger" = 0, "act" = 0))
 
 	data["commands"] = commands
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "door_control.tmpl", "Door Controls", 450, 350, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/door/airlock/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+
+	var/activate = text2num(params["activate"])
+	switch(action)
+		if("idscan")
+			set_idscan(activate, 1)
+		if("main_power")
+			if(!main_power_lost_until)
+				loseMainPower()
+		if("backup_power")
+			if(!backup_power_lost_until)
+				loseBackupPower()
+		if("bolts")
+			if(isWireCut(WIRE_DOOR_BOLTS))
+				to_chat(usr, "The door bolt control wire is cut - Door bolts permanently dropped.")
+			else if(activate && lock())
+				to_chat(usr, "The door bolts have been dropped.")
+			else if(!activate && unlock())
+				to_chat(usr, "The door bolts have been raised.")
+		if("electrify_temporary")
+			electrify(30 * activate, 1)
+		if("electrify_permanently")
+			electrify(-1 * activate, 1)
+		if("open")
+			if(welded)
+				to_chat(usr, "The airlock has been welded shut!")
+			else if(locked)
+				to_chat(usr, "The door bolts are down!")
+			else if(activate && density)
+				open()
+			else if(!activate && !density)
+				close()
+		if("safeties")
+			set_safeties(!activate, 1)
+		if("timing")
+			if(isWireCut(WIRE_SPEED))
+				to_chat(usr, "The timing wire is cut - Cannot alter timing.")
+			else if(activate && normalspeed)
+				normalspeed = 0
+			else if(!activate && !normalspeed)
+				normalspeed = 1
+		if("lights")
+			if(isWireCut(WIRE_BOLT_LIGHT))
+				to_chat(usr, "The lights wire is cut - The door lights are permanently disabled.")
+			else if(!activate && lights)
+				lights = 0
+				to_chat(usr, "The door lights have been disabled.")
+			else if(activate && !lights)
+				lights = 1
+				to_chat(usr, "The door lights have been enabled.")
+	return TRUE
 
 /obj/machinery/door/airlock/proc/hack(mob/user as mob)
 	if(src.aiHacking==0)
@@ -889,64 +943,6 @@ About the new airlock wires panel:
 		return STATUS_CLOSE
 
 	return ..()
-
-/obj/machinery/door/airlock/Topic(href, href_list)
-	if(..())
-		return 1
-
-	var/activate = text2num(href_list["activate"])
-	switch (href_list["command"])
-		if("idscan")
-			set_idscan(activate, 1)
-		if("main_power")
-			if(!main_power_lost_until)
-				src.loseMainPower()
-		if("backup_power")
-			if(!backup_power_lost_until)
-				src.loseBackupPower()
-		if("bolts")
-			if(src.isWireCut(WIRE_DOOR_BOLTS))
-				to_chat(usr, "The door bolt control wire is cut - Door bolts permanently dropped.")
-			else if(activate && src.lock())
-				to_chat(usr, "The door bolts have been dropped.")
-			else if(!activate && src.unlock())
-				to_chat(usr, "The door bolts have been raised.")
-		if("electrify_temporary")
-			electrify(30 * activate, 1)
-		if("electrify_permanently")
-			electrify(-1 * activate, 1)
-		if("open")
-			if(src.welded)
-				to_chat(usr, text("The airlock has been welded shut!"))
-			else if(src.locked)
-				to_chat(usr, text("The door bolts are down!"))
-			else if(activate && density)
-				open()
-			else if(!activate && !density)
-				close()
-		if("safeties")
-			set_safeties(!activate, 1)
-		if("timing")
-			// Door speed control
-			if(src.isWireCut(WIRE_SPEED))
-				to_chat(usr, text("The timing wire is cut - Cannot alter timing."))
-			else if (activate && src.normalspeed)
-				normalspeed = 0
-			else if (!activate && !src.normalspeed)
-				normalspeed = 1
-		if("lights")
-			// Lights
-			if(src.isWireCut(WIRE_BOLT_LIGHT))
-				to_chat(usr, "The lights wire is cut - The door lights are permanently disabled.")
-			else if (!activate && src.lights)
-				lights = 0
-				to_chat(usr, "The door lights have been disabled.")
-			else if (activate && !src.lights)
-				lights = 1
-				to_chat(usr, "The door lights have been enabled.")
-
-	update_icon()
-	return 1
 
 //returns 1 on success, 0 on failure
 /obj/machinery/door/airlock/proc/cut_bolts(obj/item/item, mob/user)

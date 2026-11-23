@@ -35,31 +35,31 @@
 		to_chat(user, SPAN_WARNING("\The [src] only accepts used swabs."))
 		return
 
-/obj/machinery/dnaforensics/ui_interact(mob/user, ui_key = "main",datum/nanoui/ui = null)
+/obj/machinery/dnaforensics/tgui_interact(mob/user, datum/tgui/ui)
 	if(stat & (NOPOWER)) return
 	if(user.stat || user.restrained()) return
+
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "DNAScanner", "QuikScan DNA Analyzer", 540, 326)
+		ui.open()
+
+/obj/machinery/dnaforensics/tgui_data(mob/user)
 	var/list/data = list()
 	data["scan_progress"] = round(scanner_progress)
 	data["scanning"] = scanning
 	data["bloodsamp"] = (bloodsamp ? bloodsamp.name : "")
 	data["bloodsamp_desc"] = (bloodsamp ? (bloodsamp.desc ? bloodsamp.desc : "No information on record.") : "")
 	data["lidstate"] = closed
+	return data
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
-	if (!ui)
-		ui = new(user, src, ui_key, "dnaforensics.tmpl", "QuikScan DNA Analyzer", 540, 326)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/obj/machinery/dnaforensics/Topic(href, href_list)
-
-	if(..()) return 1
+/obj/machinery/dnaforensics/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..()) return TRUE
 
 	if(stat & (NOPOWER))
-		return 0 // don't update UIs attached to this object
+		return FALSE
 
-	if(href_list["scanItem"])
+	if(action == "scanItem")
 		if(scanning)
 			scanning = 0
 		else
@@ -74,15 +74,15 @@
 			else
 				to_chat(usr, SPAN_WARNING("Insert an item to scan."))
 
-	if(href_list["ejectItem"])
+	if(action == "ejectItem")
 		if(bloodsamp)
 			bloodsamp.forceMove(src.loc)
 			bloodsamp = null
 
-	if(href_list["toggleLid"])
+	if(action == "toggleLid")
 		toggle_lid()
 
-	return 1
+	return TRUE
 
 /obj/machinery/dnaforensics/Process()
 	if(scanning)
@@ -125,7 +125,7 @@
 	return
 
 /obj/machinery/dnaforensics/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/dnaforensics/verb/toggle_lid()

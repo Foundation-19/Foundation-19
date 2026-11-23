@@ -100,21 +100,28 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 	if(selected_category)
 		return selected_category.content(user)
 
-/datum/category_collection/player_setup_collection/Topic(href,list/href_list)
+/datum/category_collection/player_setup_collection/proc/get_category_data(mob/user)
+	var/list/data = list()
+	for(var/datum/category_group/player_setup_category/PS in categories)
+		data[PS.name] = PS.get_category_data(user)
+	return data
+
+/datum/category_collection/player_setup_collection/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	var/mob/user = usr
-	if(!user.client)
-		return 1
+		return TRUE
 
-	if(href_list["category"])
-		var/category = locate(href_list["category"])
-		if(category && (category in categories))
-			selected_category = category
-		. = 1
+	if(action == "category")
+		var/category_name = params["category"]
+		for(var/datum/category_group/player_setup_category/PS in categories)
+			if(PS.name == category_name)
+				selected_category = PS
+				return TRUE
+		return TRUE
 
-	if(.)
-		user.client.prefs.update_setup_window(user)
+	for(var/datum/category_group/player_setup_category/PS in categories)
+		if(PS.tgui_act(action, params, ui, state))
+			return TRUE
+	return FALSE
 
 /**************************
 * Category Category Setup *
@@ -163,9 +170,19 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 		. += "[PI.content(user)]<br>"
 	. += "</td></tr></table>"
 
-/datum/category_group/player_setup_category/occupation_preferences/content(mob/user)
+/datum/category_group/player_setup_category/proc/get_category_data(mob/user)
+	var/list/data = list()
 	for(var/datum/category_item/player_setup_item/PI in items)
-		. += "[PI.content(user)]<br>"
+		var/list/item_data = PI.get_setup_data(user)
+		if(length(item_data))
+			data[PI.name] = item_data
+	return data
+
+/datum/category_group/player_setup_category/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	for(var/datum/category_item/player_setup_item/PI in items)
+		if(PI.act_setup(action, params, usr))
+			return TRUE
+	return FALSE
 
 /**********************
 * Category Item Setup *
@@ -218,6 +235,20 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 
 /datum/category_item/player_setup_item/proc/sanitize_preferences()
 	return
+
+/datum/category_item/player_setup_item/proc/get_setup_data(mob/user)
+	return list()
+
+/datum/category_item/player_setup_item/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	var/mob/pref_mob = preference_mob()
+	if(!pref_mob || !pref_mob.client)
+		return FALSE
+	if(usr != pref_mob && !check_rights(R_ADMIN, 0, usr))
+		return FALSE
+	return act_setup(action, params, usr)
+
+/datum/category_item/player_setup_item/proc/act_setup(action, list/params, mob/user)
+	return FALSE
 
 /datum/category_item/player_setup_item/Topic(href,list/href_list)
 	if(..())

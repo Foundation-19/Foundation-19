@@ -76,6 +76,138 @@
 		if(alt_title && !(alt_title in job.alt_titles))
 			pref.player_alt_titles -= job.title
 
+/datum/category_item/player_setup_item/occupation/get_setup_data(mob/user)
+	var/list/data = list()
+
+	if(!SSmapping || !SSjobs.job_lists_by_map_name)
+		return data
+
+	var/datum/species/S = preference_species()
+	data["alternate_option"] = pref.alternate_option
+	data["default_assistant_title"] = GLOB.using_map.default_assistant_title
+
+	var/list/maps_data = list()
+	for(var/job_map in SSjobs.job_lists_by_map_name)
+		var/list/map_data_src = SSjobs.job_lists_by_map_name[job_map]
+		var/is_hidden = pref.hiding_maps[job_map]
+		if(isnull(is_hidden))
+			is_hidden = map_data_src["default_to_hidden"]
+
+		var/list/jobs_data = list()
+		var/list/map_job_list = map_data_src["jobs"]
+		for(var/datum/job/job in map_job_list)
+			var/title = job.title
+			var/current_level = JOB_LEVEL_NEVER
+			if(pref.job_high == job.title)
+				current_level = JOB_LEVEL_HIGH
+			else if(job.title in pref.job_medium)
+				current_level = JOB_LEVEL_MEDIUM
+			else if(job.title in pref.job_low)
+				current_level = JOB_LEVEL_LOW
+
+			var/bodytype = S.get_bodytype()
+			var/bad_message = ""
+			if(job.total_positions == 0 && job.spawn_positions == 0)
+				bad_message = "UNAVAILABLE"
+			else if(!job.meets_req(user.client))
+				bad_message = "TIMELOCKED"
+			else if(jobban_isbanned(user, title))
+				bad_message = "BANNED"
+			else if(!job.player_old_enough(user.client))
+				var/available_in_days = job.available_in_days(user.client)
+				bad_message = "IN [available_in_days] DAYS"
+			else if(LAZYACCESS(job.minimum_character_age, bodytype) && user.client && (user.client.prefs.age < job.minimum_character_age[bodytype]))
+				bad_message = "MIN CHAR AGE: [job.minimum_character_age[bodytype]]"
+			else if(!S.check_background(job, user.client.prefs))
+				bad_message = "BACKGROUND RESTRICTED"
+
+			var/list/job_entry = list(
+				"title" = title,
+				"level" = current_level,
+				"bad_message" = bad_message,
+				"color" = job.selection_color,
+				"available_by_default" = job.available_by_default,
+				"alt_title" = pref.GetPlayerAltTitle(job),
+				"has_alt_titles" = length(job.alt_titles) > 0
+			)
+			if(pref.points_by_job[job] && (!job.available_by_default || current_level != JOB_LEVEL_NEVER))
+				job_entry["has_skills"] = TRUE
+			else
+				job_entry["has_skills"] = FALSE
+			jobs_data += list(job_entry)
+
+		maps_data += list(list(
+			"name" = capitalize(job_map),
+			"hidden" = is_hidden,
+			"jobs" = jobs_data
+		))
+
+	data["maps"] = maps_data
+	return data
+
+/datum/category_item/player_setup_item/occupation/act_setup(action, list/params, mob/user)
+
+	if(action == "reset_jobs")
+		ResetJobs()
+		return TRUE
+
+	else if(action == "toggle_map")
+		var/mapname = params["map"]
+		pref.hiding_maps[mapname] = !pref.hiding_maps[mapname]
+		return TRUE
+
+	else if(action == "job_alternative")
+		if(pref.alternate_option == GET_RANDOM_JOB || pref.alternate_option == BE_CLASS_D)
+			pref.alternate_option += 1
+		else if(pref.alternate_option == RETURN_TO_LOBBY)
+			pref.alternate_option = 0
+		return TRUE
+
+	else if(action == "select_alt_title")
+		var/datum/job/job = locate(params["job_ref"])
+		if(job)
+			var/choices = list(job.title) + job.alt_titles
+			var/choice = tgui_input_list(user, "Choose a title for [job.title].", "Choose Title", choices, pref.GetPlayerAltTitle(job))
+			if(choice && CanUseTopic(user))
+				SetPlayerAltTitle(job, choice)
+				return TRUE
+		return FALSE
+
+	else if(action == "set_job")
+		var/set_job = params["job"]
+		var/set_to
+		if(params["set_level"])
+			set_to = text2num(params["set_level"])
+		if(params["inc_level"])
+			set_to = GetCurrentJobLevel(set_job) + text2num(params["inc_level"])
+			if(set_to < JOB_LEVEL_HIGH)
+				set_to = JOB_LEVEL_NEVER
+			else if(set_to > JOB_LEVEL_NEVER)
+				set_to = JOB_LEVEL_HIGH
+		if(SetJob(user, set_job, set_to))
+			return TRUE
+		return FALSE
+
+	else if(action == "set_skills")
+		var/rank = params["rank"]
+		var/datum/job/job = SSjobs.get_by_title(rank, TRUE)
+		if(job)
+			var/datum/skill_selection_ui/SUI = new(pref, job)
+			SUI.tgui_interact(user)
+		return TRUE
+
+	else if(action == "job_info")
+		var/rank = params["rank"]
+		var/datum/job/job = SSjobs.get_by_title(rank)
+		var/datum/codex_entry/c_e = SScodex.get_codex_entry("[job.title] (job)")
+		if(c_e && istype(c_e))
+			SScodex.present_codex_entry(user, c_e)
+		else
+			tgui_alert(user, "Could not find codex entry!", timeout = 5 SECONDS)
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/occupation/content(mob/user, limit = 16, list/splitJobs, splitLimit = 1)
 
 	if(!SSmapping || !SSjobs.job_lists_by_map_name)

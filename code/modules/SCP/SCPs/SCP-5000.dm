@@ -39,8 +39,19 @@
 /obj/item/rig/light/stealth/scp5000/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"total exclusion harness", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"5000", //Numerical Designation
+		src,
+		"total exclusion harness",
+		SCP_SAFE,
+		"5000",
 	)
+	if(SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)
+
+/obj/item/rig/light/stealth/scp5000/forceMove(atom/dest)
+	var/atom/old_loc = loc
+	. = ..()
+	if(old_loc && istype(old_loc, /obj/structure/scp_containment_safe) && !(istype(loc, /obj/structure/scp_containment_safe)))
+		if(SCP && SCP.research)
+			SCP.research.set_containment_status(SCP_BREACHED)
+	else if(istype(loc, /obj/structure/scp_containment_safe) && SCP && SCP.research)
+		SCP.research.set_containment_status(SCP_CONTAINED)

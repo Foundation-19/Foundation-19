@@ -42,6 +42,75 @@
 			if(!pref.real_name)
 				pref.real_name = random_name(pref.gender, pref.species)
 
+/datum/category_item/player_setup_item/physical/basic/get_setup_data(mob/user)
+	var/datum/species/S = all_species[pref.species ? pref.species : SPECIES_HUMAN]
+	var/list/data = list()
+	data["name"] = pref.real_name
+	data["be_random_name"] = pref.be_random_name
+	data["gender"] = pref.gender
+	data["gender_text"] = gender2text(pref.gender)
+	data["age"] = pref.age
+	data["spawnpoint"] = pref.spawnpoint
+	data["min_age"] = S?.min_age || 18
+	data["max_age"] = S?.max_age || 85
+	data["genders"] = S?.genders || list(MALE, FEMALE)
+	var/list/spawnpts = list()
+	for(var/spawntype in spawntypes())
+		spawnpts += spawntype
+	data["spawnpoints"] = spawnpts
+	return data
+
+/datum/category_item/player_setup_item/physical/basic/act_setup(action, list/params, mob/user)
+	var/datum/species/S = all_species[pref.species]
+
+	if(action == "rename")
+		var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name", pref.real_name, MAX_NAME_LEN)
+		if(!isnull(raw_name) && CanUseTopic(user))
+			var/decl/cultural_info/check = SSculture.get_culture(pref.cultural_info[TAG_CULTURE])
+			var/new_name = check.sanitize_name(raw_name, pref.species)
+			if(new_name)
+				pref.real_name = new_name
+				return TRUE
+			else
+				to_chat(user, SPAN_WARNING("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
+		return FALSE
+
+	else if(action == "random_name")
+		pref.real_name = random_name(pref.gender, pref.species)
+		return TRUE
+
+	else if(action == "always_random_name")
+		pref.be_random_name = !pref.be_random_name
+		return TRUE
+
+	else if(action == "gender")
+		var/new_gender = tgui_input_list(user, "Select your character's gender.", CHARACTER_PREFERENCE_INPUT_TITLE, S.genders, pref.gender)
+		S = all_species[pref.species]
+		if(new_gender && CanUseTopic(user) && (new_gender in S.genders))
+			pref.gender = new_gender
+			if(!(pref.f_style in S.get_facial_hair_styles(pref.gender)))
+				ResetFacialHair()
+		return TRUE
+
+	else if(action == "age")
+		var/new_age = tgui_input_number(user, "Choose your character's age:\n([S.min_age]-[S.max_age])", CHARACTER_PREFERENCE_INPUT_TITLE, pref.age, S.max_age, S.min_age)
+		if(new_age && CanUseTopic(user))
+			pref.age = max(min(round(text2num(new_age)), S.max_age), S.min_age)
+			pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)
+		return TRUE
+
+	else if(action == "spawnpoint")
+		var/list/spawnkeys = list()
+		for(var/spawntype in spawntypes())
+			spawnkeys += spawntype
+		var/choice = tgui_input_list(user, "Where would you like to spawn when late-joining?", "Late-Join Spawn Area", spawnkeys)
+		if(!choice || !spawntypes()[choice] || !CanUseTopic(user))
+			return FALSE
+		pref.spawnpoint = choice
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/physical/basic/content()
 	. = list()
 	. += "<b>Name:</b> "

@@ -32,7 +32,7 @@
 			over.product_records += R
 
 	product_records = null
-	SSnano.update_uis(over)
+	SStgui.update_uis(over)
 	qdel(src)
 
 /obj/machinery/vending/dismantle()

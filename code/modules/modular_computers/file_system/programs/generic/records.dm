@@ -16,7 +16,13 @@
 	var/datum/computer_file/report/crew_record/active_record
 	var/message = null
 
-/datum/nano_module/records/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/datum/nano_module/records/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Records", name)
+		ui.open()
+
+/datum/nano_module/records/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 	var/list/user_access = get_record_access(user)
 
@@ -41,12 +47,7 @@
 		data["dnasearch"] = check_access(user, ACCESS_MEDICAL_LVL2) || check_access(user, ACCESS_SECURITY_LVL2)
 		data["fingersearch"] = check_access(user, ACCESS_SECURITY_LVL2)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "crew_records.tmpl", name, 700, 540, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 
 /datum/nano_module/records/proc/get_record_access(mob/user)
@@ -70,62 +71,63 @@
 		return
 	F.ask_value(user)
 
-/datum/nano_module/records/Topic(href, href_list)
+/datum/nano_module/records/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
-	if(href_list["clear_active"])
+	if(action == "clear_active")
 		active_record = null
 		return 1
-	if(href_list["clear_message"])
+	if(action == "clear_message")
 		message = null
 		return 1
-	if(href_list["set_active"])
-		var/ID = text2num(href_list["set_active"])
+	if(action == "set_active")
+		var/ID = text2num(params["set_active"])
 		for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 			if(R.uid == ID)
 				active_record = R
 				break
 		return 1
-	if(href_list["new_record"])
+	if(action == "new_record")
 		if(!check_access(usr, ACCESS_ADMIN_LVL2))
 			to_chat(usr, "Access Denied.")
 			return
 		active_record = new/datum/computer_file/report/crew_record()
 		GLOB.all_crew_records.Add(active_record)
 		return 1
-	if(href_list["print_active"])
+	if(action == "print_active")
 		if(!active_record)
 			return
 		print_text(active_record.record_to_html(get_record_access(usr)), usr)
 		return 1
-	if(href_list["search"])
-		var/field_name = href_list["search"]
-		var/search = sanitize(input("Enter the value for search for.") as null|text)
+	if(action == "search")
+		var/field_name = params["search"]
+		var/search = sanitize(params["value"] || input("Enter the value for search for.") as null|text)
 		if(!search)
 			return
 		for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 			var/datum/report_field/field = R.field_from_name(field_name)
-			if(findtext(lowertext(field.get_value()), lowertext(search)))
+			if(field && findtext(lowertext(field.get_value()), lowertext(search)))
 				active_record = R
-				return 1
-		message = "Unable to find record containing '[search]'"
+				break
+		if(!active_record)
+			message = "Unable to find record containing '[search]'"
 		return 1
 
 	var/datum/computer_file/report/crew_record/R = active_record
 	if(!istype(R))
 		return 1
-	if(href_list["edit_photo_front"])
+	if(action == "edit_photo_front")
 		var/photo = get_photo(usr)
 		if(photo && active_record)
 			active_record.photo_front = photo
 		return 1
-	if(href_list["edit_photo_side"])
+	if(action == "edit_photo_side")
 		var/photo = get_photo(usr)
 		if(photo && active_record)
 			active_record.photo_side = photo
 		return 1
-	if(href_list["edit_field"])
-		edit_field(usr, text2num(href_list["edit_field"]))
+	if(action == "edit_field")
+		edit_field(usr, text2num(params["edit_field"]))
 		return 1
 
 /datum/nano_module/records/proc/get_photo(mob/user)

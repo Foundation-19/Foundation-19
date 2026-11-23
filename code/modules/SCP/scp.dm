@@ -1,27 +1,19 @@
 /datum/scp
-	///SCP name
 	var/name
-	///SCP Designation (i.e 173 or 096)
 	var/designation
-	///SCP Class (SAFE, EUCLID, ETC.)
 	var/classification
 
-	///Meta Flags for the SCP
 	var/metaFlags
 
-	///Datum Parent
-	var/atom/parent
-
-	//Playable SCP vars
-
-	///How many players do we need on for this SCP to be playable
 	var/min_playercount = 0
-	///How much time has to have passed for this SCP to become playable
 	var/min_time = 0
+
+	var/possessed = FALSE
+
+	var/atom/parent
 
 	//Components
 
-	///Memetic Component
 	var/datum/component/memetic/meme_comp
 
 	//Memetic Comp Vars
@@ -35,6 +27,11 @@
 
 	/// If this SCP can still be examined as normal
 	var/regular_examine = FALSE
+
+	/// Research datum tracking this SCP's research progress
+	var/datum/scp_research/research
+	/// Containment zone datum tracking this SCP's containment status
+	var/datum/containment_zone/containment_zone
 
 /datum/scp/New(atom/creation, vName, vClass = SCP_SAFE, vDesg, vMetaFlags)
 	GLOB.SCP_list += creation
@@ -66,12 +63,23 @@
 		return
 
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, PROC_REF(OnExamine))
+	research = GLOB.scp_research_tracker.register_scp(src)
+	if(LAZYLEN(designation))
+		for(var/datum/containment_zone/CZ in GLOB.containment_zones)
+			if(!CZ.linked_scp && CZ.scp_designation == designation)
+				CZ.link_scp(src)
+				break
 	onGain()
 
 /datum/scp/Destroy()
 	. = ..()
 	GLOB.SCP_list -= src
 	UnregisterSignal(parent, COMSIG_ATOM_EXAMINED)
+	if(research)
+		QDEL_NULL(research)
+	if(containment_zone)
+		containment_zone.linked_scp = null
+		containment_zone = null
 	parent = null
 
 ///Run only after adding appropriate flags for components.
@@ -100,6 +108,12 @@
 	if(!ishuman(examinee))
 		return
 	var/mob/living/carbon/human/H = examinee
+	// Gazing upon an anomaly is stressful. Keter SCPs are worse.
+	if(H.sanity)
+		var/exposure_sev = (classification == SCP_KETER) ? 8 : 4
+		H.sanity.on_scp_exposure(designation, exposure_sev)
+	// Codex: record the first observation.
+	codex_on_first_examine(H, designation)
 	var/datum/job/job = SSjobs.get_by_title(H.job)
 	if(job && (job.department_flag & (COM|SCI|SEC)))
 		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
@@ -125,3 +139,6 @@
 	else
 		to_chat(src, SPAN_WARNING("You must be SCP!"))
 		return
+
+/atom/proc/do_possession(mob/observer/ghost/possessor)
+	return 0

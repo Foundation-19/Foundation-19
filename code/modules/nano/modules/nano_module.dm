@@ -18,6 +18,12 @@
 /datum/nano_module/nano_host()
 	return host ? host : src
 
+// Nano modules are virtual UIs (programs, silicon subsystems) with no world
+// location: the default state's distance checks cannot apply. Access control
+// is enforced inside tgui_data/tgui_act via check_access().
+/datum/nano_module/tgui_state(mob/user)
+	return GLOB.always_tgui_state
+
 /datum/nano_module/proc/can_still_topic(datum/topic_state/state = GLOB.default_state)
 	return CanUseTopic(usr, state) == STATUS_INTERACTIVE
 

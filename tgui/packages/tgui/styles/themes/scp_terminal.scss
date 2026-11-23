@@ -1,0 +1,186 @@
+@use 'sass:color';
+
+$scp-red: #8b0000;
+$scp-dark-red: #5c0000;
+$scp-amber: #d4a017;
+$scp-green: #0a6e0a;
+$scp-bright-green: #44ff44;
+$scp-dark-bg: #0a0a0c;
+$scp-panel-bg: #111114;
+$scp-elevated-bg: #1a1a20;
+$scp-input-bg: #0d0d10;
+$scp-caution-bg: #2a1a00;
+$scp-border: #2a2a30;
+$scp-text: #c8c8c8;
+$scp-dim-text: #6a6a70;
+$scp-highlight: #e8e8e8;
+$scp-mono: ('Consolas', 'Courier New', monospace);
+
+.theme-scp_terminal {
+  color: $scp-text;
+  font-family: $scp-mono;
+  background-color: $scp-dark-bg;
+
+  .Layout__content {
+    background-image: none;
+    background-color: $scp-dark-bg;
+  }
+
+  // CRT scanline effect
+  .Layout__content::before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  // CRT vignette effect
+  .Layout__content::after {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .Window__contentPadding { font-family: $scp-mono; }
+
+  .TitleBar {
+    font-family: $scp-mono;
+    background-color: $scp-dark-red;
+    color: $scp-highlight;
+    border-bottom: 2px solid $scp-red;
+  }
+
+  .Button {
+    font-family: $scp-mono;
+    background-color: $scp-elevated-bg;
+    border: 1px solid $scp-border;
+    border-radius: 0;
+    color: $scp-text;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    &:hover {
+      border-color: $scp-red;
+      background-color: rgba($scp-red, 0.3);
+      color: $scp-highlight;
+    }
+    &--selected {
+      background-color: $scp-dark-red;
+      border-color: $scp-red;
+      color: $scp-highlight;
+      box-shadow: 0 0 8px rgba($scp-red, 0.4);
+    }
+    &--disabled { opacity: 0.3; border-color: $scp-dark-bg; }
+    &--caution { background-color: $scp-caution-bg; }
+    &--danger { background-color: $scp-dark-red; }
+    &--color-good { color: $scp-bright-green; }
+  }
+
+  .Section {
+    border: 1px solid $scp-border;
+    border-radius: 0;
+    background-color: $scp-panel-bg;
+    .Section__title {
+      font-family: $scp-mono;
+      color: $scp-amber;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid $scp-border;
+    }
+  }
+
+  .Input {
+    font-family: $scp-mono;
+    background-color: $scp-input-bg;
+    border: 1px solid $scp-border;
+    border-radius: 0;
+    color: $scp-amber;
+  }
+
+  .Dropdown {
+    font-family: $scp-mono;
+    background-color: $scp-input-bg;
+    border: 1px solid $scp-border;
+    border-radius: 0;
+    color: $scp-text;
+  }
+
+  .Tabs {
+    font-family: $scp-mono;
+    .Tab {
+      font-family: $scp-mono;
+      color: $scp-dim-text;
+      &--selected {
+        background-color: $scp-dark-red;
+        color: $scp-highlight;
+      }
+    }
+  }
+
+  .LabeledList__label {
+    font-family: $scp-mono;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    color: $scp-dim-text;
+  }
+
+  .ProgressBar {
+    background-color: $scp-elevated-bg;
+    .ProgressBar__fill { background-color: $scp-amber; }
+    &--color-good .ProgressBar__fill { background-color: $scp-green; }
+    &--color-bad .ProgressBar__fill { background-color: $scp-red; }
+  }
+
+  .NoticeBox { background-color: $scp-dark-red; }
+  .Tooltip { font-family: $scp-mono; background-color: $scp-elevated-bg; border: 1px solid $scp-border; }
+  .Dimmer { background-color: rgba(0, 0, 0, 0.7); }
+  .NumberInput { font-family: $scp-mono; border: 1px solid $scp-border; }
+  .BlockQuote { border-left: 2px solid $scp-border; }
+  .candystripe:nth-child(odd) { background-color: rgba(255, 255, 255, 0.02); }
+
+  // Scrollbar styling
+  ::-webkit-scrollbar-track { background: $scp-dark-bg; }
+  ::-webkit-scrollbar-thumb { background: $scp-border; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: $scp-red; }
+
+  // Table styling
+  .Table {
+    border-color: $scp-border;
+    td, th { border-color: $scp-border; color: $scp-text; }
+    th { color: $scp-highlight; }
+  }
+
+  // Modal styling
+  .Modal { background-color: $scp-panel-bg; border: 1px solid $scp-border; color: $scp-text; }
+
+  // TextArea styling
+  .TextArea {
+    background-color: $scp-input-bg; border-color: $scp-border; color: $scp-text;
+    &:focus { border-color: $scp-red; }
+  }
+
+  hr { border: 1px solid $scp-border; }
+  .color-good { color: $scp-green; }
+  .color-bad { color: $scp-red; }
+  .color-label { color: $scp-amber; }
+  .color-average { color: $scp-amber; }
+  .color-bright-green { color: $scp-bright-green; }
+}

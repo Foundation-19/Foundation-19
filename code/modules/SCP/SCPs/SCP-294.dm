@@ -6,6 +6,7 @@
 	icon_state = "coffee_294"
 	anchored = TRUE
 	density = TRUE
+	req_access = list(ACCESS_SCIENCE_LVL2)
 
 	//Config
 
@@ -88,6 +89,10 @@
 /obj/machinery/scp294/attack_hand(mob/user)
 	if(user.a_intent != I_HELP)
 		return ..()
+
+	if(!allowed(user))
+		to_chat(user, SPAN_WARNING("Access denied. Swipe your ID card to use this machine."))
+		return
 
 	if(((world.time - usage_cooldown_tracker) > usage_cooldown) && uses_tracker >= max_uses)
 		uses_tracker = 0

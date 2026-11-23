@@ -38,33 +38,28 @@
 			return TRUE
 	return FALSE
 
-/datum/nano_module/crew_monitor/Topic(href, href_list)
+/datum/nano_module/crew_monitor/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..()) return 1
 
-	if(href_list["track"])
+	if(action == "track")
 		if(isAI(usr))
 			var/mob/living/silicon/ai/AI = usr
-			var/mob/living/carbon/human/H = locate(href_list["track"]) in SSmobs.mob_list
+			var/mob/living/carbon/human/H = locate(params["track"]) in SSmobs.mob_list
 			if(hassensorlevel(H, SUIT_SENSOR_TRACKING))
 				AI.ai_actual_track(H)
 		return 1
 
-/datum/nano_module/crew_monitor/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/crew_monitor/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SuitSensors", "Crew Monitoring Computer")
+		ui.open()
+
+/datum/nano_module/crew_monitor/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 
 	data["isAI"] = isAI(user)
 	var/Z = get_host_z()
 	data["crewmembers"] = crew_repository.health_data(Z)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "crew_monitor.tmpl", "Crew Monitoring Computer", 1050, 800, state = state)
-
-		// adding a template with the key "mapContent" enables the map ui functionality
-		ui.add_template("mapContent", "crew_monitor_map_content.tmpl")
-		// adding a template with the key "mapHeader" replaces the map header content
-		ui.add_template("mapHeader", "crew_monitor_map_header.tmpl")
-
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data

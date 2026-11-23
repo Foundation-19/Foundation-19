@@ -18,7 +18,13 @@
 	var/datum/computer_file/report/saved_report        //The computer file open.
 	var/prog_state = REPORTS_VIEW
 
-/datum/nano_module/program/reports/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+/datum/nano_module/program/reports/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Reports", name)
+		ui.open()
+
+/datum/nano_module/program/reports/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 	data["prog_state"] = prog_state
 	switch(prog_state)
@@ -36,12 +42,7 @@
 				L += list(M)
 			data["reports"] = L
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "reports.tmpl", name, 700, 800, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /datum/nano_module/program/reports/proc/switch_state(new_state)
 	if(prog_state == new_state)
@@ -98,89 +99,88 @@
 		selected_report = chosen_report.clone()
 		return 1
 
-/datum/nano_module/program/reports/Topic(href, href_list)
+/datum/nano_module/program/reports/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
-	var/mob/user = usr
 
-	if(text2num(href_list["warning"])) //Gives the user a chance to avoid losing unsaved reports.
-		if(alert(user, "Are you sure you want to leave this page? Unsubmitted data will be lost.",, "Yes.", "No.") == "No.")
-			return 1 //If yes, proceed to the actual action instead.
+	if(text2num(params["warning"]))
+		if(alert(usr, "Are you sure you want to leave this page? Unsubmitted data will be lost.",, "Yes.", "No.") == "No.")
+			return 1
 
-	if(href_list["load"])
+	if(action == "load")
 		if(selected_report || saved_report)
 			close_report()
-		load_report(user)
+		load_report(usr)
 		return 1
-	if(href_list["save"])
+	if(action == "save")
 		if(!selected_report)
 			return 1
-		if(!selected_report.verify_access(get_access(user)))
+		if(!selected_report.verify_access(get_access(usr)))
 			return 1
-		var/save_as = text2num(href_list["save_as"])
-		save_report(user, save_as)
-	if(href_list["submit"])
+		var/save_as = text2num(params["save_as"])
+		save_report(usr, save_as)
+	if(action == "submit")
 		if(!selected_report)
 			return 1
-		if(!selected_report.verify_access_edit(get_access(user)))
+		if(!selected_report.verify_access_edit(get_access(usr)))
 			return 1
-		if(selected_report.submit(user))
-			to_chat(user, "The [src] has been submitted.")
-			if(alert(user, "Would you like to save a copy?","Save Report", "Yes.", "No.") == "Yes.")
-				save_report(user)
+		if(selected_report.submit(usr))
+			to_chat(usr, "The [src] has been submitted.")
+			if(alert(usr, "Would you like to save a copy?","Save Report", "Yes.", "No.") == "Yes.")
+				save_report(usr)
 		return 1
-	if(href_list["discard"])
+	if(action == "discard")
 		if(!selected_report)
 			return 1
 		close_report()
 		return 1
-	if(href_list["edit"])
+	if(action == "edit")
 		if(!selected_report)
 			return 1
-		var/field_ID = text2num(href_list["ID"])
+		var/field_ID = text2num(params["ID"])
 		var/datum/report_field/field = selected_report.field_from_ID(field_ID)
-		if(!field || !field.verify_access_edit(get_access(user)))
+		if(!field || !field.verify_access_edit(get_access(usr)))
 			return 1
-		field.ask_value(user) //Handles the remaining IO.
+		field.ask_value(usr)
 		return 1
-	if(href_list["print"])
-		if(!selected_report || !selected_report.verify_access(get_access(user)))
+	if(action == "print")
+		if(!selected_report || !selected_report.verify_access(get_access(usr)))
 			return 1
 		if(!program.computer.nano_printer)
-			to_chat(user, SPAN_WARNING("Missing Hardware: Your computer does not have the required hardware to complete this operation."))
+			to_chat(usr, SPAN_WARNING("Missing Hardware: Your computer does not have the required hardware to complete this operation."))
 			return
-		var/with_fields = text2num(href_list["print_mode"])
-		var/text = selected_report.generate_pencode(get_access(user), with_fields)
+		var/with_fields = text2num(params["print_mode"])
+		var/text = selected_report.generate_pencode(get_access(usr), with_fields)
 		if(!program.computer.nano_printer.print_text(text, selected_report.display_name()))
-			to_chat(user, "Hardware error: Printer was unable to print the file. It may be out of paper.")
+			to_chat(usr, "Hardware error: Printer was unable to print the file. It may be out of paper.")
 		return 1
-	if(href_list["export"])
-		if(!selected_report || !selected_report.verify_access(get_access(user)))
+	if(action == "export")
+		if(!selected_report || !selected_report.verify_access(get_access(usr)))
 			return 1
 		var/datum/computer_file/data/text/file = new
 		selected_report.rename_file()
-		file.stored_data = selected_report.generate_pencode(get_access(user), no_html = 1) //TXT files can't have html; they use pencode only.
+		file.stored_data = selected_report.generate_pencode(get_access(usr), no_html = 1)
 		file.filename = selected_report.filename
 		if(program.computer.hard_drive.store_file(file))
-			to_chat(user, "The report has been exported as [file.filename].[file.filetype]")
+			to_chat(usr, "The report has been exported as [file.filename].[file.filetype]")
 		else
-			to_chat(user, "Error storing file. Please check your hard drive.")
+			to_chat(usr, "Error storing file. Please check your hard drive.")
 		return 1
 
-	if(href_list["download"])
+	if(action == "download")
 		switch_state(REPORTS_DOWNLOAD)
 		return 1
-	if(href_list["get_report"])
-		var/uid = text2num(href_list["report"])
-		for(var/datum/computer_file/report/report in ntnet_global.fetch_reports(get_access(user)))
+	if(action == "get_report")
+		var/uid = text2num(params["report"])
+		for(var/datum/computer_file/report/report in ntnet_global.fetch_reports(get_access(usr)))
 			if(report.uid == uid)
 				selected_report = report.clone()
 				can_view_only = 0
 				switch_state(REPORTS_VIEW)
 				return 1
-		to_chat(user, "Network error: Selected report could not be downloaded. Check network functionality and credentials.")
+		to_chat(usr, "Network error: Selected report could not be downloaded. Check network functionality and credentials.")
 		return 1
-	if(href_list["home"])
+	if(action == "home")
 		switch_state(REPORTS_VIEW)
 		return 1
 

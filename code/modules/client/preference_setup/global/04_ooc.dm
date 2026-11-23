@@ -18,6 +18,25 @@
 	if(!islist(pref.ignored_players))
 		pref.ignored_players = list()
 
+/datum/category_item/player_setup_item/player_global/ooc/get_setup_data(mob/user)
+	var/list/data = list()
+	data["ignored_players"] = pref.ignored_players ? pref.ignored_players.Copy() : list()
+	return data
+
+/datum/category_item/player_setup_item/player_global/ooc/act_setup(action, list/params, mob/user)
+
+	if(action == "unignore_player")
+		pref.ignored_players -= params["player"]
+		return TRUE
+
+	if(action == "ignore_player")
+		var/player_to_ignore = sanitize(ckey(input(user, "Who do you want to ignore?", "Ignore") as null|text))
+		if(player_to_ignore && CanUseTopic(user))
+			pref.ignored_players |= player_to_ignore
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/player_global/ooc/content(mob/user)
 	. += "<b>OOC:</b><br>"
 	. += "Ignored Players<br>"

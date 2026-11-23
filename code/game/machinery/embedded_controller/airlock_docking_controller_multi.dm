@@ -1,5 +1,3 @@
-//a controller for a docking port with multiple independent airlocks
-//this is the master controller, that things will try to dock with.
 /obj/machinery/embedded_controller/radio/docking_port_multi
 	name = "docking port controller"
 	program = /datum/computer/file/embedded_program/docking/multi
@@ -15,13 +13,19 @@
 		for (var/i = 1; i <= tags.len; i++)
 			child_names[tags[i]] = names[i]
 
-/obj/machinery/embedded_controller/radio/docking_port_multi/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/obj/machinery/embedded_controller/radio/docking_port_multi/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "MultiDockingConsole", name, 470, 290)
+		ui.open()
+
+/obj/machinery/embedded_controller/radio/docking_port_multi/tgui_data(mob/user)
+	var/list/data = list()
 	var/datum/computer/file/embedded_program/docking/multi/docking_program = program
 
-	var/list/airlocks[child_names.len]
+	var/list/airlocks = list()
 	var/i = 1
-	for (var/child_tag in child_names)
+	for(var/child_tag in child_names)
 		airlocks[i++] = list("name"=child_names[child_tag], "override_enabled"=(docking_program.children_override[child_tag] == "enabled"))
 
 	data = list(
@@ -29,28 +33,25 @@
 		"airlocks" = airlocks,
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	return data
 
-	if (!ui)
-		ui = new(user, src, ui_key, "multi_docking_console.tmpl", name, 470, 290, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/embedded_controller/radio/docking_port_multi/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	return TRUE
 
-/obj/machinery/embedded_controller/radio/docking_port_multi/Topic(href, href_list)
-	return 1 // Apparently we swallow all input (this is corrected legacy code)
-
-
-
-//a docking port based on an airlock
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi
 	name = "docking port controller"
 	program = /datum/computer/file/embedded_program/airlock/multi_docking
-	var/master_tag	//for mapping
+	var/master_tag
 	tag_secure = 1
 
-/obj/machinery/embedded_controller/radio/airlock/docking_port_multi/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "DockingAirlockConsole", name, 470, 290)
+		ui.open()
+
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi/tgui_data(mob/user)
+	var/list/data = list()
 	var/datum/computer/file/embedded_program/airlock/multi_docking/airlock_program
 
 	data = list(
@@ -63,10 +64,4 @@
 		"override_enabled" = airlock_program.override_enabled,
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-
-	if (!ui)
-		ui = new(user, src, ui_key, "docking_airlock_console.tmpl", name, 470, 290, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data

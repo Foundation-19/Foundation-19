@@ -20,14 +20,14 @@
 	..()
 
 /obj/machinery/computer/crew/interface_interact(user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/crew/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
-	crew_monitor.ui_interact(user, ui_key, ui, force_open, state)
+/obj/machinery/computer/crew/tgui_interact(mob/user, datum/tgui/ui)
+	crew_monitor.tgui_interact(user, ui)
 
 /obj/machinery/computer/crew/nano_container()
 	return crew_monitor
 
 /obj/machinery/computer/crew/interact(mob/user)
-	crew_monitor.ui_interact(user)
+	crew_monitor.tgui_interact(user)

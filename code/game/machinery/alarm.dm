@@ -491,35 +491,29 @@
 	frequency.post_signal(src, alert_signal)
 
 /obj/machinery/alarm/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/alarm/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, master_ui = null, datum/topic_state/state = GLOB.default_state)
-	var/data[0]
-	var/remote_connection = 0
-	var/remote_access = 0
-	if(state)
-		var/list/href = state.href_list(user)
-		remote_connection = href["remote_connection"]	// Remote connection means we're non-adjacent/connecting from another computer
-		remote_access = href["remote_access"]			// Remote access means we also have the privilege to alter the air alarm.
+/obj/machinery/alarm/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AirAlarm", name)
+		ui.open()
+
+/obj/machinery/alarm/tgui_data(mob/user)
+	var/list/data = list()
 
 	data["locked"] = locked && !issilicon(user)
-	data["remote_connection"] = remote_connection
-	data["remote_access"] = remote_access
+	data["remote_connection"] = 0
+	data["remote_access"] = 0
 	data["rcon"] = rcon_setting
 	data["screen"] = screen
 
 	populate_status(data)
 
-	if(!(locked && !remote_connection) || remote_access || issilicon(user))
+	if(!locked || issilicon(user))
 		populate_controls(data)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "air_alarm.tmpl", src.name, 325, 625, master_ui = master_ui, state = state)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/alarm/proc/populate_status(data)
 	var/turf/location = get_turf(src)
@@ -637,29 +631,21 @@
 
 			data["thresholds"] = thresholds
 
-/obj/machinery/alarm/CanUseTopic(mob/user, datum/topic_state/state, href_list = list())
+/obj/machinery/alarm/tgui_status(mob/user, datum/tgui_state/state)
 	if(buildstage != 2)
 		return STATUS_CLOSE
-
 	if(aidisabled && isAI(user))
 		to_chat(user, SPAN_WARNING("AI control for \the [src] interface has been disabled."))
 		return STATUS_CLOSE
-
 	. = shorted ? STATUS_DISABLED : STATUS_INTERACTIVE
-
-	if(. == STATUS_INTERACTIVE)
-		var/extra_href = state.href_list(user)
-		// Prevent remote users from altering RCON settings unless they already have access
-		if(href_list["rcon"] && extra_href["remote_connection"] && !extra_href["remote_access"])
-			. = STATUS_UPDATE
-
 	return min(..(), .)
 
-/obj/machinery/alarm/OnTopic(user, href_list, datum/topic_state/state)
-	// hrefs that can always be called -walter0o
-	if(href_list["rcon"])
-		var/attempted_rcon_setting = text2num(href_list["rcon"])
+/obj/machinery/alarm/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
+	if(action == "rcon")
+		var/attempted_rcon_setting = text2num(params["rcon"])
 		switch(attempted_rcon_setting)
 			if(RCON_NO)
 				rcon_setting = RCON_NO
@@ -667,143 +653,121 @@
 				rcon_setting = RCON_AUTO
 			if(RCON_YES)
 				rcon_setting = RCON_YES
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["temperature"])
+	if(action == "temperature")
 		var/list/selected = TLV["temperature"]
 		var/max_temperature = min(selected[3] - T0C, MAX_TEMPERATURE)
 		var/min_temperature = max(selected[2] - T0C, MIN_TEMPERATURE)
-		var/input_temperature = input(user, "What temperature would you like the system to maintain? (Capped between [min_temperature] and [max_temperature]C)", "Thermostat Controls", target_temperature - T0C) as num|null
-		if(isnum(input_temperature) && CanUseTopic(user, state))
+		var/input_temperature = input(usr, "What temperature would you like the system to maintain? (Capped between [min_temperature] and [max_temperature]C)", "Thermostat Controls", target_temperature - T0C) as num|null
+		if(isnum(input_temperature) && tgui_status(usr, state))
 			if(input_temperature > max_temperature || input_temperature < min_temperature)
-				to_chat(user, "Temperature must be between [min_temperature]C and [max_temperature]C")
+				to_chat(usr, "Temperature must be between [min_temperature]C and [max_temperature]C")
 			else
 				target_temperature = input_temperature + T0C
-		return TOPIC_REFRESH
+		return TRUE
 
-	// hrefs that need the AA unlocked -walter0o
-	var/extra_href = state.href_list(user)
-	if(!(locked && !extra_href["remote_connection"]) || extra_href["remote_access"] || issilicon(user))
-		if(href_list["command"])
-			var/device_id = href_list["id_tag"]
-			switch(href_list["command"])
+	if(!locked || issilicon(usr))
+		if(action == "command")
+			var/device_id = params["id_tag"]
+			var/command = params["command"]
+			switch(command)
 				if("set_external_pressure")
-					var/input_pressure = input(user, "What pressure you like the system to mantain?", "Pressure Controls") as num|null
-					if(isnum(input_pressure) && CanUseTopic(user, state))
-						send_signal(device_id, list(href_list["command"] = input_pressure))
-					return TOPIC_REFRESH
-
+					var/input_pressure = input(usr, "What pressure you like the system to mantain?", "Pressure Controls") as num|null
+					if(isnum(input_pressure) && tgui_status(usr, state))
+						send_signal(device_id, list(command = input_pressure))
+					return TRUE
 				if("reset_external_pressure")
-					send_signal(device_id, list(href_list["command"] = ONE_ATMOSPHERE))
-					return TOPIC_REFRESH
-
-				if( "set_power",
-					"set_checks",
-					"panic_siphon")
-
-					send_signal(device_id, list(href_list["command"] = text2num(href_list["val"]) ) )
-					return TOPIC_REFRESH
-
+					send_signal(device_id, list(command = ONE_ATMOSPHERE))
+					return TRUE
+				if("set_power", "set_checks", "panic_siphon")
+					send_signal(device_id, list(command = text2num(params["val"])))
+					return TRUE
 				if("set_scrubbing")
-					send_signal(device_id, list(href_list["command"] = href_list["scrub_mode"]) )
-					return TOPIC_REFRESH
-
+					send_signal(device_id, list(command = params["scrub_mode"]))
+					return TRUE
 				if("set_scrub_gas")
 					var/decl/environment_data/env_info = decls_repository.get_decl(environment_type)
-					if(env_info && (href_list["gas_id"] in env_info.filter_gasses))
-						send_signal(device_id, list(href_list["command"] = list(href_list["gas_id"] = text2num(href_list["val"]))) )
-					return TOPIC_REFRESH
-
+					if(env_info && (params["gas_id"] in env_info.filter_gasses))
+						send_signal(device_id, list(command = list(params["gas_id"] = text2num(params["val"]))))
+					return TRUE
 				if("set_breach")
-					var/newval = input(user, "Enter minimum pressure for breach detection, preasures lower then this will cause vents to stop.", breach_pressure) as null|num
-					if (isnull(newval) || !CanUseTopic(user, state))
-						return TOPIC_HANDLED
-					if (newval<0)
+					var/newval = input(usr, "Enter minimum pressure for breach detection, preasures lower then this will cause vents to stop.", breach_pressure) as null|num
+					if(isnull(newval) || !tgui_status(usr, state))
+						return TRUE
+					if(newval < 0)
 						breach_pressure = -1.0
-					else if (newval > 50*ONE_ATMOSPHERE)
+					else if(newval > 50*ONE_ATMOSPHERE)
 						breach_pressure = 50*ONE_ATMOSPHERE
 					else
-						breach_pressure = round(newval,0.01)
-
+						breach_pressure = round(newval, 0.01)
+					return TRUE
 				if("set_threshold")
-					var/env = href_list["env"]
-					var/threshold = text2num(href_list["var"])
-					var/list/selected = TLV[env]
+					var/env = params["env"]
+					var/threshold = text2num(params["var"])
+					var/list/sel = TLV[env]
 					var/list/thresholds = list("lower bound", "low warning", "high warning", "upper bound")
-					var/newval = input(user, "Enter [thresholds[threshold]] for [env]", "Alarm triggers", selected[threshold]) as null|num
-					if (isnull(newval) || !CanUseTopic(user, state))
-						return TOPIC_HANDLED
-					if (newval<0)
-						selected[threshold] = -1.0
-					else if (env=="temperature" && newval>5000)
-						selected[threshold] = 5000
-					else if (env=="pressure" && newval>50*ONE_ATMOSPHERE)
-						selected[threshold] = 50*ONE_ATMOSPHERE
-					else if (env!="temperature" && env!="pressure" && newval>200)
-						selected[threshold] = 200
+					var/newval = input(usr, "Enter [thresholds[threshold]] for [env]", "Alarm triggers", sel[threshold]) as null|num
+					if(isnull(newval) || !tgui_status(usr, state))
+						return TRUE
+					if(newval < 0)
+						sel[threshold] = -1.0
+					else if(env == "temperature" && newval > 5000)
+						sel[threshold] = 5000
+					else if(env == "pressure" && newval > 50*ONE_ATMOSPHERE)
+						sel[threshold] = 50*ONE_ATMOSPHERE
+					else if(env != "temperature" && env != "pressure" && newval > 200)
+						sel[threshold] = 200
 					else
-						newval = round(newval,0.01)
-						selected[threshold] = newval
+						newval = round(newval, 0.01)
+						sel[threshold] = newval
 					if(threshold == 1)
-						if(selected[1] > selected[2])
-							selected[2] = selected[1]
-						if(selected[1] > selected[3])
-							selected[3] = selected[1]
-						if(selected[1] > selected[4])
-							selected[4] = selected[1]
+						if(sel[1] > sel[2]) sel[2] = sel[1]
+						if(sel[1] > sel[3]) sel[3] = sel[1]
+						if(sel[1] > sel[4]) sel[4] = sel[1]
 					if(threshold == 2)
-						if(selected[1] > selected[2])
-							selected[1] = selected[2]
-						if(selected[2] > selected[3])
-							selected[3] = selected[2]
-						if(selected[2] > selected[4])
-							selected[4] = selected[2]
+						if(sel[1] > sel[2]) sel[1] = sel[2]
+						if(sel[2] > sel[3]) sel[3] = sel[2]
+						if(sel[2] > sel[4]) sel[4] = sel[2]
 					if(threshold == 3)
-						if(selected[1] > selected[3])
-							selected[1] = selected[3]
-						if(selected[2] > selected[3])
-							selected[2] = selected[3]
-						if(selected[3] > selected[4])
-							selected[4] = selected[3]
+						if(sel[1] > sel[3]) sel[1] = sel[3]
+						if(sel[2] > sel[3]) sel[2] = sel[3]
+						if(sel[3] > sel[4]) sel[4] = sel[3]
 					if(threshold == 4)
-						if(selected[1] > selected[4])
-							selected[1] = selected[4]
-						if(selected[2] > selected[4])
-							selected[2] = selected[4]
-						if(selected[3] > selected[4])
-							selected[3] = selected[4]
-
+						if(sel[1] > sel[4]) sel[1] = sel[4]
+						if(sel[2] > sel[4]) sel[2] = sel[4]
+						if(sel[3] > sel[4]) sel[3] = sel[4]
 					apply_mode()
-					return TOPIC_REFRESH
+					return TRUE
 
-		if(href_list["screen"])
-			screen = text2num(href_list["screen"])
-			return TOPIC_REFRESH
+		if(action == "screen")
+			screen = text2num(params["screen"])
+			return TRUE
 
-		if(href_list["atmos_unlock"])
-			switch(href_list["atmos_unlock"])
+		if(action == "atmos_unlock")
+			switch(params["atmos_unlock"])
 				if("0")
 					alarm_area.air_doors_close()
 				if("1")
 					alarm_area.air_doors_open()
-			return TOPIC_REFRESH
+			return TRUE
 
-		if(href_list["atmos_alarm"])
-			if (alarm_area.atmosalert(2, src))
+		if(action == "atmos_alarm")
+			if(alarm_area.atmosalert(2, src))
 				apply_danger_level(2)
 			update_icon()
-			return TOPIC_REFRESH
+			return TRUE
 
-		if(href_list["atmos_reset"])
-			if (alarm_area.atmosalert(0, src))
+		if(action == "atmos_reset")
+			if(alarm_area.atmosalert(0, src))
 				apply_danger_level(0)
 			update_icon()
-			return TOPIC_REFRESH
+			return TRUE
 
-		if(href_list["mode"])
-			mode = text2num(href_list["mode"])
+		if(action == "mode")
+			mode = text2num(params["mode"])
 			apply_mode()
-			return TOPIC_REFRESH
+			return TRUE
 
 /obj/machinery/alarm/attackby(obj/item/W as obj, mob/user as mob)
 	switch(buildstage)

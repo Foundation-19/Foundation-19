@@ -12,9 +12,6 @@
 	// Whether pAIs should automatically receive this module at no cost
 	var/default = 0
 
-/datum/pai_software/proc/on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui=null, force_open=1)
-	return
-
 /datum/pai_software/proc/toggle(mob/living/silicon/pai/user)
 	return
 
@@ -31,40 +28,38 @@
 	toggle = 0
 	default = 1
 
-/datum/pai_software/directives/on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui=null, force_open=1)
+/datum/pai_software/directives/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, user, ui)
+	if(!ui)
+		ui = new(user, user, "PAISoftwareModules", "pAI Directives", 450, 600)
+		ui.open()
+
+/datum/pai_software/directives/tgui_data(mob/living/silicon/pai/user)
 	var/data[0]
 
+	data["module"] = "directives"
 	data["master"] = user.master
 	data["dna"] = user.master_dna
 	data["prime"] = user.pai_law0
 	data["supplemental"] = user.pai_laws
 
-	ui = SSnano.try_update_ui(user, user, id, ui, data, force_open)
-	if(!ui)
-		// Don't copy-paste this unless you're making a pAI software module!
-		ui = new(user, user, id, "pai_directives.tmpl", "pAI Directives", 450, 600)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/datum/pai_software/directives/Topic(href, href_list)
+/datum/pai_software/directives/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	var/mob/living/silicon/pai/P = usr
 	if(!istype(P)) return
 
-	if(href_list["getdna"])
+	if(action == "getdna")
 		var/mob/living/M = P.loc
 		var/count = 0
 
-		// Find the carrier
 		while(!istype(M, /mob/living))
 			if(!M || !M.loc || count > 6)
-				//For a runtime where M ends up in nullspace (similar to bluespace but less colourful)
 				to_chat(src, "You are not being carried by anyone!")
-				return 0
+				return FALSE
 			M = M.loc
 			count++
 
-		// Check the carrier
 		var/answer = input(M, "[P] is requesting a DNA sample from you. Will you allow it to confirm your identity?", "[P] Check DNA", "No") in list("Yes", "No")
 		if(answer == "Yes")
 			var/turf/T = get_turf_or_move(P.loc)
@@ -78,7 +73,7 @@
 				to_chat(P, "<b>DNA does not match stored Master DNA.</b>")
 		else
 			to_chat(P, "[M] does not seem like \he is going to provide a DNA sample willingly.")
-		return 1
+		return TRUE
 
 /datum/pai_software/radio_config
 	name = "Radio Configuration"
@@ -87,9 +82,16 @@
 	toggle = 0
 	default = 1
 
-/datum/pai_software/radio_config/on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui = null, force_open = 1)
+/datum/pai_software/radio_config/tgui_interact(mob/living/silicon/pai/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, user, ui)
+	if(!ui)
+		ui = new(user, user, "PAISoftwareModules", "Radio Configuration", 300, 150)
+		ui.open()
+
+/datum/pai_software/radio_config/tgui_data(mob/living/silicon/pai/user)
 	var/data[0]
 
+	data["module"] = "radio"
 	data["listening"] = user.silicon_radio.broadcasting
 	data["frequency"] = format_frequency(user.silicon_radio.frequency)
 
@@ -98,24 +100,18 @@
 		var/ch_stat = user.silicon_radio.channels[ch_name]
 		var/ch_dat[0]
 		ch_dat["name"] = ch_name
-		// FREQ_LISTENING is const in /obj/item/device/radio
 		ch_dat["listening"] = !!(ch_stat & user.silicon_radio.FREQ_LISTENING)
 		channels[++channels.len] = ch_dat
 
 	data["channels"] = channels
+	return data
 
-	ui = SSnano.try_update_ui(user, user, id, ui, data, force_open)
-	if(!ui)
-		ui = new(user, user, id, "pai_radio.tmpl", "Radio Configuration", 300, 150)
-		ui.set_initial_data(data)
-		ui.open()
-
-/datum/pai_software/radio_config/Topic(href, href_list)
+/datum/pai_software/radio_config/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	var/mob/living/silicon/pai/P = usr
 	if(!istype(P)) return
 
-	P.silicon_radio.Topic(href, href_list)
-	return 1
+	P.silicon_radio.tgui_act(action, params, ui, state)
+	return TRUE
 
 /datum/pai_software/crew_manifest
 	name = "Crew Manifest"
@@ -123,18 +119,17 @@
 	id = "manifest"
 	toggle = 0
 
-/datum/pai_software/crew_manifest/on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui=null, force_open=1)
-	var/data[0]
-	// This is dumb, but NanoUI breaks if it has no data to send
-	data["crew_manifest"] = html_crew_manifest()
-
-	ui = SSnano.try_update_ui(user, user, id, ui, data, force_open)
+/datum/pai_software/crew_manifest/tgui_interact(mob/living/silicon/pai/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, user, ui)
 	if(!ui)
-		// Don't copy-paste this unless you're making a pAI software module!
-		ui = new(user, user, id, "crew_manifest.tmpl", "Crew Manifest", 450, 600)
-		ui.set_initial_data(data)
+		ui = new(user, user, "PAISoftwareModules", "Crew Manifest", 450, 600)
 		ui.open()
-		ui.set_auto_update(1)
+
+/datum/pai_software/crew_manifest/tgui_data(mob/user)
+	var/data[0]
+	data["module"] = "manifest"
+	data["crew_manifest"] = html_crew_manifest()
+	return data
 
 /datum/pai_software/door_jack/
 	name = "Door Jack"
@@ -142,9 +137,16 @@
 	id = "door_jack"
 	toggle = 0
 
-/datum/pai_software/door_jack/on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui=null, force_open=1)
+/datum/pai_software/door_jack/tgui_interact(mob/living/silicon/pai/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, user, ui)
+	if(!ui)
+		ui = new(user, user, "PAISoftwareModules", "Door Jack", 300, 150)
+		ui.open()
+
+/datum/pai_software/door_jack/tgui_data(mob/living/silicon/pai/user)
 	var/data[0]
 
+	data["module"] = "door_jack"
 	data["cable"] = user.cable != null
 	data["machine"] = user.cable && (user.cable.machine != null)
 	data["inprogress"] = user.hackdoor != null
@@ -152,34 +154,28 @@
 	data["progress_b"] = user.hackprogress % 10
 	data["aborted"] = user.hack_aborted
 
-	ui = SSnano.try_update_ui(user, user, id, ui, data, force_open)
-	if(!ui)
-		// Don't copy-paste this unless you're making a pAI software module!
-		ui = new(user, user, id, "pai_doorjack.tmpl", "Door Jack", 300, 150)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/datum/pai_software/door_jack/Topic(href, href_list)
+/datum/pai_software/door_jack/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	var/mob/living/silicon/pai/P = usr
 	if(!istype(P)) return
 
-	if(href_list["jack"])
+	if(action == "jack")
 		if(P.cable && P.cable.machine)
 			P.hackdoor = P.cable.machine
 			P.hackloop()
-		return 1
-	else if(href_list["cancel"])
+		return TRUE
+	else if(action == "cancel")
 		P.hackdoor = null
-		return 1
-	else if(href_list["cable"])
+		return TRUE
+	else if(action == "cable")
 		var/turf/T = get_turf_or_move(P.loc)
 		P.hack_aborted = 0
 		P.cable = new /obj/item/pai_cable(T)
 		for(var/mob/M in viewers(T))
 			M.show_message(SPAN_WARNING("A port on [P] opens to reveal [P.cable], which promptly falls to the floor."), 3,
 							SPAN_WARNING("You hear the soft click of something light and hard falling to the ground."), 2)
-		return 1
+		return TRUE
 
 /mob/living/silicon/pai/proc/hackloop()
 	var/turf/T = get_turf_or_move(src.loc)
@@ -216,7 +212,13 @@
 	id = "atmos_sense"
 	toggle = 0
 
-/datum/pai_software/atmosphere_sensor/on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui=null, force_open=1)
+/datum/pai_software/atmosphere_sensor/tgui_interact(mob/living/silicon/pai/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, user, ui)
+	if(!ui)
+		ui = new(user, user, "PAISoftwareModules", "Atmosphere Sensor", 350, 300)
+		ui.open()
+
+/datum/pai_software/atmosphere_sensor/tgui_data(mob/living/silicon/pai/user)
 	var/data[0]
 
 	var/turf/T = get_turf_or_move(user.loc)
@@ -243,12 +245,8 @@
 			gases[++gases.len] = gas
 		data["gas"] = gases
 
-	ui = SSnano.try_update_ui(user, user, id, ui, data, force_open)
-	if(!ui)
-		// Don't copy-paste this unless you're making a pAI software module!
-		ui = new(user, user, id, "pai_atmosphere.tmpl", "Atmosphere Sensor", 350, 300)
-		ui.set_initial_data(data)
-		ui.open()
+	data["module"] = "atmos_sense"
+	return data
 
 /datum/pai_software/sec_hud
 	name = "Security HUD"

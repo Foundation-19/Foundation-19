@@ -113,6 +113,127 @@ var/list/gear_datums = list()
 		else
 			pref.gear_list[index] = list()
 
+/datum/category_item/player_setup_item/loadout/get_setup_data(mob/user)
+	var/list/data = list()
+	var/total_cost = 0
+	var/list/gears = pref.gear_list[pref.gear_slot]
+	for(var/i = 1; i <= gears.len; i++)
+		var/datum/gear/G = gear_datums[gears[i]]
+		if(G)
+			total_cost += G.cost
+
+	data["gear_slot"] = pref.gear_slot
+	data["total_cost"] = total_cost
+	data["max_gear_cost"] = config.max_gear_cost
+	data["max_slots"] = config.loadout_slots
+	data["hide_unavailable"] = hide_unavailable_gear
+
+	var/list/categories = list()
+	for(var/category in loadout_categories)
+		var/datum/loadout_category/LC = loadout_categories[category]
+		var/cat_cost = 0
+		for(var/gear in LC.gear)
+			if(gear in pref.gear_list[pref.gear_slot])
+				var/datum/gear/G = LC.gear[gear]
+				cat_cost += G.cost
+		var/list/gear_entries = list()
+		for(var/gear_name in LC.gear)
+			var/datum/gear/G = LC.gear[gear_name]
+			if(!(gear_name in valid_gear_choices()))
+				continue
+			gear_entries += list(list(
+				"name" = G.display_name,
+				"cost" = G.cost,
+				"ref" = "\ref[G]",
+				"selected" = (G.display_name in pref.gear_list[pref.gear_slot]),
+				"description" = G.get_description(get_gear_metadata(G, 1))
+			))
+			// Per-gear accessory options (color/path tweaks) for the TGUI dropdown.
+			if(LAZYLEN(G.gear_tweaks))
+				var/list/tweaks_out = list()
+				for(var/datum/gear_tweak/tweak in G.gear_tweaks)
+					var/list/tweak_data = list(
+						"ref" = "\ref[tweak]",
+						"contents" = tweak.get_contents(get_tweak_metadata(G, tweak))
+					)
+					// Path tweaks: expose named options for a dropdown.
+					if(istype(tweak, /datum/gear_tweak/path))
+						var/datum/gear_tweak/path/PT = tweak
+						var/list/options_list = list()
+						for(var/path_name in PT.valid_paths)
+							options_list += list(list("name" = path_name, "value" = path_name))
+						tweak_data["options"] = options_list
+						var/current = get_tweak_metadata(G, tweak)
+						tweak_data["current"] = current
+					tweaks_out += list(tweak_data)
+				gear_entries[list(gear_entries.len)]["tweaks"] = tweaks_out
+		categories += list(list("name" = category, "cost" = cat_cost, "gear" = gear_entries))
+	data["categories"] = categories
+	data["current_tab"] = current_tab
+	return data
+
+/datum/category_item/player_setup_item/loadout/act_setup(action, list/params, mob/user)
+
+	if(action == "toggle_gear")
+		var/datum/gear/TG = locate(params["gear_ref"])
+		if(!istype(TG) || gear_datums[TG.display_name] != TG)
+			return TRUE
+		if(TG.display_name in pref.gear_list[pref.gear_slot])
+			pref.gear_list[pref.gear_slot] -= TG.display_name
+		else
+			var/total_cost = 0
+			for(var/gear_name in pref.gear_list[pref.gear_slot])
+				var/datum/gear/G = gear_datums[gear_name]
+				if(istype(G)) total_cost += G.cost
+			if((total_cost+TG.cost) <= config.max_gear_cost)
+				pref.gear_list[pref.gear_slot] += TG.display_name
+		return TRUE
+
+	if(action == "gear_tweak")
+		var/datum/gear/gear = locate(params["gear_ref"])
+		var/datum/gear_tweak/tweak = locate(params["tweak_ref"])
+		if(!tweak || !istype(gear) || !(tweak in gear.gear_tweaks) || gear_datums[gear.display_name] != gear)
+			return FALSE
+		if(istype(tweak, /datum/gear_tweak/path) && params["selected_path"])
+			// Dropdown path selection: apply the chosen path name directly.
+			var/datum/gear_tweak/path/PT = tweak
+			if(params["selected_path"] in PT.valid_paths)
+				set_tweak_metadata(gear, tweak, params["selected_path"])
+				return TRUE
+			return FALSE
+		var/metadata = tweak.get_metadata(user, get_tweak_metadata(gear, tweak))
+		if(!metadata || !CanUseTopic(user))
+			return FALSE
+		set_tweak_metadata(gear, tweak, metadata)
+		return TRUE
+
+	if(action == "next_slot")
+		pref.gear_slot = pref.gear_slot+1
+		if(pref.gear_slot > config.loadout_slots)
+			pref.gear_slot = 1
+		return TRUE
+
+	if(action == "prev_slot")
+		pref.gear_slot = pref.gear_slot-1
+		if(pref.gear_slot < 1)
+			pref.gear_slot = config.loadout_slots
+		return TRUE
+
+	if(action == "select_category")
+		current_tab = params["category"]
+		return TRUE
+
+	if(action == "clear_loadout")
+		var/list/gear = pref.gear_list[pref.gear_slot]
+		gear.Cut()
+		return TRUE
+
+	if(action == "toggle_hiding")
+		hide_unavailable_gear = !hide_unavailable_gear
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/loadout/content()
 	. = list()
 	var/total_cost = 0

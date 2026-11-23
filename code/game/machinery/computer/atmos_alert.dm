@@ -20,10 +20,16 @@ var/global/list/minor_air_alarms = list()
 	. = ..()
 
 /obj/machinery/computer/atmos_alert/interface_interact(user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/atmos_alert/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/computer/atmos_alert/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AtmosAlert", src.name, 500, 500)
+		ui.open()
+
+/obj/machinery/computer/atmos_alert/tgui_data(mob/user)
 	var/data[0]
 	var/major_alarms[0]
 	var/minor_alarms[0]
@@ -37,12 +43,7 @@ var/global/list/minor_air_alarms = list()
 	data["priority_alarms"] = major_alarms
 	data["minor_alarms"] = minor_alarms
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "atmos_alert.tmpl", src.name, 500, 500)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 /obj/machinery/computer/atmos_alert/on_update_icon()
 	if(!(stat & (NOPOWER|BROKEN)))
@@ -54,16 +55,16 @@ var/global/list/minor_air_alarms = list()
 			icon_screen = initial(icon_screen)
 	..()
 
-/obj/machinery/computer/atmos_alert/OnTopic(user, href_list)
-	if(href_list["clear_alarm"])
-		var/datum/alarm/alarm = locate(href_list["clear_alarm"]) in GLOB.atmosphere_alarm.alarms
+/obj/machinery/computer/atmos_alert/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(action == "clear_alarm")
+		var/datum/alarm/alarm = locate(params["clear_alarm"]) in GLOB.atmosphere_alarm.alarms
 		if(alarm)
 			for(var/datum/alarm_source/alarm_source in alarm.sources)
 				var/obj/machinery/alarm/air_alarm = alarm_source.source
 				if(istype(air_alarm))
 					var/list/new_ref = list("atmos_reset" = 1)
 					air_alarm.Topic(air_alarm, new_ref, state = air_alarm_topic)
-		return TOPIC_REFRESH
+		return TRUE
 
 
 var/datum/topic_state/air_alarm_topic/air_alarm_topic = new()

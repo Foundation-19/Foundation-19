@@ -25,15 +25,28 @@
 
 	///minimium distance we have to be away in order to be able to fire on scp 247
 	var/min_fire_distance = 3
+	var/spawn_area
 
 /mob/living/simple_animal/hostile/scp247/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"cute kitty", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"247", //Numerical Designation
+		src,
+		"cute kitty",
+		SCP_EUCLID,
+		"247",
 	)
+	spawn_area = get_area(src)
+
+/mob/living/simple_animal/hostile/scp247/Life()
+	. = ..()
+	if(spawn_area && SCP && SCP.research)
+		var/area/current = get_area(src)
+		if(current != spawn_area && SCP.research.containment_status != SCP_BREACHED)
+			SCP.research.set_containment_status(SCP_BREACHED)
+			for(var/mob/living/silicon/ai/AI in GLOB.living_mob_list_)
+				to_chat(AI, SPAN_WARNING("<b>AI ALERT:</b> Unauthorized biological entity detected in [current ? current.name : "corridor"]. SCP-247 is outside its enclosure."))
+		else if(current == spawn_area && SCP.research.containment_status == SCP_BREACHED)
+			SCP.research.set_containment_status(SCP_CONTAINED)
 
 // AI
 

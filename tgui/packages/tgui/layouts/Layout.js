@@ -9,7 +9,7 @@ import { computeBoxClassName, computeBoxProps } from '../components/Box';
 import { addScrollableNode, removeScrollableNode } from '../events';
 
 export const Layout = (props) => {
-  const { className, theme = 'scc', children, ...rest } = props;
+  const { className, theme = 'scp_terminal', children, ...rest } = props;
   document.documentElement.className = `theme-${theme}`;
 
   return (

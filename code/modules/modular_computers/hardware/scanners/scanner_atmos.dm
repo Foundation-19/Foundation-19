@@ -21,7 +21,7 @@
 		return
 	if(driver && driver.using_scanner)
 		driver.data_buffer = html2pencode(data)
-		SSnano.update_uis(driver.NM)
+		SStgui.update_uis(driver.NM)
 	to_chat(user, data)
 
 /obj/item/stock_parts/computer/scanner/atmos/proc/scan_data(mob/user, atom/target, proximity = TRUE)

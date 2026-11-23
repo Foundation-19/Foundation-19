@@ -54,7 +54,7 @@
 	if(active && HasFuel() && !IsBroken() && anchored && powernet)
 		add_avail(power_gen * power_output)
 		UseFuel()
-		src.updateDialog()
+		SStgui.update_uis(src)
 	else
 		active = 0
 		handleInactive()
@@ -250,7 +250,7 @@
 		var/temp_loss = (operating_temperature - cooling_temperature)/TEMPERATURE_DIVISOR
 		temp_loss = between(2, round(temp_loss, 1), TEMPERATURE_CHANGE_MAX)
 		operating_temperature = max(operating_temperature - temp_loss, cooling_temperature)
-		src.updateDialog()
+		SStgui.update_uis(src)
 
 	if(overheating)
 		overheating--
@@ -299,7 +299,7 @@
 		to_chat(user, SPAN_NOTICE("You add [amount] sheet\s to the [src.name]."))
 		sheets += amount
 		addstack.use(amount)
-		updateUsrDialog()
+		SStgui.update_uis(src)
 		return
 	if(isWrench(O) && !active)
 		if(!anchored)
@@ -319,14 +319,20 @@
 	. = ..()
 
 /obj/machinery/power/port_gen/pacman/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/power/port_gen/pacman/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/power/port_gen/pacman/tgui_interact(mob/user, datum/tgui/ui)
 	if(IsBroken())
 		return
 
-	var/data[0]
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "PortableGenerator", src.name, 500, 560)
+		ui.open()
+
+/obj/machinery/power/port_gen/pacman/tgui_data(mob/user)
+	var/list/data = list()
 	data["active"] = active
 	if(istype(user, /mob/living/silicon/ai))
 		data["is_ai"] = 1
@@ -341,10 +347,9 @@
 	data["temperature_current"] = src.operating_temperature
 	data["temperature_max"] = src.max_temperature
 	if(overheating)
-		data["temperature_overheat"] = ((overheating / max_overheat) * 100)		// Overheat percentage. Generator explodes at 100%
+		data["temperature_overheat"] = ((overheating / max_overheat) * 100)
 	else
 		data["temperature_overheat"] = 0
-	// 1 sheet = 1000cm3?
 	data["fuel_stored"] = round((sheets * 1000) + (sheet_left * 1000))
 	data["fuel_capacity"] = round(max_sheets * 1000, 0.1)
 	data["fuel_usage"] = active ? round((power_output / time_per_sheet) * 1000) : 0
@@ -352,15 +357,7 @@
 	data["uses_coolant"] = !!reagents
 	data["coolant_stored"] = reagents?.total_volume
 	data["coolant_capacity"] = reagents?.maximum_volume
-
-
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "pacman.tmpl", src.name, 500, 560)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
 
 /*
@@ -391,29 +388,28 @@
 	onclose(user, "port_gen")
 */
 
-/obj/machinery/power/port_gen/pacman/Topic(href, href_list)
+/obj/machinery/power/port_gen/pacman/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return
 
 	src.add_fingerprint(usr)
-	if(href_list["action"])
-		if(href_list["action"] == "enable")
-			if(!active && HasFuel() && !IsBroken())
-				active = 1
-				update_icon()
-		if(href_list["action"] == "disable")
-			if (active)
-				active = 0
-				update_icon()
-		if(href_list["action"] == "eject")
-			if(!active)
-				DropFuel()
-		if(href_list["action"] == "lower_power")
-			if (power_output > 1)
-				power_output--
-		if (href_list["action"] == "higher_power")
-			if (power_output < max_power_output || (emagged && power_output < round(max_power_output*2.5)))
-				power_output++
+	if(action == "enable")
+		if(!active && HasFuel() && !IsBroken())
+			active = 1
+			update_icon()
+	if(action == "disable")
+		if (active)
+			active = 0
+			update_icon()
+	if(action == "eject")
+		if(!active)
+			DropFuel()
+	if(action == "lower_power")
+		if (power_output > 1)
+			power_output--
+	if (action == "higher_power")
+		if (power_output < max_power_output || (emagged && power_output < round(max_power_output*2.5)))
+			power_output++
 
 /obj/machinery/power/port_gen/pacman/super
 	name = "S.U.P.E.R.P.A.C.M.A.N.-type Portable Generator"

@@ -95,11 +95,17 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	. = ..()
 
 /obj/machinery/requests_console/interface_interact(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/requests_console/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/requests_console/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "RequestsConsole", "[department] Request Console", 520, 460)
+		ui.open()
+
+/obj/machinery/requests_console/tgui_data(mob/user)
+	var/list/data = list()
 
 	data["department"] = department
 	data["screen"] = screen
@@ -110,83 +116,80 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 
 	data["assist_dept"] = req_console_assistance
 	data["supply_dept"] = req_console_supplies
-	data["info_dept"]   = req_console_information
+	data["info_dept"] = req_console_information
 
 	data["message"] = message
 	data["recipient"] = recipient
-	data["priortiy"] = priority
+	data["priority"] = priority
 	data["msgStamped"] = msgStamped
 	data["msgVerified"] = msgVerified
 	data["announceAuth"] = announceAuth
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "request_console.tmpl", "[department] Request Console", 520, 410)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
-/obj/machinery/requests_console/OnTopic(href, href_list)
-	if(reject_bad_text(href_list["write"]))
-		recipient = href_list["write"] //write contains the string of the receiving department's name
+/obj/machinery/requests_console/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-		var/new_message = sanitize(input("Write your message:", "Awaiting Input", ""))
+	if(action == "write")
+		recipient = params["recipient"]
+		var/new_message = sanitize(input("Write your message:", "Awaiting Input", "") as text|null)
 		if(new_message)
 			message = new_message
 			screen = RCS_MESSAUTH
-			switch(href_list["priority"])
+			switch(params["priority"])
 				if("1") priority = 1
-				if("2")	priority = 2
-				else	priority = 0
+				if("2") priority = 2
+				else priority = 0
 		else
 			reset_message(1)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["writeAnnouncement"])
-		var/new_message = sanitize(input("Write your message:", "Awaiting Input", ""))
+	if(action == "writeAnnouncement")
+		var/new_message = sanitize(input("Write your message:", "Awaiting Input", "") as text|null)
 		if(new_message)
 			message = new_message
 		else
 			reset_message(1)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if(href_list["sendAnnouncement"])
-		if(!announcementConsole)	return
+	if(action == "sendAnnouncement")
+		if(!announcementConsole) return
 		announcement.Announce(message, msg_sanitized = 1)
 		reset_message(1)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if( href_list["department"] && message )
-		var/log_msg = message
-		screen = RCS_SENTFAIL
-		var/obj/machinery/message_server/MS = get_message_server(get_z(src))
-		if(MS)
-			if(MS.send_rc_message(ckey(href_list["department"]),department,log_msg,msgStamped,msgVerified,priority))
-				screen = RCS_SENTPASS
-				message_log += "<B>Message sent to [recipient]</B><BR>[message]"
-		else
-			audible_message(text("[icon2html(src, viewers(get_turf(src)))] *The Requests Console beeps: 'NOTICE: No server detected!'"),,4)
-		return TOPIC_REFRESH
+	if(action == "sendMessage")
+		if(message)
+			var/log_msg = message
+			screen = RCS_SENTFAIL
+			var/obj/machinery/message_server/MS = get_message_server(get_z(src))
+			if(MS)
+				if(MS.send_rc_message(ckey(recipient), department, log_msg, msgStamped, msgVerified, priority))
+					screen = RCS_SENTPASS
+					message_log += "<B>Message sent to [recipient]</B><BR>[message]"
+			else
+				audible_message(text("[icon2html(src, viewers(get_turf(src)))] *The Requests Console beeps: 'NOTICE: No server detected!'"),,4)
+		return TRUE
 
-	//Handle screen switching
-	if(href_list["setScreen"])
-		var/tempScreen = text2num(href_list["setScreen"])
+	if(action == "setScreen")
+		var/tempScreen = text2num(params["screen"])
 		if(tempScreen == RCS_ANNOUNCE && !announcementConsole)
 			return
 		if(tempScreen == RCS_VIEWMSGS)
-			for (var/obj/machinery/requests_console/Console in allConsoles)
-				if (Console.department == department)
+			for(var/obj/machinery/requests_console/Console in allConsoles)
+				if(Console.department == department)
 					Console.newmessagepriority = 0
 					Console.icon_state = "req_comp0"
 					Console.set_light(1)
 		if(tempScreen == RCS_MAINMENU)
 			reset_message()
 		screen = tempScreen
-		return TOPIC_REFRESH
+		return TRUE
 
-	//Handle silencing the console
-	if(href_list["toggleSilent"])
+	if(action == "toggleSilent")
 		silent = !silent
-		return TOPIC_REFRESH
+		return TRUE
 
 					//err... hacking code, which has no reason for existing... but anyway... it was once supposed to unlock priority 3 messanging on that console (EXTREME priority...), but the code for that was removed.
 /obj/machinery/requests_console/attackby(obj/item/O as obj, mob/user as mob)
@@ -216,7 +219,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 		if(screen == RCS_MESSAUTH)
 			var/obj/item/card/id/T = O
 			msgVerified = text(FONT_COLORED("green","<b>Verified by [T.registered_name] ([T.assignment])</b>"))
-			SSnano.update_uis(src)
+			SStgui.update_uis(src)
 		if(screen == RCS_ANNOUNCE)
 			var/obj/item/card/id/ID = O
 			if (ACCESS_RC_ANNOUNCE in ID.GetAccess())
@@ -225,13 +228,13 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 			else
 				reset_message()
 				to_chat(user, SPAN_WARNING("You are not authorized to send announcements."))
-			SSnano.update_uis(src)
+			SStgui.update_uis(src)
 	if (istype(O, /obj/item/stamp))
 		if(inoperable(MAINT)) return
 		if(screen == RCS_MESSAUTH)
 			var/obj/item/stamp/T = O
 			msgStamped = text(FONT_COLORED("blue","<b>Stamped with the [T.name]</b>"))
-			SSnano.update_uis(src)
+			SStgui.update_uis(src)
 	return
 
 /obj/machinery/requests_console/proc/reset_message(mainmenu = 0)

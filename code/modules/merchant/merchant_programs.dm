@@ -25,7 +25,13 @@
 	if(num)
 		return SStrade.traders[num]
 
-/datum/nano_module/program/merchant/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/merchant/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "MerchantProgram", "Merchant List", 575, 700, state = state)
+		ui.open()
+
+/datum/nano_module/program/merchant/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 	var/show_trade = 0
 	var/hailed = 0
@@ -51,12 +57,7 @@
 				for(var/i in 1 to T.trading_items.len)
 					trades += T.print_trading_items(i)
 			data["trades"] = trades
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "merchant.tmpl", "Merchant List", 575, 700, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /datum/computer_file/program/merchant/proc/connect_pad()
 	for(var/obj/machinery/merchant_pad/P in orange(1,get_turf(computer)))
@@ -145,44 +146,44 @@
 	bank = 0
 	B.update_icon()
 
-/datum/computer_file/program/merchant/Topic(href, href_list)
+/datum/computer_file/program/merchant/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 	var/mob/user = usr
-	if(href_list["PRG_connect_pad"])
-		. = 1
+	if(action == "PRG_connect_pad")
+		. = TRUE
 		connect_pad()
-	if(href_list["PRG_continue"])
-		. = 1
+	if(action == "PRG_continue")
+		. = TRUE
 		temp = null
-	if(href_list["PRG_transfer_to_bank"])
-		. = 1
+	if(action == "PRG_transfer_to_bank")
+		. = TRUE
 		transfer_to_bank()
-	if(href_list["PRG_get_money"])
-		. = 1
+	if(action == "PRG_get_money")
+		. = TRUE
 		get_money()
-	if(href_list["PRG_main_menu"])
-		. = 1
+	if(action == "PRG_main_menu")
+		. = TRUE
 		current_merchant = 0
-	if(href_list["PRG_merchant_list"])
+	if(action == "PRG_merchant_list")
 		if(SStrade.traders.len == 0)
-			. = 0
+			. = FALSE
 			temp = "Cannot find any traders within broadcasting range."
 		else
-			. = 1
+			. = TRUE
 			current_merchant = 1
 			hailed_merchant = 0
 			last_comms = null
-	if(href_list["PRG_test_fire"])
-		. = 1
+	if(action == "PRG_test_fire")
+		. = TRUE
 		if(test_fire())
 			temp = "Test Fire Successful"
 		else
 			temp = "Test Fire Unsuccessful"
-	if(href_list["PRG_scroll"])
-		. = 1
+	if(action == "PRG_scroll")
+		. = TRUE
 		var/scrolled = 0
-		switch(href_list["PRG_scroll"])
+		switch(params["PRG_scroll"])
 			if("right")
 				scrolled = 1
 			if("left")
@@ -195,36 +196,36 @@
 	if(current_merchant)
 		var/datum/trader/T = get_merchant(current_merchant)
 		if(!hailed_merchant)
-			if(href_list["PRG_hail"])
-				. = 1
+			if(action == "PRG_hail")
+				. = TRUE
 				hailed_merchant = get_response(T.hail(user))
 				show_trades = 0
-			. = 1
+			. = TRUE
 		else
-			if(href_list["PRG_show_trades"])
-				. = 1
+			if(action == "PRG_show_trades")
+				. = TRUE
 				show_trades = !show_trades
-			if(href_list["PRG_insult"])
-				. = 1
+			if(action == "PRG_insult")
+				. = TRUE
 				get_response(T.insult())
-			if(href_list["PRG_compliment"])
-				. = 1
+			if(action == "PRG_compliment")
+				. = TRUE
 				get_response(T.compliment())
-			if(href_list["PRG_offer_item"])
-				. = 1
-				offer_item(T,text2num(href_list["PRG_offer_item"]) + 1, user.get_skill_value(SKILL_FINANCE))
-			if(href_list["PRG_how_much_do_you_want"])
-				. = 1
-				get_response(T.how_much_do_you_want(text2num(href_list["PRG_how_much_do_you_want"]) + 1, user.get_skill_value(SKILL_FINANCE)))
-			if(href_list["PRG_offer_money_for_item"])
-				. = 1
-				offer_money(T, text2num(href_list["PRG_offer_money_for_item"])+1, user.get_skill_value(SKILL_FINANCE))
-			if(href_list["PRG_what_do_you_want"])
-				. = 1
+			if(action == "PRG_offer_item")
+				. = TRUE
+				offer_item(T,text2num(params["PRG_offer_item"]) + 1, user.get_skill_value(SKILL_FINANCE))
+			if(action == "PRG_how_much_do_you_want")
+				. = TRUE
+				get_response(T.how_much_do_you_want(text2num(params["PRG_how_much_do_you_want"]) + 1, user.get_skill_value(SKILL_FINANCE)))
+			if(action == "PRG_offer_money_for_item")
+				. = TRUE
+				offer_money(T, text2num(params["PRG_offer_money_for_item"])+1, user.get_skill_value(SKILL_FINANCE))
+			if(action == "PRG_what_do_you_want")
+				. = TRUE
 				get_response(T.what_do_you_want())
-			if(href_list["PRG_sell_items"])
-				. = 1
+			if(action == "PRG_sell_items")
+				. = TRUE
 				sell_items(T, user.get_skill_value(SKILL_FINANCE))
-			if(href_list["PRG_bribe"])
-				. = 1
-				bribe(T, text2num(href_list["PRG_bribe"]))
+			if(action == "PRG_bribe")
+				. = TRUE
+				bribe(T, text2num(params["PRG_bribe"]))

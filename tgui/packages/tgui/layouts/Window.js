@@ -22,12 +22,15 @@ const logger = createLogger('Window');
 const DEFAULT_SIZE = [400, 600];
 
 export class Window extends Component {
+  __geometryPending = true;
+
   componentDidMount() {
     const { suspended } = useBackend(this.context);
     const { canClose = true } = this.props;
     if (suspended) {
       return;
     }
+    this.__geometryPending = false;
     Byond.winset(Byond.windowId, {
       'can-close': Boolean(canClose),
     });
@@ -35,13 +38,14 @@ export class Window extends Component {
     this.updateGeometry();
   }
 
-  componentDidUpdate(prevProps) {
-    // prettier-ignore
-    const shouldUpdateGeometry = (
-      this.props.width !== prevProps.width
-      || this.props.height !== prevProps.height
-    );
-    if (shouldUpdateGeometry) {
+  componentDidUpdate() {
+    // Track the suspended→active transition ourselves: the geometry is
+    // skipped on suspended mounts (componentDidMount early-return), so
+    // windows claimed from the pool while hidden never get their real size
+    // applied. Apply it on the first render where the page is actually live.
+    const { suspended } = useBackend(this.context);
+    if (!suspended && this.__geometryPending) {
+      this.__geometryPending = false;
       this.updateGeometry();
     }
   }

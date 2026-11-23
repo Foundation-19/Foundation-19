@@ -38,7 +38,7 @@
 	disable()
 
 /obj/item/device/suit_sensor_jammer/attack_self(mob/user)
-	ui_interact(user)
+	tgui_interact(user)
 
 /obj/item/device/suit_sensor_jammer/get_cell()
 	return bcell
@@ -118,7 +118,13 @@
 		return STATUS_CLOSE
 	return ..()
 
-/obj/item/device/suit_sensor_jammer/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/item/device/suit_sensor_jammer/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "SuitSensorJammer", "Sensor Jammer", 300, 640)
+		ui.open()
+
+/obj/item/device/suit_sensor_jammer/tgui_data(mob/user)
 	var/list/methods = new
 	for(var/suit_sensor_jammer_method/ssjm in suit_sensor_jammer_methods)
 		methods[++methods.len] = list("name" = ssjm.name, "cost" = ssjm.energy_cost, "ref" = "\ref[ssjm]")
@@ -135,33 +141,28 @@
 		"total_cost" = "[ceil(JAMMER_POWER_CONSUMPTION(10))]"
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "suit_sensor_jammer.tmpl", "Sensor Jammer", 300, 640)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	return data
 
-/obj/item/device/suit_sensor_jammer/OnTopic(mob/user, list/href_list, state)
-	if (href_list["enable_jammer"])
+/obj/item/device/suit_sensor_jammer/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if (action == "enable_jammer")
 		enable()
-		return TOPIC_REFRESH
-	if (href_list["disable_jammer"])
+		return TRUE
+	if (action == "disable_jammer")
 		disable()
-		return TOPIC_REFRESH
+		return TRUE
 
-	if (href_list["increase_range"])
+	if (action == "increase_range")
 		set_range(range + 1)
-		return TOPIC_REFRESH
-	if (href_list["decrease_range"])
+		return TRUE
+	if (action == "decrease_range")
 		set_range(range - 1)
-		return TOPIC_REFRESH
+		return TRUE
 
-	if (href_list["select_method"])
-		var/method = locate(href_list["select_method"]) in suit_sensor_jammer_methods
+	if (action == "select_method")
+		var/method = locate(params["select_method"]) in suit_sensor_jammer_methods
 		if(method)
 			set_method(method)
-			return TOPIC_REFRESH
+			return TRUE
 
 /obj/item/device/suit_sensor_jammer/Process(wait)
 	if(bcell)

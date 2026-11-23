@@ -41,7 +41,7 @@
 /obj/machinery/dummy_airlock_controller/proc/open_remote_ui(mob/user)
 	if(master_controller)
 		appearance = master_controller
-		return master_controller.ui_interact(user, state = remote_state)
+		return master_controller.tgui_interact(user)
 
 /obj/machinery/dummy_airlock_controller/powered(chan = -1, area/check_area = null)
 	if(master_controller)

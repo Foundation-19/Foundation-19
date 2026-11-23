@@ -172,11 +172,17 @@
 	read_authorization(W)
 	..()
 
-/obj/machinery/computer/shuttle_control/emergency/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
-	var/data[0]
+/obj/machinery/computer/shuttle_control/emergency/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "EmergencyShuttleConsole", "Shuttle Control", 470, 420)
+		ui.open()
+
+/obj/machinery/computer/shuttle_control/emergency/tgui_data(mob/user)
+	var/data = list()
 	var/datum/shuttle/autodock/ferry/emergency/shuttle = SSshuttle.shuttles[shuttle_tag]
 	if (!istype(shuttle))
-		return
+		return data
 
 	var/shuttle_state
 	switch(shuttle.moving_status)
@@ -200,7 +206,6 @@
 		if(WAIT_FINISH)
 			shuttle_status = "Arriving at destination now."
 
-	//build a list of authorizations
 	var/list/auth_list[req_authorizations]
 
 	if (!emagged)
@@ -208,11 +213,11 @@
 		for (var/dna_hash in authorized)
 			auth_list[i++] = list("auth_name"=authorized[dna_hash], "auth_hash"=dna_hash)
 
-		while (i <= req_authorizations)	//fill up the rest of the list with blank entries
+		while (i <= req_authorizations)
 			auth_list[i++] = list("auth_name"="", "auth_hash"=null)
 	else
 		for (var/i = 1; i <= req_authorizations; i++)
-			auth_list[i] = list("auth_name"="<font color=\"red\">ERROR</font>", "auth_hash"=null)
+			auth_list[i] = list("auth_name"="ERROR", "auth_hash"=null)
 
 	var/has_auth = has_authorization()
 
@@ -228,26 +233,23 @@
 		"auth_list" = auth_list,
 		"has_auth" = has_auth,
 		"user" = debug? user : null,
+		"emagged" = emagged,
 	)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	return data
 
-	if (!ui)
-		ui = new(user, src, ui_key, "escape_shuttle_control_console.tmpl", "Shuttle Control", 470, 420)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+/obj/machinery/computer/shuttle_control/emergency/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-/obj/machinery/computer/shuttle_control/emergency/OnTopic(user, href_list)
-	if(href_list["removeid"])
-		var/dna_hash = href_list["removeid"]
+	if(action == "removeid")
+		var/dna_hash = params["removeid"]
 		authorized -= dna_hash
-		. = TOPIC_REFRESH
+		return TRUE
 
-	else if(!emagged && href_list["scanid"])
-		//They selected an empty entry. Try to scan their id.
-		var/mob/living/carbon/human/H = user
+	else if(!emagged && action == "scanid")
+		var/mob/living/carbon/human/H = usr
 		if (istype(H))
-			if (!read_authorization(H.get_active_hand()))	//try to read what's in their hand first
+			if (!read_authorization(H.get_active_hand()))
 				read_authorization(H.wear_id)
-				. = TOPIC_REFRESH
+		return TRUE

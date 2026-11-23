@@ -71,6 +71,10 @@
 		//Updates the number of stored chemicals for powers
 		handle_changeling()
 
+		// Sanity processing (SCP exposure, traumas, hallucination pressure)
+		if(sanity)
+			sanity.process_sanity()
+
 		//Organs and blood
 		handle_organs()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)

@@ -32,6 +32,7 @@
 	if(istype(H.wear_id, /obj/item/card/id))
 		var/obj/item/card/id/ID = H.wear_id
 		ID.registered_name = "D-[used_numbers[used_numbers.len]]"
+	dclass_register_spawn(H)
 
 // LOGISTICS DEPARTMENT
 /datum/job/qm

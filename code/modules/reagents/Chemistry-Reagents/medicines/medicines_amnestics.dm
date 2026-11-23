@@ -1,3 +1,23 @@
+/proc/apply_amnestic_cure(mob/living/carbon/human/H, amnestic_class)
+	if(!istype(H) || !H.humanStageHandler)
+		return
+	switch(amnestic_class)
+		if("A")
+			var/bluelady_stage = H.humanStageHandler.getStage("BlueLady")
+			if(bluelady_stage && bluelady_stage <= 2)
+				H.cure_bluelady(1)
+		if("B")
+			var/bluelady_stage = H.humanStageHandler.getStage("BlueLady")
+			if(bluelady_stage && bluelady_stage <= 4)
+				H.cure_bluelady(2)
+		if("C")
+			H.cure_bluelady(3)
+			H.cure_scp513()
+			H.cure_scp151()
+		if("E")
+			if(H.humanStageHandler.getStage("BlueLady"))
+				H.humanStageHandler.adjustStage("BlueLady", -2)
+
 /datum/reagent/medicine/amnestics
 	name = "Amnestics"
 	description = "Amnestics are applied to remove or alter memories from a target, often to different degrees."
@@ -20,10 +40,11 @@
 
 /datum/reagent/medicine/amnestics/classa/affect_blood(mob/living/carbon/M, removed)
 
-	if((volume <= 0.55) && !isamnesticized) //when the amnestic is fully metabolized, trigger amnesia
+	if((volume <= 0.55) && !isamnesticized)
 		isamnesticized = TRUE
 		M.visible_message(SPAN_WARNING("[M] looks confused for a moment."))
 		to_chat(M, "<font size='5' color='red'>Your recent memories are fading away... You completely forget the last [round(M.chem_doses[type], 1) * 2] minutes.</font>")
+		apply_amnestic_cure(M, "A")
 
 	if(prob(10))
 		M.adjust_drowsiness(5 SECONDS)
@@ -46,6 +67,7 @@
 		isamnesticized = TRUE
 		M.visible_message(SPAN_WARNING("[M] looks confused."))
 		to_chat(M, "<font size='5' color='red'>Your memories are melting away... You have lost all memory of the last [round(M.chem_doses[type], 1)] days.</font>")
+		apply_amnestic_cure(M, "B")
 
 	if(prob(15))
 		M.adjust_drowsiness(5 SECONDS)
@@ -70,6 +92,7 @@
 		isamnesticized = TRUE
 		M.visible_message(SPAN_WARNING("[M] looks deeply confused."))
 		to_chat(M, "<font size='5' color='red'>Your memories are disappearing rapidly... You completely forget the existence of the anomalous, the Foundation, and anything else supernatural.</font>")
+		apply_amnestic_cure(M, "C")
 
 	M.add_chemical_effect(CE_SEDATE, 1) //sedative logic stolen from chloral hydrate.
 	if (M.chem_doses[type] <= metabolism * threshold)

@@ -94,30 +94,23 @@
 		go_out()
 
 /obj/machinery/atmospherics/unary/cryo_cell/interface_interact(user)
-	ui_interact(user)
+	tgui_interact(user)
 	return TRUE
 
- /**
-  * The ui_interact proc is used to open and update Nano UIs
-  * If ui_interact is not used then the UI will not update correctly
-  * ui_interact is currently defined for /atom/movable (which is inherited by /obj and /mob)
-  *
-  * @param user /mob The mob who is interacting with this ui
-  * @param ui_key string A string key to use for this ui. Allows for multiple unique uis on one obj/mob (defaut value "main")
-  * @param ui /datum/nanoui This parameter is passed by the nanoui process() proc when updating an open ui
-  *
-  * @return nothing
-  */
-/obj/machinery/atmospherics/unary/cryo_cell/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/atmospherics/unary/cryo_cell/tgui_interact(mob/user, datum/tgui/ui)
 	if(user == occupant || user.stat)
 		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CryoCell", "Cryo Cell Control System")
+		ui.open()
 
-	// this is the data which will be sent to the ui
-	var/data[0]
+/obj/machinery/atmospherics/unary/cryo_cell/tgui_data(mob/user)
+	var/list/data = list()
 	data["isOperating"] = on
 	data["hasOccupant"] = occupant ? 1 : 0
 
-	if (occupant)
+	if(occupant)
 		var/cloneloss = "none"
 		var/amount = occupant.getCloneLoss()
 		if(amount > 50)
@@ -138,7 +131,7 @@
 
 	data["cellTemperature"] = round(air_contents.temperature)
 	data["cellTemperatureStatus"] = "good"
-	if(air_contents.temperature > T0C) // if greater than 273.15 kelvin (0 celsius)
+	if(air_contents.temperature > T0C)
 		data["cellTemperatureStatus"] = "bad"
 	else if(air_contents.temperature > 225)
 		data["cellTemperatureStatus"] = "average"
@@ -150,47 +143,33 @@
 	if(beaker)
 		data["beakerLabel"] = beaker.name
 		data["beakerVolume"] = beaker.reagents.total_volume
+	return data
 
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "cryo.tmpl", "Cryo Cell Control System", 520, 410)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(1)
+/obj/machinery/atmospherics/unary/cryo_cell/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(usr == occupant)
+		return
 
-/obj/machinery/atmospherics/unary/cryo_cell/OnTopic(user, href_list)
-	if(user == occupant)
-		return STATUS_CLOSE
-	. = ..()
-
-/obj/machinery/atmospherics/unary/cryo_cell/OnTopic(user, href_list)
-	if(href_list["switchOn"])
-		on = 1
-		update_icon()
-		return TOPIC_REFRESH
-
-	if(href_list["switchOff"])
-		on = 0
-		update_icon()
-		return TOPIC_REFRESH
-
-	if(href_list["ejectBeaker"])
-		if(beaker)
-			beaker.forceMove(get_step(loc, SOUTH))
-			beaker = null
-		return TOPIC_REFRESH
-
-	if(href_list["ejectOccupant"])
-		if(!occupant || isslime(user) || ispAI(user))
-			return TOPIC_HANDLED // don't update UIs attached to this object
-		go_out()
-		return TOPIC_REFRESH
+	switch(action)
+		if("switchOn")
+			on = 1
+			update_icon()
+			return TRUE
+		if("switchOff")
+			on = 0
+			update_icon()
+			return TRUE
+		if("ejectBeaker")
+			if(beaker)
+				beaker.forceMove(get_step(loc, SOUTH))
+				beaker = null
+			return TRUE
+		if("ejectOccupant")
+			if(!occupant || isslime(usr) || ispAI(usr))
+				return
+			go_out()
+			return TRUE
 
 /obj/machinery/atmospherics/unary/cryo_cell/state_transition(decl/machine_construction/default/new_state)
 	. = ..()

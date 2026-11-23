@@ -477,7 +477,7 @@
 			to_chat(usr, "This can only be done on mobs with clients")
 			return
 
-		SSnano.close_uis(H)
+		SStgui.close_uis(H)
 		var/datum/asset/simple/nanoui/asset = get_asset_datum(/datum/asset/simple/nanoui)
 		//Pretend we never recieved this asset
 		H.client.sent_assets -= asset.assets

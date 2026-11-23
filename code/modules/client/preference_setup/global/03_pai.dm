@@ -25,6 +25,64 @@
 
 	candidate.savefile_save(preference_mob())
 
+/datum/category_item/player_setup_item/player_global/pai/get_setup_data(mob/user)
+	var/list/data = list()
+	if(!candidate)
+		candidate = new()
+	data["pai_name"] = candidate.name || ""
+	data["pai_desc"] = candidate.description || ""
+	data["pai_role"] = candidate.role || ""
+	data["pai_ooc"] = candidate.comments || ""
+	data["pai_chassis"] = candidate.chassis
+	data["pai_say_verb"] = candidate.say_verb
+	var/list/chassis_options = list()
+	for(var/chassis in GLOB.possible_chassis)
+		chassis_options += chassis
+	data["chassis_options"] = chassis_options
+	var/list/say_options = list()
+	for(var/verb_opt in GLOB.possible_say_verbs)
+		say_options += verb_opt
+	data["say_verb_options"] = say_options
+	return data
+
+/datum/category_item/player_setup_item/player_global/pai/act_setup(action, list/params, mob/user)
+	if(!candidate)
+		candidate = new()
+
+	if(action == "pai_name")
+		var/t = sanitizeName(input(user, "Enter a name for your pAI", "Global Preference", candidate.name) as text|null, MAX_NAME_LEN, 1)
+		if(t && CanUseTopic(user))
+			candidate.name = t
+		return TRUE
+
+	if(action == "pai_desc")
+		var/t = input(user, "Enter a description for your pAI", "Global Preference", html_decode(candidate.description)) as message|null
+		if(!isnull(t) && CanUseTopic(user))
+			candidate.description = sanitize(t)
+		return TRUE
+
+	if(action == "pai_role")
+		var/t = input(user, "Enter a role for your pAI", "Global Preference", html_decode(candidate.role)) as text|null
+		if(!isnull(t) && CanUseTopic(user))
+			candidate.role = sanitize(t)
+		return TRUE
+
+	if(action == "pai_ooc")
+		var/t = input(user, "Enter any OOC comments", "Global Preference", html_decode(candidate.comments)) as message
+		if(!isnull(t) && CanUseTopic(user))
+			candidate.comments = sanitize(t)
+		return TRUE
+
+	if(action == "pai_chassis")
+		candidate.chassis = input(user, "What would you like to use for your mobile chassis icon?") as null|anything in GLOB.possible_chassis
+		return TRUE
+
+	if(action == "pai_say")
+		candidate.say_verb = input(user, "What theme would you like to use for your speech verbs?") as null|anything in GLOB.possible_say_verbs
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/player_global/pai/content(mob/user)
 	if(!candidate)
 		candidate = new()

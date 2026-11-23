@@ -18,6 +18,45 @@
 		pref.alternate_languages = list()
 	sanitize_alt_languages()
 
+/datum/category_item/player_setup_item/background/languages/get_setup_data(mob/user)
+	var/list/data = list()
+	sanitize_alt_languages()
+	var/list/lang_list = list()
+	if(LAZYLEN(pref.alternate_languages))
+		for(var/i = 1 to pref.alternate_languages.len)
+			var/lang = pref.alternate_languages[i]
+			lang_list += list(list("name" = lang, "required" = free_languages[lang] ? TRUE : FALSE, "index" = i))
+	data["languages"] = lang_list
+	data["can_add"] = pref.alternate_languages.len < MAX_LANGUAGES
+	sanitize_alt_languages()
+	var/list/available_languages = allowed_languages - free_languages
+	data["available_languages"] = list()
+	for(var/L in available_languages)
+		data["available_languages"] += L
+	return data
+
+/datum/category_item/player_setup_item/background/languages/act_setup(action, list/params, mob/user)
+
+	if(action == "remove_language")
+		var/index = text2num(params["index"])
+		pref.alternate_languages.Cut(index, index+1)
+		return TRUE
+
+	else if(action == "add_language")
+		if(pref.alternate_languages.len >= MAX_LANGUAGES)
+			return FALSE
+		sanitize_alt_languages()
+		var/list/available_langs = allowed_languages - free_languages
+		if(!LAZYLEN(available_langs))
+			return FALSE
+		var/new_lang = tgui_input_list(user, "Select an additional language.", "Character Generation", available_langs)
+		if(new_lang)
+			pref.alternate_languages |= new_lang
+			return TRUE
+		return FALSE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/background/languages/content()
 	. = list()
 	. += "<b>Languages</b><br>"

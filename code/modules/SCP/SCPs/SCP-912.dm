@@ -4,13 +4,18 @@
 
 	status_flags = NO_ANTAG
 
+	var/spawn_area
+	var/crime_detection_range = 10
+	var/last_containment_alert = 0
+	var/containment_alert_cooldown = 60 SECONDS
+
 /mob/living/carbon/human/scp912/Initialize(mapload, new_species = "SCP-912")
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"SCP-912", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_SAFE, //Obj Class
-		"912", //Numerical Designation
+		src,
+		"SCP-912",
+		SCP_SAFE,
+		"912",
 		SCP_ROLEPLAY
 	)
 
@@ -18,6 +23,22 @@
 
 	var/decl/hierarchy/outfit/scp912/outfit = outfit_by_type(/decl/hierarchy/outfit/scp912)
 	outfit.equip(src)
+	spawn_area = get_area(src)
+
+/mob/living/carbon/human/scp912/Life()
+	. = ..()
+	if(spawn_area)
+		var/area/current = get_area(src)
+		if(current != spawn_area && SCP && SCP.research && SCP.research.containment_status != SCP_BREACHED)
+			SCP.research.set_containment_status(SCP_BREACHED)
+			if(world.time > last_containment_alert + containment_alert_cooldown)
+				last_containment_alert = world.time
+				for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+					var/datum/job/job = SSjobs.get_by_title(H.job)
+					if(job && (job.department_flag & (COM|SCI|SEC)))
+						to_chat(H, SPAN_WARNING("<b>ALERT:</b> SCP-912 has left its containment area. It may be responding to perceived criminal activity."))
+		else if(current == spawn_area && SCP && SCP.research && SCP.research.containment_status == SCP_BREACHED)
+			SCP.research.set_containment_status(SCP_CONTAINED)
 
 /mob/living/carbon/human/scp912/proc/init_skills()
 	skillset.skill_list = list()

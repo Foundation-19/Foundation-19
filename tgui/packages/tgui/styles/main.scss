@@ -62,10 +62,5 @@
 
 @include meta.load-css('highlight.js/scss/github-dark.scss');
 
-// SCC Theme
-.Layout__content {
-  background-image: url('../assets/bg-scc.svg');
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+// SCP Terminal Theme (default)
+@include meta.load-css('./themes/scp_terminal.scss');

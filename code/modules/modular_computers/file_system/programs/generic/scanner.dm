@@ -59,41 +59,47 @@
 		return 0
 	return 1
 
-/datum/computer_file/program/scanner/Topic(href, href_list)
+/datum/computer_file/program/scanner/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return 1
 
-	if(href_list["connect_scanner"])
-		if(text2num(href_list["connect_scanner"]))
+	if(action == "connect_scanner")
+		if(text2num(params["connect_scanner"]))
 			if(!connect_scanner())
 				to_chat(usr, "Scanner installation failed.")
 		else
 			disconnect_scanner()
 		return 1
 
-	if(href_list["scan"])
+	if(action == "scan")
 		if(check_scanning())
 			metadata_buffer.Cut()
 			var/obj/item/stock_parts/computer/scanner/scanner = computer.scanner
 			scanner.run_scan(usr, src)
 		return 1
 
-	if(href_list["save"])
+	if(action == "save")
 		var/name = sanitize(input(usr, "Enter file name:", "Save As") as text|null)
 		if(!save_scan(name))
 			to_chat(usr, "Scan save failed.")
 
 	if(.)
-		SSnano.update_uis(NM)
+		SStgui.update_uis(NM)
 
 /datum/nano_module/program/scanner
 	name = "Scanner"
 
-/datum/nano_module/program/scanner/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/scanner/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Scanner", name)
+		ui.open()
+
+/datum/nano_module/program/scanner/tgui_data(mob/user)
 	var/list/data = host.initial_data()
 	var/datum/computer_file/program/scanner/prog = program
 	if(!prog.computer)
-		return
+		return data
 	var/obj/item/stock_parts/computer/scanner/scanner = prog.computer.scanner
 	if(scanner)
 		data["scanner_name"] = scanner.name
@@ -107,9 +113,4 @@
 	else
 		data["data_buffer"] = digitalPencode2html(prog.data_buffer)
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "scanner.tmpl", name, 600, 700, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	return data

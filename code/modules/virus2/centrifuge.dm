@@ -23,7 +23,7 @@
 		O.loc = src
 
 		user.visible_message("[user] adds \a [O] to \the [src]!", "You add \a [O] to \the [src]!")
-		GLOB.nanomanager.update_uis(src)
+		SStgui.update_uis(src)
 
 	src.attack_hand(user)
 
@@ -34,12 +34,17 @@
 
 /obj/machinery/computer/centrifuge/attack_hand(mob/user as mob)
 	if(..()) return
-	ui_interact(user)
+	tgui_interact(user)
 
-/obj/machinery/computer/centrifuge/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+/obj/machinery/computer/centrifuge/tgui_interact(mob/user, datum/tgui/ui)
 	user.set_machine(src)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Centrifuge", name)
+		ui.open()
 
-	var/data[0]
+/obj/machinery/computer/centrifuge/tgui_data(mob/user)
+	var/list/data = list()
 	data["antibodies"] = null
 	data["pathogens"] = null
 	data["is_antibody_sample"] = null
@@ -71,11 +76,7 @@
 					data["antibodies"] = antigens2string(A.data["antibodies"], none=null)
 				data["is_antibody_sample"] = 1
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "isolation_centrifuge.tmpl", src.name, 400, 500)
-		ui.set_initial_data(data)
-		ui.open()
+	return data
 
 /obj/machinery/computer/centrifuge/Process()
 	..()
@@ -91,31 +92,34 @@
 		if(isolating == 0)
 			isolate()
 
-/obj/machinery/computer/centrifuge/OnTopic(user, href_list)
-	if (href_list["close"])
-		GLOB.nanomanager.close_user_uis(user, src, "main")
-		return TOPIC_HANDLED
+/obj/machinery/computer/centrifuge/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-	if (href_list["print"])
-		print(user)
-		return TOPIC_HANDLED
+	if(action == "close")
+		SStgui.close_user_uis(usr, src)
+		return TRUE
 
-	if(href_list["isolate"])
+	if(action == "print")
+		print(usr)
+		return TRUE
+
+	if(action == "isolate")
 		var/datum/reagent/blood/B = locate(/datum/reagent/blood) in sample.reagents.reagent_list
 		if (B)
-			var/datum/disease2/disease/virus = locate(href_list["isolate"])
+			var/datum/disease2/disease/virus = locate(params["isolate"])
 			virus2 = virus.getcopy()
 			isolating = 40
 			update_icon()
-		return TOPIC_REFRESH
+		return TRUE
 
-	switch(href_list["action"])
+	switch(action)
 		if ("antibody")
 			var/delay = 20
 			var/datum/reagent/blood/B = locate(/datum/reagent/blood) in sample.reagents.reagent_list
 			if (!B)
 				state("\The [src] buzzes, \"No antibody carrier detected.\"", "blue")
-				return TOPIC_HANDLED
+				return TRUE
 
 			var/has_toxins = locate(/datum/reagent/toxin) in sample.reagents.reagent_list
 			var/has_radium = sample.reagents.has_reagent(/datum/reagent/radium)
@@ -130,13 +134,13 @@
 			playsound(src.loc, 'sounds/machines/juicer.ogg', 50, 1)
 			show_sound_effect(src.loc, soundicon = SFX_ICON_SMALL)
 			update_icon()
-			return TOPIC_REFRESH
+			return TRUE
 
 		if("sample")
 			if(sample)
 				sample.dropInto(loc)
 				sample = null
-			return TOPIC_REFRESH
+			return TRUE
 
 /obj/machinery/computer/centrifuge/proc/cure()
 	if (!sample) return
@@ -148,7 +152,7 @@
 	sample.reagents.remove_reagent(/datum/reagent/blood, amt)
 	sample.reagents.add_reagent(/datum/reagent/antibodies, amt, data)
 
-	GLOB.nanomanager.update_uis(src)
+	SStgui.update_uis(src)
 	update_icon()
 	ping("\The [src] pings, \"Antibody isolated.\"")
 
@@ -158,7 +162,7 @@
 	dish.virus2 = virus2
 	virus2 = null
 
-	GLOB.nanomanager.update_uis(src)
+	SStgui.update_uis(src)
 	update_icon()
 	ping("\The [src] pings, \"Pathogen isolated.\"")
 

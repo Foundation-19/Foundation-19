@@ -45,14 +45,20 @@
 /mob/living/simple_animal/hostile/retaliate/scp1507/Initialize()
 	. = ..()
 	SCP = new /datum/scp(
-		src, // Ref to actual SCP atom
-		"pink plastic flamingo", //Name (Should not be the scp desg, more like what it can be described as to viewers)
-		SCP_EUCLID, //Obj Class
-		"1507", //Numerical Designation
+		src,
+		"pink plastic flamingo",
+		SCP_EUCLID,
+		"1507",
 		SCP_PLAYABLE
 	)
 	name += " ([spawn_count])"
 	spawn_count += 1
+
+/mob/living/simple_animal/hostile/retaliate/scp1507/proc/FlockCall()
+	for(var/mob/living/simple_animal/hostile/retaliate/scp1507/F in range(10, src))
+		if(F == src || F.stat)
+			continue
+		F.ai_holder.set_stance(STANCE_ATTACK)
 
 /mob/living/simple_animal/hostile/retaliate/scp1507/lay_down()
 	..()

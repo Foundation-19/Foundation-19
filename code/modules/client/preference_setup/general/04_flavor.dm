@@ -41,6 +41,52 @@
 	if(!istype(pref.flavor_texts))        pref.flavor_texts = list()
 	if(!istype(pref.flavour_texts_robot)) pref.flavour_texts_robot = list()
 
+/datum/category_item/player_setup_item/physical/flavor/get_setup_data(mob/user)
+	var/list/data = list()
+	data["flavor_general"] = pref.flavor_texts["general"] || ""
+	data["flavor_head"] = pref.flavor_texts["head"] || ""
+	data["flavor_face"] = pref.flavor_texts["face"] || ""
+	data["flavor_eyes"] = pref.flavor_texts["eyes"] || ""
+	data["flavor_torso"] = pref.flavor_texts["torso"] || ""
+	data["flavor_arms"] = pref.flavor_texts["arms"] || ""
+	data["flavor_hands"] = pref.flavor_texts["hands"] || ""
+	data["flavor_legs"] = pref.flavor_texts["legs"] || ""
+	data["flavor_feet"] = pref.flavor_texts["feet"] || ""
+	data["flavour_robot_default"] = pref.flavour_texts_robot["Default"] || ""
+	var/list/robot_modules = list()
+	for(var/module in SSrobots.all_module_names)
+		robot_modules += module
+	data["robot_modules"] = robot_modules
+	return data
+
+/datum/category_item/player_setup_item/physical/flavor/act_setup(action, list/params, mob/user)
+
+	if(action == "set_flavor_text")
+		var/slot = params["slot"]
+		if(slot == "general")
+			var/msg = sanitize(input(usr, "Give a general description of your character. This will be shown regardless of clothing. Do not include OOC information here.", "Flavor Text", html_decode(pref.flavor_texts["general"])) as message, extra = 0)
+			if(CanUseTopic(user))
+				pref.flavor_texts["general"] = msg
+		else
+			var/msg = sanitize(input(usr, "Set the flavor text for your [slot].", "Flavor Text", html_decode(pref.flavor_texts[slot])) as message, extra = 0)
+			if(CanUseTopic(user))
+				pref.flavor_texts[slot] = msg
+		return TRUE
+
+	else if(action == "set_flavour_robot")
+		var/slot = params["slot"]
+		if(slot == "Default")
+			var/msg = sanitize(input(usr, "Set the default flavour text for your robot. It will be used for any module without individual setting.", "Flavour Text", html_decode(pref.flavour_texts_robot["Default"])) as message, extra = 0)
+			if(CanUseTopic(user))
+				pref.flavour_texts_robot["Default"] = msg
+		else
+			var/msg = sanitize(input(usr, "Set the flavour text for your robot with [slot] module. If you leave this empty, default flavour text will be used for this module.", "Flavour Text", html_decode(pref.flavour_texts_robot[slot])) as message, extra = 0)
+			if(CanUseTopic(user))
+				pref.flavour_texts_robot[slot] = msg
+		return TRUE
+
+	return FALSE
+
 /datum/category_item/player_setup_item/physical/flavor/content(mob/user)
 	. += "<b>Flavor:</b><br>"
 	. += "<a href='byond://?src=\ref[src];flavor_text=open'>Set Flavor Text</a><br/>"
