@@ -134,7 +134,7 @@
 		else if (user.unEquip(I, src))
 			container = I
 			update_icon()
-			updateDialog()
+			SStgui.update_uis(src)
 
 	else if (is_type_in_list(I, storage_types))
 		var/obj/item/storage/S = I
@@ -161,7 +161,7 @@
 					"\The [user] empties things from \the [S] into \the [src].",
 					"You empty [english_list(removed)] from \the [S] into \the [src][full ? ", filling it to capacity" : ""]."
 				)
-				updateDialog()
+				SStgui.update_uis(src)
 			else
 				to_chat(user, SPAN_WARNING("Nothing more in \the [S] will go into \the [src]."))
 
@@ -176,61 +176,62 @@
 
 	else if (user.unEquip(I, src))
 		items += I
-		updateUsrDialog()
+		SStgui.update_uis(src)
 
 	return TRUE
 
 
 /obj/machinery/reagentgrinder/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
 
-/obj/machinery/reagentgrinder/interact(mob/user)
+/obj/machinery/reagentgrinder/tgui_interact(mob/user, datum/tgui/ui)
 	if (inoperable())
 		return
-	user.set_machine(src)
-	var/window = list()
-	if (grinding)
-		window += "Working, please wait..."
-	else
-		window += "<b>Processing Hopper</b>"
-		if (!items.len)
-			window += " (empty)"
-		else
-			window += "<br><a href='byond://?src=\ref[src];action=grind'>(grind)</a> <a href='byond://?src=\ref[src];action=eject'>(eject)</a><br>"
-			for (var/obj/item/I in items)
-				window += "<br>\An [I]"
-				if (isstack(I))
-					var/obj/item/stack/material/S = I
-					window += " ([S.get_amount()])"
-		window += "<br><br><b>Chemical Container</b>"
-		if (!container)
-			window += " (not attached)"
-		else
-			window += " (\an [container], [PERCENT(container.reagents.total_volume, container.reagents.maximum_volume, 1)]% full)"
-			window += "<br><a href='byond://?src=\ref[src];action=detach'>(detach)</a><br>"
-			for (var/datum/reagent/R in container.reagents.reagent_list)
-				window += "<br>[R.volume] - [R.name]"
-
-	window = strip_improper("<head><title>[name]</title></head><tt>[JOINTEXT(window)]</tt>")
-	var/datum/browser/popup = new(user, "reagentgrinder", "Reagent Grinder")
-	popup.set_content(window)
-	popup.open()
-	onclose(user, "reagentgrinder")
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "ReagentGrinder", name)
+		ui.open()
 
 
-/obj/machinery/reagentgrinder/OnTopic(user, href_list)
-	if (user && href_list && href_list["action"])
-		switch (href_list["action"])
-			if ("grind")
-				grind(user)
-			if ("eject")
-				eject()
-			if ("detach")
-				detach(user)
-		interact(user)
-		return TOPIC_REFRESH
+/obj/machinery/reagentgrinder/tgui_data(mob/user)
+	var/list/data = list()
+	data["grinding"] = grinding
+	var/list/item_list = list()
+	for (var/obj/item/I in items)
+		var/list/entry = list("name" = capitalize(I.name))
+		if (isstack(I))
+			var/obj/item/stack/S = I
+			entry["amount"] = S.get_amount()
+		item_list += list(entry)
+	data["items"] = item_list
+	data["has_container"] = container ? 1 : 0
+	if (container)
+		data["container_name"] = capitalize(container.name)
+		data["container_volume"] = container.reagents.total_volume
+		data["container_max"] = container.reagents.maximum_volume
+		var/list/reagent_list = list()
+		for (var/datum/reagent/R in container.reagents.reagent_list)
+			reagent_list += list(list("name" = R.name, "volume" = R.volume))
+		data["reagents"] = reagent_list
+	return data
+
+
+/obj/machinery/reagentgrinder/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if (..())
+		return TRUE
+	switch (action)
+		if ("grind")
+			grind(usr)
+			return TRUE
+		if ("eject")
+			eject()
+			return TRUE
+		if ("detach")
+			detach(usr)
+			return TRUE
+	return FALSE
 
 
 /obj/machinery/reagentgrinder/AltClick(mob/user)

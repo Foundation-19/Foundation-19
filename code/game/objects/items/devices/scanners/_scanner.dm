@@ -22,9 +22,35 @@
 	show_menu(user)
 
 /obj/item/device/scanner/proc/show_menu(mob/user)
-	var/datum/browser/popup = new(user, "scanner", scan_title, window_width, window_height)
-	popup.set_content("[get_header()]<hr>[scan_data]")
-	popup.open()
+	tgui_interact(user)
+
+/obj/item/device/scanner/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "HandScanner", scan_title ? scan_title : "[capitalize(name)] scan")
+		ui.open()
+
+/obj/item/device/scanner/tgui_data(mob/user)
+	var/list/data = list()
+	data["scan_title"] = scan_title
+	data["scan_data"] = scan_data
+	data["width"] = window_width
+	data["height"] = window_height
+	return data
+
+/obj/item/device/scanner/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("print")
+			print_report(usr)
+			return TRUE
+		if("clear")
+			to_chat(usr, "You clear data buffer on [src].")
+			scan_data = null
+			scan_title = null
+			return TRUE
+	return FALSE
 
 /obj/item/device/scanner/proc/get_header()
 	return "<a href='byond://?src=\ref[src];print=1'>Print Report</a><a href='byond://?src=\ref[src];clear=1'>Clear data</a>"
@@ -70,16 +96,6 @@
 	if (user.incapacitated())
 		return
 	print_report(user)
-
-/obj/item/device/scanner/OnTopic(user, list/href_list)
-	if(href_list["print"])
-		print_report(user)
-		return 1
-	if(href_list["clear"])
-		to_chat(user, "You clear data buffer on [src].")
-		scan_data = null
-		scan_title = null
-		return 1
 
 /obj/item/device/scanner/proc/print_report(mob/living/user)
 	if(!scan_data)

@@ -49,7 +49,7 @@
 	. = ..()
 
 	if(over == usr)
-		interact(usr)
+		tgui_interact(usr)
 		return
 
 	var/turf/T = get_turf(over)
@@ -93,50 +93,41 @@
 	update_icon()
 
 /obj/item/storage/slide_projector/attack_self(mob/user)
-	interact(user)
+	tgui_interact(user)
 
-/obj/item/storage/slide_projector/interact(mob/user)
-	var/data = list()
-	if(projection)
-		data += "<a href='byond://?src=\ref[src];stop_projector=1'>Disable projector</a>"
-	else
-		data += "Projector inactive"
+/obj/item/storage/slide_projector/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "SlideProjector", "Slide Projector")
+		ui.open()
 
-	var/table = list("<table><tr><th>#</th><th>SLIDE</th><th>SHOW</th></tr>")
+/obj/item/storage/slide_projector/tgui_data(mob/user)
+	var/list/data = list()
+	data["projecting"] = projection ? TRUE : FALSE
+	var/list/slides = list()
 	var/i = 1
 	for(var/obj/item/I in contents)
-		table += "<tr><td>#[i]</td>"
-		if(I == current_slide)
-			table += "<td><b>[I.name]</b></td><td>SHOWING</td>"
-		else
-			table += "<td>[I.name]</td><td><a href='byond://?src=\ref[src];set_active=[i]'>SHOW</a></td>"
-		table += "</tr>"
+		slides += list(list("index" = i, "name" = I.name, "active" = (I == current_slide)))
 		i++
-	table += "</table>"
-	data += jointext(table,null)
-	var/datum/browser/popup = new(user, "slides\ref[src]", "Slide Projector")
-	popup.set_content(jointext(data, "<br>"))
-	popup.open()
+	data["slides"] = slides
+	return data
 
-/obj/item/storage/slide_projector/OnTopic(mob/user, href_list, datum/topic_state/state)
-	. = ..()
-	if(.)
-		return
-	if(href_list["stop_projector"])
-		if(!projection)
-			return TOPIC_HANDLED
-		stop_projecting()
-		. = TOPIC_REFRESH
-
-	if(href_list["set_active"])
-		var/index = text2num(href_list["set_active"])
-		if(index < 1 || index > contents.len)
-			return TOPIC_HANDLED
-		set_slide(contents[index])
-		. = TOPIC_REFRESH
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
+/obj/item/storage/slide_projector/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("stop_projector")
+			if(!projection)
+				return TRUE
+			stop_projecting()
+			return TRUE
+		if("set_active")
+			var/index = text2num(params["index"])
+			if(index < 1 || index > contents.len)
+				return TRUE
+			set_slide(contents[index])
+			return TRUE
+	return FALSE
 
 /obj/effect/projection
 	name = "projected slide"

@@ -45,41 +45,67 @@
 		return ..()
 
 /obj/item/anodevice/attack_self(mob/user as mob)
-	return src.interact(user)
+	tgui_interact(user)
 
-/obj/item/anodevice/interact(mob/user)
-	var/dat = "<b>Anomalous Materials Energy Utiliser</b><br>"
+/obj/item/anodevice/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "DeviceBattery", name)
+		ui.open()
+
+/obj/item/anodevice/tgui_data(mob/user)
+	var/list/data = list()
+	data["activated"] = activated
+	data["has_battery"] = inserted_battery ? 1 : 0
+	data["duration"] = duration / 10
+	data["interval"] = interval / 10
 	if(inserted_battery)
-		if(activated)
-			dat += "Device active.<br>"
+		data["battery_name"] = inserted_battery.name
+		data["artifact_id"] = inserted_battery.battery_effect?.artifact_id ? inserted_battery.battery_effect.artifact_id : "NA"
+		data["stored_charge"] = inserted_battery.stored_charge
+		data["capacity"] = inserted_battery.capacity
+		data["time_left"] = round(max((time_end - last_process) / 10, 0))
+	return data
 
-		dat += "[inserted_battery] inserted, anomaly ID: [(inserted_battery.battery_effect?.artifact_id) ? inserted_battery.battery_effect.artifact_id : "NA"]<BR>"
-		dat += "<b>Charge:</b> [inserted_battery.stored_charge] / [inserted_battery.capacity]<BR>"
-		dat += "<b>Time left activated:</b> [round(max((time_end - last_process) / 10, 0))]<BR>"
-		if(activated)
-			dat += "<a href='byond://?src=\ref[src];shutdown=1'>Shutdown</a><br>"
-		else
-			dat += "<A href='byond://?src=\ref[src];startup=1'>Start</a><BR>"
-		dat += "<BR>"
-
-		dat += "<b>Activate duration (sec):</b> <A href='byond://?src=\ref[src];changetime=-100;duration=1'>--</a> <A href='byond://?src=\ref[src];changetime=-10;duration=1'>-</a> [duration/10] <A href='byond://?src=\ref[src];changetime=10;duration=1'>+</a> <A href='byond://?src=\ref[src];changetime=100;duration=1'>++</a><BR>"
-		dat += "<b>Activate interval (sec):</b> <A href='byond://?src=\ref[src];changetime=-100;interval=1'>--</a> <A href='byond://?src=\ref[src];changetime=-10;interval=1'>-</a> [interval/10] <A href='byond://?src=\ref[src];changetime=10;interval=1'>+</a> <A href='byond://?src=\ref[src];changetime=100;interval=1'>++</a><BR>"
-		dat += "<br>"
-		dat += "<A href='byond://?src=\ref[src];ejectbattery=1'>Eject battery</a><BR>"
-	else
-		dat += "Please insert battery<br>"
-
-	dat += "<hr>"
-	dat += "<a href='byond://?src=\ref[src];close=1'>Close</a>"
-
-	var/datum/browser/popup = new(user, "anodevice", "Anomaly Power Utilizer", 400, 500)
-	popup.set_content(dat)
-	popup.open()
-	user.set_machine(src)
-	onclose(user, "anodevice")
+/obj/item/anodevice/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("changetime")
+			var/timedif = text2num(params["changetime"])
+			if(params["duration"])
+				duration += timedif
+				//max 30 sec duration
+				duration = min(max(duration, 0), 300)
+				if(activated)
+					time_end += timedif
+			else if(params["interval"])
+				interval += timedif
+				//max 10 sec interval
+				interval = min(max(interval, 0), 100)
+			return TRUE
+		if("startup")
+			if(inserted_battery && inserted_battery.battery_effect && (inserted_battery.stored_charge > 0) )
+				activated = 1
+				last_process = world.time
+				src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] whirrs."), SPAN_NOTICE("[icon2html(src, src)] You hear something whirr."))
+				if(!inserted_battery.battery_effect.activated)
+					inserted_battery.battery_effect.ToggleActivate(1)
+				time_end = world.time + duration
+			return TRUE
+		if("shutdown")
+			activated = 0
+			return TRUE
+		if("ejectbattery")
+			shutdown_emission()
+			inserted_battery.dropInto(loc)
+			inserted_battery = null
+			UpdateSprite()
+			return TRUE
+	return FALSE
 
 /obj/item/anodevice/Process()
-	updateSelfDialog()
+	SStgui.update_uis(src)
 	if(activated)
 		if(inserted_battery && inserted_battery.battery_effect && (inserted_battery.stored_charge > 0) )
 			//make sure the effect is active
@@ -148,48 +174,6 @@
 			inserted_battery.battery_effect.ToggleActivate(1)
 		if(inserted_battery.stored_charge <= 0)
 			inserted_battery.battery_effect = null
-
-/obj/item/anodevice/Topic(user, href_list, state = GLOB.inventory_state)
-	..()
-
-/obj/item/anodevice/OnTopic(user, href_list)
-	if(href_list["changetime"])
-		var/timedif = text2num(href_list["changetime"])
-		if(href_list["duration"])
-			duration += timedif
-			//max 30 sec duration
-			duration = min(max(duration, 0), 300)
-			if(activated)
-				time_end += timedif
-		else if(href_list["interval"])
-			interval += timedif
-			//max 10 sec interval
-			interval = min(max(interval, 0), 100)
-		. = TOPIC_REFRESH
-	else if(href_list["startup"])
-		if(inserted_battery && inserted_battery.battery_effect && (inserted_battery.stored_charge > 0) )
-			activated = 1
-			last_process = world.time
-			src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] whirrs."), SPAN_NOTICE("[icon2html(src, src)] You hear something whirr."))
-			if(!inserted_battery.battery_effect.activated)
-				inserted_battery.battery_effect.ToggleActivate(1)
-			time_end = world.time + duration
-		. = TOPIC_REFRESH
-	else if(href_list["shutdown"])
-		activated = 0
-		. = TOPIC_REFRESH
-	else if(href_list["ejectbattery"])
-		shutdown_emission()
-		inserted_battery.dropInto(loc)
-		inserted_battery = null
-		UpdateSprite()
-		. = TOPIC_REFRESH
-	if(href_list["close"])
-		close_browser(user, "window=anodevice")
-		. = TOPIC_HANDLED
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
 
 /obj/item/anodevice/proc/UpdateSprite()
 	if(!inserted_battery)

@@ -129,62 +129,47 @@
 	return ..()
 
 /obj/item/device/integrated_circuit_printer/attack_self(mob/user)
-	interact(user)
+	tgui_interact(user)
 
-/obj/item/device/integrated_circuit_printer/interact(mob/user)
+/obj/item/device/integrated_circuit_printer/tgui_interact(mob/user, datum/tgui/ui)
 	if(!(in_range(src, user) || issilicon(user)))
 		return
 
 	if(isnull(current_category))
 		current_category = SScircuit.circuit_fabricator_recipe_list[1]
 
-	//Preparing the browser
-	var/datum/browser/popup = new(user, "printernew", "Integrated Circuit Printer", 800, 630) // Set up the popup browser window
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CircuitPrinter", "Integrated Circuit Printer")
+		ui.open()
 
-	var/list/HTML = list()
-	HTML += "<center><h2>Integrated Circuit Printer</h2></center><br>"
-	if(debug)
-		HTML += "<center><h3>DEBUG PRINTER -- Infinite materials. Cloning available.</h3></center>"
-	else
-		HTML += "Materials: "
-		var/list/dat = list()
-		for(var/material in materials)
-			var/material/material_datum = SSmaterials.get_material_by_name(material)
-			dat += "[materials[material]]/[metal_max] [material_datum.display_name]"
-		HTML += jointext(dat, "; ")
-		HTML += ".<br><br>"
+/obj/item/device/integrated_circuit_printer/tgui_data(mob/user)
+	var/list/data = list()
+	data["debug"] = debug
+	data["upgraded"] = upgraded
+	data["can_clone"] = can_clone
+	data["fast_clone"] = fast_clone
+	data["cloning"] = cloning
+	data["has_program"] = program ? TRUE : FALSE
+	data["current_category"] = current_category
+	data["allow_ic_printing"] = config.allow_ic_printing ? TRUE : FALSE
 
-	if(config.allow_ic_printing || debug)
-		HTML += "Assembly cloning: [can_clone ? (fast_clone ? "Instant" : "Available") : "Unavailable"].<br>"
+	var/list/material_list = list()
+	for(var/material in materials)
+		var/material/material_datum = SSmaterials.get_material_by_name(material)
+		material_list += list(list(
+			"amount" = materials[material],
+			"max" = metal_max,
+			"name" = material_datum.display_name,
+		))
+	data["materials"] = material_list
 
-	HTML += "Circuits available: [upgraded || debug ? "Advanced":"Regular"]."
-	if(!upgraded)
-		HTML += "<br>Crossed out circuits mean that the printer is not sufficiently upgraded to create that circuit."
-
-	HTML += "<hr>"
-	if((can_clone && config.allow_ic_printing) || debug)
-		HTML += "Here you can load script for your assembly.<br>"
-		if(!cloning)
-			HTML += " <A href='byond://?src=\ref[src];print=load'>{Load Program}</a> "
-		else
-			HTML += " {Load Program}"
-		if(!program)
-			HTML += " {[fast_clone ? "Print" : "Begin Printing"] Assembly}"
-		else if(cloning)
-			HTML += " <A href='byond://?src=\ref[src];print=cancel'>{Cancel Print}</a>"
-		else
-			HTML += " <A href='byond://?src=\ref[src];print=print'>{[fast_clone ? "Print" : "Begin Printing"] Assembly}</a>"
-
-		HTML += "<br><hr>"
-	HTML += "Categories:"
+	var/list/categories = list()
 	for(var/category in SScircuit.circuit_fabricator_recipe_list)
-		if(category != current_category)
-			HTML += " <a href='byond://?src=\ref[src];category=[category]'>\[[category]\]</a> "
-		else // Bold the button if it's already selected.
-			HTML += " <b>\[[category]\]</b> "
-	HTML += "<hr>"
-	HTML += "<center><h4>[current_category]</h4></center>"
+		categories += category
+	data["categories"] = categories
 
+	var/list/circuits = list()
 	var/list/current_list = SScircuit.circuit_fabricator_recipe_list[current_category]
 	for(var/path in current_list)
 		var/obj/O = path
@@ -193,132 +178,136 @@
 			var/obj/item/integrated_circuit/IC = path
 			if((initial(IC.spawn_flags) & IC_SPAWN_RESEARCH) && (!(initial(IC.spawn_flags) & IC_SPAWN_DEFAULT)) && !upgraded)
 				can_build = FALSE
-		if(can_build)
-			HTML += "<A href='byond://?src=\ref[src];build=\ref[path]'>\[[initial(O.name)]\]</A>: [initial(O.desc)]<br>"
-		else
-			HTML += "<s>\[[initial(O.name)]\]</s>: [initial(O.desc)]<br>"
+		circuits += list(list(
+			"name" = initial(O.name),
+			"desc" = initial(O.desc),
+			"path" = "[path]",
+			"can_build" = can_build,
+		))
+	data["circuits"] = circuits
+	return data
 
-	popup.set_content(JOINTEXT(HTML))
-	popup.open()
-
-/obj/item/device/integrated_circuit_printer/Topic(href, href_list)
+/obj/item/device/integrated_circuit_printer/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(!check_interactivity(usr))
-		return
+		return TRUE
 	if(..())
 		return TRUE
 	add_fingerprint(usr)
 
-	if(href_list["category"])
-		current_category = href_list["category"]
-
-	if(href_list["build"])
-		var/build_type = locate(href_list["build"])
-		if(!build_type || !ispath(build_type))
+	switch(action)
+		if("category")
+			current_category = params["category"]
 			return TRUE
+		if("build")
+			var/build_type = text2path(params["path"])
+			if(!build_type || !ispath(build_type))
+				return TRUE
 
-		var/list/cost
-		if(ispath(build_type, /obj/item/device/electronic_assembly))
-			var/obj/item/device/electronic_assembly/E = SScircuit.cached_assemblies[build_type]
-			cost = E.matter
-		else if(ispath(build_type, /obj/item/integrated_circuit))
-			var/obj/item/integrated_circuit/IC = SScircuit.cached_components[build_type]
-			cost = IC.matter
-		else if(!(build_type in SScircuit.circuit_fabricator_recipe_list["Tools"]))
-			return
+			var/list/cost
+			if(ispath(build_type, /obj/item/device/electronic_assembly))
+				var/obj/item/device/electronic_assembly/E = SScircuit.cached_assemblies[build_type]
+				cost = E.matter
+			else if(ispath(build_type, /obj/item/integrated_circuit))
+				var/obj/item/integrated_circuit/IC = SScircuit.cached_components[build_type]
+				cost = IC.matter
+			else if(!(build_type in SScircuit.circuit_fabricator_recipe_list["Tools"]))
+				return TRUE
 
-		if(!debug && !subtract_material_costs(cost, usr))
-			return
+			if(!debug && !subtract_material_costs(cost, usr))
+				return TRUE
 
-		var/obj/item/built = new build_type(get_turf(src))
-		usr.put_in_hands(built)
+			var/obj/item/built = new build_type(get_turf(src))
+			usr.put_in_hands(built)
 
-		if(istype(built, /obj/item/device/electronic_assembly))
-			var/obj/item/device/electronic_assembly/E = built
-			E.creator = key_name(usr)
-			E.opened = TRUE
-			E.update_icon()
-		to_chat(usr, SPAN_NOTICE("[capitalize(built.name)] printed."))
-		playsound(src, 'sounds/items/jaws_pry.ogg', 50, TRUE)
+			if(istype(built, /obj/item/device/electronic_assembly))
+				var/obj/item/device/electronic_assembly/E = built
+				E.creator = key_name(usr)
+				E.opened = TRUE
+				E.update_icon()
+			to_chat(usr, SPAN_NOTICE("[capitalize(built.name)] printed."))
+			playsound(src, 'sounds/items/jaws_pry.ogg', 50, TRUE)
+			return TRUE
+		if("print")
+			if(!config.allow_ic_printing && !debug)
+				to_chat(usr, SPAN_WARNING("Your facility has disabled printing of custom circuitry due to recent allegations of copyright infringement."))
+				return TRUE
+			if(!can_clone) // Copying and printing ICs is cloning
+				to_chat(usr, SPAN_WARNING("This printer does not have the cloning upgrade."))
+				return TRUE
+			switch(params["mode"])
+				if("load")
+					if(cloning)
+						return TRUE
+					var/input = usr.get_input("Put your code there:", "loading", null, MOB_INPUT_MESSAGE, src)
+					if(cloning)
+						return TRUE
+					if(!input)
+						program = null
+						return TRUE
 
-	if(href_list["print"])
-		if(!config.allow_ic_printing && !debug)
-			to_chat(usr, SPAN_WARNING("Your facility has disabled printing of custom circuitry due to recent allegations of copyright infringement."))
-			return
-		if(!can_clone) // Copying and printing ICs is cloning
-			to_chat(usr, SPAN_WARNING("This printer does not have the cloning upgrade."))
-			return
-		switch(href_list["print"])
-			if("load")
-				if(cloning)
-					return
-				var/input = usr.get_input("Put your code there:", "loading", null, MOB_INPUT_MESSAGE, src)
-				if(cloning)
-					return
-				if(!input)
-					program = null
-					return
+					var/validation = SScircuit.validate_electronic_assembly(input)
 
-				var/validation = SScircuit.validate_electronic_assembly(input)
+					// Validation error codes are returned as text.
+					if(istext(validation))
+						to_chat(usr, SPAN_WARNING("Error: [validation]"))
+						return TRUE
+					else if(islist(validation))
+						program = validation
+						to_chat(usr, SPAN_NOTICE("This is a valid program for [program["assembly"]["type"]]."))
+						if(program["requires_upgrades"])
+							if(upgraded)
+								to_chat(usr, SPAN_NOTICE("It uses advanced component designs."))
+							else
+								to_chat(usr, SPAN_WARNING("It uses unknown component designs. Printer upgrade is required to proceed."))
+						if(program["unsupported_circuit"])
+							to_chat(usr, SPAN_WARNING("This program uses components not supported by the specified assembly. Please change the assembly type in the save file to a supported one."))
+						to_chat(usr, SPAN_NOTICE("Used space: [program["used_space"]]/[program["max_space"]]."))
+						to_chat(usr, SPAN_NOTICE("Complexity: [program["complexity"]]/[program["max_complexity"]]."))
+						to_chat(usr, SPAN_NOTICE("Cost: [json_encode(program["cost"])]."))
+					return TRUE
 
-				// Validation error codes are returned as text.
-				if(istext(validation))
-					to_chat(usr, SPAN_WARNING("Error: [validation]"))
-					return
-				else if(islist(validation))
-					program = validation
-					to_chat(usr, SPAN_NOTICE("This is a valid program for [program["assembly"]["type"]]."))
-					if(program["requires_upgrades"])
-						if(upgraded)
-							to_chat(usr, SPAN_NOTICE("It uses advanced component designs."))
-						else
-							to_chat(usr, SPAN_WARNING("It uses unknown component designs. Printer upgrade is required to proceed."))
-					if(program["unsupported_circuit"])
+				if("print")
+					if(!program || cloning)
+						return TRUE
+
+					if(program["requires_upgrades"] && !upgraded && !debug)
+						to_chat(usr, SPAN_WARNING("This program uses unknown component designs. Printer upgrade is required to proceed."))
+						return TRUE
+					if(program["unsupported_circuit"] && !debug)
 						to_chat(usr, SPAN_WARNING("This program uses components not supported by the specified assembly. Please change the assembly type in the save file to a supported one."))
-					to_chat(usr, SPAN_NOTICE("Used space: [program["used_space"]]/[program["max_space"]]."))
-					to_chat(usr, SPAN_NOTICE("Complexity: [program["complexity"]]/[program["max_complexity"]]."))
-					to_chat(usr, SPAN_NOTICE("Cost: [json_encode(program["cost"])]."))
-
-			if("print")
-				if(!program || cloning)
-					return
-
-				if(program["requires_upgrades"] && !upgraded && !debug)
-					to_chat(usr, SPAN_WARNING("This program uses unknown component designs. Printer upgrade is required to proceed."))
-					return
-				if(program["unsupported_circuit"] && !debug)
-					to_chat(usr, SPAN_WARNING("This program uses components not supported by the specified assembly. Please change the assembly type in the save file to a supported one."))
-					return
-				else if(fast_clone)
-					var/list/cost = program["cost"]
-					if(debug || subtract_material_costs(cost, usr))
+						return TRUE
+					else if(fast_clone)
+						var/list/cost = program["cost"]
+						if(debug || subtract_material_costs(cost, usr))
+							cloning = TRUE
+							print_program(usr)
+					else
+						var/list/cost = program["cost"]
+						if(!subtract_material_costs(cost, usr))
+							return TRUE
+						var/cloning_time = 0
+						for(var/material in cost)
+							cloning_time += cost[material]
+						cloning_time = round(cloning_time/15)
+						cloning_time = min(cloning_time, MAX_CIRCUIT_CLONE_TIME)
 						cloning = TRUE
-						print_program(usr)
-				else
-					var/list/cost = program["cost"]
-					if(!subtract_material_costs(cost, usr))
-						return
-					var/cloning_time = 0
+						to_chat(usr, "<span class='notice'>You begin printing a custom assembly. This will take approximately [round(cloning_time/10)] seconds. You can still print \
+						off normal parts during this time.</span>")
+						playsound(src, 'sounds/items/poster_being_created.ogg', 50, TRUE)
+						addtimer(CALLBACK(src, PROC_REF(print_program), usr), cloning_time)
+					return TRUE
+
+				if("cancel")
+					if(!cloning || !program)
+						return TRUE
+
+					to_chat(usr, SPAN_NOTICE("Cloning has been canceled. Cost has been refunded."))
+					cloning = FALSE
+					var/cost = program["cost"]
 					for(var/material in cost)
-						cloning_time += cost[material]
-					cloning_time = round(cloning_time/15)
-					cloning_time = min(cloning_time, MAX_CIRCUIT_CLONE_TIME)
-					cloning = TRUE
-					to_chat(usr, "<span class='notice'>You begin printing a custom assembly. This will take approximately [round(cloning_time/10)] seconds. You can still print \
-					off normal parts during this time.</span>")
-					playsound(src, 'sounds/items/poster_being_created.ogg', 50, TRUE)
-					addtimer(CALLBACK(src, PROC_REF(print_program), usr), cloning_time)
-
-			if("cancel")
-				if(!cloning || !program)
-					return
-
-				to_chat(usr, SPAN_NOTICE("Cloning has been canceled. Cost has been refunded."))
-				cloning = FALSE
-				var/cost = program["cost"]
-				for(var/material in cost)
-					materials[material] = min(metal_max, materials[material] + cost[material])
-
-	interact(usr)
+						materials[material] = min(metal_max, materials[material] + cost[material])
+					return TRUE
+	return FALSE
 
 /obj/item/device/integrated_circuit_printer/proc/subtract_material_costs(list/cost, mob/user)
 	for(var/material in cost)

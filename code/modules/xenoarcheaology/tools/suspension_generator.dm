@@ -14,7 +14,7 @@
 
 /obj/machinery/suspension_gen/Process()
 	if(suspension_field)
-		updateDialog()
+		SStgui.update_uis(src)
 		if(stat & NOPOWER)
 			deactivate()
 			return
@@ -35,52 +35,48 @@
 				suspension_field.add_overlay("shield2")
 			I.forceMove(suspension_field)
 
-/obj/machinery/suspension_gen/interact(mob/user)
-	user.set_machine(src)
-	var/dat = "<b>Multi-phase mobile suspension field generator MK II \"Steadfast\"</b><br>"
+/obj/machinery/suspension_gen/interface_interact(mob/user)
+	tgui_interact(user)
+	return TRUE
+
+/obj/machinery/suspension_gen/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SuspensionGenerator", name)
+		ui.open()
+
+/obj/machinery/suspension_gen/tgui_data(mob/user)
+	var/list/data = list()
 	var/obj/item/cell/cell = get_cell()
 	if(cell)
-		var/colour = "red"
 		var/percent = cell.percent()
+		var/colour = "red"
 		if(percent > 66)
 			colour = "green"
 		else if(percent > 33)
 			colour = "orange"
-		dat += "<b>Energy cell</b>: <font color='[colour]'>[percent]%</font><br>"
+		data["cell"] = list("percent" = percent, "colour" = colour)
 	else
-		dat += "<b>Energy cell</b>: None<br>"
-	dat += "<b><A href='byond://?src=\ref[src];toggle_field=1'>[suspension_field ? "Disable" : "Enable"] field</a></b><br>"
-	dat += "<hr>"
-	dat += "<hr>"
-	dat += "<font style='color: cyan;'><b>Always wear safety gear and consult a field manual before operation.</b></font><br>"
-	dat += "<A href='byond://?src=\ref[src];close=1'>Close console</A>"
-	var/datum/browser/popup = new(user, "suspension", "Suspension Generator", 500, 400)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "suspension")
+		data["cell"] = null
+	data["active"] = suspension_field ? 1 : 0
+	return data
 
-/obj/machinery/suspension_gen/OnTopic(mob/user, href_list)
-	if(href_list["toggle_field"])
-		if(!suspension_field)
-			var/obj/item/cell/cell = get_cell()
-			if(cell.charge > 0)
-				if(anchored)
-					activate()
-				else
-					to_chat(user, SPAN_WARNING("You are unable to activate [src] until it is properly secured on the ground."))
-		else
-			deactivate()
-		. = TOPIC_REFRESH
-	else if(href_list["close"])
-		close_browser(user, "window=suspension")
-		return TOPIC_HANDLED
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
-
-/obj/machinery/suspension_gen/interface_interact(mob/user)
-	interact(user)
-	return TRUE
+/obj/machinery/suspension_gen/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("toggle_field")
+			if(!suspension_field)
+				var/obj/item/cell/cell = get_cell()
+				if(cell.charge > 0)
+					if(anchored)
+						activate()
+					else
+						to_chat(usr, SPAN_WARNING("You are unable to activate [src] until it is properly secured on the ground."))
+			else
+				deactivate()
+			return TRUE
+	return FALSE
 
 /obj/machinery/suspension_gen/components_are_accessible(path)
 	return !suspension_field && ..()

@@ -25,97 +25,90 @@
 	matter = list(MATERIAL_ALUMINIUM = 400)
 
 /obj/item/locator/attack_self(mob/user as mob)
-	user.set_machine(src)
-	var/dat
-	if (src.temp)
-		dat = "[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
-	else
-		dat = {"
-<B>Persistent Signal Locator</B><HR>
-Frequency:
-<A href='byond://?src=\ref[src];freq=-10'>-</A>
-<A href='byond://?src=\ref[src];freq=-2'>-</A> [format_frequency(src.frequency)]
-<A href='byond://?src=\ref[src];freq=2'>+</A>
-<A href='byond://?src=\ref[src];freq=10'>+</A><BR>
+	tgui_interact(user)
 
-<A href='byond://?src=\ref[src];refresh=1'>Refresh</A>"}
-	var/datum/browser/popup = new(user, "radio", "Persistent Signal Locator")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "radio")
+/obj/item/locator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "Locator", "Persistent Signal Locator")
+		ui.open()
 
-/obj/item/locator/Topic(href, href_list)
-	..()
-	if (usr.stat || usr.restrained())
-		return
-	var/turf/current_location = get_turf(usr)//What turf is the user on?
-	if(!current_location||current_location.z==2)//If turf was not found or they're on z level 2.
-		to_chat(usr, "The [src] is malfunctioning.")
-		return
-	if ((list_find(usr.contents, src) || (in_range(src, usr) && istype(src.loc, /turf))))
-		usr.set_machine(src)
-		if (href_list["refresh"])
-			src.temp = "<B>Persistent Signal Locator</B><HR>"
-			var/turf/sr = get_turf(src)
+/obj/item/locator/tgui_data(mob/user)
+	var/list/data = list()
+	data["frequency"] = format_frequency(frequency)
+	data["show_results"] = temp ? TRUE : FALSE
+	if(temp)
+		var/turf/sr = get_turf(src)
+		if(sr)
+			var/list/beacons = list()
+			for(var/obj/machinery/tele_beacon/W in world)
+				if(!W.functioning())
+					continue
+				var/turf/tr = get_turf(W)
+				if (tr.z == sr.z && tr)
+					var/direct = max(abs(tr.x - sr.x), abs(tr.y - sr.y))
+					if (direct < 5)
+						direct = "very strong"
+					else
+						if (direct < 10)
+							direct = "strong"
+						else
+							if (direct < 20)
+								direct = "weak"
+							else
+								direct = "very weak"
+					beacons += list(list("name" = W.beacon_name, "direction" = dir2text(get_dir(sr, tr)), "strength" = direct))
+			data["beacons"] = beacons
 
-			if (sr)
-				src.temp += "<B>Located Beacons:</B><BR>"
+			var/list/signals = list()
+			for (var/obj/item/implant/tracking/W in world)
+				if (!W.implanted || !(istype(W.loc,/obj/item/organ/external) || ismob(W.loc)))
+					continue
+				else
+					var/mob/M = W.loc
+					if (M.stat == 2)
+						if (M.timeofdeath + 6000 < world.time)
+							continue
 
-				for(var/obj/machinery/tele_beacon/W in world)
-					if(!W.functioning())
-						continue
-					var/turf/tr = get_turf(W)
-					if (tr.z == sr.z && tr)
-						var/direct = max(abs(tr.x - sr.x), abs(tr.y - sr.y))
+				var/turf/tr = get_turf(W)
+				if (tr.z == sr.z && tr)
+					var/direct = max(abs(tr.x - sr.x), abs(tr.y - sr.y))
+					if (direct < 20)
 						if (direct < 5)
 							direct = "very strong"
 						else
 							if (direct < 10)
 								direct = "strong"
 							else
-								if (direct < 20)
-									direct = "weak"
-								else
-									direct = "very weak"
-						src.temp += "[W.beacon_name]-[dir2text(get_dir(sr, tr))]-[direct]<BR>"
+								direct = "weak"
+						signals += list(list("name" = W.id, "direction" = dir2text(get_dir(sr, tr)), "strength" = direct))
+			data["signals"] = signals
 
-				src.temp += "<B>Extranneous Signals:</B><BR>"
-				for (var/obj/item/implant/tracking/W in world)
-					if (!W.implanted || !(istype(W.loc,/obj/item/organ/external) || ismob(W.loc)))
-						continue
-					else
-						var/mob/M = W.loc
-						if (M.stat == 2)
-							if (M.timeofdeath + 6000 < world.time)
-								continue
-
-					var/turf/tr = get_turf(W)
-					if (tr.z == sr.z && tr)
-						var/direct = max(abs(tr.x - sr.x), abs(tr.y - sr.y))
-						if (direct < 20)
-							if (direct < 5)
-								direct = "very strong"
-							else
-								if (direct < 10)
-									direct = "strong"
-								else
-									direct = "weak"
-							src.temp += "[W.id]-[dir2text(get_dir(sr, tr))]-[direct]<BR>"
-
-				src.temp += "<B>You are at \[[sr.x],[sr.y],[sr.z]\]</B> in orbital coordinates.<BR><BR><A href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR>"
-			else
-				src.temp += "<B><FONT color='red'>Processing Error:</FONT></B> Unable to locate orbital position.<BR>"
+			data["position"] = "[sr.x], [sr.y], [sr.z]"
 		else
-			if (href_list["freq"])
-				src.frequency += text2num(href_list["freq"])
-				src.frequency = sanitize_frequency(src.frequency)
-			else
-				if (href_list["temp"])
-					src.temp = null
-		if (istype(src.loc, /mob))
-			attack_self(src.loc)
-		else
-			for(var/mob/M in viewers(1, src))
-				if (M.client)
-					src.attack_self(M)
-	return
+			data["error"] = "Unable to locate orbital position."
+	return data
+
+/obj/item/locator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if (usr.stat || usr.restrained())
+		return TRUE
+	var/turf/current_location = get_turf(usr)
+	if(!current_location||current_location.z==2)
+		to_chat(usr, "The [src] is malfunctioning.")
+		return TRUE
+	if (!(list_find(usr.contents, src) || (in_range(src, usr) && istype(src.loc, /turf))))
+		return TRUE
+	switch(action)
+		if("refresh")
+			temp = "1"
+			return TRUE
+		if("freq")
+			frequency += text2num(params["value"])
+			frequency = sanitize_frequency(frequency)
+			return TRUE
+		if("temp")
+			temp = null
+			return TRUE
+	return FALSE

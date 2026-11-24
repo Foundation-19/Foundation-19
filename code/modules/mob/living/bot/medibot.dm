@@ -111,78 +111,91 @@
 		..()
 
 /mob/living/bot/medbot/GetInteractTitle()
-	. = "<head><title>Medibot v1.0 controls</title></head>"
-	. += "<b>Automatic Medical Unit v1.0</b>"
+	return "Automatic Medical Unit v1.0"
 
-/mob/living/bot/medbot/GetInteractStatus()
+/mob/living/bot/medbot/get_status_data(mob/user)
 	. = ..()
-	. += "<br>Beaker: "
+	.["info"] += list(list("label" = "Beaker", "value" = reagent_glass ? "Loaded \[[reagent_glass.reagents.total_volume]/[reagent_glass.reagents.maximum_volume]\]" : "None loaded"))
 	if(reagent_glass)
-		. += "<A href='byond://?src=\ref[src];command=eject'>Loaded \[[reagent_glass.reagents.total_volume]/[reagent_glass.reagents.maximum_volume]\]</a>"
+		.["buttons"] = list(list("action" = "eject", "label" = "Eject beaker"))
+	return
+
+/mob/living/bot/medbot/get_panel_data(mob/user)
+	. = list()
+	.["info"] = list(
+		list("label" = "Healing threshold", "value" = heal_threshold),
+		list("label" = "Injection level", "value" = injection_amount),
+	)
+	.["buttons"] = list(
+		list("action" = "adj_threshold", "label" = "--", "params" = list("amount" = -10)),
+		list("action" = "adj_threshold", "label" = "-", "params" = list("amount" = -5)),
+		list("action" = "adj_threshold", "label" = "+", "params" = list("amount" = 5)),
+		list("action" = "adj_threshold", "label" = "++", "params" = list("amount" = 10)),
+		list("action" = "adj_inject", "label" = "-", "params" = list("amount" = -5)),
+		list("action" = "adj_inject", "label" = "+", "params" = list("amount" = 5)),
+	)
+	.["toggles"] = list(
+		list("action" = "use_beaker", "label" = "Reagent source", "value" = use_beaker, "value_text" = use_beaker ? "Loaded Beaker (When available)" : "Internal Synthesizer"),
+		list("action" = "declaretreatment", "label" = "Treatment report", "value" = declare_treatment),
+		list("action" = "togglevoice", "label" = "Speaker", "value" = vocal),
+	)
+	return
+
+/mob/living/bot/medbot/get_maintenance_data(mob/user)
+	. = list()
+	if(emagged < 2)
+		.["toggles"] = list(
+			list("action" = "emag", "label" = "Injection mode", "value" = emagged, "value_text" = emagged ? "Random (DANGER)" : "Treatment"),
+		)
 	else
-		. += "None loaded"
+		.["info"] = list(
+			list("label" = "Injection mode", "value" = "ERROROROROROR-----"),
+		)
+	return
 
-/mob/living/bot/medbot/GetInteractPanel()
-	. = "Healing threshold: "
-	. += "<a href='byond://?src=\ref[src];command=adj_threshold;amount=-10'>--</a> "
-	. += "<a href='byond://?src=\ref[src];command=adj_threshold;amount=-5'>-</a> "
-	. += "[heal_threshold] "
-	. += "<a href='byond://?src=\ref[src];command=adj_threshold;amount=5'>+</a> "
-	. += "<a href='byond://?src=\ref[src];command=adj_threshold;amount=10'>++</a>"
-
-	. += "<br>Injection level: "
-	. += "<a href='byond://?src=\ref[src];command=adj_inject;amount=-5'>-</a> "
-	. += "[injection_amount] "
-	. += "<a href='byond://?src=\ref[src];command=adj_inject;amount=5'>+</a> "
-
-	. += "<br>Reagent source: <a href='byond://?src=\ref[src];command=use_beaker'>[use_beaker ? "Loaded Beaker (When available)" : "Internal Synthesizer"]</a>"
-	. += "<br>Treatment report is [declare_treatment ? "on" : "off"]. <a href='byond://?src=\ref[src];command=declaretreatment'>Toggle</a>"
-	. += "<br>The speaker switch is [vocal ? "on" : "off"]. <a href='byond://?src=\ref[src];command=togglevoice'>Toggle</a>"
-
-/mob/living/bot/medbot/GetInteractMaintenance()
-	. = "Injection mode: "
-	switch(emagged)
-		if(0)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Treatment</a>"
-		if(1)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Random (DANGER)</a>"
-		if(2)
-			. += "ERROROROROROR-----"
-
-/mob/living/bot/medbot/ProcessCommand(mob/user, command, href_list)
-	..()
-	if(CanAccessPanel(user))
-		switch(command)
+/mob/living/bot/medbot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(CanAccessPanel(usr))
+		switch(action)
 			if("adj_threshold")
-				if(!locked || issilicon(user))
-					var/adjust_num = text2num(href_list["amount"])
-					heal_threshold = Clamp(heal_threshold + adjust_num, 5, 75)
+				var/threshold_num = params["amount"]
+				if(!isnum(threshold_num))
+					threshold_num = text2num("[threshold_num]")
+				if(isnum(threshold_num))
+					heal_threshold = Clamp(heal_threshold + threshold_num, 5, 75)
+				return TRUE
 			if("adj_inject")
-				if(!locked || issilicon(user))
-					var/adjust_num = text2num(href_list["amount"])
-					injection_amount = Clamp(injection_amount + adjust_num, 5, 15)
+				var/inject_num = params["amount"]
+				if(!isnum(inject_num))
+					inject_num = text2num("[inject_num]")
+				if(isnum(inject_num))
+					injection_amount = Clamp(injection_amount + inject_num, 5, 15)
+				return TRUE
 			if("use_beaker")
-				if(!locked || issilicon(user))
-					use_beaker = !use_beaker
+				use_beaker = !use_beaker
+				return TRUE
 			if("eject")
 				if(reagent_glass)
 					if(!locked)
 						reagent_glass.dropInto(src.loc)
 						reagent_glass = null
 					else
-						to_chat(user, SPAN_NOTICE("You cannot eject the beaker because the panel is locked."))
+						to_chat(usr, SPAN_NOTICE("You cannot eject the beaker because the panel is locked."))
+				return TRUE
 			if("togglevoice")
-				if(!locked || issilicon(user))
-					vocal = !vocal
+				vocal = !vocal
+				return TRUE
 			if("declaretreatment")
-				if(!locked || issilicon(user))
-					declare_treatment = !declare_treatment
-
-	if(CanAccessMaintenance(user))
-		switch(command)
+				declare_treatment = !declare_treatment
+				return TRUE
+	if(CanAccessMaintenance(usr))
+		switch(action)
 			if("emag")
 				if(emagged < 2)
 					emagged = !emagged
+				return TRUE
+	return FALSE
 
 /mob/living/bot/medbot/emag_act(remaining_uses, mob/user)
 	. = ..()

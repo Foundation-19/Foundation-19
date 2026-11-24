@@ -155,54 +155,76 @@
 
 
 /mob/living/carbon/human/show_inv(mob/user as mob)
+	tgui_interact(user)
+
+/mob/living/carbon/human/tgui_interact(mob/user, datum/tgui/ui)
 	if(user.incapacitated()  || !user.Adjacent(src) || !ISADVANCEDTOOLUSER(user))
 		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "HumanInventory", "[name] Inventory")
+		ui.open()
 
-	user.set_machine(src)
-	var/dat
+/mob/living/carbon/human/tgui_data(mob/user)
+	var/list/data = list()
+	data["name"] = name
+	var/list/slots = list()
 	for(var/entry in species.hud.gear)
 		var/list/slot_ref = species.hud.gear[entry]
 		if((slot_ref["slot"] in list(slot_l_store, slot_r_store)))
 			continue
 		var/obj/item/thing_in_slot = get_equipped_item(slot_ref["slot"])
-		dat += "<b>[slot_ref["name"]]:</b> <a href='byond://?src=\ref[src];item=[slot_ref["slot"]]'>[istype(thing_in_slot) ? thing_in_slot : "nothing"]</a><BR>"
+		var/list/slot_data = list(
+			"slot" = "[slot_ref["slot"]]",
+			"name" = slot_ref["name"],
+			"item" = istype(thing_in_slot) ? thing_in_slot.name : "nothing",
+		)
 		if(istype(thing_in_slot, /obj/item/clothing))
 			var/obj/item/clothing/C = thing_in_slot
 			if(C.accessories.len)
-				dat += "<A href='byond://?src=\ref[src];item=tie;holder=\ref[C]'>Remove accessory</A><BR>"
-	dat += "<HR><BR>"
+				slot_data["has_accessory"] = TRUE
+				slot_data["holder"] = "\ref[C]"
+		slots += list(slot_data)
+	data["slots"] = slots
 
+	data["has_hands"] = species.hud.has_hands
 	if(species.hud.has_hands)
-		dat += "<b>Left hand:</b> <A href='byond://?src=\ref[src];item=[slot_l_hand]'>[istype(l_hand) ? l_hand : "nothing"]</A><BR>"
-		dat += "<b>Right hand:</b> <A href='byond://?src=\ref[src];item=[slot_r_hand]'>[istype(r_hand) ? r_hand : "nothing"]</A><BR>"
+		data["left_hand"] = istype(l_hand) ? l_hand.name : "nothing"
+		data["right_hand"] = istype(r_hand) ? r_hand.name : "nothing"
+		data["left_hand_slot"] = "[slot_l_hand]"
+		data["right_hand_slot"] = "[slot_r_hand]"
 
 	// Do they get an option to set internals?
-	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
-		if(istype(back, /obj/item/tank) || istype(belt, /obj/item/tank) || istype(s_store, /obj/item/tank))
-			dat += "<A href='byond://?src=\ref[src];item=internals'>Toggle internals.</A><BR>"
+	data["can_toggle_internals"] = ((istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space)) && (istype(back, /obj/item/tank) || istype(belt, /obj/item/tank) || istype(s_store, /obj/item/tank))) ? TRUE : FALSE
 
 	var/obj/item/clothing/under/suit = w_uniform
 	// Other incidentals.
 	if(istype(suit))
-		dat += "<b>Pockets:</b> <A href='byond://?src=\ref[src];item=pockets'>Empty or Place Item</A><BR>"
-		if(suit.has_sensor == 1)
-			dat += "<A href='byond://?src=\ref[src];item=sensors'>Set sensors</A><BR>"
-		if (suit.has_sensor && user.get_multitool())
-			dat += "<A href='byond://?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unl" : "L"]ock sensors</A><BR>"
-	if(handcuffed)
-		dat += "<A href='byond://?src=\ref[src];item=[slot_handcuffed]'>Handcuffed</A><BR>"
+		data["has_suit"] = TRUE
+		data["has_sensors"] = (suit.has_sensor == 1) ? TRUE : FALSE
+		data["can_lock_sensors"] = (suit.has_sensor && user.get_multitool()) ? TRUE : FALSE
+		data["sensor_locked"] = (suit.has_sensor == SUIT_LOCKED_SENSORS) ? TRUE : FALSE
+	data["handcuffed"] = handcuffed ? TRUE : FALSE
+	data["handcuffed_slot"] = "[slot_handcuffed]"
 
+	var/list/underwear = list()
 	for(var/entry in worn_underwear)
 		var/obj/item/underwear/UW = entry
-		dat += "<a href='byond://?src=\ref[src];item=\ref[UW]'>Remove \the [UW]</a><BR>"
+		underwear += list(list("name" = UW.name, "ref" = "\ref[UW]"))
+	data["underwear"] = underwear
+	return data
 
-	dat += "<A href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR>"
-	dat += "<A href='byond://?src=\ref[user];mach_close=mob[name]'>Close</A>"
-
-	var/datum/browser/popup = new(user, "mob[name]", "[name] Inventory", 340, 540)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "mob[name]")
+/mob/living/carbon/human/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("refresh")
+			return TRUE
+		if("strip")
+			if(!handle_strip(params["slot"], usr, locate(params["holder"])))
+				SStgui.update_uis(src)
+			return TRUE
+	return FALSE
 
 // called when something steps onto a human
 // this handles mulebots and vehicles
@@ -378,15 +400,6 @@
 		return min(., ..(user, GLOB.physical_state, href_list))
 
 /mob/living/carbon/human/OnTopic(mob/user, href_list)
-	if (href_list["refresh"])
-		show_inv(user)
-		return TOPIC_HANDLED
-
-	if(href_list["item"])
-		if(!handle_strip(href_list["item"],user,locate(href_list["holder"])))
-			show_inv(user)
-		return TOPIC_HANDLED
-
 	if (href_list["criminal"])
 		if(hasHUD(user, HUD_SECURITY))
 

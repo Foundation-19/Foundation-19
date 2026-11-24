@@ -243,20 +243,38 @@
 	if(user.z in GLOB.using_map.admin_levels)
 		to_chat(user, SPAN_WARNING("You cannot use \the [src] here."))
 		return
-	user.set_machine(src)
-	interact(user)
+	tgui_interact(user)
 
-/obj/item/summoning_stone/interact(mob/user)
+/obj/item/summoning_stone/tgui_interact(mob/user, datum/tgui/ui)
 	var/list/types = subtypesof(/datum/spellbound_type) - /datum/spellbound_type/servant
 	if(user.mind && !GLOB.wizards.is_antagonist(user.mind))
 		use_type(pick(types),user)
 		return
-	var/dat = "<center><b><h3>Summoning Stone</h3></b><i>Choose a companion to help you.</i><br><br></center>"
-	for(var/type in types)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ScryingOrb", "Summoning Stone")
+		ui.open()
+
+/obj/item/summoning_stone/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/types = list()
+	for(var/type in (subtypesof(/datum/spellbound_type) - /datum/spellbound_type/servant))
 		var/datum/spellbound_type/SB = type
-		dat += "<br><a href='byond://?src=\ref[src];type=[type]'>[initial(SB.name)]</a> - [initial(SB.desc)]"
-	show_browser(user,dat,"window=summoning")
-	onclose(user,"summoning")
+		types += list(list(
+			"name" = initial(SB.name),
+			"desc" = initial(SB.desc),
+			"path" = "[type]",
+		))
+	data["types"] = types
+	return data
+
+/obj/item/summoning_stone/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(action == "type")
+		use_type(text2path(params["path"]), usr)
+		return TRUE
+	return FALSE
 
 /obj/item/summoning_stone/proc/use_type(type, mob/user)
 	new /obj/effect/cleanable/spellbound(get_turf(src),type)
@@ -275,10 +293,5 @@
 			if(turfs.len)
 				src.visible_message(SPAN_NOTICE("\The [src] vanishes!"))
 				src.forceMove(pick(turfs))
-	show_browser(user, null, "window=summoning")
+	SStgui.close_user_uis(user, src)
 	qdel(src)
-
-/obj/item/summoning_stone/OnTopic(user, href_list, state)
-	if(href_list["type"])
-		use_type(href_list["type"],user)
-	return TOPIC_HANDLED

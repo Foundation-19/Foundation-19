@@ -80,68 +80,75 @@
 	cooking.Cut()
 
 /obj/machinery/cooker/interface_interact(mob/living/user)
-	var/dat = ""
-	if (stat)
-		dat += UI_FONT_BAD("\The [src] is in no condition to operate.")
-	else
-		dat += "[UIBUTTON("empty_cooker", "Empty Ingredients", null)]<br>"
-		dat += "[UIBUTTON("toggle_state", "Turn [is_processing ? "Off" : "On"]", null)]<br>"
-		if (cook_modes.len > 1)
-			dat += "[UIBUTTON("cook_mode", "Change Cook Mode", null)] (current: [cook_mode])"
-		dat += "<br><hr>"
-		dat += "<b>Contents[is_processing ? UI_FONT_BAD(" (<i>Cooking!</i>)") : ""]:</b><br>"
-		if (!LAZYLEN(cooking))
-			dat += UI_FONT_BAD("None!")
-		else
-			var/list/item_counts = list()
-			for (var/obj/item/I in cooking)
-				item_counts[I.name]++
-			for (var/V in item_counts)
-				var/N = item_counts[V]
-				dat += "[N] [V]\s<br>"
+	tgui_interact(user)
+	return TRUE
 
-	var/datum/browser/popup = new(user, "cooker", name, 350, 300, src)
-	popup.set_content(dat)
-	popup.open()
+/obj/machinery/cooker/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Cooker", name)
+		ui.open()
 
-/obj/machinery/cooker/OnTopic(mob/user, href_list, datum/topic_state/state)
+/obj/machinery/cooker/tgui_data(mob/user)
+	var/list/data = list()
+	data["operable"] = !stat
+	data["processing"] = is_processing
+	data["cook_mode"] = cook_mode
+	var/list/modes = list()
+	for (var/mode in cook_modes)
+		modes += list(list("name" = mode, "desc" = cook_modes[mode]["desc"]))
+	data["cook_modes"] = modes
+	var/list/item_counts = list()
+	for (var/obj/item/I in cooking)
+		item_counts[I.name]++
+	var/list/item_lines = list()
+	for (var/V in item_counts)
+		item_lines += "[item_counts[V]] [V]\s"
+	data["items"] = item_lines
+	return data
+
+/obj/machinery/cooker/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if (stat)
-		to_chat(user, SPAN_WARNING("\The [src] is in no condition to operate."))
-		return
-	else if (href_list["empty_cooker"])
-		if (is_processing)
-			to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
-			return
-		else if(length(cooking))
-			empty()
-		interface_interact(user)
-	else if (href_list["toggle_state"])
-		if (is_processing)
-			user.visible_message(
-				SPAN_NOTICE("\The [user] turns off \the [src]."),
-				SPAN_NOTICE("You turn off \the [src].")
-			)
-			disable()
-		else
-			user.visible_message(
-				SPAN_NOTICE("\The [user] turns on \the [src]."),
-				SPAN_NOTICE("You turn on \the [src].")
-			)
-			enable()
-		interface_interact(user)
-	else if (href_list["cook_mode"])
-		if (is_processing)
-			to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
-			return
-		var/mode = input(user, "", "[src] Cook Modes") as null|anything in cook_modes
-		if (!mode || QDELETED(src) || !operable())
-			return
-		if (!CanDefaultInteract(user))
-			to_chat(user, SPAN_WARNING("You're not able to do that to \the [src] right now."))
-			return
-		cook_mode = mode
-		to_chat(user, "The contents of \the [src] will now be [cook_modes[mode]["desc"]].")
-		interface_interact(user)
+		to_chat(usr, SPAN_WARNING("\The [src] is in no condition to operate."))
+		return TRUE
+	switch(action)
+		if ("empty_cooker")
+			if (is_processing)
+				to_chat(usr, SPAN_WARNING("Turn off \the [src] first."))
+				return TRUE
+			else if(length(cooking))
+				empty()
+			return TRUE
+		if ("toggle_state")
+			if (is_processing)
+				usr.visible_message(
+					SPAN_NOTICE("\The [usr] turns off \the [src]."),
+					SPAN_NOTICE("You turn off \the [src].")
+				)
+				disable()
+			else
+				usr.visible_message(
+					SPAN_NOTICE("\The [usr] turns on \the [src]."),
+					SPAN_NOTICE("You turn on \the [src].")
+				)
+				enable()
+			return TRUE
+		if ("cook_mode")
+			if (is_processing)
+				to_chat(usr, SPAN_WARNING("Turn off \the [src] first."))
+				return TRUE
+			var/mode = params["mode"]
+			if (!mode || !cook_modes[mode] || QDELETED(src) || !operable())
+				return TRUE
+			if (!CanDefaultInteract(usr))
+				to_chat(usr, SPAN_WARNING("You're not able to do that to \the [src] right now."))
+				return TRUE
+			cook_mode = mode
+			to_chat(usr, "The contents of \the [src] will now be [cook_modes[mode]["desc"]].")
+			return TRUE
+	return FALSE
 
 /obj/machinery/cooker/attackby(obj/item/I, mob/user)
 	if (is_processing)

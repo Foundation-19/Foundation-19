@@ -46,71 +46,77 @@
 	icon_state = initial_icon
 
 /obj/machinery/stove/interface_interact(mob/living/user)
-	var/dat = ""
-	if (stat || !anchored)
-		dat += UI_FONT_BAD("\The [src] is in no condition to operate.")
+	tgui_interact(user)
+	return TRUE
+
+/obj/machinery/stove/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Stove", name)
+		ui.open()
+
+/obj/machinery/stove/tgui_data(mob/user)
+	var/list/data = list()
+	data["operable"] = !(stat || !anchored)
+	if (!data["operable"])
+		return data
+	data["cooking"] = cooking
+	var/cooking_skill = user.get_skill_value(SKILL_COOKING)
+	if (cooking_skill > SKILL_UNTRAINED)
+		user_time_modifier = -(0.1 SECONDS * cooking_skill)
 	else
-		if (cooking)
-			dat += "<b>Contents are cooking. Please wait...</b>"
+		user_time_modifier = 0
+	data["cook_time"] = (cook_time + user_time_modifier) / 10
+	var/list/tray_lines = list()
+	var/list/item_counts = list()
+	for (var/obj/item/I in ingredients)
+		if (istype(I, /obj/item/tray/baking))
+			var/obj/item/tray/T = I
+			tray_lines += "[I.name] with [T.carrying.len > 0 ? T.carrying.len : "no"] item\s"
 		else
-			var/cooking_skill = user.get_skill_value(SKILL_COOKING)
-			if (cooking_skill > SKILL_UNTRAINED)
-				user_time_modifier = -(0.1 SECONDS * cooking_skill)
-			else
-				user_time_modifier = 0
-			var/effective_cook_time = cook_time + user_time_modifier
-			dat += "[UIBUTTON("empty_stove", "Empty Ingredients", null)]<br>"
-			dat += "[UIBUTTON("start_cooking", "Start", null)]<br>"
-			dat += "<b>Cooking time for you:</b> [effective_cook_time / 10] second\s."
-			dat += "<br><hr>"
-			if (!LAZYLEN(ingredients))
-				dat += UI_FONT_BAD("No ingredients!")
-			else
-				var/list/item_counts = list()
-				for (var/obj/item/I in ingredients)
-					if (istype(I, /obj/item/tray/baking))
-						var/obj/item/tray/T = I
-						dat += "[I.name] with [T.carrying.len > 0 ? T.carrying.len : "no"] item\s<br>"
-					else
-						item_counts[I.name]++
-				for (var/V in item_counts)
-					var/N = item_counts[V]
-					dat += "[N] [V]\s<br>"
-			if (reagents?.total_volume)
-				for (var/datum/reagent/R in reagents.reagent_list)
-					dat += "[R.volume] units of [R.name]<br>"
-				dat += "<br>"
+			item_counts[I.name]++
+	var/list/item_lines = list()
+	item_lines += tray_lines
+	for (var/V in item_counts)
+		item_lines += "[item_counts[V]] [V]\s"
+	data["items"] = item_lines
+	var/list/reagent_list = list()
+	if (reagents?.total_volume)
+		for (var/datum/reagent/R in reagents.reagent_list)
+			reagent_list += list(list("name" = R.name, "volume" = R.volume))
+	data["reagents"] = reagent_list
+	return data
 
-	var/datum/browser/popup = new(user, "stove", name, 450, 600, src)
-	popup.set_content(dat)
-	popup.open()
-
-/obj/machinery/stove/OnTopic(mob/user, href_list, datum/topic_state/state)
+/obj/machinery/stove/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if (stat || !anchored)
-		to_chat(user, SPAN_WARNING("\The [src] is in no condition to operate."))
-		return
-	else if (href_list["empty_stove"])
-		if (is_processing)
-			to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
-			return
-		else if (length(ingredients) || reagents?.total_volume)
-			to_chat(user, SPAN_NOTICE("You empty \the [src]."))
-			for (var/obj/item/I in ingredients)
-				I.dropInto(loc)
-				LAZYREMOVE(ingredients, I)
-			reagents?.clear_reagents()
-		interface_interact(user)
-	else if (href_list["start_cooking"])
-		user.visible_message(
-			SPAN_NOTICE("\The [user] turns on \the [src]."),
-			SPAN_NOTICE("You turn on \the [src] and set the timer."),
-			SPAN_NOTICE("You hear the click-click <i>fwoosh</i> of a stovetop turning on.")
-		)
-		cooking = TRUE
-		playsound(src, 'sounds/machines/stove_on.ogg', 100, FALSE) // 100% volume here because the sound itself is pretty quiet
-		addtimer(CALLBACK(src, PROC_REF(attempt_cook)), cook_time + user_time_modifier)
-		update_icon()
-		interface_interact(user)
+		to_chat(usr, SPAN_WARNING("\The [src] is in no condition to operate."))
+		return TRUE
+	switch(action)
+		if ("empty_stove")
+			if (is_processing)
+				to_chat(usr, SPAN_WARNING("Turn off \the [src] first."))
+				return TRUE
+			else if (length(ingredients) || reagents?.total_volume)
+				to_chat(usr, SPAN_NOTICE("You empty \the [src]."))
+				for (var/obj/item/I in ingredients)
+					I.dropInto(loc)
+					LAZYREMOVE(ingredients, I)
+				reagents?.clear_reagents()
+			return TRUE
+		if ("start_cooking")
+			usr.visible_message(
+				SPAN_NOTICE("\The [usr] turns on \the [src]."),
+				SPAN_NOTICE("You turn on \the [src] and set the timer."),
+				SPAN_NOTICE("You hear the click-click <i>fwoosh</i> of a stovetop turning on.")
+			)
+			cooking = TRUE
+			playsound(src, 'sounds/machines/stove_on.ogg', 100, FALSE) // 100% volume here because the sound itself is pretty quiet
+			addtimer(CALLBACK(src, PROC_REF(attempt_cook)), cook_time + user_time_modifier)
+			update_icon()
+			return TRUE
+	return FALSE
 
 /obj/machinery/stove/attackby(obj/item/I, mob/user)
 	if (is_type_in_list(I, SScuisine.stove_accepts_items))
@@ -133,8 +139,8 @@
 				SPAN_NOTICE("\The [user] adds \the [I] to \the [src]."), \
 				SPAN_NOTICE("You put \the [I] into \the [src].")
 			)
-		if (winget(user, "stove", "is-visible") == "true") // refresh if open, otherwise don't open it just for adding an item
-			interface_interact(user)
+		// refresh if open, otherwise don't open it just for adding an item
+		SStgui.update_uis(src)
 		return
 
 	else if (istype(I, /obj/item/storage))
@@ -240,12 +246,12 @@
 	visible_message(SPAN_NOTICE("\The [src] finishes a cooking cycle."))
 	playsound(src, 'sounds/machines/ding.ogg', 50, TRUE)
 	finish_cook()
-	updateUsrDialog()
+	SStgui.update_uis(src)
 
 /obj/machinery/stove/proc/finish_cook()
 	cooking = FALSE
 	update_icon()
-	updateUsrDialog()
+	SStgui.update_uis(src)
 
 // Simple version for roundstart maintenance hideouts, offships, and so on. Takes longer to cook stuff
 /obj/machinery/stove/hotplate

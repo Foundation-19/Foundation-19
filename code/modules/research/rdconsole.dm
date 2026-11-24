@@ -143,8 +143,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		//The construction/deconstruction of the console code.
 		..()
 
-	src.updateUsrDialog()
+	SStgui.update_uis(src)
 	return
+
+
 
 /obj/machinery/computer/rdconsole/emag_act(remaining_charges, mob/user)
 	if(!emagged)
@@ -162,279 +164,293 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			return STATUS_CLOSE
 	return ..()
 
-/obj/machinery/computer/rdconsole/OnTopic(user, href_list)
-	if(href_list["menu"]) //Switches menu screens. Converts a sent text string into a number. Saves a LOT of code.
-		screen = text2num(href_list["menu"])
-		. = TOPIC_REFRESH
+/obj/machinery/computer/rdconsole/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	// Access gate mirroring legacy CanUseTopic: everything except the main menu
+	// (1.0), research viewer (1.1) and lathe/imprinter screens (3.x/4.x) needs access.
+	if(action == "menu" && params["menu"])
+		var/temp_screen = text2num(params["menu"])
+		if(!((temp_screen <= 1.1) || (3 <= temp_screen && 4.9 >= temp_screen) || allowed(usr)))
+			to_chat(usr, "Unauthorized Access.")
+			return TRUE
 
-	else if(href_list["updt_tech"]) //Update the research holder with information from the technology disk.
-		. = TOPIC_REFRESH
-		if(!t_disk)
-			screen = 1
-			return
-		screen = 0.0
-		spawn(50)
+	switch(action)
+		if("menu")
+			screen = text2num(params["menu"])
+			return TRUE
+
+		if("updt_tech")
 			if(!t_disk)
 				screen = 1
-				return
+				return TRUE
+			screen = 0.0
+			spawn(50)
+				if(!t_disk)
+					screen = 1
+					return
+				screen = 1.2
+				files.AddTech2Known(t_disk.stored)
+				SStgui.update_uis(src)
+			return TRUE
+
+		if("clear_tech")
+			if(!t_disk)
+				screen = 1
+				return TRUE
+			t_disk.stored = null
+			return TRUE
+
+		if("eject_tech")
+			if(t_disk)
+				t_disk.dropInto(loc)
+				t_disk = null
+			screen = 1.0
+			return TRUE
+
+		if("copy_tech")
+			if(!t_disk)
+				screen = 1
+				return TRUE
+			for(var/datum/tech/T in files.known_tech)
+				if(params["copy_tech_ID"] == T.id)
+					t_disk.stored = T
+					break
 			screen = 1.2
-			files.AddTech2Known(t_disk.stored)
-			updateUsrDialog()
+			return TRUE
 
-	else if(href_list["clear_tech"]) //Erase data on the technology disk.
-		. = TOPIC_REFRESH
-		if(!t_disk)
-			screen = 1
-			return
-		t_disk.stored = null
-
-	else if(href_list["eject_tech"]) //Eject the technology disk.
-		t_disk.dropInto(loc)
-		t_disk = null
-		screen = 1.0
-		. = TOPIC_REFRESH
-
-	else if(href_list["copy_tech"]) //Copys some technology data from the research holder to the disk.
-		. = TOPIC_REFRESH
-		if(!t_disk)
-			screen = 1
-			return
-		for(var/datum/tech/T in files.known_tech)
-			if(href_list["copy_tech_ID"] == T.id)
-				t_disk.stored = T
-				break
-		screen = 1.2
-
-	else if(href_list["updt_design"]) //Updates the research holder with design data from the design disk.
-		. = TOPIC_REFRESH
-		if(!d_disk)
-			screen = 1
-			return
-		screen = 0.0
-		spawn(50)
+		if("updt_design")
 			if(!d_disk)
 				screen = 1
-				return
-			screen = 1.4
-			files.AddDesign2Known(d_disk.blueprint)
-			updateUsrDialog()
-
-	else if(href_list["clear_design"]) //Erases data on the design disk.
-		. = TOPIC_REFRESH
-		if(!d_disk)
-			screen = 1
-			return
-		d_disk.blueprint = null
-
-	else if(href_list["eject_design"]) //Eject the design disk.
-		if(d_disk)
-			d_disk.dropInto(loc)
-		d_disk = null
-		screen = 1.0
-		. = TOPIC_REFRESH
-
-	else if(href_list["copy_design"]) //Copy design data from the research holder to the design disk.
-		. = TOPIC_REFRESH
-		if(!d_disk)
-			screen = 1
-			return
-		for(var/datum/design/D in files.known_designs)
-			if(href_list["copy_design_ID"] == D.id)
-				d_disk.blueprint = D
-				break
-		screen = 1.4
-
-	else if(href_list["eject_item"]) //Eject the item inside the destructive analyzer.
-		. = TOPIC_REFRESH
-		CHECK_DESTROY
-		if(linked_destroy.busy)
-			to_chat(usr, SPAN_NOTICE("The destructive analyzer is busy at the moment."))
-
-		else if(linked_destroy.loaded_item)
-			linked_destroy.loaded_item.dropInto(linked_destroy.loc)
-			linked_destroy.loaded_item = null
-			linked_destroy.icon_state = "d_analyzer"
-			screen = 2.1
-
-	else if(href_list["deconstruct"]) //Deconstruct the item in the destructive analyzer and update the research holder.
-		. = TOPIC_REFRESH
-		CHECK_DESTROY
-		if(linked_destroy.busy)
-			to_chat(usr, SPAN_NOTICE("The destructive analyzer is busy at the moment."))
-			return TOPIC_HANDLED
-		if(alert("Proceeding will destroy loaded item. Continue?", "Destructive analyzer confirmation", "Yes", "No") == "No")
-			return TOPIC_HANDLED
-		CHECK_DESTROY
-		linked_destroy.busy = 1
-		screen = 0.1
-		flick("d_analyzer_process", linked_destroy)
-		addtimer(CALLBACK(src, PROC_REF(finish_deconstruct), weakref(user)), 24)
-
-	else if(href_list["lock"]) //Lock the console from use by anyone without tox access.
-		if(allowed(usr))
-			screen = text2num(href_list["lock"])
-		else
-			to_chat(usr, "Unauthorized Access.")
-		. = TOPIC_REFRESH
-
-	else if(href_list["sync"]) //Sync the research holder with all the R&D consoles in the game that aren't sync protected.
-		screen = 0.0
-		if(!sync)
-			to_chat(usr, SPAN_NOTICE("You must connect to the network first."))
-		else
-			. = TOPIC_HANDLED
-			spawn(30)
-				if(src)
-					for(var/obj/machinery/r_n_d/server/S in SSmachines.machinery)
-						var/server_processed = 0
-						if((id in S.id_with_upload) || istype(S, /obj/machinery/r_n_d/server/centcom))
-							for(var/datum/tech/T in files.known_tech)
-								S.files.AddTech2Known(T)
-							for(var/datum/design/D in files.known_designs)
-								S.files.AddDesign2Known(D)
-							S.files.RefreshResearch()
-							server_processed = 1
-						if((id in S.id_with_download) && !istype(S, /obj/machinery/r_n_d/server/centcom))
-							for(var/datum/tech/T in S.files.known_tech)
-								files.AddTech2Known(T)
-							for(var/datum/design/D in S.files.known_designs)
-								files.AddDesign2Known(D)
-							files.RefreshResearch()
-							server_processed = 1
-						if(!istype(S, /obj/machinery/r_n_d/server/centcom) && server_processed)
-							S.produce_heat()
-					screen = 1.6
-					interact(user)
-
-	else if(href_list["togglesync"]) //Prevents the console from being synced by other consoles. Can still send data.
-		sync = !sync
-		. = TOPIC_REFRESH
-
-	else if(href_list["build"]) //Causes the Protolathe to build something.
-		. = TOPIC_REFRESH
-		CHECK_LATHE
-		var/datum/design/being_built = null
-		for(var/datum/design/D in files.known_designs)
-			if(D.id == href_list["build"])
-				being_built = D
-				break
-		if(being_built)
-			linked_lathe.addToQueue(being_built)
-		screen = 3.1
-
-	else if(href_list["imprint"]) //Causes the Circuit Imprinter to build something.
-		. = TOPIC_REFRESH
-		CHECK_IMPRINTER
-		var/datum/design/being_built = null
-		for(var/datum/design/D in files.known_designs)
-			if(D.id == href_list["imprint"])
-				being_built = D
-				break
-		if(being_built)
-			linked_imprinter.addToQueue(being_built)
-		screen = 4.1
-
-	else if(href_list["disposeI"])  //Causes the circuit imprinter to dispose of a single reagent (all of it)
-		. = TOPIC_REFRESH
-		CHECK_IMPRINTER
-		var/datum/reagent/R = locate(href_list["disposeI"]) in linked_imprinter.reagents.reagent_list
-		if(R)
-			linked_imprinter.reagents.del_reagent(href_list["dispose"])
-
-	else if(href_list["disposeallI"]) //Causes the circuit imprinter to dispose of all it's reagents.
-		. = TOPIC_REFRESH
-		CHECK_IMPRINTER
-		linked_imprinter.reagents.clear_reagents()
-
-	else if(href_list["removeI"])
-		. = TOPIC_REFRESH
-		CHECK_LATHE
-		linked_imprinter.removeFromQueue(text2num(href_list["removeI"]))
-
-	else if(href_list["disposeP"])  //Causes the protolathe to dispose of a single reagent (all of it)
-		. = TOPIC_REFRESH
-		CHECK_LATHE
-		var/datum/reagent/R = locate(href_list["disposeP"]) in linked_lathe.reagents.reagent_list
-		if(R)
-			linked_lathe.reagents.del_reagent(R.type)
-
-	else if(href_list["disposeallP"]) //Causes the protolathe to dispose of all it's reagents.
-		. = TOPIC_REFRESH
-		CHECK_LATHE
-		linked_lathe.reagents.clear_reagents()
-
-	else if(href_list["removeP"])
-		. = TOPIC_REFRESH
-		CHECK_LATHE
-		var/to_remove = text2num(href_list["removeP"])
-		if(sanitize_integer(to_remove, 1, length(linked_lathe.queue), 1) == to_remove)
-			linked_lathe.removeFromQueue(to_remove)
-
-	else if(href_list["lathe_ejectsheet"]) //Causes the protolathe to eject a sheet of material
-		. = TOPIC_REFRESH
-		CHECK_LATHE
-		linked_lathe.eject(href_list["lathe_ejectsheet"], text2num(href_list["amount"]))
-
-	else if(href_list["imprinter_ejectsheet"]) //Causes the protolathe to eject a sheet of material
-		. = TOPIC_REFRESH
-		CHECK_IMPRINTER
-		linked_imprinter.eject(href_list["imprinter_ejectsheet"], text2num(href_list["amount"]))
-
-	else if(href_list["find_device"]) //The R&D console looks for devices nearby to link up with.
-		screen = 0.0
-		. = TOPIC_HANDLED
-		spawn(10)
-			SyncRDevices()
-			screen = 1.7
-			interact(user)
-
-	else if(href_list["disconnect"]) //The R&D console disconnects with a specific device.
-		. = TOPIC_REFRESH
-		switch(href_list["disconnect"])
-			if("destroy")
-				CHECK_DESTROY
-				linked_destroy.linked_console = null
-				linked_destroy = null
-			if("lathe")
-				CHECK_LATHE
-				linked_lathe.linked_console = null
-				linked_lathe = null
-			if("imprinter")
-				CHECK_IMPRINTER
-				linked_imprinter.linked_console = null
-				linked_imprinter = null
-
-	else if(href_list["reset"]) //Reset the R&D console's database.
-		var/choice = alert("R&D Console Database Reset", "Are you sure you want to reset the R&D console's database? Data lost cannot be recovered.", "Continue", "Cancel")
-		. = TOPIC_HANDLED
-		if(choice == "Continue")
+				return TRUE
 			screen = 0.0
-			qdel(files)
-			files = new /datum/research(src)
-			spawn(20)
-				screen = 1.6
-				interact(user)
+			spawn(50)
+				if(!d_disk)
+					screen = 1
+					return
+				screen = 1.4
+				files.AddDesign2Known(d_disk.blueprint)
+				SStgui.update_uis(src)
+			return TRUE
 
-	else if (href_list["print"]) //Print research information
-		screen = 0.5
-		. = TOPIC_HANDLED
-		spawn(20)
-			var/obj/item/paper/PR = new/obj/item/paper
-			PR.name = "fabricator report"
-			PR.info = "<center><b>[station_name()] Fabricator Laboratory</b>"
-			PR.info += "<h2>[ (text2num(href_list["print"]) == 2) ? "Detailed" : null ] Fabricator Status Report</h2>"
-			PR.info += "<i>report prepared at [station_time_timestamp("hh:mm")] local time</i></center><br>"
-			if(text2num(href_list["print"]) == 2)
-				PR.info += GetResearchListInfo()
+		if("clear_design")
+			if(!d_disk)
+				screen = 1
+				return TRUE
+			d_disk.blueprint = null
+			return TRUE
+
+		if("eject_design")
+			if(d_disk)
+				d_disk.dropInto(loc)
+				d_disk = null
+			screen = 1.0
+			return TRUE
+
+		if("copy_design")
+			if(!d_disk)
+				screen = 1
+				return TRUE
+			for(var/datum/design/D in files.known_designs)
+				if(params["copy_design_ID"] == D.id)
+					d_disk.blueprint = D
+					break
+			screen = 1.4
+			return TRUE
+
+		if("eject_item")
+			CHECK_DESTROY
+			if(linked_destroy.busy)
+				to_chat(usr, SPAN_NOTICE("The destructive analyzer is busy at the moment."))
+			else if(linked_destroy.loaded_item)
+				linked_destroy.loaded_item.dropInto(linked_destroy.loc)
+				linked_destroy.loaded_item = null
+				linked_destroy.icon_state = "d_analyzer"
+				screen = 2.1
+			return TRUE
+
+		if("deconstruct")
+			CHECK_DESTROY
+			if(linked_destroy.busy)
+				to_chat(usr, SPAN_NOTICE("The destructive analyzer is busy at the moment."))
+				return TRUE
+			var/choice = alert("Proceeding will destroy loaded item. Continue?", "Destructive analyzer confirmation", "Yes", "No")
+			if(choice == "No")
+				return TRUE
+			CHECK_DESTROY
+			linked_destroy.busy = 1
+			screen = 0.1
+			flick("d_analyzer_process", linked_destroy)
+			addtimer(CALLBACK(src, PROC_REF(finish_deconstruct), weakref(usr)), 24)
+			return TRUE
+
+		if("lock")
+			if(allowed(usr))
+				screen = text2num(params["lock"])
 			else
-				PR.info += GetResearchLevelsInfo()
-			PR.info_links = PR.info
-			PR.icon_state = "paper_words"
-			PR.dropInto(loc)
-			spawn(10)
-				screen = ((text2num(href_list["print"]) == 2) ? 5.0 : 1.1)
-				interact(user)
+				to_chat(usr, "Unauthorized Access.")
+			return TRUE
 
+		if("sync")
+			screen = 0.0
+			if(!sync)
+				to_chat(usr, SPAN_NOTICE("You must connect to the network first."))
+			else
+				spawn(30)
+					if(src)
+						for(var/obj/machinery/r_n_d/server/S in SSmachines.machinery)
+							var/server_processed = 0
+							if((id in S.id_with_upload) || istype(S, /obj/machinery/r_n_d/server/centcom))
+								for(var/datum/tech/T in files.known_tech)
+									S.files.AddTech2Known(T)
+								for(var/datum/design/D in files.known_designs)
+									S.files.AddDesign2Known(D)
+								S.files.RefreshResearch()
+								server_processed = 1
+							if((id in S.id_with_download) && !istype(S, /obj/machinery/r_n_d/server/centcom))
+								for(var/datum/tech/T in S.files.known_tech)
+									files.AddTech2Known(T)
+								for(var/datum/design/D in S.files.known_designs)
+									files.AddDesign2Known(D)
+								files.RefreshResearch()
+								server_processed = 1
+							if(!istype(S, /obj/machinery/r_n_d/server/centcom) && server_processed)
+								S.produce_heat()
+						screen = 1.6
+						SStgui.update_uis(src)
+			return TRUE
+
+		if("togglesync")
+			sync = !sync
+			return TRUE
+
+		if("build")
+			CHECK_LATHE
+			var/datum/design/being_built = null
+			for(var/datum/design/D in files.known_designs)
+				if(D.id == params["build"])
+					being_built = D
+					break
+			if(being_built)
+				linked_lathe.addToQueue(being_built)
+			screen = 3.1
+			return TRUE
+
+		if("imprint")
+			CHECK_IMPRINTER
+			var/datum/design/being_built = null
+			for(var/datum/design/D in files.known_designs)
+				if(D.id == params["imprint"])
+					being_built = D
+					break
+			if(being_built)
+				linked_imprinter.addToQueue(being_built)
+			screen = 4.1
+			return TRUE
+
+		if("disposeP")
+			CHECK_LATHE
+			for(var/datum/reagent/R in linked_lathe.reagents.reagent_list)
+				if("[R.type]" == params["chem"])
+					linked_lathe.reagents.del_reagent(R.type)
+					break
+			return TRUE
+
+		if("disposeallP")
+			CHECK_LATHE
+			linked_lathe.reagents.clear_reagents()
+			return TRUE
+
+		if("removeP")
+			CHECK_LATHE
+			var/to_remove = text2num(params["remove"])
+			if(sanitize_integer(to_remove, 1, length(linked_lathe.queue), 1) == to_remove)
+				linked_lathe.removeFromQueue(to_remove)
+			return TRUE
+
+		if("lathe_ejectsheet")
+			CHECK_LATHE
+			linked_lathe.eject(params["mat"], text2num(params["amount"]))
+			return TRUE
+
+		if("disposeI")
+			CHECK_IMPRINTER
+			for(var/datum/reagent/R in linked_imprinter.reagents.reagent_list)
+				if("[R.type]" == params["chem"])
+					linked_imprinter.reagents.del_reagent(R.type)
+					break
+			return TRUE
+
+		if("disposeallI")
+			CHECK_IMPRINTER
+			linked_imprinter.reagents.clear_reagents()
+			return TRUE
+
+		if("removeI")
+			CHECK_IMPRINTER
+			linked_imprinter.removeFromQueue(text2num(params["remove"]))
+			return TRUE
+
+		if("imprinter_ejectsheet")
+			CHECK_IMPRINTER
+			linked_imprinter.eject(params["mat"], text2num(params["amount"]))
+			return TRUE
+
+		if("find_device")
+			screen = 0.0
+			spawn(10)
+				SyncRDevices()
+				screen = 1.7
+				SStgui.update_uis(src)
+			return TRUE
+
+		if("disconnect")
+			switch(params["device"])
+				if("destroy")
+					CHECK_DESTROY
+					linked_destroy.linked_console = null
+					linked_destroy = null
+				if("lathe")
+					CHECK_LATHE
+					linked_lathe.linked_console = null
+					linked_lathe = null
+				if("imprinter")
+					CHECK_IMPRINTER
+					linked_imprinter.linked_console = null
+					linked_imprinter = null
+			return TRUE
+
+		if("reset")
+			var/choice = alert("R&D Console Database Reset", "Are you sure you want to reset the R&D console's database? Data lost cannot be recovered.", "Continue", "Cancel")
+			if(choice == "Continue")
+				screen = 0.0
+				qdel(files)
+				files = new /datum/research(src)
+				spawn(20)
+					screen = 1.6
+					SStgui.update_uis(src)
+			return TRUE
+
+		if("print")
+			screen = 0.5
+			spawn(20)
+				var/obj/item/paper/PR = new/obj/item/paper
+				PR.name = "fabricator report"
+				PR.info = "<center><b>[station_name()] Fabricator Laboratory</b>"
+				PR.info += "<h2>[ (text2num(params["print"]) == 2) ? "Detailed" : null ] Fabricator Status Report</h2>"
+				PR.info += "<i>report prepared at [station_time_timestamp("hh:mm")] local time</i></center><br>"
+				if(text2num(params["print"]) == 2)
+					PR.info += GetResearchListInfo()
+				else
+					PR.info += GetResearchLevelsInfo()
+				PR.info_links = PR.info
+				PR.icon_state = "paper_words"
+				PR.dropInto(loc)
+				spawn(10)
+					screen = ((text2num(params["print"]) == 2) ? 5.0 : 1.1)
+					SStgui.update_uis(src)
+			return TRUE
+	return FALSE
 /obj/machinery/computer/rdconsole/proc/finish_deconstruct(weakref/W)
 	CHECK_DESTROY
 	var/mob/user = W.resolve()
@@ -469,8 +485,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 	use_power_oneoff(linked_destroy.active_power_usage)
 	screen = 1.0
-	if(CanInteract(user, DefaultTopicState()))
-		interact(user)
+	SStgui.update_uis(src)
 
 /obj/machinery/computer/rdconsole/proc/GetResearchLevelsInfo()
 	var/dat
@@ -500,373 +515,171 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	return TRUE
 
 /obj/machinery/computer/rdconsole/interact(mob/user)
-	user.set_machine(src)
-	var/dat = list()
-	files.RefreshResearch()
-	switch(screen) //A quick check to make sure you get the right screen when a device is disconnected.
-		if(2 to 2.9)
-			if(linked_destroy == null)
-				screen = 2.0
-			else if(linked_destroy.loaded_item == null)
-				screen = 2.1
-			else
-				screen = 2.2
-		if(3 to 3.9)
-			if(linked_lathe == null)
-				screen = 3.0
-		if(4 to 4.9)
-			if(linked_imprinter == null)
-				screen = 4.0
+	tgui_interact(user)
 
-	switch(screen)
+/obj/machinery/computer/rdconsole/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "RDConsole", name)
+		ui.open()
 
-		//////////////////////R&D CONSOLE SCREENS//////////////////
-		if(0.0)
-			dat += "Updating Database..."
+/obj/machinery/computer/rdconsole/tgui_data(mob/user)
+	var/list/data = list()
+	data["screen"] = "[screen]"
+	data["sync"] = sync
+	data["can_analyze"] = can_analyze
+	data["t_disk"] = t_disk ? 1 : 0
+	data["d_disk"] = d_disk ? 1 : 0
+	data["has_destroy"] = linked_destroy ? 1 : 0
+	data["has_lathe"] = linked_lathe ? 1 : 0
+	data["has_imprinter"] = linked_imprinter ? 1 : 0
 
-		if(0.1)
-			dat += "Processing and Updating Database..."
+	if(t_disk)
+		var/list/tech_info = list()
+		if(t_disk.stored)
+			tech_info["name"] = t_disk.stored.name
+			tech_info["level"] = t_disk.stored.level
+			tech_info["desc"] = t_disk.stored.desc
+		data["tech_disk"] = tech_info
+	if(d_disk)
+		var/list/design_info = list()
+		if(d_disk.blueprint)
+			design_info["name"] = d_disk.blueprint.name
+			var/build_type = d_disk.blueprint.build_type
+			switch(build_type)
+				if(IMPRINTER)
+					design_info["lathe_type"] = "Circuit Imprinter"
+				if(PROTOLATHE)
+					design_info["lathe_type"] = "Proto-lathe"
+			var/list/mat_list = list()
+			for(var/M in d_disk.blueprint.materials)
+				mat_list += list(list("name" = CallMaterialName(M), "amount" = d_disk.blueprint.materials[M]))
+			design_info["materials"] = mat_list
+		data["design_disk"] = design_info
 
-		if(0.2)
-			dat += "SYSTEM LOCKED<BR><BR>"
-			dat += "<A href='byond://?src=\ref[src];lock=1.6'>Unlock</A>"
+	// Screen 1.1 — research levels
+	var/list/techs = list()
+	for(var/datum/tech/T in files.known_tech)
+		if(T.level < 1)
+			continue
+		techs += list(list("name" = T.name, "level" = T.level, "desc" = T.desc))
+	data["techs"] = techs
+	// Screen 5.0 — known designs
+	var/list/designs_known = list()
+	for(var/datum/design/D in files.known_designs)
+		if(D.build_path)
+			designs_known += list(list("name" = D.name, "desc" = D.desc))
+	data["known_designs"] = designs_known
 
-		if(0.3)
-			dat += "Constructing Prototype. Please Wait..."
+	// Copy-to-disk source lists (screens 1.3 / 1.5)
+	var/list/copyable_techs = list()
+	for(var/datum/tech/T in files.known_tech)
+		copyable_techs += list(list("name" = T.name, "id" = T.id))
+	data["copyable_techs"] = copyable_techs
+	var/list/copyable_designs = list()
+	for(var/datum/design/D in files.known_designs)
+		if(D.build_path)
+			copyable_designs += list(list("name" = D.name, "id" = D.id))
+	data["copyable_designs"] = copyable_designs
 
-		if(0.4)
-			dat += "Imprinting Circuit. Please Wait..."
-
-		if(0.5)
-			dat += "Printing. Please Wait..."
-
-		if(1.0) //Main Menu
-			dat += "Main Menu:<BR><BR>"
-			dat += "Loaded disk: "
-			dat += (t_disk || d_disk) ? (t_disk ? "technology storage disk" : "design storage disk") : "none"
-			dat += "<HR><UL>"
-			dat += "<LI><A href='byond://?src=\ref[src];menu=1.1'>Current Fabricator Learning Matrix Status</A>"
-			dat += "<LI><A href='byond://?src=\ref[src];menu=5.0'>View Available Designs</A>"
-			if(t_disk)
-				dat += "<LI><A href='byond://?src=\ref[src];menu=1.2'>Disk Operations</A>"
-			else if(d_disk)
-				dat += "<LI><A href='byond://?src=\ref[src];menu=1.4'>Disk Operations</A>"
-			else
-				dat += "<LI>Disk Operations"
-			if(linked_destroy)
-				dat += "<LI><A href='byond://?src=\ref[src];menu=2.2'>Destructive Analyzer Menu</A>"
-			if(linked_lathe)
-				dat += "<LI><A href='byond://?src=\ref[src];menu=3.1'>Protolathe Construction Menu</A>"
-			if(linked_imprinter)
-				dat += "<LI><A href='byond://?src=\ref[src];menu=4.1'>Circuit Construction Menu</A>"
-			dat += "<LI><A href='byond://?src=\ref[src];menu=1.6'>Settings</A>"
-			dat += "</UL>"
-
-		if(1.1) //Research viewer
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];print=1'>Print This Page</A><HR>"
-			dat += "Fabricator Learning Matrix Proficiency Levels:<BR><BR>"
-			dat += GetResearchLevelsInfo()
-			dat += "</UL>"
-
-		if(1.2) //Technology Disk Menu
-			if(!t_disk)
-				screen = 1
-				return
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "Disk Contents: (Technology Data Disk)<BR><BR>"
-			if(t_disk.stored == null)
-				dat += "The disk has no data stored on it.<HR>"
-				dat += "Operations: "
-				dat += "<A href='byond://?src=\ref[src];menu=1.3'>Load Tech to Disk</A> || "
-			else
-				dat += "Name: [t_disk.stored.name]<BR>"
-				dat += "Level: [t_disk.stored.level]<BR>"
-				dat += "Description: [t_disk.stored.desc]<HR>"
-				dat += "Operations: "
-				dat += "<A href='byond://?src=\ref[src];updt_tech=1'>Upload to Database</A> || "
-				dat += "<A href='byond://?src=\ref[src];clear_tech=1'>Clear Disk</A> || "
-			dat += "<A href='byond://?src=\ref[src];eject_tech=1'>Eject Disk</A>"
-
-		if(1.3) //Technology Disk submenu
-			if(!t_disk)
-				screen = 1
-				return
-			dat += "<BR><A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=1.2'>Return to Disk Operations</A><HR>"
-			dat += "Load Technology to Disk:<BR><BR>"
-			dat += "<UL>"
-			for(var/datum/tech/T in files.known_tech)
-				dat += "<LI>[T.name] "
-				dat += "\[<A href='byond://?src=\ref[src];copy_tech=1;copy_tech_ID=[T.id]'>copy to disk</A>\]"
-			dat += "</UL>"
-
-		if(1.4) //Design Disk menu.
-			if(!d_disk)
-				screen = 1
-				return
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			if(d_disk.blueprint == null)
-				dat += "The disk has no data stored on it.<HR>"
-				dat += "Operations: "
-				dat += "<A href='byond://?src=\ref[src];menu=1.5'>Load Design to Disk</A> || "
-			else
-				dat += "Name: [d_disk.blueprint.name]<BR>"
-				switch(d_disk.blueprint.build_type)
-					if(IMPRINTER) dat += "Lathe Type: Circuit Imprinter<BR>"
-					if(PROTOLATHE) dat += "Lathe Type: Proto-lathe<BR>"
-				dat += "Required Materials:<BR>"
-				for(var/M in d_disk.blueprint.materials)
-					if(copytext(M, 1, 2) == "$") dat += "* [copytext(M, 2)] x [d_disk.blueprint.materials[M]]<BR>"
-					else dat += "* [M] x [d_disk.blueprint.materials[M]]<BR>"
-				dat += "<HR>Operations: "
-				dat += "<A href='byond://?src=\ref[src];updt_design=1'>Upload to Database</A> || "
-				dat += "<A href='byond://?src=\ref[src];clear_design=1'>Clear Disk</A> || "
-			dat += "<A href='byond://?src=\ref[src];eject_design=1'>Eject Disk</A>"
-
-		if(1.5) //Design disk submenu
-			if(!d_disk)
-				screen = 1
-				return
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=1.4'>Return to Disk Operations</A><HR>"
-			dat += "Load Design to Disk:<BR><BR>"
-			dat += "<UL>"
-			for(var/datum/design/D in files.known_designs)
-				if(D.build_path)
-					dat += "<LI>[D.name] "
-					dat += "<A href='byond://?src=\ref[src];copy_design=1;copy_design_ID=[D.id]'>\[copy to disk\]</A>"
-			dat += "</UL>"
-
-		if(1.6) //R&D console settings
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "R&D Console Setting:<HR>"
-			dat += "<UL>"
-			if(sync)
-				dat += "<LI><A href='byond://?src=\ref[src];sync=1'>Sync Database with Network</A><BR>"
-				dat += "<LI><A href='byond://?src=\ref[src];togglesync=1'>Disconnect from Fabrication Network</A><BR>"
-			else
-				dat += "<LI><A href='byond://?src=\ref[src];togglesync=1'>Connect to Fabrication Network</A><BR>"
-			dat += "<LI><A href='byond://?src=\ref[src];menu=1.7'>Device Linkage Menu</A><BR>"
-			dat += "<LI><A href='byond://?src=\ref[src];lock=0.2'>Lock Console</A><BR>"
-			dat += "<LI><A href='byond://?src=\ref[src];reset=1'>Reset R&D Database</A><BR>"
-			dat += "<UL>"
-
-		if(1.7) //R&D device linkage
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=1.6'>Settings Menu</A><HR>"
-			dat += "R&D Console Device Linkage Menu:<BR><BR>"
-			dat += "<A href='byond://?src=\ref[src];find_device=1'>Re-sync with Nearby Devices</A><HR>"
-			dat += "Linked Devices:"
-			dat += "<UL>"
-			if(linked_destroy)
-				dat += "<LI>Destructive Analyzer <A href='byond://?src=\ref[src];disconnect=destroy'>(Disconnect)</A>"
-			else
-				if (can_analyze == TRUE)
-					dat += "<LI>(No Destructive Analyzer Linked)"
-			if(linked_lathe)
-				dat += "<LI>Protolathe <A href='byond://?src=\ref[src];disconnect=lathe'>(Disconnect)</A>"
-			else
-				dat += "<LI>(No Protolathe Linked)"
-			if(linked_imprinter)
-				dat += "<LI>Circuit Imprinter <A href='byond://?src=\ref[src];disconnect=imprinter'>(Disconnect)</A>"
-			else
-				dat += "<LI>(No Circuit Imprinter Linked)"
-			dat += "</UL>"
-
-		////////////////////DESTRUCTIVE ANALYZER SCREENS////////////////////////////
-		if(2.0)
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "NO DESTRUCTIVE ANALYZER LINKED TO CONSOLE<BR><BR>"
-
-		if(2.1)
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "No Item Loaded. Standing-by...<BR><HR>"
-
-		if(2.2)
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "Deconstruction Menu<HR>"
-			dat += "Name: [linked_destroy.loaded_item.name]<BR>"
-
-			dat += "Origin Tech:"
-			dat += "<UL>"
+	// Destructive analyzer screens
+	if(linked_destroy)
+		var/list/destroy_data = list()
+		destroy_data["busy"] = linked_destroy.busy
+		if(linked_destroy.loaded_item)
+			var/list/origin = list()
 			for(var/T in linked_destroy.loaded_item.origin_tech)
-				dat += "<LI>[CallTechName(T)] [linked_destroy.loaded_item.origin_tech[T]]"
+				var/current = null
 				for(var/datum/tech/F in files.known_tech)
 					if(F.name == CallTechName(T))
-						dat += " (Current: [F.level])"
+						current = F.level
 						break
-			dat += "</UL>"
-			dat += "<HR><A href='byond://?src=\ref[src];deconstruct=1'>Deconstruct Item</A> || "
-			dat += "<A href='byond://?src=\ref[src];eject_item=1'>Eject Item</A> || "
+				origin += list(list("name" = CallTechName(T), "value" = linked_destroy.loaded_item.origin_tech[T], "current" = current))
+			destroy_data["item_name"] = linked_destroy.loaded_item.name
+			destroy_data["origin_tech"] = origin
+		data["destroy"] = destroy_data
 
-		/////////////////////PROTOLATHE SCREENS/////////////////////////
-		if(3.0)
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "NO PROTOLATHE LINKED TO CONSOLE<BR><BR>"
+	// Protolathe screens
+	if(linked_lathe)
+		data["lathe"] = build_lathe_imprinter_data(linked_lathe, TRUE)
 
-		if(3.1)
-			CHECK_LATHE
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=3.4'>View Queue</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=3.2'>Material Storage</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=3.3'>Chemical Storage</A><HR>"
-			dat += "Protolathe Menu:<BR><BR>"
-			dat += "<B>Material Amount:</B> [linked_lathe.TotalMaterials()] cm<sup>3</sup> (MAX: [linked_lathe.max_material_storage])<BR>"
-			dat += "<B>Chemical Volume:</B> [linked_lathe.reagents.total_volume] (MAX: [linked_lathe.reagents.maximum_volume])<HR>"
-			dat += "<UL>"
-			for(var/datum/design/D in files.known_designs)
-				if(!D.build_path || !(D.build_type & PROTOLATHE))
-					continue
-				var/temp_dat
-				for(var/M in D.materials)
-					temp_dat += ", [D.materials[M]] [CallMaterialName(M)]"
-				for(var/T in D.chemicals)
-					temp_dat += ", [D.chemicals[T]*(linked_imprinter ? linked_imprinter.mat_efficiency : 1)] [CallReagentName(T)]"
-				if(temp_dat)
-					temp_dat = " \[[copytext(temp_dat, 3)]\]"
-				if(linked_lathe.canBuild(D))
-					dat += "<LI><B><A href='byond://?src=\ref[src];build=[D.id]'>[D.name]</A></B>[temp_dat]"
-				else
-					dat += "<LI><B>[D.name]</B>[temp_dat]"
-			dat += "</UL>"
+	// Circuit imprinter screens
+	if(linked_imprinter)
+		data["imprinter"] = build_lathe_imprinter_data(linked_imprinter, FALSE)
 
-		if(3.2) //Protolathe Material Storage Sub-menu
-			CHECK_LATHE
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=3.1'>Protolathe Menu</A><HR>"
-			dat += "Material Storage<BR><HR>"
-			dat += "<UL>"
-			for(var/M in linked_lathe.materials)
-				var/amount = linked_lathe.materials[M]
-				dat += "<LI><B>[capitalize(M)]</B>: [amount] cm<sup>3</sup>"
-				if(amount >= SHEET_MATERIAL_AMOUNT)
-					dat += " || Eject "
-					for (var/C in list(1, 3, 5, 10, 15, 20, 25, 30, 40))
-						if(amount < C * SHEET_MATERIAL_AMOUNT)
-							break
-						dat += "[C > 1 ? ", " : ""]<A href='byond://?src=\ref[src];lathe_ejectsheet=[M];amount=[C]'>[C]</A> "
+	return data
 
-					dat += " or <A href='byond://?src=\ref[src];lathe_ejectsheet=[M];amount=50'>max</A> sheets"
-				dat += ""
-			dat += "</UL>"
+/obj/machinery/computer/rdconsole/proc/build_lathe_imprinter_data(obj/machinery/r_n_d/machine, is_lathe)
+	var/list/out = list()
+	out["materials"] = machine.TotalMaterials()
+	out["chem_volume"] = machine.reagents.total_volume
+	out["chem_max"] = machine.reagents.maximum_volume
+	out["busy"] = machine.busy
 
-		if(3.3) //Protolathe Chemical Storage Submenu
-			CHECK_LATHE
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=3.1'>Protolathe Menu</A><HR>"
-			dat += "Chemical Storage<BR><HR>"
-			for(var/datum/reagent/R in linked_lathe.reagents.reagent_list)
-				dat += "Name: [R.name] | Units: [R.volume] "
-				dat += "<A href='byond://?src=\ref[src];disposeP=\ref[R]'>(Purge)</A><BR>"
-				dat += "<A href='byond://?src=\ref[src];disposeallP=1'><U>Disposal All Chemicals in Storage</U></A><BR>"
+	var/list/mats = list()
+	for(var/M in machine.materials)
+		var/amount = machine.materials[M]
+		var/list/ejects = list()
+		if(amount >= SHEET_MATERIAL_AMOUNT)
+			for(var/C in list(1, 3, 5, 10, 15, 20, 25, 30, 40))
+				if(amount < C * SHEET_MATERIAL_AMOUNT)
+					break
+				ejects += C
+		mats += list(list("name" = capitalize(M), "key" = M, "amount" = amount, "ejects" = ejects))
+	out["mat_list"] = mats
 
-		if(3.4) // Protolathe queue
-			CHECK_LATHE
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=3.1'>Protolathe Menu</A><HR>"
-			dat += "Queue<BR><HR>"
-			if(!linked_lathe.queue.len)
-				dat += "Empty"
-			else
-				var/tmp = 1
-				for(var/datum/design/D in linked_lathe.queue)
-					if(tmp == 1)
-						if(linked_lathe.busy)
-							dat += "<B>1: [D.name]</B><BR>"
-						else
-							dat += "<B>1: [D.name]</B> (Awaiting materials) <A href='byond://?src=\ref[src];removeP=[tmp]'>(Remove)</A><BR>"
-					else
-						dat += "[tmp]: [D.name] <A href='byond://?src=\ref[src];removeP=[tmp]'>(Remove)</A><BR>"
-					++tmp
+	var/list/chems = list()
+	for(var/datum/reagent/R in machine.reagents.reagent_list)
+		chems += list(list("name" = R.name, "volume" = R.volume, "key" = "[R.type]"))
+	out["chems"] = chems
 
-		///////////////////CIRCUIT IMPRINTER SCREENS////////////////////
-		if(4.0)
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A><HR>"
-			dat += "NO CIRCUIT IMPRINTER LINKED TO CONSOLE<BR><BR>"
+	var/list/queue = list()
+	var/qindex = 1
+	var/list/machine_queue = list()
+	if(is_lathe)
+		var/obj/machinery/r_n_d/protolathe/PL = machine
+		machine_queue = PL.queue
+	else
+		var/obj/machinery/r_n_d/circuit_imprinter/CI = machine
+		machine_queue = CI.queue
+	for(var/datum/design/D in machine_queue)
+		var/busy_first = (qindex == 1 && machine.busy)
+		queue += list(list("name" = D.name, "index" = qindex, "busy" = busy_first))
+		qindex++
+	out["queue"] = queue
 
-		if(4.1)
-			CHECK_IMPRINTER
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=4.4'>View Queue</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=4.3'>Material Storage</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=4.2'>Chemical Storage</A><HR>"
-			dat += "Circuit Imprinter Menu:<BR><BR>"
-			dat += "Material Amount: [linked_imprinter.TotalMaterials()] cm<sup>3</sup><BR>"
-			dat += "Chemical Volume: [linked_imprinter.reagents.total_volume]<HR>"
-			dat += "<UL>"
-			for(var/datum/design/D in files.known_designs)
-				if(!D.build_path || !(D.build_type & IMPRINTER))
-					continue
-				var/temp_dat
-				for(var/M in D.materials)
-					temp_dat += ", [D.materials[M]*linked_imprinter.mat_efficiency] [CallMaterialName(M)]"
-				for(var/T in D.chemicals)
-					temp_dat += ", [D.chemicals[T]*linked_imprinter.mat_efficiency] [CallReagentName(T)]"
-				if(temp_dat)
-					temp_dat = " \[[copytext(temp_dat,3)]\]"
-				if(linked_imprinter.canBuild(D))
-					dat += "<LI><B><A href='byond://?src=\ref[src];imprint=[D.id]'>[D.name]</A></B>[temp_dat]"
-				else
-					dat += "<LI><B>[D.name]</B>[temp_dat]"
-			dat += "</UL>"
+	var/list/buildables = list()
+	for(var/datum/design/D in files.known_designs)
+		if(!D.build_path)
+			continue
+		var/build_type_flag = is_lathe ? PROTOLATHE : IMPRINTER
+		if(!(D.build_type & build_type_flag))
+			continue
+		var/mat_efficiency = 1
+		if(!is_lathe)
+			var/obj/machinery/r_n_d/circuit_imprinter/CI = machine
+			mat_efficiency = CI.mat_efficiency
+		var/list/cost_parts = list()
+		for(var/M in D.materials)
+			cost_parts += "[D.materials[M]*(is_lathe ? 1 : mat_efficiency)] [CallMaterialName(M)]"
+		for(var/T in D.chemicals)
+			cost_parts += "[D.chemicals[T]*mat_efficiency] [CallReagentName(T)]"
+		var/can_build = FALSE
+		if(is_lathe)
+			var/obj/machinery/r_n_d/protolathe/PL = machine
+			can_build = PL.canBuild(D)
+		else
+			var/obj/machinery/r_n_d/circuit_imprinter/CI = machine
+			can_build = CI.canBuild(D)
+		buildables += list(list(
+			"name" = D.name,
+			"id" = D.id,
+			"cost" = jointext(cost_parts, ", "),
+			"can_build" = can_build
+		))
+	out["buildables"] = buildables
+	return out
 
-		if(4.2)
-			CHECK_IMPRINTER
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=4.1'>Imprinter Menu</A><HR>"
-			dat += "Chemical Storage<BR><HR>"
-			for(var/datum/reagent/R in linked_imprinter.reagents.reagent_list)
-				dat += "Name: [R.name] | Units: [R.volume] "
-				dat += "<A href='byond://?src=\ref[src];disposeI=\ref[R]'>(Purge)</A><BR>"
-				dat += "<A href='byond://?src=\ref[src];disposeallI=1'><U>Disposal All Chemicals in Storage</U></A><BR>"
-
-		if(4.3)
-			CHECK_IMPRINTER
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=4.1'>Circuit Imprinter Menu</A><HR>"
-			dat += "Material Storage<BR><HR>"
-			dat += "<UL>"
-			for(var/M in linked_imprinter.materials)
-				var/amount = linked_imprinter.materials[M]
-				dat += "<LI><B>[capitalize(M)]</B>: [amount] cm<sup>3</sup>"
-				if(amount >= SHEET_MATERIAL_AMOUNT)
-					dat += " || Eject: "
-					for (var/C in list(1, 3, 5, 10, 15, 20, 25, 30, 40))
-						if(amount < C * SHEET_MATERIAL_AMOUNT)
-							break
-						dat += "[C > 1 ? ", " : ""]<A href='byond://?src=\ref[src];imprinter_ejectsheet=[M];amount=[C]'>[C]</A> "
-
-					dat += " or <A href='byond://?src=\ref[src];imprinter_ejectsheet=[M];amount=50'>max</A> sheets"
-				dat += ""
-			dat += "</UL>"
-
-		if(4.4)
-			CHECK_IMPRINTER
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];menu=4.1'>Circuit Imprinter Menu</A><HR>"
-			dat += "Queue<BR><HR>"
-			if(linked_imprinter.queue.len == 0)
-				dat += "Empty"
-			else
-				var/tmp = 1
-				for(var/datum/design/D in linked_imprinter.queue)
-					if(tmp == 1)
-						dat += "<B>1: [D.name]</B><BR>"
-					else
-						dat += "[tmp]: [D.name] <A href='byond://?src=\ref[src];removeI=[tmp]'>(Remove)</A><BR>"
-					++tmp
-
-		///////////////////Research Information Browser////////////////////
-		if(5.0)
-			dat += "<A href='byond://?src=\ref[src];menu=1.0'>Main Menu</A> || "
-			dat += "<A href='byond://?src=\ref[src];print=2'>Print This Page</A><HR>"
-			dat += "List of Available Designs:"
-			dat += GetResearchListInfo()
-
-	var/datum/browser/popup = new(user, "rdconsolenew", "Core Fabricator Console", 850, 600)
-	popup.set_content(JOINTEXT(dat))
-	popup.open()
 
 /obj/machinery/computer/rdconsole/robotics
 	name = "robotics fabrication console"

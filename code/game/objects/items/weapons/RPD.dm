@@ -78,7 +78,6 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 	var/datum/effect/effect/system/spark_spread/spark_system
 	var/datum/pipe/P
 	var/pipe_color = "white"
-	var/datum/browser/popup
 
 /obj/item/rpd/Initialize()
 	. = ..()
@@ -93,43 +92,56 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 	QDEL_NULL(spark_system)
 	return ..()
 
-/obj/item/rpd/proc/get_console_data(list/pipe_categories, color_options = FALSE)
-	. = list()
-	. += "<table>"
-	if(color_options)
-		. += "<tr><td>Color</td><td><a href='byond://?src=\ref[src];color=\ref[src]'><font color = '[pipe_color]'>[pipe_color]</font></a></td></tr>"
+/obj/item/rpd/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "RPD", src.name)
+		ui.open()
+
+/obj/item/rpd/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/pipe_categories = user.skill_check(SKILL_ATMOS, SKILL_EXPERIENCED) ? GLOB.rpd_pipe_selection_skilled : GLOB.rpd_pipe_selection
+	var/list/categories = list()
 	for(var/category in pipe_categories)
 		var/datum/pipe/cat = category
-		. += "<tr><td><font color = '#517087'><strong>[initial(cat.category)]</strong></font></td></tr>"
+		var/list/pipe_list = list()
 		for(var/datum/pipe/pipe in pipe_categories[category])
-			. += "<tr><td>[pipe.name]</td><td>[P.type == pipe.type ? SPAN_CLASS("linkOn","Select") : "<a href='byond://?src=\ref[src];select=\ref[pipe]'>Select</a>"]</td></tr>"
-	.+= "</table>"
-	. = JOINTEXT(.)
+			pipe_list += list(list(
+				"name" = pipe.name,
+				"ref" = REF(pipe),
+				"selected" = (P.type == pipe.type)))
+		categories += list(list(
+			"name" = initial(cat.category),
+			"pipes" = pipe_list))
+	data["categories"] = categories
+	data["pipe_color"] = pipe_color
+	var/list/colors = list()
+	for(var/color in pipe_colors)
+		colors += color
+	data["colors"] = colors
+	return data
 
-/obj/item/rpd/interact(mob/user)
-	popup = new (user, "Pipe List", "[src] menu")
-	popup.set_content(get_console_data(user.skill_check(SKILL_ATMOS,SKILL_EXPERIENCED) ? GLOB.rpd_pipe_selection_skilled : GLOB.rpd_pipe_selection, TRUE))
-	popup.open()
-
-/obj/item/rpd/OnTopic(user, list/href_list)
-	if(href_list["select"])
-		P = locate(href_list["select"])
-		playsound(src.loc, 'sounds/machines/click.ogg', 50, 1)
-		interact(user)
-		if(prob(10)) src.spark_system.start()
-		return TOPIC_HANDLED
-	if(href_list["color"])
-		var/choice = input(user, "What color do you want pipes to have?") as null|anything in pipe_colors
-		if(!choice || !CanPhysicallyInteract(user))
-			return TOPIC_HANDLED
-		pipe_color = choice
-		interact(user)
-		return TOPIC_HANDLED
-
-/obj/item/rpd/dropped(mob/user)
-	..()
-	if(popup)
-		popup.close()
+/obj/item/rpd/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("set_buildtype")
+			var/datum/pipe/new_pipe = locate(params["pipe"])
+			if(!istype(new_pipe))
+				return TRUE
+			P = new_pipe
+			playsound(src.loc, 'sounds/machines/click.ogg', 50, 1)
+			SStgui.update_uis(src)
+			if(prob(10)) src.spark_system.start()
+			return TRUE
+		if("set_color")
+			var/choice = params["color"]
+			if(!(choice in pipe_colors))
+				return TRUE
+			pipe_color = choice
+			SStgui.update_uis(src)
+			return TRUE
+	return FALSE
 
 /obj/item/rpd/afterattack(atom/A, mob/user, proximity)
 	if(!proximity) return
@@ -161,7 +173,7 @@ GLOBAL_LIST_INIT(rpd_pipe_selection_skilled, list(
 			to_chat(user, SPAN_WARNING("The readout is flashing some atmospheric jargon, you can't understand."))
 
 /obj/item/rpd/attack_self(mob/user)
-	interact(user)
+	tgui_interact(user)
 	add_fingerprint(user)
 
 /obj/item/rpd/attackby(obj/item/W, mob/user)

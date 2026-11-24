@@ -74,54 +74,55 @@
 
 
 /obj/item/storage/secure/attack_self(mob/user as mob)
-	user.set_machine(src)
-	var/dat = text("<TT><B>[]</B><BR>\n\nLock Status: []",src, (src.locked ? "LOCKED" : "UNLOCKED"))
-	var/message = "Code"
-	if ((src.l_set == 0) && (!src.emagged) && (!src.l_setshort))
-		dat += text("<p>\n<b>5-DIGIT PASSCODE NOT SET.<br>ENTER NEW PASSCODE.</b>")
-	if (src.emagged)
-		dat += text("<p>\n<font color=red><b>LOCKING SYSTEM ERROR - 1701</b></font>")
-	if (src.l_setshort)
-		dat += text("<p>\n<font color=red><b>ALERT: MEMORY SYSTEM ERROR - 6040 201</b></font>")
-	message = text("[]", src.code)
-	if (!src.locked)
-		message = "*****"
-	dat += text("<HR>\n>[]<BR>\n<A href='byond://?src=\ref[];type=1'>1</A>-<A href='byond://?src=\ref[];type=2'>2</A>-<A href='byond://?src=\ref[];type=3'>3</A><BR>\n<A href='byond://?src=\ref[];type=4'>4</A>-<A href='byond://?src=\ref[];type=5'>5</A>-<A href='byond://?src=\ref[];type=6'>6</A><BR>\n<A href='byond://?src=\ref[];type=7'>7</A>-<A href='byond://?src=\ref[];type=8'>8</A>-<A href='byond://?src=\ref[];type=9'>9</A><BR>\n<A href='byond://?src=\ref[];type=R'>R</A>-<A href='byond://?src=\ref[];type=0'>0</A>-<A href='byond://?src=\ref[];type=E'>E</A><BR>\n</TT>", message, src, src, src, src, src, src, src, src, src, src, src, src)
-	var/datum/browser/popup = new(user, "caselock", "Secure Storage", 300, 280)
-	popup.set_content(dat)
-	popup.open()
+	tgui_interact(user)
 
-/obj/item/storage/secure/Topic(href, href_list)
-	..()
+/obj/item/storage/secure/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SecureStorage", "Secure Storage")
+		ui.open()
+
+/obj/item/storage/secure/tgui_data(mob/user)
+	var/list/data = list()
+	data["name"] = name
+	data["locked"] = locked
+	data["code"] = locked ? (code || "") : "*****"
+	data["needs_code"] = (l_set == 0 && !emagged && !l_setshort) ? TRUE : FALSE
+	data["emagged"] = emagged
+	data["setshort"] = l_setshort
+	return data
+
+/obj/item/storage/secure/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if ((usr.stat || usr.restrained()) || (get_dist(src, usr) > 1))
-		return
-	if (href_list["type"])
-		if (href_list["type"] == "E")
-			if ((src.l_set == 0) && (length(src.code) == 5) && (!src.l_setshort) && (src.code != "ERROR"))
-				src.l_code = src.code
-				src.l_set = 1
-			else if ((src.code == src.l_code) && (!src.emagged) && (src.l_set == 1))
-				src.locked = 0
-				cut_overlays()
-				add_overlay(image('icons/obj/storage.dmi', icon_opened))
-				src.code = null
-			else
-				src.code = "ERROR"
-		else
-			if ((href_list["type"] == "R") && (!src.emagged) && (!src.l_setshort))
-				src.locked = 1
-				cut_overlays()
-				src.code = null
-				src.close(usr)
-			else
-				src.code += text("[]", href_list["type"])
-				if (length(src.code) > 5)
+		return TRUE
+	switch(action)
+		if("type")
+			var/key = params["type"]
+			if (key == "E")
+				if ((src.l_set == 0) && (length(src.code) == 5) && (!src.l_setshort) && (src.code != "ERROR"))
+					src.l_code = src.code
+					src.l_set = 1
+				else if ((src.code == src.l_code) && (!src.emagged) && (src.l_set == 1))
+					src.locked = 0
+					cut_overlays()
+					add_overlay(image('icons/obj/storage.dmi', icon_opened))
+					src.code = null
+				else
 					src.code = "ERROR"
-		for(var/mob/M in viewers(1, src.loc))
-			if ((M.client && M.machine == src))
-				src.attack_self(M)
-			return
-	return
+			else
+				if ((key == "R") && (!src.emagged) && (!src.l_setshort))
+					src.locked = 1
+					cut_overlays()
+					src.code = null
+					src.close(usr)
+				else
+					src.code += text("[]", key)
+					if (length(src.code) > 5)
+						src.code = "ERROR"
+			return TRUE
+	return FALSE
 
 
 /obj/item/storage/secure/examine(mob/user, distance)

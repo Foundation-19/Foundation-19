@@ -137,63 +137,60 @@
 			B.reagents.trans_to_obj(dart, mix_amount)
 
 /obj/item/gun/projectile/dartgun/attack_self(mob/user)
-	Interact(user)
+	tgui_interact(user)
 
-/obj/item/gun/projectile/dartgun/proc/Interact(mob/user)
-	user.set_machine(src)
-	var/list/dat = list("<b>[src] mixing control:</b><br><br>")
+/obj/item/gun/projectile/dartgun/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "DartGun", "[src] mixing control")
+		ui.open()
 
-	if (!beakers.len)
-		dat += "There are no beakers inserted!<br><br>"
-	else
-		for(var/i in 1 to beakers.len)
-			var/obj/item/reagent_containers/glass/beaker/B = beakers[i]
-			if(!istype(B)) continue
-
-			dat += "Beaker [i] contains: "
-			if(B.reagents && B.reagents.reagent_list.len)
-				for(var/datum/reagent/R in B.reagents.reagent_list)
-					dat += "<br>    [R.volume] units of [R.name], "
-				if(B in mixing)
-					dat += "<A href='byond://?src=\ref[src];stop_mix=[i]'><font color='green'>Mixing</font></A> "
-				else
-					dat += "<A href='byond://?src=\ref[src];mix=[i]'><font color='red'>Not mixing</font></A> "
-			else
-				dat += "nothing."
-			dat += " \[<A href='byond://?src=\ref[src];eject=[i]'>Eject</A>\]<br>"
-
+/obj/item/gun/projectile/dartgun/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/beaker_list = list()
+	for(var/i in 1 to beakers.len)
+		var/obj/item/reagent_containers/glass/beaker/B = beakers[i]
+		if(!istype(B))
+			continue
+		var/list/entry = list(
+			"index" = i,
+			"name" = B.name,
+			"mixing" = (B in mixing),
+			"reagents" = list()
+		)
+		if(B.reagents && B.reagents.reagent_list.len)
+			var/list/reagent_list = list()
+			for(var/datum/reagent/R in B.reagents.reagent_list)
+				reagent_list += list(list("name" = R.name, "volume" = R.volume))
+			entry["reagents"] = reagent_list
+		beaker_list += list(entry)
+	data["beakers"] = beaker_list
+	data["has_magazine"] = ammo_magazine ? TRUE : FALSE
 	if(ammo_magazine)
-		if(ammo_magazine.stored_ammo && ammo_magazine.stored_ammo.len)
-			dat += "The dart cartridge has [ammo_magazine.stored_ammo.len] shots remaining."
-		else
-			dat += FONT_COLORED("red","The dart cartridge is empty!")
-		dat += " \[<A href='byond://?src=\ref[src];eject_cart=1'>Eject</A>\]<br>"
+		data["magazine_rounds"] = ammo_magazine.stored_ammo ? ammo_magazine.stored_ammo.len : 0
+	return data
 
-	dat += "<br>\[<A href='byond://?src=\ref[src];refresh=1'>Refresh</A>\]"
-
-	var/datum/browser/popup = new(user, "dartgun", "[src] mixing control")
-	popup.set_content(jointext(dat,null))
-	popup.open()
-
-/obj/item/gun/projectile/dartgun/OnTopic(user, href_list)
-	if(href_list["stop_mix"])
-		var/index = text2num(href_list["stop_mix"])
-		mixing -= beakers[index]
-		. = TOPIC_REFRESH
-	else if (href_list["mix"])
-		var/index = text2num(href_list["mix"])
-		mixing |= beakers[index]
-		. = TOPIC_REFRESH
-	else if (href_list["eject"])
-		var/index = text2num(href_list["eject"])
-		if(beakers[index])
-			remove_beaker(beakers[index], usr)
-		. = TOPIC_REFRESH
-	else if (href_list["eject_cart"])
-		unload_ammo(usr)
-		. = TOPIC_REFRESH
-
-	Interact(usr)
+/obj/item/gun/projectile/dartgun/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("stop_mix")
+			var/index = text2num(params["index"])
+			mixing -= beakers[index]
+			return TRUE
+		if("mix")
+			var/index = text2num(params["index"])
+			mixing |= beakers[index]
+			return TRUE
+		if("eject")
+			var/index = text2num(params["index"])
+			if(beakers[index])
+				remove_beaker(beakers[index], usr)
+			return TRUE
+		if("eject_cart")
+			unload_ammo(usr)
+			return TRUE
+	return FALSE
 
 /obj/item/gun/projectile/dartgun/vox
 	name = "alien dart gun"

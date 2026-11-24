@@ -28,50 +28,55 @@
 		to_chat(M, "This stack of blue paper means nothing to you.")//monkeys cannot into projecting
 
 		return
-	interact()
+	tgui_interact(M)
 
 /obj/item/blueprints/DefaultTopicState()
 	return GLOB.physical_state
 
-/obj/item/blueprints/OnTopic(user, href_list)
-	switch(href_list["action"])
+/obj/item/blueprints/tgui_state(mob/user)
+	return GLOB.physical_tgui_state
+
+/obj/item/blueprints/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Blueprints", name)
+		ui.open()
+
+/obj/item/blueprints/tgui_data(mob/user)
+	var/area/A = get_area(src)
+	var/area_type = get_area_type(A)
+	var/list/data = list()
+	data["station_name"] = station_name()
+	data["company_name"] = GLOB.using_map.company_name
+	data["outpost"] = istype(src, /obj/item/blueprints/outpost) ? TRUE : FALSE
+	data["is_space"] = (area_type == AREA_SPACE) ? TRUE : FALSE
+	data["is_station"] = (area_type == AREA_STATION) ? TRUE : FALSE
+	data["area_name"] = A ? A.name : ""
+	data["has_apc"] = (A && A.apc) ? TRUE : FALSE
+	return data
+
+/obj/item/blueprints/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
 		if ("create_area")
 			if (get_area_type()!=AREA_SPACE)
-				interact()
-				return
+				return TRUE
 			create_area()
+			return TRUE
 		if ("edit_area")
 			if (get_area_type()!=AREA_STATION)
-				interact()
-				return
+				return TRUE
 			edit_area()
+			return TRUE
 		if ("delete_area")
 			//skip the sanity checking, delete_area() does it anyway
 			delete_area()
+			return TRUE
+	return FALSE
 
 /obj/item/blueprints/proc/get_header()
 	return "<h2>[station_name()] blueprints</h2><small>Property of [GLOB.using_map.company_name]. For heads of staff only. Store in high-secure storage.</small><hr>"
-
-/obj/item/blueprints/interact()
-	var/area/A = get_area(src)
-	var/list/dat =  list(get_header())
-
-	switch (get_area_type(A))
-		if (AREA_SPACE)
-			dat += "According \the [src], you are now <b>outside the facility</b>."
-			dat += "<a href='byond://?src=\ref[src];action=create_area'>Mark this place as new area.</a>"
-		if (AREA_STATION)
-			dat += "According \the [src], you are now in <b>\"[A.name]\"</b>."
-			dat += "You may <a href='byond://?src=\ref[src];action=edit_area'> move an amendment</a> to the drawing."
-			if (A.apc)
-				dat += "You can't erase this area, because it has an APC.</p>"
-			else
-				dat += "You <a href='byond://?src=\ref[src];action=delete_area'>erase a part of it</a>.</p>"
-		else
-			dat += "This place isn't noted on \the [src]."
-	var/datum/browser/popup = new(usr, "blueprints", name, 290, 300)
-	popup.set_content(jointext(dat, "<br>"))
-	popup.open()
 
 /obj/item/blueprints/proc/get_area_type(area/A = get_area(src))
 	if(istype(A, /area/space))
@@ -113,7 +118,7 @@
 	for(var/T in turfs)
 		ChangeArea(T, A)
 	A.always_unpowered = 0
-	interact()
+	SStgui.update_uis(src)
 
 /obj/item/blueprints/proc/edit_area()
 	var/area/A = get_area(src)
@@ -128,17 +133,17 @@
 	set_area_machinery_title(A,str,prevname)
 	A.SetName(str)
 	to_chat(usr, SPAN_NOTICE("You set the area '[prevname]' title to '[str]'."))
-	interact()
+	SStgui.update_uis(src)
 
 /obj/item/blueprints/proc/delete_area()
 	var/area/A = get_area(src)
 	if (get_area_type(A)!=AREA_STATION || A.apc) //let's just check this one last time, just in case
-		interact()
+		SStgui.update_uis(src)
 		return
 	to_chat(usr, SPAN_NOTICE("You scrub [A.name] off the blueprint."))
 	log_and_message_staff("deleted area [A.name] via station blueprints.")
 	qdel(A)
-	interact()
+	SStgui.update_uis(src)
 
 /obj/item/blueprints/proc/set_area_machinery_title(area/A,title,oldtitle)
 	if (!oldtitle) // or replacetext goes to infinite loop

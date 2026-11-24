@@ -69,99 +69,79 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	return TRUE
 
 /obj/machinery/photocopier/faxmachine/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/photocopier/faxmachine/interact(mob/user)
+/obj/machinery/photocopier/faxmachine/tgui_interact(mob/user, datum/tgui/ui)
 	user.set_machine(src)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "FaxMachine", "Fax Machine")
+		ui.open()
 
-	var/scan_name
-	if(scan)
-		scan_name = scan.name
-	else
-		scan_name = "--------"
+/obj/machinery/photocopier/faxmachine/tgui_data(mob/user)
+	var/list/data = list()
+	data["scan_name"] = scan ? scan.name : "--------"
+	data["authenticated"] = authenticated
+	data["has_item"] = copyitem ? TRUE : FALSE
+	if(copyitem)
+		data["item_name"] = copyitem.name
+	data["destination"] = destination ? destination : "Nobody"
+	data["boss_name"] = GLOB.using_map.boss_name
+	return data
 
-	var/dat = "Confirm Identity: <a href='byond://?src=\ref[src];scan=1'>[scan_name]</a><br>"
+/obj/machinery/photocopier/faxmachine/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("send")
+			if(copyitem)
+				if(SSoffsites.offsites_by_name[destination])
+					send_admin_fax(usr, destination)
+				else
+					sendfax(destination)
+			return TRUE
 
-	if(authenticated)
-		dat += "<a href='byond://?src=\ref[src];logout=1'>Log Out</a>"
-	else
-		dat += "<a href='byond://?src=\ref[src];auth=1'>Log In</a>"
+		if("remove")
+			OnRemove(usr)
+			return TRUE
 
-	dat += "<hr>"
-
-	if(authenticated)
-		dat += "<b>Logged in to:</b> [GLOB.using_map.boss_name] Quantum Entanglement Network<br><br>"
-
-		if(copyitem)
-			dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><br><br>"
-			dat += "<a href='byond://?src=\ref[src];send=1'>Send</a><br>"
-			dat += "<b>Currently sending:</b> [copyitem.name]<br>"
-			dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination ? destination : "Nobody"]</a><br>"
-
-		else
-			dat += "Please insert paper to send via secure connection.<br><br>"
-
-	else
-		dat += "Proper authentication is required to use this device.<br><br>"
-
-		if(copyitem)
-			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
-
-	var/datum/browser/popup = new(user, "copier", "Fax Machine")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "copier")
-
-/obj/machinery/photocopier/faxmachine/OnTopic(mob/user, href_list, state)
-	if(href_list["send"])
-		if(copyitem)
-			if(SSoffsites.offsites_by_name[destination])
-				send_admin_fax(user, destination)
+		if("scan")
+			if(scan)
+				if(ishuman(usr))
+					usr.put_in_hands(scan)
+				else
+					scan.dropInto(loc)
+				scan = null
 			else
-				sendfax(destination)
+				var/obj/item/I = usr.get_active_hand()
+				if(istype(I, /obj/item/card/id) && usr.unEquip(I, src))
+					scan = I
+			authenticated = 0
+			return TRUE
 
-		return TOPIC_REFRESH
+		if("dept")
+			var/list/allTargets = list()
+			allTargets |= GLOB.alldepartments
+			for(var/D in SSoffsites.offsites_by_name)
+				if(!is_abstract(SSoffsites.offsites_by_name[D]))
+					allTargets |= D
 
-	if(href_list["remove"])
-		OnRemove(user)
-		return TOPIC_REFRESH
+			var/desired_destination = tgui_input_list(usr, "Which department?", "Choose a department", allTargets, destination)
+			if(desired_destination)
+				destination = desired_destination
+			return TRUE
 
-	if(href_list["scan"])
-		if (scan)
-			if(ishuman(user))
-				user.put_in_hands(scan)
-			else
-				scan.dropInto(loc)
-			scan = null
-		else
-			var/obj/item/I = user.get_active_hand()
-			if (istype(I, /obj/item/card/id) && user.unEquip(I, src))
-				scan = I
-		authenticated = 0
-		return TOPIC_REFRESH
+		if("auth")
+			if((!(authenticated)) && (scan))
+				if(has_access(send_access, scan.GetAccess()))
+					authenticated = 1
+			return TRUE
 
-	if(href_list["dept"])
-		var/list/allTargets = list()
-		allTargets |= GLOB.alldepartments
-		for(var/D in SSoffsites.offsites_by_name)
-			if(!is_abstract(SSoffsites.offsites_by_name[D]))
-				allTargets |= D
-
-		var/desired_destination = tgui_input_list(user, "Which department?", "Choose a department", allTargets, destination)
-		if(desired_destination && CanInteract(user, state))
-			destination = desired_destination
-		return TOPIC_REFRESH
-
-	if(href_list["auth"])
-		if ( (!( authenticated ) && (scan)) )
-			if (has_access(send_access, scan.GetAccess()))
-				authenticated = 1
-		return TOPIC_REFRESH
-
-	if(href_list["logout"])
-		authenticated = 0
-		return TOPIC_REFRESH
+		if("logout")
+			authenticated = 0
+			return TRUE
+	return FALSE
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(destination)
 	if(stat & (BROKEN|NOPOWER))

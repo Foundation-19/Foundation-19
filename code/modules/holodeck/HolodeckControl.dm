@@ -35,115 +35,70 @@
 		restricted_programs |= GLOB.using_map.holodeck_restricted_programs[programs_list_id]
 
 /obj/machinery/computer/HolodeckControl/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/HolodeckControl/interact(mob/user)
+/obj/machinery/computer/HolodeckControl/tgui_interact(mob/user, datum/tgui/ui)
 	user.set_machine(src)
-	var/dat
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "HolodeckControl", "Holodeck Controls")
+		ui.open()
 
-	dat += "<B>Holodeck Control System</B><BR>"
-	if(!islocked)
-		dat += "Holodeck is <A href='byond://?src=\ref[src];togglehololock=1'><font color=green>(UNLOCKED)</font></A><BR>"
-	else
-		dat += "Holodeck is <A href='byond://?src=\ref[src];togglehololock=1'><font color=red>(LOCKED)</font></A><BR>"
-		var/datum/browser/popup = new(user, "computer", "Holodeck Controls", 400, 500)
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "computer")
-		return
-
-	dat += "<HR>Current Loaded Programs:<BR>"
-
-	if(!linkedholodeck)
-		dat += SPAN_DANGER("Warning: Unable to locate holodeck.<br>")
-		var/datum/browser/popup = new(user, "computer", "Holodeck Controls", 400, 500)
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "computer")
-		return
-
-	if(!supported_programs.len)
-		dat += SPAN_DANGER("Warning: No supported holo-programs loaded.<br>")
-		var/datum/browser/popup = new(user, "computer", "Holodeck Controls", 400, 500)
-		popup.set_content(dat)
-		popup.open()
-		onclose(user, "computer")
-		return
-
+/obj/machinery/computer/HolodeckControl/tgui_data(mob/user)
+	var/list/data = list()
+	data["islocked"] = islocked
+	data["linked"] = linkedholodeck ? 1 : 0
+	var/list/programs = list()
 	for(var/prog in supported_programs)
-		dat += "<A href='byond://?src=\ref[src];program=[supported_programs[prog]]'>([prog])</A><BR>"
+		programs += list(list("label" = prog, "value" = supported_programs[prog]))
+	data["programs"] = programs
+	var/list/restricted = list()
+	for(var/prog in restricted_programs)
+		restricted += list(list("label" = prog, "value" = restricted_programs[prog]))
+	data["restricted"] = restricted
+	data["safety_disabled"] = safety_disabled
+	data["emagged"] = emagged
+	data["is_silicon"] = issilicon(user) ? 1 : 0
+	data["gravity"] = (linkedholodeck && linkedholodeck.has_gravity) ? 1 : 0
+	return data
 
-	dat += "<BR>"
-	dat += "<A href='byond://?src=\ref[src];program=turnoff'>(Turn Off)</A><BR>"
-
-	dat += "<BR>"
-	dat += "Please ensure that only holographic weapons are used in the holodeck if a combat simulation has been loaded.<BR>"
-
-	if(issilicon(user))
-		dat += "<BR>"
-		if(safety_disabled)
-			if (emagged)
-				dat += "<font color=red><b>ERROR</b>: Cannot re-enable Safety Protocols.</font><BR>"
-			else
-				dat += "<A href='byond://?src=\ref[src];AIoverride=1'>(<font color=green>Re-Enable Safety Protocols?</font>)</A><BR>"
-		else
-			dat += "<A href='byond://?src=\ref[src];AIoverride=1'>(<font color=red>Override Safety Protocols?</font>)</A><BR>"
-
-	dat += "<BR>"
-
-	if(safety_disabled)
-		for(var/prog in restricted_programs)
-			dat += "<A href='byond://?src=\ref[src];program=[restricted_programs[prog]]'>(<font color=red>Begin [prog]</font>)</A><BR>"
-			dat += "Ensure the holodeck is empty before testing.<BR>"
-			dat += "<BR>"
-		dat += "Safety Protocols are <font color=red> DISABLED </font><BR>"
-	else
-		dat += "Safety Protocols are <font color=green> ENABLED </font><BR>"
-
-	if(linkedholodeck.has_gravity)
-		dat += "Gravity is <A href='byond://?src=\ref[src];gravity=1'><font color=green>(ON)</font></A><BR>"
-	else
-		dat += "Gravity is <A href='byond://?src=\ref[src];gravity=1'><font color=blue>(OFF)</font></A><BR>"
-	var/datum/browser/popup = new(user, "computer", "Holodeck Controls", 400, 500)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "computer")
-
-/obj/machinery/computer/HolodeckControl/Topic(href, href_list)
+/obj/machinery/computer/HolodeckControl/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if((list_find(usr.contents, src) || (in_range(src, usr) && istype(src.loc, /turf))) || (istype(usr, /mob/living/silicon)))
-		usr.set_machine(src)
-
-		if(href_list["program"])
-			var/prog = href_list["program"]
+		return TRUE
+	if(!((src in usr.contents) || (in_range(src, usr) && istype(src.loc, /turf)) || (istype(usr, /mob/living/silicon))))
+		return TRUE
+	usr.set_machine(src)
+	switch(action)
+		if("program")
+			var/prog = params["program"]
 			if(prog in GLOB.using_map.holodeck_programs)
 				loadProgram(GLOB.using_map.holodeck_programs[prog])
-
-		else if(href_list["AIoverride"])
+			src.add_fingerprint(usr)
+			return TRUE
+		if("AIoverride")
 			if(!issilicon(usr))
-				return
-
+				return TRUE
 			if(safety_disabled && emagged)
-				return //if a traitor has gone through the trouble to emag the thing, let them keep it.
-
+				return TRUE
 			safety_disabled = !safety_disabled
 			update_projections()
 			if(safety_disabled)
 				log_and_message_staff("overrode the holodeck's safeties")
 			else
 				log_and_message_staff("restored the holodeck's safeties")
-
-		else if(href_list["gravity"])
+			src.add_fingerprint(usr)
+			return TRUE
+		if("gravity")
 			toggleGravity(linkedholodeck)
-
-		else if(href_list["togglehololock"])
+			src.add_fingerprint(usr)
+			return TRUE
+		if("togglehololock")
 			togglelock(usr)
+			src.add_fingerprint(usr)
+			return TRUE
+	return FALSE
 
-		src.add_fingerprint(usr)
-	src.updateUsrDialog()
-	return
 
 /obj/machinery/computer/HolodeckControl/emag_act(remaining_charges, mob/user as mob)
 	playsound(src.loc, 'sounds/effects/sparks4.ogg', 75, 1)
@@ -155,7 +110,7 @@
 		to_chat(user, SPAN_NOTICE("You vastly increase projector power and override the safety and security protocols."))
 		to_chat(user, "Warning.  Automatic shutoff and derezing protocols have been corrupted.  Please call [GLOB.using_map.company_name] maintenance and do not use the simulator.")
 		log_game("[key_name(usr)] emagged the Holodeck Control Computer")
-		src.updateUsrDialog()
+		SStgui.update_uis(src)
 		return 1
 	else
 		..()

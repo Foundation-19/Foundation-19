@@ -186,72 +186,65 @@
 
 			to_chat(user, SPAN_NOTICE("[icon2html(src, user)] [src] pings [pick("madly","wildly","excitedly","crazily")]!"))
 
-	updateSelfDialog()
+	SStgui.update_uis(src)
 
 /obj/item/device/depth_scanner/attack_self(mob/living/user)
-	interact(user)
+	tgui_interact(user)
 
-/obj/item/device/depth_scanner/interact(mob/user as mob)
-	user.set_machine(src)
-	var/dat = "<b>Coordinates with positive matches</b><br>"
+/obj/item/device/depth_scanner/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "DepthScanner", name)
+		ui.open()
 
-	dat += "<A href='byond://?src=\ref[src];clear=0'>== Clear all ==</a><br>"
-
+/obj/item/device/depth_scanner/tgui_data(mob/user)
+	var/list/data = list()
 	if(current)
-		dat += "Time: [current.time]<br>"
-		dat += "Coords: [current.coords]<br>"
-		dat += "Anomaly depth: [current.depth] cm<br>"
-		dat += "Anomaly size: [current.clearance] cm<br>"
-		dat += "Dissonance spread: [current.dissonance_spread]<br>"
-		var/index = list_find(responsive_carriers, current.material)
-		if(index > 0 && index <= finds_as_strings.len)
-			dat += "Anomaly material: [finds_as_strings[index]]<br>"
+		var/list/entry = list(
+			"time" = current.time,
+			"coords" = current.coords,
+			"depth" = current.depth,
+			"clearance" = current.clearance,
+			"dissonance_spread" = current.dissonance_spread,
+			"record_index" = current.record_index,
+		)
+		var/material_index = list_find(responsive_carriers, current.material)
+		if(material_index > 0 && material_index <= finds_as_strings.len)
+			entry["material"] = finds_as_strings[material_index]
 		else
-			dat += "Anomaly material: Unknown<br>"
-		dat += "<A href='byond://?src=\ref[src];clear=[current.record_index]'>clear entry</a><br>"
+			entry["material"] = "Unknown"
+		data["current"] = entry
 	else
-		dat += "Select an entry from the list<br>"
-		dat += "<br><br><br><br>"
-	dat += "<hr>"
-	if(positive_locations.len)
-		for(var/index = 1 to positive_locations.len)
-			var/datum/depth_scan/D = positive_locations[index]
-			dat += "<A href='byond://?src=\ref[src];select=[index]'>[D.time], coords: [D.coords]</a><br>"
-	else
-		dat += "No entries recorded."
+		data["current"] = null
+	var/list/locations = list()
+	for(var/i = 1 to positive_locations.len)
+		var/datum/depth_scan/D = positive_locations[i]
+		locations += list(list("index" = i, "time" = D.time, "coords" = D.coords))
+	data["locations"] = locations
+	return data
 
-	dat += "<hr>"
-	dat += "<a href='byond://?src=\ref[src];close=1'>Close</a>"
-
-	var/datum/browser/popup = new(user, "depth_scanner", "Results", 300, 500)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "depth_scanner")
-
-/obj/item/device/depth_scanner/OnTopic(user, href_list)
-	if(href_list["select"])
-		var/index = text2num(href_list["select"])
-		if(index && index <= positive_locations.len)
-			current = positive_locations[index]
-		. = TOPIC_REFRESH
-	else if(href_list["clear"])
-		var/index = text2num(href_list["clear"])
-		if(index)
-			if(index <= positive_locations.len)
-				var/datum/depth_scan/D = positive_locations[index]
-				positive_locations.Remove(D)
-				qdel(D)
-		else
-			//GC will hopefully pick them up before too long
-			positive_locations = list()
-			QDEL_NULL(current)
-		. = TOPIC_REFRESH
-	else if(href_list["close"])
-		close_browser(user, "window=depth_scanner")
-		return TOPIC_HANDLED
-
-	if (. == TOPIC_REFRESH)
-		interact(user)
+/obj/item/device/depth_scanner/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("select")
+			var/select_index = text2num(params["index"])
+			if(select_index && select_index <= positive_locations.len)
+				current = positive_locations[select_index]
+			return TRUE
+		if("clear")
+			var/clear_index = text2num(params["index"])
+			if(clear_index)
+				if(clear_index <= positive_locations.len)
+					var/datum/depth_scan/D = positive_locations[clear_index]
+					positive_locations.Remove(D)
+					qdel(D)
+			else
+				//GC will hopefully pick them up before too long
+				positive_locations = list()
+				QDEL_NULL(current)
+			return TRUE
+	return FALSE
 
 //Radio beacon locator
 /obj/item/pinpointer/radio
@@ -274,36 +267,32 @@
 				. = weakref(R)
 
 /obj/item/pinpointer/radio/attack_self(mob/user as mob)
-	interact(user)
+	tgui_interact(user)
 
-/obj/item/pinpointer/radio/interact(mob/user)
-	var/dat = "<b>Radio frequency tracker</b><br>"
-	dat += {"
-				Tracking: <A href='byond://?src=\ref[src];toggle=1'>[active ? "Enabled" : "Disabled"]</A><BR>
-				<A href='byond://?src=\ref[src];reset_tracking=1'>Reset tracker</A><BR>
-				Frequency:
-				<A href='byond://?src=\ref[src];freq=-10'>-</A>
-				<A href='byond://?src=\ref[src];freq=-2'>-</A>
-				[format_frequency(tracking_freq)]
-				<A href='byond://?src=\ref[src];freq=2'>+</A>
-				<A href='byond://?src=\ref[src];freq=10'>+</A><BR>
-				"}
-	show_browser(user, dat,"window=locater;size=300x150")
-	onclose(user, "locater")
+/obj/item/pinpointer/radio/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "RadioPinpointer", name)
+		ui.open()
 
-/obj/item/pinpointer/radio/OnTopic(user, href_list)
-	if(href_list["toggle"])
-		toggle(user)
-		. = TOPIC_REFRESH
+/obj/item/pinpointer/radio/tgui_data(mob/user)
+	var/list/data = list()
+	data["active"] = active ? TRUE : FALSE
+	data["freq"] = format_frequency(tracking_freq)
+	return data
 
-	if(href_list["reset_tracking"])
-		target = acquire_target()
-		. = TOPIC_REFRESH
-
-	else if(href_list["freq"])
-		var/new_frequency = (tracking_freq + text2num(href_list["freq"]))
-		tracking_freq = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
-		. = TOPIC_REFRESH
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
+/obj/item/pinpointer/radio/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("toggle")
+			toggle(usr)
+			return TRUE
+		if("reset_tracking")
+			target = acquire_target()
+			return TRUE
+		if("freq")
+			var/new_frequency = (tracking_freq + text2num(params["amount"]))
+			tracking_freq = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
+			return TRUE
+	return FALSE

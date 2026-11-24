@@ -18,6 +18,7 @@ FLOOR SAFES
 	var/tumbler_2_pos
 	var/tumbler_2_open
 	var/dial = 0		//where is the dial pointing?
+	var/dial_input = ""	//digits entered on the dial keypad
 	var/space = 0		//the combined w_class of everything in the safe
 	var/maxspace = 24	//the maximum combined w_class of stuff in the safe
 
@@ -61,60 +62,8 @@ FLOOR SAFES
 	return num
 
 
-/obj/structure/safe/on_update_icon()
-	if(open)
-		icon_state = "[initial(icon_state)]-open"
-	else
-		icon_state = initial(icon_state)
-
-
-/obj/structure/safe/attack_hand(mob/user as mob)
-	var/dat = "<center>"
-	dat += "<a href='byond://?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a> | <a href='byond://?src=\ref[src];decrement=1'>-</a> [dial * 5] <a href='byond://?src=\ref[src];increment=1'>+</a>"
-	if(open)
-		dat += "<table>"
-		for(var/i = contents.len, i>=1, i--)
-			var/obj/item/P = contents[i]
-			dat += "<tr><td><a href='byond://?src=\ref[src];retrieve=\ref[P]'>[P.name]</a></td></tr>"
-		dat += "</table></center>"
-	var/datum/browser/popup = new(user, "safe", "Safe", 350, 300)
-	popup.set_content(dat)
-	popup.open()
-
-/obj/structure/safe/Topic(href, href_list)
-	if(!ishuman(usr))	return
-	var/mob/living/carbon/human/user = usr
-
-	var/canhear = 0
-	if(istype(user.l_hand, /obj/item/clothing/accessory/stethoscope) || istype(user.r_hand, /obj/item/clothing/accessory/stethoscope))
-		canhear = 1
-
-	if(href_list["open"])
-		if(check_unlocked())
-			to_chat(user, SPAN_NOTICE("You [open ? "close" : "open"] [src]."))
-			open = !open
-			update_icon()
-			attack_hand(user)
-			return
-		else
-			to_chat(user, SPAN_NOTICE("You can't [open ? "close" : "open"] [src], the lock is engaged!"))
-			return
-
-	if(href_list["decrement"])
-		dial = decrement(dial)
-		if(dial == tumbler_1_pos + 1 || dial == tumbler_1_pos - 71)
-			tumbler_1_pos = decrement(tumbler_1_pos)
-			if(canhear)
-				to_chat(user, SPAN_NOTICE("You hear a [pick("clack", "scrape", "clank")] from [src]."))
-			if(tumbler_1_pos == tumbler_2_pos + 37 || tumbler_1_pos == tumbler_2_pos - 35)
-				tumbler_2_pos = decrement(tumbler_2_pos)
-				if(canhear)
-					to_chat(user, SPAN_NOTICE("You hear a [pick("click", "chink", "clink")] from [src]."))
-			check_unlocked(user, canhear)
-		attack_hand(user)
-		return
-
-	if(href_list["increment"])
+/obj/structure/safe/proc/turn_dial(direction, mob/user, canhear)
+	if(direction > 0)
 		dial = increment(dial)
 		if(dial == tumbler_1_pos - 1 || dial == tumbler_1_pos + 71)
 			tumbler_1_pos = increment(tumbler_1_pos)
@@ -125,15 +74,113 @@ FLOOR SAFES
 				if(canhear)
 					to_chat(user, SPAN_NOTICE("You hear a [pick("click", "chink", "clink")] from [src]."))
 			check_unlocked(user, canhear)
-		attack_hand(user)
-		return
+	else
+		dial = decrement(dial)
+		if(dial == tumbler_1_pos + 1 || dial == tumbler_1_pos - 71)
+			tumbler_1_pos = decrement(tumbler_1_pos)
+			if(canhear)
+				to_chat(user, SPAN_NOTICE("You hear a [pick("clack", "scrape", "clank")] from [src]."))
+			if(tumbler_1_pos == tumbler_2_pos + 37 || tumbler_1_pos == tumbler_2_pos - 35)
+				tumbler_2_pos = decrement(tumbler_2_pos)
+				if(canhear)
+					to_chat(user, SPAN_NOTICE("You hear a [pick("click", "chink", "clink")] from [src]."))
+			check_unlocked(user, canhear)
 
-	if(href_list["retrieve"])
-		var/obj/item/P = locate(href_list["retrieve"]) in src
-		if(open)
-			if(P && in_range(src, user))
-				user.put_in_hands(P)
-				attack_hand(user)
+
+/obj/structure/safe/proc/turn_to_position(target, mob/user, canhear)
+	var/steps = 0
+	while(dial != target && steps < 72)
+		var/forward = (target - dial + 72) % 72
+		var/backward = (dial - target + 72) % 72
+		var/direction = 1
+		if(backward < forward)
+			direction = -1
+		turn_dial(direction, user, canhear)
+		steps++
+
+
+/obj/structure/safe/on_update_icon()
+	if(open)
+		icon_state = "[initial(icon_state)]-open"
+	else
+		icon_state = initial(icon_state)
+
+
+/obj/structure/safe/attack_hand(mob/user as mob)
+	tgui_interact(user)
+
+
+/obj/structure/safe/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Safe", "Safe")
+		ui.open()
+
+
+/obj/structure/safe/tgui_data(mob/user)
+	var/list/data = list()
+	data["open"] = open
+	data["dial"] = dial
+	data["dial_input"] = dial_input
+	var/list/item_list = list()
+	if(open)
+		for(var/obj/item/P in contents)
+			item_list += list(list("name" = P.name, "ref" = "\ref[P]"))
+	data["items"] = item_list
+	return data
+
+
+/obj/structure/safe/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(!ishuman(usr))
+		return TRUE
+	var/mob/living/carbon/human/user = usr
+
+	var/canhear = 0
+	if(istype(user.l_hand, /obj/item/clothing/accessory/stethoscope) || istype(user.r_hand, /obj/item/clothing/accessory/stethoscope))
+		canhear = 1
+
+	switch(action)
+		if("open")
+			if(check_unlocked())
+				to_chat(user, SPAN_NOTICE("You [open ? "close" : "open"] [src]."))
+				open = !open
+				update_icon()
+			else
+				to_chat(user, SPAN_NOTICE("You can't [open ? "close" : "open"] [src], the lock is engaged!"))
+			return TRUE
+		if("decrement")
+			turn_dial(-1, user, canhear)
+			return TRUE
+		if("increment")
+			turn_dial(1, user, canhear)
+			return TRUE
+		if("dial")
+			var/digit = params["digit"]
+			if(digit == null)
+				return TRUE
+			dial_input = "[dial_input][digit]"
+			if(length(dial_input) > 2)
+				dial_input = copytext(dial_input, length(dial_input) - 1)
+			return TRUE
+		if("clear")
+			dial_input = ""
+			return TRUE
+		if("try")
+			var/target = text2num(dial_input)
+			dial_input = ""
+			if(!isnum(target))
+				return TRUE
+			turn_to_position(clamp(round(target), 0, 71), user, canhear)
+			return TRUE
+		if("retrieve")
+			var/obj/item/P = locate(params["ref"]) in src
+			if(open)
+				if(P && in_range(src, user))
+					user.put_in_hands(P)
+			return TRUE
+	return FALSE
 
 
 /obj/structure/safe/attackby(obj/item/I as obj, mob/user as mob)
@@ -143,7 +190,7 @@ FLOOR SAFES
 				return
 			space += I.w_class
 			to_chat(user, SPAN_NOTICE("You put [I] in [src]."))
-			attack_hand(user)
+			SStgui.update_uis(src)
 			return
 		else
 			to_chat(user, SPAN_NOTICE("[I] won't fit in [src]."))

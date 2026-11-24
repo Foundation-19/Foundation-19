@@ -76,63 +76,44 @@
 		panel_open = !panel_open
 		user.visible_message(SPAN_NOTICE("[user] [panel_open ? "opens" : "closes"] the hatch on the [src]."), SPAN_NOTICE("You [panel_open ? "open" : "close"] the hatch on the [src]."))
 		update_icon(1)
-		if(!panel_open && user.machine == src)
-			show_browser(user, null, "window=spaceheater")
-			user.unset_machine()
+		if(!panel_open)
+			SStgui.close_uis(src)
 	else
 		..()
 	return
 
 /obj/machinery/space_heater/interface_interact(mob/user)
 	if(panel_open)
-		interact(user)
+		tgui_interact(user)
 		return TRUE
 
-/obj/machinery/space_heater/interact(mob/user)
-	if(panel_open)
-		var/list/dat = list()
-		dat += "Power cell: "
-		if(cell)
-			dat += "<A href='byond://?src=\ref[src];op=cellremove'>Installed</A><BR>"
-		else
-			dat += "<A href='byond://?src=\ref[src];op=cellinstall'>Removed</A><BR>"
+/obj/machinery/space_heater/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SpaceHeater", "Space Heater Control Panel")
+		ui.open()
 
-		dat += "Power Level: [cell ? round(cell.percent(),1) : 0]%<BR><BR>"
+/obj/machinery/space_heater/tgui_data(mob/user)
+	var/list/data = list()
+	data["panel_open"] = panel_open ? TRUE : FALSE
+	data["on"] = on ? TRUE : FALSE
+	data["has_cell"] = cell ? TRUE : FALSE
+	data["cell_percent"] = cell ? round(cell.percent(),1) : 0
+	data["set_temperature"] = set_temperature
+	data["set_temperature_c"] = set_temperature - T0C
+	data["active"] = active
+	return data
 
-		dat += "Set Temperature: "
-
-		dat += "<A href='byond://?src=\ref[src];op=temp;val=-5'>-</A>"
-
-		dat += " [set_temperature]K ([set_temperature-T0C]&deg;C)"
-		dat += "<A href='byond://?src=\ref[src];op=temp;val=5'>+</A><BR>"
-
-		var/datum/browser/popup = new(usr, "spaceheater", "Space Heater Control Panel")
-		popup.set_content(jointext(dat, null))
-		popup.set_title_image(usr.browse_rsc_icon(src.icon, "sheater-standby"))
-		popup.open()
-
-	return
-
-/obj/machinery/space_heater/physical_attack_hand(mob/user)
-	if(!panel_open)
-		on = !on
-		user.visible_message(SPAN_NOTICE("[user] switches [on ? "on" : "off"] the [src]."),SPAN_NOTICE("You switch [on ? "on" : "off"] the [src]."))
-		update_icon()
+/obj/machinery/space_heater/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
 		return TRUE
-
-/obj/machinery/space_heater/Topic(href, href_list, state = GLOB.physical_state)
-	if (..())
-		show_browser(usr, null, "window=spaceheater")
-		usr.unset_machine()
-		return 1
-
-	switch(href_list["op"])
-
+	switch(action)
 		if("temp")
-			var/value = text2num(href_list["val"])
+			var/value = text2num(params["val"])
 
 			// limit to 0-90 degC
 			set_temperature = dd_range(T0C, T0C + 90, set_temperature + value)
+			return TRUE
 
 		if("cellremove")
 			if(panel_open && cell && !usr.get_active_hand())
@@ -142,19 +123,27 @@
 				cell.add_fingerprint(usr)
 				cell = null
 				power_change()
+			return TRUE
 
 		if("cellinstall")
 			if(panel_open && !cell)
 				var/obj/item/cell/C = usr.get_active_hand()
 				if(istype(C))
 					if(!usr.unEquip(C, src))
-						return
+						return TRUE
 					cell = C
 					C.add_fingerprint(usr)
 					power_change()
 					usr.visible_message(SPAN_NOTICE("[usr] inserts \the [C] into \the [src]."), SPAN_NOTICE("You insert \the [C] into \the [src]."))
+			return TRUE
+	return FALSE
 
-	updateDialog()
+/obj/machinery/space_heater/physical_attack_hand(mob/user)
+	if(!panel_open)
+		on = !on
+		user.visible_message(SPAN_NOTICE("[user] switches [on ? "on" : "off"] the [src]."),SPAN_NOTICE("You switch [on ? "on" : "off"] the [src]."))
+		update_icon()
+		return TRUE
 
 /obj/machinery/space_heater/Process()
 	if(on)

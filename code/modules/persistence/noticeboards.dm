@@ -126,60 +126,63 @@
 	..()
 
 /obj/structure/noticeboard/attack_ai(mob/user)
-	examine(user)
+	tgui_interact(user)
 
 /obj/structure/noticeboard/attack_hand(mob/user)
-	examine(user)
+	tgui_interact(user)
 
-/obj/structure/noticeboard/examine(mob/user)
-	. = ..()
-	var/list/dat = list("<table>")
+/obj/structure/noticeboard/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "NoticeBoard", "Noticeboard")
+		ui.open()
+
+/obj/structure/noticeboard/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/notice_list = list()
 	for(var/thing in notices)
-		LAZYADD(dat, "<tr><td>[thing]</td><td>")
-		if(istype(thing, /obj/item/paper))
-			LAZYADD(dat, "<a href='byond://?src=\ref[src];read=\ref[thing]'>Read</a><a href='byond://?src=\ref[src];write=\ref[thing]'>Write</a>")
-		else if(istype(thing, /obj/item/photo))
-			LAZYADD(dat, "<a href='byond://?src=\ref[src];look=\ref[thing]'>Look</a>")
-		LAZYADD(dat, "<a href='byond://?src=\ref[src];remove=\ref[thing]'>Remove</a></td></tr>")
-	var/datum/browser/popup = new(user, "noticeboard-\ref[src]", "Noticeboard")
-	popup.set_content(jointext(dat, null))
-	popup.open()
+		notice_list += list(list(
+			"name" = "[thing]",
+			"ref" = "\ref[thing]",
+			"paper" = istype(thing, /obj/item/paper),
+			"photo" = istype(thing, /obj/item/photo)
+		))
+	data["notices"] = notice_list
+	return data
 
-/obj/structure/noticeboard/OnTopic(mob/user, list/href_list)
+/obj/structure/noticeboard/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 
-	if(href_list["read"])
-		var/obj/item/paper/P = locate(href_list["read"])
-		if(P?.loc == src)
-			P.show_content(user)
-		. = TOPIC_HANDLED
-
-	if(href_list["look"])
-		var/obj/item/photo/P = locate(href_list["look"])
-		if(P?.loc == src)
-			P.show(user)
-		. = TOPIC_HANDLED
-
-	if(href_list["remove"])
-		remove_paper(locate(href_list["remove"]))
-		add_fingerprint(user)
-		. = TOPIC_REFRESH
-
-	if(href_list["write"])
-		var/obj/item/P = locate(href_list["write"])
-		if(!P)
-			return
-		var/obj/item/pen/pen = user.r_hand
-		if(!istype(pen))
-			pen = user.l_hand
-		if(istype(pen))
-			add_fingerprint(user)
-			P.attackby(pen, user)
-		else
-			to_chat(user, SPAN_WARNING("You need a pen to write on \the [P]."))
-		. = TOPIC_REFRESH
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
+	switch(action)
+		if("read")
+			var/obj/item/paper/P = locate(params["ref"])
+			if(P?.loc == src)
+				P.show_content(usr)
+			return TRUE
+		if("look")
+			var/obj/item/photo/P = locate(params["ref"])
+			if(P?.loc == src)
+				P.show(usr)
+			return TRUE
+		if("remove")
+			remove_paper(locate(params["ref"]))
+			add_fingerprint(usr)
+			return TRUE
+		if("write")
+			var/obj/item/P = locate(params["ref"])
+			if(!P)
+				return TRUE
+			var/obj/item/pen/pen = usr.r_hand
+			if(!istype(pen))
+				pen = usr.l_hand
+			if(istype(pen))
+				add_fingerprint(usr)
+				P.attackby(pen, usr)
+			else
+				to_chat(usr, SPAN_WARNING("You need a pen to write on \the [P]."))
+			return TRUE
+	return FALSE
 
 /obj/structure/noticeboard/anomaly
 	icon_state = "nboard05"

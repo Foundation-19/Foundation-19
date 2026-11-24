@@ -11,37 +11,54 @@
 	var/show_detailed = FALSE
 
 /obj/item/device/scp_containment_meter/attack_self(mob/user)
-	show_status(user)
+	tgui_interact(user)
 
-/obj/item/device/scp_containment_meter/proc/show_status(mob/user)
+/obj/item/device/scp_containment_meter/tgui_interact(mob/user, datum/tgui/ui)
 	if(!GLOB.scp_research_tracker)
 		to_chat(user, SPAN_WARNING("Unable to connect to research database."))
 		return
-	var/list/data = GLOB.scp_research_tracker.get_all_scp_data()
-	if(!length(data))
+	var/list/scp_data = GLOB.scp_research_tracker.get_all_scp_data()
+	if(!length(scp_data))
 		to_chat(user, SPAN_WARNING("No SCP data available."))
 		return
-	var/list/output = list()
-	output += "<b>SCP Containment Status Overview</b><br><br>"
-	for(var/list/scp in data)
-		var/status_color
-		switch(scp["containment_status"])
-			if(SCP_CONTAINED)
-				status_color = "green"
-			if(SCP_BREACHED)
-				status_color = "red"
-			if(SCP_UNKNOWN)
-				status_color = "yellow"
-			else
-				status_color = "orange"
-		output += "<span style='color:[status_color]'>SCP-[scp["designation"]] ([scp["classification"]]) - [scp["containment_status"]]</span>"
-		if(show_detailed)
-			output += " | Research: [SCP_RESEARCH_TIER_NAME(scp["research_level"])] | Rating: [scp["containment_rating"]] | Breaches: [scp["times_breached"]]"
-		output += "<br>"
-	var/datum/browser/popup = new(user, "scp_meter", "Containment Status", 400, 400)
-	popup.set_content(jointext(output, ""))
-	popup.open()
-	update_last_statuses(data)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ContainmentMeter", name)
+		ui.open()
+
+/obj/item/device/scp_containment_meter/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/scps = list()
+	if(GLOB.scp_research_tracker)
+		var/list/scp_data = GLOB.scp_research_tracker.get_all_scp_data()
+		update_last_statuses(scp_data)
+		for(var/list/scp in scp_data)
+			var/status = scp["containment_status"]
+			var/status_color = "orange"
+			switch(status)
+				if(SCP_CONTAINED)
+					status_color = "green"
+				if(SCP_BREACHED)
+					status_color = "red"
+				if(SCP_UNKNOWN)
+					status_color = "yellow"
+			scps += list(list(
+				"designation" = scp["designation"],
+				"classification" = scp["classification"],
+				"status" = status,
+				"status_color" = status_color,
+				"research" = SCP_RESEARCH_TIER_NAME(scp["research_level"]),
+				"rating" = scp["containment_rating"],
+				"breaches" = scp["times_breached"],
+			))
+	data["scps"] = scps
+	data["show_detailed"] = show_detailed
+	return data
+
+/obj/item/device/scp_containment_meter/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	return FALSE
 
 /obj/item/device/scp_containment_meter/proc/update_last_statuses(list/data)
 	last_known_statuses = list()

@@ -23,48 +23,48 @@
 
 
 /obj/machinery/implantchair/attack_hand(mob/user as mob)
-	user.set_machine(src)
-	var/health_text = ""
-	if(src.occupant)
-		if(src.occupant.health <= -100)
-			health_text = "<FONT color=red>Dead</FONT>"
-		else if(src.occupant.health < 0)
-			health_text = "<FONT color=red>[round(src.occupant.health,0.1)]</FONT>"
-		else
-			health_text = "[round(src.occupant.health,0.1)]"
+	tgui_interact(user)
 
-	var/dat ="<B>Implanter Status</B><BR>"
+/obj/machinery/implantchair/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "ImplantChair", "Implanter")
+		ui.open()
 
-	dat +="<B>Current occupant:</B> [src.occupant ? "<BR>Name: [src.occupant]<BR>Health: [health_text]<BR>" : "<FONT color=red>None</FONT>"]<BR>"
-	dat += "<B>Implants:</B> [src.implant_list.len ? "[implant_list.len]" : "<A href='byond://?src=\ref[src];replenish=1'>Replenish</A>"]<BR>"
-	if(src.occupant)
-		dat += "[src.ready ? "<A href='byond://?src=\ref[src];implant=1'>Implant</A>" : "Recharging"]<BR>"
-	user.set_machine(src)
-	var/datum/browser/popup = new(user, "implant", "Implanter")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "implant")
+/obj/machinery/implantchair/tgui_data(mob/user)
+	var/list/data = list()
+	data["has_occupant"] = occupant ? TRUE : FALSE
+	if(occupant)
+		data["occupant_name"] = occupant.name
+		data["occupant_health"] = round(occupant.health, 0.1)
+		data["occupant_dead"] = occupant.health <= -100
+	data["implant_count"] = implant_list.len
+	data["ready"] = ready
+	return data
 
-
-/obj/machinery/implantchair/Topic(href, href_list)
-	if((get_dist(src, usr) <= 1) || istype(usr, /mob/living/silicon/ai))
-		if(href_list["implant"])
-			if(src.occupant)
+/obj/machinery/implantchair/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if((get_dist(src, usr) > 1) && !istype(usr, /mob/living/silicon/ai))
+		return TRUE
+	switch(action)
+		if("implant")
+			if(occupant)
 				injecting = 1
 				go_out()
 				ready = 0
 				spawn(injection_cooldown)
 					ready = 1
-
-		if(href_list["replenish"])
+			add_fingerprint(usr)
+			return TRUE
+		if("replenish")
 			ready = 0
 			spawn(replenish_cooldown)
 				add_implants()
 				ready = 1
-
-		src.updateUsrDialog()
-		src.add_fingerprint(usr)
-		return
+			add_fingerprint(usr)
+			return TRUE
+	return FALSE
 
 
 /obj/machinery/implantchair/attackby(obj/item/G as obj, mob/user as mob)
@@ -79,7 +79,7 @@
 		var/mob/M = grab.affecting
 		if(put_mob(M))
 			qdel(G)
-	src.updateUsrDialog()
+	SStgui.update_uis(src)
 	return
 
 

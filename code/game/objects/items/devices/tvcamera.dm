@@ -37,46 +37,58 @@
 
 /obj/item/device/camera/tvcamera/attack_self(mob/user)
 	add_fingerprint(user)
-	user.set_machine(src)
-	var/dat = list()
-	dat += "Photography mode is currently: <a href='byond://?src=\ref[src];photo=1'>[on ? "On" : "Off"]</a><br>"
-	dat += "Photography focus is currently: <a href='byond://?src=\ref[src];focus=1'>[size]</a><br>"
-	dat += "Channel name is: <a href='byond://?src=\ref[src];channel=1'>[channel ? channel : "unidentified broadcast"]</a><br>"
-	dat += "Video streaming is: <a href='byond://?src=\ref[src];video=1'>[camera.status ? "Online" : "Offline"]</a><br>"
-	dat += "Microphone is: <a href='byond://?src=\ref[src];sound=1'>[radio.broadcasting ? "Online" : "Offline"]</a><br>"
-	dat += "Sound is being broadcasted on frequency: [format_frequency(radio.frequency)] ([get_frequency_default_name(radio.frequency)])<br>"
-	var/datum/browser/popup = new(user, "Press Camera Drone", "EyeBuddy", 300, 390, src)
-	popup.set_content(jointext(dat,null))
-	popup.open()
+	tgui_interact(user)
 
-/obj/item/device/camera/tvcamera/Topic(bred, href_list, state = GLOB.physical_state)
+/obj/item/device/camera/tvcamera/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "TVCamera", "EyeBuddy")
+		ui.open()
+
+/obj/item/device/camera/tvcamera/tgui_data(mob/user)
+	var/list/data = list()
+	data["on"] = on
+	data["focus"] = size
+	data["channel"] = channel ? channel : "unidentified broadcast"
+	data["video"] = camera.status
+	data["sound"] = radio.broadcasting
+	data["frequency"] = format_frequency(radio.frequency)
+	data["frequency_name"] = get_frequency_default_name(radio.frequency)
+	return data
+
+/obj/item/device/camera/tvcamera/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if (href_list["photo"])
-		on = !on
-	if (href_list["focus"])
-		change_size()
-	if(href_list["channel"])
-		var/nc = sanitize(input(usr, "Channel name", "Select new channel name", channel) as text|null)
-		if(nc)
-			channel = nc
-			camera.c_tag = channel
-			to_chat(usr, SPAN_NOTICE("New channel name: '[channel]' has been set."))
-	if(href_list["video"])
-		camera.set_status(!camera.status)
-		if(camera.status)
-			to_chat(usr,SPAN_NOTICE("Video streaming: Activated. Broadcasting on channel: '[channel]'"))
-		else
-			to_chat(usr,SPAN_NOTICE("Video streaming: Deactivated."))
-		update_icon()
-	if(href_list["sound"])
-		radio.ToggleBroadcast()
-		if(radio.broadcasting)
-			to_chat(usr,SPAN_NOTICE("Audio streaming: Activated. Broadcasting on frequency: [format_frequency(radio.frequency)]."))
-		else
-			to_chat(usr,SPAN_NOTICE("Audio streaming: Deactivated."))
-	if(!href_list["close"])
-		attack_self(usr)
+		return TRUE
+	switch(action)
+		if("photo")
+			on = !on
+			return TRUE
+		if("focus")
+			change_size()
+			return TRUE
+		if("channel")
+			var/nc = sanitize(input(usr, "Channel name", "Select new channel name", channel) as text|null)
+			if(nc)
+				channel = nc
+				camera.c_tag = channel
+				to_chat(usr, SPAN_NOTICE("New channel name: '[channel]' has been set."))
+			return TRUE
+		if("video")
+			camera.set_status(!camera.status)
+			if(camera.status)
+				to_chat(usr,SPAN_NOTICE("Video streaming: Activated. Broadcasting on channel: '[channel]'"))
+			else
+				to_chat(usr,SPAN_NOTICE("Video streaming: Deactivated."))
+			update_icon()
+			return TRUE
+		if("sound")
+			radio.ToggleBroadcast()
+			if(radio.broadcasting)
+				to_chat(usr,SPAN_NOTICE("Audio streaming: Activated. Broadcasting on frequency: [format_frequency(radio.frequency)]."))
+			else
+				to_chat(usr,SPAN_NOTICE("Audio streaming: Deactivated."))
+			return TRUE
+	return FALSE
 
 /obj/item/device/camera/tvcamera/on_update_icon()
 	..()

@@ -91,7 +91,7 @@
 
 // End button.
 
-// Panel. Lists floors (HTML), moves with the elevator, schedules a move to a given floor.
+// Panel. Lists floors (TGUI), moves with the elevator, schedules a move to a given floor.
 /obj/structure/lift/panel
 	name = "elevator control panel"
 	icon_state = "panel"
@@ -102,44 +102,50 @@
 	return interact(user)
 
 /obj/structure/lift/panel/interact(mob/user)
-	if(!..())
+	tgui_interact(user)
+
+/obj/structure/lift/panel/tgui_interact(mob/user, datum/tgui/ui)
+	if(!lift.is_functional())
 		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "TurboliftConsole", "Lift Panel")
+		ui.open()
 
-	var/dat = list()
-	dat += "<html><body><hr><b>Lift panel</b><hr>"
-
+/obj/structure/lift/panel/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/floors = list()
 	//the floors list stores levels in order of increasing Z
 	//therefore, to display upper levels at the top of the menu and
 	//lower levels at the bottom, we need to go through the list in reverse
 	for(var/i in lift.floors.len to 1 step -1)
 		var/datum/turbolift_floor/floor = lift.floors[i]
-		var/label = floor.label? floor.label : "Level #[i]"
-		dat += "<font color = '[(floor in lift.queued_floors) ? COLOR_YELLOW : COLOR_WHITE]'>"
-		dat += "<a href='byond://?src=\ref[src];move_to_floor=["\ref[floor]"]'>[label]</a>: [floor.name]</font><br>"
+		floors += list(list(
+			"ref" = "\ref[floor]",
+			"label" = floor.label ? floor.label : "Level #[i]",
+			"name" = floor.name,
+			"queued" = (floor in lift.queued_floors) ? TRUE : FALSE,
+		))
+	data["floors"] = floors
+	data["doors_open"] = lift.doors_are_open() ? TRUE : FALSE
+	return data
 
-	dat += "<hr>"
-	if(lift.doors_are_open())
-		dat += "<a href='byond://?src=\ref[src];close_doors=1'>Close Doors</a><br>"
-	else
-		dat += "<a href='byond://?src=\ref[src];open_doors=1'>Open Doors</a><br>"
-	dat += "<a href='byond://?src=\ref[src];emergency_stop=1'>Emergency Stop</a>"
-	dat += "<hr></body></html>"
+/obj/structure/lift/panel/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("move_to_floor")
+			lift.queue_move_to(locate(params["ref"]))
+		if("open_doors")
+			lift.open_doors()
+		if("close_doors")
+			lift.close_doors()
+		if("emergency_stop")
+			lift.emergency_stop()
+		else
+			return FALSE
 
-	var/datum/browser/popup = new(user, "turbolift_panel", "Lift Panel", 230, 260)
-	popup.set_content(jointext(dat, null))
-	popup.open()
-
-/obj/structure/lift/panel/OnTopic(user, href_list)
-	if(href_list["move_to_floor"])
-		lift.queue_move_to(locate(href_list["move_to_floor"]))
-	if(href_list["open_doors"])
-		lift.open_doors()
-	if(href_list["close_doors"])
-		lift.close_doors()
-	if(href_list["emergency_stop"])
-		lift.emergency_stop()
-
-	pressed(user)
-	interact(user)
+	pressed(usr)
+	return TRUE
 
 // End panel.

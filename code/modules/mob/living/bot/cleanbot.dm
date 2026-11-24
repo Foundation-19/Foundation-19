@@ -105,34 +105,46 @@
 		icon_state = "cleanbot[on]"
 
 /mob/living/bot/cleanbot/GetInteractTitle()
-	. = "<head><title>Cleanbot controls</title></head>"
-	. += "<b>Automatic Cleaner v1.0</b>"
+	return "Automatic Cleaner v1.0"
 
-/mob/living/bot/cleanbot/GetInteractPanel()
-	. = "Cleans blood: <a href='byond://?src=\ref[src];command=blood'>[blood ? "Yes" : "No"]</a>"
-	. += "<br>Patrol station: <a href='byond://?src=\ref[src];command=patrol'>[will_patrol ? "Yes" : "No"]</a>"
+/mob/living/bot/cleanbot/get_panel_data(mob/user)
+	. = list()
+	.["toggles"] = list(
+		list("action" = "blood", "label" = "Cleans blood", "value" = blood),
+		list("action" = "patrol", "label" = "Patrol station", "value" = will_patrol),
+	)
+	return
 
-/mob/living/bot/cleanbot/GetInteractMaintenance()
-	. = "Odd looking screw twiddled: <a href='byond://?src=\ref[src];command=screw'>[screwloose ? "Yes" : "No"]</a>"
-	. += "<br>Weird button pressed: <a href='byond://?src=\ref[src];command=oddbutton'>[oddbutton ? "Yes" : "No"]</a>"
+/mob/living/bot/cleanbot/get_maintenance_data(mob/user)
+	. = list()
+	.["toggles"] = list(
+		list("action" = "screw", "label" = "Odd looking screw twiddled", "value" = screwloose),
+		list("action" = "oddbutton", "label" = "Weird button pressed", "value" = oddbutton),
+	)
+	return
 
-/mob/living/bot/cleanbot/ProcessCommand(mob/user, command, href_list)
-	..()
-	if(CanAccessPanel(user))
-		switch(command)
+/mob/living/bot/cleanbot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(CanAccessPanel(usr))
+		switch(action)
 			if("blood")
 				blood = !blood
 				get_targets()
+				return TRUE
 			if("patrol")
 				will_patrol = !will_patrol
 				patrol_path = null
-
-	if(CanAccessMaintenance(user))
-		switch(command)
+				return TRUE
+	if(CanAccessMaintenance(usr))
+		switch(action)
 			if("screw")
 				screwloose = !screwloose
+				return TRUE
 			if("oddbutton")
 				oddbutton = !oddbutton
+				return TRUE
+	return FALSE
 
 /mob/living/bot/cleanbot/emag_act(remaining_uses, mob/user)
 	. = ..()

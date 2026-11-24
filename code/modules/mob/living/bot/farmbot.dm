@@ -35,57 +35,67 @@
 	on = 0
 
 /mob/living/bot/farmbot/GetInteractTitle()
-	. = "<head><title>Farmbot controls</title></head>"
-	. += "<b>Automatic Hyrdoponic Assisting Unit v1.0</b>"
+	return "Automatic Hyrdoponic Assisting Unit v1.0"
 
-/mob/living/bot/farmbot/GetInteractStatus()
+/mob/living/bot/farmbot/get_status_data(mob/user)
 	. = ..()
-	. += "<br>Water tank: "
-	if(tank)
-		. += "[tank.reagents.total_volume]/[tank.reagents.maximum_volume]"
+	.["info"] += list(list("label" = "Water tank", "value" = tank ? "[tank.reagents.total_volume]/[tank.reagents.maximum_volume]" : "error: not found"))
+	return
+
+/mob/living/bot/farmbot/get_panel_data(mob/user)
+	. = list()
+	.["toggles"] = list(
+		list("action" = "water", "label" = "Water plants", "value" = waters_trays),
+		list("action" = "refill", "label" = "Refill watertank", "value" = refills_water),
+		list("action" = "weed", "label" = "Weed plants", "value" = uproots_weeds),
+		list("action" = "replacenutri", "label" = "Replace fertilizer", "value" = replaces_nutriment),
+		list("action" = "collect", "label" = "Collect produce", "value" = collects_produce),
+		list("action" = "removedead", "label" = "Remove dead plants", "value" = removes_dead),
+	)
+	return
+
+/mob/living/bot/farmbot/get_maintenance_data(mob/user)
+	. = list()
+	if(emagged < 2)
+		.["toggles"] = list(
+			list("action" = "emag", "label" = "Plant identifier", "value" = emagged, "value_text" = emagged ? "Scrambled (DANGER)" : "Normal"),
+		)
 	else
-		. += "error: not found"
+		.["info"] = list(
+			list("label" = "Plant identifier status", "value" = "ERROROROROROR-----"),
+		)
+	return
 
-/mob/living/bot/farmbot/GetInteractPanel()
-	. = "Water plants : <a href='byond://?src=\ref[src];command=water'>[waters_trays ? "Yes" : "No"]</a>"
-	. += "<br>Refill watertank : <a href='byond://?src=\ref[src];command=refill'>[refills_water ? "Yes" : "No"]</a>"
-	. += "<br>Weed plants: <a href='byond://?src=\ref[src];command=weed'>[uproots_weeds ? "Yes" : "No"]</a>"
-	. += "<br>Replace fertilizer: <a href='byond://?src=\ref[src];command=replacenutri'>[replaces_nutriment ? "Yes" : "No"]</a>"
-	. += "<br>Collect produce: <a href='byond://?src=\ref[src];command=collect'>[collects_produce ? "Yes" : "No"]</a>"
-	. += "<br>Remove dead plants: <a href='byond://?src=\ref[src];command=removedead'>[removes_dead ? "Yes" : "No"]</a>"
-
-/mob/living/bot/farmbot/GetInteractMaintenance()
-	. = "Plant identifier status: "
-	switch(emagged)
-		if(0)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Normal</a>"
-		if(1)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Scrambled (DANGER)</a>"
-		if(2)
-			. += "ERROROROROROR-----"
-
-/mob/living/bot/farmbot/ProcessCommand(mob/user, command, href_list)
-	..()
-	if(CanAccessPanel(user))
-		switch(command)
+/mob/living/bot/farmbot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(CanAccessPanel(usr))
+		switch(action)
 			if("water")
 				waters_trays = !waters_trays
+				return TRUE
 			if("refill")
 				refills_water = !refills_water
+				return TRUE
 			if("weed")
 				uproots_weeds = !uproots_weeds
+				return TRUE
 			if("replacenutri")
 				replaces_nutriment = !replaces_nutriment
+				return TRUE
 			if("collect")
 				collects_produce = !collects_produce
+				return TRUE
 			if("removedead")
 				removes_dead = !removes_dead
-
-	if(CanAccessMaintenance(user))
-		switch(command)
+				return TRUE
+	if(CanAccessMaintenance(usr))
+		switch(action)
 			if("emag")
 				if(emagged < 2)
 					emagged = !emagged
+				return TRUE
+	return FALSE
 
 /mob/living/bot/farmbot/emag_act(remaining_charges, mob/user)
 	. = ..()

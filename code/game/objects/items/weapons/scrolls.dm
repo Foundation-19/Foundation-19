@@ -15,30 +15,33 @@
 		to_chat(usr, SPAN_WARNING("You stare at the scroll but cannot make sense of the markings!"))
 		return
 
-	user.set_machine(src)
-	var/dat = "Number of uses: [src.uses]<BR>"
-	dat += "<HR>"
-	dat += "<B>Four uses use them wisely:</B><BR>"
-	dat += "<A href='byond://?src=\ref[src];spell_teleport=1'>Teleport</A><BR>"
-	dat += "Kind regards,<br>Wizards Federation<br><br>P.S. Don't forget to bring your gear, you'll need it to cast most spells.<HR>"
-	var/datum/browser/popup = new(user, "scroll", "Teleportation Scroll")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "scroll")
+	tgui_interact(user)
 
-/obj/item/teleportation_scroll/Topic(href, href_list)
+/obj/item/teleportation_scroll/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Scrolls", "Teleportation Scroll")
+		ui.open()
+
+/obj/item/teleportation_scroll/tgui_data(mob/user)
+	var/list/data = list()
+	data["uses"] = uses
+	return data
+
+/obj/item/teleportation_scroll/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
+		return TRUE
 	var/mob/living/carbon/human/H = usr
 	if (!( istype(H, /mob/living/carbon/human)))
-		return 1
-	if ((usr == src.loc || (in_range(src, usr) && istype(src.loc, /turf))))
-		usr.set_machine(src)
-		if (href_list["spell_teleport"])
+		return TRUE
+	if (!(usr == src.loc || (in_range(src, usr) && istype(src.loc, /turf))))
+		return TRUE
+	switch(action)
+		if("spell_teleport")
 			if (src.uses >= 1)
 				teleportscroll(H)
-	attack_self(H)
-	return
+			return TRUE
+	return FALSE
 
 /obj/item/teleportation_scroll/proc/teleportscroll(mob/user)
 	var/area/thearea = input(user, "Area to jump to", "BOOYEA") as null|anything in wizteleportlocs
