@@ -39,6 +39,30 @@
 			catalog += list(list("type" = "[typepath]", "name" = D.tech_tree.get_catalog_items()[typepath]))
 		director_data["catalog"] = catalog
 	data["director"] = director_data
+	// Cross-SCP interaction registry.
+	var/list/interaction_list = list()
+	var/discovered_count = 0
+	if(SSscp_cross_interactions && SSscp_cross_interactions.setup_complete)
+		for(var/interaction_id in SSscp_cross_interactions.interactions)
+			var/datum/cross_scp_interaction/I = SSscp_cross_interactions.interactions[interaction_id]
+			if(I.discovered)
+				discovered_count++
+			interaction_list += list(list(
+				"id" = I.interaction_id,
+				"name" = I.name,
+				"description" = I.discovered ? I.description : "",
+				"scp1" = I.scp_id_1,
+				"scp2" = I.scp_id_2,
+				"tier" = I.tier,
+				"discovered" = I.discovered,
+				"discovered_by" = I.discovered_by,
+				"trigger_count" = I.trigger_count,
+				"req1" = I.research_required_scp1,
+				"req2" = I.research_required_scp2,
+			))
+	data["interactions"] = interaction_list
+	data["discovered_count"] = discovered_count
+	data["total_count"] = interaction_list.len
 	if(selected_scp)
 		var/datum/scp_research/research = GLOB.scp_research_tracker.get_research(selected_scp)
 		if(research)

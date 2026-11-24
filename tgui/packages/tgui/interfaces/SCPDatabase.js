@@ -62,6 +62,11 @@ const SCPDatabaseContent = (props, context) => {
           onClick={() => act('PRG_switch_tab', { tab: 'safety' })}>
           Safety
         </Tabs.Tab>
+        <Tabs.Tab
+          selected={tab === 'interactions'}
+          onClick={() => act('PRG_switch_tab', { tab: 'interactions' })}>
+          Interactions
+        </Tabs.Tab>
       </Tabs>
       {tab === 'overview' && <OverviewTab />}
       {tab === 'detail' && <DetailTab />}
@@ -71,6 +76,7 @@ const SCPDatabaseContent = (props, context) => {
       {tab === 'projects' && <ProjectsTab />}
       {tab === 'teams' && <TeamsTab />}
       {tab === 'safety' && <SafetyTab />}
+      {tab === 'interactions' && <InteractionsTab />}
     </Box>
   );
 };
@@ -813,6 +819,54 @@ const TestLogTab = (props, context) => {
             <Box color="label" mt={1}>
               Type: {entry.test_type} | Tester: {entry.tester} | {entry.result}
             </Box>
+          </Box>
+        ))
+      )}
+    </Section>
+  );
+};
+
+const InteractionsTab = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { interactions = [], discovered_count = 0, total_count = 0 } = data;
+
+  const tierColor = (tier) => {
+    switch (tier) {
+      case 5: return 'bad';
+      case 4: return 'average';
+      case 3: return 'violet';
+      default: return 'label';
+    }
+  };
+
+  return (
+    <Section
+      title={'CROSS-ANOMALY INTERACTION REGISTRY — ' + discovered_count + '/' + total_count + ' DISCOVERED'}>
+      {interactions.length === 0 ? (
+        <Box color="label">No cross-anomaly interactions registered.</Box>
+      ) : (
+        interactions.map((I) => (
+          <Box key={I.id} mb={1} p={0.5} style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <Box bold>
+              <span style={{ color: I.discovered ? '#7ec97e' : '#a04040' }}>
+                {I.discovered ? '● DISCOVERED' : '○ UNKNOWN'}
+              </span>
+              {' '}{I.name} — SCP-{I.scp1} × SCP-{I.scp2}{' '}
+              <span style={{ color: '#9a9ab0' }}>(Tier {I.tier})</span>
+            </Box>
+            {I.discovered ? (
+              <>
+                <Box mt={0.5} color="label">{I.description}</Box>
+                <Box mt={0.5} color="label" fontSize={0.9}>
+                  Triggers: {I.trigger_count} | Req. research: L{I.req1}/L{I.req2}
+                  {I.discovered_by ? (' | Found by: ' + I.discovered_by) : ''}
+                </Box>
+              </>
+            ) : (
+              <Box mt={0.5} color="label" fontSize={0.9}>
+                Undocumented interaction. Raise research on both anomalies to discover.
+              </Box>
+            )}
           </Box>
         ))
       )}

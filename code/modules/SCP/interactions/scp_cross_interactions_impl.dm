@@ -29,12 +29,10 @@
 	var/atom/doctor = cross_partner(scp1, scp2, "049")
 	if(!doctor || !ismob(doctor))
 		return FALSE
-	var/host = cross_partner(scp1, scp2, "035")
-	if(host && isobj(host))
-		var/mob/living/carbon/human/wearer = host.loc && ishuman(host.loc) ? host.loc : null
-		if(wearer)
-			to_chat(doctor, SPAN_WARNING("You sense an UNUSUALLY concentrated Pestilence in a nearby host... it clouds your judgment. Fascinating."))
-			return TRUE
+	var/atom/host = cross_partner(scp1, scp2, "035")
+	if(host && isobj(host) && host.loc && ishuman(host.loc))
+		to_chat(doctor, SPAN_WARNING("You sense an UNUSUALLY concentrated Pestilence in a nearby host... it clouds your judgment. Fascinating."))
+		return TRUE
 	to_chat(doctor, SPAN_NOTICE("You detect a dormant but incredibly potent strain of the Pestilence nearby... unlike anything you've encountered."))
 	return TRUE
 
@@ -83,8 +81,8 @@
 		return FALSE
 	var/found = FALSE
 	for(var/mob/living/carbon/human/H in range(7, slime))
-		if(H.sanity && H.hallucination > 0)
-			H.hallucination = max(0, H.hallucination - 20)
+		if(H.sanity && H.hallucination_power > 0)
+			H.adjust_hallucination(-10 SECONDS, -20)
 			H.sanity.adjust_sanity(5, "scp999_513_counter")
 			to_chat(H, SPAN_NOTICE("The looming presence recedes. You feel safe again."))
 			found = TRUE
@@ -183,7 +181,7 @@
 	var/atom/bat = cross_partner(scp1, scp2, "2398")
 	if(!statue || !bat)
 		return FALSE
-	var/bat_holder = istype(bat, /obj/item) && ishuman(bat.loc) ? bat.loc : null
+	var/mob/living/carbon/human/bat_holder = (istype(bat, /obj/item) && bat.loc && ishuman(bat.loc)) ? bat.loc : null
 	if(bat_holder)
 		bat_holder.visible_message(SPAN_DANGER("A powerful swing connects with [statue]! It is knocked backward!"))
 		step_away(statue, bat, 2)
@@ -217,7 +215,9 @@
 	if(!mask || !predator)
 		return FALSE
 	// 939 learns the mask's current host's voice.
-	var/mob/living/carbon/human/host = isobj(mask) && mask.loc && ishuman(mask.loc) ? mask.loc : null
+	var/mob/living/carbon/human/host = null
+	if(isobj(mask) && mask.loc && ishuman(mask.loc))
+		host = mask.loc
 	if(host && istype(predator, /mob/living/simple_animal/hostile/scp939))
 		var/mob/living/simple_animal/hostile/scp939/S = predator
 		S.learn_voice(host)
@@ -230,7 +230,9 @@
 	var/atom/mask = cross_partner(scp1, scp2, "035")
 	if(!predator || !mask)
 		return FALSE
-	var/mob/living/carbon/human/host = isobj(mask) && mask.loc && ishuman(mask.loc) ? mask.loc : null
+	var/mob/living/carbon/human/host = null
+	if(isobj(mask) && mask.loc && ishuman(mask.loc))
+		host = mask.loc
 	if(host && istype(predator, /mob/living/simple_animal/hostile/scp939))
 		var/mob/living/simple_animal/hostile/scp939/S = predator
 		S.learn_voice(host)
@@ -269,20 +271,20 @@
 	scp1.visible_message(SPAN_WARNING("A small metal sphere repeatedly says 'Eric!' near [mask], disrupting its concentration."))
 	return TRUE
 
-// --- 914 refinement pairs: the item SCP must be inside 914's input booth ---
+// --- 914 refinement pairs: the item SCP must be in/near the input booth ---
 /proc/interact_914_refine_500(atom/scp1, atom/scp2)
 	var/atom/machine = cross_partner(scp1, scp2, "914")
 	var/atom/pills = cross_partner(scp1, scp2, "500")
 	if(!machine || !pills)
 		return FALSE
-	if(!istype(machine, /obj/machinery/scp914) || !istype(pills, /obj/item/reagent_containers/pill/scp500))
+	if(!istype(machine, /obj/structure/scp_914) || !istype(pills, /obj/item/reagent_containers/pill/scp500))
 		return FALSE
-	var/obj/machinery/scp914/M = machine
+	var/obj/structure/scp_914/M = machine
 	var/obj/item/reagent_containers/pill/scp500/P = pills
-	if(get_area(P) != get_area(M.input_part) && get_dist(P, M.input_part) > 2)
+	if(get_dist(P, M.input_part) > 3)
 		return FALSE
-	if(M.setting == "Fine" && P.reagents)
-		P.reagents.add_reagent(/datum/reagent/medicine/omnizine, 5)
+	if(M.current_mode == MODE_FINE && P.reagents)
+		P.reagents.add_reagent(/datum/reagent/medicine/peridaxon, 5)
 		P.desc = "An enhanced red pill. The label reads 'SCP-500-F'."
 		M.visible_message(SPAN_NOTICE("[M] hums contentedly as it refines [P]..."))
 		log_game("Cross-SCP: 914 Fine-refined SCP-500.")
@@ -292,11 +294,11 @@
 /proc/interact_914_refine_113(atom/scp1, atom/scp2)
 	var/atom/machine = cross_partner(scp1, scp2, "914")
 	var/atom/ring = cross_partner(scp1, scp2, "113")
-	if(!machine || !ring || !istype(machine, /obj/machinery/scp914))
+	if(!machine || !ring || !istype(machine, /obj/structure/scp_914))
 		return FALSE
-	var/obj/machinery/scp914/M = machine
-	if(M.setting == "Fine" && istype(ring, /obj/item/clothing/ring))
-		var/obj/item/clothing/ring/R = ring
+	var/obj/structure/scp_914/M = machine
+	if(M.current_mode == MODE_FINE && istype(ring, /obj/item/scp113))
+		var/obj/item/scp113/R = ring
 		R.desc = "A red jasper ring, somehow softer-edged than before. Less dangerous, maybe."
 		M.visible_message(SPAN_NOTICE("[M] polishes [R] to a gentler sheen."))
 		log_game("Cross-SCP: 914 Fine-refined SCP-113.")
@@ -306,10 +308,10 @@
 /proc/interact_914_refine_513(atom/scp1, atom/scp2)
 	var/atom/machine = cross_partner(scp1, scp2, "914")
 	var/atom/bell = cross_partner(scp1, scp2, "513")
-	if(!machine || !bell || !istype(machine, /obj/machinery/scp914))
+	if(!machine || !bell || !istype(machine, /obj/structure/scp_914))
 		return FALSE
-	var/obj/machinery/scp914/M = machine
-	if(M.setting == "Rough")
+	var/obj/structure/scp_914/M = machine
+	if(M.current_mode == MODE_ROUGH)
 		M.visible_message(SPAN_DANGER("[M] crushes and grinds — the bell's ring comes out dead and silent."))
 		bell.visible_message(SPAN_NOTICE("[bell] emerges dented, its memetic toll seemingly gone."))
 		log_game("Cross-SCP: 914 Rough-destroyed SCP-513 memetic property.")
@@ -319,13 +321,14 @@
 /proc/interact_914_refine_427(atom/scp1, atom/scp2)
 	var/atom/machine = cross_partner(scp1, scp2, "914")
 	var/atom/locket = cross_partner(scp1, scp2, "427")
-	if(!machine || !locket)
+	if(!machine || !istype(machine, /obj/structure/scp_914))
 		return FALSE
-	// F19 427 may not carry an SCP datum; accept any amulet-shaped item nearby.
-	var/obj/machinery/scp914/M = machine
-	if(M.setting == "Fine")
+	var/obj/structure/scp_914/M = machine
+	// 427's locket may lack an SCP datum; find the accessory near the input booth.
+	var/obj/item/clothing/accessory/scp_427/locket_item = locket && istype(locket, /obj/item/clothing/accessory/scp_427) ? locket : locate() in range(3, M.input_part)
+	if(M.current_mode == MODE_FINE && locket_item)
 		M.visible_message(SPAN_NOTICE("[M] produces a stabilized variant from its output booth..."))
-		var/obj/item/reagent_containers/pill/telecordrazine/P = new /obj/item/reagent_containers/pill/telecordrazine(get_turf(M.output_part))
+		var/obj/item/reagent_containers/pill/antitox/P = new(get_turf(M.output_part))
 		P.name = "stabilized healing compound (SCP-427-F)"
 		log_game("Cross-SCP: 914 Fine-refined SCP-427 locket.")
 		return TRUE
@@ -375,8 +378,8 @@
 	for(var/mob/living/carbon/human/H in range(5, coffin))
 		if(H.stat == DEAD)
 			continue
-		if(H.hallucination < 30)
-			H.hallucination += 10
+		if(H.hallucination_power < 30)
+			H.adjust_hallucination(20 SECONDS, 10)
 			to_chat(H, SPAN_WARNING("The water's surface shows something that shouldn't be there..."))
 		break
 	return TRUE
@@ -389,14 +392,14 @@
 	flame.visible_message(SPAN_DANGER("SCP-457 burns near SCP-895! Corrupted smoke billows through the vents!"))
 	// Extend 895's reach: anyone viewing cameras near the coffin gets worse.
 	for(var/mob/living/carbon/human/H in range(10, coffin))
-		if(H.stat != DEAD && H.hallucination < 40)
-			H.hallucination += 5
+		if(H.stat != DEAD && H.hallucination_power < 40)
+			H.adjust_hallucination(10 SECONDS, 5)
 	return TRUE
 
 /proc/interact_2427_malfunction_914(atom/scp1, atom/scp2)
 	var/atom/machine = cross_partner(scp1, scp2, "914")
 	var/atom/glitcher = cross_partner(scp1, scp2, "2427-3")
-	if(!machine || !glitcher || !istype(machine, /obj/machinery/scp914))
+	if(!machine || !glitcher || !istype(machine, /obj/structure/scp_914))
 		return FALSE
 	if(get_dist(machine, glitcher) > 5)
 		return FALSE

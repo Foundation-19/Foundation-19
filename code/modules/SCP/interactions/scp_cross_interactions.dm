@@ -217,7 +217,7 @@ SUBSYSTEM_DEF(scp_cross_interactions)
 	if(researcher_ckey)
 		for(var/client/C in GLOB.clients)
 			if(C?.mob?.ckey == researcher_ckey)
-				to_chat(C, SPAN_BOLDNOTICE("RESEARCH DISCOVERY: Cross-anomaly interaction '[I.name]' identified between SCP-[I.scp_id_1] and SCP-[I.scp_id_2]!"))
+				to_chat(C, SPAN_BOLD("RESEARCH DISCOVERY: Cross-anomaly interaction '[I.name]' identified between SCP-[I.scp_id_1] and SCP-[I.scp_id_2]!"))
 				break
 	log_and_message_staff("RESEARCH: [researcher_ckey ? "[researcher_ckey] discovered" : "The system auto-discovered"] cross-SCP interaction '[I.name]' (SCP-[I.scp_id_1] x SCP-[I.scp_id_2]).")
 

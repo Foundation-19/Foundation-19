@@ -146,6 +146,9 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 	GLOB.scp_research_tracker.log_test(parent, tester, test_type, "+[points] points ([risk_level] risk)")
 	// Codex: tests advance personal knowledge to detailed.
 	codex_on_test(designation, tester, CODEX_DETAILED)
+	// Cross-SCP interactions: testing an SCP may discover a hidden pairing.
+	if(SSscp_cross_interactions && SSscp_cross_interactions.setup_complete && tester)
+		SSscp_cross_interactions.try_discover_interaction(designation, tester.ckey)
 	// Safety: extreme-risk tests damage the site safety rating.
 	if(risk_level == "extreme" && GLOB.scp_research_director)
 		GLOB.scp_research_director.on_extreme_test(designation)

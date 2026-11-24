@@ -32,6 +32,9 @@
 	if(accumulated_points >= points_to_award)
 		research.add_research_points(accumulated_points, "scanner_observation")
 		accumulated_points = 0
+	// Cross-SCP interactions: sustained observation may discover a hidden pairing.
+	if(SSscp_cross_interactions && SSscp_cross_interactions.setup_complete && user)
+		SSscp_cross_interactions.try_discover_interaction(scp_datum.designation, user.ckey)
 	var/tier_name = research.get_tier_name()
 	var/status = research.containment_status
 	to_chat(user, SPAN_NOTICE("<b>Scan Result - SCP-[scp_datum.designation]</b>"))
