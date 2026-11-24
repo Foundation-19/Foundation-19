@@ -78,6 +78,19 @@
 		window = src)
 	if(!client)
 		return
+	// OneDrive / cloud-placeholder trap: inline_html/js/css may be passed as
+	// /file references whose backing content is an online-only stub. An empty
+	// page silently produces a window with no JS — it never sends 'ready'
+	// and never works. Loudly log if any inline file is unusable.
+	if(isfile(inline_html) && !length(file2text(inline_html)))
+		log_tgui(client, "Error: [id] inline_html is EMPTY (cloud placeholder or unreadable file). The page will not function.",
+			window = src)
+	if(isfile(inline_js) && !length(file2text(inline_js)))
+		log_tgui(client, "Error: [id] inline_js is EMPTY (cloud placeholder or unreadable file). The page will not function.",
+			window = src)
+	if(isfile(inline_css) && !length(file2text(inline_css)))
+		log_tgui(client, "Error: [id] inline_css is EMPTY (cloud placeholder or unreadable file). The page will not function.",
+			window = src)
 	src.initial_fancy = fancy
 	src.initial_assets = assets
 	src.initial_inline_html = inline_html

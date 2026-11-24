@@ -113,7 +113,7 @@
 /*
 	NANO UI FOR UPLINK WOOP WOOP
 */
-/obj/item/device/uplink/tgui_interact(mob/user, datum/tgui/ui, uistate = GLOB.inventory_state)
+/obj/item/device/uplink/tgui_interact(mob/user, datum/tgui/ui, uistate = GLOB.inventory_tgui_state)
 	var/title = "Remote Uplink"
 
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -240,5 +240,5 @@
 	..()
 	hidden_uplink = new(src)
 
-/obj/item/device/uplink/contained/tgui_interact(mob/user, datum/tgui/ui, uistate = GLOB.contained_state)
+/obj/item/device/uplink/contained/tgui_interact(mob/user, datum/tgui/ui, uistate = GLOB.contained_tgui_state)
 	return ..()

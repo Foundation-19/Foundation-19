@@ -17,11 +17,12 @@ SUBSYSTEM_DEF(character_setup)
 		var/datum/preferences/prefs = prefs_awaiting_setup[prefs_awaiting_setup.len]
 		prefs_awaiting_setup.len--
 		prefs.setup()
-	while(newplayers_requiring_init.len)
-		var/mob/new_player/new_player = newplayers_requiring_init[newplayers_requiring_init.len]
-		newplayers_requiring_init.len--
-		if(!QDELETED(new_player))
-			new_player.deferred_login()
+	// Do NOT flush newplayers_requiring_init here. Clients that connected
+	// during world startup re-login mid-initialization; a deferred_login
+	// issued now lands on a client whose browse channel isn't live yet and
+	// is silently dropped, and consuming the queue entry here would leave
+	// them with no lobby and no retries. Leave them queued — fire() (once
+	// the MC starts ticking) retries until their LobbyMenu window is live.
 	. = ..()
 
 /datum/controller/subsystem/character_setup/fire(resumed = FALSE)

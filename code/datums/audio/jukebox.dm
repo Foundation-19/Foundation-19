@@ -107,7 +107,7 @@
 	return owner
 
 
-/jukebox/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/jukebox/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new (user, src, "Jukebox", ui_title, ui_width, ui_height, state = state)

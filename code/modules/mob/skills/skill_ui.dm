@@ -21,7 +21,7 @@
 	skillset = null
 	. = ..()
 
-/datum/nano_module/skill_ui/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.self_state)
+/datum/nano_module/skill_ui/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.self_tgui_state)
 	if(!skillset)
 		return
 
@@ -250,7 +250,7 @@ Admin version, with debugging options.
 	.["antag_buff"] = length(skillset.owner.fetch_buffs_of_type(/datum/skill_buff/antag))
 	.["antag"] = skillset.owner && skillset.owner.mind && player_is_antag(skillset.owner.mind)
 
-/datum/nano_module/skill_ui/admin/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.admin_state)
+/datum/nano_module/skill_ui/admin/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.admin_tgui_state)
 	..()
 
 /datum/nano_module/skill_ui/admin/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)

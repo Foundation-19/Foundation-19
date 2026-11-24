@@ -53,3 +53,16 @@ GLOBAL_DATUM_INIT(physical_obscured_tgui_state, /datum/tgui_state/physical_obscu
 
 /mob/living/silicon/ai/physical_obscured_can_use_tgui_topic(src_object)
 	return UI_UPDATE // AIs are not physical.
+
+/**
+ * tgui state: mech_state
+ *
+ * Port of the legacy mech state: only exosuit pilots (or the exosuit itself)
+ * may interact. Used by the exosuit radio.
+ */
+GLOBAL_DATUM_INIT(mech_tgui_state, /datum/tgui_state/mech_state, new)
+
+/datum/tgui_state/mech_state/can_use_tgui_topic(mob/living/exosuit/src_object, mob/user)
+	if(istype(src_object) && ((user in src_object.pilots) || (user == src_object)))
+		return user.shared_ui_interaction(src_object)
+	return UI_CLOSE

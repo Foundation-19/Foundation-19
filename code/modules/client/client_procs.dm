@@ -263,13 +263,16 @@
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
 
-	// Initialize stat panel
+	// Initialize stat panel. On clients reconnecting through a round restart,
+	// this runs before the connection handshake is live — the browse() can be
+	// silently dropped and the panel never comes up. A retry loop re-issues
+	// the initialization until the page is alive.
 	stat_panel.initialize(
 		inline_html = file("html/statbrowser.html"),
 		inline_js = file("html/statbrowser.js"),
 		inline_css = file("html/statbrowser.css"),
 	)
-	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
+	retry_panel_init()
 
 	// Initialize tgui panel
 	tgui_panel.initialize()
@@ -339,6 +342,22 @@
 	if(stat_panel.is_ready())
 		return
 	to_chat(src, SPAN_USERDANGER("Statpanel failed to load, click <a href='byond://?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel "))
+
+/// Retries stat-panel initialization until the page is alive. The initial
+/// browse() can be silently dropped when a client reconnects through a round
+/// restart (connection still settling), leaving a dead panel with no tabs.
+/// Every 2 seconds: if the page hasn't contacted us, re-issue the browse.
+/client/proc/retry_panel_init()
+	if(QDELETED(stat_panel) || stat_panel.is_ready())
+		return
+	// A page that sent 'ready' flips the window to READY and starts
+	// sending tab messages; until then assume the browse was lost.
+	stat_panel.initialize(
+		inline_html = file("html/statbrowser.html"),
+		inline_js = file("html/statbrowser.js"),
+		inline_css = file("html/statbrowser.css"),
+	)
+	addtimer(CALLBACK(src, PROC_REF(retry_panel_init)), 2 SECONDS)
 
 /**
  * Initializes dropdown menus on client

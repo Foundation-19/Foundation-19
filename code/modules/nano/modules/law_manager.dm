@@ -147,7 +147,7 @@
 
 	return FALSE
 
-/datum/nano_module/law_manager/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/datum/nano_module/law_manager/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	owner.lawsync()
 
 	ui = SStgui.try_update_ui(user, src, ui)

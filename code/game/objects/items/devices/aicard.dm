@@ -14,7 +14,7 @@
 
 	tgui_interact(user)
 
-/obj/item/aicard/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.inventory_state)
+/obj/item/aicard/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.inventory_tgui_state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new(user, src, "AICard", "[name]", 600, 400, state = state)
