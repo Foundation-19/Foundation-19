@@ -310,8 +310,9 @@ const TeamsTab = (props, context) => {
       ) : (
         teams.map((team) => {
           const members = team.members || [];
+          const membersRaw = team.members_raw || [];
           const joinRequests = team.join_requests || [];
-          const isMember = currentCkey ? members.includes(currentCkey) : false;
+          const isMember = currentCkey ? membersRaw.includes(currentCkey) : false;
           return (
             <Box key={team.id} mb={1} p={1} style={{ border: '1px solid #444' }}>
               <Flex>
@@ -329,21 +330,21 @@ const TeamsTab = (props, context) => {
               {joinRequests.length > 0 ? (
                 <Box mt={1}>
                   <Box bold color="label" mb={0.5}>Join Requests</Box>
-                  {joinRequests.map((ckey) => (
-                    <Flex key={ckey} mb={0.5} align="center">
-                      <Flex.Item grow={1}>{ckey}</Flex.Item>
+                  {joinRequests.map((name, idx) => (
+                    <Flex key={name} mb={0.5} align="center">
+                      <Flex.Item grow={1}>{name}</Flex.Item>
                       <Flex.Item>
                         <Button
                           icon="check"
                           content="Approve"
                           color="good"
-                          onClick={() => act('PRG_approve_join', { team_id: team.id, ckey })} />
+                          onClick={() => act('PRG_approve_join', { team_id: team.id, ckey: (team.join_requests_raw || [])[idx] })} />
                         <Button
                           icon="times"
                           content="Deny"
                           color="bad"
                           ml={0.5}
-                          onClick={() => act('PRG_deny_join', { team_id: team.id, ckey })} />
+                          onClick={() => act('PRG_deny_join', { team_id: team.id, ckey: (team.join_requests_raw || [])[idx] })} />
                       </Flex.Item>
                     </Flex>
                   ))}

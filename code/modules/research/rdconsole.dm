@@ -119,8 +119,11 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			break
 
 /obj/machinery/computer/rdconsole/Initialize()
-	SyncRDevices()
 	. = ..()
+	// Device Initialize order within the same map-load pass is not
+	// guaranteed — the console can run before the lathe/analyzer/imprinter
+	// exist. Sync once everything has initialized.
+	addtimer(CALLBACK(src, PROC_REF(SyncRDevices)), 1)
 
 /obj/machinery/computer/rdconsole/attackby(obj/item/D as obj, mob/user as mob)
 	//Loading a disk into it.

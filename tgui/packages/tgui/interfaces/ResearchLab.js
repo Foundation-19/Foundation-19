@@ -356,8 +356,9 @@ const TeamsTab = (props, context) => {
       ) : (
         teams.map((team) => {
           const members = team.members || [];
+          const membersRaw = team.members_raw || [];
           const joinRequests = team.join_requests || [];
-          const isMember = currentCkey ? members.includes(currentCkey) : false;
+          const isMember = currentCkey ? membersRaw.includes(currentCkey) : false;
           return (
             <Panel key={team.id} title={'TEAM ' + team.id}>
               <Box style={{ color: C.text, fontWeight: 'bold' }}>{team.name}</Box>
@@ -372,21 +373,21 @@ const TeamsTab = (props, context) => {
                   <Box style={{ color: C.amber, fontSize: '10px', letterSpacing: '0.1em' }}>
                     JOIN REQUESTS
                   </Box>
-                  {joinRequests.map((ckey) => (
-                    <Box key={ckey} mb={0.5}>
-                      <Box inline style={{ color: C.text, marginRight: '4px' }}>{ckey}</Box>
+                  {joinRequests.map((name, idx) => (
+                    <Box key={name} mb={0.5}>
+                      <Box inline style={{ color: C.text, marginRight: '4px' }}>{name}</Box>
                       <Button
                         icon="check"
                         content="Approve"
                         color="good"
                         mr={0.5}
-                        onClick={() => act('PRG_approve_join', { team_id: team.id, ckey })} />
+                        onClick={() => act('PRG_approve_join', { team_id: team.id, ckey: (team.join_requests_raw || [])[idx] })} />
                       <Button
                         icon="times"
                         content="Deny"
                         color="bad"
                         mr={0.5}
-                        onClick={() => act('PRG_deny_join', { team_id: team.id, ckey })} />
+                        onClick={() => act('PRG_deny_join', { team_id: team.id, ckey: (team.join_requests_raw || [])[idx] })} />
                     </Box>
                   ))}
                 </Box>
