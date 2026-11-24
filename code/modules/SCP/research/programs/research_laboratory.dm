@@ -69,9 +69,12 @@
 			data["scp_detail"] = research.get_data()
 	return data
 
-/datum/computer_file/program/research_laboratory/tgui_act(act, params, mob/user)
+/datum/computer_file/program/research_laboratory/tgui_act(act, params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
+	// The third tgui_act arg is the UI datum, not the mob — pull the real
+	// user from ui.user (or usr as fallback).
+	var/mob/user = ui?.user || usr
 	// Program access: level 3 science required for management actions.
 	var/can_manage = program_has_access(user, 0, ACCESS_SCIENCE_LVL3)
 	switch(act)

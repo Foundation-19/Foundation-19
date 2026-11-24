@@ -226,6 +226,18 @@
 				var/confirm = alert("Are you sure you want to [selected_evac_option.option_desc]?", name, "No", "Yes")
 				if (confirm == "Yes" && can_still_topic())
 					evacuation_controller.handle_evac_option(selected_evac_option.option_target, usr)
+		if("line1")
+			. = TRUE
+			if(is_authenticated(usr) && ntn_cont)
+				var/linput = reject_bad_text(sanitize(params["value"], 40), 40)
+				if(can_still_topic())
+					msg_line1 = linput
+		if("line2")
+			. = TRUE
+			if(is_authenticated(usr) && ntn_cont)
+				var/linput = reject_bad_text(sanitize(params["value"], 40), 40)
+				if(can_still_topic())
+					msg_line2 = linput
 		if("setstatus")
 			. = TRUE
 			if(is_authenticated(usr) && ntn_cont)

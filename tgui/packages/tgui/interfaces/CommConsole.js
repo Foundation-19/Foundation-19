@@ -68,7 +68,7 @@ export const CommConsole = (props, context) => {
                       selected={lvl.title === current_security_level_title}
                       color={lvl.title === 'Delta' ? 'bad' : undefined}
                       disabled={!authenticated || !net_syscont}
-                      onClick={() => act('setalert', { setalert: lvl.ref })}
+                      onClick={() => act('setalert', { target: lvl.ref })}
                     />
                   </Flex.Item>
                 ))}
