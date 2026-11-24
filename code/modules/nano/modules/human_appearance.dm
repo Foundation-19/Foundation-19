@@ -136,7 +136,7 @@
 			return TRUE
 
 
-/datum/nano_module/appearance_changer/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/datum/nano_module/appearance_changer/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	if (QDELETED(owner) || !owner.species)
 		return
 

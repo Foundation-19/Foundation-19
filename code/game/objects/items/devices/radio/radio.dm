@@ -103,7 +103,7 @@
 
 	return tgui_interact(user)
 
-/obj/item/device/radio/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/obj/item/device/radio/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Radio", "[name]", 400, 430, state = state)
@@ -948,5 +948,5 @@
 		if(istype(exosuit) && exosuit.head && exosuit.head.radio && exosuit.head.radio.is_functional())
 			return ..()
 
-/obj/item/device/radio/exosuit/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.mech_state)
+/obj/item/device/radio/exosuit/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.mech_tgui_state)
 	. = ..()

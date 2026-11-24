@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(mob_spawners, list())
 /datum/build_mode/mob_mode/Help()
 	to_chat(user, SPAN_NOTICE(help_text))
 
-/datum/build_mode/mob_mode/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/datum/build_mode/mob_mode/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	. = ..()
 
 	if (!current_turf || !current_area)

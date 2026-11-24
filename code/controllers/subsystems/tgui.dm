@@ -124,6 +124,11 @@ SUBSYSTEM_DEF(tgui)
 		for(var/i in 1 to TGUI_WINDOW_HARD_LIMIT)
 			var/window_id = TGUI_WINDOW_ID(i)
 			user << browse(null, "window=[window_id]")
+		// Also tear down the stat panel and chat panel windows — clients that
+		// reconnected through a round restart still hold the previous round's
+		// live pages in these controls, whose JS races the new round.
+		user << browse(null, "window=statbrowser")
+		user << browse(null, "window=browseroutput")
 
 /**
  * public
