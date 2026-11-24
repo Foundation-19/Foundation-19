@@ -364,6 +364,22 @@
 	if (!istype(connection))
 		return 0
 
+	// Comms integrity: degraded department channels have a chance to swallow
+	// the transmission (static). Common/antag channels bypass this.
+	if(channel && (channel in SScomms_integrity?.channels))
+		var/integrity = get_channel_integrity(channel)
+		if(integrity < 100 && prob((100 - integrity) * 0.5))
+			to_chat(M, SPAN_WARNING("Your transmission dissolves into static — [channel] relay is overloaded."))
+			return 0
+
+	// SCP-035 hazard: the mask rides the Command channel. Listeners take
+	// sanity damage from hearing it; the hazard is in the receiving end and
+	// is handled at broadcast time.
+	if(channel == "Command" && SScomms_integrity?.hazard_source && ishuman(M) && prob(35))
+		var/mob/living/carbon/human/H = M
+		H.adjust_sanity(-3, "scp035_channel")
+		to_chat(M, SPAN_OCCULT("Between the words, something else whispers on the channel..."))
+
 	var/turf/position = get_turf(src)
 	playsound(src, 'sounds/effects/radiohiss.ogg', 10)
 

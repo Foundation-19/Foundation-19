@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Input, LabeledList, NoticeBox, Section } from '../components';
+import { Box, Button, Flex, Input, LabeledList, NoticeBox, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
 export const CommConsole = (props, context) => {
@@ -19,6 +19,8 @@ export const CommConsole = (props, context) => {
     cannot_change_security_level,
     security_levels = [],
     evac_options = [],
+    comms_channels = [],
+    comms_hazard_active,
   } = data;
 
   return (
@@ -88,6 +90,45 @@ export const CommConsole = (props, context) => {
                 <Button icon="door-closed" content="Bolt Doors" onClick={() => act('bolt_doors')} />
                 <Button icon="door-open" content="Unbolt Doors" onClick={() => act('unbolt_doors')} />
               </Box>
+            </Section>
+          ) : null}
+
+          {comms_channels.length > 0 ? (
+            <Section title="Relay Integrity Board">
+              {comms_hazard_active ? (
+                <NoticeBox danger mb={1}>
+                  ANOMALOUS SIGNAL CONTAMINATION DETECTED ON COMMAND CHANNEL.
+                  <Button
+                    ml={1}
+                    color="bad"
+                    content="CUT RELAY"
+                    onClick={() => act('cut_hazard')} />
+                </NoticeBox>
+              ) : null}
+              <LabeledList>
+                {comms_channels.map((ch) => (
+                  <LabeledList.Item
+                    key={ch.name}
+                    label={ch.name}
+                    color={ch.degraded ? 'bad' : (ch.rebooting ? 'average' : undefined)}>
+                    <Box style={{ display: 'inline-block', width: '45%', verticalAlign: 'middle' }}>
+                      <ProgressBar
+                        value={ch.rebooting ? 0 : ch.integrity}
+                        minValue={0}
+                        maxValue={100}
+                        color={ch.degraded ? 'bad' : (ch.rebooting ? 'average' : 'good')}>
+                        {ch.rebooting ? 'REBOOTING' : ch.integrity + '%'}
+                      </ProgressBar>
+                    </Box>
+                    <Button
+                      inline
+                      ml={1}
+                      content="Reboot"
+                      disabled={!authenticated || ch.rebooting || ch.integrity >= 100}
+                      onClick={() => act('reboot_channel', { channel: ch.name })} />
+                  </LabeledList.Item>
+                ))}
+              </LabeledList>
             </Section>
           ) : null}
 

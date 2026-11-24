@@ -94,6 +94,21 @@
 	if(current_viewing_message)
 		data["message_current"] = current_viewing_message
 
+	// Comms integrity panel: per-channel capacity for the relay board.
+	if(SScomms_integrity)
+		var/list/channel_states = list()
+		for(var/ch_name in SScomms_integrity.channels)
+			var/datum/comms_channel_state/CS = SScomms_integrity.channels[ch_name]
+			channel_states += list(list(
+				"name" = ch_name,
+				"integrity" = CS.integrity,
+				"degraded" = CS.degraded,
+				"rebooting" = (ch_name in SScomms_integrity.rebooting),
+			))
+		data["comms_channels"] = channel_states
+		data["comms_hazard_active"] = !!SScomms_integrity.hazard_source
+	data["is_comms_officer"] = is_authenticated(user)
+
 	data["cross_enabled"] = LAZYLEN(config.cross_servers)
 
 	var/list/processed_evac_options = list()
@@ -138,6 +153,13 @@
 
 	message_offsite(input, usr, O)
 
+	// Auto-acknowledge: the offsite dispatches a reply after a short delay.
+	// Replies land in the console inbox (comm_message_listener) so the
+	// officer reads them in-console.
+	var/datum/offsite/offsite_datum = O
+	var/reply_text = offsite_datum.generate_auto_reply(input)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(post_comm_message), "RE: [target] transmission", reply_text), rand(45 SECONDS, 2 MINUTES))
+
 	centcomm_message_cooldown = 1
 	spawn(30 SECOND)//30 second cooldown
 		centcomm_message_cooldown = 0
@@ -153,6 +175,14 @@
 		if("sw_menu")
 			. = TRUE
 			current_status = text2num(params["target"])
+		if("reboot_channel")
+			. = TRUE
+			if(is_authenticated(usr) && SScomms_integrity)
+				SScomms_integrity.reboot_channel(params["channel"], usr)
+		if("cut_hazard")
+			. = TRUE
+			if(is_authenticated(usr) && SScomms_integrity)
+				SScomms_integrity.cut_035_hazard(usr)
 		if("announce")
 			. = TRUE
 			if(is_authenticated(usr) && !issilicon(usr) && ntn_comm)
