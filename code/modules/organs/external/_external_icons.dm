@@ -71,6 +71,11 @@ var/list/limb_icon_cache = list()
 
 /obj/item/organ/external/var/icon_cache_key
 /obj/item/organ/external/on_update_icon(regenerate = 0)
+	// Species can be transiently null (organs torn from a body mid-mutation,
+	// factory-created limbs before set_dna, etc). Fall back to human rather
+	// than runtime — this proc runs every Life tick for the HUD damage icons.
+	if(!species)
+		species = all_species[SPECIES_HUMAN]
 	var/gender = "_m"
 	if(!(limb_flags & ORGAN_FLAG_GENDERED_ICON))
 		gender = null
@@ -154,8 +159,9 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 			var/g = 0.59 * species.health_hud_intensity
 			var/b = 0.11 * species.health_hud_intensity
 			temp.color = list(r, r, r, g, g, g, b, b, b)
-		temp.pixel_x = owner.default_pixel_x
-		temp.pixel_y = owner.default_pixel_y
+		if(owner)
+			temp.pixel_x = owner.default_pixel_x
+			temp.pixel_y = owner.default_pixel_y
 		hud_damage_image = image(null)
 		hud_damage_image.add_overlay(temp)
 

@@ -45,7 +45,13 @@ export const Supply = (props, context) => {
 
           {screen === 1 ? (
             <Section title="Order Supplies" buttons={
-              is_admin ? <Button icon="truck" content="Statistics" onClick={() => act('set_screen', { set_screen: 2 })} /> : null
+              is_admin ? (
+                <Box>
+                  <Button icon="truck" content="Shuttle" mr={0.5} onClick={() => act('set_screen', { set_screen: 3 })} />
+                  <Button icon="tasks" content="Statistics" mr={0.5} onClick={() => act('set_screen', { set_screen: 2 })} />
+                  <Button icon="clipboard-list" content="Orders" onClick={() => act('set_screen', { set_screen: 4 })} />
+                </Box>
+              ) : null
             }>
               <Flex wrap="wrap" mb={1}>
                 {categories.map((cat) => (
@@ -80,6 +86,107 @@ export const Supply = (props, context) => {
                   <LabeledList.Item key={pb.desc} label={pb.desc}>{pb.points}</LabeledList.Item>
                 ))}
               </LabeledList>
+            </Section>
+          ) : null}
+
+          {screen === 3 ? (
+            <Section title="Supply Shuttle Control" buttons={
+              <Button icon="arrow-left" content="Back" onClick={() => act('set_screen', { set_screen: 1 })} />
+            }>
+              <LabeledList>
+                <LabeledList.Item label="Shuttle">{data.shuttle_name || 'Unknown'}</LabeledList.Item>
+                <LabeledList.Item label="Location">{data.shuttle_location || 'Unknown'}</LabeledList.Item>
+                <LabeledList.Item label="Status">{data.shuttle_status || 'Unknown'}</LabeledList.Item>
+              </LabeledList>
+              <Button
+                mt={1}
+                icon="truck"
+                content="Launch Shuttle"
+                disabled={!data.shuttle_can_control || !is_admin}
+                onClick={() => act('launch_shuttle')} />
+            </Section>
+          ) : null}
+
+          {screen === 4 && is_admin ? (
+            <Section title="Order Processing" buttons={
+              <Button icon="arrow-left" content="Back" onClick={() => act('set_screen', { set_screen: 1 })} />
+            }>
+              <Section title={`Pending Requests (${(data.requests || []).length})`}>
+                {(data.requests || []).length === 0 ? (
+                  <Box style={{ color: C.textDim }}>No pending requests.</Box>
+                ) : (
+                  (data.requests || []).map((order) => (
+                    <Box key={order.id} mb={0.5} style={{ borderBottom: `1px solid ${C.border}`, paddingBottom: '4px' }}>
+                      <Box style={{ display: 'inline-block', width: '72%' }}>
+                        <Box>#{order.id} — {order.object}</Box>
+                        <Box style={{ color: C.textDim, fontSize: '10px' }}>by {order.orderer}</Box>
+                      </Box>
+                      <Box inline>
+                        <Button
+                          icon="check"
+                          content="Approve"
+                          color="good"
+                          mr={0.5}
+                          onClick={() => act('approve_order', { approve_order: order.id })} />
+                        <Button
+                          icon="times"
+                          content="Deny"
+                          color="bad"
+                          onClick={() => act('deny_order', { deny_order: order.id })} />
+                      </Box>
+                    </Box>
+                  ))
+                )}
+              </Section>
+              <Section title={`Ordered — Awaiting Delivery (${(data.cart || []).length})`}>
+                {(data.cart || []).length === 0 ? (
+                  <Box style={{ color: C.textDim }}>Nothing ordered yet.</Box>
+                ) : (
+                  (data.cart || []).map((order) => (
+                    <Box key={order.id} mb={0.5} style={{ borderBottom: `1px solid ${C.border}`, paddingBottom: '4px' }}>
+                      <Box style={{ display: 'inline-block', width: '72%' }}>
+                        <Box>#{order.id} — {order.object}</Box>
+                        <Box style={{ color: C.textDim, fontSize: '10px' }}>by {order.orderer}</Box>
+                      </Box>
+                      <Box inline>
+                        <Button
+                          icon="undo"
+                          content="Cancel"
+                          onClick={() => act('cancel_order', { cancel_order: order.id })} />
+                        <Button
+                          icon="print"
+                          content="Receipt"
+                          onClick={() => act('print_receipt', { print_receipt: order.id, list_id: order.list_id })} />
+                      </Box>
+                    </Box>
+                  ))
+                )}
+              </Section>
+              <Section title={`Delivered (${(data.done || []).length})`}>
+                {(data.done || []).length === 0 ? (
+                  <Box style={{ color: C.textDim }}>Nothing delivered yet.</Box>
+                ) : (
+                  (data.done || []).map((order) => (
+                    <Box key={order.id} mb={0.5}>
+                      <Box style={{ display: 'inline-block', width: '72%' }}>
+                        <Box>#{order.id} — {order.object}</Box>
+                        <Box style={{ color: C.textDim, fontSize: '10px' }}>by {order.orderer}</Box>
+                      </Box>
+                      <Box inline>
+                        <Button
+                          icon="print"
+                          content="Receipt"
+                          onClick={() => act('print_receipt', { print_receipt: order.id, list_id: order.list_id })} />
+                        <Button
+                          icon="trash"
+                          content="Delete"
+                          color="bad"
+                          onClick={() => act('delete_order', { delete_order: order.id })} />
+                      </Box>
+                    </Box>
+                  ))
+                )}
+              </Section>
             </Section>
           ) : null}
 
