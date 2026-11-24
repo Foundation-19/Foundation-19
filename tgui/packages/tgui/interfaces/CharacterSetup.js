@@ -321,7 +321,12 @@ const OccupationPage = (props, context) => {
               ) : (
                 <Box style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <PriorityButtons job={job.title} level={job.level} act={act} />
-                  {job.level > 0 ? (
+                  {job.has_alt_titles ? (
+                    <TermButton onClick={() => act('select_alt_title', { job_ref: job.job_ref })}>
+                      {job.alt_title || job.title}
+                    </TermButton>
+                  ) : null}
+                  {job.level > 0 && job.has_skills ? (
                     <TermButton onClick={() => act('set_skills', { rank: job.title })}>SKILLS</TermButton>
                   ) : null}
                 </Box>

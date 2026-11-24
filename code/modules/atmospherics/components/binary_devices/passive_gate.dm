@@ -198,6 +198,7 @@
 /obj/machinery/atmospherics/binary/passive_gate/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
+	. = TRUE
 
 	if(action == "toggle_valve")
 		unlocked = !unlocked
@@ -208,23 +209,33 @@
 			if("input") regulate_mode = REGULATE_INPUT
 			if("output") regulate_mode = REGULATE_OUTPUT
 
-	switch(params["set_press"])
-		if("min")
-			target_pressure = 0
-		if("max")
-			target_pressure = max_pressure_setting
-		if("set")
-			var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure Control",src.target_pressure) as num
-			src.target_pressure = between(0, new_pressure, max_pressure_setting)
+	if(action == "set_press")
+		switch(params["set_press"])
+			if("min")
+				target_pressure = 0
+			if("max")
+				target_pressure = max_pressure_setting
+			if("custom")
+				var/new_pressure = text2num(params["pressure"])
+				if(isnum(new_pressure))
+					target_pressure = between(0, new_pressure, max_pressure_setting)
+			if("set")
+				var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure Control",src.target_pressure) as num
+				src.target_pressure = between(0, new_pressure, max_pressure_setting)
 
-	switch(params["set_flow_rate"])
-		if("min")
-			set_flow_rate = 0
-		if("max")
-			set_flow_rate = air1.volume
-		if("set")
-			var/new_flow_rate = input(usr,"Enter new flow rate limit (0-[air1.volume]kPa)","Flow Rate Control",src.set_flow_rate) as num
-			src.set_flow_rate = between(0, new_flow_rate, air1.volume)
+	if(action == "set_flow_rate")
+		switch(params["set_flow_rate"])
+			if("min")
+				set_flow_rate = 0
+			if("max")
+				set_flow_rate = air1.volume
+			if("custom")
+				var/new_flow_rate = text2num(params["flow_rate"])
+				if(isnum(new_flow_rate))
+					set_flow_rate = between(0, new_flow_rate, air1.volume)
+			if("set")
+				var/new_flow_rate = input(usr,"Enter new flow rate limit (0-[air1.volume]kPa)","Flow Rate Control",src.set_flow_rate) as num
+				src.set_flow_rate = between(0, new_flow_rate, air1.volume)
 
 	src.update_icon()
 	src.add_fingerprint(usr)

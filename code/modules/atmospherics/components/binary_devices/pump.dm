@@ -151,17 +151,24 @@ Thus, the two variables affect pump operation are set in New():
 		update_use_power(!use_power)
 		. = TRUE
 
-	switch(params["set_press"])
-		if("min")
-			target_pressure = 0
-			. = TRUE
-		if("max")
-			target_pressure = max_pressure_setting
-			. = TRUE
-		if("set")
-			var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure control",src.target_pressure) as num
-			src.target_pressure = between(0, new_pressure, max_pressure_setting)
-			. = TRUE
+	if(action == "set_press")
+		switch(params["set_press"])
+			if("min")
+				target_pressure = 0
+				. = TRUE
+			if("max")
+				target_pressure = max_pressure_setting
+				. = TRUE
+			if("custom")
+				// NumberInput drag/entry from the tgui frontend.
+				var/new_pressure = text2num(params["pressure"])
+				if(isnum(new_pressure))
+					target_pressure = between(0, new_pressure, max_pressure_setting)
+					. = TRUE
+			if("set")
+				var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure control",src.target_pressure) as num
+				src.target_pressure = between(0, new_pressure, max_pressure_setting)
+				. = TRUE
 
 	if(.)
 		src.update_icon()
