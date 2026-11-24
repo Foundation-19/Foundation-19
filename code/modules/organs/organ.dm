@@ -126,6 +126,12 @@ var/list/organ_cache = list()
 	if(is_preserved())
 		return
 
+	// Robotic prostheses don't rot: no decay, no infection. The printed
+	// posibrain sitting on a printer's floor must not die from exposure.
+	if(BP_IS_ROBOTIC(src) && !owner)
+		germ_level = 0
+		return
+
 	if(!owner && reagents)
 		var/datum/reagent/blood/B = locate(/datum/reagent/blood) in reagents.reagent_list
 		if(B && prob(40))
