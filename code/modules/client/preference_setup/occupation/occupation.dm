@@ -128,7 +128,8 @@
 				"color" = job.selection_color,
 				"available_by_default" = job.available_by_default,
 				"alt_title" = pref.GetPlayerAltTitle(job),
-				"has_alt_titles" = length(job.alt_titles) > 0
+				"has_alt_titles" = length(job.alt_titles) > 0,
+				"job_ref" = "\ref[job]"
 			)
 			if(pref.points_by_job[job] && (!job.available_by_default || current_level != JOB_LEVEL_NEVER))
 				job_entry["has_skills"] = TRUE
