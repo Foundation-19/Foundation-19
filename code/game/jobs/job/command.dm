@@ -202,6 +202,107 @@
 	mechanical_difficulty = "Easy"
 	duties = "Ensure Foundation protocols are followed. Keep security in line."
 
+/datum/job/investigationoff
+	title = "Investigation Officer"
+	department = "Civilian"
+	selection_color = "#601c1c"
+	department_flag = COM|BUR
+	total_positions = 1
+	spawn_positions = 1
+	//duties = "<big><b>As the Agent you have more access than a Junior Agent, but do not control them. You are to guard tests and SCP's in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You also have the duty of guarding the D-Class Cell Blocks. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the Tribunal Officer"
+	economic_power = 4
+	requirements = list(EXP_TYPE_ECZ = 480)
+	minimal_player_age = 5
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/civ/investigativeoff
+	class = CLASS_C
+	hud_icon = "hudinvestigation"
+
+	access = list(
+		ACCESS_SEC_COMMS,
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_SECURITY_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
+		ACCESS_CHAPEL_OFFICE
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_TRAINED,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+	skill_points = 21
+
+/datum/job/investigation
+
+	title = "Investigation Agent"
+	department = "Civilian"
+	selection_color = "#601c1c"
+	department_flag = COM|BUR
+	total_positions = 2
+	spawn_positions = 2
+	//duties = "<big><b>As a regular Guard you have minimal access. You are to guard tests, SCP's and provide support in the zone you spawned in. If in doubt, ask your Zone or Guard Commander. You should not leave your zone under usual SoP.</b></big>"
+	supervisors = "the Investigation Officer"
+	economic_power = 4
+	requirements = list(EXP_TYPE_ECZ = 220)
+	minimal_player_age = 0
+	ideal_character_age = 25
+	outfit_type = /decl/hierarchy/outfit/job/civ/investigative
+	class = CLASS_C
+	hud_icon = "hudinvestigation"
+
+	access = list(
+		ACCESS_SCIENCE_LVL1,
+		ACCESS_SEC_COMMS,
+		ACCESS_SECURITY_LVL1,
+		ACCESS_SECURITY_LVL2,
+		ACCESS_ENGINEERING_LVL1,
+		ACCESS_MEDICAL_LVL1,
+		ACCESS_MEDICAL_LVL2,
+		ACCESS_MEDICAL_LVL3,
+		ACCESS_ADMIN_LVL1,
+		ACCESS_ADMIN_LVL2,
+		ACCESS_ADMIN_LVL3,
+		ACCESS_ADMIN_LVL4,
+		ACCESS_ADMIN_LVL5,
+		ACCESS_CHAPEL_OFFICE
+	)
+	minimal_access = list()
+
+	min_skill = list(
+	    SKILL_COMPUTER    = SKILL_BASIC,
+	    SKILL_HAULING     = SKILL_TRAINED,
+	    SKILL_COMBAT      = SKILL_BASIC,
+	    SKILL_WEAPONS     = SKILL_TRAINED,
+	    SKILL_FORENSICS   = SKILL_EXPERIENCED
+	)
+
+	max_skill = list(
+		SKILL_COMBAT      = SKILL_EXPERIENCED,
+	    SKILL_WEAPONS     = SKILL_EXPERIENCED,
+	    SKILL_FORENSICS   = SKILL_MASTER
+	)
+	skill_points = 17
+
 /datum/job/ethicsliaison
 
 	title = "Ethics Committee Liaison"

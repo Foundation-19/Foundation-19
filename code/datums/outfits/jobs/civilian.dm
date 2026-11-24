@@ -126,6 +126,38 @@
 	backpack_contents = list(/obj/item/ammo_magazine/scp/m1911 = 1)
 	belt = /obj/item/gun/projectile/pistol/m1911/gold
 
+/decl/hierarchy/outfit/job/civ/investigativeoff
+	name = OUTFIT_JOB_NAME("Investigation Officer")
+	uniform = /obj/item/clothing/under/det/grey
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench/grey
+	id_type = /obj/item/card/id/seclvl3io
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	head = /obj/item/clothing/head/det/grey
+	gloves = /obj/item/clothing/gloves/forensic
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/security/cadet/ez = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
+
+/decl/hierarchy/outfit/job/civ/investigative
+	name = OUTFIT_JOB_NAME("Investigation Agent")
+	uniform = /obj/item/clothing/under/det
+	shoes = /obj/item/clothing/shoes/dress
+	suit = /obj/item/clothing/suit/storage/det_trench
+	id_type = /obj/item/card/id/seclvl3ia
+	l_ear = /obj/item/device/radio/headset/heads/cos
+	belt = /obj/item/storage/belt/holster/security/fullrhino
+	l_hand = /obj/item/storage/briefcase/crimekit
+	glasses = /obj/item/clothing/glasses/sunglasses/sechud
+	head = /obj/item/clothing/head/det
+	gloves = /obj/item/clothing/gloves/forensic
+	l_pocket = /obj/item/handcuffs
+	r_pocket = /obj/item/melee/telebaton
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/security/cadet/ez = 1, /obj/item/clothing/suit/armor/pcarrier/scp/medium = 1)
+
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")
 	uniform = /obj/item/clothing/under/rank/chaplain
