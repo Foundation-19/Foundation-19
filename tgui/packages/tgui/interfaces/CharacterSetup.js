@@ -428,7 +428,15 @@ const LoadoutPage = (props, context) => {
                 <Box key={ti} style={{ marginBottom: '4px', marginLeft: '16px' }}>
                   {tweak.options ? (
                     <Box>
-                      <Box style={{ fontSize: '10px', color: C.textDim, marginBottom: '2px' }}>{tweak.contents}</Box>
+                      <Box style={{ fontSize: '10px', color: C.textDim, marginBottom: '2px' }}>
+                        {/color$/.test(tweak.tweak_type || '') ? (
+                          <Box inline
+                            width="10px"
+                            height="10px"
+                            style={{ background: tweak.current, border: '1px solid #555', marginRight: '4px', verticalAlign: 'middle' }} />
+                        ) : null}
+                        {tweak.contents}
+                      </Box>
                       <Dropdown
                         width="100%"
                         displayText={tweak.current || 'SELECT'}
@@ -437,10 +445,21 @@ const LoadoutPage = (props, context) => {
                       />
                     </Box>
                   ) : (
-                    <Box style={{ fontSize: '10px', color: C.textDim }}>{tweak.contents}</Box>
+                    <Box style={{ fontSize: '10px', color: C.textDim }}>
+                      <Button
+                        content={tweak.contents}
+                        disabled={!gear.selected}
+                        onClick={() => act('gear_tweak', { gear_ref: gear.ref, tweak_ref: tweak.ref })}
+                        style={{ fontSize: '10px', padding: '0 4px' }} />
+                    </Box>
                   )}
                 </Box>
               ))}
+              {gear.selected && gear.allowed_jobs && gear.allowed_jobs.length > 0 ? (
+                <Box style={{ fontSize: '9px', color: C.textDim, marginLeft: '16px', fontStyle: 'italic' }}>
+                  RESTRICTED TO: {gear.allowed_jobs.join(', ')}
+                </Box>
+              ) : null}
             </Box>
           ))}
         </TermBox>

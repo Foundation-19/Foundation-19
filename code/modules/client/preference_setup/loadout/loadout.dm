@@ -149,7 +149,7 @@ var/list/gear_datums = list()
 				"selected" = selected,
 				"description" = G.get_description(get_gear_metadata(G, 1))
 			)
-			// Per-gear accessory options (color/path tweaks) for the TGUI dropdown.
+			// Per-gear accessory options (color/path/reagents/etc tweaks) for the TGUI.
 			// Only exposed for selected gear: get_tweak_metadata() creates metadata
 			// entries for unselected gear, which would mark them as selected.
 			if(selected && LAZYLEN(G.gear_tweaks))
@@ -157,7 +157,8 @@ var/list/gear_datums = list()
 				for(var/datum/gear_tweak/tweak in G.gear_tweaks)
 					var/list/tweak_data = list(
 						"ref" = "\ref[tweak]",
-						"contents" = tweak.get_contents(get_tweak_metadata(G, tweak))
+						"contents" = tweak.get_contents(get_tweak_metadata(G, tweak)),
+						"tweak_type" = "[tweak.type]",
 					)
 					// Path tweaks: expose named options for a dropdown.
 					if(istype(tweak, /datum/gear_tweak/path))
@@ -174,8 +175,48 @@ var/list/gear_datums = list()
 									current = path_name
 									break
 						tweak_data["current"] = current
+					// Color tweaks: expose the valid color list for a swatch picker.
+					if(istype(tweak, /datum/gear_tweak/color))
+						var/datum/gear_tweak/color/CT = tweak
+						if(LAZYLEN(CT.valid_colors))
+							var/list/color_list = list()
+							for(var/color_value in CT.valid_colors)
+								color_list += list(list("name" = color_value, "value" = color_value))
+							tweak_data["options"] = color_list
+							tweak_data["current"] = get_tweak_metadata(G, tweak)
+					// Reagent tweaks: expose the reagent + Random/None list.
+					if(istype(tweak, /datum/gear_tweak/reagents))
+						var/datum/gear_tweak/reagents/RT = tweak
+						var/list/reagent_list = list()
+						for(var/reagent_name in RT.valid_reagents + list("Random", "None"))
+							reagent_list += list(list("name" = reagent_name, "value" = reagent_name))
+						tweak_data["options"] = reagent_list
+						tweak_data["current"] = get_tweak_metadata(G, tweak)
+					// Tablet tweak: sub-options are exposed one at a time by the
+					// legacy input chain — fall back to a "choose" button.
 					tweaks_out += list(tweak_data)
 				gear_entry["tweaks"] = tweaks_out
+			// Job restriction summary: which jobs can use this gear.
+			if(LAZYLEN(G.allowed_roles) || LAZYLEN(G.denied_roles) || G.whitelist_department_flags || G.blacklist_department_flags)
+				var/list/restrictions = list()
+				for(var/job_title in SSjobs.distinct_job_titles)
+					var/datum/job/J = SSjobs.titles_to_datums[job_title]
+					if(!J)
+						continue
+					if(G.whitelist_department_flags)
+						if(J.department_flag & G.whitelist_department_flags)
+							if(!(J.type in G.denied_roles))
+								restrictions["[J.title]"] = TRUE
+					else if(G.blacklist_department_flags)
+						if(!(J.department_flag & G.blacklist_department_flags) || (J.type in G.allowed_roles))
+							restrictions["[J.title]"] = TRUE
+					else if(G.allowed_roles)
+						if((J.type in G.allowed_roles) && !(J.type in G.denied_roles))
+							restrictions["[J.title]"] = TRUE
+					else if(G.denied_roles)
+						if(!(J.type in G.denied_roles))
+							restrictions["[J.title]"] = TRUE
+				gear_entry["allowed_jobs"] = sortList(restrictions)
 			gear_entries += list(gear_entry)
 		categories += list(list("name" = category, "cost" = cat_cost, "gear" = gear_entries))
 	data["categories"] = categories
@@ -211,6 +252,10 @@ var/list/gear_datums = list()
 				set_tweak_metadata(gear, tweak, params["selected_path"])
 				return TRUE
 			return FALSE
+		// Color/reagent dropdowns: same shape, single-value list options.
+		if((istype(tweak, /datum/gear_tweak/color) || istype(tweak, /datum/gear_tweak/reagents)) && params["selected_path"])
+			set_tweak_metadata(gear, tweak, params["selected_path"])
+			return TRUE
 		var/metadata = tweak.get_metadata(user, get_tweak_metadata(gear, tweak))
 		if(!metadata || !CanUseTopic(user))
 			return FALSE
