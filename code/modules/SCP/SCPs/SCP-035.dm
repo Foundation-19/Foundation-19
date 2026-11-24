@@ -111,6 +111,9 @@
 	if(SCP && SCP.research)
 		SCP.research.set_containment_status(SCP_BREACHED)
 	announce_possession(H)
+	// The mask bleeds its influence into the Command channel: whispers ride
+	// the site comms until the Communications Officer cuts the relay.
+	SScomms_integrity.begin_035_hazard(src)
 
 /obj/item/clothing/mask/scp035/proc/release_host()
 	if(!host_body)
@@ -126,6 +129,7 @@
 			to_chat(old_host, SPAN_WARNING("Your mind is your own again... but the memories of what the mask did linger."))
 	if(SCP && SCP.research && SCP.research.containment_status == SCP_BREACHED)
 		SCP.research.set_containment_status(SCP_CONTAINED)
+	SScomms_integrity.end_035_hazard()
 
 /obj/item/clothing/mask/scp035/proc/announce_possession(mob/living/carbon/human/H)
 	var/area/A = get_area(H)

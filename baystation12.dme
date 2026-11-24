@@ -3155,6 +3155,7 @@
 #include "code\modules\SCP\containment\floodlight.dm"
 #include "code\modules\SCP\containment\scp151_cover.dm"
 #include "code\modules\SCP\containment\security_integration.dm"
+#include "code\modules\communications\comms_integrity.dm"
 #include "code\modules\SCP\containment\soundproof_locker.dm"
   #include "code\modules\SCP\research\countermeasures.dm"
 #include "code\modules\SCP\research\dclass_requests.dm"

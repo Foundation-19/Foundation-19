@@ -129,6 +129,11 @@
 
 	log_admin("[admin] sent a fax to [department].")
 
+/// Generates an automatic acknowledgment reply for an incoming radio
+/// message. Offsites override this to vary the tone of their dispatches.
+/datum/offsite/proc/generate_auto_reply(message)
+	return "Your transmission has been received by [name]. A response will be dispatched in due course. Do not resend."
+
 /datum/offsite/proc/receive_message(message, mob/sender)
 	current_history_id++
 	var/list/to_add = list(list(
