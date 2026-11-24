@@ -311,6 +311,8 @@ SUBSYSTEM_DEF(tgui)
  * required ui datum/tgui The UI to be added.
  */
 /datum/controller/subsystem/tgui/proc/on_open(datum/tgui/ui)
+	if(!ui.user)
+		return
 	var/key = ref(ui.src_object)
 	if(isnull(open_uis_by_src[key]) || !istype(open_uis_by_src[key], /list))
 		open_uis_by_src[key] = list()
@@ -330,17 +332,16 @@ SUBSYSTEM_DEF(tgui)
  */
 /datum/controller/subsystem/tgui/proc/on_close(datum/tgui/ui)
 	var/key = ref(ui.src_object)
-	if(isnull(open_uis_by_src[key]) || !istype(open_uis_by_src[key], /list))
-		return FALSE
 	// Remove it from the list of processing UIs.
 	open_uis.Remove(ui)
 	// If the user exists, remove it from them too.
 	if(ui.user)
 		ui.user.tgui_open_uis.Remove(ui)
 	var/list/uis = open_uis_by_src[key]
-	uis.Remove(ui)
-	if(length(uis) == 0)
-		open_uis_by_src.Remove(key)
+	if(islist(uis))
+		uis.Remove(ui)
+		if(length(uis) == 0)
+			open_uis_by_src.Remove(key)
 	return TRUE
 
 /**

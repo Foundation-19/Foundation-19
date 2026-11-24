@@ -98,7 +98,6 @@
 	src.initial_inline_css = inline_css
 	status = TGUI_WINDOW_LOADING
 	fatally_errored = FALSE
-	world.log << "TGUI-TRACE initialize [id] (re-browse)"
 	// Build window options
 	var/options = "file=[id].html;can_minimize=0;auto_format=0;"
 	// Remove titlebar and resize handles for a fancy window
@@ -384,7 +383,6 @@
  * Callback for handling incoming tgui messages.
  */
 /datum/tgui_window/proc/on_message(type, payload, href_list)
-	world.log << "TGUI-TRACE msg [id] type=[type] locked=[locked ? locked_by : "null"]"
 	// BYOND 516 race: winexists() may run before the browser control finishes
 	// creating, misdetecting runtime browse() windows as non-browser and
 	// routing every output to a control that doesn't exist. Re-check the
@@ -393,8 +391,6 @@
 		is_browser = TRUE
 	// Status can be READY if user has refreshed the window.
 	if(type == "ready" && status == TGUI_WINDOW_READY)
-		// A fresh page is alive; any pending stale-suspend ownership is moot.
-		suspend_ownership = null
 		// Resend the assets
 		for(var/asset in sent_assets)
 			send_asset(asset)
@@ -407,11 +403,17 @@
 		status = TGUI_WINDOW_READY
 		flush_message_queue()
 	needs_fresh_page = FALSE
-	// If this is the first time we see the page alive and the output control
-	// was just corrected (516 winexists race), push a fresh full update so the
-	// UI renders even if the original payload went to a dead control.
-	if(type == "ready" && locked_by && !locked_by.initialized)
-		locked_by.send_update(force = TRUE)
+	// A 'ready' proves the CURRENT page is the live one; any stale-suspend
+	// ownership left over from the previous page is moot from here on, and
+	// suspends arriving after this are genuine (user closed the window).
+	if(type == "ready")
+		suspend_ownership = null
+		// If this is the first time we see the page alive and the output
+		// control was just corrected (516 winexists race), push a fresh full
+		// update so the UI renders even if the original payload went to a
+		// dead control.
+		if(locked_by && !locked_by.initialized)
+			locked_by.send_update(force = TRUE)
 	// Pass message to UI that requested the lock
 	if(locked && locked_by)
 		var/prevent_default = locked_by.on_message(type, payload, href_list)
@@ -429,16 +431,16 @@
 		if("ping")
 			send_message("ping/reply", payload)
 		if("suspend")
-			// Stale-suspend guard: any page we close (hard or suspend) keeps
-			// emitting 'suspend' for up to 2s from its unload handler. If a NEW
-			// ui has claimed the window since (lock owner differs from the
-			// suspend originator), the echo belongs to the DEAD page — ignore
-			// it, otherwise it would suspend/close the fresh UI. The dead
-			// page's suspend handler ALSO re-hides the window (winset
-			// is-visible false lands after initialize re-showed it), which
-			// traps the live new page invisible. Reclaim visibility.
-			if(locked_by && locked_by != suspend_ownership)
+			// Stale-suspend guard: a page we closed (hard or suspend) keeps
+			// emitting 'suspend' for up to 2s from its unload handler. If a
+			// NEW ui has claimed the window since, the echo belongs to the
+			// DEAD page — ignore it, otherwise it would suspend/close the
+			// fresh UI. suspend_ownership is only set by close()/release_lock
+			// (i.e. a dead owner) and is cleared on 'ready', so a NULL value
+			// means the live page is talking to us: honor the suspend.
+			if(locked_by && suspend_ownership && locked_by != suspend_ownership)
 				winset(client, id, "is-visible=true")
+				suspend_ownership = null
 				return
 			suspend_ownership = null
 			close(can_be_suspended = TRUE)

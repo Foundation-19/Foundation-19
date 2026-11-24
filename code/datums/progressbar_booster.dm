@@ -38,6 +38,8 @@
 	. = ..()
 
 /datum/progbar_booster_manager/proc/randomize_location()
+	if(!booster || !trap)
+		return
 	var/x = rand(-12,12)
 	var/y = rand(-12,12)
 

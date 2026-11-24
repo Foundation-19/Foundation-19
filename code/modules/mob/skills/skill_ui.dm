@@ -27,7 +27,7 @@
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		ui = new(user, src, "SkillUI", "Skills", 600, 900, src, state = state)
+		ui = new(user, src, "SkillUI", "Skills", 600, 900, state = state)
 		ui.open()
 
 /datum/nano_module/skill_ui/tgui_data(mob/user)

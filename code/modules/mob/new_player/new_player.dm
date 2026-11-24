@@ -16,6 +16,11 @@
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
 	var/datum/new_player_panel/npp = null
+	/// One-time lobby intro (title music, alert level notice) already played by deferred_login
+	var/deferred_login_intro_done = FALSE
+	/// The lobby menu UI has successfully opened at least once. Prevents the
+	/// SScharacter_setup retry loop from force-reopening a menu the player closed.
+	var/lobby_menu_opened = FALSE
 
 /mob/new_player/Initialize()
 	add_verb(src, /mob/proc/toggle_antag_pool)

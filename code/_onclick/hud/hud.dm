@@ -54,6 +54,10 @@
 	QDEL_LIST_ASSOC_VAL(effects_planemasters)
 	return TRUE
 
+/atom/movable/screen/plane_master/Destroy()
+	atom_flags |= ATOM_FLAG_INITIALIZED
+	return ..()
+
 /mob/Destroy()
 	QDEL_LIST_ASSOC_VAL(effects_planemasters)
 	return ..()
