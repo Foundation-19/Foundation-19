@@ -73,6 +73,11 @@
 		health_min_damage += round(reinf_material.hardness * 0.625)
 	health_min_damage = round(health_min_damage / 10)
 
+	// Borosilicate (phoron) glass is rated to ~4000 K: essentially immune to
+	// ordinary fire damage. Containment chamber observation windows rely on it.
+	if(new_material == MATERIAL_PHORON_GLASS)
+		set_damage_resistance(BURN, 0.05)
+
 	if (constructed)
 		set_anchored(FALSE)
 		construction_state = 0
