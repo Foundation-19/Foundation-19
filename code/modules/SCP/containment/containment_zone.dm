@@ -75,6 +75,10 @@ GLOBAL_LIST_EMPTY(containment_zones)
 	if(!linked_scp || !linked_scp.parent)
 		return
 	var/atom/scp_atom = linked_scp.parent
+	// Mobile flames (SCP-457) breach via fire spread, not by walking out —
+	// their containment status is owned by the flame-spread check.
+	if(istype(scp_atom, /mob/living/simple_animal/hostile/scp457))
+		return
 	var/area/scp_area = get_area(scp_atom)
 	var/is_in_zone = is_in_zone_area(scp_area)
 	var/current_status = linked_scp.research ? linked_scp.research.containment_status : SCP_UNKNOWN

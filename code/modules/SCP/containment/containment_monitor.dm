@@ -12,7 +12,7 @@
 	var/scp_designation = ""
 	var/alert_active = FALSE
 	var/last_alert_time = 0
-	var/alert_cooldown = 30 SECONDS
+	var/alert_cooldown = 2 MINUTES
 
 /obj/machinery/scp_containment_monitor/Initialize()
 	. = ..()
@@ -77,10 +77,12 @@
 			overlays += "light_yellow"
 
 /obj/machinery/scp_containment_monitor/proc/trigger_alert()
+	// Per-zone announcement cooldown: status flapping (SCP walks out, gets
+	// recontained, walks out again) must not re-siren the site each cycle.
 	if(world.time < last_alert_time + alert_cooldown)
 		return
 	alert_active = TRUE
-	last_alert_time = world.time
+	last_alert_time = world.time + alert_cooldown // next alert allowed after this one expires
 	var/datum/scp/scp_datum = linked_zone.linked_scp
 	var/desg = scp_datum ? scp_datum.designation : linked_zone.scp_designation
 	var/class = scp_datum ? scp_datum.classification : "Unknown"

@@ -445,10 +445,21 @@
 		return
 
 	if(istype(A, /obj) && A.can_damage_health(A.health_current, BURN))
-		if(get_area(A) == spawn_area && istype(A, /obj/machinery))
+		// Thermally-insulated containment structures resist 457: machinery,
+		// windows, and walls inside his own chamber cannot be melted — no
+		// roundstart self-release. Outside the chamber, only insulated
+		// machinery still resists; everything else is fair game.
+		var/area/A_area = get_area(A)
+		if(A_area == spawn_area)
 			to_chat(src, SPAN_NOTICE("[A] is too thermally insulated for you to damage."))
 			return
-		// Burning objects grants heat — machinery, consoles, anything.
+		if(istype(A, /obj/machinery))
+			to_chat(src, SPAN_NOTICE("[A] is too thermally insulated for you to damage."))
+			return
+		// Borosilicate (phoron) glass is rated to 4000 K — 457 cannot melt it.
+		if(istype(A, /obj/structure/window/phoronreinforced) || istype(A, /obj/structure/window/phoronbasic))
+			to_chat(src, SPAN_NOTICE("[A] is borosilicate glass — rated for extreme temperatures. Your flames cannot melt it."))
+			return
 		var/fuel = GetFuelValue(A)
 		A.attack_generic(src, 50, "melts")
 		AddHeat(max(1, fuel / 2))
@@ -589,7 +600,7 @@
 	name = "Hurl Fireball"
 	action_type = AB_INNATE
 	button_icon = 'icons/hud/actions.dmi'
-	button_icon_state = "default"
+	button_icon_state = "fireball"
 
 /datum/action/scp457_fireball/IsAvailable()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
@@ -601,6 +612,8 @@
 
 /datum/action/scp457_fireball/Activate()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
+	if(!istype(S) || S.current_heat < 10 || world.time < S.fireball_cooldown)
+		return
 	S.fireball_cooldown = world.time + 20 SECONDS
 	var/list/targets = list()
 	for(var/mob/living/L in view(7, S))
@@ -628,7 +641,7 @@
 	name = "Consume Fuel"
 	action_type = AB_INNATE
 	button_icon = 'icons/hud/actions.dmi'
-	button_icon_state = "default"
+	button_icon_state = "gib"
 
 /datum/action/scp457_consume/IsAvailable()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
@@ -638,6 +651,8 @@
 
 /datum/action/scp457_consume/Activate()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
+	if(!istype(S) || world.time < S.consume_fuel_cooldown)
+		return
 	S.consume_fuel_cooldown = world.time + 5 SECONDS
 	var/list/fuel_targets = list()
 	for(var/obj/item/I in range(1, S))
@@ -660,7 +675,7 @@
 	name = "Flame Dash"
 	action_type = AB_INNATE
 	button_icon = 'icons/hud/actions.dmi'
-	button_icon_state = "default"
+	button_icon_state = "gib"
 
 /datum/action/scp457_dash/IsAvailable()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
@@ -672,13 +687,17 @@
 
 /datum/action/scp457_dash/Activate()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
+	if(!istype(S) || S.current_heat < 15 || world.time < S.flame_dash_cooldown)
+		return
 	S.flame_dash_cooldown = world.time + 25 SECONDS
 	S.ConsumeHeat(15)
 	S.visible_message(SPAN_DANGER("[S] erupts forward in a blazing dash!"))
 	playsound(S, 'sounds/effects/explosion1.ogg', 60, 1)
 	for(var/i in 1 to 4)
 		var/turf/next = get_step(S, S.dir)
-		if(!next || next.density)
+		// Fire can't pass through solid walls or dense obstacles
+		// (windows, closed doors, machines, tables...).
+		if(!next || next.density || next.contains_dense_objects())
 			break
 		S.CreateFireAtTurf(get_turf(S))
 		S.forceMove(next)
@@ -695,7 +714,7 @@
 	name = "Heat Vent"
 	action_type = AB_INNATE
 	button_icon = 'icons/hud/actions.dmi'
-	button_icon_state = "default"
+	button_icon_state = "blink"
 
 /datum/action/scp457_vent/IsAvailable()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
@@ -707,6 +726,8 @@
 
 /datum/action/scp457_vent/Activate()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
+	if(!istype(S) || S.current_heat < 20 || world.time < S.heat_vent_cooldown)
+		return
 	S.heat_vent_cooldown = world.time + 30 SECONDS
 	S.ConsumeHeat(20)
 	S.visible_message(SPAN_DANGER("[S] releases a wave of scorching heat!"))
@@ -728,7 +749,7 @@
 	name = "Fire Wall"
 	action_type = AB_INNATE
 	button_icon = 'icons/hud/actions.dmi'
-	button_icon_state = "default"
+	button_icon_state = "shield"
 
 /datum/action/scp457_firewall/IsAvailable()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
@@ -740,6 +761,8 @@
 
 /datum/action/scp457_firewall/Activate()
 	var/mob/living/simple_animal/hostile/scp457/S = owner
+	if(!istype(S) || S.current_heat < 25 || world.time < S.fire_wall_cooldown)
+		return
 	S.fire_wall_cooldown = world.time + 40 SECONDS
 	S.ConsumeHeat(25)
 	S.visible_message(SPAN_DANGER("[S] summons a ring of living flame!"))
