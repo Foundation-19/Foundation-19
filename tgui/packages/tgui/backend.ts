@@ -122,6 +122,10 @@ export const backendMiddleware = (store) => {
   return (next) => (action) => {
     const { suspended } = selectBackend(store.getState());
     const { type, payload } = action;
+    // Retries the suspend handshake until the server acknowledges it. Used
+    // by both title-bar closes and server-initiated suspends. Declared here
+    // so the 'suspend' handler below can reach it regardless of order.
+    const suspendFn = () => Byond.sendMessage('suspend');
 
     if (type === 'update') {
       // A live 'update' means THIS page instance is the active one. If a
@@ -141,14 +145,12 @@ export const backendMiddleware = (store) => {
     }
 
     if (type === 'suspend') {
-      // Only honor the suspend if we actually requested one ourselves.
-      // Stale echoes from a previous page's interval arrive here too; the
-      // server-side ownership guard already filters most, but a fresh page
-      // receiving a leftover interval tick must NOT hide itself.
-      if (suspendInterval) {
-        store.dispatch(backendSuspendSuccess());
-        return;
-      }
+      // Server-initiated suspend (ui.close() from close_user_uis, modal
+      // submit/cancel, machine shutdown, spawn transfer...). Acknowledge it
+      // immediately: suspendRenderer + hide the window. Retrying (arming the
+      // interval) is only needed for CLIENT-initiated closes, where the
+      // initial suspend message can be dropped by topic rate limiting.
+      store.dispatch(backendSuspendSuccess());
       return;
     }
 
@@ -169,8 +171,6 @@ export const backendMiddleware = (store) => {
       logger.log(`suspending (${Byond.windowId})`);
       // Keep sending suspend messages until it succeeds.
       // It may fail multiple times due to topic rate limiting.
-      const suspendFn = () => Byond.sendMessage('suspend');
-      suspendFn();
       suspendInterval = setInterval(suspendFn, 2000);
     }
 

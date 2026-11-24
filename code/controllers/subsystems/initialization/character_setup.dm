@@ -29,11 +29,31 @@ SUBSYSTEM_DEF(character_setup)
 	// (e.g. users who stayed connected through a server restart). Their
 	// deferred_login can silently fail while the client handshake is still
 	// settling, leaving them stuck at a black lobby with no menu.
-	while(newplayers_requiring_init.len)
-		var/mob/new_player/new_player = newplayers_requiring_init[newplayers_requiring_init.len]
-		newplayers_requiring_init.len--
-		if(!QDELETED(new_player) && new_player.client)
+	//
+	// A player stays queued until they have a live LobbyMenu window (or until
+	// they leave the lobby entirely) — a single popped retry is not enough:
+	// both the immediate attempt and one retry can land mid-handshake.
+	if(length(newplayers_requiring_init))
+		for(var/mob/new_player/new_player in newplayers_requiring_init.Copy())
+			if(QDELETED(new_player) || !new_player.client)
+				newplayers_requiring_init -= new_player
+				continue
+			// They're in the game now — no lobby to open.
+			if(new_player.spawning)
+				newplayers_requiring_init -= new_player
+				continue
+			var/has_lobby = FALSE
+			for(var/datum/tgui/ui in new_player.tgui_open_uis)
+				if(ui.src_object == new_player.npp)
+					has_lobby = TRUE
+					break
+			if(has_lobby)
+				// Lobby is up; also handle round-start (menu switches tabs).
+				newplayers_requiring_init -= new_player
+				continue
+			// No live lobby window yet: (re)attempt the login.
 			new_player.deferred_login()
+			// Leave them queued; next tick retries until the window lives.
 
 	while(save_queue.len)
 		var/datum/preferences/prefs = save_queue[save_queue.len]

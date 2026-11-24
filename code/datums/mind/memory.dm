@@ -47,7 +47,7 @@
 	if(!istype(recipient))
 		return
 
-	var/list/output = list() + "<meta http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'/>"
+	var/list/output = list()
 	var/last_owner_name
 	// We pretend that memories are stored in some semblance of an order
 	for(var/mem in memories)
@@ -66,7 +66,7 @@
 			output += "<B>Objective #[obj_count]</B>: [objective.explanation_text]"
 			obj_count++
 
-	show_browser(recipient, replacetext(jointext(output, "<BR>"),"\n","<BR>"),"window=memory")
+	show_browser(recipient, HTML_SKELETON(replacetext(jointext(output, "<BR>"),"\n","<BR>")),"window=memory")
 
 /***********
 * Memories *

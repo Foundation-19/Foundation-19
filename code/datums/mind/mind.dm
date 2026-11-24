@@ -137,6 +137,10 @@
 	var/is_admin =   FALSE
 	is_admin = check_rights(R_ADMIN, FALSE)
 
+	// Only the mind's owner (or an admin) may act on their own memories.
+	if(!is_admin && (!usr || !current || usr != current))
+		return FALSE
+
 	if(href_list["remove_memory"])
 		var/memory = locate(href_list["remove_memory"]) in memories
 		RemoveMemory(memory, usr)
