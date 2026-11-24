@@ -449,15 +449,34 @@
 	if(!LAZYLEN(timestamp))
 		to_chat(user, SPAN_NOTICE("There's nothing on this tape!"))
 		return
-	var/list/output = list("<center>")
-	for(var/i=1, i < timestamp.len, i++)
-		var/time = "\[[time2text(timestamp[i]*10,"mm:ss")]\]"
-		output += "[time]<br><a href='byond://?src=\ref[src];cut_after=[i]'>-----CUT------</a><br>"
-	output += "</center>"
+	tgui_interact(user)
 
-	var/datum/browser/popup = new(user, "tape_cutting", "Cutting tape", 170, 600)
-	popup.set_content(jointext(output,null))
-	popup.open()
+/obj/item/device/tape/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "TapeRecorder", "Cutting tape")
+		ui.open()
+
+/obj/item/device/tape/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/entries = list()
+	for(var/i=1, i < timestamp.len, i++)
+		entries += list(list("index" = i, "time" = time2text(timestamp[i]*10,"mm:ss")))
+	data["entries"] = entries
+	return data
+
+/obj/item/device/tape/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("cut_after")
+			var/index = text2num(params["index"])
+			if(index >= timestamp.len)
+				return TRUE
+			to_chat(usr, SPAN_NOTICE("You remove part of the tape off."))
+			get_loose_tape(usr, index)
+			return TRUE
+	return FALSE
 
 /obj/item/device/tape/proc/join(mob/user, obj/item/device/tape/other)
 	if(max_capacity + other.max_capacity > initial(max_capacity))
@@ -473,17 +492,6 @@
 		ruin()
 		update_icon()
 		qdel(other)
-
-/obj/item/device/tape/OnTopic(mob/user, list/href_list)
-	if(href_list["cut_after"])
-		var/index = text2num(href_list["cut_after"])
-		if(index >= timestamp.len)
-			return
-
-		to_chat(user, SPAN_NOTICE("You remove part of the tape off."))
-		get_loose_tape(user, index)
-		cut(user)
-		return TOPIC_REFRESH
 
 //Spawns new loose tape item, with data starting from [index] entry
 /obj/item/device/tape/proc/get_loose_tape(mob/user, index)

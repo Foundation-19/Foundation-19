@@ -51,8 +51,6 @@
 /obj/item/stack/Destroy()
 	if(uses_charge)
 		return 1
-	if (src && usr && usr.machine == src)
-		close_browser(usr, "window=stack")
 	return ..()
 
 /obj/item/stack/examine(mob/user, distance)
@@ -64,64 +62,73 @@
 			to_chat(user, "There is enough charge for [get_amount()].")
 
 /obj/item/stack/attack_self(mob/user as mob)
-	list_recipes(user)
+	tgui_interact(user)
 
 /obj/item/stack/proc/list_recipes(mob/user as mob, recipes_sublist)
-	if (!recipes)
+	if (!recipes || !src || get_amount() <= 0)
 		return
-	if (!src || get_amount() <= 0)
-		close_browser(user, "window=stack")
-	user.set_machine(src) //for correct work of onclose
-	var/list/recipe_list = recipes
-	if (recipes_sublist && recipe_list[recipes_sublist] && istype(recipe_list[recipes_sublist], /datum/stack_recipe_list))
-		var/datum/stack_recipe_list/srl = recipe_list[recipes_sublist]
-		recipe_list = srl.recipes
-	var/t1 = list()
-	t1 += "<HTML><HEAD><title>Constructions from [src]</title></HEAD><body><TT>Amount Left: [src.get_amount()]<br>"
+
+/obj/item/stack/tgui_interact(mob/user, datum/tgui/ui)
+	list_recipes(user)
+	if(!recipes || get_amount() <= 0)
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "StackCrafting", "Constructions from [src]")
+		ui.open()
+
+/obj/item/stack/tgui_data(mob/user)
+	var/list/data = list()
+	data["amount"] = get_amount()
+	data["singular_name"] = singular_name
+	data["recipes"] = get_recipe_data(recipes, user)
+	return data
+
+/obj/item/stack/proc/get_recipe_data(list/recipe_list, mob/user)
+	var/list/entries = list()
+	if(!recipe_list)
+		return entries
 	for(var/i=1,i<=recipe_list.len,i++)
 		var/E = recipe_list[i]
 		if (isnull(E))
 			continue
 
 		if (istype(E, /datum/stack_recipe_list))
-			t1+="<br>"
 			var/datum/stack_recipe_list/srl = E
-			t1 += "\[Sub-menu\] <a href='byond://?src=\ref[src];sublist=[i]'>[srl.title]</a>"
+			entries += list(list(
+				"type" = "sublist",
+				"index" = i,
+				"title" = srl.title,
+				"recipes" = get_recipe_data(srl.recipes, user)))
 
 		if (istype(E, /datum/stack_recipe))
 			var/datum/stack_recipe/R = E
-			t1+="<br>"
-			var/max_multiplier = round(src.get_amount() / R.req_amount)
-			var/title
-			var/can_build = 1
-			can_build = can_build && (max_multiplier>0)
-			if (R.res_amount>1)
-				title+= "[R.res_amount]x [R.display_name()]\s"
-			else
-				title+= "[R.display_name()]"
-			title+= " ([R.req_amount] [src.singular_name]\s)"
+			var/max_multiplier = round(get_amount() / R.req_amount)
+			var/can_build = (max_multiplier > 0)
 			var/skill_label = ""
 			if(!user.skill_check(SKILL_CONSTRUCTION, R.difficulty))
 				var/decl/hierarchy/skill/S = decls_repository.get_decl(SKILL_CONSTRUCTION)
-				skill_label = FONT_COLORED("red","[S.levels[R.difficulty]]")
-			if (can_build)
-				t1 +="[skill_label]<A href='byond://?src=\ref[src];sublist=[recipes_sublist];make=[i];multiplier=1'>[title]</A>"
-			else
-				t1 += "[skill_label][title]"
+				skill_label = S.levels[R.difficulty]
+			var/list/multipliers = list()
+			if(can_build)
+				multipliers += 1
 			if (R.max_res_amount>1 && max_multiplier>1)
 				max_multiplier = min(max_multiplier, round(R.max_res_amount/R.res_amount))
-				t1 += " |"
 				for (var/n in possible_multipliers)
 					if ((n != 1) && (max_multiplier >= n))
-						t1 += " <A href='byond://?src=\ref[src];make=[i];multiplier=[n]'>[n*R.res_amount]x</A>"
+						multipliers += n
 				if (!(max_multiplier in possible_multipliers))
-					t1 += " <A href='byond://?src=\ref[src];make=[i];multiplier=[max_multiplier]'>[max_multiplier*R.res_amount]x</A>"
-
-	t1 += "</TT></body></HTML>"
-	var/datum/browser/popup = new(user, "stack", "Recipes")
-	popup.set_content(JOINTEXT(t1))
-	popup.open()
-	onclose(user, "stack")
+					multipliers += max_multiplier
+			entries += list(list(
+				"type" = "recipe",
+				"index" = i,
+				"title" = R.display_name(),
+				"req_amount" = R.req_amount,
+				"res_amount" = R.res_amount,
+				"can_build" = can_build,
+				"skill_label" = skill_label,
+				"multipliers" = multipliers))
+	return entries
 
 /obj/item/stack/proc/produce_recipe(datum/stack_recipe/recipe, quantity, mob/user)
 	var/required = quantity*recipe.req_amount
@@ -157,45 +164,43 @@
 		user.put_in_hands(O)
 		SEND_SIGNAL(user, COMSIG_PRODUCED_RECIPE, recipe, O)
 
-/obj/item/stack/Topic(href, href_list)
-	..()
+/obj/item/stack/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if ((usr.restrained() || usr.stat || usr.get_active_hand() != src))
-		return
+		return TRUE
+	switch(action)
+		if("make")
+			if (src.get_amount() < 1)
+				qdel(src) //Never should happen
+				return TRUE
 
-	if (href_list["sublist"] && !href_list["make"])
-		list_recipes(usr, text2num(href_list["sublist"]))
+			var/list/recipes_list = recipes
+			if (params["sublist"])
+				var/datum/stack_recipe_list/srl = recipes_list[text2num(params["sublist"])]
+				if(!istype(srl))
+					return TRUE
+				recipes_list = srl.recipes
 
-	if (href_list["make"])
-		if (src.get_amount() < 1) qdel(src) //Never should happen
+			var/datum/stack_recipe/R = recipes_list[text2num(params["make"])]
+			var/multiplier = text2num(params["multiplier"])
+			if(!R)
+				return TRUE
+			if (!multiplier || (multiplier <= 0)) //href exploit protection
+				return TRUE
 
-		var/list/recipes_list = recipes
-		if (href_list["sublist"])
-			var/datum/stack_recipe_list/srl = recipes_list[text2num(href_list["sublist"])]
-			recipes_list = srl.recipes
+			// max multiplier calculation stolen from recipe logic
+			var/max_multiplier = round(src.get_amount() / R.req_amount)
+			if (R.max_res_amount > 1 && max_multiplier > 1)
+				max_multiplier = min(max_multiplier, round(R.max_res_amount/R.res_amount))
+			if(max_multiplier < 1)
+				return TRUE
+			if (!((multiplier in possible_multipliers) || (multiplier == max_multiplier))) // more href exploit protection
+				return TRUE
 
-		var/datum/stack_recipe/R = recipes_list[text2num(href_list["make"])]
-		var/multiplier = text2num(href_list["multiplier"])
-		if(!R)
-			return
-		if (!multiplier || (multiplier <= 0)) //href exploit protection
-			return
-
-		// max multiplier calculation stolen from recipe logic
-		var/max_multiplier = round(src.get_amount() / R.req_amount)
-		if (R.max_res_amount > 1 && max_multiplier > 1)
-			max_multiplier = min(max_multiplier, round(R.max_res_amount/R.res_amount))
-		if(max_multiplier < 1)
-			return
-		if (!((multiplier in possible_multipliers) || (multiplier == max_multiplier))) // more href exploit protection
-			return
-
-		src.produce_recipe(R, multiplier, usr)
-
-	if (src && usr.machine==src) //do not reopen closed window
-		spawn( 0 )
-			src.interact(usr)
-			return
-	return
+			src.produce_recipe(R, multiplier, usr)
+			return TRUE
+	return FALSE
 
 //Return 1 if an immediate subsequent call to use() would succeed.
 //Ensures that code dealing with stacks uses the same logic
@@ -357,8 +362,8 @@
 				src.add_fingerprint(user)
 				F.add_fingerprint(user)
 				spawn(0)
-					if (src && usr.machine==src)
-						src.interact(usr)
+					if (src)
+						SStgui.update_uis(src)
 	else
 		..()
 	return
@@ -369,10 +374,10 @@
 		src.transfer_to(S)
 
 		spawn(0) //give the stacks a chance to delete themselves if necessary
-			if (S && usr.machine==S)
-				S.interact(usr)
-			if (src && usr.machine==src)
-				src.interact(usr)
+			if (S)
+				SStgui.update_uis(S)
+			if (src)
+				SStgui.update_uis(src)
 	else
 		return ..()
 

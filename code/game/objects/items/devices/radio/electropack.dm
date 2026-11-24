@@ -39,43 +39,40 @@
 
 		user.put_in_hands(A)
 
-/obj/item/device/radio/electropack/Topic(href, href_list)
-	//..()
+/obj/item/device/radio/electropack/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Electropack", "Electropack")
+		ui.open()
+
+/obj/item/device/radio/electropack/tgui_data(mob/user)
+	var/list/data = list()
+	data["on"] = on
+	data["frequency"] = format_frequency(frequency)
+	data["code"] = code
+	return data
+
+/obj/item/device/radio/electropack/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if(usr.stat || usr.restrained())
-		return
-	if(((istype(usr, /mob/living/carbon/human) && (ISADVANCEDTOOLUSER(usr) && list_find(usr.contents, src))) || (list_find(usr.contents, master) || (in_range(src, usr) && istype(loc, /turf)))))
-		usr.set_machine(src)
-		if(href_list["freq"])
-			var/new_frequency = sanitize_frequency(frequency + text2num(href_list["freq"]))
+		return TRUE
+	switch(action)
+		if("toggle_power")
+			on = !on
+			icon_state = "electropack[on]"
+			return TRUE
+		if("set_freq")
+			var/new_frequency = sanitize_frequency(frequency + text2num(params["value"]))
 			set_frequency(new_frequency)
-		else
-			if(href_list["code"])
-				code += text2num(href_list["code"])
-				code = round(code)
-				code = min(100, code)
-				code = max(1, code)
-			else
-				if(href_list["power"])
-					on = !( on )
-					icon_state = "electropack[on]"
-		if(!( master ))
-			if(istype(loc, /mob))
-				attack_self(loc)
-			else
-				for(var/mob/M in viewers(1, src))
-					if(M.client)
-						attack_self(M)
-		else
-			if(istype(master.loc, /mob))
-				attack_self(master.loc)
-			else
-				for(var/mob/M in viewers(1, master))
-					if(M.client)
-						attack_self(M)
-	else
-		close_browser(usr, "window=radio")
-		return
-	return
+			return TRUE
+		if("set_code")
+			code += text2num(params["value"])
+			code = round(code)
+			code = min(100, code)
+			code = max(1, code)
+			return TRUE
+	return FALSE
 
 /obj/item/device/radio/electropack/receive_signal(datum/signal/signal)
 	if(!signal || signal.encryption != code)
@@ -103,26 +100,6 @@
 	return
 
 /obj/item/device/radio/electropack/attack_self(mob/user as mob, flag1)
-
 	if(!istype(user, /mob/living/carbon/human))
 		return
-	user.set_machine(src)
-	var/dat = {"<TT>
-<A href='byond://?src=\ref[src];power=1'>Turn [on ? "Off" : "On"]</A><BR>
-<B>Frequency/Code</B> for electropack:<BR>
-Frequency:
-<A href='byond://?src=\ref[src];freq=-10'>-</A>
-<A href='byond://?src=\ref[src];freq=-2'>-</A> [format_frequency(frequency)]
-<A href='byond://?src=\ref[src];freq=2'>+</A>
-<A href='byond://?src=\ref[src];freq=10'>+</A><BR>
-
-Code:
-<A href='byond://?src=\ref[src];code=-5'>-</A>
-<A href='byond://?src=\ref[src];code=-1'>-</A> [code]
-<A href='byond://?src=\ref[src];code=1'>+</A>
-<A href='byond://?src=\ref[src];code=5'>+</A><BR>
-</TT>"}
-	var/datum/browser/popup = new(user, "radio", "Electropack")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "radio")
+	tgui_interact(user)

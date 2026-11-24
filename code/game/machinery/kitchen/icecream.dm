@@ -72,33 +72,34 @@
 	reagents.add_reagent(/datum/reagent/drink/ice, 5)
 
 /obj/machinery/icecream_vat/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/icecream_vat/interact(mob/user as mob)
-	user.set_machine(src)
-	var/dat
-	dat += "<b>ICECREAM</b><br><div class='statusDisplay'>"
-	dat += "<b>Dispensing: [flavour_name] icecream </b> <br><br>"
-	dat += "<b>Vanilla icecream:</b> <a href='byond://?src=\ref[src];select=[ICECREAM_VANILLA]'><b>Select</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_VANILLA];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_VANILLA];amount=5'><b>x5</b></a> [product_types[ICECREAM_VANILLA]] scoops left. (Ingredients: milk, ice)<br>"
-	dat += "<b>Strawberry icecream:</b> <a href='byond://?src=\ref[src];select=[ICECREAM_STRAWBERRY]'><b>Select</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_STRAWBERRY];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_STRAWBERRY];amount=5'><b>x5</b></a> [product_types[ICECREAM_STRAWBERRY]] dollops left. (Ingredients: milk, ice, berry juice)<br>"
-	dat += "<b>Chocolate icecream:</b> <a href='byond://?src=\ref[src];select=[ICECREAM_CHOCOLATE]'><b>Select</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_CHOCOLATE];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_CHOCOLATE];amount=5'><b>x5</b></a> [product_types[ICECREAM_CHOCOLATE]] dollops left. (Ingredients: milk, ice, coco powder)<br>"
-	dat += "<b>Blue icecream:</b> <a href='byond://?src=\ref[src];select=[ICECREAM_BLUE]'><b>Select</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_BLUE];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_BLUE];amount=5'><b>x5</b></a> [product_types[ICECREAM_BLUE]] dollops left. (Ingredients: milk, ice, singulo)<br>"
-	dat += "<b>Cherry icecream:</b> <a href='byond://?src=\ref[src];select=[ICECREAM_CHERRY]'><b>Select</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_CHERRY];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_CHERRY];amount=5'><b>x5</b></a> [product_types[ICECREAM_CHERRY]] dollops left. (Ingredients: milk, ice, cherry jelly)<br>"
-	dat += "<b>Banana icecream:</b> <a href='byond://?src=\ref[src];select=[ICECREAM_BANANA]'><b>Select</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_BANANA];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[ICECREAM_BANANA];amount=5'><b>x5</b></a> [product_types[ICECREAM_BANANA]] dollops left. (Ingredients: milk, ice, banana)<br></div>"
-	dat += "<br><b>CONES</b><br><div class='statusDisplay'>"
-	dat += "<b>Waffle cones:</b> <a href='byond://?src=\ref[src];cone=[CONE_WAFFLE]'><b>Dispense</b></a> <a href='byond://?src=\ref[src];make=[CONE_WAFFLE];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[CONE_WAFFLE];amount=5'><b>x5</b></a> [product_types[CONE_WAFFLE]] cones left. (Ingredients: flour, sugar)<br>"
-	dat += "<b>Chocolate cones:</b> <a href='byond://?src=\ref[src];cone=[CONE_CHOC]'><b>Dispense</b></a> <a href='byond://?src=\ref[src];make=[CONE_CHOC];amount=1'><b>Make</b></a> <a href='byond://?src=\ref[src];make=[CONE_CHOC];amount=5'><b>x5</b></a> [product_types[CONE_CHOC]] cones left. (Ingredients: flour, sugar, coco powder)<br></div>"
-	dat += "<br>"
-	dat += "<b>VAT CONTENT</b><br>"
-	for(var/datum/reagent/R in reagents.reagent_list)
-		dat += "[R.name]: [R.volume]"
-		dat += "<A href='byond://?src=\ref[src];disposeI=\ref[R]'>Purge</A><BR>"
-	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</a> <a href='byond://?src=\ref[src];close=1'>Close</a>"
+/obj/machinery/icecream_vat/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "IcecreamVat", "Icecream Vat")
+		ui.open()
 
-	var/datum/browser/popup = new(user, "icecreamvat","Icecream Vat", 700, 500, src)
-	popup.set_content(dat)
-	popup.open()
+/obj/machinery/icecream_vat/tgui_data(mob/user)
+	var/list/data = list()
+	data["dispensing"] = flavour_name
+	data["products"] = list(
+		list("id" = ICECREAM_VANILLA, "name" = "Vanilla icecream", "count" = product_types[ICECREAM_VANILLA], "unit" = "scoops", "ingredients" = "milk, ice", "is_cone" = FALSE),
+		list("id" = ICECREAM_STRAWBERRY, "name" = "Strawberry icecream", "count" = product_types[ICECREAM_STRAWBERRY], "unit" = "dollops", "ingredients" = "milk, ice, berry juice", "is_cone" = FALSE),
+		list("id" = ICECREAM_CHOCOLATE, "name" = "Chocolate icecream", "count" = product_types[ICECREAM_CHOCOLATE], "unit" = "dollops", "ingredients" = "milk, ice, coco powder", "is_cone" = FALSE),
+		list("id" = ICECREAM_BLUE, "name" = "Blue icecream", "count" = product_types[ICECREAM_BLUE], "unit" = "dollops", "ingredients" = "milk, ice, singulo", "is_cone" = FALSE),
+		list("id" = ICECREAM_CHERRY, "name" = "Cherry icecream", "count" = product_types[ICECREAM_CHERRY], "unit" = "dollops", "ingredients" = "milk, ice, cherry jelly", "is_cone" = FALSE),
+		list("id" = ICECREAM_BANANA, "name" = "Banana icecream", "count" = product_types[ICECREAM_BANANA], "unit" = "dollops", "ingredients" = "milk, ice, banana", "is_cone" = FALSE),
+		list("id" = CONE_WAFFLE, "name" = "Waffle cones", "count" = product_types[CONE_WAFFLE], "unit" = "cones", "ingredients" = "flour, sugar", "is_cone" = TRUE),
+		list("id" = CONE_CHOC, "name" = "Chocolate cones", "count" = product_types[CONE_CHOC], "unit" = "cones", "ingredients" = "flour, sugar, coco powder", "is_cone" = TRUE)
+	)
+	var/list/reagent_list = list()
+	for (var/i = 1 to length(reagents.reagent_list))
+		var/datum/reagent/R = reagents.reagent_list[i]
+		reagent_list += list(list("index" = i, "name" = R.name, "volume" = R.volume))
+	data["reagents"] = reagent_list
+	return data
 
 /obj/machinery/icecream_vat/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/reagent_containers/food/snacks/icecream))
@@ -148,45 +149,40 @@
 	else
 		to_chat(user, SPAN_WARNING("You don't have the ingredients to make this."))
 
-/obj/machinery/icecream_vat/OnTopic(user, href_list)
-	if(href_list["close"])
-		close_browser(usr,"window=icecreamvat")
-		return TOPIC_HANDLED
-
-	if(href_list["select"])
-		dispense_flavour = text2num(href_list["select"])
-		flavour_name = get_flavour_name(dispense_flavour)
-		src.visible_message(SPAN_NOTICE("[user] sets [src] to dispense [flavour_name] flavoured icecream."))
-		. = TOPIC_HANDLED
-
-	else if(href_list["cone"])
-		var/dispense_cone = text2num(href_list["cone"])
-		var/cone_name = get_flavour_name(dispense_cone)
-		if(product_types[dispense_cone] >= 1)
-			product_types[dispense_cone] -= 1
-			var/obj/item/reagent_containers/food/snacks/icecream/I = new(src.loc)
-			I.cone_type = cone_name
-			I.icon_state = "icecream_cone_[cone_name]"
-			I.desc = "Delicious [cone_name] cone, but no ice cream."
-			src.visible_message(SPAN_INFO("[user] dispenses a crunchy [cone_name] cone from [src]."))
-		else
-			to_chat(user, SPAN_WARNING("There are no [cone_name] cones left!"))
-		. = TOPIC_REFRESH
-
-	else if(href_list["make"])
-		var/amount = (text2num(href_list["amount"]))
-		var/C = text2num(href_list["make"])
-		make(user, C, amount)
-		. = TOPIC_REFRESH
-
-	else if(href_list["disposeI"])
-		var/datum/reagent/R = locate(href_list["disposeI"]) in reagents.reagent_list
-		if(R)
-			reagents.del_reagent(R.type)
-		. = TOPIC_REFRESH
-
-	if(href_list["refresh"])
-		. = TOPIC_REFRESH
+/obj/machinery/icecream_vat/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if ("select")
+			dispense_flavour = text2num(params["select"])
+			flavour_name = get_flavour_name(dispense_flavour)
+			visible_message(SPAN_NOTICE("[usr] sets [src] to dispense [flavour_name] flavoured icecream."))
+			return TRUE
+		if ("cone")
+			var/dispense_cone = text2num(params["cone"])
+			var/cone_name = get_flavour_name(dispense_cone)
+			if (product_types[dispense_cone] >= 1)
+				product_types[dispense_cone] -= 1
+				var/obj/item/reagent_containers/food/snacks/icecream/I = new(src.loc)
+				I.cone_type = cone_name
+				I.icon_state = "icecream_cone_[cone_name]"
+				I.desc = "Delicious [cone_name] cone, but no ice cream."
+				visible_message(SPAN_INFO("[usr] dispenses a crunchy [cone_name] cone from [src]."))
+			else
+				to_chat(usr, SPAN_WARNING("There are no [cone_name] cones left!"))
+			return TRUE
+		if ("make")
+			var/amount = text2num(params["amount"])
+			var/make_type = text2num(params["make"])
+			make(usr, make_type, amount)
+			return TRUE
+		if ("disposeI")
+			var/index = text2num(params["index"])
+			if (is_valid_index(index, reagents.reagent_list))
+				var/datum/reagent/R = reagents.reagent_list[index]
+				reagents.del_reagent(R.type)
+			return TRUE
+	return FALSE
 
 /obj/item/reagent_containers/food/snacks/icecream
 	name = "ice cream cone"

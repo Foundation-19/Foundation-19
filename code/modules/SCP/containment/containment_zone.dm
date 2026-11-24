@@ -54,6 +54,8 @@ GLOBAL_LIST_EMPTY(containment_zones)
 
 /datum/containment_zone/proc/check_integrity()
 	var/new_integrity = 100
+	// Containment tech branch: reinforced zones never fall below the floor.
+	var/floor = GLOB.scp_research_director ? GLOB.scp_research_director.tech_tree.get_containment_floor() : 0
 	if(!has_power)
 		new_integrity -= 30
 	if(zone_area)
@@ -65,7 +67,7 @@ GLOBAL_LIST_EMPTY(containment_zones)
 		for(var/obj/machinery/light/L in zone_area)
 			if(L.on)
 				new_integrity += 1
-	integrity = clamp(new_integrity, 0, 100)
+	integrity = clamp(new_integrity, max(floor, 0), 100)
 	if(integrity < alert_threshold && linked_scp && linked_scp.research)
 		SEND_SIGNAL(linked_scp, COMSIG_CONTAINMENT_WARNING, src, integrity)
 

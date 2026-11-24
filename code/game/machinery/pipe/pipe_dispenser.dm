@@ -32,20 +32,6 @@
 	if (anchored)
 		update_use_power(POWER_USE_IDLE)
 
-/obj/machinery/pipedispenser/proc/get_console_data(list/pipe_categories, color_options = FALSE)
-	. = list()
-	. += "<table>"
-	if (color_options)
-		. += "<tr><td>Color</td><td><a href='byond://?src=\ref[src];color=\ref[src]'><font color = '[pipe_color]'>[pipe_color]</font></a></td></tr>"
-	for (var/category in pipe_categories)
-		var/datum/pipe/cat = category
-		. += "<tr><td><font color = '#517087'><strong>[initial(cat.category)]</strong></font></td></tr>"
-		for (var/datum/pipe/pipe in pipe_categories[category])
-			var/line = "[pipe.name]</td>"
-			. += "<tr><td>[line]<td><a href='byond://?src=\ref[src];build=\ref[pipe]'>Dispense</a></td><td><a href='byond://?src=\ref[src];buildfive=\ref[pipe]'>5x</a></td><td><a href='byond://?src=\ref[src];buildten=\ref[pipe]'>10x</a></td></tr>"
-	.+= "</table>"
-	. = JOINTEXT(.)
-
 /// Returns an associated list of pipes that this dispenser can create. We can't use globals in compile-time defs, so we do this instead.
 /obj/machinery/pipedispenser/proc/get_pipe_types()
 	return GLOB.all_pipe_datums_by_category
@@ -56,33 +42,63 @@
 		use_power_oneoff(500)
 	playsound(src, 'sounds/items/Deconstruct.ogg', 50, TRUE)
 
-/obj/machinery/pipedispenser/Topic(href, href_list)
+/obj/machinery/pipedispenser/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "PipeDispenser", name)
+		ui.open()
+
+/obj/machinery/pipedispenser/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/pipe_types = get_pipe_types()
+	var/list/categories = list()
+	for (var/category in pipe_types)
+		var/datum/pipe/cat = category
+		var/list/pipe_list = list()
+		for (var/datum/pipe/pipe in pipe_types[category])
+			pipe_list += list(list(
+				"name" = pipe.name,
+				"ref" = REF(pipe)))
+		categories += list(list(
+			"name" = initial(cat.category),
+			"pipes" = pipe_list))
+	data["categories"] = categories
+	data["has_colors"] = has_colors
+	data["pipe_color"] = pipe_color
+	if (has_colors)
+		var/list/colors = list()
+		for (var/color in pipe_colors)
+			colors += color
+		data["colors"] = colors
+	return data
+
+/obj/machinery/pipedispenser/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if (..())
 		return TRUE
-	if (href_list["build"])
-		var/datum/pipe/P = locate(href_list["build"])
-		build_quantity(P, 1)
-	if (href_list["buildfive"])
-		var/datum/pipe/P = locate(href_list["buildfive"])
-		build_quantity(P, 5)
-	if (href_list["buildten"])
-		var/datum/pipe/P = locate(href_list["buildten"])
-		build_quantity(P, 10)
-	if (href_list["color"])
-		var/choice = input(usr, "What color do you want pipes to have?") as null|anything in pipe_colors
-		if (!choice)
+	switch (action)
+		if ("build")
+			var/datum/pipe/P = locate(params["pipe"])
+			if (!istype(P))
+				return TRUE
+			var/quantity = text2num(params["amount"])
+			if (!quantity)
+				return TRUE
+			build_quantity(P, quantity)
 			return TRUE
-		pipe_color = choice
-		updateUsrDialog()
+		if ("set_color")
+			if (!has_colors)
+				return TRUE
+			var/choice = params["color"]
+			if (!(choice in pipe_colors))
+				return TRUE
+			pipe_color = choice
+			SStgui.update_uis(src)
+			return TRUE
+	return FALSE
 
 /obj/machinery/pipedispenser/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
-
-/obj/machinery/pipedispenser/interact(mob/user)
-	var/datum/browser/popup = new (user, "Pipe List", "[name]")
-	popup.set_content(get_console_data(get_pipe_types(), has_colors))
-	popup.open()
 
 /obj/machinery/pipedispenser/attackby(obj/item/W, mob/user)
 	if (is_type_in_list(W, consume_types))
@@ -113,8 +129,7 @@
 			if (!anchored)
 				stat |= MAINT
 				update_use_power(POWER_USE_OFF)
-				if (user.machine == src)
-					close_browser(user, "window=pipedispenser")
+				SStgui.close_uis(src)
 			else
 				stat &= ~MAINT
 				update_use_power(POWER_USE_IDLE)

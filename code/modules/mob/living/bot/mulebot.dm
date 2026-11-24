@@ -62,62 +62,92 @@
 	load(C)
 
 /mob/living/bot/mulebot/GetInteractTitle()
-	. = "<head><title>Mulebot [suffix ? "([suffix])" : ""]</title></head>"
-	. += "<b>Multiple Utility Load Effector Mk. III</b>"
-	. += "<br>ID: [suffix]"
+	return "Multiple Utility Load Effector Mk. III"
 
-/mob/living/bot/mulebot/GetInteractStatus()
+/mob/living/bot/mulebot/get_status_data(mob/user)
 	. = ..()
-	. += "<br>Current Load: [load ? load.name : "<i>none</i>"]"
+	.["info"] += list(list("label" = "ID", "value" = suffix))
+	.["info"] += list(list("label" = "Current Load", "value" = load ? load.name : "none"))
+	return
 
-/mob/living/bot/mulebot/GetInteractPanel()
-	. += "<a href='byond://?src=\ref[src];command=stop'>Stop</a>"
-	. += "<br><a href='byond://?src=\ref[src];command=go'>Proceed</a>"
-	. += "<br><a href='byond://?src=\ref[src];command=home'>Return to home</a>"
-	. += "<br><a href='byond://?src=\ref[src];command=destination'>Set destination</a>"
-	. += "<br><a href='byond://?src=\ref[src];command=sethome'>Set home</a>"
-	. += "<br><a href='byond://?src=\ref[src];command=autoret'>Toggle auto return home</a> ([auto_return ? "On" : "Off"])"
-	. += "<br><a href='byond://?src=\ref[src];command=cargotypes'>Toggle non-standard cargo</a> ([crates_only ? "Off" : "On"])"
+/mob/living/bot/mulebot/get_panel_data(mob/user)
+	var/list/beaconlist = GetBeaconList()
+	var/list/beacon_tags = list()
+	for(var/tag in beaconlist)
+		beacon_tags += tag
 
+	. = list()
+	.["info"] = list(
+		list("label" = "Home", "value" = homeName ? homeName : "Unset"),
+		list("label" = "Destination", "value" = targetName ? targetName : "None"),
+	)
+	.["buttons"] = list(
+		list("action" = "stop", "label" = "Stop"),
+		list("action" = "go", "label" = "Proceed"),
+		list("action" = "home", "label" = "Return to home"),
+	)
 	if(load)
-		. += "<br><a href='byond://?src=\ref[src];command=unload'>Unload now</a>"
+		.["buttons"] += list(list("action" = "unload", "label" = "Unload now"))
+	.["toggles"] = list(
+		list("action" = "autoret", "label" = "Auto return home", "value" = auto_return),
+		list("action" = "cargotypes", "label" = "Allow non-standard cargo", "value" = !crates_only),
+	)
+	.["options"] = list()
+	if(beacon_tags.len)
+		.["options"] += list(list("action" = "set_destination", "label" = "Destination beacon", "param" = "dest", "values" = beacon_tags))
+		.["options"] += list(list("action" = "set_home", "label" = "Home beacon", "param" = "dest", "values" = beacon_tags))
+	return
 
-/mob/living/bot/mulebot/GetInteractMaintenance()
-	. = "<a href='byond://?src=\ref[src];command=safety'>Toggle safety</a> ([safety ? "On" : "Off - DANGER"])"
+/mob/living/bot/mulebot/get_maintenance_data(mob/user)
+	. = list()
+	.["toggles"] = list(
+		list("action" = "safety", "label" = "Safety", "value" = safety, "value_text" = safety ? "On" : "Off - DANGER"),
+	)
+	return
 
-/mob/living/bot/mulebot/ProcessCommand(mob/user, command, href_list)
-	..()
-	if(CanAccessPanel(user))
-		switch(command)
+/mob/living/bot/mulebot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(CanAccessPanel(usr))
+		var/list/beaconlist = GetBeaconList()
+		switch(action)
 			if("stop")
 				obeyCommand("Stop")
+				return TRUE
 			if("go")
 				obeyCommand("GoTD")
+				return TRUE
 			if("home")
 				obeyCommand("Home")
-			if("destination")
-				obeyCommand("SetD")
-			if("sethome")
-				var/new_dest
-				var/list/beaconlist = GetBeaconList()
-				if(beaconlist.len)
-					new_dest = input("Select new home tag", "Mulebot [suffix ? "([suffix])" : ""]", null) in null|beaconlist
-				else
-					alert("No destination beacons available.")
-				if(new_dest)
-					home = get_turf(beaconlist[new_dest])
-					homeName = new_dest
+				return TRUE
+			if("set_destination")
+				var/dest = params["dest"]
+				if(dest && beaconlist[dest])
+					resetTarget()
+					target = get_turf(beaconlist[dest])
+					targetName = dest
+				return TRUE
+			if("set_home")
+				var/home_dest = params["dest"]
+				if(home_dest && beaconlist[home_dest])
+					home = get_turf(beaconlist[home_dest])
+					homeName = home_dest
+				return TRUE
 			if("unload")
 				unload()
+				return TRUE
 			if("autoret")
 				auto_return = !auto_return
+				return TRUE
 			if("cargotypes")
 				crates_only = !crates_only
-
-	if(CanAccessMaintenance(user))
-		switch(command)
+				return TRUE
+	if(CanAccessMaintenance(usr))
+		switch(action)
 			if("safety")
 				safety = !safety
+				return TRUE
+	return FALSE
 
 /mob/living/bot/mulebot/attackby(obj/item/O, mob/user)
 	..()

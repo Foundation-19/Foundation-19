@@ -85,200 +85,233 @@
 	port = 0
 	view = ORION_VIEW_MAIN
 
-/obj/machinery/computer/arcade/orion_trail/interact(mob/user)
-	var/dat = ""
+/obj/machinery/computer/arcade/orion_trail/tgui_interact(mob/user, datum/tgui/ui)
 	if(event == null)
 		newgame()
-	user.set_machine(src)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OrionTrail", "Arcade")
+		ui.open()
+
+/obj/machinery/computer/arcade/orion_trail/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/actions = list()
+	var/title = event
+	var/desc = event_desc
+	var/info = event_info
 	switch(view)
 		if(ORION_VIEW_MAIN)
 			if(event == ORION_TRAIL_START) //new game? New game.
-				dat = "<center><h1>Orion Trail[emagged ? ": Realism Edition" : ""]</h1><br>Learn how our ancestors got to Orion, and have fun in the process!</center><br><P ALIGN=Right><a href='byond://?src=\ref[src];continue=1'>Start New Game</a></P>"
-				var/datum/browser/popup = new(user, "arcade", "Arcade")
-				popup.set_content(dat)
-				popup.open()
-				return
-			else
-				event_title = event
-				event_actions = "<a href='byond://?src=\ref[src];continue=1'>Continue your journey</a><br>"
+				data["start"] = TRUE
+				data["title"] = "Orion Trail[emagged ? ": Realism Edition" : ""]"
+				data["desc"] = "Learn how our ancestors got to Orion, and have fun in the process!"
+				data["actions"] = list(list("action" = "continue", "label" = "Start New Game"))
+				data["view"] = view
+				return data
+			actions = list(list("action" = "continue", "label" = "Continue your journey"))
 			switch(event)
 				if(ORION_TRAIL_GAMEOVER)
-					event_info = ""
-					event_actions = "<a href='byond://?src=\ref[src];continue=1'>Start New Game</a><br>"
+					info = ""
+					actions = list(list("action" = "continue", "label" = "Start New Game"))
 				if(ORION_TRAIL_SPACEPORT)
-					event_title   += ": [stops[port]]"
-					event_desc     = "[stopblurbs[port]]"
-					event_info     = ""
+					title += ": [stops[port]]"
+					desc = "[stopblurbs[port]]"
+					info = ""
 					if(port == 9)
-						event_actions = "<a href='byond://?src=\ref[src];continue=1'>Return to the title screen!</a><br>"
+						actions = list(list("action" = "continue", "label" = "Return to the title screen!"))
 					else
-						event_actions  = "<a href='byond://?src=\ref[src];continue=1'>Shove off</a><br>"
-						event_actions += "<a href='byond://?src=\ref[src];attack=1'>Raid Spaceport</a>"
+						actions = list(
+							list("action" = "continue", "label" = "Shove off"),
+							list("action" = "attack", "label" = "Raid Spaceport"),
+						)
 				if(ORION_TRAIL_SPACEPORT_RAIDED)
-					event_title  += ": [stops[port]]"
-					event_actions = "<a href='byond://?src=\ref[src];continue=1'>Shove off</a>"
+					title += ": [stops[port]]"
+					actions = list(list("action" = "continue", "label" = "Shove off"))
 				if(ORION_TRAIL_RAIDERS)
-					event_desc   = "You arm yourselves as you prepare to fight off the vox menace!"
+					desc = "You arm yourselves as you prepare to fight off the vox menace!"
 				if(ORION_TRAIL_DERELICT)
-					event_desc = "You come across an unpowered ship drifting slowly in the vastness of space. Sensors indicate there are no lifeforms aboard."
+					desc = "You come across an unpowered ship drifting slowly in the vastness of space. Sensors indicate there are no lifeforms aboard."
 				if(ORION_TRAIL_ILLNESS)
-					event_desc = "A disease has spread amoungst your crew!"
+					desc = "A disease has spread amoungst your crew!"
 				if(ORION_TRAIL_FLUX)
-					event_desc = "You've entered a turbulent region. Slowing down would be better for your ship but would cost more fuel."
-					event_actions  = "<a href='byond://?src=\ref[src];continue=1;risky=25'>Continue as normal</a><BR>"
-					event_actions += "<a href='byond://?src=\ref[src];continue=1;slow=1;'>Take it slow</a><BR>"
+					desc = "You've entered a turbulent region. Slowing down would be better for your ship but would cost more fuel."
+					actions = list(
+						list("action" = "continue", "label" = "Continue as normal", "risky" = 25),
+						list("action" = "continue", "label" = "Take it slow", "slow" = 1),
+					)
 				if(ORION_TRAIL_MALFUNCTION)
-					event_info = ""
-					event_desc = "The ship's computers are malfunctioning! You can choose to fix it with a part or risk something going awry."
-					event_actions  = "<a href='byond://?src=\ref[src];continue=1;risky=25'>Continue as normal</a><BR>"
+					info = ""
+					desc = "The ship's computers are malfunctioning! You can choose to fix it with a part or risk something going awry."
+					actions = list(list("action" = "continue", "label" = "Continue as normal", "risky" = 25))
 					if(supplies["3"] != 0)
-						event_actions += "<a href='byond://?src=\ref[src];continue=1;fix=3'>Fix using a part.</a><BR>"
+						actions += list(list("action" = "continue", "label" = "Fix using a part.", "fix" = "3"))
 				if(ORION_TRAIL_COLLISION)
-					event_info = ""
-					event_desc = "Something has hit your ship and breached the hull! You can choose to fix it with a part or risk something going awry."
-					event_actions  = "<a href='byond://?src=\ref[src];continue=1;risky=25'>Continue as normal</a><BR>"
+					info = ""
+					desc = "Something has hit your ship and breached the hull! You can choose to fix it with a part or risk something going awry."
+					actions = list(list("action" = "continue", "label" = "Continue as normal", "risky" = 25))
 					if(supplies["2"] != 0)
-						event_actions += "<a href='byond://?src=\ref[src];continue=1;fix=2'>Fix using a part.</a><BR>"
+						actions += list(list("action" = "continue", "label" = "Fix using a part.", "fix" = "2"))
 				if(ORION_TRAIL_BREAKDOWN)
-					event_info = ""
-					event_desc = "The ship's engines broke down! You can choose to fix it with a part or risk something going awry."
-					event_actions  = "<a href='byond://?src=\ref[src];continue=1;risky=25'>Continue as normal</a><BR>"
+					info = ""
+					desc = "The ship's engines broke down! You can choose to fix it with a part or risk something going awry."
+					actions = list(list("action" = "continue", "label" = "Continue as normal", "risky" = 25))
 					if(supplies["1"] != 0)
-						event_actions += "<a href='byond://?src=\ref[src];continue=1;fix=1'>Fix using a part.</a><BR>"
+						actions += list(list("action" = "continue", "label" = "Fix using a part.", "fix" = "1"))
 				if(ORION_TRAIL_STUCK)
-					event_desc    = "You've ran out of fuel. Your only hope to survive is to get refueled by a passing ship, if there are any."
+					desc = "You've ran out of fuel. Your only hope to survive is to get refueled by a passing ship, if there are any."
 					if(supplies["5"] == 0)
-						event_actions = "<a href='byond://?src=\ref[src];continue=1;food=1'>Wait</a>"
+						actions = list(list("action" = "continue", "label" = "Wait", "food" = 1))
 				if(ORION_TRAIL_CARP)
-					event_desc = "You've chanced upon a large carp migration! Known both for their delicious meat as well as their bite, you and your crew arm yourselves for a small hunting trip."
+					desc = "You've chanced upon a large carp migration! Known both for their delicious meat as well as their bite, you and your crew arm yourselves for a small hunting trip."
 				if(ORION_TRAIL_MUTINY)
-					event_desc = "You've been hearing rumors of dissenting opinions and missing items from the armory..."
+					desc = "You've been hearing rumors of dissenting opinions and missing items from the armory..."
 				if(ORION_TRAIL_MUTINY_ATTACK)
-					event_desc = "Oh no, some of your crew are attempting to mutiny!!"
-
-			dat = "<center><h1>[event_title]</h1>[event_desc]<br><br>Distance to next port: [distance]<br><b>[event_info]</b><br></center><br>[event_actions]"
+					desc = "Oh no, some of your crew are attempting to mutiny!!"
+			data["title"] = title
+			data["desc"] = desc
+			data["info"] = info
+			data["distance"] = distance
+			data["actions"] = actions
 		if(ORION_VIEW_SUPPLIES)
-			dat  = "<center><h1>Supplies</h1>View your supplies or buy more when at a spaceport.</center><BR>"
-			dat += "<center>You have [supplies["6"]] [GLOB.using_map.local_currency_name].</center>"
+			data["title"] = "Supplies"
+			data["desc"] = "View your supplies or buy more when at a spaceport."
+			data["currency"] = supplies["6"]
+			data["currency_name"] = GLOB.using_map.local_currency_name
+			var/list/supply_list = list()
 			for(var/i=1; i<6; i++)
 				var/amm = (i>3?10:1)
-				dat += "[supplies["[i]"]] [supply_name["[i]"]][event==ORION_TRAIL_SPACEPORT ? ", <a href='byond://?src=\ref[src];buy=[i]'>buy [amm] for [supply_cost["[i]"]]T</a>" : ""]<BR>"
-				if(supplies["[i]"] >= amm && event == ORION_TRAIL_SPACEPORT)
-					dat += "<a href='byond://?src=\ref[src];sell=[i]'>sell [amm] for [supply_cost["[i]"]]T</a><br>"
+				supply_list += list(list(
+					"index" = "[i]",
+					"amount" = supplies["[i]"],
+					"name" = supply_name["[i]"],
+					"can_buy" = (event == ORION_TRAIL_SPACEPORT) ? TRUE : FALSE,
+					"buy_cost" = supply_cost["[i]"],
+					"can_sell" = (supplies["[i]"] >= amm && event == ORION_TRAIL_SPACEPORT) ? TRUE : FALSE,
+					"amount_step" = amm,
+				))
+			data["supplies"] = supply_list
 		if(ORION_VIEW_CREW)
-			dat = "<center><h1>Crew</h1>View the status of your crew.</center>"
+			data["title"] = "Crew"
+			data["desc"] = "View the status of your crew."
+			var/list/crew = list()
 			for(var/i=1;i<=settlers.len;i++)
-				dat += "[settlers[i]] <a href='byond://?src=\ref[src];kill=[i]'>Kill</a><br>"
+				crew += list(list("index" = "[i]", "name" = settlers[i]))
+			data["crew"] = crew
+	var/list/nav = list()
+	nav += list(list("action" = "continue", "label" = "Main", "active" = (view == ORION_VIEW_MAIN)))
+	nav += list(list("action" = "supplies", "label" = "Supplies", "active" = (view == ORION_VIEW_SUPPLIES)))
+	nav += list(list("action" = "crew", "label" = "Crew", "active" = (view == ORION_VIEW_CREW)))
+	data["nav"] = nav
+	data["view"] = view
+	data["emagged"] = emagged
+	return data
 
-	dat += "<br><P ALIGN=Right>View:<BR>"
-	dat += "[view==ORION_VIEW_MAIN ? "" : "<a href='byond://?src=\ref[src];continue=1'>"]Main[view==ORION_VIEW_MAIN ? "" : "</a>"]<BR>"
-	dat += "[view==ORION_VIEW_SUPPLIES ? "" : "<a href='byond://?src=\ref[src];supplies=1'>"]Supplies[view==ORION_VIEW_SUPPLIES ? "" : "</a>"]<BR>"
-	dat += "[view==ORION_VIEW_CREW ? "" : "<a href='byond://?src=\ref[src];crew=1'>"]Crew[view==ORION_VIEW_CREW ? "" : "</a>"]</P>"
-	var/datum/browser/popup = new(user, "arcade", "Arcade")
-	popup.set_content(dat)
-	popup.open()
-
-/obj/machinery/computer/arcade/orion_trail/OnTopic(user, href_list)
-	if(href_list["continue"])
-		if(view == ORION_VIEW_MAIN)
-			var/next_event = null
-			if(event == ORION_TRAIL_START)
-				event = ORION_TRAIL_SPACEPORT
-			if(event == ORION_TRAIL_GAMEOVER)
-				event = null
-				return TOPIC_REFRESH
-			if(!settlers.len)
-				event_desc = "You and your crew were killed on the way to Orion, your ship left abandoned for scavengers to find."
-				next_event = ORION_TRAIL_GAMEOVER
-			if(port == 9)
-				win()
-				return TOPIC_REFRESH
-			var/travel = min(rand(1000,10000),distance)
-			if(href_list["fix"])
-				var/item = href_list["fix"]
-				supplies[item] = max(0, --supplies[item])
-			if(href_list["risky"])
-				var/risk = text2num(href_list["risky"])
-				if(prob(risk))
-					next_event = ORION_TRAIL_DISASTER
+/obj/machinery/computer/arcade/orion_trail/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("continue")
+			if(view == ORION_VIEW_MAIN)
+				var/next_event = null
+				if(event == ORION_TRAIL_START)
+					event = ORION_TRAIL_SPACEPORT
+				if(event == ORION_TRAIL_GAMEOVER)
+					event = null
+					newgame()
+					return TRUE
+				if(!settlers.len)
+					event_desc = "You and your crew were killed on the way to Orion, your ship left abandoned for scavengers to find."
+					next_event = ORION_TRAIL_GAMEOVER
+				if(port == 9)
+					win()
+					return TRUE
+				var/travel = min(rand(1000,10000),distance)
+				if(params["fix"])
+					var/item = params["fix"]
+					supplies[item] = max(0, --supplies[item])
+				if(params["risky"])
+					var/risk = text2num(params["risky"])
+					if(prob(risk))
+						next_event = ORION_TRAIL_DISASTER
 
 
-			if(!href_list["food"])
-				var/temp = supplies["5"] - travel/1000 * (href_list["slow"] ? 2 : 1)
-				if(temp < 0 && (distance-travel != 0) && next_event == null) //uh oh. Better start a fuel event.
+				if(!params["food"])
+					var/temp = supplies["5"] - travel/1000 * (params["slow"] ? 2 : 1)
+					if(temp < 0 && (distance-travel != 0) && next_event == null) //uh oh. Better start a fuel event.
+						next_event = ORION_TRAIL_STUCK
+						travel -= (temp*-1)*1000/(params["slow"] ? 2 : 1)
+						temp = 0
+					supplies["5"] = temp
+
+					supplies["4"] = round(supplies["4"] - travel/1000 * settlers.len * (params["slow"] ? 2 : 1))
+					distance = max(0,distance-travel)
+				else
+					supplies["4"] -= settlers.len * 5
+					event_info = "You have [supplies["4"]] food left.<BR>"
 					next_event = ORION_TRAIL_STUCK
-					travel -= (temp*-1)*1000/(href_list["slow"] ? 2 : 1)
-					temp = 0
-				supplies["5"] = temp
 
-				supplies["4"] = round(supplies["4"] - travel/1000 * settlers.len * (href_list["slow"] ? 2 : 1))
-				distance = max(0,distance-travel)
+				if(supplies["4"] <= 0)
+					next_event = ORION_TRAIL_GAMEOVER
+					event_desc = "You and your crew starved to death, never to reach Orion."
+					supplies["4"] = 0
+
+				if(distance == 0 && next_event == null) //POOORT!
+					port++
+					event = ORION_TRAIL_SPACEPORT
+					distance = stop_distance[port]
+					//gotta set supply costs. The further out the more expensive it'll generally be
+					supply_cost = list("1" = rand(500+100*port,1200+100*port), "2" = rand(700+100*port,1000+100*port), "3" = rand(900+50*port,1500+75*port), "4" =  rand(10+50*port,125+50*port), "5" =  rand(75+25*port,200+100*port))
+				else //Event? Event.
+					generate_event(next_event)
 			else
-				supplies["4"] -= settlers.len * 5
-				event_info = "You have [supplies["4"]] food left.<BR>"
-				next_event = ORION_TRAIL_STUCK
+				view = ORION_VIEW_MAIN
+			return TRUE
 
-			if(supplies["4"] <= 0)
-				next_event = ORION_TRAIL_GAMEOVER
-				event_desc = "You and your crew starved to death, never to reach Orion."
-				supplies["4"] = 0
+		if("supplies")
+			view = ORION_VIEW_SUPPLIES
+			return TRUE
 
-			if(distance == 0 && next_event == null) //POOORT!
-				port++
-				event = ORION_TRAIL_SPACEPORT
-				distance = stop_distance[port]
-				//gotta set supply costs. The further out the more expensive it'll generally be
-				supply_cost = list("1" = rand(500+100*port,1200+100*port), "2" = rand(700+100*port,1000+100*port), "3" = rand(900+50*port,1500+75*port), "4" =  rand(10+50*port,125+50*port), "5" =  rand(75+25*port,200+100*port))
-			else //Event? Event.
-				generate_event(next_event)
-		else
-			view = ORION_VIEW_MAIN
-		return TOPIC_REFRESH
+		if("crew")
+			view = ORION_VIEW_CREW
+			return TRUE
 
-	else if(href_list["supplies"])
-		view = ORION_VIEW_SUPPLIES
-		return TOPIC_REFRESH
+		if("buy")
+			var/item = params["buy"]
+			if(supply_cost["[item]"] <= supplies["6"])
+				supplies["[item]"] += (text2num(item) > 3 ? 10 : 1)
+				supplies["6"] -= supply_cost["[item]"]
+			return TRUE
 
-	else if(href_list["crew"])
-		view = ORION_VIEW_CREW
-		return TOPIC_REFRESH
+		if("sell")
+			var/item = params["sell"]
+			if(supplies["[item]"] >= (text2num(item) > 3 ? 10 : 1))
+				supplies["6"] += supply_cost["[item]"]
+				supplies["[item]"] -= (text2num(item) > 3 ? 10 : 1)
+			return TRUE
 
-	else if(href_list["buy"])
-		var/item = href_list["buy"]
-		if(supply_cost["[item]"] <= supplies["6"])
-			supplies["[item]"] += (text2num(item) > 3 ? 10 : 1)
-			supplies["6"] -= supply_cost["[item]"]
-		return TOPIC_REFRESH
+		if("kill")
+			var/item = text2num(params["kill"])
+			remove_settler(item)
+			return TRUE
 
-	else if(href_list["sell"])
-		var/item = href_list["sell"]
-		if(supplies["[item]"] >= (text2num(item) > 3 ? 10 : 1))
-			supplies["6"] += supply_cost["[item]"]
-			supplies["[item]"] -= (text2num(item) > 3 ? 10 : 1)
-		return TOPIC_REFRESH
-
-	else if(href_list["kill"])
-		var/item = text2num(href_list["kill"])
-		remove_settler(item)
-		return TOPIC_REFRESH
-
-	else if(href_list["attack"])
-		supply_cost = list()
-		if(prob(17*settlers.len))
-			event_desc = "An empty husk of a station now, all its resources stripped for use in your travels."
-			event_info = "You've successfully raided the spaceport!<br>"
-			change_resource(null)
-			change_resource(null)
-		else
-			event_desc = "The local police mobilized too quickly, sirens blare as you barely make it away with your ship intact."
-			change_resource(null,-1)
-			change_resource(null,-1)
-			if(prob(50))
-				remove_settler(null, "died while you were escaping!")
-				if(prob(10))
+		if("attack")
+			supply_cost = list()
+			if(prob(17*settlers.len))
+				event_desc = "An empty husk of a station now, all its resources stripped for use in your travels."
+				event_info = "You've successfully raided the spaceport!<br>"
+				change_resource(null)
+				change_resource(null)
+			else
+				event_desc = "The local police mobilized too quickly, sirens blare as you barely make it away with your ship intact."
+				change_resource(null,-1)
+				change_resource(null,-1)
+				if(prob(50))
 					remove_settler(null, "died while you were escaping!")
-		event = ORION_TRAIL_SPACEPORT_RAIDED
-		return TOPIC_REFRESH
+					if(prob(10))
+						remove_settler(null, "died while you were escaping!")
+			event = ORION_TRAIL_SPACEPORT_RAIDED
+			return TRUE
+	return FALSE
 
 /obj/machinery/computer/arcade/orion_trail/proc/change_resource(specific = null, add = 1)
 	if(!specific)
@@ -450,7 +483,7 @@
 			to_chat(usr, SPAN_DANGER("<font size=3>You're never going to make it to Orion...</font>"))
 			var/mob/living/M = usr
 			M.visible_message("\The [M] starts rapidly deteriorating.")
-			close_browser(M, "window=arcade")
+			SStgui.close_user_uis(M, src)
 			for(var/i=0;i<10;i++)
 				sleep(10)
 				M.Stun(5)
@@ -463,7 +496,7 @@
 /obj/machinery/computer/arcade/orion_trail/emag_act(mob/user)
 	if(!emagged)
 		newgame(1)
-		src.updateUsrDialog()
+		SStgui.update_uis(src)
 
 /obj/machinery/computer/arcade/orion_trail/proc/win()
 	src.visible_message("\The [src] plays a triumpant tune, stating 'CONGRATULATIONS, YOU HAVE MADE IT TO ORION.'")
@@ -473,7 +506,9 @@
 	else
 		prizevend()
 	event = null
-	src.updateUsrDialog()
+	if(usr)
+		newgame()
+	SStgui.update_uis(src)
 
 /obj/item/orion_ship
 	name = "model settler ship"

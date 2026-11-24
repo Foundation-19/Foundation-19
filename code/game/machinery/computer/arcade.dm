@@ -46,7 +46,7 @@
 		return INITIALIZE_HINT_QDEL
 
 /obj/machinery/computer/arcade/interface_interact(user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/computer/arcade/proc/prizevend()
@@ -108,92 +108,91 @@
 	src.SetName((name_action + name_part1 + name_part2))
 
 
-/obj/machinery/computer/arcade/battle/interact(mob/user)
-	user.set_machine(src)
-	var/dat = "<a href='byond://?src=\ref[src];close=1'>Close</a>"
-	dat += "<center><h4>[src.enemy_name]</h4></center>"
+/obj/machinery/computer/arcade/battle/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ArcadeGame", "Arcade")
+		ui.open()
 
-	dat += "<br><center><h3>[src.temp]</h3></center>"
-	dat += "<br><center>Health: [src.player_hp] | Magic: [src.player_mp] | Enemy Health: [src.enemy_hp]</center>"
-
-	dat += "<center><b>"
-	if (src.gameover)
-		dat += "<a href='byond://?src=\ref[src];newgame=1'>New Game</a>"
-	else
-		dat += "<a href='byond://?src=\ref[src];attack=1'>Attack</a> | "
-		dat += "<a href='byond://?src=\ref[src];heal=1'>Heal</a> | "
-		dat += "<a href='byond://?src=\ref[src];charge=1'>Recharge Power</a>"
-
-	dat += "</b></center>"
-
-	var/datum/browser/popup = new(user, "arcade", "Arcade")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "arcade")
+/obj/machinery/computer/arcade/battle/tgui_data(mob/user)
+	var/list/data = list()
+	data["enemy_name"] = enemy_name
+	data["temp"] = temp
+	data["player_hp"] = player_hp
+	data["player_mp"] = player_mp
+	data["enemy_hp"] = enemy_hp
+	data["enemy_mp"] = enemy_mp
+	data["gameover"] = gameover
+	data["blocked"] = blocked
+	return data
 
 /obj/machinery/computer/arcade/battle/CanUseTopic(mob/user, datum/topic_state/state, href_list)
 	if((blocked || gameover) && href_list && (href_list["attack"] || href_list["heal"] || href_list["charge"]))
 		return min(..(), STATUS_UPDATE)
 	return ..()
 
-/obj/machinery/computer/arcade/battle/OnTopic(user, href_list)
-	set waitfor = 0
+/obj/machinery/computer/arcade/battle/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if((blocked || gameover) && (action == "attack" || action == "heal" || action == "charge"))
+		return TRUE
+	var/mob/user = usr
+	switch(action)
+		if("attack")
+			blocked = 1
+			var/attackamt = rand(2,6)
+			temp = "You attack for [attackamt] damage!"
+			if(turtle > 0)
+				turtle--
+			enemy_hp -= attackamt
 
-	if (href_list["close"])
-		close_browser(user, "window=arcade")
-		return TOPIC_HANDLED
+			SStgui.update_uis(src)
+			spawn(10)
+				arcade_action(user)
+			return TRUE
 
-	if (href_list["attack"])
-		src.blocked = 1
-		var/attackamt = rand(2,6)
-		src.temp = "You attack for [attackamt] damage!"
-		if(turtle > 0)
-			turtle--
-		src.enemy_hp -= attackamt
+		if("heal")
+			blocked = 1
+			var/pointamt = rand(1,3)
+			var/healamt = rand(6,8)
+			temp = "You use [pointamt] magic to heal for [healamt] damage!"
+			turtle++
 
-		updateDialog()
-		sleep(10)
-		src.arcade_action(user)
+			player_mp -= pointamt
+			player_hp += healamt
+			blocked = 1
 
-	else if (href_list["heal"])
-		src.blocked = 1
-		var/pointamt = rand(1,3)
-		var/healamt = rand(6,8)
-		src.temp = "You use [pointamt] magic to heal for [healamt] damage!"
-		turtle++
+			SStgui.update_uis(src)
+			spawn(10)
+				arcade_action(user)
+			return TRUE
 
-		src.player_mp -= pointamt
-		src.player_hp += healamt
-		src.blocked = 1
+		if("charge")
+			blocked = 1
+			var/chargeamt = rand(4,7)
+			temp = "You regain [chargeamt] points"
+			player_mp += chargeamt
+			if(turtle > 0)
+				turtle--
 
-		updateDialog()
-		sleep(10)
-		src.arcade_action(user)
+			SStgui.update_uis(src)
+			spawn(10)
+				arcade_action(user)
+			return TRUE
 
-	else if (href_list["charge"])
-		src.blocked = 1
-		var/chargeamt = rand(4,7)
-		src.temp = "You regain [chargeamt] points"
-		src.player_mp += chargeamt
-		if(turtle > 0)
-			turtle--
-
-		updateDialog()
-		sleep(10)
-		src.arcade_action(user)
-
-	else if (href_list["newgame"]) //Reset everything
-		temp = "New Round"
-		player_hp = 30
-		player_mp = 10
-		enemy_hp = 45
-		enemy_mp = 20
-		gameover = 0
-		turtle = 0
-		if(emagged)
-			emagged = FALSE
-			SetupGame()
-		updateDialog()
+		if("newgame") //Reset everything
+			temp = "New Round"
+			player_hp = 30
+			player_mp = 10
+			enemy_hp = 45
+			enemy_mp = 20
+			gameover = 0
+			turtle = 0
+			if(emagged)
+				emagged = FALSE
+				SetupGame()
+			return TRUE
+	return FALSE
 
 /obj/machinery/computer/arcade/battle/proc/arcade_action(user)
 	if ((src.enemy_mp <= 0) || (src.enemy_hp <= 0))
@@ -252,7 +251,7 @@
 		else
 			SSstatistics.add_field("arcade_loss_hp_normal")
 
-	updateDialog()
+	SStgui.update_uis(src)
 	src.blocked = 0
 
 /obj/machinery/computer/arcade/proc/explode()

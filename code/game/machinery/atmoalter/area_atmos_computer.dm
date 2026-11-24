@@ -21,100 +21,53 @@
 	spawn(10)
 		scanscrubbers()
 
-/obj/machinery/computer/area_atmos/attack_ai(mob/user as mob)
-	return src.attack_hand(user)
+/obj/machinery/computer/area_atmos/interface_interact(mob/user)
+	tgui_interact(user)
+	return TRUE
 
-/obj/machinery/computer/area_atmos/attack_hand(mob/user as mob)
-	if(..(user))
-		return
-	var/dat = {"
-	<html>
-		<head>
-			<style type="text/css">
-				a.green:link
-				{
-					color:#00cc00;
-				}
-				a.green:visited
-				{
-					color:#00cc00;
-				}
-				a.green:hover
-				{
-					color:#00cc00;
-				}
-				a.green:active
-				{
-					color:#00cc00;
-				}
-				a.red:link
-				{
-					color:#ff0000;
-				}
-				a.red:visited
-				{
-					color:#ff0000;
-				}
-				a.red:hover
-				{
-					color:#ff0000;
-				}
-				a.red:active
-				{
-					color:#ff0000;
-				}
-			</style>
-		</head>
-		<body>
-			<center><h1>Area Air Control</h1></center>
-			<font color="red">[status]</font><br>
-			<a href="byond://?src=\ref[src];scan=1">Scan</a>
-			<table border="1" width="90%">"}
-	for(var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber in connectedscrubbers)
-		dat += {"
-				<tr>
-					<td>
-						[scrubber.name]<br>
-						Pressure: [round(scrubber.air_contents.return_pressure(), 0.01)] kPa<br>
-						Flow Rate: [round(scrubber.last_flow_rate,0.1)] L/s<br>
-					</td>
-					<td width="150">
-						<a class="green" href="byond://?src=\ref[src];scrub=\ref[scrubber];toggle=1">Turn On</a>
-						<a class="red" href="byond://?src=\ref[src];scrub=\ref[scrubber];toggle=0">Turn Off</a><br>
-						Load: [round(scrubber.last_power_draw)] W
-					</td>
-				</tr>"}
+/obj/machinery/computer/area_atmos/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AreaAtmosComputer", "Area Air Control")
+		ui.open()
 
-	dat += {"
-			</table><br>
-			<i>[zone]</i>
-		</body>
-	</html>"}
-	var/datum/browser/popup = new(user, "miningshuttle", "Area Air Control", 400, 400)
-	popup.set_content("[dat]")
-	popup.open()
+/obj/machinery/computer/area_atmos/tgui_data(mob/user)
+	var/list/data = list()
+	data["status"] = status
 	status = ""
+	data["zone"] = zone
+	var/list/scrubbers = list()
+	for(var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber in connectedscrubbers)
+		scrubbers += list(list(
+			"ref" = "\ref[scrubber]",
+			"name" = scrubber.name,
+			"pressure" = round(scrubber.air_contents.return_pressure(), 0.01),
+			"flow_rate" = round(scrubber.last_flow_rate, 0.1),
+			"power_draw" = round(scrubber.last_power_draw),
+			"on" = scrubber.use_power > POWER_USE_OFF ? TRUE : FALSE
+		))
+	data["scrubbers"] = scrubbers
+	return data
 
-/obj/machinery/computer/area_atmos/Topic(href, href_list)
+/obj/machinery/computer/area_atmos/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return
-	usr.set_machine(src)
-
-
-	if(href_list["scan"])
-		scanscrubbers()
-	else if(href_list["toggle"])
-		var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber = locate(href_list["scrub"])
-
-		if(!validscrubber(scrubber))
-			spawn(20)
-				status = "ERROR: Couldn't connect to scrubber! (timeout)"
-				connectedscrubbers -= scrubber
-				src.updateUsrDialog()
-			return
-
-		scrubber.update_use_power(text2num(href_list["toggle"]) ? POWER_USE_ACTIVE : POWER_USE_IDLE)
-		scrubber.update_icon()
+		return TRUE
+	switch(action)
+		if("scan")
+			scanscrubbers()
+			return TRUE
+		if("toggle")
+			var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber = locate(params["scrub"])
+			if(!validscrubber(scrubber))
+				spawn(20)
+					status = "ERROR: Couldn't connect to scrubber! (timeout)"
+					connectedscrubbers -= scrubber
+					SStgui.update_uis(src)
+				return TRUE
+			scrubber.update_use_power(text2num(params["toggle"]) ? POWER_USE_ACTIVE : POWER_USE_IDLE)
+			scrubber.update_icon()
+			return TRUE
+	return FALSE
 
 /obj/machinery/computer/area_atmos/proc/validscrubber( obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber as obj )
 	if(!isobj(scrubber) || get_dist(scrubber.loc, src.loc) > src.range || scrubber.loc.z != src.loc.z)
@@ -134,7 +87,7 @@
 	if(!found)
 		status = "ERROR: No scrubber found!"
 
-	src.updateUsrDialog()
+	SStgui.update_uis(src)
 
 
 /obj/machinery/computer/area_atmos/area
@@ -180,4 +133,4 @@
 	if(!found)
 		status = "ERROR: No scrubber found!"
 
-	src.updateUsrDialog()
+	SStgui.update_uis(src)

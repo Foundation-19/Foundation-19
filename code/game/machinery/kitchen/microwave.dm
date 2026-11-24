@@ -196,7 +196,7 @@
 	else
 		to_chat(user, SPAN_WARNING("You have no idea what you can cook with this [O]."))
 
-	updateUsrDialog()
+	SStgui.update_uis(src)
 
 /obj/machinery/microwave/components_are_accessible(path)
 	return (broken == 0) && ..()
@@ -208,14 +208,14 @@
 
 /obj/machinery/microwave/state_transition(decl/machine_construction/new_state)
 	..()
-	updateUsrDialog()
+	SStgui.update_uis(src)
 
 // need physical proximity for our interface.
 /obj/machinery/microwave/DefaultTopicState()
 	return GLOB.physical_state
 
 /obj/machinery/microwave/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /*******************
@@ -225,55 +225,65 @@
 /obj/machinery/microwave/InsertedContents()
 	return ingredients
 
-/obj/machinery/microwave/interact(mob/user as mob) // The microwave Menu
-	user.set_machine(src)
-	var/dat
-	if(broken > 0)
-		dat += "<TT><b><i>This microwave is very broken. You'll need to fix it before you can use it again.</i></b></TT>"
-	else if(operating)
-		dat += "<TT>Microwaving in progress!<BR>Please wait...!</TT>"
-	else if(dirtiness == 100)
-		dat += "<TT><b><i>This microwave is covered in muck. You'll need to wipe it down or clean it out before you can use it again.</i></b></TT>"
-	else
-		playsound(loc, 'sounds/machines/pda_click.ogg', 50, 1)
-		if (!LAZYLEN(ingredients))
-			dat += "<B>The microwave is empty.</B>"
+/obj/machinery/microwave/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		if(!broken && !operating && dirtiness != 100)
+			playsound(loc, 'sounds/machines/pda_click.ogg', 50, 1)
+		ui = new(user, src, "Microwave", "Microwave Controls")
+		ui.open()
+
+/obj/machinery/microwave/tgui_data(mob/user)
+	var/list/data = list()
+	data["broken"] = broken > 0
+	data["operating"] = operating
+	data["dirty"] = dirtiness == 100
+	var/list/items_counts = list()
+	var/list/items_measures = list()
+	var/list/items_measures_p = list()
+	for (var/obj/O in InsertedContents())
+		var/display_name = O.name
+		if (istype(O, /obj/item/reagent_containers/food/snacks/egg))
+			items_measures[display_name] = "egg"
+			items_measures_p[display_name] = "eggs"
+		if (istype(O, /obj/item/reagent_containers/food/snacks/tofu))
+			items_measures[display_name] = "tofu chunk"
+			items_measures_p[display_name] = "tofu chunks"
+		if (istype(O, /obj/item/reagent_containers/food/snacks/meat)) //any meat
+			items_measures[display_name] = "slab of meat"
+			items_measures_p[display_name] = "slabs of meat"
+		if (istype(O, /obj/item/reagent_containers/food/snacks/fish))
+			items_measures[display_name] = "fillet of fish"
+			items_measures_p[display_name] = "fillets of fish"
+		items_counts[display_name]++
+	var/list/ingredient_list = list()
+	for (var/O in items_counts)
+		var/N = items_counts[O]
+		var/unit
+		if (!(O in items_measures))
+			unit = "[lowertext(O)]\s"
+		else if (N == 1)
+			unit = items_measures[O]
 		else
-			dat += "<b>Ingredients:</b><br>"
-			var/list/items_counts = new
-			var/list/items_measures = new
-			var/list/items_measures_p = new
-			for (var/obj/O in InsertedContents())
-				var/display_name = O.name
-				if (istype(O,/obj/item/reagent_containers/food/snacks/egg))
-					items_measures[display_name] = "egg"
-					items_measures_p[display_name] = "eggs"
-				if (istype(O,/obj/item/reagent_containers/food/snacks/tofu))
-					items_measures[display_name] = "tofu chunk"
-					items_measures_p[display_name] = "tofu chunks"
-				if (istype(O,/obj/item/reagent_containers/food/snacks/meat)) //any meat
-					items_measures[display_name] = "slab of meat"
-					items_measures_p[display_name] = "slabs of meat"
-				if (istype(O,/obj/item/reagent_containers/food/snacks/fish))
-					items_measures[display_name] = "fillet of fish"
-					items_measures_p[display_name] = "fillets of fish"
-				items_counts[display_name]++
-			for (var/O in items_counts)
-				var/N = items_counts[O]
-				if (!(O in items_measures))
-					dat += "<B>[capitalize(O)]:</B> [N] [lowertext(O)]\s"
-				else
-					if (N==1)
-						dat += "<B>[capitalize(O)]:</B> [N] [items_measures[O]]"
-					else
-						dat += "<B>[capitalize(O)]:</B> [N] [items_measures_p[O]]"
+			unit = items_measures_p[O]
+		ingredient_list += list(list("name" = capitalize(O), "count" = N, "unit" = unit))
+	data["ingredients"] = ingredient_list
+	return data
 
-		dat += "<HR><A href='byond://?src=\ref[src];action=cook'>Turn on!</a><br><A href='byond://?src=\ref[src];action=dispose'>Eject ingredients!</a>"
-
-	var/datum/browser/popup = new(user, "microwave", "Microwave Controls")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "microwave")
+/obj/machinery/microwave/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(operating)
+		return TRUE
+	switch(action)
+		if ("cook")
+			playsound(loc, 'sounds/machines/quiet_beep.ogg', 50, 1)
+			cook()
+			return TRUE
+		if ("dispose")
+			dispose()
+			return TRUE
+	return FALSE
 
 
 
@@ -318,18 +328,18 @@
 /obj/machinery/microwave/proc/start()
 	visible_message(SPAN_NOTICE("The microwave turns on."), SPAN_NOTICE("You hear a microwave."))
 	operating = TRUE
-	updateUsrDialog()
+	SStgui.update_uis(src)
 	update_icon()
 
 /obj/machinery/microwave/proc/abort()
 	operating = FALSE // Turn it off again aferwards
-	updateUsrDialog()
+	SStgui.update_uis(src)
 	update_icon()
 
 /obj/machinery/microwave/proc/stop()
 	playsound(loc, 'sounds/machines/ding.ogg', 50, 1)
 	operating = FALSE // Turn it off again aferwards
-	updateUsrDialog()
+	SStgui.update_uis(src)
 	update_icon()
 
 /obj/machinery/microwave/proc/dispose()
@@ -341,7 +351,7 @@
 		disposed = TRUE
 	if (disposed)
 		to_chat(usr, SPAN_NOTICE("You dispose of the microwave contents."))
-		updateUsrDialog()
+		SStgui.update_uis(src)
 
 /obj/machinery/microwave/proc/muck_start()
 	playsound(loc, 'sounds/effects/splat.ogg', 50, 1) // Play a splat sound
@@ -353,7 +363,7 @@
 	dirtiness = 100 // Make it dirty so it can't be used util cleaned
 	obj_flags = null //So you can't add condiments
 	operating = FALSE // Turn it off again aferwards
-	updateUsrDialog()
+	SStgui.update_uis(src)
 	update_icon()
 
 /obj/machinery/microwave/proc/broke()
@@ -364,7 +374,7 @@
 		visible_message(SPAN_WARNING("\The [src] breaks!")) //Let them know they're stupid
 		broken = 2 // Make it broken so it can't be used util fixed
 		obj_flags = null //So you can't add condiments
-		updateUsrDialog()
+		SStgui.update_uis(src)
 	else
 		visible_message(SPAN_WARNING("\The [src] sputters and grinds to a halt!"))
 	operating = FALSE // Turn it off again aferwards
@@ -400,20 +410,3 @@
 	ffuu.reagents.add_reagent(/datum/reagent/carbon, amount)
 	ffuu.reagents.add_reagent(/datum/reagent/toxin, amount / 10)
 	return ffuu
-
-/obj/machinery/microwave/Topic(href, href_list)
-	if(..())
-		return TRUE
-
-	usr.set_machine(src)
-	if(operating)
-		updateUsrDialog()
-		return
-
-	switch(href_list["action"])
-		if ("cook")
-			playsound(loc, 'sounds/machines/quiet_beep.ogg', 50, 1)
-			cook()
-
-		if ("dispose")
-			dispose()

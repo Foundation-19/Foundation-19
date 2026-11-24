@@ -28,37 +28,27 @@
 	return GLOB.physical_state
 
 /obj/machinery/artifact_analyser/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/artifact_analyser/interact(mob/user)
-	var/dat = "<B>Anomalous material analyser</B><BR>"
-	dat += "<HR>"
+/obj/machinery/artifact_analyser/tgui_interact(mob/user, datum/tgui/ui)
 	if(!owned_scanner)
 		reconnect_scanner()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ArtifactAnalyser", name)
+		ui.open()
 
-	if(!owned_scanner)
-		dat += "<b><font color=red>Unable to locate analysis pad.</font></b><br>"
-	else if(scan_in_progress)
-		dat += "Please wait. Analysis in progress.<br>"
-		dat += "<a href='byond://?src=\ref[src];halt_scan=1'>Halt scanning.</a><br>"
-	else
-		dat += "Scanner is ready.<br>"
-		dat += "<a href='byond://?src=\ref[src];begin_scan=1'>Begin scanning.</a><br>"
-
-	dat += "<br>"
-	dat += "<hr>"
-	dat += "<a href='byond://?src=\ref[src];close=1'>Close</a>"
-	var/datum/browser/popup = new(user, "artanalyser", "Artifact Analyzer", 450, 500)
-	popup.set_content(dat)
-	popup.open()
-	user.set_machine(src)
-	onclose(user, "artanalyser")
+/obj/machinery/artifact_analyser/tgui_data(mob/user)
+	var/list/data = list()
+	data["has_scanner"] = owned_scanner ? 1 : 0
+	data["scan_in_progress"] = scan_in_progress
+	return data
 
 /obj/machinery/artifact_analyser/Process()
 	if(scan_in_progress && world.time > scan_completion_time)
 		scan_in_progress = 0
-		updateDialog()
+		SStgui.update_uis(src)
 
 		var/results = ""
 		if(!owned_scanner)
@@ -85,47 +75,44 @@
 			A.being_used = 0
 			scanned_object = null
 
-/obj/machinery/artifact_analyser/OnTopic(user, href_list)
-	if(href_list["begin_scan"])
-		if(!owned_scanner)
-			reconnect_scanner()
-		if(owned_scanner)
-			var/artifact_in_use = 0
-			for(var/obj/O in owned_scanner.loc)
-				if(O == owned_scanner)
-					continue
-				if(O.invisibility)
-					continue
-				if(istype(O, /obj/machinery/artifact))
-					var/obj/machinery/artifact/A = O
-					if(A.being_used)
-						artifact_in_use = 1
+/obj/machinery/artifact_analyser/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("begin_scan")
+			if(!owned_scanner)
+				reconnect_scanner()
+			if(owned_scanner)
+				var/artifact_in_use = 0
+				for(var/obj/O in owned_scanner.loc)
+					if(O == owned_scanner)
+						continue
+					if(O.invisibility)
+						continue
+					if(istype(O, /obj/machinery/artifact))
+						var/obj/machinery/artifact/A = O
+						if(A.being_used)
+							artifact_in_use = 1
+						else
+							A.anchored = TRUE
+							A.being_used = 1
+
+					if(artifact_in_use)
+						src.visible_message("<b>[name]</b> states, \"Cannot scan. Too much interference.\"")
 					else
-						A.anchored = TRUE
-						A.being_used = 1
-
-				if(artifact_in_use)
-					src.visible_message("<b>[name]</b> states, \"Cannot scan. Too much interference.\"")
-				else
-					scanned_object = O
-					scan_in_progress = 1
-					scan_completion_time = world.time + scan_duration
-					src.visible_message("<b>[name]</b> states, \"Scanning begun.\"")
-				break
-			if(!scanned_object)
-				src.visible_message("<b>[name]</b> states, \"Unable to isolate scan target.\"")
-		. = TOPIC_REFRESH
-	else if(href_list["halt_scan"])
-		scan_in_progress = 0
-		src.visible_message("<b>[name]</b> states, \"Scanning halted.\"")
-		. = TOPIC_REFRESH
-
-	else if(href_list["close"])
-		close_browser(user, "window=artanalyser")
-		return TOPIC_HANDLED
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
+						scanned_object = O
+						scan_in_progress = 1
+						scan_completion_time = world.time + scan_duration
+						src.visible_message("<b>[name]</b> states, \"Scanning begun.\"")
+					break
+				if(!scanned_object)
+					src.visible_message("<b>[name]</b> states, \"Unable to isolate scan target.\"")
+			return TRUE
+		if("halt_scan")
+			scan_in_progress = 0
+			src.visible_message("<b>[name]</b> states, \"Scanning halted.\"")
+			return TRUE
+	return FALSE
 
 //hardcoded responses, oh well
 /obj/machinery/artifact_analyser/proc/get_scan_info(obj/scanned_obj)

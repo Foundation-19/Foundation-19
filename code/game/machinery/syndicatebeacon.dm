@@ -18,58 +18,63 @@
 	var/charges = 1
 
 /obj/machinery/syndicate_beacon/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/syndicate_beacon/interact(mob/user)
+/obj/machinery/syndicate_beacon/tgui_interact(mob/user, datum/tgui/ui)
 	user.set_machine(src)
-	var/dat = "<font color=#005500><i>Scanning [pick("retina pattern", "voice print", "fingerprints", "dna sequence")]...<br>Identity confirmed,<br></i></font>"
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SyndicateBeacon", "Syndicate Beacon")
+		ui.open()
+
+/obj/machinery/syndicate_beacon/tgui_data(mob/user)
+	var/list/data = list()
+	data["temptext"] = temptext
+	data["charges"] = charges
+	data["selfdestructing"] = selfdestructing ? 1 : 0
+	data["name"] = user.name
+	data["scan_phrase"] = pick("retina pattern", "voice print", "fingerprints", "dna sequence")
+	data["status"] = "none"
 	if(istype(user, /mob/living/carbon/human) || istype(user, /mob/living/silicon/ai))
 		if(is_special_character(user))
-			dat += "<font color=#07700><i>Operative record found. Greetings, Agent [user.name].</i></font><br>"
+			data["status"] = "special"
 		else if(charges < 1)
-			dat += "<TT>Connection severed.</TT><BR>"
+			data["status"] = "severed"
 		else
+			data["status"] = "unknown"
 			var/honorific = "Mr."
 			if(user.gender == FEMALE)
 				honorific = "Ms."
-			dat += "<font color=red><i>Identity not found in operative database. What can the Syndicate do for you today, [honorific] [user.name]?</i></font><br>"
+			data["honorific"] = honorific
 			if(!selfdestructing)
-				dat += "<br><br><A href='byond://?src=\ref[src];betraitor=1;traitormob=\ref[user]'>\"[pick("I want to switch teams.", "I want to work for you.", "Let me join you.", "I can be of use to you.", "You want me working for you, and here's why...", "Give me an objective.", "How's the 401k over at the Syndicate?")]\"</A><BR>"
-	dat += temptext
-	var/datum/browser/popup = new(user, "syndbeacon", "Syndicate Beacon")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "syndbeacon")
+				data["phrase"] = pick("I want to switch teams.", "I want to work for you.", "Let me join you.", "I can be of use to you.", "You want me working for you, and here's why...", "Give me an objective.", "How's the 401k over at the Syndicate?")
+	return data
 
-/obj/machinery/syndicate_beacon/Topic(href, href_list)
+/obj/machinery/syndicate_beacon/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return
-	if(href_list["betraitor"])
-		if(charges < 1)
-			src.updateUsrDialog()
-			return
-		var/mob/M = locate(href_list["traitormob"])
-		if(M.mind.special_role || jobban_isbanned(M, MODE_TRAITOR))
-			temptext = "<i>We have no need for you at this time. Have a pleasant day.</i><br>"
-			src.updateUsrDialog()
-			return
-		charges -= 1
-		if(prob(50))
-			temptext = "<font color=red><i><b>Double-crosser. You planned to betray us from the start. Allow us to repay the favor in kind.</b></i></font>"
-			src.updateUsrDialog()
-			spawn(rand(50,200)) selfdestruct()
-			return
-		if(istype(M, /mob/living/carbon/human))
-			var/mob/living/carbon/human/N = M
-			to_chat(M, "<B>You have joined the ranks of the Syndicate and become a traitor to the station!</B>")
-			GLOB.traitors.add_antagonist(N.mind)
-			GLOB.traitors.equip(N)
-			log_and_message_staff("has accepted a traitor objective from a syndicate beacon.", M)
-
-
-	src.updateUsrDialog()
-	return
+		return TRUE
+	switch(action)
+		if("betraitor")
+			if(charges < 1)
+				return TRUE
+			var/mob/M = usr
+			if(M.mind.special_role || jobban_isbanned(M, MODE_TRAITOR))
+				temptext = "<i>We have no need for you at this time. Have a pleasant day.</i><br>"
+				return TRUE
+			charges -= 1
+			if(prob(50))
+				temptext = "<font color=red><i><b>Double-crosser. You planned to betray us from the start. Allow us to repay the favor in kind.</b></i></font>"
+				spawn(rand(50,200)) selfdestruct()
+				return TRUE
+			if(istype(M, /mob/living/carbon/human))
+				var/mob/living/carbon/human/N = M
+				to_chat(M, "<B>You have joined the ranks of the Syndicate and become a traitor to the station!</B>")
+				GLOB.traitors.add_antagonist(N.mind)
+				GLOB.traitors.equip(N)
+				log_and_message_staff("has accepted a traitor objective from a syndicate beacon.", M)
+			return TRUE
+	return FALSE
 
 
 /obj/machinery/syndicate_beacon/proc/selfdestruct()

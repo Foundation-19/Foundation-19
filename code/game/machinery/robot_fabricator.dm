@@ -26,50 +26,36 @@
 
 					to_chat(user, "You insert [count] metal sheet\s into the fabricator.")
 					cut_overlay("fab-load-metal")
-					updateDialog()
+					SStgui.update_uis(src)
 		else
 			to_chat(user, "The robot part maker is full. Please remove metal from the robot part maker in order to insert more.")
 
 /obj/machinery/robotic_fabricator/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/robotic_fabricator/interact(mob/user)
-	var/dat
+/obj/machinery/robotic_fabricator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "RobotFabricator", "Robotic Fabricator Control Panel")
+		ui.open()
 
-	if (src.operating)
-		dat = {"
-<TT>Building [src.being_built.name].<BR>
-Please wait until completion...</TT><BR>
-<BR>
-"}
-	else
-		dat = {"
-<B>Metal Amount:</B> [min(150000, src.metal_amount)] cm<sup>3</sup> (MAX: 150,000)<BR><HR>
-<A href='byond://?src=\ref[src];make=1'>Left Arm (25,000 cc metal)</a><BR>
-<A href='byond://?src=\ref[src];make=2'>Right Arm (25,000 cc metal)</a><BR>
-<A href='byond://?src=\ref[src];make=3'>Left Leg (25,000 cc metal)</a><BR>
-<A href='byond://?src=\ref[src];make=4'>Right Leg (25,000 cc metal)</a><BR>
-<A href='byond://?src=\ref[src];make=5'>Chest (50,000 cc metal)</a><BR>
-<A href='byond://?src=\ref[src];make=6'>Head (50,000 cc metal)</a><BR>
-<A href='byond://?src=\ref[src];make=7'>Robot Frame (75,000 cc metal)</a>
-"}
+/obj/machinery/robotic_fabricator/tgui_data(mob/user)
+	var/list/data = list()
+	data["operating"] = operating
+	data["metal_amount"] = min(150000, metal_amount)
+	if(operating && being_built)
+		data["building"] = being_built.name
+	return data
 
-	var/datum/browser/popup = new(user, "robot_fabricator", "Robotic Fabricator Control Panel")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "robot_fabricator")
-	return
-
-/obj/machinery/robotic_fabricator/Topic(href, href_list)
-	if (..())
-		return
-
-	usr.set_machine(src)
-
-	if (href_list["make"])
-		if (!src.operating)
-			var/part_type = text2num(href_list["make"])
+/obj/machinery/robotic_fabricator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("make")
+			if(src.operating)
+				return TRUE
+			var/part_type = text2num(params["part"])
 
 			var/build_type = null
 			var/build_time = 200
@@ -122,13 +108,10 @@ Please wait until completion...</TT><BR>
 					src.being_built = new building(src)
 
 					src.add_overlay("fab-active")
-					src.updateUsrDialog()
+					SStgui.update_uis(src)
 					addtimer(CALLBACK(src, PROC_REF(done_building)), build_time)
-		return
-
-	for (var/mob/M in viewers(1, src))
-		if (M.client && M.machine == src)
-			src.attack_hand(M)
+			return TRUE
+	return FALSE
 
 /obj/machinery/robotic_fabricator/proc/done_building()
 	if (!isnull(being_built))
@@ -137,3 +120,4 @@ Please wait until completion...</TT><BR>
 	update_use_power(POWER_USE_IDLE)
 	cut_overlay("fab-active")
 	operating = FALSE
+	SStgui.update_uis(src)

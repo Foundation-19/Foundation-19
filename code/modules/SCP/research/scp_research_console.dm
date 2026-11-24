@@ -61,6 +61,25 @@
 				var/known = get_scp216_known_codes(r216 ? r216.research_level : 0)
 				if(known)
 					data["known_codes"] = known
+	var/list/director_data = list()
+	if(GLOB.scp_research_director)
+		var/datum/scp_research_director/D = GLOB.scp_research_director
+		director_data["pool"] = D.site_research_points
+		director_data["total_earned"] = D.total_points_earned
+		director_data["safety_rating"] = D.safety_rating
+		director_data["research_multiplier"] = round((D.tech_tree.get_research_multiplier() - 1) * 100)
+		director_data["sanity_resist"] = round(D.tech_tree.get_sanity_resist() * 100)
+		director_data["containment_floor"] = D.tech_tree.get_containment_floor()
+		director_data["tech_nodes"] = D.tech_tree.get_all_nodes_data()
+		director_data["projects"] = D.get_projects_data()
+		director_data["teams"] = D.get_teams_data()
+		director_data["research_log"] = D.research_log
+		director_data["achievements"] = D.achievements
+		var/list/catalog = list()
+		for(var/typepath in D.tech_tree.get_catalog_items())
+			catalog += list(list("type" = "[typepath]", "name" = D.tech_tree.get_catalog_items()[typepath]))
+		director_data["catalog"] = catalog
+	data["director"] = director_data
 	return data
 
 /obj/machinery/scp_research_console/tgui_act(act, params, mob/user)
@@ -193,6 +212,102 @@
 			selected_scp = null
 			current_tab = "overview"
 			return TRUE
+		// ---- Site research overhaul actions ----
+		if("PRG_unlock_node")
+			if(!allowed(user))
+				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required to unlock research."))
+				return
+			GLOB.scp_research_director.try_unlock_node(params["node_id"], user)
+			return TRUE
+		if("PRG_create_project")
+			if(!allowed(user))
+				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
+				return
+			var/title = tgui_input_text(user, "Project title:", "New Research Project", "SCP Study", MAX_NAME_LEN)
+			if(!title)
+				return
+			var/required = input(user, "Required research points (50-1000):", "New Research Project", 200) as null|num
+			if(isnull(required))
+				return
+			required = clamp(round(required), 50, 1000)
+			var/list/targets = list()
+			if(selected_scp)
+				targets += selected_scp
+			var/desc = tgui_input_text(user, "Description (optional):", "New Research Project", "", 200)
+			var/datum/scp_research_project/project = GLOB.scp_research_director.create_project(title, desc || "", targets, required, user)
+			if(project)
+				to_chat(user, SPAN_NOTICE("Research project '[title]' filed for approval ([required] points, target: [targets.len ? "SCP-[selected_scp]" : "any SCP"])."))
+			return TRUE
+		if("PRG_approve_project")
+			if(!allowed(user))
+				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
+				return
+			var/datum/scp_research_project/project = find_project_by_id(params["project_id"])
+			if(project && GLOB.scp_research_director.approve_project(project, user))
+				to_chat(user, SPAN_NOTICE("Project '[project.title]' approved. Staff may now contribute research points."))
+			return TRUE
+		if("PRG_revoke_project")
+			if(!allowed(user))
+				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
+				return
+			var/datum/scp_research_project/project = find_project_by_id(params["project_id"])
+			if(project && GLOB.scp_research_director.revoke_project(project, user))
+				to_chat(user, SPAN_NOTICE("Project '[project.title]' revoked."))
+			return TRUE
+		if("PRG_create_team")
+			if(!allowed(user))
+				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
+				return
+			var/datum/scp_research_team/team = GLOB.scp_research_director.create_team(null, user)
+			if(team)
+				to_chat(user, SPAN_NOTICE("Formed [team.name] with you as leader."))
+			return TRUE
+		if("PRG_request_join")
+			var/team_id = params["team_id"]
+			for(var/datum/scp_research_team/team in GLOB.scp_research_director.teams)
+				if(team.id == team_id)
+					if(GLOB.scp_research_director.request_team_join(team, user))
+						to_chat(user, SPAN_NOTICE("Join request sent to [team.name]."))
+					return TRUE
+			return TRUE
+		if("PRG_approve_join")
+			var/team_id = params["team_id"]
+			var/ckey_name = params["ckey"]
+			for(var/datum/scp_research_team/team in GLOB.scp_research_director.teams)
+				if(team.id == team_id)
+					GLOB.scp_research_director.approve_join(team, ckey_name, user)
+					return TRUE
+			return TRUE
+		if("PRG_deny_join")
+			var/team_id = params["team_id"]
+			var/ckey_name = params["ckey"]
+			for(var/datum/scp_research_team/team in GLOB.scp_research_director.teams)
+				if(team.id == team_id)
+					GLOB.scp_research_director.deny_join(team, ckey_name)
+					return TRUE
+			return TRUE
+		if("PRG_fabricate_catalog")
+			if(!allowed(user))
+				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
+				return
+			var/type_path = text2path(params["type"])
+			if(!type_path)
+				return
+			var/catalog_items = GLOB.scp_research_director.tech_tree.get_catalog_items()
+			if(!(type_path in catalog_items))
+				to_chat(user, SPAN_WARNING("That item is not unlocked in the research catalog."))
+				return
+			new type_path(get_turf(src))
+			to_chat(user, SPAN_NOTICE("[catalog_items[type_path]] fabricated at the console."))
+			log_and_message_staff("[key_name(user)] fabricated [catalog_items[type_path]] (research catalog).")
+			return TRUE
+
+/obj/machinery/scp_research_console/proc/find_project_by_id(project_id)
+	var/wanted = text2num(project_id)
+	for(var/datum/scp_research_project/project in GLOB.scp_research_director.projects)
+		if(project.id == wanted)
+			return project
+	return null
 
 /obj/machinery/scp_research_console/on_update_icon()
 	if(stat & BROKEN)

@@ -124,61 +124,56 @@
 	Interact(user)
 
 /mob/living/bot/proc/Interact(mob/user)
+	tgui_interact(user)
+
+/mob/living/bot/tgui_interact(mob/user, datum/tgui/ui)
 	add_fingerprint(user)
-	var/dat
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BotControl", "[src] controls")
+		ui.open()
 
-	var/curText = GetInteractTitle()
-	if(curText)
-		dat += curText
-		dat += "<hr>"
+/mob/living/bot/tgui_data(mob/user)
+	var/list/data = list()
+	data["title"] = GetInteractTitle()
+	data["status"] = get_status_data(user)
+	data["panel"] = (CanAccessPanel(user)) ? get_panel_data(user) : list("locked" = TRUE)
+	data["maintenance"] = (CanAccessMaintenance(user)) ? get_maintenance_data(user) : list("locked" = TRUE)
+	data["on"] = on
+	data["locked"] = locked
+	data["open"] = open
+	return data
 
-	curText = GetInteractStatus()
-	if(curText)
-		dat += curText
-		dat += "<hr>"
-
-	curText = (CanAccessPanel(user)) ? GetInteractPanel() : "The access panel is locked."
-	if(curText)
-		dat += curText
-		dat += "<hr>"
-
-	curText = (CanAccessMaintenance(user)) ? GetInteractMaintenance() : "The maintenance panel is locked."
-	if(curText)
-		dat += curText
-
-	var/datum/browser/popup = new(user, "botpanel", "[src] controls")
-	popup.set_content(dat)
-	popup.open()
-
-/mob/living/bot/DefaultTopicState()
-	return GLOB.default_state
-
-/mob/living/bot/OnTopic(mob/user, href_list)
-	if(href_list["command"])
-		ProcessCommand(user, href_list["command"], href_list)
-	Interact(user)
+/mob/living/bot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("toggle")
+			if(CanToggle(usr))
+				if(on)
+					turn_off()
+				else
+					turn_on()
+			return TRUE
+	return FALSE
 
 /mob/living/bot/proc/GetInteractTitle()
 	return
 
-/mob/living/bot/proc/GetInteractStatus()
-	. = "Status: <A href='byond://?src=\ref[src];command=toggle'>[on ? "On" : "Off"]</A>"
-	. += "<BR>Behaviour controls are [locked ? "locked" : "unlocked"]"
-	. += "<BR>Maintenance panel is [open ? "opened" : "closed"]"
-
-/mob/living/bot/proc/GetInteractPanel()
+/mob/living/bot/proc/get_status_data(mob/user)
+	. = list()
+	.["info"] = list(
+		list("label" = "Status", "value" = on ? "On" : "Off"),
+		list("label" = "Behaviour controls", "value" = locked ? "locked" : "unlocked"),
+		list("label" = "Maintenance panel", "value" = open ? "opened" : "closed"),
+	)
 	return
 
-/mob/living/bot/proc/GetInteractMaintenance()
-	return
+/mob/living/bot/proc/get_panel_data(mob/user)
+	return list()
 
-/mob/living/bot/proc/ProcessCommand(mob/user, command, href_list)
-	if(command == "toggle" && CanToggle(user))
-		if(on)
-			turn_off()
-		else
-			turn_on()
-	return
+/mob/living/bot/proc/get_maintenance_data(mob/user)
+	return list()
 
 /mob/living/bot/proc/CanToggle(mob/user)
 	return (!RequiresAccessToToggle || access_scanner.allowed(user) || issilicon(user))

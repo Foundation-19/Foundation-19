@@ -7,6 +7,8 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 	var/obj/effect/overmap/visitable/ship/linked
 	var/list/viewers // Weakrefs to mobs in direct-view mode.
 	var/extra_view = 0 // how much the view is increased by when the mob is in overmap mode.
+	var/reconnect_flavor = ""
+	var/datum/ship_reconnect/reconnect_dialog
 
 // A late init operation called in SSshuttle, used to attach the thing to the right ship.
 /obj/machinery/computer/ship/proc/attempt_hook_up(obj/effect/overmap/visitable/ship/sector)
@@ -30,9 +32,71 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 			return
 
 /obj/machinery/computer/ship/proc/display_reconnect_dialog(mob/user, flavor)
-	var/datum/browser/popup = new (user, "[src]", "[src]")
-	popup.set_content("<center><strong><font color = 'red'>Error</strong></font><br>Unable to connect to [flavor].<br><a href='byond://?src=\ref[src];sync=1'>Reconnect</a></center>")
-	popup.open()
+	reconnect_flavor = flavor
+	if(type == /obj/machinery/computer/ship)
+		tgui_interact(user)
+		return
+	var/datum/ship_reconnect/reconnect = get_reconnect_dialog()
+	reconnect.flavor = flavor
+	reconnect.tgui_interact(user)
+
+/obj/machinery/computer/ship/proc/get_reconnect_dialog()
+	if(!reconnect_dialog)
+		reconnect_dialog = new(src)
+	return reconnect_dialog
+
+/obj/machinery/computer/ship/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ShipReconnect", "Connection Error")
+		ui.open()
+
+/obj/machinery/computer/ship/tgui_data(mob/user)
+	var/list/data = list()
+	data["flavor"] = reconnect_flavor
+	return data
+
+/obj/machinery/computer/ship/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(action == "sync")
+		sync_linked()
+		SStgui.close_uis(src)
+		return TRUE
+	return FALSE
+
+/datum/ship_reconnect
+	var/obj/machinery/computer/ship/ship_ref
+	var/flavor = "the vessel"
+
+/datum/ship_reconnect/New(obj/machinery/computer/ship/ship)
+	. = ..()
+	ship_ref = ship
+
+/datum/ship_reconnect/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ShipReconnect", "Connection Error")
+		ui.open()
+
+/datum/ship_reconnect/tgui_data(mob/user)
+	var/list/data = list()
+	data["flavor"] = flavor
+	return data
+
+/datum/ship_reconnect/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(action == "sync")
+		var/obj/machinery/computer/ship/ship = ship_ref
+		if(!ship)
+			return TRUE
+		ship.sync_linked()
+		SStgui.close_uis(src)
+		if(ship.linked)
+			ship.tgui_interact(usr)
+		return TRUE
+	return FALSE
 
 /obj/machinery/computer/ship/interface_interact(mob/user)
 	ui_interact(user)

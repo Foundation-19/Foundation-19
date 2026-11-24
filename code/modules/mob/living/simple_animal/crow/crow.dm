@@ -49,77 +49,80 @@
 	return access_card
 
 /mob/living/simple_animal/crow/show_inv(mob/user)
+	tgui_interact(user)
+
+/mob/living/simple_animal/crow/tgui_interact(mob/user, datum/tgui/ui)
 	if(user.incapacitated())
 		return
-	var/list/dat = list()
-	if(access_card)
-		dat += "<b>ID:</b> [access_card] (<a href='byond://?src=\ref[src];remove_inv=access cuff'>Remove</a>)"
-	else
-		dat += "<b>ID:</b> <a href='byond://?src=\ref[src];add_inv=access cuff'>Nothing</a>"
-	if(messenger_bag)
-		dat += "<b>Back:</b> [messenger_bag] (<a href='byond://?src=\ref[src];remove_inv=back'>Remove</a>)"
-	else
-		dat += "<b>Back:</b> <a href='byond://?src=\ref[src];add_inv=back'>Nothing</a>"
-	var/datum/browser/popup = new(user, "[name]", "Inventory of \the [name]", 350, 150, src)
-	popup.set_content(jointext(dat, "<br>"))
-	popup.open()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CrowPanel", "Inventory of \the [name]")
+		ui.open()
+
+/mob/living/simple_animal/crow/tgui_data(mob/user)
+	var/list/data = list()
+	data["access_card"] = access_card ? access_card.name : null
+	data["messenger_bag"] = messenger_bag ? messenger_bag.name : null
+	return data
+
+/mob/living/simple_animal/crow/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(!ishuman(usr))
+		return TRUE
+	switch(action)
+		if("remove_inv")
+			var/obj/item/removed
+			switch(params["slot"])
+				if("access cuff")
+					removed = access_card
+					access_card = null
+				if("back")
+					removed = messenger_bag
+					messenger_bag = null
+			if(removed)
+				removed.dropInto(loc)
+				usr.put_in_hands(removed)
+				visible_message(SPAN_NOTICE("\The [usr] removes \the [removed] from \the [src]'s [params["slot"]]."))
+				update_icon()
+			else
+				to_chat(usr, SPAN_WARNING("There is nothing to remove from \the [src]'s [params["slot"]]."))
+			return TRUE
+		if("add_inv")
+			var/mob/living/carbon/human/user = usr
+			var/obj/item/equipping = user.get_active_hand()
+			if(!equipping)
+				to_chat(user, SPAN_WARNING("You have nothing in your hand to put on \the [src]'s [params["slot"]]."))
+				return TRUE
+			var/obj/item/equipped
+			var/checktype
+			switch(params["slot"])
+				if("access cuff")
+					equipped = access_card
+					checktype = /obj/item/card/id
+				if("back")
+					equipped = messenger_bag
+					checktype = /obj/item/storage/messenger
+			if(equipped)
+				to_chat(user, SPAN_WARNING("There is already something worn on \the [src]'s [params["slot"]]."))
+				return TRUE
+			if(!istype(equipping, checktype))
+				to_chat(user, SPAN_WARNING("\The [equipping] won't fit on \the [src]'s [params["slot"]]."))
+				return TRUE
+			switch(params["slot"])
+				if("access cuff")
+					access_card = equipping
+				if("back")
+					messenger_bag = equipping
+			if(!user.unEquip(equipping, src))
+				return TRUE
+			visible_message(SPAN_NOTICE("\The [user] places \the [equipping] on to \the [src]'s [params["slot"]]."))
+			update_icon()
+			return TRUE
+	return FALSE
 
 /mob/living/simple_animal/crow/DefaultTopicState()
 	return GLOB.physical_state
-
-/mob/living/simple_animal/crow/OnTopic(mob/user, href_list)
-	if(!ishuman(user))
-		return ..()
-	if(href_list["remove_inv"])
-		var/obj/item/removed
-		switch(href_list["remove_inv"])
-			if("access cuff")
-				removed = access_card
-				access_card = null
-			if("back")
-				removed = messenger_bag
-				messenger_bag = null
-		if(removed)
-			removed.dropInto(loc)
-			usr.put_in_hands(removed)
-			visible_message(SPAN_NOTICE("\The [usr] removes \the [removed] from \the [src]'s [href_list["remove_inv"]]."))
-			show_inv(usr)
-			update_icon()
-		else
-			to_chat(user, SPAN_WARNING("There is nothing to remove from \the [src]'s [href_list["remove_inv"]]."))
-		return TOPIC_HANDLED
-	if(href_list["add_inv"])
-		var/obj/item/equipping = user.get_active_hand()
-		if(!equipping)
-			to_chat(user, SPAN_WARNING("You have nothing in your hand to put on \the [src]'s [href_list["add_inv"]]."))
-			return 0
-		var/obj/item/equipped
-		var/checktype
-		switch(href_list["add_inv"])
-			if("access cuff")
-				equipped = access_card
-				checktype = /obj/item/card/id
-			if("back")
-				equipped = messenger_bag
-				checktype = /obj/item/storage/messenger
-		if(equipped)
-			to_chat(user, SPAN_WARNING("There is already something worn on \the [src]'s [href_list["add_inv"]]."))
-			return TOPIC_HANDLED
-		if(!istype(equipping, checktype))
-			to_chat(user, SPAN_WARNING("\The [equipping] won't fit on \the [src]'s [href_list["add_inv"]]."))
-			return TOPIC_HANDLED
-		switch(href_list["add_inv"])
-			if("access cuff")
-				access_card = equipping
-			if("back")
-				messenger_bag = equipping
-		if(!user.unEquip(equipping, src))
-			return TOPIC_HANDLED
-		visible_message(SPAN_NOTICE("\The [user] places \the [equipping] on to \the [src]'s [href_list["add_inv"]]."))
-		update_icon()
-		show_inv(user)
-		return TOPIC_HANDLED
-	return ..()
 
 /mob/living/simple_animal/crow/examine(mob/user)
 	. = ..()

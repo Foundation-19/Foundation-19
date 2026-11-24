@@ -17,6 +17,8 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 	throw_range = 3
 	w_class = ITEM_SIZE_NORMAL
 	var/temp = null
+	/// Currently selected spell in the tgui interface.
+	var/selected_spell = null
 	var/book_flags = 0
 	/// Current owner of the book, none other than them can use it; Can be dispelled to remove that and other locks.
 	var/mob/owner = null
@@ -66,30 +68,126 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 		SetOwner(user)
 		return
 
-	interact(user)
+	tgui_interact(user)
 
 /obj/item/spellbook/examine(mob/user)
 	. = ..()
 	if(LAZYLEN(authors))
 		to_chat(user, SPAN_NOTICE("The book was written by [english_list(authors)]."))
 
-/obj/item/spellbook/interact(mob/living/user)
-	var/dat = null
-	dat += "Your spell power: [user.mind.mana.spell_points].<br>"
-	dat += "Your mana level: [user.mind.mana.mana_level] / [user.mind.mana.mana_level_max].<br>"
-	dat += "Applied categories: <A href='byond://?src=\ref[src];categories=1'>[english_list(spell_categories, "None")].</a><br>"
-	dat += "<hr>"
+/obj/item/spellbook/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Spellbook", "Spell Book")
+		ui.open()
+
+/obj/item/spellbook/tgui_data(mob/user)
+	var/list/data = list()
+	data["spell_points"] = user.mind.mana.spell_points
+	data["mana_level"] = user.mind.mana.mana_level
+	data["mana_level_max"] = user.mind.mana.mana_level_max
+	data["categories"] = english_list(spell_categories, "None")
+	var/list/spell_list = list()
 	for(var/spell_type in allowed_spells)
 		var/datum/spell/S = spell_type
 		var/list/combined_list = GLOB.spells_by_categories[spell_type] & spell_categories
 		if(LAZYLEN(spell_categories) && !LAZYLEN(combined_list))
 			continue
+		spell_list += list(list("name" = initial(S.name), "path" = "[spell_type]"))
+	data["spells"] = spell_list
+	if(selected_spell && ispath(selected_spell, /datum/spell))
+		var/datum/spell/S = selected_spell
+		var/datum/spell/OS = locate(S) in user.mind.learned_spells
+		var/list/selected = list()
+		selected["name"] = initial(S.name)
+		selected["desc"] = initial(S.desc)
+		selected["path"] = "[S]"
+		selected["mana_cost"] = initial(S.mana_cost)
+		selected["categories"] = english_list(GLOB.spells_by_categories[S], "None")
+		selected["needs_clothes"] = (initial(S.spell_flags) & NEEDSCLOTHES) ? TRUE : FALSE
+		selected["no_somatic"] = (initial(S.spell_flags) & NO_SOMATIC) ? TRUE : FALSE
+		if(!istype(OS))
+			selected["learned"] = FALSE
+			selected["purchase_cost"] = initial(S.spell_cost)
+		else
+			selected["learned"] = TRUE
+			var/up_count = 0
+			for(var/up_type in OS.spell_levels)
+				up_count += OS.spell_levels[up_type]
+			selected["used_upgrades"] = up_count
+			selected["max_upgrades"] = OS.level_max[UPGRADE_TOTAL]
+			selected["has_upgrades"] = OS.level_max[UPGRADE_TOTAL] > 0
+			var/list/upgrades = list()
+			for(var/upgrade_type in OS.spell_levels)
+				if(OS.level_max[upgrade_type] <= 0)
+					continue
+				upgrades += list(list(
+					"type" = upgrade_type,
+					"level" = OS.spell_levels[upgrade_type],
+					"max" = OS.level_max[upgrade_type],
+					"can_improve" = OS.CanImprove(upgrade_type),
+					"cost" = OS.upgrade_cost[upgrade_type],
+				))
+			selected["upgrades"] = upgrades
+		data["selected"] = selected
+	return data
 
-		dat += "<A href='byond://?src=\ref[src];spell=[spell_type]'>[initial(S.name)]</a><br>"
-
-	var/datum/browser/popup = new(user, "spellbook", "Spell Book")
-	popup.set_content(dat)
-	popup.open()
+/obj/item/spellbook/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("spell")
+			var/datum/spell/S = text2path(params["path"])
+			if(!ispath(S, /datum/spell))
+				return TRUE
+			if(!(S in allowed_spells))
+				return TRUE
+			selected_spell = S
+			return TRUE
+		if("back")
+			selected_spell = null
+			return TRUE
+		if("purchase")
+			var/path = text2path(params["path"])
+			if(!ispath(path, /datum/spell))
+				return TRUE
+			if(!(path in allowed_spells))
+				return TRUE
+			if(locate(path) in usr.mind.learned_spells)
+				return TRUE
+			SendFeedback(path) //feedback stuff
+			to_chat(usr, AddSpell(usr, path))
+			selected_spell = path
+			return TRUE
+		if("upgrade")
+			var/spell_path = text2path(params["path"])
+			if(!ispath(spell_path, /datum/spell))
+				return TRUE
+			if(!(spell_path in allowed_spells))
+				return TRUE
+			var/upgrade_return = UpgradeSpell(usr, spell_path, params["upgrade_type"])
+			if(istext(upgrade_return))
+				to_chat(usr, upgrade_return)
+			return TRUE
+		if("categories")
+			var/option = "Add"
+			if(LAZYLEN(spell_categories))
+				option = input(usr, "What do you want to do?", "Options") as anything in list("Add", "Remove", "Clear")
+			switch(option)
+				if("Add")
+					var/list/add_list = list("-- None --") + GLOB.spell_categories - spell_categories
+					var/cat = input(usr, "What category do you want to add?", "Add Category") as anything in add_list
+					if(cat && !(cat in spell_categories) && (cat in GLOB.spell_categories))
+						spell_categories |= cat
+				if("Remove")
+					var/list/rem_list = list("-- None --") + spell_categories
+					var/cat = input(usr, "What category do you want to remove?", "Remove Category") as anything in rem_list
+					if(cat && (cat in spell_categories))
+						spell_categories -= cat
+				if("Clear")
+					spell_categories = list()
+			return TRUE
+	return FALSE
 
 /obj/item/spellbook/attackby(obj/item/P, mob/user)
 	. = ..()
@@ -151,64 +249,6 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 
 	return ..()
 
-/obj/item/spellbook/OnTopic(mob/user, href_list)
-	/* Normal interact topics */
-	if(href_list["spell"])
-		var/datum/spell/S = text2path(href_list["spell"])
-		if(!ispath(S, /datum/spell))
-			return TOPIC_NOACTION
-		if(!(S in allowed_spells))
-			return TOPIC_NOACTION
-
-		ShowSpellMenu(user, S)
-		return TOPIC_NOACTION
-
-	else if(href_list["purchase"])
-		var/path = text2path(href_list["purchase"])
-		if(!ispath(path, /datum/spell))
-			return TOPIC_NOACTION
-		if(!(path in allowed_spells))
-			return TOPIC_NOACTION
-
-		// No duplicate spells
-		if(locate(path) in user.mind.learned_spells)
-			return TOPIC_NOACTION
-		SendFeedback(path) //feedback stuff
-		to_chat(user, AddSpell(user, path))
-		ShowSpellMenu(user, path)
-
-	else if(href_list["upgrade"])
-		var/spell_path = text2path(href_list["upgrade"])
-		if(!ispath(spell_path, /datum/spell))
-			return TOPIC_NOACTION
-		if(!(spell_path in allowed_spells))
-			return TOPIC_NOACTION
-		var/upgrade_return = UpgradeSpell(user, spell_path, href_list["upgrade_type"])
-		if(istext(upgrade_return))
-			to_chat(user, upgrade_return)
-		ShowSpellMenu(user, spell_path)
-
-	else if(href_list["categories"])
-		var/option = "Add"
-		if(LAZYLEN(spell_categories))
-			option = input(user, "What do you want to do?", "Options") as anything in list("Add", "Remove", "Clear")
-		switch(option)
-			if("Add")
-				var/list/add_list = list("-- None --") + GLOB.spell_categories - spell_categories
-				var/cat = input(user, "What category do you want to add?", "Add Category") as anything in add_list
-				if(cat && !(cat in spell_categories) && (cat in GLOB.spell_categories))
-					spell_categories |= cat
-			if("Remove")
-				var/list/rem_list = list("-- None --") + spell_categories
-				var/cat = input(user, "What category do you want to remove?", "Remove Category") as anything in rem_list
-				if(cat && (cat in spell_categories))
-					spell_categories -= cat
-			if("Clear")
-				spell_categories = list()
-		. = TOPIC_REFRESH
-
-	interact(user)
-
 // Being hit with any source of dispell releases any locks
 /obj/item/spellbook/Dispell(dispell_strength = DISPELL_WEAK)
 	. = ..()
@@ -222,39 +262,6 @@ GLOBAL_LIST_EMPTY(spells_by_categories)
 	owner = null
 	book_flags &= ~WIZARD_ONLY
 	book_flags &= ~APPRENTICE_ONLY
-
-// Shows a second menu for the specific spell
-/obj/item/spellbook/proc/ShowSpellMenu(mob/living/user, datum/spell/S)
-	var/dat = null
-	var/datum/spell/OS = locate(S) in user.mind.learned_spells
-	if(!istype(OS))
-		dat += "<A href='byond://?src=\ref[src];purchase=[S]'>Purchase ([initial(S.spell_cost)] points)</a><br>"
-	else if(OS.level_max[UPGRADE_TOTAL] > 0)
-		var/up_count = 0
-		for(var/up_type in OS.spell_levels)
-			up_count += OS.spell_levels[up_type]
-		dat += "Maximum amount of upgrades: [up_count]/[OS.level_max[UPGRADE_TOTAL]].<br>"
-		for(var/upgrade_type in OS.spell_levels)
-			if(OS.level_max[upgrade_type] <= 0)
-				continue
-			dat += "Current [upgrade_type] level: [OS.spell_levels[upgrade_type]]/[OS.level_max[upgrade_type]].<br>"
-			if(!OS.CanImprove(upgrade_type))
-				continue
-			dat += "<A href='byond://?src=\ref[src];upgrade=[S]&upgrade_type=[upgrade_type]'>Improve [upgrade_type] ([OS.upgrade_cost[upgrade_type]] points)</a><br>"
-	dat += "<hr>"
-	dat += "[initial(S.name)]<br>"
-	dat += "[initial(S.desc)]<br>"
-	dat += "<hr>"
-	dat += "Mana cost: [initial(S.mana_cost)].<br>"
-	dat += "Categories: [english_list(GLOB.spells_by_categories[S], "None")].<br>"
-	if(initial(S.spell_flags) & NEEDSCLOTHES)
-		dat += "Requires wizard robes to cast."
-	if(initial(S.spell_flags) & NO_SOMATIC)
-		dat += "Can be cast while incapacitated."
-
-	var/datum/browser/popup = new(user, "spellbook_[S]", "Spell Book - [initial(S.name)]")
-	popup.set_content(dat)
-	popup.open()
 
 /obj/item/spellbook/proc/SetOwner(mob/new_owner)
 	if(!istype(new_owner))

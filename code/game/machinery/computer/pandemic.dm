@@ -60,102 +60,71 @@
 	else
 		return ..()
 
-/obj/machinery/computer/pandemic/interface_interact(user)
-	interact(user)
+/obj/machinery/computer/pandemic/interface_interact(mob/user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/pandemic/interact(mob/user)
-	user.set_machine(src)
+/obj/machinery/computer/pandemic/tgui_interact(mob/user, datum/tgui/ui)
 	if(!istype(beaker))
 		to_chat(user, SPAN_WARNING("\The [src] does not have a beaker installed!"))
 		return
-	var/datum/reagent/blood/B = locate() in beaker.reagents.reagent_list
-	var/dat
+	user.set_machine(src)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Pandemic", "Pan.D.E.M.I.C. 2200 console")
+		ui.open()
+
+/obj/machinery/computer/pandemic/tgui_data(mob/user)
+	var/list/data = list()
+	data["has_beaker"] = istype(beaker) ? 1 : 0
+	var/datum/reagent/blood/B = null
+	if(beaker)
+		B = locate() in beaker.reagents.reagent_list
+	data["has_blood"] = B ? 1 : 0
+	data["selected_symptom"] = selected_symptom
 	if(B)
-		var/list/disease_data = GetVirusesData(B)
-		if(LAZYLEN(disease_data))
-			for(var/list/D in disease_data)
-				dat += "<b>Disease #[D["index"]]: [D["name"]]</b><br>"
-				if(D["can_rename"])
-					dat += "<A href='byond://?src=[REF(src)];rename_disease=[D["index"]]'><b>[D["name"]]</b></a><br>"
-				dat += "[D["desc"]]"
-				dat += "Spread: [D["spread"]]<br>"
-				dat += "Cure: [D["cure"]]<br>"
-
-				if(D["is_adv"])
-					// Current stats
-					dat += "<hr>"
-					dat += "- Stealth: [D["stealth"]]<br>"
-					dat += "- Resistance: [D["resistance"]]<br>"
-					dat += "- Stage Speed: [D["stage_speed"]]<br>"
-					dat += "- Transmission: [D["transmission"]]<br>"
-					dat += "<hr>"
-					// Symptoms
-					dat += "Symptoms:<br>"
-					for(var/list/S in D["symptoms"])
-						if(S["name"] == selected_symptom)
-							dat += "<A href='byond://?src=[REF(src)];choose_symptom=none'><b>[S["name"]]</b></a><br>"
-							dat += "[S["desc"]]<br>"
-							dat += "- Level: [S["level"]]<br>"
-							dat += "- Stealth: [S["stealth"]]<br>"
-							dat += "- Resistance: [S["resistance"]]<br>"
-							dat += "- Stage Speed: [S["stage_speed"]]<br>"
-							dat += "- Transmission: [S["transmission"]]<br>"
-							if(LAZYLEN(S["threshold_desc"]))
-								dat += "Thresholds:<br>"
-								for(var/threshold in S["threshold_desc"])
-									dat += "- [threshold]: [S["threshold_desc"][threshold]]<br>"
-						else
-							dat += "<A href='byond://?src=[REF(src)];choose_symptom=[S["name"]]'>[S["name"]]</a><br>"
-				dat += "<hr>"
-		var/list/vaccine_data = GetResistanceData(B)
-		if(LAZYLEN(vaccine_data))
-			dat += "<b>Antibodies detected for the following diseases:</b><br>"
-			for(var/V in vaccine_data)
-				dat += "- <A href='byond://?src=[REF(src)];create_vaccine_bottle=[V["id"]]'>[V["name"]]</a><br>"
-		if(!LAZYLEN(disease_data) && !LAZYLEN(vaccine_data))
-			dat += "<b>Cannot detect any visible diseases or antibodies.</b><br>"
+		data["diseases"] = GetVirusesData(B)
+		data["vaccines"] = GetResistanceData(B)
 	else
-		dat += "<b>The beaker does not contain blood!</b><br>"
-	dat += "<A href='byond://?src=[REF(src)];remove_beacon=1'>Remove beaker</a><br>"
-	var/datum/browser/popup = new(user, "pandemic_computer", "Pan.D.E.M.I.C. 2200 console", 400, 600)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "pandemic_computer")
-	return
+		data["diseases"] = list()
+		data["vaccines"] = list()
+	return data
 
-/obj/machinery/computer/pandemic/OnTopic(href, href_list)
-	if(href_list["choose_symptom"])
-		selected_symptom = href_list["choose_symptom"]
-		updateDialog()
-		return TOPIC_HANDLED
-	if(href_list["rename_disease"])
-		var/id = GetVirusIdByIndex(text2num(href_list["rename_disease"]))
-		var/datum/disease/advance/A = SSdisease.archive_diseases[id]
-		if(!A || !A.mutable)
-			return
-		var/new_name = sanitize(html_encode(input(usr,"Name:","Enter new name","")), 64)
-		if(!new_name)
-			return
-		A.AssignName(new_name)
-		updateDialog()
-		return TOPIC_HANDLED
-	if(href_list["create_vaccine_bottle"])
-		if(vaccine_cooldown > world.time)
-			to_chat(usr, SPAN_WARNING("The vaccine bottle cannot be manufactered yet. Try again later."))
-			return TOPIC_REFRESH
-		var/id = href_list["create_vaccine_bottle"]
-		var/datum/disease/D = SSdisease.archive_diseases[id]
-		var/obj/item/reagent_containers/glass/bottle/B = new(get_turf(src))
-		B.name = "[D.name] vaccine bottle"
-		B.reagents.add_reagent(/datum/reagent/vaccine, 15, list(id))
-		vaccine_cooldown = world.time + 30 SECONDS
-		playsound(src, 'sounds/machines/ping.ogg', 30, TRUE)
-		return TOPIC_HANDLED
-	if(href_list["remove_beacon"])
-		if(Adjacent(usr))
-			EjectBeaker()
-		return TOPIC_HANDLED
+/obj/machinery/computer/pandemic/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("choose_symptom")
+			selected_symptom = params["name"]
+			return TRUE
+		if("rename_disease")
+			var/id = GetVirusIdByIndex(text2num(params["index"]))
+			var/datum/disease/advance/A = SSdisease.archive_diseases[id]
+			if(!A || !A.mutable)
+				return TRUE
+			var/new_name = sanitize(html_encode(input(usr,"Name:","Enter new name","")), 64)
+			if(!new_name)
+				return TRUE
+			A.AssignName(new_name)
+			return TRUE
+		if("create_vaccine_bottle")
+			if(vaccine_cooldown > world.time)
+				to_chat(usr, SPAN_WARNING("The vaccine bottle cannot be manufactered yet. Try again later."))
+				return TRUE
+			var/id = params["id"]
+			var/datum/disease/D = SSdisease.archive_diseases[id]
+			var/obj/item/reagent_containers/glass/bottle/B = new(get_turf(src))
+			B.name = "[D.name] vaccine bottle"
+			B.reagents.add_reagent(/datum/reagent/vaccine, 15, list(id))
+			vaccine_cooldown = world.time + 30 SECONDS
+			playsound(src, 'sounds/machines/ping.ogg', 30, TRUE)
+			return TRUE
+		if("remove_beacon")
+			if(Adjacent(usr))
+				EjectBeaker()
+			return TRUE
+	return FALSE
+
 
 /obj/machinery/computer/pandemic/proc/GetByIndex(thing, index)
 	if(!beaker || !beaker.reagents)

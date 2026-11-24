@@ -163,6 +163,11 @@
 
 // Public entry points used by SCP interactions and events.
 /datum/sanity/proc/on_scp_exposure(designation, severity = 10)
+	// Site tech tree (Cognitive branch) reduces SCP exposure severity.
+	if(GLOB.scp_research_director)
+		severity = round(severity * (1 - GLOB.scp_research_director.tech_tree.get_sanity_resist()), 1)
+		if(severity <= 0)
+			return
 	add_trauma(TRAUMA_SCP_EXPOSURE, severity)
 	hallucination_level = clamp(hallucination_level + severity, 0, 100)
 	adjust_sanity(-severity * scp_exposure_multiplier)

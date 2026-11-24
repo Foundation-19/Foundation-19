@@ -112,16 +112,44 @@
 	last_process_time = world.time
 
 /obj/machinery/replicator/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/replicator/interact(mob/user)
-	var/dat = "The control panel displays an incomprehensible selection of controls, many with unusual markings or text around them.<br>"
-	dat += "<br>"
-	for(var/index=1, index<=construction.len, index++)
-		dat += "<A href='byond://?src=\ref[src];activate=[index]'>\[[construction[index]]\]</a><br>"
+/obj/machinery/replicator/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ArtifactReplicator", name)
+		ui.open()
 
-	show_browser(user, dat, "window=alien_replicator")
+/obj/machinery/replicator/tgui_data(mob/user)
+	var/list/data = list()
+	var/list/entries = list()
+	for(var/index = 1 to construction.len)
+		entries += list(list("index" = index, "name" = "[construction[index]]"))
+	data["construction"] = entries
+	return data
+
+/obj/machinery/replicator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("activate")
+			var/index = text2num(params["index"])
+			if(index > 0 && index <= construction.len)
+				if(stored_materials.len > spawning_types.len)
+					if(spawning_types.len)
+						src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] a [pick("light","dial","display","meter","pad")] on [src]'s front [pick("blinks","flashes")] [pick("red","yellow","blue","orange","purple","green","white")]."))
+					else
+						src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src]'s front compartment slides shut."))
+
+					spawning_types.Add(construction[construction[index]])
+					spawn_progress_time = 0
+					update_use_power(POWER_USE_ACTIVE)
+					icon_state = "borgcharger1(old)"
+				else
+					src.visible_message(fail_message)
+			return TRUE
+	return FALSE
 
 /obj/machinery/replicator/attackby(obj/item/W as obj, mob/living/user as mob)
 	if(!user.unEquip(W, src))
@@ -129,20 +157,3 @@
 	stored_materials.Add(W)
 	src.visible_message(SPAN_NOTICE("\The [user] inserts \the [W] into \the [src]."))
 
-/obj/machinery/replicator/OnTopic(user, href_list)
-	if(href_list["activate"])
-		var/index = text2num(href_list["activate"])
-		if(index > 0 && index <= construction.len)
-			if(stored_materials.len > spawning_types.len)
-				if(spawning_types.len)
-					src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] a [pick("light","dial","display","meter","pad")] on [src]'s front [pick("blinks","flashes")] [pick("red","yellow","blue","orange","purple","green","white")]."))
-				else
-					src.visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src]'s front compartment slides shut."))
-
-				spawning_types.Add(construction[construction[index]])
-				spawn_progress_time = 0
-				update_use_power(POWER_USE_ACTIVE)
-				icon_state = "borgcharger1(old)"
-			else
-				src.visible_message(fail_message)
-		. = TOPIC_REFRESH

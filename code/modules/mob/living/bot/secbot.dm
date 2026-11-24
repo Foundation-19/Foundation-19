@@ -69,46 +69,58 @@
 	icon_state = "secbot[on]"
 
 /mob/living/bot/secbot/GetInteractTitle()
-	. = "<head><title>Securitron controls</title></head>"
-	. += "<b>Automatic Security Unit</b>"
+	return "Automatic Security Unit"
 
-/mob/living/bot/secbot/GetInteractPanel()
-	. = "Check for weapon authorization: <a href='byond://?src=\ref[src];command=idcheck'>[idcheck ? "Yes" : "No"]</a>"
-	. += "<br>Check security records: <a href='byond://?src=\ref[src];command=ignorerec'>[check_records ? "Yes" : "No"]</a>"
-	. += "<br>Check arrest status: <a href='byond://?src=\ref[src];command=ignorearr'>[check_arrest ? "Yes" : "No"]</a>"
-	. += "<br>Report arrests: <a href='byond://?src=\ref[src];command=declarearrests'>[declare_arrests ? "Yes" : "No"]</a>"
-	. += "<br>Auto patrol: <a href='byond://?src=\ref[src];command=patrol'>[will_patrol ? "On" : "Off"]</a>"
+/mob/living/bot/secbot/get_panel_data(mob/user)
+	. = list()
+	.["toggles"] = list(
+		list("action" = "idcheck", "label" = "Check for weapon authorization", "value" = idcheck),
+		list("action" = "ignorerec", "label" = "Check security records", "value" = check_records),
+		list("action" = "ignorearr", "label" = "Check arrest status", "value" = check_arrest),
+		list("action" = "declarearrests", "label" = "Report arrests", "value" = declare_arrests),
+		list("action" = "patrol", "label" = "Auto patrol", "value" = will_patrol),
+	)
+	return
 
-/mob/living/bot/secbot/GetInteractMaintenance()
-	. = "Threat identifier status: "
-	switch(emagged)
-		if(0)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Normal</a>"
-		if(1)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Scrambled (DANGER)</a>"
-		if(2)
-			. += "ERROROROROROR-----"
+/mob/living/bot/secbot/get_maintenance_data(mob/user)
+	. = list()
+	if(emagged < 2)
+		.["toggles"] = list(
+			list("action" = "emag", "label" = "Threat identifier", "value" = emagged, "value_text" = emagged ? "Scrambled (DANGER)" : "Normal"),
+		)
+	else
+		.["info"] = list(
+			list("label" = "Threat identifier status", "value" = "ERROROROROROR-----"),
+		)
+	return
 
-/mob/living/bot/secbot/ProcessCommand(mob/user, command, href_list)
-	..()
-	if(CanAccessPanel(user))
-		switch(command)
+/mob/living/bot/secbot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(CanAccessPanel(usr))
+		switch(action)
 			if("idcheck")
 				idcheck = !idcheck
+				return TRUE
 			if("ignorerec")
 				check_records = !check_records
+				return TRUE
 			if("ignorearr")
 				check_arrest = !check_arrest
-			if("patrol")
-				will_patrol = !will_patrol
+				return TRUE
 			if("declarearrests")
 				declare_arrests = !declare_arrests
-
-	if(CanAccessMaintenance(user))
-		switch(command)
+				return TRUE
+			if("patrol")
+				will_patrol = !will_patrol
+				return TRUE
+	if(CanAccessMaintenance(usr))
+		switch(action)
 			if("emag")
 				if(emagged < 2)
 					emagged = !emagged
+				return TRUE
+	return FALSE
 
 /mob/living/bot/secbot/attackby(obj/item/O, mob/user)
 	var/curhealth = health

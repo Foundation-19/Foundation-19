@@ -83,7 +83,7 @@
 		..()
 
 /obj/machinery/reagent_temperature/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
 /obj/machinery/reagent_temperature/ProcessAtomTemperature()
@@ -149,33 +149,41 @@
 
 	set_overlays(adding_overlays)
 
-/obj/machinery/reagent_temperature/interact(mob/user)
+/obj/machinery/reagent_temperature/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ChemicalHeater", "[capitalize(name)]")
+		ui.open()
 
-	var/dat = list()
-	dat += "<table>"
-	dat += "<tr><td>Target temperature:</td><td>"
+/obj/machinery/reagent_temperature/tgui_data(mob/user)
+	var/list/data = list()
+	data["name"] = capitalize(name)
+	data["target_temperature"] = target_temperature - T0C
+	data["current_temperature"] = Floor(temperature - T0C)
+	data["min_temperature"] = min_temperature - T0C
+	data["max_temperature"] = max_temperature - T0C
+	data["heating_power"] = heating_power
+	data["on"] = use_power == POWER_USE_ACTIVE ? TRUE : FALSE
+	data["has_container"] = container ? TRUE : FALSE
+	data["container_name"] = container ? container.name : null
+	data["container_temperature"] = container ? Floor(container.temperature - T0C) : null
+	return data
 
-	if(target_temperature > min_temperature)
-		dat += "<a href='byond://?src=\ref[src];adjust_temperature=-[heating_power]'>-</a> "
-
-	dat += "[target_temperature - T0C]C"
-
-	if(target_temperature < max_temperature)
-		dat += " <a href='byond://?src=\ref[src];adjust_temperature=[heating_power]'>+</a>"
-
-	dat += "</td></tr>"
-
-	dat += "<tr><td>Current temperature:</td><td>[Floor(temperature - T0C)]C</td></tr>"
-
-	dat += "<tr><td>Loaded container:</td>"
-	dat += "<td>[container ? "[container.name] ([Floor(container.temperature - T0C)]C) <a href='byond://?src=\ref[src];remove_container=1'>Remove</a>" : "None."]</td></tr>"
-
-	dat += "<tr><td>Switched:</td><td><a href='byond://?src=\ref[src];toggle_power=1'>[use_power == POWER_USE_ACTIVE ? "On" : "Off"]</a></td></tr>"
-	dat += "</table>"
-
-	var/datum/browser/popup = new(user, "\ref[src]-reagent_temperature_window", "[capitalize(name)]")
-	popup.set_content(jointext(dat, null))
-	popup.open()
+/obj/machinery/reagent_temperature/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("adjust_temperature")
+			target_temperature = Clamp(target_temperature + text2num(params["amount"]), min_temperature, max_temperature)
+			return TRUE
+		if("toggle_power")
+			if(ToggleUsePower() != TOPIC_REFRESH)
+				to_chat(usr, SPAN_WARNING("The button clicks, but nothing happens."))
+			return TRUE
+		if("remove_container")
+			eject_beaker(usr)
+			return TRUE
+	return FALSE
 
 /obj/machinery/reagent_temperature/CanUseTopic(mob/user, state, href_list)
 	if(href_list && href_list["remove_container"])
@@ -195,24 +203,6 @@
 	update_icon()
 
 	return TOPIC_REFRESH
-
-/obj/machinery/reagent_temperature/OnTopic(mob/user, href_list)
-
-	if(href_list["adjust_temperature"])
-		target_temperature = Clamp(target_temperature + text2num(href_list["adjust_temperature"]), min_temperature, max_temperature)
-		. = TOPIC_REFRESH
-
-	if(href_list["toggle_power"])
-		. = ToggleUsePower()
-		if(. != TOPIC_REFRESH)
-			to_chat(user, SPAN_WARNING("The button clicks, but nothing happens."))
-
-	if(href_list["remove_container"])
-		eject_beaker(user)
-		. = TOPIC_REFRESH
-
-	if(. == TOPIC_REFRESH)
-		interact(user)
 
 #undef MINIMUM_GLOW_TEMPERATURE
 #undef MINIMUM_GLOW_VALUE

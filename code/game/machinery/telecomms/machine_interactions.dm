@@ -62,80 +62,197 @@
 	return ..()
 
 /obj/machinery/telecomms/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/telecomms/interact(mob/user)
-	var/obj/item/device/multitool/P = get_multitool(user)
-
+/obj/machinery/telecomms/tgui_interact(mob/user, datum/tgui/ui)
 	user.set_machine(src)
-	var/list/dat = list()
-	dat += "<font face = \"Courier\"><HEAD><TITLE>[src.name]</TITLE></HEAD><center><H3>[src.name] Access</H3></center>"
-	dat += "<br>[temp]<br>"
-	dat += "<br>Power Status: <a href='byond://?src=\ref[src];input=toggle'>[src.toggled ? "On" : "Off"]</a>"
-	if(overloaded_for)
-		dat += "<br><br>WARNING: Ion interference detected. System will automatically recover in [overloaded_for*2] seconds. <a href='byond://?src=\ref[src];input=resetoverload'>Reset manually</a><br>"
-	if(on && toggled)
-		if(id != "" && id)
-			dat += "<br>Identification String: <a href='byond://?src=\ref[src];input=id'>[id]</a>"
-		else
-			dat += "<br>Identification String: <a href='byond://?src=\ref[src];input=id'>NULL</a>"
-		dat += "<br>Network: <a href='byond://?src=\ref[src];input=network'>[network]</a>"
-		dat += "<br>Prefabrication: [autolinkers.len ? "TRUE" : "FALSE"]"
-		if(hide) dat += "<br>Shadow Link: ACTIVE</a>"
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "TelecommsLink", "[src.name] Access")
+		ui.open()
 
-		//Show additional options for certain machines.
-		dat += Options_Menu()
-
-		dat += "<br>Linked Network Entities: <ol>"
-
-		var/i = 0
-		for(var/obj/machinery/telecomms/T in links)
-			i++
-			if(T.hide && !src.hide)
-				continue
-			dat += "<li>\ref[T] [T.name] ([T.id])  <a href='byond://?src=\ref[src];unlink=[i]'>\[X\]</a></li>"
-		dat += "</ol>"
-
-		dat += "<br>Filtering Frequencies: "
-
-		i = 0
-		if(length(freq_listening))
-			for(var/x in freq_listening)
-				i++
-				if(i < length(freq_listening))
-					dat += "[format_frequency(x)] GHz<a href='byond://?src=\ref[src];delete=[x]'>\[X\]</a>; "
-				else
-					dat += "[format_frequency(x)] GHz<a href='byond://?src=\ref[src];delete=[x]'>\[X\]</a>"
-		else
-			dat += "NONE"
-
-		dat += "<br>  <a href='byond://?src=\ref[src];input=freq'>\[Add Filter\]</a>"
-
-		dat += "<br><br>Channel Tagging Rules: <ol>"
-
-		if(length(channel_tags))
-			for(var/list/rule in channel_tags)
-				dat +="<li>[format_frequency(rule[1])] -> [rule[2]] ([rule[3]]) <a href='byond://?src=\ref[src];deletetagrule=[rule[1]]'>\[X\]</a></li>"
-
-		dat += "</ol>"
-		dat += "<a href='byond://?src=\ref[src];input=tagrule'>\[Add Rule\]</a>"
-
-		dat += "<hr>"
-
-		if(P)
-			var/obj/machinery/telecomms/device = P.get_buffer()
-			if(istype(device))
-				dat += "<br><br>MULTITOOL BUFFER: [device] ([device.id]) <a href='byond://?src=\ref[src];link=1'>\[Link\]</a> <a href='byond://?src=\ref[src];flush=1'>\[Flush\]"
-			else
-				dat += "<br><br>MULTITOOL BUFFER: <a href='byond://?src=\ref[src];buffer=1'>\[Add Machine\]</a>"
-
-	dat += "</font>"
+/obj/machinery/telecomms/tgui_data(mob/user)
+	var/list/data = list()
+	data["name"] = src.name
+	data["toggled"] = src.toggled
+	data["temp"] = temp
 	temp = ""
+	data["overloaded"] = overloaded_for ? overloaded_for * 2 : 0
+	data["active"] = (on && toggled) ? 1 : 0
+	data["id"] = id
+	data["network"] = network
+	data["prefab"] = autolinkers.len ? 1 : 0
+	data["hide"] = hide
 
-	var/datum/browser/popup = new(user, "tcommmachine", "Telecommunications Machine Configuration Panel", 520, 600)
-	popup.set_content(JOINTEXT(dat))
-	popup.open()
+	var/list/linked = list()
+	var/i = 0
+	for(var/obj/machinery/telecomms/T in links)
+		i++
+		if(T.hide && !src.hide)
+			continue
+		linked += list(list("index" = i, "name" = T.name, "id" = T.id))
+	data["links"] = linked
+
+	var/list/frequencies = list()
+	for(var/x in freq_listening)
+		frequencies += list(list("freq" = x, "display" = format_frequency(x)))
+	data["frequencies"] = frequencies
+
+	var/list/tag_rules = list()
+	for(var/list/rule in channel_tags)
+		tag_rules += list(list("freq" = rule[1], "display" = format_frequency(rule[1]), "tag" = rule[2], "color" = rule[3]))
+	data["channel_tags"] = tag_rules
+
+	var/obj/item/device/multitool/P = get_multitool(user)
+	if(P)
+		data["multitool"] = 1
+		var/obj/machinery/telecomms/device = P.get_buffer()
+		if(istype(device))
+			data["buffer"] = list("name" = device.name, "id" = device.id)
+		else
+			data["buffer"] = null
+	else
+		data["multitool"] = 0
+		data["buffer"] = null
+
+	data["options"] = Options_Data()
+	return data
+
+/obj/machinery/telecomms/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(!issilicon(usr))
+		if(!istype(usr.get_active_hand(), /obj/item/device/multitool))
+			return TRUE
+	if(stat & (BROKEN|NOPOWER))
+		return TRUE
+
+	var/obj/item/device/multitool/P = get_multitool(usr)
+
+	switch(action)
+		if("toggle")
+			src.toggled = !src.toggled
+			temp = "<font color = #666633>-% [src] has been [src.toggled ? "activated" : "deactivated"].</font>"
+			update_power()
+			return TRUE
+
+		if("resetoverload")
+			overloaded_for = 0
+			temp = "<font color = #666633>-% Manual override accepted. \The [src] has been reset.</font>"
+			return TRUE
+
+		if("id")
+			var/newid = copytext(reject_bad_text(input(usr, "Specify the new ID for this machine", src, id) as null|text),1,MAX_MESSAGE_LEN)
+			if(newid && canAccess(usr))
+				id = newid
+				temp = "<font color = #666633>-% New ID assigned: \"[id]\" %-</font>"
+			return TRUE
+
+		if("network")
+			var/newnet = input(usr, "Specify the new network for this machine. This will break all current links.", src, network) as null|text
+			if(newnet && canAccess(usr))
+				if(length(newnet) > 15)
+					temp = "<font color = #666633>-% Too many characters in new network tag %-</font>"
+				else
+					for(var/obj/machinery/telecomms/T in links)
+						T.links.Remove(src)
+					network = newnet
+					links = list()
+					temp = "<font color = #666633>-% New network tag assigned: \"[network]\" %-</font>"
+			return TRUE
+
+		if("freq")
+			var/newfreq = input(usr, "Specify a new frequency to filter (GHz). Decimals assigned automatically.", src, network) as null|num
+			if(newfreq && canAccess(usr))
+				if(findtext(num2text(newfreq), "."))
+					newfreq *= 10 // shift the decimal one place
+				if(!(newfreq in freq_listening) && newfreq < 10000)
+					freq_listening.Add(newfreq)
+					temp = "<font color = #666633>-% New frequency filter assigned: \"[newfreq] GHz\" %-</font>"
+			return TRUE
+
+		if("tagrule")
+			var/freq = input(usr, "Specify frequency to tag (GHz). Decimals assigned automatically.", src, network) as null|num
+			if(freq && canAccess(usr))
+				if(findtext(num2text(freq), "."))
+					freq *= 10
+
+				if(!(freq in freq_listening))
+					temp = "<font color = #660000>-% Not filtering specified frequency %-</font>"
+					return TRUE
+
+				for(var/list/rule in channel_tags)
+					if(rule[1] == freq)
+						temp = "<font color = #660000>-% Tagging rule already defined %-</font>"
+						return TRUE
+
+				var/tag = input(usr, "Specify tag.", src, "") as null|text
+				var/color = input(usr, "Select color.", src, "") as null|anything in (channel_color_presets + "Custom color")
+
+				if(color == "Custom color")
+					color = input("Select color.", src, rgb(0, 128, 0)) as null|color
+				else
+					color = channel_color_presets[color]
+
+				if(freq < 10000)
+					channel_tags.Add(list(list(freq, tag, color)))
+					temp = "<font color = #666633>-% New tagging rule assigned:[freq] GHz -> \"[tag]\" ([color]) %-</font>"
+			return TRUE
+
+		if("delete")
+			var/x = text2num(params["freq"])
+			temp = "<font color = #666633>-% Removed frequency filter [x] %-</font>"
+			freq_listening.Remove(x)
+			return TRUE
+
+		if("deletetagrule")
+			var/freq = text2num(params["freq"])
+			var/rule_delete
+			for(var/list/rule in channel_tags)
+				if(rule[1] == freq)
+					rule_delete = rule
+			temp = "<font color = #666633>-% Removed tagging rule: [rule_delete[1]] -> [rule_delete[2]] %-</font>"
+			channel_tags.Remove(list(rule_delete))
+			return TRUE
+
+		if("unlink")
+			var/index = text2num(params["index"])
+			if(index <= length(links))
+				var/obj/machinery/telecomms/T = links[index]
+				temp = "<font color = #666633>-% Removed \ref[T] [T.name] from linked entities. %-</font>"
+				if(src in T.links)
+					T.links.Remove(src)
+				links.Remove(T)
+			return TRUE
+
+		if("link")
+			if(P)
+				var/obj/machinery/telecomms/device = P.get_buffer()
+				if(istype(device) && device != src)
+					if(!(src in device.links))
+						device.links.Add(src)
+					if(!(device in src.links))
+						src.links.Add(device)
+					temp = "<font color = #666633>-% Successfully linked with \ref[device] [device.name] %-</font>"
+				else
+					temp = "<font color = #666633>-% Unable to acquire buffer %-</font>"
+			return TRUE
+
+		if("buffer")
+			P.set_buffer(src)
+			var/atom/buffer = P.get_buffer()
+			temp = "<font color = #666633>-% Successfully stored \ref[buffer] [buffer.name] in buffer %-</font>"
+			return TRUE
+
+		if("flush")
+			temp = "<font color = #666633>-% Buffer successfully flushed. %-</font>"
+			P.set_buffer(null)
+			return TRUE
+
+	if(Options_Act(action, params))
+		return TRUE
+	return FALSE
 
 // Returns a multitool from a user depending on their mobtype.
 
@@ -156,38 +273,34 @@
 // Additional Options for certain machines. Use this when you want to add an option to a specific machine.
 // Example of how to use below.
 
-/obj/machinery/telecomms/proc/Options_Menu()
-	return ""
+/obj/machinery/telecomms/proc/Options_Data()
+	return null
 
 /*
 // Add an option to the processor to switch processing mode. (COMPRESS -> UNCOMPRESS or UNCOMPRESS -> COMPRESS)
-/obj/machinery/telecomms/processor/Options_Menu()
-	var/dat = "<br>Processing Mode: <A href='byond://?src=\ref[src];process=1'>[process_mode ? "UNCOMPRESS" : "COMPRESS"]</a>"
-	return dat
+/obj/machinery/telecomms/processor/Options_Data()
+	return list("process_mode" = process_mode)
 */
-// The topic for Additional Options. Use this for checking href links for your specific option.
-// Example of how to use below.
-/obj/machinery/telecomms/proc/Options_Topic(href, href_list)
-	return
+// Handle the actions for Additional Options. Use this for your specific option.
+/obj/machinery/telecomms/proc/Options_Act(action, list/params)
+	return FALSE
 
 /*
-/obj/machinery/telecomms/processor/Options_Topic(href, href_list)
-
-	if(href_list["process"])
+/obj/machinery/telecomms/processor/Options_Act(action, list/params)
+	if(action == "process")
 		temp = "<font color = #666633>-% Processing mode changed. %-</font>"
 		src.process_mode = !src.process_mode
+		return TRUE
+	return FALSE
 */
 
 // BUS
 
-/obj/machinery/telecomms/bus/Options_Menu()
-	var/dat = "<br>Change Signal Frequency: <A href='byond://?src=\ref[src];change_freq=1'>[change_frequency ? "YES ([change_frequency])" : "NO"]</a>"
-	return dat
+/obj/machinery/telecomms/bus/Options_Data()
+	return list("change_frequency" = change_frequency)
 
-/obj/machinery/telecomms/bus/Options_Topic(href, href_list)
-
-	if(href_list["change_freq"])
-
+/obj/machinery/telecomms/bus/Options_Act(action, list/params)
+	if(action == "change_freq")
 		var/newfreq = input(usr, "Specify a new frequency for new signals to change to. Enter null to turn off frequency changing. Decimals assigned automatically.", src, network) as null|num
 		if(canAccess(usr))
 			if(newfreq)
@@ -199,162 +312,9 @@
 			else
 				change_frequency = 0
 				temp = "<font color = #666633>-% Frequency changing deactivated %-</font>"
+		return TRUE
+	return FALSE
 
-
-/obj/machinery/telecomms/Topic(href, href_list)
-	if(..())
-		return 1
-	if(!issilicon(usr))
-		if(!istype(usr.get_active_hand(), /obj/item/device/multitool))
-			return
-
-	if(stat & (BROKEN|NOPOWER))
-		return
-
-	var/obj/item/device/multitool/P = get_multitool(usr)
-
-	if(href_list["input"])
-		switch(href_list["input"])
-
-			if("resetoverload")
-				overloaded_for = 0
-				temp = "<font color = #666633>-% Manual override accepted. \The [src] has been reset.</font>"
-
-			if("toggle")
-
-				src.toggled = !src.toggled
-				temp = "<font color = #666633>-% [src] has been [src.toggled ? "activated" : "deactivated"].</font>"
-				update_power()
-
-			/*
-			if("hide")
-				src.hide = !hide
-				temp = "<font color = #666633>-% Shadow Link has been [src.hide ? "activated" : "deactivated"].</font>"
-			*/
-
-			if("id")
-				var/newid = copytext(reject_bad_text(input(usr, "Specify the new ID for this machine", src, id) as null|text),1,MAX_MESSAGE_LEN)
-				if(newid && canAccess(usr))
-					id = newid
-					temp = "<font color = #666633>-% New ID assigned: \"[id]\" %-</font>"
-
-			if("network")
-				var/newnet = input(usr, "Specify the new network for this machine. This will break all current links.", src, network) as null|text
-				if(newnet && canAccess(usr))
-
-					if(length(newnet) > 15)
-						temp = "<font color = #666633>-% Too many characters in new network tag %-</font>"
-
-					else
-						for(var/obj/machinery/telecomms/T in links)
-							T.links.Remove(src)
-
-						network = newnet
-						links = list()
-						temp = "<font color = #666633>-% New network tag assigned: \"[network]\" %-</font>"
-
-
-			if("freq")
-				var/newfreq = input(usr, "Specify a new frequency to filter (GHz). Decimals assigned automatically.", src, network) as null|num
-				if(newfreq && canAccess(usr))
-					if(findtext(num2text(newfreq), "."))
-						newfreq *= 10 // shift the decimal one place
-					if(!(newfreq in freq_listening) && newfreq < 10000)
-						freq_listening.Add(newfreq)
-						temp = "<font color = #666633>-% New frequency filter assigned: \"[newfreq] GHz\" %-</font>"
-
-			if("tagrule")
-				var/freq = input(usr, "Specify frequency to tag (GHz). Decimals assigned automatically.", src, network) as null|num
-				if(freq && canAccess(usr))
-					if(findtext(num2text(freq), "."))
-						freq *= 10
-
-					if(!(freq in freq_listening))
-						temp = "<font color = #660000>-% Not filtering specified frequency %-</font>"
-						updateUsrDialog()
-						return
-
-					for(var/list/rule in channel_tags)
-						if(rule[1] == freq)
-							temp = "<font color = #660000>-% Tagging rule already defined %-</font>"
-							updateUsrDialog()
-							return
-
-					var/tag = input(usr, "Specify tag.", src, "") as null|text
-					var/color = input(usr, "Select color.", src, "") as null|anything in (channel_color_presets + "Custom color")
-
-					if(color == "Custom color")
-						color = input("Select color.", src, rgb(0, 128, 0)) as null|color
-					else
-						color = channel_color_presets[color]
-
-					if(freq < 10000)
-						channel_tags.Add(list(list(freq, tag, color)))
-						temp = "<font color = #666633>-% New tagging rule assigned:[freq] GHz -> \"[tag]\" ([color]) %-</font>"
-
-	if(href_list["delete"])
-
-		// changed the layout about to workaround a pesky runtime -- Doohl
-
-		var/x = text2num(href_list["delete"])
-		temp = "<font color = #666633>-% Removed frequency filter [x] %-</font>"
-		freq_listening.Remove(x)
-
-	if(href_list["deletetagrule"])
-
-		var/freq = text2num(href_list["deletetagrule"])
-		var/rule_delete
-		for(var/list/rule in channel_tags)
-			if(rule[1] == freq)
-				rule_delete = rule
-		temp = "<font color = #666633>-% Removed tagging rule: [rule_delete[1]] -> [rule_delete[2]] %-</font>"
-		channel_tags.Remove(list(rule_delete))
-
-	if(href_list["unlink"])
-
-		if(text2num(href_list["unlink"]) <= length(links))
-			var/obj/machinery/telecomms/T = links[text2num(href_list["unlink"])]
-			temp = "<font color = #666633>-% Removed \ref[T] [T.name] from linked entities. %-</font>"
-
-			// Remove link entries from both T and src.
-
-			if(src in T.links)
-				T.links.Remove(src)
-			links.Remove(T)
-
-	if(href_list["link"])
-
-		if(P)
-			var/obj/machinery/telecomms/device = P.get_buffer()
-			if(istype(device) && device != src)
-				if(!(src in device.links))
-					device.links.Add(src)
-
-				if(!(device in src.links))
-					src.links.Add(device)
-
-				temp = "<font color = #666633>-% Successfully linked with \ref[device] [device.name] %-</font>"
-
-			else
-				temp = "<font color = #666633>-% Unable to acquire buffer %-</font>"
-
-	if(href_list["buffer"])
-
-		P.set_buffer(src)
-		var/atom/buffer = P.get_buffer()
-		temp = "<font color = #666633>-% Successfully stored \ref[buffer] [buffer.name] in buffer %-</font>"
-
-
-	if(href_list["flush"])
-
-		temp = "<font color = #666633>-% Buffer successfully flushed. %-</font>"
-		P.set_buffer(null)
-
-	src.Options_Topic(href, href_list)
-
-	usr.set_machine(src)
-
-	updateUsrDialog()
 
 /obj/machinery/telecomms/proc/canAccess(mob/user)
 	if(issilicon(user) || in_range(user, src))

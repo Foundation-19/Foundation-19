@@ -66,41 +66,43 @@
 			else
 				add_underlay(T,, dir)
 
-/obj/machinery/atmospherics/unary/outlet_injector/proc/get_console_data()
-	. = list()
-	. += "<table>"
-	. += "<tr><td><b>Name:</b></td><td>[name]</td>"
-	. += "<tr><td><b>Power:</b></td><td>[use_power?("<font color = 'green'>Injecting</font>"):("<font color = 'red'>Offline</font>")]</td><td><a href='byond://?src=\ref[src];toggle_power=\ref[src]'>Toggle</a></td></tr>"
-	. += "<tr><td><b>ID Tag:</b></td><td>[id]</td><td><a href='byond://?src=\ref[src];settag=\ref[id]'>Set ID Tag</a></td></td></tr>"
-	if(frequency%10)
-		. += "<tr><td><b>Frequency:</b></td><td>[frequency/10]</td><td><a href='byond://?src=\ref[src];setfreq=\ref[frequency]'>Set Frequency</a></td></td></tr>"
-	else
-		. += "<tr><td><b>Frequency:</b></td><td>[frequency/10].0</td><td><a href='byond://?src=\ref[src];setfreq=\ref[frequency]'>Set Frequency</a></td></td></tr>"
-	.+= "</table>"
-	. = JOINTEXT(.)
+/obj/machinery/atmospherics/unary/outlet_injector/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OutletInjector", name)
+		ui.open()
 
-/obj/machinery/atmospherics/unary/outlet_injector/OnTopic(mob/user, href_list, datum/topic_state/state)
-	if((. = ..()))
-		return
-	if(href_list["toggle_power"])
-		update_use_power(!use_power)
-		queue_icon_update()
-		to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
-		return TOPIC_REFRESH
-	if(href_list["settag"])
-		var/t = sanitizeSafe(input(user, "Enter the ID tag for [src.name]", src.name, id), MAX_NAME_LEN)
-		if(t && CanInteract(user, state))
-			id = t
-			to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
-			return TOPIC_REFRESH
-		return TOPIC_HANDLED
-	if(href_list["setfreq"])
-		var/freq = input(user, "Enter the Frequency for [src.name]. Decimal will automatically be inserted", src.name, frequency) as num|null
-		if(CanInteract(user, state))
-			set_frequency(freq)
-			to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
-			return TOPIC_REFRESH
-		return TOPIC_HANDLED
+/obj/machinery/atmospherics/unary/outlet_injector/tgui_data(mob/user)
+	var/list/data = list()
+	data["name"] = name
+	data["power"] = use_power ? TRUE : FALSE
+	data["id"] = id
+	data["frequency"] = frequency / 10
+	data["frequency_decimal"] = (frequency % 10) ? TRUE : FALSE
+	return data
+
+/obj/machinery/atmospherics/unary/outlet_injector/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("toggle_power")
+			update_use_power(!use_power)
+			queue_icon_update()
+			to_chat(usr, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
+			return TRUE
+		if("settag")
+			var/t = sanitizeSafe(input(usr, "Enter the ID tag for [src.name]", src.name, id), MAX_NAME_LEN)
+			if(t && CanInteract(usr, state))
+				id = t
+				to_chat(usr, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
+			return TRUE
+		if("setfreq")
+			var/freq = input(usr, "Enter the Frequency for [src.name]. Decimal will automatically be inserted", src.name, frequency) as num|null
+			if(!isnull(freq) && CanInteract(usr, state))
+				set_frequency(freq)
+				to_chat(usr, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
+			return TRUE
+	return FALSE
 
 /obj/machinery/atmospherics/unary/outlet_injector/Process()
 	..()
@@ -205,9 +207,7 @@
 
 /obj/machinery/atmospherics/unary/outlet_injector/attackby(obj/item/O as obj, mob/user as mob)
 	if(isMultitool(O))
-		var/datum/browser/popup = new (user, "Vent Configuration Utility", "[src] Configuration Panel", 600, 200)
-		popup.set_content(jointext(get_console_data(),"<br>"))
-		popup.open()
+		tgui_interact(user)
 		return
 
 	if(isWrench(O))

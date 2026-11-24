@@ -42,21 +42,30 @@
 	if(!human_who_can_use_underwear(user))
 		to_chat(user, SPAN_WARNING("Sadly there's nothing in here for you to wear."))
 		return
-	interact(user)
+	tgui_interact(user)
 
-/obj/structure/undies_wardrobe/interact(mob/living/carbon/human/H)
+/obj/structure/undies_wardrobe/tgui_interact(mob/user, datum/tgui/ui)
+	if(!human_who_can_use_underwear(user))
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "UnderWardrobe", "Underwear Wardrobe")
+		ui.open()
+
+/obj/structure/undies_wardrobe/tgui_data(mob/user)
+	if(!human_who_can_use_underwear(user))
+		return list()
+
+	var/mob/living/carbon/human/H = user
 	var/id = H.GetIdCard()
 
-	var/dat = list()
-	dat += "<b>Underwear</b><br><hr>"
-	dat += "You may claim [id ? length(GLOB.underwear.categories) - LAZYACCESS(amount_of_underwear_by_id_card, id) : 0] more article\s this shift.<br><br>"
-	dat += "<b>Available Categories</b><br><hr>"
+	var/list/data = list()
+	data["quota"] = id ? length(GLOB.underwear.categories) - LAZYACCESS(amount_of_underwear_by_id_card, id) : 0
+	var/list/category_list = list()
 	for(var/datum/category_group/underwear/UWC in GLOB.underwear.categories)
-		dat += "[UWC.name] <a href='byond://?src=\ref[src];select_underwear=[UWC.name]'>(Select)</a><br>"
-	dat = jointext(dat,null)
-	var/datum/browser/popup = new(H, "wardrobe", "Underwear Wardrobe", 400, 250)
-	popup.set_content(dat)
-	popup.open()
+		category_list += list(list("name" = UWC.name))
+	data["categories"] = category_list
+	return data
 
 /obj/structure/undies_wardrobe/proc/human_who_can_use_underwear(mob/living/carbon/human/H)
 	if(!istype(H) || !H.species || !(H.species.appearance_flags & HAS_UNDERWEAR))
@@ -69,49 +78,49 @@
 
 	return ..()
 
-/obj/structure/undies_wardrobe/Topic(href, href_list, state)
+/obj/structure/undies_wardrobe/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
+		return TRUE
+	if(!human_who_can_use_underwear(usr))
 		return TRUE
 
 	var/mob/living/carbon/human/H = usr
-	if(href_list["select_underwear"])
-		var/datum/category_group/underwear/UWC = GLOB.underwear.categories_by_name[href_list["select_underwear"]]
+	if(action == "select_underwear")
+		var/datum/category_group/underwear/UWC = GLOB.underwear.categories_by_name[params["category"]]
 		if(!UWC)
-			return
+			return TRUE
 		var/datum/category_item/underwear/UWI = input("Select your desired underwear:", "Choose underwear") as null|anything in exlude_none(UWC.items)
 		if(!UWI)
-			return
+			return TRUE
 
 		var/list/metadata_list = list()
 		for(var/tweak in UWI.tweaks)
 			var/datum/gear_tweak/gt = tweak
 			var/metadata = gt.get_metadata(H, title = "Adjust underwear")
 			if(!metadata)
-				return
+				return TRUE
 			metadata_list["[gt]"] = metadata
 
-		if(!CanInteract(H, state))
-			return
+		if(tgui_status(H, state) != STATUS_INTERACTIVE)
+			return TRUE
 
 		var/id = H.GetIdCard()
 		if(!id)
 			audible_message("No ID card detected. Unable to acquire your underwear quota for this shift.", WARDROBE_BLIND_MESSAGE(H))
-			return
+			return TRUE
 
 		var/current_quota = LAZYACCESS(amount_of_underwear_by_id_card, id)
 		if(current_quota >= length(GLOB.underwear.categories))
 			audible_message("You have already used up your underwear quota for this shift. Please return previously acquired items to increase it.", WARDROBE_BLIND_MESSAGE(H))
-			return
+			return TRUE
 		LAZYSET(amount_of_underwear_by_id_card, id, ++current_quota)
 
 		var/obj/UW = UWI.create_underwear(H, metadata_list)
 		UW.forceMove(loc)
 		H.put_in_hands(UW)
 
-		. = TRUE
-
-	if(.)
-		interact(H)
+		return TRUE
+	return FALSE
 
 /obj/structure/undies_wardrobe/proc/exlude_none(list/L)
 	. = L.Copy()

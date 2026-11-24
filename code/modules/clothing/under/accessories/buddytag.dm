@@ -15,29 +15,38 @@
 /obj/item/clothing/accessory/buddytag/attack_self(mob/user)
 	if(!CanPhysicallyInteract(user))
 		return
-	var/dat = "<A href='byond://?src=\ref[src];toggle=1;'>[on ? "Disable" : "Enable"]</a><br>"
-	dat += "ID: <A href='byond://?src=\ref[src];setcode=1;'>[id]</a>"
-	var/datum/browser/popup = new(user, "buddytag", "Buddy Tag", 290, 200)
-	popup.set_content(dat)
-	popup.open()
+	tgui_interact(user)
 
-/obj/item/clothing/accessory/buddytag/DefaultTopicState()
-	return GLOB.physical_state
+/obj/item/clothing/accessory/buddytag/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "BuddyTag", "Buddy Tag")
+		ui.open()
 
-/obj/item/clothing/accessory/buddytag/OnTopic(user, list/href_list, state)
-	if(href_list["toggle"])
-		on = !on
-		if(on)
-			next_search = world.time
-			START_PROCESSING(SSobj, src)
-		update_icon()
-		return TOPIC_REFRESH
-	if(href_list["setcode"])
-		var/newcode = input("Set new buddy ID number." , "Buddy Tag ID" , "") as num|null
-		if(newcode == null || !CanInteract(user, state))
-			return
-		id = newcode
-		return TOPIC_REFRESH
+/obj/item/clothing/accessory/buddytag/tgui_data(mob/user)
+	var/list/data = list()
+	data["on"] = on
+	data["id"] = id
+	return data
+
+/obj/item/clothing/accessory/buddytag/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("toggle")
+			on = !on
+			if(on)
+				next_search = world.time
+				START_PROCESSING(SSobj, src)
+			update_icon()
+			return TRUE
+		if("setcode")
+			var/newcode = input("Set new buddy ID number." , "Buddy Tag ID" , "") as num|null
+			if(newcode == null)
+				return TRUE
+			id = newcode
+			return TRUE
+	return FALSE
 
 /obj/item/clothing/accessory/buddytag/Process()
 	if(!on)

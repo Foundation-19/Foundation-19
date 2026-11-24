@@ -18,54 +18,49 @@
 		icon_state = "meter_off"
 
 /obj/machinery/psi_meter/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/psi_meter/interact(mob/user)
+/obj/machinery/psi_meter/tgui_interact(mob/user, datum/tgui/ui)
+	if(!use_power)
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "PsiMeter", "Psi-Assay")
+		ui.open()
 
-	if(!use_power) return
-
-	var/list/dat = list()
+/obj/machinery/psi_meter/tgui_data(mob/user)
+	var/list/data = list()
 	if(LAZYLEN(last_assay))
-		dat = last_assay
+		data["has_assay"] = TRUE
+		data["assay_html"] = jointext(last_assay, null)
+		data["assayed_name"] = last_assayed ? last_assayed.name : null
 	else
-		dat += "<h2>TELESTO Mark I Psi-Meter</h2><hr><table border = 1 width = 100%><tr><td colspan = 2><b>Candidates</b></td></tr>"
-		var/found
+		data["has_assay"] = FALSE
+		var/list/candidates = list()
 		for(var/mob/living/H in range(1, src))
-			found = TRUE
-			dat += "<tr><td>[H.name]</td><td><a href='byond://?src=\ref[src];assay=\ref[H]'>Conduct Assay</a>"
-		if(!found)
-			dat += "<tr><td colspan = 2>No candidates found.</td></tr>"
-		dat += "<table>"
+			candidates += list(list("name" = H.name, "ref" = "\ref[H]"))
+		data["candidates"] = candidates
+	return data
 
-	var/datum/browser/popup = new(user, "psi_assay_\ref[src]", "Psi-Assay")
-	popup.set_content(jointext(dat,null))
-	popup.open()
-
-/obj/machinery/psi_meter/Topic(href, href_list)
-	. = ..()
-	if(!.)
-
-		if(!issilicon(usr) && !Adjacent(usr))
-			return FALSE
-
-		var/refresh
-		if(href_list["print"])
+/obj/machinery/psi_meter/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(!issilicon(usr) && !Adjacent(usr))
+		return TRUE
+	switch(action)
+		if("print")
 			if(last_assay)
 				var/obj/item/paper/P = new(loc)
 				P.name = "paper - Psi-Assay ([last_assayed.name])"
-				P.info = jointext(last_assay - last_assay[last_assay.len],null) // Last line is 'print | clear' link line.
-				return TRUE
-
-		if(href_list["clear"])
+				P.info = jointext(last_assay, null)
+			return TRUE
+		if("clear")
 			last_assay = null
-			refresh = TRUE
-		else if(href_list["assay"])
-			last_assayed = locate(href_list["assay"])
+			return TRUE
+		if("assay")
+			last_assayed = locate(params["ref"])
 			if(istype(last_assayed))
 				last_assayed.show_psi_assay(usr, src)
-				refresh = TRUE
-
-		if(refresh)
-			interact(usr)
 			return TRUE
+	return FALSE

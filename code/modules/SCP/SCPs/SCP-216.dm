@@ -162,67 +162,75 @@
 	InsertItem(user, I, current_code)
 
 /obj/structure/scp216/attack_hand(mob/user)
-	var/text_code = add_zero(num2text(current_code, 7), 7)
-	var/dat = "<center>"
-	dat += "<a href='byond://?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a><br>"
-	dat += "Current code: <a href='byond://?src=\ref[src];change_code=1'>[text_code]</a><br>"
-	if(open && (num2text(current_code, 7) in all_codes))
-		dat += "<table>"
-		for(var/atom/movable/A in all_codes[num2text(current_code, 7)])
-			dat += "<tr><td><a href='byond://?src=\ref[src];retrieve=\ref[A]'>[A.name]</a></td></tr>"
-		dat += "</table></center>"
-	var/datum/browser/popup = new(user, "safe", "Safe", 350, 300)
-	popup.set_content(dat)
-	popup.open()
+	tgui_interact(user)
 
-/obj/structure/scp216/Topic(href, href_list)
+/obj/structure/scp216/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SCP216", name)
+		ui.open()
+
+/obj/structure/scp216/tgui_data(mob/user)
+	var/list/data = list()
+	data["open"] = open
+	data["current_code"] = add_zero(num2text(current_code, 7), 7)
+	var/list/item_list = list()
+	if(open && (num2text(current_code, 7) in all_codes))
+		for(var/atom/movable/A in all_codes[num2text(current_code, 7)])
+			item_list += list(list("name" = A.name, "ref" = "\ref[A]"))
+	data["items"] = item_list
+	return data
+
+/obj/structure/scp216/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
 	if(!ishuman(usr))
-		return
+		return TRUE
 	var/mob/living/carbon/human/user = usr
 
-	if(href_list["open"])
-		to_chat(user, SPAN_NOTICE("You [open ? "close" : "open"] [src]."))
-		open = !open
-		update_icon()
-		// JUMPSCARE!!
-		if(open && (num2text(current_code, 7) in all_codes))
-			for(var/mob/living/L in all_codes[num2text(current_code, 7)])
-				L.forceMove(get_turf(src))
-				visible_message(SPAN_DANGER("[L] falls out of \the [src]!"))
-		attack_hand(user)
-		return
+	switch(action)
+		if("open")
+			to_chat(user, SPAN_NOTICE("You [open ? "close" : "open"] [src]."))
+			open = !open
+			update_icon()
+			// JUMPSCARE!!
+			if(open && (num2text(current_code, 7) in all_codes))
+				for(var/mob/living/L in all_codes[num2text(current_code, 7)])
+					L.forceMove(get_turf(src))
+					visible_message(SPAN_DANGER("[L] falls out of \the [src]!"))
+			return TRUE
 
-	if(href_list["change_code"])
-		if(open)
-			to_chat(user, SPAN_WARNING("You have to close the safe before changing the code!"))
-			return
-		var/temp_code = text2num(input(user, "Enter the new code.", "SCP 216") as null|text)
-		if(!isnum(temp_code))
-			to_chat(user, SPAN_WARNING("Input a number!"))
-			return
-		if(temp_code > 9999999)
-			to_chat(user, SPAN_WARNING("The code can be no longer than 7 numbers!"))
-			return
-		if(temp_code < 0)
-			to_chat(user, SPAN_WARNING("The code can't be lower than zero!"))
-			return
-		current_code = temp_code
-		if(!(num2text(current_code, 7) in all_codes))
-			GenerateRandomItemsAt(current_code)
-		attack_hand(user)
-		return
+		if("change_code")
+			if(open)
+				to_chat(user, SPAN_WARNING("You have to close the safe before changing the code!"))
+				return TRUE
+			var/temp_code = text2num(input(user, "Enter the new code.", "SCP 216") as null|text)
+			if(!isnum(temp_code))
+				to_chat(user, SPAN_WARNING("Input a number!"))
+				return TRUE
+			if(temp_code > 9999999)
+				to_chat(user, SPAN_WARNING("The code can be no longer than 7 numbers!"))
+				return TRUE
+			if(temp_code < 0)
+				to_chat(user, SPAN_WARNING("The code can't be lower than zero!"))
+				return TRUE
+			current_code = temp_code
+			if(!(num2text(current_code, 7) in all_codes))
+				GenerateRandomItemsAt(current_code)
+			return TRUE
 
-	if(href_list["retrieve"])
-		var/atom/movable/A = locate(href_list["retrieve"]) in all_codes[num2text(current_code, 7)]
-		if(!A)
-			to_chat(user, SPAN_WARNING("Couldn't find the item."))
-			return
-		if(!open)
-			return
-		if(!in_range(src, user))
-			return
-		RetrieveItem(user, A, current_code)
-		attack_hand(user)
+		if("retrieve")
+			var/atom/movable/A = locate(params["ref"]) in all_codes[num2text(current_code, 7)]
+			if(!A)
+				to_chat(user, SPAN_WARNING("Couldn't find the item."))
+				return TRUE
+			if(!open)
+				return TRUE
+			if(!in_range(src, user))
+				return TRUE
+			RetrieveItem(user, A, current_code)
+			return TRUE
+	return FALSE
 
 /obj/structure/scp216/proc/GenerateRandomItemsAt(code)
 	if(!(num2text(code, 7) in all_codes) || !islist(all_codes[num2text(code, 7)]))
@@ -280,4 +288,4 @@ GLOBAL_LIST_INIT(scp216_known_codes, null)
 		user.put_in_hands(A)
 	else // In case we want to get funky and put mobs into it
 		A.forceMove(get_turf(src))
-	attack_hand(user)
+	SStgui.update_uis(src)

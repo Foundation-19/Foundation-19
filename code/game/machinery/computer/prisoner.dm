@@ -15,90 +15,80 @@
 	var/screen = 0 // 0 - No Access Denied, 1 - Access allowed
 
 
-/obj/machinery/computer/prisoner/attack_ai(mob/user as mob)
-	return src.attack_hand(user)
+/obj/machinery/computer/prisoner/interface_interact(mob/user)
+	tgui_interact(user)
+	return TRUE
 
-/obj/machinery/computer/prisoner/attack_hand(mob/user as mob)
-	if(..())
-		return
+/obj/machinery/computer/prisoner/tgui_interact(mob/user, datum/tgui/ui)
 	user.set_machine(src)
-	var/dat
-	dat += "<B>Prisoner Implant Manager System</B><BR>"
-	if(screen == 0)
-		dat += "<HR><A href='byond://?src=\ref[src];lock=1'>Unlock Console</A>"
-	else if(screen == 1)
-		dat += "<HR>Chemical Implants<BR>"
-		var/turf/Tr = null
-		for(var/obj/item/implant/chem/C in world)
-			Tr = get_turf(C)
-			if((Tr) && !AreConnectedZLevels(Tr.z, src.z))	continue // Out of range
-			if(!C.implanted) continue
-			dat += "[C.imp_in.name] | Remaining Units: [C.reagents.total_volume] | Inject: "
-			dat += "<A href='byond://?src=\ref[src];inject1=\ref[C]'>(<font color=red>(1)</font>)</A>"
-			dat += "<A href='byond://?src=\ref[src];inject5=\ref[C]'>(<font color=red>(5)</font>)</A>"
-			dat += "<A href='byond://?src=\ref[src];inject10=\ref[C]'>(<font color=red>(10)</font>)</A><BR>"
-			dat += "********************************<BR>"
-		dat += "<HR>Tracking Implants<BR>"
-		for(var/obj/item/implant/tracking/T in world)
-			Tr = get_turf(T)
-			if((Tr) && !AreConnectedZLevels(Tr.z, src.z))	continue // Out of range
-			if(!T.implanted) continue
-			var/loc_display = "Space"
-			var/mob/living/carbon/M = T.imp_in
-			if(!isspaceturf(M.loc))
-				var/turf/mob_loc = get_turf(M)
-				loc_display = mob_loc.loc
-			if(T.malfunction)
-				loc_display = pick(teleportlocs)
-			dat += "ID: [T.id] | Location: [loc_display]<BR>"
-			dat += "<A href='byond://?src=\ref[src];warn=\ref[T]'>(<font color=red><i>Message Holder</i></font>)</A> |<BR>"
-			dat += "********************************<BR>"
-		dat += "<HR><A href='byond://?src=\ref[src];lock=1'>Lock Console</A>"
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "PrisonerConsole", "Prisoner Implant Management System")
+		ui.open()
 
-	var/datum/browser/popup = new(user, "computer", "Prisoner Implant Management System", 400, 500)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "computer")
-	return
+/obj/machinery/computer/prisoner/tgui_data(mob/user)
+	var/list/data = list()
+	data["screen"] = screen
+	var/list/chem_implants = list()
+	var/turf/Tr = null
+	for(var/obj/item/implant/chem/C in world)
+		Tr = get_turf(C)
+		if((Tr) && !AreConnectedZLevels(Tr.z, src.z))	continue // Out of range
+		if(!C.implanted) continue
+		chem_implants += list(list(
+			"ref" = "\ref[C]",
+			"name" = C.imp_in.name,
+			"units" = C.reagents.total_volume,
+		))
+	data["chem_implants"] = chem_implants
+	var/list/tracking_implants = list()
+	for(var/obj/item/implant/tracking/T in world)
+		Tr = get_turf(T)
+		if((Tr) && !AreConnectedZLevels(Tr.z, src.z))	continue // Out of range
+		if(!T.implanted) continue
+		var/loc_display = "Space"
+		var/mob/living/carbon/M = T.imp_in
+		if(!isspaceturf(M.loc))
+			var/turf/mob_loc = get_turf(M)
+			loc_display = mob_loc.loc
+		if(T.malfunction)
+			loc_display = pick(teleportlocs)
+		tracking_implants += list(list(
+			"ref" = "\ref[T]",
+			"id" = T.id,
+			"location" = loc_display,
+		))
+	data["tracking_implants"] = tracking_implants
+	return data
 
-
-/obj/machinery/computer/prisoner/Process()
-	if(!..())
-		src.updateDialog()
-	return
-
-
-/obj/machinery/computer/prisoner/Topic(href, href_list)
+/obj/machinery/computer/prisoner/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return
-	if((list_find(usr.contents, src) || (in_range(src, usr) && istype(src.loc, /turf))) || (istype(usr, /mob/living/silicon)))
-		usr.set_machine(src)
+		return TRUE
+	switch(action)
+		if("inject")
+			var/obj/item/implant/I = locate(params["ref"])
+			if(I)	I.activate(text2num(params["amount"]))
+			return TRUE
 
-		if(href_list["inject1"])
-			var/obj/item/implant/I = locate(href_list["inject1"])
-			if(I)	I.activate(1)
+		if("warn")
+			var/warning = sanitize(tgui_input_text(usr, "Message:", "Enter your message here!"))
+			if(!warning) return TRUE
+			var/obj/item/implant/I = locate(params["ref"])
+			if((I)&&(I.imp_in))
+				var/mob/living/carbon/R = I.imp_in
+				to_chat(R, SPAN_NOTICE("You hear a voice in your head saying: '[warning]'"))
+			return TRUE
 
-		else if(href_list["inject5"])
-			var/obj/item/implant/I = locate(href_list["inject5"])
-			if(I)	I.activate(5)
-
-		else if(href_list["inject10"])
-			var/obj/item/implant/I = locate(href_list["inject10"])
-			if(I)	I.activate(10)
-
-		else if(href_list["lock"])
+		if("lock")
 			if(src.allowed(usr))
 				screen = !screen
 			else
 				to_chat(usr, "Unauthorized Access.")
+			return TRUE
+	return FALSE
 
-		else if(href_list["warn"])
-			var/warning = sanitize(input(usr,"Message:","Enter your message here!",""))
-			if(!warning) return
-			var/obj/item/implant/I = locate(href_list["warn"])
-			if((I)&&(I.imp_in))
-				var/mob/living/carbon/R = I.imp_in
-				to_chat(R, SPAN_NOTICE("You hear a voice in your head saying: '[warning]'"))
 
-	src.updateUsrDialog()
+/obj/machinery/computer/prisoner/Process()
+	if(!..())
+		SStgui.update_uis(src)
 	return

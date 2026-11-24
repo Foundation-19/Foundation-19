@@ -243,97 +243,90 @@
 /obj/machinery/magnetic_controller/attack_hand(mob/user as mob)
 	if(stat & (BROKEN|NOPOWER))
 		return
-	user.set_machine(src)
-	var/dat = "<B>Magnetic Control Console</B><BR><BR>"
-	if(!autolink)
-		dat += {"
-		Frequency: <a href='byond://?src=\ref[src];operation=setfreq'>[frequency]</a><br>
-		Code: <a href='byond://?src=\ref[src];operation=setfreq'>[code]</a><br>
-		<a href='byond://?src=\ref[src];operation=probe'>Probe Generators</a><br>
-		"}
+	tgui_interact(user)
 
-	if(magnets.len >= 1)
+/obj/machinery/magnetic_controller/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "MagnetControl", title)
+		ui.open()
 
-		dat += "Magnets confirmed: <br>"
-		var/i = 0
-		for(var/obj/machinery/magnetic_module/M in magnets)
-			i++
-			dat += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< \[[i]\] (<a href='byond://?src=\ref[src];radio-op=togglepower'>[M.on ? "On":"Off"]</a>) | Electricity level: <a href='byond://?src=\ref[src];radio-op=minuselec'>-</a> [M.electricity_level] <a href='byond://?src=\ref[src];radio-op=pluselec'>+</a>; Magnetic field: <a href='byond://?src=\ref[src];radio-op=minusmag'>-</a> [M.magnetic_field] <a href='byond://?src=\ref[src];radio-op=plusmag'>+</a><br>"
+/obj/machinery/magnetic_controller/tgui_data(mob/user)
+	var/list/data = list()
+	data["frequency"] = frequency
+	data["code"] = code
+	data["autolink"] = autolink ? TRUE : FALSE
+	data["speed"] = speed
+	data["path"] = path
+	data["moving"] = moving ? TRUE : FALSE
+	data["looping"] = looping ? TRUE : FALSE
+	var/list/magnet_list = list()
+	for(var/obj/machinery/magnetic_module/M in magnets)
+		magnet_list += list(list(
+			"on" = M.on ? TRUE : FALSE,
+			"electricity_level" = M.electricity_level,
+			"magnetic_field" = M.magnetic_field
+		))
+	data["magnets"] = magnet_list
+	return data
 
-	dat += "<br>Speed: <a href='byond://?src=\ref[src];operation=minusspeed'>-</a> [speed] <a href='byond://?src=\ref[src];operation=plusspeed'>+</a><br>"
-	dat += "Path: {<a href='byond://?src=\ref[src];operation=setpath'>[path]</a>}<br>"
-	dat += "Moving: <a href='byond://?src=\ref[src];operation=togglemoving'>[moving ? "Enabled":"Disabled"]</a>"
-
-
-	var/datum/browser/popup = new(user, "magnet", "Magnet", 400, 500)
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "magnet")
-
-/obj/machinery/magnetic_controller/Topic(href, href_list)
+/obj/machinery/magnetic_controller/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		return 1
-	if(stat & (BROKEN|NOPOWER))
-		return
-	usr.set_machine(src)
+		return TRUE
+	switch(action)
+		if("radio_op")
+			// Prepare signal beforehand, because this is a radio operation
+			var/datum/signal/signal = new
+			signal.transmission_method = 1 // radio transmission
+			signal.source = src
+			signal.frequency = frequency
+			signal.data["code"] = code
 
-	if(href_list["radio-op"])
+			// Apply any necessary commands
+			switch(params["op"])
+				if("togglepower")
+					signal.data["command"] = "toggle-power"
+				if("minuselec")
+					signal.data["command"] = "sub-elec"
+				if("pluselec")
+					signal.data["command"] = "add-elec"
+				if("minusmag")
+					signal.data["command"] = "sub-mag"
+				if("plusmag")
+					signal.data["command"] = "add-mag"
 
-		// Prepare signal beforehand, because this is a radio operation
-		var/datum/signal/signal = new
-		signal.transmission_method = 1 // radio transmission
-		signal.source = src
-		signal.frequency = frequency
-		signal.data["code"] = code
-
-		// Apply any necessary commands
-		switch(href_list["radio-op"])
-			if("togglepower")
-				signal.data["command"] = "toggle-power"
-
-			if("minuselec")
-				signal.data["command"] = "sub-elec"
-			if("pluselec")
-				signal.data["command"] = "add-elec"
-
-			if("minusmag")
-				signal.data["command"] = "sub-mag"
-			if("plusmag")
-				signal.data["command"] = "add-mag"
-
-
-		// Broadcast the signal
-
-		radio_connection.post_signal(src, signal, radio_filter = RADIO_MAGNETS)
-
-		spawn(1)
-			updateUsrDialog() // pretty sure this increases responsiveness
-
-	if(href_list["operation"])
-		switch(href_list["operation"])
-			if("plusspeed")
-				speed ++
-				if(speed > 10)
-					speed = 10
-			if("minusspeed")
-				speed --
-				if(speed <= 0)
-					speed = 1
-			if("setpath")
-				var/newpath = sanitize(input(usr, "Please define a new path!",,path) as text|null)
-				if(newpath && newpath != "")
-					moving = 0 // stop moving
-					path = newpath
-					pathpos = 1 // reset position
-					filter_path() // renders rpath
-
-			if("togglemoving")
-				moving = !moving
-				if(moving)
-					spawn() MagnetMove()
-
-
-	updateUsrDialog()
+			// Broadcast the signal
+			radio_connection.post_signal(src, signal, radio_filter = RADIO_MAGNETS)
+			SStgui.update_uis(src)
+			return TRUE
+		if("operation")
+			switch(params["op"])
+				if("plusspeed")
+					speed++
+					if(speed > 10)
+						speed = 10
+				if("minusspeed")
+					speed--
+					if(speed <= 0)
+						speed = 1
+				if("setpath")
+					var/newpath = sanitize(input(usr, "Please define a new path!",,path) as text|null)
+					if(newpath && newpath != "")
+						moving = 0 // stop moving
+						path = newpath
+						pathpos = 1 // reset position
+						filter_path() // renders rpath
+				if("togglemoving")
+					moving = !moving
+					if(moving)
+						spawn() MagnetMove()
+				if("probe")
+					magnets = list()
+					for(var/obj/machinery/magnetic_module/M in world)
+						if(M.freq == frequency && M.code == code)
+							magnets.Add(M)
+			return TRUE
+	return FALSE
 
 /obj/machinery/magnetic_controller/proc/MagnetMove()
 	if(looping) return

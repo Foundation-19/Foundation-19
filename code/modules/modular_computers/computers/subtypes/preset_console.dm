@@ -44,6 +44,8 @@
 	hard_drive.store_file(new /datum/computer_file/program/aidiag())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())
 	hard_drive.store_file(new /datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new /datum/computer_file/program/scp_database())
+	hard_drive.store_file(new /datum/computer_file/program/research_laboratory())
 
 /obj/item/modular_computer/console/preset/aislot/sysadmin/install_default_programs()
 	..()

@@ -12,5 +12,6 @@
 /obj/item/modular_computer/tablet/preset/scp_research/install_default_programs()
 	..()
 	hard_drive.store_file(new/datum/computer_file/program/scp_database())
+	hard_drive.store_file(new/datum/computer_file/program/research_laboratory())
 	hard_drive.store_file(new/datum/computer_file/program/records())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())

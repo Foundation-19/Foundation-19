@@ -36,44 +36,55 @@
 		icon_state = "floorbot[on]e"
 
 /mob/living/bot/floorbot/GetInteractTitle()
-	. = "<head><title>Repairbot v1.0 controls</title></head>"
-	. += "<b>Automatic Floor Repairer v1.0</b>"
+	return "Automatic Floor Repairer v1.0"
 
-/mob/living/bot/floorbot/GetInteractStatus()
+/mob/living/bot/floorbot/get_status_data(mob/user)
 	. = ..()
-	. += "<br>Tiles left: [amount]"
+	.["info"] += list(list("label" = "Tiles left", "value" = amount))
+	return
 
-/mob/living/bot/floorbot/GetInteractPanel()
-	. = "Improves floors: <a href='byond://?src=\ref[src];command=improve'>[improvefloors ? "Yes" : "No"]</a>"
-	. += "<br>Finds tiles: <a href='byond://?src=\ref[src];command=tiles'>[eattiles ? "Yes" : "No"]</a>"
-	. += "<br>Make single pieces of metal into tiles when empty: <a href='byond://?src=\ref[src];command=make'>[maketiles ? "Yes" : "No"]</a>"
+/mob/living/bot/floorbot/get_panel_data(mob/user)
+	. = list()
+	.["toggles"] = list(
+		list("action" = "improve", "label" = "Improves floors", "value" = improvefloors),
+		list("action" = "tiles", "label" = "Finds tiles", "value" = eattiles),
+		list("action" = "make", "label" = "Make single pieces of metal into tiles when empty", "value" = maketiles),
+	)
+	return
 
-/mob/living/bot/floorbot/GetInteractMaintenance()
-	. = "Disassembly mode: "
-	switch(emagged)
-		if(0)
-			. += "<a href='byond://?src=\ref[src];command=emag'>Off</a>"
-		if(1)
-			. += "<a href='byond://?src=\ref[src];command=emag'>On (Caution)</a>"
-		if(2)
-			. += "ERROROROROROR-----"
+/mob/living/bot/floorbot/get_maintenance_data(mob/user)
+	. = list()
+	if(emagged < 2)
+		.["toggles"] = list(
+			list("action" = "emag", "label" = "Disassembly mode", "value" = emagged, "value_text" = emagged ? "On (Caution)" : "Off"),
+		)
+	else
+		.["info"] = list(
+			list("label" = "Disassembly mode", "value" = "ERROROROROROR-----"),
+		)
+	return
 
-/mob/living/bot/floorbot/ProcessCommand(mob/user, command, href_list)
-	..()
-	if(CanAccessPanel(user))
-		switch(command)
+/mob/living/bot/floorbot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	if(CanAccessPanel(usr))
+		switch(action)
 			if("improve")
 				improvefloors = !improvefloors
+				return TRUE
 			if("tiles")
 				eattiles = !eattiles
+				return TRUE
 			if("make")
 				maketiles = !maketiles
-
-	if(CanAccessMaintenance(user))
-		switch(command)
+				return TRUE
+	if(CanAccessMaintenance(usr))
+		switch(action)
 			if("emag")
 				if(emagged < 2)
 					emagged = !emagged
+					return TRUE
+	return FALSE
 
 /mob/living/bot/floorbot/emag_act(remaining_charges, mob/user)
 	. = ..()

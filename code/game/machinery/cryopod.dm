@@ -16,6 +16,7 @@
 	density = FALSE
 	interact_offline = 1
 	var/mode = null
+	var/view_mode = null
 
 	//Used for logging people entering cryosleep and important items they are carrying.
 	var/list/frozen_crew = list()
@@ -44,85 +45,77 @@
 	allow_items = TRUE
 
 /obj/machinery/computer/cryopod/interface_interact(mob/user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/cryopod/interact(mob/user)
-	user.set_machine(src)
+/obj/machinery/computer/cryopod/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		view_mode = null
+		ui = new(user, src, "CryopodConsole", "Cryopod Console")
+		ui.open()
 
-	var/dat
+/obj/machinery/computer/cryopod/tgui_data(mob/user)
+	var/list/data = list()
+	data["storage_name"] = storage_name
+	data["storage_type"] = storage_type
+	data["allow_items"] = allow_items
+	data["user_name"] = user.real_name
+	data["view_mode"] = view_mode
+	var/list/crew = list()
+	for(var/person in frozen_crew)
+		crew += person
+	data["frozen_crew"] = crew
+	var/list/items = list()
+	for(var/obj/item/I in frozen_items)
+		items += list(list(
+			"name" = I.name,
+			"ref" = REF(I)))
+	data["frozen_items"] = items
+	return data
 
-	dat += "<hr/><br/><b>[storage_name]</b><br/>"
-	dat += "<i>Welcome, [user.real_name].</i><br/><br/><hr/>"
-	dat += "<a href='byond://?src=\ref[src];log=1'>View storage log</a><br>"
-	if(allow_items)
-		dat += "<a href='byond://?src=\ref[src];view=1'>View objects</a><br>"
-		dat += "<a href='byond://?src=\ref[src];item=1'>Recover object</a><br>"
-		dat += "<a href='byond://?src=\ref[src];allitems=1'>Recover all objects</a><br>"
-
-	var/datum/browser/popup = new(user, "cryopod_console", "Cryopod Console")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "cryopod_console")
-
-/obj/machinery/computer/cryopod/OnTopic(user, href_list, state)
-	if(href_list["log"])
-		var/dat = "<b>Recently stored [storage_type]</b><br/><hr/><br/>"
-		for(var/person in frozen_crew)
-			dat += "[person]<br/>"
-		dat += "<hr/>"
-		var/datum/browser/popup = new(user, "cryolog", "Cryopod Logs")
-		popup.set_content(dat)
-		popup.open()
-		. = TOPIC_HANDLED
-
-	else if(href_list["view"])
-		if(!allow_items) return
-
-		var/dat = "<b>Recently stored objects</b><br/><hr/><br/>"
-		for(var/obj/item/I in frozen_items)
-			dat += "[I.name]<br/>"
-		dat += "<hr/>"
-
-		var/datum/browser/popup = new(user, "cryoitems", "Cryopod Items")
-		popup.set_content(dat)
-		popup.open()
-		. = TOPIC_HANDLED
-
-	else if(href_list["item"])
-		if(!allow_items) return
-
-		if(frozen_items.len == 0)
-			to_chat(user, SPAN_NOTICE("There is nothing to recover from storage."))
-			return TOPIC_HANDLED
-
-		var/obj/item/I = input(user, "Please choose which object to retrieve.","Object recovery",null) as null|anything in frozen_items
-		if(!I || !CanUseTopic(user, state))
-			return TOPIC_HANDLED
-
-		if(!(I in frozen_items))
-			to_chat(user, SPAN_NOTICE("\The [I] is no longer in storage."))
-			return TOPIC_HANDLED
-
-		visible_message(SPAN_NOTICE("The console beeps happily as it disgorges \the [I]."), range = 3)
-
-		I.dropInto(loc)
-		frozen_items -= I
-		. = TOPIC_REFRESH
-
-	else if(href_list["allitems"])
-		if(!allow_items) return TOPIC_HANDLED
-
-		if(frozen_items.len == 0)
-			to_chat(user, SPAN_NOTICE("There is nothing to recover from storage."))
-			return TOPIC_HANDLED
-
-		visible_message(SPAN_NOTICE("The console beeps happily as it disgorges the desired objects."), range = 3)
-
-		for(var/obj/item/I in frozen_items)
+/obj/machinery/computer/cryopod/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("log")
+			view_mode = "log"
+		if("view")
+			if(!allow_items) return TRUE
+			view_mode = "view"
+		if("item")
+			if(!allow_items) return TRUE
+			if(frozen_items.len == 0)
+				to_chat(usr, SPAN_NOTICE("There is nothing to recover from storage."))
+				return TRUE
+			view_mode = "recover"
+		if("recover")
+			if(!allow_items) return TRUE
+			if(frozen_items.len == 0)
+				to_chat(usr, SPAN_NOTICE("There is nothing to recover from storage."))
+				return TRUE
+			var/obj/item/I = locate(params["item"])
+			if(isnull(I))
+				return TRUE
+			if(!(I in frozen_items))
+				to_chat(usr, SPAN_NOTICE("\The [I] is no longer in storage."))
+				return TRUE
+			visible_message(SPAN_NOTICE("The console beeps happily as it disgorges \the [I]."), range = 3)
 			I.dropInto(loc)
 			frozen_items -= I
-		. = TOPIC_REFRESH
+		if("allitems")
+			if(!allow_items) return TRUE
+			if(frozen_items.len == 0)
+				to_chat(usr, SPAN_NOTICE("There is nothing to recover from storage."))
+				return TRUE
+			visible_message(SPAN_NOTICE("The console beeps happily as it disgorges the desired objects."), range = 3)
+			for(var/obj/item/I in frozen_items)
+				I.dropInto(loc)
+				frozen_items -= I
+		if("back")
+			view_mode = null
+	SStgui.update_uis(src)
+	return TRUE
 
 /obj/item/stock_parts/circuitboard/cryopodcontrol
 	name = "Circuit board (Cryogenic Oversight Console)"

@@ -109,58 +109,35 @@
 
 /obj/item/device/assembly/infra/interact(mob/user as mob)//TODO: change this this to the wire control panel
 	if(!secured)	return
-	user.set_machine(src)
+	tgui_interact(user)
 
-	/* a testament to autism
-	var/dat = text("<TT><B>Infrared Laser</B>\n<B>Status</B>: []<BR>\n<B>Visibility</B>: []<BR>\n</TT>", (on ? text("<A href='byond://?src=\ref[];state=0'>On</A>", src) : text("<A href='byond://?src=\ref[];state=1'>Off</A>", src)), (src.visible ? text("<A href='byond://?src=\ref[];visible=0'>Visible</A>", src) : text("<A href='byond://?src=\ref[];visible=1'>Invisible</A>", src)))
-	*/
+/obj/item/device/assembly/infra/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "InfraredSensor", "Infrared Laser")
+		ui.open()
 
-	var/dat = "<TT><B>Infrared Laser</B>\n<B>Status</B>: "
-	if (on)
-		dat += "<A href='byond://?src=\ref[src];state=0'>On</A>"
-	else
-		dat += "<A href='byond://?src=\ref[src];state=1'>Off</A>"
-	dat += "<BR>\n<B>Visibility</B>: "
+/obj/item/device/assembly/infra/tgui_data(mob/user)
+	var/list/data = list()
+	data["on"] = on
+	data["visible"] = visible
+	return data
 
-	if (visible)
-		dat += "<A href='byond://?src=\ref[src];visible=0'>Visible</A>"
-	else
-		dat += "<A href='byond://?src=\ref[src];visible=1'>Invisible</A>"
-
-	dat += "<BR>\n</TT>"
-	dat += "<BR><BR><A href='byond://?src=\ref[src];refresh=1'>Refresh</A>"
-	dat += "<BR><BR><A href='byond://?src=\ref[src];close=1'>Close</A>"
-
-	var/datum/browser/popup = new(user, "infra", "Infrared Laser")
-	popup.set_content(dat)
-	popup.open()
-
-	return
-
-/obj/item/device/assembly/infra/Topic(href, href_list, state = GLOB.physical_state)
+/obj/item/device/assembly/infra/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
-		close_browser(usr, "window=infra")
-		onclose(usr, "infra")
-		return 1
-
-	if(href_list["state"])
-		on = !(on)
-		update_icon()
-
-	if(href_list["visible"])
-		visible = !(visible)
-		spawn(0)
-			if(first)
-				first.vis_spread(visible)
-
-	if(href_list["close"])
-		close_browser(usr, "window=infra")
-		return
-
-	if(usr)
-		attack_self(usr)
-
-	return
+		return TRUE
+	switch(action)
+		if("state")
+			on = !(on)
+			update_icon()
+			return TRUE
+		if("visible")
+			visible = !(visible)
+			spawn(0)
+				if(first)
+					first.vis_spread(visible)
+			return TRUE
+	return FALSE
 
 
 /obj/item/device/assembly/infra/verb/rotate_laser()//This could likely be better

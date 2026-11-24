@@ -259,14 +259,37 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 	return 0
 
 /obj/item/card/id/proc/show(mob/user as mob)
+	tgui_interact(user)
+
+/obj/item/card/id/tgui_state(mob/user)
+	return GLOB.always_tgui_state
+
+/obj/item/card/id/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "IDCard", name)
+		ui.open()
+
+/obj/item/card/id/tgui_data(mob/user)
+	var/list/data = list()
+	data["registered_name"] = "[formal_name_prefix][registered_name][formal_name_suffix]"
+	data["sex"] = sex
+	data["age"] = age
+	data["class"] = class
+	data["assignment"] = assignment
+	data["fingerprint_hash"] = fingerprint_hash
+	data["blood_type"] = blood_type
+	data["dna_hash"] = dna_hash
+	data["has_photo"] = (front && side) ? TRUE : FALSE
 	if(front && side)
 		send_rsc(user, front, "front.png")
 		send_rsc(user, side, "side.png")
-	var/datum/browser/popup = new(user, "idcard", name, 600, 250)
-	popup.set_content(dat())
-	popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
-	popup.open()
-	return
+	return data
+
+/obj/item/card/id/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	return FALSE
 
 /obj/item/card/id/proc/get_display_name()
 	. = "[formal_name_prefix][registered_name][formal_name_suffix]"
@@ -306,21 +329,6 @@ GLOBAL_LIST_EMPTY(conversion_cards)
 /mob/living/carbon/human/set_id_info(obj/item/card/id/id_card)
 	..()
 	id_card.age = age
-
-/obj/item/card/id/proc/dat()
-	var/list/dat = list("<table><tr><td>")
-	dat += text("Name: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
-	dat += text("Sex: []</A><BR>\n", sex)
-	dat += text("Age: []</A><BR>\n", age)
-	dat += text("Class: []</A><BR>\n", class)
-	dat += text("Assignment: []</A><BR>\n", assignment)
-	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
-	dat += text("Blood Type: []<BR>\n", blood_type)
-	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
-	if(front && side)
-		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=70 width=70 border=7 style='-ms-interpolation-mode: nearest-neighbor'> <img src=side.png height=70 width=70 border=4 style='-ms-interpolation-mode: nearest-neighbor'></td>"
-	dat += "</tr></table>"
-	return jointext(dat,null)
 
 /obj/item/card/id/attack_self(mob/user as mob)
 	user.visible_message("\The [user] shows you: [icon2html(src, viewers(get_turf(src)))] [src.name]. The assignment on the card: [src.assignment]",\

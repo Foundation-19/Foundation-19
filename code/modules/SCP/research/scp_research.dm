@@ -93,6 +93,10 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 		return
 	research_points += amount
 	check_tier_upgrade()
+	// Site research overhaul: all point earnings also feed the site pool
+	// and any active research projects targeting this SCP.
+	if(GLOB.scp_research_director)
+		GLOB.scp_research_director.on_points_earned(src, amount, source)
 
 /datum/scp_research/proc/check_tier_upgrade()
 	var/next_tier = research_level + 1
@@ -142,6 +146,9 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 	GLOB.scp_research_tracker.log_test(parent, tester, test_type, "+[points] points ([risk_level] risk)")
 	// Codex: tests advance personal knowledge to detailed.
 	codex_on_test(designation, tester, CODEX_DETAILED)
+	// Safety: extreme-risk tests damage the site safety rating.
+	if(risk_level == "extreme" && GLOB.scp_research_director)
+		GLOB.scp_research_director.on_extreme_test(designation)
 	return points
 
 /datum/scp_research/proc/set_containment_status(new_status)

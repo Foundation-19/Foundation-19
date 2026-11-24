@@ -42,11 +42,383 @@ const SCPDatabaseContent = (props, context) => {
           onClick={() => act('PRG_switch_tab', { tab: 'tests' })}>
           Test Log
         </Tabs.Tab>
+        <Tabs.Tab
+          selected={tab === 'tree'}
+          onClick={() => act('PRG_switch_tab', { tab: 'tree' })}>
+          Tech Tree
+        </Tabs.Tab>
+        <Tabs.Tab
+          selected={tab === 'projects'}
+          onClick={() => act('PRG_switch_tab', { tab: 'projects' })}>
+          Projects
+        </Tabs.Tab>
+        <Tabs.Tab
+          selected={tab === 'teams'}
+          onClick={() => act('PRG_switch_tab', { tab: 'teams' })}>
+          Teams
+        </Tabs.Tab>
+        <Tabs.Tab
+          selected={tab === 'safety'}
+          onClick={() => act('PRG_switch_tab', { tab: 'safety' })}>
+          Safety
+        </Tabs.Tab>
       </Tabs>
       {tab === 'overview' && <OverviewTab />}
       {tab === 'detail' && <DetailTab />}
       {tab === 'breaches' && <BreachLogTab />}
       {tab === 'tests' && <TestLogTab />}
+      {tab === 'tree' && <TechTreeTab />}
+      {tab === 'projects' && <ProjectsTab />}
+      {tab === 'teams' && <TeamsTab />}
+      {tab === 'safety' && <SafetyTab />}
+    </Box>
+  );
+};
+
+const ResearchOffline = () => (
+  <NoticeBox danger>
+    Research systems offline.
+  </NoticeBox>
+);
+
+const tagColor = (tag) => {
+  switch (tag) {
+    case 'POINTS': return 'good';
+    case 'TECH': return 'blue';
+    case 'BONUS': return 'good';
+    case 'PROJECT': return 'average';
+    case 'TEAM': return 'label';
+    case 'SAFETY': return 'bad';
+    default: return 'label';
+  }
+};
+
+const TechTreeTab = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { director } = data;
+
+  if (!director || !director.tech_nodes) {
+    return <ResearchOffline />;
+  }
+
+  const {
+    pool = 0,
+    safety_rating = 0,
+    research_multiplier = 0,
+    sanity_resist = 0,
+    containment_floor = 0,
+    tech_nodes = [],
+    catalog = [],
+  } = director;
+
+  const categories = ['Containment', 'Medical', 'Engineering', 'Cognitive', 'Analytical'];
+  const unlockedIds = tech_nodes.filter((node) => node.unlocked).map((node) => node.id);
+
+  return (
+    <Box>
+      <Section title="Site Research Status">
+        <LabeledList>
+          <LabeledList.Item label="Site Pool">{pool}</LabeledList.Item>
+          <LabeledList.Item label="Safety Rating">{safety_rating}%</LabeledList.Item>
+          <LabeledList.Item label="Research Multiplier">+{research_multiplier}%</LabeledList.Item>
+          <LabeledList.Item label="Sanity Resist">{sanity_resist}%</LabeledList.Item>
+          <LabeledList.Item label="Containment Floor">{containment_floor}%</LabeledList.Item>
+        </LabeledList>
+      </Section>
+      {categories.map((category) => {
+        const categoryNodes = tech_nodes.filter((node) => node.category === category);
+        if (!categoryNodes.length) {
+          return null;
+        }
+        return (
+          <Section key={category} title={category}>
+            {[1, 2, 3, 4, 5].map((tier) => {
+              const tierNodes = categoryNodes.filter((node) => node.tier === tier);
+              if (!tierNodes.length) {
+                return null;
+              }
+              return (
+                <Box key={tier} mb={1}>
+                  <Box bold color="label" mb={0.5}>Tier {tier}</Box>
+                  {tierNodes.map((node) => {
+                    const prereqMet = (node.prerequisites || []).every((id) => unlockedIds.includes(id));
+                    const affordable = pool >= node.cost;
+                    const canUnlock = prereqMet && affordable;
+                    return (
+                      <Box key={node.id} mb={1}>
+                        <Button
+                          fluid
+                          selected={node.unlocked}
+                          disabled={!node.unlocked && !canUnlock}
+                          onClick={() => !node.unlocked && act('PRG_unlock_node', { node_id: node.id })}>
+                          {node.name} (T{node.tier}) — {node.cost} pts
+                        </Button>
+                        <Box color="label" mt={0.5}>{node.description}</Box>
+                      </Box>
+                    );
+                  })}
+                </Box>
+              );
+            })}
+          </Section>
+        );
+      })}
+      <Section title="Research Catalog">
+        {catalog.length === 0 ? (
+          <Box color="label">No catalog items unlocked.</Box>
+        ) : (
+          <LabeledList>
+            {catalog.map((item, i) => (
+              <LabeledList.Item key={i} label={item.name}>
+                <Button
+                  icon="print"
+                  content="Fabricate"
+                  onClick={() => act('PRG_fabricate_catalog', { type: item.type })} />
+              </LabeledList.Item>
+            ))}
+          </LabeledList>
+        )}
+      </Section>
+    </Box>
+  );
+};
+
+const ProjectsTab = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { director } = data;
+
+  if (!director || !director.tech_nodes) {
+    return <ResearchOffline />;
+  }
+
+  const projects = director.projects || [];
+
+  const statusColor = (status) => {
+    switch (status) {
+      case 'proposed': return 'average';
+      case 'active': return 'good';
+      case 'completed': return 'blue';
+      case 'revoked': return 'bad';
+      default: return 'label';
+    }
+  };
+
+  return (
+    <Box>
+      <Box mb={1}>
+        <Button
+          icon="plus"
+          content="File New Project"
+          color="good"
+          onClick={() => act('PRG_create_project', {})} />
+      </Box>
+      {projects.length === 0 ? (
+        <Box color="label">No research projects on file.</Box>
+      ) : (
+        projects.map((project) => (
+          <Box key={project.id} mb={1} p={1} style={{ border: '1px solid #444' }}>
+            <Flex>
+              <Flex.Item grow={1} bold>{project.title}</Flex.Item>
+              <Flex.Item color={statusColor(project.status)} bold>
+                {String(project.status).toUpperCase()}
+              </Flex.Item>
+            </Flex>
+            <Box color="label" mt={1}>{project.description || 'No description.'}</Box>
+            <LabeledList>
+              <LabeledList.Item label="Targets">
+                {(project.scp_targets && project.scp_targets.length)
+                  ? project.scp_targets.map((designation) => `SCP-${designation}`).join(', ')
+                  : 'Any SCP'}
+              </LabeledList.Item>
+              <LabeledList.Item label="Proposed By">
+                {project.proposed_by || 'Unknown'}
+              </LabeledList.Item>
+              {project.approved_by ? (
+                <LabeledList.Item label="Approved By">
+                  {project.approved_by}
+                </LabeledList.Item>
+              ) : null}
+              <LabeledList.Item label="Progress">
+                <ProgressBar
+                  value={project.contributed_points}
+                  minValue={0}
+                  maxValue={Math.max(project.required_points || 0, 1)}
+                  color="blue">
+                  {project.contributed_points} / {project.required_points}
+                </ProgressBar>
+              </LabeledList.Item>
+            </LabeledList>
+            <Box mt={1}>
+              {project.status === 'proposed' ? (
+                <Box>
+                  <Button
+                    icon="check"
+                    content="Approve"
+                    color="good"
+                    onClick={() => act('PRG_approve_project', { project_id: String(project.id) })} />
+                  <Button
+                    icon="ban"
+                    content="Revoke"
+                    color="bad"
+                    ml={1}
+                    onClick={() => act('PRG_revoke_project', { project_id: String(project.id) })} />
+                </Box>
+              ) : null}
+              {project.status === 'active' ? (
+                <Button
+                  icon="ban"
+                  content="Revoke"
+                  color="bad"
+                  onClick={() => act('PRG_revoke_project', { project_id: String(project.id) })} />
+              ) : null}
+            </Box>
+          </Box>
+        ))
+      )}
+    </Box>
+  );
+};
+
+const TeamsTab = (props, context) => {
+  const { act, data } = useBackend(context);
+  const { director } = data;
+
+  if (!director || !director.tech_nodes) {
+    return <ResearchOffline />;
+  }
+
+  const teams = director.teams || [];
+  const currentCkey = data.user_ckey || data.ckey || null;
+
+  return (
+    <Box>
+      <Box mb={1}>
+        <Button
+          icon="users"
+          content="Form New Team"
+          color="good"
+          onClick={() => act('PRG_create_team', {})} />
+      </Box>
+      {teams.length === 0 ? (
+        <Box color="label">No research teams formed.</Box>
+      ) : (
+        teams.map((team) => {
+          const members = team.members || [];
+          const joinRequests = team.join_requests || [];
+          const isMember = currentCkey ? members.includes(currentCkey) : false;
+          return (
+            <Box key={team.id} mb={1} p={1} style={{ border: '1px solid #444' }}>
+              <Flex>
+                <Flex.Item grow={1} bold>{team.name}</Flex.Item>
+                <Flex.Item color="label">{team.id}</Flex.Item>
+              </Flex>
+              <LabeledList>
+                <LabeledList.Item label="Leader">
+                  {team.leader || 'Unassigned'}
+                </LabeledList.Item>
+                <LabeledList.Item label={`Members (${members.length})`}>
+                  {members.length ? members.join(', ') : 'None'}
+                </LabeledList.Item>
+              </LabeledList>
+              {joinRequests.length > 0 ? (
+                <Box mt={1}>
+                  <Box bold color="label" mb={0.5}>Join Requests</Box>
+                  {joinRequests.map((ckey) => (
+                    <Flex key={ckey} mb={0.5} align="center">
+                      <Flex.Item grow={1}>{ckey}</Flex.Item>
+                      <Flex.Item>
+                        <Button
+                          icon="check"
+                          content="Approve"
+                          color="good"
+                          onClick={() => act('PRG_approve_join', { team_id: team.id, ckey })} />
+                        <Button
+                          icon="times"
+                          content="Deny"
+                          color="bad"
+                          ml={0.5}
+                          onClick={() => act('PRG_deny_join', { team_id: team.id, ckey })} />
+                      </Flex.Item>
+                    </Flex>
+                  ))}
+                </Box>
+              ) : null}
+              {!isMember ? (
+                <Box mt={1}>
+                  <Button
+                    icon="user-plus"
+                    content="Request Join"
+                    onClick={() => act('PRG_request_join', { team_id: team.id })} />
+                </Box>
+              ) : null}
+            </Box>
+          );
+        })
+      )}
+    </Box>
+  );
+};
+
+const SafetyTab = (props, context) => {
+  const { data } = useBackend(context);
+  const { director } = data;
+
+  if (!director || !director.tech_nodes) {
+    return <ResearchOffline />;
+  }
+
+  const {
+    safety_rating = 0,
+    achievements = [],
+    research_log = [],
+  } = director;
+  const safetyColor = safety_rating > 75 ? 'good' : safety_rating > 50 ? 'average' : 'bad';
+  const recentLog = research_log.slice(-40);
+
+  return (
+    <Box>
+      <Section title="Safety Rating">
+        <LabeledList>
+          <LabeledList.Item label="Rating">
+            <Box color={safetyColor} bold>{safety_rating}%</Box>
+          </LabeledList.Item>
+          <LabeledList.Item label="Protocol Status">
+            <Box color={safetyColor}>
+              {safety_rating > 75
+                ? 'Nominal — protocols observed.'
+                : safety_rating > 50
+                  ? 'Caution — protocol violations logged.'
+                  : 'Critical — containment protocols compromised.'}
+            </Box>
+          </LabeledList.Item>
+        </LabeledList>
+      </Section>
+      <Section title="Achievements">
+        {achievements.length === 0 ? (
+          <Box color="label">No achievements recorded.</Box>
+        ) : (
+          <LabeledList>
+            {achievements.map((achievement, i) => (
+              <LabeledList.Item key={i} label={achievement.name}>
+                {achievement.type} — {achievement.by} — {achievement.time}
+              </LabeledList.Item>
+            ))}
+          </LabeledList>
+        )}
+      </Section>
+      <Section title="Research Log">
+        {recentLog.length === 0 ? (
+          <Box color="label">No research activity logged.</Box>
+        ) : (
+          recentLog.map((entry, i) => (
+            <Box key={i} mb={0.5}>
+              <Box inline bold color={tagColor(entry.tag)}>[{entry.tag}]</Box>
+              <Box inline ml={1}>{entry.text}</Box>
+              <Box inline ml={1} color="label">{entry.time}</Box>
+            </Box>
+          ))
+        )}
+      </Section>
     </Box>
   );
 };

@@ -18,38 +18,33 @@
 			break
 
 /obj/machinery/computer/operating/interface_interact(user)
-	interact(user)
+	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/computer/operating/interact(mob/user)
+/obj/machinery/computer/operating/tgui_interact(mob/user, datum/tgui/ui)
 	if((get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)))
 		if(!issilicon(user))
 			user.unset_machine()
-			close_browser(user, "window=op")
 			return
 
 	user.set_machine(src)
-	var/dat = "<HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>\n"
-	dat += "<A href='byond://?src=\ref[user];mach_close=op'>Close</A><br><br>" //| <A href='byond://?src=\ref[user];update=1'>Update</A>"
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OperatingConsole", "Patient Monitoring System")
+		ui.open()
+
+/obj/machinery/computer/operating/tgui_data(mob/user)
+	var/list/data = list()
 	if(src.table && (src.table.check_victim()))
 		src.victim = src.table.victim
-		dat += {"
-<B>Patient Information:</B><BR>
-<BR>
-[medical_scan_results(victim, 1)]
-"}
+		data["has_patient"] = TRUE
+		data["patient"] = victim.name
+		data["scan"] = medical_scan_results(victim, 1)
 	else
 		src.victim = null
-		dat += {"
-<B>Patient Information:</B><BR>
-<BR>
-<B>No Patient Detected</B>
-"}
-	var/datum/browser/popup = new(user, "op", "Patient Monitoring System")
-	popup.set_content(dat)
-	popup.open()
-	onclose(user, "op")
+		data["has_patient"] = FALSE
+	return data
 
 /obj/machinery/computer/operating/Process()
 	if(!inoperable())
-		updateDialog()
+		SStgui.update_uis(src)

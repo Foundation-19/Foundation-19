@@ -326,28 +326,57 @@
 			new /obj/item/pipe(loc, src)
 			qdel(src)
 	if(isMultitool(W))
-		var/datum/browser/popup = new(user, "Vent Configuration Utility", "[src] Configuration Panel", 600, 200)
-		popup.set_content(jointext(get_console_data(),"<br>"))
-		popup.open()
+		tgui_interact(user)
 		return
 	else
 		return ..()
 
-/obj/machinery/atmospherics/unary/vent_pump/proc/get_console_data()
-	. = list()
-	. += "<table>"
-	. += "<tr><td><b>Name:</b></td><td>[name]</td>"
-	. += "<tr><td><b>Pump Status:</b></td><td>[pump_direction?("<font color = 'green'>Releasing</font>"):("<font color = 'red'>Siphoning</font>")]</td><td><a href='byond://?src=\ref[src];switchMode=\ref[src]'>Toggle</a></td></tr>"
-	. = JOINTEXT(.)
+/obj/machinery/atmospherics/unary/vent_pump/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "VentPump", name)
+		ui.open()
 
-/obj/machinery/atmospherics/unary/vent_pump/OnTopic(mob/user, href_list, datum/topic_state/state)
-	if((. = ..()))
-		return
-	if(href_list["switchMode"])
-		pump_direction = !pump_direction
-		to_chat(user, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
-		queue_icon_update() //force the icon to refresh after changing directional mode.
-		return TOPIC_REFRESH
+/obj/machinery/atmospherics/unary/vent_pump/tgui_data(mob/user)
+	var/list/data = list()
+	data["name"] = name
+	data["pump_direction"] = pump_direction
+	data["power"] = use_power ? TRUE : FALSE
+	data["external_pressure_bound"] = external_pressure_bound
+	data["internal_pressure_bound"] = internal_pressure_bound
+	data["pressure_checks"] = pressure_checks
+	data["external_pressure_bound_default"] = external_pressure_bound_default
+	data["internal_pressure_bound_default"] = internal_pressure_bound_default
+	data["pressure_checks_default"] = pressure_checks_default
+	data["max_pressure"] = MAX_PUMP_PRESSURE
+	return data
+
+/obj/machinery/atmospherics/unary/vent_pump/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("switch_mode")
+			pump_direction = !pump_direction
+			to_chat(usr, SPAN_NOTICE("The multitool emits a short beep confirming the change."))
+			queue_icon_update() //force the icon to refresh after changing directional mode.
+			return TRUE
+		if("set_external_pressure")
+			external_pressure_bound = Clamp(text2num(params["pressure"]), 0, MAX_PUMP_PRESSURE)
+			return TRUE
+		if("set_internal_pressure")
+			internal_pressure_bound = Clamp(text2num(params["pressure"]), 0, MAX_PUMP_PRESSURE)
+			return TRUE
+		if("toggle_check")
+			var/check = text2num(params["check"])
+			if(check == PRESSURE_CHECK_EXTERNAL || check == PRESSURE_CHECK_INTERNAL)
+				pressure_checks ^= check
+			return TRUE
+		if("reset_defaults")
+			external_pressure_bound = external_pressure_bound_default
+			internal_pressure_bound = internal_pressure_bound_default
+			pressure_checks = pressure_checks_default
+			return TRUE
+	return FALSE
 
 /decl/public_access/public_variable/pump_dir
 	expected_type = /obj/machinery/atmospherics/unary/vent_pump

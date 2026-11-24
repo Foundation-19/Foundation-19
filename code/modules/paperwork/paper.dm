@@ -42,6 +42,9 @@
 	///Whether or not title should be show in the desc.
 	var/show_title = TRUE
 
+	var/tgui_force
+	var/tgui_editable
+
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
@@ -147,7 +150,40 @@
 		user = C.mob
 	if (!user)
 		return
-	var/can_read = force || isghost(user)
+	tgui_force = force
+	tgui_editable = editable
+	tgui_interact(user)
+
+	if(isnull(name))
+		crash_with("Paper failed a sanity check. It has no name. Report that! | Type: [type]")
+
+/obj/item/paper/tgui_interact(mob/user, datum/tgui/ui)
+	if (isclient(user))
+		var/client/C = user
+		user = C.mob
+	if (!user)
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "Paper", name)
+		ui.open()
+
+/obj/item/paper/tgui_state(mob/user)
+	if (tgui_force)
+		return GLOB.always_tgui_state
+	if (user && user.contains(src))
+		return GLOB.deep_inventory_tgui_state
+	return GLOB.default_tgui_state
+
+/obj/item/paper/tgui_data(mob/user)
+	if (isclient(user))
+		var/client/C = user
+		user = C.mob
+	var/list/data = list()
+	if (!user)
+		return data
+
+	var/can_read = tgui_force || isghost(user)
 	if (!can_read)
 		can_read = isAI(user)
 		if (can_read)
@@ -157,39 +193,50 @@
 			can_read = ishuman(user) || issilicon(user)
 			if (can_read)
 				can_read = get_dist(src, user) < PAPER_EYEBALL_DISTANCE
-	var/html = ""
-	if (!can_read)
-		html += PAPER_META_BAD("The paper is too far away or you can't read.")
+
 	var/has_content = length(info)
-	var/has_language = force || (language in user.languages)
-	if (has_content && !has_language && !isghost(user))
-		html += PAPER_META_BAD("The paper is written in a language you don't understand.")
-		html += "<hr/>" + language.scramble(info)
-	else if (editable)
-		if (has_content)
-			html += PAPER_META("The paper is written in [language.name].")
-			html += "<hr/>" + info_links
-		else if (force || length(user.languages))
-			if (!has_language)
-				language = user.languages[1]
-			html += PAPER_META("You are writing in <a href='byond://?src=\ref[src];change_language=1'>[language.name]</a>.")
-			html += "<hr/>" + info_links
-		else
-			html += PAPER_META_BAD("You can't write without knowing a language.")
+	var/has_language = tgui_force || (language in user.languages)
+	var/editable = tgui_editable
+	var/can_write = tgui_force || length(user.languages)
+	var/unknown_language = has_content && !has_language && !isghost(user)
+	var/can_change_language = editable && !has_content && can_write
+
+	if (editable && !has_content && can_write && !has_language)
+		language = user.languages[1]
+
+	var/show_links = editable && (has_content ? (has_language || isghost(user)) : can_write)
+
+	var/content = ""
+	if (show_links)
+		content = get_tgui_info_links()
 	else if (has_content)
-		html += PAPER_META("The paper is written in [language.name].")
-		html += "<hr/>" + info
-	html += "[stamps]"
+		content = (has_language || isghost(user)) ? info : language.scramble(info)
 
-	// Ported to browser datum for IE11 feature parity
-	var/datum/browser/window = new(user, "paper_[name]", include_common = FALSE)
-	window.add_stylesheet("acs", 'html/acs.css')
-	window.add_head_content("<title>[name]</title><style>body { background-color: [color]; }</style>")
-	window.set_content(html)
-	window.open()
+	var/obj/item/I = user.get_active_hand()
+	var/has_pen = istype(I, /obj/item/pen)
+	if (!has_pen && user.back && istype(user.back, /obj/item/rig))
+		var/obj/item/rig/r = user.back
+		var/obj/item/rig_module/device/pen/m = locate(/obj/item/rig_module/device/pen) in r.installed_modules
+		if (!r.offline && m)
+			has_pen = TRUE
 
-	if(isnull(name))
-		crash_with("Paper failed a sanity check. It has no name. Report that! | Type: [type]")
+	data["name"] = name
+	data["content_html"] = content
+	data["info_links"] = show_links ? get_tgui_info_links() : ""
+	data["stamps"] = stamps ? stamps : ""
+	data["language"] = language ? language.name : "Unknown"
+	data["has_language"] = has_language
+	data["has_content"] = has_content
+	data["blank"] = !has_content
+	data["editable"] = editable
+	data["show_links"] = show_links
+	data["can_read"] = can_read
+	data["can_change_language"] = can_change_language
+	data["no_language"] = editable && !has_content && !can_write
+	data["unknown_language"] = unknown_language
+	data["free_space"] = free_space
+	data["has_pen"] = has_pen
+	return data
 
 /obj/item/paper/verb/rename()
 	set name = "Rename paper"
@@ -334,6 +381,15 @@
 		addtofield(i, "<font face=\"[deffont]\"><A href='byond://?src=\ref[src];write=[i]'>write</A></font>", TRUE)
 	info_links = info_links + "<font face=\"[deffont]\"><A href='byond://?src=\ref[src];write=end'>write</A></font>"
 
+/obj/item/paper/proc/get_tgui_info_links()
+	var/html = info_links
+	if (!html)
+		return ""
+	for (var/i = 1 to fields)
+		html = replacetext(html, "href='byond://?src=\ref[src];write=[i]'", "href='byond://?src=\ref[src];write=[i]' data-paper-act='write' data-paper-field='[i]'")
+	html = replacetext(html, "href='byond://?src=\ref[src];write=end'", "href='byond://?src=\ref[src];write=end' data-paper-act='write' data-paper-field='end'")
+	return html
+
 
 /obj/item/paper/proc/clearpaper()
 	info = null
@@ -409,76 +465,84 @@
 				to_chat(user, SPAN_WARNING("You must hold \the [P] steady to burn \the [src]."))
 
 
-/obj/item/paper/Topic(href, href_list)
-	..()
+/obj/item/paper/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if (..())
+		return TRUE
 	if(!usr || (usr.stat || usr.restrained()))
-		return
+		return TRUE
 
-	if (href_list["change_language"])
-		choose_language(usr)
-		show_content(usr, editable = TRUE)
-		return
+	switch(action)
+		if("change_language")
+			tgui_force = FALSE
+			tgui_editable = TRUE
+			choose_language(usr)
+			SStgui.update_uis(src)
+			return TRUE
 
-	if(href_list["write"])
-		var/id = href_list["write"]
+		if("write")
+			var/id = params["field"]
 
-		if(free_space <= 0)
-			to_chat(usr, SPAN_INFO("There isn't enough space left on \the [src] to write anything."))
-			return
+			if(free_space <= 0)
+				to_chat(usr, SPAN_INFO("There isn't enough space left on \the [src] to write anything."))
+				return TRUE
 
-		var/obj/item/I = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
-		var/iscrayon = 0
-		var/isfancy = 0
-		if(!istype(I, /obj/item/pen))
-			if(usr.back && istype(usr.back,/obj/item/rig))
-				var/obj/item/rig/r = usr.back
-				var/obj/item/rig_module/device/pen/m = locate(/obj/item/rig_module/device/pen) in r.installed_modules
-				if(!r.offline && m)
-					I = m.device
+			var/obj/item/I = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
+			var/iscrayon = 0
+			var/isfancy = 0
+			if(!istype(I, /obj/item/pen))
+				if(usr.back && istype(usr.back,/obj/item/rig))
+					var/obj/item/rig/r = usr.back
+					var/obj/item/rig_module/device/pen/m = locate(/obj/item/rig_module/device/pen) in r.installed_modules
+					if(!r.offline && m)
+						I = m.device
+					else
+						return TRUE
 				else
-					return
+					return TRUE
+
+			var/obj/item/pen/P = I
+			if(!P.active)
+				P.toggle()
+
+			if(P.iscrayon)
+				iscrayon = TRUE
+
+			if(P.isfancy)
+				isfancy = TRUE
+			sanitize()
+			var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", null, free_space, TRUE, trim = FALSE)
+			if(!t)
+				return TRUE
+
+			// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr
+			if(src.loc != usr && !src.Adjacent(usr) && !((istype(src.loc, /obj/item/material/clipboard) || istype(src.loc, /obj/item/folder)) && (src.loc.loc == usr || src.loc.Adjacent(usr)) ) )
+				return TRUE
+
+			var/last_fields_value = fields
+			t = parsepencode(t, I, usr, iscrayon, isfancy) // Encode everything from pencode to html
+
+			if(fields > MAX_PAPER_FIELDS)
+				to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
+				fields = last_fields_value
+				return TRUE
+
+			if(id!="end")
+				addtofield(text2num(id), t) // He wants to edit a field, let him.
 			else
-				return
+				info += t // Oh, he wants to edit to the end of the file, let him.
+				updateinfolinks()
 
-		var/obj/item/pen/P = I
-		if(!P.active)
-			P.toggle()
+			last_modified_ckey = usr.ckey
 
-		if(P.iscrayon)
-			iscrayon = TRUE
+			update_space(t)
 
-		if(P.isfancy)
-			isfancy = TRUE
-		sanitize()
-		var/t = tgui_input_text(usr, "Enter what you want to write:", "Write", null, free_space, TRUE, trim = FALSE)
-		if(!t)
-			return
-
-		// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr
-		if(src.loc != usr && !src.Adjacent(usr) && !((istype(src.loc, /obj/item/material/clipboard) || istype(src.loc, /obj/item/folder)) && (src.loc.loc == usr || src.loc.Adjacent(usr)) ) )
-			return
-
-		var/last_fields_value = fields
-		t = parsepencode(t, I, usr, iscrayon, isfancy) // Encode everything from pencode to html
-
-		if(fields > MAX_PAPER_FIELDS)
-			to_chat(usr, SPAN_WARNING("Too many fields. Sorry, you can't do this."))
-			fields = last_fields_value
-			return
-
-		if(id!="end")
-			addtofield(text2num(id), t) // He wants to edit a field, let him.
-		else
-			info += t // Oh, he wants to edit to the end of the file, let him.
-			updateinfolinks()
-
-		last_modified_ckey = usr.ckey
-
-		update_space(t)
-
-		show_content(usr, editable = TRUE)
-		playsound(src, pick('sounds/effects/pen1.ogg','sounds/effects/pen2.ogg'), 10)
-		update_icon()
+			tgui_force = FALSE
+			tgui_editable = TRUE
+			SStgui.update_uis(src)
+			playsound(src, pick('sounds/effects/pen1.ogg','sounds/effects/pen2.ogg'), 10)
+			update_icon()
+			return TRUE
+	return FALSE
 
 
 /obj/item/paper/attackby(obj/item/P as obj, mob/user as mob)
