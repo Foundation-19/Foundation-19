@@ -33,16 +33,27 @@
 // Do not make any calls in mob/Login which may require prefs having been loaded.
 // It is safe to assume that any UI or sound related calls will fall into that category.
 /mob/new_player/proc/deferred_login()
-	if(client)
+	if(!client)
+		return
+	if(!deferred_login_intro_done)
+		deferred_login_intro_done = TRUE
 		client.playtitlemusic()
 		maybe_send_staffwarns("connected as new player")
 
-	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-	var/decl/security_level/SL = security_state.current_security_level
-	var/alert_desc = ""
-	if(SL.description)
-		alert_desc = SL.description
-	to_chat(src, SPAN_NOTICE("The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]"))
+		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+		var/decl/security_level/SL = security_state.current_security_level
+		var/alert_desc = ""
+		if(SL.description)
+			alert_desc = SL.description
+		to_chat(src, SPAN_NOTICE("The alert level on the [station_name()] is currently: <font color=[SL.light_color_alarm]><B>[SL.name]</B></font>. [alert_desc]"))
 	InitializeHud()
-	if(npp)
-		npp.open()
+	if(npp && npp.open())
+		lobby_menu_opened = TRUE
+
+/mob/new_player/verb/open_lobby_menu()
+	set name = "Lobby Menu"
+	set category = "OOC"
+	set desc = "Reopen the lobby menu."
+	if(!npp)
+		return
+	npp.open()

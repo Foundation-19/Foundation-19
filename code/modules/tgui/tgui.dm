@@ -49,10 +49,11 @@
  * optional title string The title of the UI.
  * optional ui_x int Deprecated: Window width.
  * optional ui_y int Deprecated: Window height.
+ * optional state datum/tgui_state The topic state to use, falls back to src_object.tgui_state().
  *
  * return datum/tgui The requested UI.
  */
-/datum/tgui/New(mob/user, datum/src_object, interface, title)
+/datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y, datum/tgui_state/state)
 	log_tgui(user,
 		"new [interface] fancy [user?.client?.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES]",
 		src_object = src_object)
@@ -62,9 +63,17 @@
 	src.interface = interface
 	if(title)
 		src.title = title
-	src.state = src_object.tgui_state(user)
+	src.state = state || src_object.tgui_state(user)
 
 /datum/tgui/Destroy()
+	SStgui.on_close(src)
+	if(window)
+		if(window.locked_by == src)
+			window.release_lock()
+		if(window.subscriber_object == src)
+			window.unsubscribe(src)
+		window = null
+	state = null
 	user = null
 	src_object = null
 	return ..()
@@ -77,7 +86,7 @@
  * return bool - TRUE if a new pooled window is opened, FALSE in all other situations including if a new pooled window didn't open because one already exists.
  */
 /datum/tgui/proc/open()
-	if(!user.client)
+	if(!user || !user.client || !src_object)
 		return FALSE
 	if(window)
 		return FALSE
@@ -130,7 +139,8 @@
 		// the error message properly.
 		window.release_lock()
 		window.close(can_be_suspended)
-		src_object.tgui_close(user)
+		if(src_object)
+			src_object.tgui_close(user)
 		SStgui.on_close(src)
 	state = null
 	qdel(src)
@@ -230,6 +240,8 @@
  * return list
  */
 /datum/tgui/proc/get_payload(custom_data, with_data, with_static_data)
+	if(!user || !user.client)
+		return
 	var/list/json_data = list()
 	json_data["config"] = list(
 		"title" = title,
@@ -270,9 +282,12 @@
 /datum/tgui/Process(delta_time, force = FALSE)
 	if(closing)
 		return
-	var/datum/host = src_object.tgui_host(user)
 	// If the object or user died (or something else), abort.
-	if(QDELETED(src_object) || QDELETED(host) || QDELETED(user) || QDELETED(window))
+	if(QDELETED(src_object) || QDELETED(user) || QDELETED(window))
+		close(can_be_suspended = FALSE)
+		return
+	var/datum/host = src_object.tgui_host(user)
+	if(QDELETED(host))
 		close(can_be_suspended = FALSE)
 		return
 	// Validate ping
@@ -315,6 +330,8 @@
 		log_tgui(user, "Action: [act_type] [href_list["payload"]]",
 			window = window,
 			src_object = src_object)
+		if(!src_object)
+			return FALSE
 		process_status()
 		if(!user || !user.client)
 			return FALSE
@@ -338,7 +355,7 @@
 			if(href_list["fatal"])
 				close(can_be_suspended = FALSE)
 		if("setSharedState")
-			if(status != UI_INTERACTIVE)
+			if(status != UI_INTERACTIVE || !src_object)
 				return
 			LAZYINITLIST(src_object.tgui_shared_states)
 			src_object.tgui_shared_states[href_list["key"]] = href_list["value"]

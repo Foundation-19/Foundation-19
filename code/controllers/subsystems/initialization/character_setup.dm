@@ -31,9 +31,10 @@ SUBSYSTEM_DEF(character_setup)
 	// deferred_login can silently fail while the client handshake is still
 	// settling, leaving them stuck at a black lobby with no menu.
 	//
-	// A player stays queued until they have a live LobbyMenu window (or until
-	// they leave the lobby entirely) — a single popped retry is not enough:
-	// both the immediate attempt and one retry can land mid-handshake.
+	// A player stays queued only until the lobby menu has successfully
+	// opened ONCE — after that, closing the menu must stick instead of
+	// being force-reopened every second (each reopen re-browses the window
+	// and rebuilds the HUD, which was spiking tgui MC tick cost).
 	if(length(newplayers_requiring_init))
 		for(var/mob/new_player/new_player in newplayers_requiring_init.Copy())
 			if(QDELETED(new_player) || !new_player.client)
@@ -43,16 +44,11 @@ SUBSYSTEM_DEF(character_setup)
 			if(new_player.spawning)
 				newplayers_requiring_init -= new_player
 				continue
-			var/has_lobby = FALSE
-			for(var/datum/tgui/ui in new_player.tgui_open_uis)
-				if(ui.src_object == new_player.npp)
-					has_lobby = TRUE
-					break
-			if(has_lobby)
-				// Lobby is up; also handle round-start (menu switches tabs).
+			if(new_player.lobby_menu_opened)
+				// Menu opened at least once; the player is on their own now.
 				newplayers_requiring_init -= new_player
 				continue
-			// No live lobby window yet: (re)attempt the login.
+			// No lobby window yet: (re)attempt the login.
 			new_player.deferred_login()
 			// Leave them queued; next tick retries until the window lives.
 
