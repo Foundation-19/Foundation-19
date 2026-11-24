@@ -316,6 +316,29 @@
 				"SCP-457 Recontainment Confirmed"
 			)
 
+// Central rule for what 457 can and cannot burn. Used by both the melee
+// attack path and the fuel-value path so nothing slips through either.
+/mob/living/simple_animal/hostile/scp457/proc/can_burn_atom(atom/target)
+	if(!target)
+		return FALSE
+	// Machinery everywhere is insulated (consoles, lathes, vents...).
+	if(istype(target, /obj/machinery))
+		return FALSE
+	// Borosilicate (phoron) glass is rated for extreme temperatures.
+	if(istype(target, /obj/structure/window/phoronreinforced) || istype(target, /obj/structure/window/phoronbasic))
+		return FALSE
+	// SCPs don't burn each other.
+	if(target.SCP)
+		return FALSE
+	// Containment doors of our own chamber resist melting: the containment
+	// design relies on him needing a door opened FOR him, not by him.
+	if(get_area(target) == spawn_area && istype(target, /obj/machinery/door))
+		return FALSE
+	// Observation-room phoron-glass walls handled above; everything else in
+	// the chamber (tables, chair, plants, closets, supplies) IS his starter
+	// fuel — he builds heat from his chamber stock before breaking out.
+	return TRUE
+
 // ===========================================================================
 // FUEL — eating the world
 // ===========================================================================
@@ -323,6 +346,19 @@
 /mob/living/simple_animal/hostile/scp457/proc/GetFuelValue(atom/target)
 	if(!target)
 		return 0
+	// Central insulation gate: things that can't be burned return no fuel
+	// (checked by ALL consume paths — melee, Consume Fuel button, corpse eat).
+	if(!can_burn_atom(target))
+		return 0
+	// His own chamber's ash: scorched residue of previous iterations. Rich in
+	// stored heat — the roundstart starter fuel.
+	if(istype(target, /obj/effect/decal/cleanable/ash))
+		return 4
+	// Corpses: fresh meat burns. Ones 457 (or his fire) killed are pre-toasted
+	// and burn hotter — testing SCP-457 feeds SCP-457.
+	if(istype(target, /mob/living) && target:stat == DEAD)
+		var/mob/living/M = target
+		return M.on_fire ? 18 : 10
 	var/fuel = 0
 	if(istype(target, /obj/item/paper) || istype(target, /obj/item/book) || istype(target, /obj/item/photo))
 		fuel = 3
@@ -380,6 +416,8 @@
 	var/consume_time = 2 SECONDS
 	if(istype(target, /obj/item) && target:w_class >= 3)
 		consume_time = 3 SECONDS
+	if(istype(target, /mob/living))
+		consume_time = 4 SECONDS // bodies take longer to render down
 	visible_message(SPAN_DANGER("[src] reaches toward [target], flames licking hungrily!"))
 	to_chat(src, SPAN_NOTICE("You begin consuming [target]..."))
 	if(!do_after(src, consume_time, target))
@@ -394,6 +432,24 @@
 		explosion(T, -1, 1, 2)
 		AddHeat(30)
 		qdel(target)
+		return TRUE
+	// Corpse consumption: gib to ash, log the feeding, reward heat + heal.
+	if(istype(target, /mob/living))
+		var/mob/living/M = target
+		M.visible_message(SPAN_DANGER("[src] renders [M] down to scorched ash!"))
+		new /obj/effect/decal/cleanable/ash(get_turf(M))
+		M.gib()
+		AddHeat(fuel_value)
+		adjustBruteLoss(-fuel_value * 1.5)
+		to_chat(src, SPAN_NOTICE("Consumed [consumed_name]. Heat: [current_heat]/[max_heat]"))
+		log_game("SCP-457 consumed [M.name] at [get_area_name(src)] (+[fuel_value] heat).")
+		// Research paper trail: the feeding is recorded as an interaction.
+		if(SCP && SCP.research)
+			SCP.research.add_research_points(round(fuel_value / 2), "457_fed")
+			if(SSscp_persistence && SSscp_persistence.manager)
+				var/datum/scp_instance/instance = SSscp_persistence.manager.get_instance("457")
+				if(instance)
+					instance.add_interaction_record("SCP-457", "Consumed a body: [M.name]")
 		return TRUE
 	AddHeat(fuel_value)
 	adjustBruteLoss(-fuel_value * 1.5) // eating heals
@@ -445,20 +501,10 @@
 		return
 
 	if(istype(A, /obj) && A.can_damage_health(A.health_current, BURN))
-		// Thermally-insulated containment structures resist 457: machinery,
-		// windows, and walls inside his own chamber cannot be melted — no
-		// roundstart self-release. Outside the chamber, only insulated
-		// machinery still resists; everything else is fair game.
-		var/area/A_area = get_area(A)
-		if(A_area == spawn_area)
+		// Central insulation gate: chamber contents, machinery, and
+		// borosilicate windows are all protected (see can_burn_atom).
+		if(!can_burn_atom(A))
 			to_chat(src, SPAN_NOTICE("[A] is too thermally insulated for you to damage."))
-			return
-		if(istype(A, /obj/machinery))
-			to_chat(src, SPAN_NOTICE("[A] is too thermally insulated for you to damage."))
-			return
-		// Borosilicate (phoron) glass is rated to 4000 K — 457 cannot melt it.
-		if(istype(A, /obj/structure/window/phoronreinforced) || istype(A, /obj/structure/window/phoronbasic))
-			to_chat(src, SPAN_NOTICE("[A] is borosilicate glass — rated for extreme temperatures. Your flames cannot melt it."))
 			return
 		var/fuel = GetFuelValue(A)
 		A.attack_generic(src, 50, "melts")
@@ -661,6 +707,15 @@
 	for(var/obj/structure/St in range(1, S))
 		if(S.GetFuelValue(St) > 0)
 			fuel_targets += St
+	// Ash piles and corpses are on the menu.
+	for(var/obj/effect/decal/cleanable/ash/A in range(1, S))
+		if(S.GetFuelValue(A) > 0)
+			fuel_targets += A
+	for(var/mob/living/M in range(1, S))
+		if(M == S || M.stat != DEAD)
+			continue
+		if(S.GetFuelValue(M) > 0)
+			fuel_targets += M
 	if(!length(fuel_targets))
 		to_chat(S, SPAN_WARNING("No flammable objects nearby!"))
 		return
