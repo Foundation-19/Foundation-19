@@ -52,6 +52,28 @@
 		return TRUE
 	. = ..()
 
+// tgui acts on nano-module-hosted UIs (src_object = the module). The newer
+// /datum/tgui_module has its own PC_exit handling; the older nano_module
+// base never got one, so the header's Exit/Minimize buttons did nothing on
+// every NM-based program. Forward the PC_* actions to the host computer.
+/datum/nano_module/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	var/obj/item/modular_computer/computer = nano_host()
+	if(!istype(computer))
+		return FALSE
+	switch(action)
+		if("PC_exit")
+			computer.kill_program()
+			return TRUE
+		if("PC_shutdown")
+			computer.shutdown_computer()
+			return TRUE
+		if("PC_minimize")
+			computer.minimize_program(usr)
+			return TRUE
+	return FALSE
+
 /datum/nano_module/proc/get_host_z()
 	return get_z(nano_host())
 

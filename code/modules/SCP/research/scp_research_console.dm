@@ -106,9 +106,10 @@
 	data["total_count"] = interaction_list.len
 	return data
 
-/obj/machinery/scp_research_console/tgui_act(act, params, mob/user)
+/obj/machinery/scp_research_console/tgui_act(act, params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
+	var/mob/user = ui?.user || usr
 	if(stat & (BROKEN|NOPOWER))
 		return
 	switch(act)

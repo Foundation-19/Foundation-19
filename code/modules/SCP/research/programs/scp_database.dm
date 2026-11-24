@@ -31,9 +31,10 @@
 			data["test_cooldown_remaining"] = research.can_test() ? 0 : round((research.last_test_time + research.test_cooldown - world.time) / 10, 1)
 	return data
 
-/datum/computer_file/program/scp_database/tgui_act(act, params, mob/user)
+/datum/computer_file/program/scp_database/tgui_act(act, params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
+	var/mob/user = ui?.user || usr
 	switch(act)
 		if("PRG_select_scp")
 			selected_scp = params["designation"]
