@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: gen-assets
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Generate static assets
         run: |
           mv tgui/public/ assets
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4.9.0
         with:
           BRANCH: gh-pages
           CLEAN: true
