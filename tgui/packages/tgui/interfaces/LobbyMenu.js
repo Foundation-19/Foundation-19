@@ -206,6 +206,9 @@ const AppWindow = (props) => {
         left: app.left + 'px',
         top: app.top + 'px',
         width: app.width + 'px',
+        maxHeight: SCREEN_H - app.top - 8 + 'px',
+        display: 'flex',
+        flexDirection: 'column',
         zIndex: zIndex,
         background: C.panel,
         border: '1px solid ' + (focused ? C.redBright : C.border),
@@ -247,7 +250,14 @@ const AppWindow = (props) => {
           {app.sub2}
         </Box>
       </Box>
-      <Box style={{ padding: '10px' }}>
+      <Box style={{
+        padding: '10px',
+        // Windows are height-capped to the screen; the body area becomes the
+        // flex leftover and scrolls its own content (manifest rows).
+        flex: 1,
+        minHeight: 0,
+        overflowY: 'auto',
+      }}>
         {props.children}
       </Box>
     </Box>
@@ -275,7 +285,11 @@ const ManifestBody = (props) => {
   return (
     <Box>
       <SectionLabel>Active personnel — {manifest_count}</SectionLabel>
-      <Box style={{ maxHeight: '190px', overflowY: 'auto', border: '1px solid ' + C.border, padding: '6px' }}>
+      {/* Full manifest list inside the scrollable window body — the window
+          itself is height-capped and scrollable, so an inner maxHeight here
+          created a dead zone: the inner box had no height cap context and
+          the outer window clipped everything past the monitor edge. */}
+      <Box>
         {manifest.map((dept, di) => (
           <Box key={di} mb={2}>
             <Box style={{
