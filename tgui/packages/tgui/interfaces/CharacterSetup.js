@@ -314,22 +314,26 @@ const OccupationPage = (props, context) => {
           {!mapData.hidden && mapData.jobs && mapData.jobs.map((job, ji) => (
             <Box key={ji} style={{ marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: `1px solid ${C.border}`, paddingBottom: '4px' }}>
               {job.bad_message ? (
-                <Box style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: C.textDim }}>
+                <Box style={{ flex: 1, minWidth: 0, fontFamily: C.mono, fontSize: '10px', color: C.textDim, padding: '0 0.5em' }}>
                   <del>{job.title}</del>
                 </Box>
               ) : job.has_alt_titles ? (
-                // The effective title doubles as the alt-title selector:
-                // a compact dropdown instead of a full-width button.
+                // Alt-title jobs: the title is a dropdown spanning the same
+                // flex area as plain titles. NOTE: flex lives on the OUTER
+                // wrapper div (dropdownStyle) — the inner control only
+                // honors the width prop. The inner control must also fill
+                // that wrapper (width="100%") or the wrapper collapses to
+                // its content and the row squishes.
                 <Dropdown
-                  width="150px"
-                  openWidth="180px"
+                  width="100%"
+                  openWidth="240px"
                   displayText={job.alt_title || job.title}
                   options={(job.alt_titles || []).length ? job.alt_titles : [job.title]}
                   onSelected={(choice) => act('select_alt_title', { job_ref: job.job_ref, choice })}
-                  style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: C.text }}
+                  dropdownStyle={{ flex: 1, minWidth: 0, fontFamily: C.mono, fontSize: '12px', color: C.text }}
                 />
               ) : (
-                <Box style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: C.text }}>
+                <Box style={{ flex: 1, minWidth: 0, fontFamily: C.mono, fontSize: '10px', color: C.text, padding: '0 0.5em' }}>
                   {job.title}
                 </Box>
               )}

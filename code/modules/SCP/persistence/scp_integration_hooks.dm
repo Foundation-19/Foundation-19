@@ -42,15 +42,21 @@ var/list/scp_breach_cooldown = list()
 		SSscp_persistence.manager.active_breaches++
 		SSscp_persistence.manager.global_containment_stability = max(0, SSscp_persistence.manager.global_containment_stability - 10)
 
-	// Site-wide announcement
+	// Site-wide announcement — Safe-class containment drift is routine
+	// business for the Foundation, so those get logged, not sirened.
+	// Keter/Euclid still announce site-wide; Safe appears in research
+	// records and on monitors only.
 	var/is_keter = FALSE
+	var/is_safe = FALSE
 	if(scp_atom && scp_atom.SCP)
 		is_keter = (scp_atom.SCP.classification == SCP_KETER)
-	priority_announcement.Announce(
-		"Containment breach detected in [breach_zone]. SCP-[designation][is_keter ? " (Keter-class)" : ""] is no longer in its designated containment zone. All personnel are advised to exercise caution.",
-		"SCP-[designation] Containment Breach Alert",
-		'sounds/effects/siren.ogg'
-	)
+		is_safe = (scp_atom.SCP.classification == SCP_SAFE)
+	if(!is_safe)
+		priority_announcement.Announce(
+			"Containment breach detected in [breach_zone]. SCP-[designation][is_keter ? " (Keter-class)" : ""] is no longer in its designated containment zone. All personnel are advised to exercise caution.",
+			"SCP-[designation] Containment Breach Alert",
+			'sounds/effects/siren.ogg'
+		)
 
 	// Codex: anyone nearby records the breach observation.
 	if(scp_atom)

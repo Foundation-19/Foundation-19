@@ -81,11 +81,19 @@
 	// recontained, walks out again) must not re-siren the site each cycle.
 	if(world.time < last_alert_time + alert_cooldown)
 		return
-	alert_active = TRUE
-	last_alert_time = world.time + alert_cooldown // next alert allowed after this one expires
 	var/datum/scp/scp_datum = linked_zone.linked_scp
 	var/desg = scp_datum ? scp_datum.designation : linked_zone.scp_designation
 	var/class = scp_datum ? scp_datum.classification : "Unknown"
+	// Safe-class drift is logged locally on the monitor, not site-sirened.
+	// The monitor still shows its red light and status readout.
+	if(class == SCP_SAFE)
+		alert_active = TRUE
+		last_alert_time = world.time + alert_cooldown
+		log_game("Safe-class containment drift: SCP-[desg] in [linked_zone.zone_area ? linked_zone.zone_area.name : "unknown area"]")
+		addtimer(CALLBACK(src, PROC_REF(clear_alert)), alert_cooldown)
+		return
+	alert_active = TRUE
+	last_alert_time = world.time + alert_cooldown // next alert allowed after this one expires
 	priority_announcement.Announce(
 		"Containment breach detected in [linked_zone.zone_area ? linked_zone.zone_area.name : "unknown area"]. SCP-[desg] ([class]) is no longer in its designated containment zone. All personnel are advised to exercise caution.",
 		"SCP-[desg] Containment Breach Alert",
