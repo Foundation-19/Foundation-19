@@ -170,9 +170,6 @@
 	if(grown_seed.get_trait(TRAIT_EXPLOSIVE))
 		dat += "<br>The fruit is internally unstable."
 
-	if(grown_seed.get_trait(TRAIT_TELEPORTING))
-		dat += "<br>The fruit is temporal/spatially unstable."
-
 	if(grown_seed.get_trait(TRAIT_EXUDE_GASSES))
 		dat += "<br>It will release gas into the environment."
 
