@@ -128,6 +128,16 @@ export const backendMiddleware = (store) => {
     const suspendFn = () => Byond.sendMessage('suspend');
 
     if (type === 'update') {
+      // While a close is in flight (suspending), updates are poison: they
+      // would clear the suspend retry interval below and re-show the
+      // window we are trying to hide. This is what made the title-bar x
+      // button dead on every auto-updating UI — the retry interval armed
+      // by the x click was always cleared by the next 0.9s update before
+      // it could fire.
+      const { suspending } = selectBackend(store.getState());
+      if (suspending) {
+        return;
+      }
       // A live 'update' means THIS page instance is the active one. If a
       // stale suspend interval survived a page replacement (the control's
       // JS context persists across re-browse in BYOND 516), kill it and
@@ -169,8 +179,11 @@ export const backendMiddleware = (store) => {
 
     if (type === 'backend/suspendStart' && !suspendInterval) {
       logger.log(`suspending (${Byond.windowId})`);
-      // Keep sending suspend messages until it succeeds.
-      // It may fail multiple times due to topic rate limiting.
+      // Send the first suspend IMMEDIATELY — the interval is only a retry
+      // net for drops (topic rate limiting). Waiting for the interval made
+      // the x button appear dead, since the retry was always cleared by
+      // the next auto-update before it could fire.
+      suspendFn();
       suspendInterval = setInterval(suspendFn, 2000);
     }
 

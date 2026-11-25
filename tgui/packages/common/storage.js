@@ -18,6 +18,13 @@ const INDEXED_DB_STORE_NAME = 'storage-v1';
 const READ_ONLY = 'readonly';
 const READ_WRITE = 'readwrite';
 
+// How long to wait for a reply from the storage iframe before giving up.
+// A dead/missing iframe must not leave requests (and their waiters) hanging.
+const IFRAME_REQUEST_TIMEOUT = 5000;
+// The ping is intentionally short: it is used to detect whether the
+// iframe backend works at all, so we can fall back quickly.
+const IFRAME_PING_TIMEOUT = 100;
+
 const testGeneric = (testFn) => () => {
   try {
     return Boolean(testFn());
@@ -88,6 +95,8 @@ class HubStorageBackend {
 class IFrameIndexedDbBackend {
   constructor() {
     this.impl = IMPL_IFRAME_INDEXED_DB;
+    /** Requests waiting for a reply. Each entry owns its timeout. */
+    this.waiters = [];
   }
 
   async ready() {
@@ -102,20 +111,61 @@ class IFrameIndexedDbBackend {
     this.documentElement = document.body.appendChild(iframe);
     this.iframeWindow = this.documentElement.contentWindow;
 
+    // A SINGLE message listener for the whole lifetime of the backend.
+    // Previous implementation installed a fresh (never-removed) listener
+    // for every get()/ping()/getChatMessages() call, which piled up
+    // listeners and caused every reply to be delivered N times.
+    this.handleMessageEvent = (messageEvent) => {
+      if (this.iframeWindow && messageEvent.source !== this.iframeWindow) {
+        return;
+      }
+      const data = messageEvent.data;
+      // Resolve every waiter that matches this reply.
+      for (let i = this.waiters.length - 1; i >= 0; i--) {
+        const waiter = this.waiters[i];
+        if (waiter.match(data)) {
+          this.waiters.splice(i, 1);
+          clearTimeout(waiter.timer);
+          waiter.resolve(data);
+        }
+      }
+    };
+    window.addEventListener('message', this.handleMessageEvent);
+
     return completePromise;
   }
 
-  async get(key) {
+  /**
+   * Registers a waiter for the next matching reply and sends the request.
+   * `fallback` is resolved if no reply arrives within the timeout.
+   */
+  request(match, timeout, fallback, requestPayload) {
     const promise = new Promise((resolve) => {
-      window.addEventListener('message', (message) => {
-        if (message.data.key && message.data.key === key) {
-          resolve(message.data.value);
-        }
-      });
+      const waiter = {
+        match,
+        resolve,
+        timer: setTimeout(() => {
+          const index = this.waiters.indexOf(waiter);
+          if (index >= 0) {
+            this.waiters.splice(index, 1);
+          }
+          resolve(fallback);
+        }, timeout),
+      };
+      this.waiters.push(waiter);
     });
-
-    this.iframeWindow.postMessage({ type: 'get', key: key }, '*');
+    this.iframeWindow.postMessage(requestPayload, '*');
     return promise;
+  }
+
+  async get(key) {
+    const data = await this.request(
+      (reply) => reply.key === key,
+      IFRAME_REQUEST_TIMEOUT,
+      undefined,
+      { type: 'get', key: key }
+    );
+    return data && data.value;
   }
 
   async set(key, value) {
@@ -131,18 +181,13 @@ class IFrameIndexedDbBackend {
   }
 
   async ping() {
-    const promise = new Promise((resolve) => {
-      window.addEventListener('message', (message) => {
-        if (message.data === true) {
-          resolve(true);
-        }
-      });
-
-      setTimeout(() => resolve(false), 100);
-    });
-
-    this.iframeWindow.postMessage({ type: 'ping' }, '*');
-    return promise;
+    const data = await this.request(
+      (reply) => reply === true,
+      IFRAME_PING_TIMEOUT,
+      undefined,
+      { type: 'ping' }
+    );
+    return data === true;
   }
 
   async processChatMessages(messages) {
@@ -153,16 +198,13 @@ class IFrameIndexedDbBackend {
   }
 
   async getChatMessages() {
-    const promise = new Promise((resolve) => {
-      window.addEventListener('message', (message) => {
-        if (message.data.messages) {
-          resolve(message.data.messages);
-        }
-      });
-    });
-
-    this.iframeWindow.postMessage({ type: 'getChatMessages' }, '*');
-    return promise;
+    const data = await this.request(
+      (reply) => reply.messages !== undefined,
+      IFRAME_REQUEST_TIMEOUT,
+      undefined,
+      { type: 'getChatMessages' }
+    );
+    return data && data.messages;
   }
 
   async setNumberStored(number) {
@@ -173,7 +215,18 @@ class IFrameIndexedDbBackend {
   }
 
   async destroy() {
-    document.body.removeChild(this.documentElement);
+    if (this.handleMessageEvent) {
+      window.removeEventListener('message', this.handleMessageEvent);
+      this.handleMessageEvent = null;
+    }
+    // Drop any pending waiters so they do not fire later.
+    for (let waiter of this.waiters) {
+      clearTimeout(waiter.timer);
+    }
+    this.waiters = [];
+    if (this.documentElement) {
+      document.body.removeChild(this.documentElement);
+    }
     this.documentElement = null;
     this.iframeWindow = null;
   }

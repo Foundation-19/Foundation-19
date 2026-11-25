@@ -1,6 +1,7 @@
 import { useBackend, useSharedState } from '../backend';
 import { Box, Button, Flex, Input, LabeledList, NoticeBox, Section, Tabs } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const C = {
   bg: '#0a0a0c',
@@ -27,10 +28,11 @@ export const Records = (props, context) => {
     access,
     access_edit,
   } = data;
+  const showExit = data && data.PC_showexitprogram;
   const recordOpen = uid !== undefined && fields.length > 0;
 
   return (
-    <Window theme="scp_terminal" width={700} height={600}>
+    <Window theme="scp_terminal" width={700} height={600} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: C.bg, minHeight: '100%', padding: '10px', fontFamily: C.mono, color: C.text }}>
           {message ? (

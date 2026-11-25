@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const C = {
   bg: '#08080a',
@@ -37,12 +38,13 @@ export const CameraConsole = (props, context) => {
     networks = [],
     cameras = [],
   } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   const online = cameras.filter((cam) => !cam.deact).length;
   const offline = cameras.length - online;
 
   return (
-    <Window theme="scp_terminal" width={620} height={680}>
+    <Window theme="scp_terminal" width={620} height={680} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: C.bg, minHeight: '100%', fontFamily: C.mono, color: C.text }}>
           {/* Header */}

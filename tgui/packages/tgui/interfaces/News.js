@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Flex, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 export const News = (props, context) => {
   const { act, data } = useBackend(context);
@@ -14,9 +15,10 @@ export const News = (props, context) => {
     active_channel,
     active_stories = [],
   } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   return (
-    <Window theme="scp_terminal" width={620} height={640}>
+    <Window theme="scp_terminal" width={620} height={640} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: '#0a0a0c', minHeight: '100%', padding: '10px', fontFamily: '"Consolas", monospace', color: '#c8c8c8' }}>
           <Box style={{ borderBottom: '2px solid #6b0000', paddingBottom: '6px', marginBottom: '10px' }}>

@@ -185,6 +185,7 @@
 	if(!href_list["tgui"])
 		return FALSE
 	var/type = href_list["type"]
+	log_tgui(usr, "TRACE topic type=[type] window=[href_list["window_id"]]")
 	// Unconditionally collect tgui logs
 	if(type == "log")
 		var/context = href_list["window_id"]

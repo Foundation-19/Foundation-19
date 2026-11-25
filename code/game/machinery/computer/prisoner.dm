@@ -29,35 +29,44 @@
 /obj/machinery/computer/prisoner/tgui_data(mob/user)
 	var/list/data = list()
 	data["screen"] = screen
+	// The world was scanned for implant objects on every refresh here —
+	// two typed in-world loops each costing a full object sweep, even with
+	// the console locked. Iterate the implant registry instead, and only
+	// when the console is actually unlocked (the frontend renders neither
+	// list while locked).
 	var/list/chem_implants = list()
-	var/turf/Tr = null
-	for(var/obj/item/implant/chem/C in world)
-		Tr = get_turf(C)
-		if((Tr) && !AreConnectedZLevels(Tr.z, src.z))	continue // Out of range
-		if(!C.implanted) continue
-		chem_implants += list(list(
-			"ref" = "\ref[C]",
-			"name" = C.imp_in.name,
-			"units" = C.reagents.total_volume,
-		))
-	data["chem_implants"] = chem_implants
 	var/list/tracking_implants = list()
-	for(var/obj/item/implant/tracking/T in world)
-		Tr = get_turf(T)
-		if((Tr) && !AreConnectedZLevels(Tr.z, src.z))	continue // Out of range
-		if(!T.implanted) continue
-		var/loc_display = "Space"
-		var/mob/living/carbon/M = T.imp_in
-		if(!isspaceturf(M.loc))
-			var/turf/mob_loc = get_turf(M)
-			loc_display = mob_loc.loc
-		if(T.malfunction)
-			loc_display = pick(teleportlocs)
-		tracking_implants += list(list(
-			"ref" = "\ref[T]",
-			"id" = T.id,
-			"location" = loc_display,
-		))
+	if(screen)
+		for(var/obj/item/implant/I in GLOB.all_implants)
+			if(!I.implanted)
+				continue
+			var/turf/Tr = get_turf(I)
+			if(Tr && !AreConnectedZLevels(Tr.z, src.z))
+				continue // Out of range
+			if(istype(I, /obj/item/implant/chem))
+				var/obj/item/implant/chem/C = I
+				chem_implants += list(list(
+					"ref" = "\ref[C]",
+					"name" = C.imp_in ? C.imp_in.name : "unknown",
+					"units" = C.reagents ? C.reagents.total_volume : 0,
+				))
+			else if(istype(I, /obj/item/implant/tracking))
+				var/obj/item/implant/tracking/T = I
+				var/mob/living/carbon/M = T.imp_in
+				if(!M)
+					continue
+				var/loc_display = "Space"
+				if(!isspaceturf(M.loc))
+					var/turf/mob_loc = get_turf(M)
+					loc_display = mob_loc ? mob_loc.loc : "Space"
+				if(T.malfunction)
+					loc_display = pick(teleportlocs)
+				tracking_implants += list(list(
+					"ref" = "\ref[T]",
+					"id" = T.id,
+					"location" = loc_display,
+				))
+	data["chem_implants"] = chem_implants
 	data["tracking_implants"] = tracking_implants
 	return data
 
@@ -90,5 +99,9 @@
 
 /obj/machinery/computer/prisoner/Process()
 	if(!..())
-		SStgui.update_uis(src)
+		// Push updates to open UIs once per machine tick. While locked the
+		// payload is empty and static, so don't spam updates; the "lock" act
+		// refreshes the UI when access changes.
+		if(screen)
+			SStgui.update_uis(src)
 	return

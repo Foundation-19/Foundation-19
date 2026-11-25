@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Flex, LabeledList, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const SmesRow = (props, context) => {
   const { act } = useBackend(context);
@@ -41,11 +42,12 @@ const SmesRow = (props, context) => {
 };
 
 export const RconConsole = (props, context) => {
-  const { data } = useBackend(context);
+  const { act, data } = useBackend(context);
   const { smes_info = [], breaker_info = [], hide_smes, hide_breakers } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   return (
-    <Window theme="scp_terminal" width={560} height={660}>
+    <Window theme="scp_terminal" width={560} height={660} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: '#0a0a0c', minHeight: '100%', padding: '10px', fontFamily: '"Consolas", monospace', color: '#c8c8c8' }}>
           <Box style={{ borderBottom: '2px solid #6b0000', paddingBottom: '6px', marginBottom: '10px' }}>

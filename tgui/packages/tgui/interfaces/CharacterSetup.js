@@ -313,21 +313,37 @@ const OccupationPage = (props, context) => {
           </Box>
           {!mapData.hidden && mapData.jobs && mapData.jobs.map((job, ji) => (
             <Box key={ji} style={{ marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: `1px solid ${C.border}`, paddingBottom: '4px' }}>
-              <Box style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: job.bad_message ? C.textDim : C.text }}>
-                {job.bad_message ? <del>{job.title}</del> : job.alt_title || job.title}
-              </Box>
+              {job.bad_message ? (
+                <Box style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: C.textDim }}>
+                  <del>{job.title}</del>
+                </Box>
+              ) : job.has_alt_titles ? (
+                // The effective title doubles as the alt-title selector:
+                // a compact dropdown instead of a full-width button.
+                <Dropdown
+                  width="150px"
+                  openWidth="180px"
+                  displayText={job.alt_title || job.title}
+                  options={(job.alt_titles || []).length ? job.alt_titles : [job.title]}
+                  onSelected={(choice) => act('select_alt_title', { job_ref: job.job_ref, choice })}
+                  style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: C.text }}
+                />
+              ) : (
+                <Box style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: C.text }}>
+                  {job.title}
+                </Box>
+              )}
               {job.bad_message ? (
                 <Box style={{ fontFamily: C.mono, fontSize: '10px', color: C.redBright }}>{job.bad_message}</Box>
               ) : (
                 <Box style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <PriorityButtons job={job.title} level={job.level} act={act} />
-                  {job.has_alt_titles ? (
-                    <TermButton onClick={() => act('select_alt_title', { job_ref: job.job_ref })}>
-                      {job.alt_title || job.title}
+                  {job.level > 0 ? (
+                    <TermButton
+                      color={job.has_skills ? 'green' : undefined}
+                      onClick={() => act('set_skills', { rank: job.title })}>
+                      {job.has_skills ? 'SET SKILLS' : 'VIEW SKILLS'}
                     </TermButton>
-                  ) : null}
-                  {job.level > 0 && job.has_skills ? (
-                    <TermButton onClick={() => act('set_skills', { rank: job.title })}>SKILLS</TermButton>
                   ) : null}
                 </Box>
               )}
