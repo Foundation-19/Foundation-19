@@ -193,6 +193,13 @@
 	var/heal_amount = -max((base_regen * (cured_count * regen_multiply)), base_regen)
 	adjustBruteLoss(heal_amount)
 
+	// Bones knit themselves back together over time. mend_fracture() only
+	// succeeds once the limb has regenerated past the re-break threshold,
+	// so freshly-broken bones stay broken until the regen catches up.
+	for(var/obj/item/organ/external/E in organs)
+		if((E.status & ORGAN_BROKEN) && E.mend_fracture())
+			to_chat(src, SPAN_NOTICE("You feel the shattered bones in your [E.name] knit back together."))
+
 /mob/living/carbon/human/scp049/UnarmedAttack(atom/target as obj|mob)
 	if(!istype(target))
 		return
@@ -282,6 +289,12 @@
 
 /mob/living/carbon/human/scp049/GetUnbuckleTime()
 	return 15 SECONDS
+
+// SCP-049 wrenches his way out of restraints with unnatural strength.
+// Routes through the standard cuff-break path (7 second still-stand, cuffs
+// destroyed) instead of the slow fiddle-escape.
+/mob/living/carbon/human/scp049/can_break_cuffs()
+	return TRUE
 
 /mob/living/carbon/human/scp049/examinate(atom/A)
 	. = ..()

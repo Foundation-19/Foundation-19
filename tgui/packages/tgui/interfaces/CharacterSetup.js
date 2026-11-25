@@ -440,7 +440,7 @@ const LoadoutPage = (props, context) => {
                 <TermButton selected={gear.selected} onClick={() => act('toggle_gear', { gear_ref: gear.ref })}>{gear.name}</TermButton>
                 <TermValue color={C.textDim}>{gear.cost}pt</TermValue>
               </Box>
-              {gear.selected && gear.tweaks && gear.tweaks.map((tweak, ti) => (
+              {!!gear.selected && gear.tweaks && gear.tweaks.map((tweak, ti) => (
                 <Box key={ti} style={{ marginBottom: '4px', marginLeft: '16px' }}>
                   {tweak.options ? (
                     <Box>
