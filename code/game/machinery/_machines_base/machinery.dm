@@ -250,8 +250,12 @@ Class Procs:
 /mob/living/silicon/direct_machine_interface(obj/machinery/machine)
 	return TRUE
 
+// Admin/mod ghosts get full remote machine access (admin tools rely on
+// this). Regular ghosts are look-only: they may still OPEN read-only UIs
+// through whatever path grants view (states decide), but this remote
+// full-interact channel is admin-gated.
 /mob/observer/ghost/direct_machine_interface(obj/machinery/machine)
-	return TRUE
+	return can_admin_interact()
 
 /obj/machinery/CanUseTopicPhysical(mob/user)
 	if(stat & BROKEN)

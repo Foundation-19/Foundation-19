@@ -141,6 +141,22 @@ export const Paper = (props, context) => {
             onClick={(event) => handlePaperClick(act, event)}
             style={{ fontSize: '15px', lineHeight: '1.55', wordBreak: 'break-word' }}>
             <div dangerouslySetInnerHTML={{ __html: content_html || info_links || '' }} />
+            {editable && !unknown_language && !has_content ? (
+              // Blank sheet: give an explicit, visible click target that
+              // appends to the end of the page. The tiny generated "write"
+              // link is easy to miss on an otherwise empty page.
+              <div
+                data-paper-act="write"
+                data-paper-field="end"
+                style={{
+                  marginTop: '10px',
+                  cursor: 'pointer',
+                  color: P.dim,
+                  fontStyle: 'italic',
+                }}>
+                __ Click here to begin writing __
+              </div>
+            ) : null}
           </Box>
 
           {stamps ? (

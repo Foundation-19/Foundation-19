@@ -45,3 +45,8 @@ GLOBAL_DATUM_INIT(default_tgui_state, /datum/tgui_state/default, new)
 	if(!control_disabled)
 		return UI_INTERACTIVE
 	return UI_CLOSE
+
+// Ghosts: regular observers are look-only through the default state.
+// Admin ghosts keep full interaction (their admin tools rely on it).
+/mob/observer/ghost/default_can_use_tgui_topic(src_object)
+	return can_admin_interact() ? UI_INTERACTIVE : UI_UPDATE

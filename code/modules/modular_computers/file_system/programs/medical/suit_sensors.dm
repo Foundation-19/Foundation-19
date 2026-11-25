@@ -49,11 +49,40 @@
 				AI.ai_actual_track(H)
 		return 1
 
+/// Minimal station-map asset bundle for the crew monitor's map view.
+/// Must NOT reuse /datum/asset/simple/nanoui: that bundle also ships the
+/// legacy NanoUI JS/CSS, and the tgui frontend executes every .js in the
+/// asset/mappings payload — which crashes the page with the BSOD.
+/// Populated lazily: SSassets may instantiate this datum before the map
+/// datum has map_levels ready, so registration happens on first use.
+/datum/asset/simple/crew_monitor_maps
+	keep_local_name = TRUE
+	var/populated = FALSE
+
+/datum/asset/simple/crew_monitor_maps/proc/populate()
+	if(populated)
+		return
+	populated = TRUE
+	for(var/z in GLOB.using_map.map_levels)
+		var/filename = map_image_file_name(z)
+		var/file_path = MAP_IMAGE_PATH + filename
+		if(fexists(file_path))
+			assets[filename] = fcopy_rsc(file_path)
+	register()
+
 /datum/nano_module/crew_monitor/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "SuitSensors", "Crew Monitoring Computer")
 		ui.open()
+
+// The map view needs the station map images, keyed by filename so the
+// frontend can resolveAsset("site53-N.png").
+/datum/nano_module/crew_monitor/tgui_assets(mob/user)
+	. = ..()
+	var/datum/asset/simple/crew_monitor_maps/maps = get_asset_datum(/datum/asset/simple/crew_monitor_maps)
+	maps.populate()
+	. |= list(maps)
 
 /datum/nano_module/crew_monitor/tgui_data(mob/user)
 	var/list/data = host.initial_data()
@@ -61,5 +90,9 @@
 	data["isAI"] = isAI(user)
 	var/Z = get_host_z()
 	data["crewmembers"] = crew_repository.health_data(Z)
+	data["map_levels"] = GLOB.using_map.map_levels
+	data["map_prefix"] = GLOB.using_map.path
+	data["world_maxx"] = world.maxx
+	data["world_maxy"] = world.maxy
 
 	return data

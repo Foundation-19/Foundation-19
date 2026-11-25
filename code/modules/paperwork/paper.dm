@@ -59,12 +59,33 @@
 	set_content(text ? text : info, title)
 	metadata = md
 
+/proc/convert_interactive_pencode(text)
+	// Converts the interactive markers to their live spans. Unlike
+	// pencode2html, this does NOT wrap in font tags or resolve [sign] —
+	// it's for raw template text that skipped parsepencode.
+	text = replacetext(text, "\[field\]", "<span class=\"paper_field\"></span>")
+	text = replacetext(text, "\[check\]", "<span class=\"paper_check\" data-paper-act='check' data-checked='0'>&#9744;</span>")
+	text = replacetext(text, "\[circle\]", "<span class=\"paper_circle\" data-paper-act='circle' data-circled='0'>&#9675;</span>")
+	return text
+
 /obj/item/paper/Initialize(mapload)
 	. = ..(mapload)
 	var/old_language = language
 	if (!set_language(language, TRUE))
 		log_debug("[src] ([type]) initialized with invalid or missing language `[old_language]` defined.")
 		set_language(LANGUAGE_ENGLISH, TRUE)
+	// Map-loaded papers skip New()/set_content(), so info_links was never
+	// generated — leaving blank sheets with NOTHING clickable in the tgui
+	// paper view and templates without their per-field write links.
+	// Foundation templates store RAW pencode ([field]/[check]/[circle])
+	// that never passed through parsepencode, so the interactive spans
+	// never existed either. Convert raw markers here, then rebuild links
+	// and recount fields. Blank paper: info is empty — both calls are
+	// no-ops and updateinfolinks supplies the end-of-page write link.
+	if(findtext(info, "\[field\]") || findtext(info, "\[check\]") || findtext(info, "\[circle\]"))
+		info = convert_interactive_pencode(info)
+	fields = count_fields_from_html(info)
+	updateinfolinks()
 
 /obj/item/paper/proc/set_content(text,title)
 	if(title)
