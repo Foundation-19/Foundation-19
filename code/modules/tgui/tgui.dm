@@ -112,7 +112,13 @@
 	for(var/datum/asset/asset in src_object.tgui_assets(user))
 		flush_queue |= window.send_asset(asset)
 	if (flush_queue)
+		// browse_queue_flush blocks up to 50 ticks waiting for the client's
+		// asset-verify page to confirm. During that window the user can
+		// close the UI (or log out), qdel'ing this datum — its Destroy
+		// nulls `window`. Re-validate before using it again.
 		user.client.browse_queue_flush()
+		if(!window || closing || !user.client)
+			return FALSE
 	window.send_message("update", get_payload(
 		with_data = TRUE,
 		with_static_data = TRUE))
