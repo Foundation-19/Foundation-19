@@ -41,7 +41,6 @@
 	set_trait(TRAIT_SPREAD,               0)            // 0 limits plant to tray, 1 = creepers, 2 = vines.
 	set_trait(TRAIT_MATURATION,           0)            // Time taken before the plant is mature.
 	set_trait(TRAIT_PRODUCTION,           0)            // Time before harvesting can be undertaken again.
-	set_trait(TRAIT_TELEPORTING,          0)            // Uses the bluespace tomato effect.
 	set_trait(TRAIT_BIOLUM,               0)            // Plant is bioluminescent.
 	set_trait(TRAIT_ALTER_TEMP,           0)            // If set, the plant will periodically alter local temp by this amount.
 	set_trait(TRAIT_PRODUCT_ICON,         0)            // Icon to use for fruit coming from this plant.
@@ -356,22 +355,6 @@
 	do_sting(target,thrown)
 	do_thorns(target,thrown)
 
-	// Bluespace tomato code copied over from grown.dm.
-	if(get_trait(TRAIT_TELEPORTING))
-
-		//Plant potency determines radius of teleport.
-		var/outer_teleport_radius = get_trait(TRAIT_POTENCY)/5
-		var/inner_teleport_radius = get_trait(TRAIT_POTENCY)/15
-
-		var/turf/T = get_random_turf_in_range(target, outer_teleport_radius, inner_teleport_radius)
-		if(T)
-			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
-			s.set_up(3, 1, get_turf(target))
-			s.start()
-			new/obj/effect/decal/cleanable/molten_item(get_turf(target)) // Leave a pile of goo behind for dramatic effect...
-			target.forceMove(T)                                     // And teleport them to the chosen location.
-			impact = 1
-
 	return impact
 
 /datum/seed/proc/generate_name()
@@ -445,8 +428,6 @@
 
 	if(prob(1))
 		set_trait(TRAIT_EXPLOSIVE,1)
-	else if(prob(1))
-		set_trait(TRAIT_TELEPORTING,1)
 
 	if(prob(5))
 		consume_gasses = list()
@@ -612,10 +593,8 @@
 						if(prob(degree*2))
 							set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
 							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
-					else
-						source_turf.visible_message(SPAN_NOTICE("\The [display_name]'s glow dims..."))
-			if(11)
-				set_trait(TRAIT_TELEPORTING,1)
+				else
+					source_turf.visible_message(SPAN_NOTICE("\The [display_name]'s glow dims..."))
 
 	return
 
@@ -711,8 +690,6 @@
 			traits_to_copy = list(TRAIT_PLANT_ICON,TRAIT_PRODUCT_ICON,TRAIT_HARVEST_REPEAT,TRAIT_LARGE)
 		if(GENE_FRUIT)
 			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOUR,TRAIT_JUICY)
-		if(GENE_SPECIAL)
-			traits_to_copy = list(TRAIT_TELEPORTING)
 
 	for(var/trait in traits_to_copy)
 		P.values["[trait]"] = get_trait(trait)
