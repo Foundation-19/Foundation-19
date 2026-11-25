@@ -274,13 +274,10 @@
 		// throttled, or crashed mid-error, the echo is never processed and
 		// the window would sit visible forever. Hide it server-side;
 		// initialize() re-shows the window when a UI claims it again.
-		winset(client, id, "is-visible=false")
-		// The old page will process the suspend and hide the window
-		// (backendSuspendSuccess -> winset is-visible false). If its suspend
-		// interval keeps retrying, that hide can land AFTER initialize()
-		// re-shows the window for the next UI — leaving a fresh, live page
-		// trapped in an invisible window. Schedule a re-show that wins.
-		addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 3 SECONDS)
+		// Client can vanish mid-close (logout racing this call).
+		if(client)
+			winset(client, id, "is-visible=false")
+			addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 3 SECONDS)
 		return
 	log_tgui(client,
 		context = "[id]/close",
