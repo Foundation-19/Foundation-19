@@ -36,6 +36,8 @@
 	var/list/connected_parts = list()
 	var/obj/structure/scp_914_part/input_booth/input_part = null
 	var/obj/structure/scp_914_part/output_booth/output_part = null
+	/// world.time until which a swiped card grants operation access
+	var/swipe_granted_until = 0
 
 /obj/structure/scp_914/Initialize()
 	. = ..()
@@ -110,10 +112,14 @@
 	if(user.SCP)
 		return FALSE
 
+	// 914's card reader: an ID with the required access must be carried
+	// (worn or in hand). The attackby swipe below also grants a short
+	// grace window for anyone without their own valid ID.
 	var/obj/item/card/id/id = user.GetIdCard()
 	if(!id || !id.check_access(req_access))
-		to_chat(user, SPAN_WARNING("Access denied. Swipe your ID card to operate SCP-914."))
-		return FALSE
+		if(!has_recent_swipe(user))
+			to_chat(user, SPAN_WARNING("Access denied. Swipe your ID card to operate SCP-914."))
+			return FALSE
 
 	if(processing)
 		to_chat(user, SPAN_WARNING("\The [src] is currently processing something!"))
@@ -125,6 +131,32 @@
 		return FALSE
 
 	return TRUE
+
+// Physical swipe: hitting 914 with an ID card runs the reader. A valid
+// card arms the machine for this user for a short window; an invalid one
+// gets the standard denial beep.
+/obj/structure/scp_914/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/card/id))
+		var/obj/item/card/id/id = I
+		if(id.check_access(req_access))
+			swipe_granted_until = world.time + 10 SECONDS
+			playsound(src, 'sounds/machines/buttonbeep.ogg', 40, TRUE)
+			user.visible_message(
+				SPAN_NOTICE("\The [user] swipes [id] through \the [src]'s reader."),
+				SPAN_NOTICE("Reader beep: access granted. You have a moment to operate \the [src]."))
+		else
+			playsound(src, 'sounds/machines/buzz-sigh.ogg', 40, TRUE)
+			to_chat(user, SPAN_WARNING("Reader beep: access denied."))
+		return
+	return ..()
+
+/obj/structure/scp_914/proc/has_recent_swipe(mob/user)
+	// Granted by attackby swipe, OR implicitly by a valid ID already
+	// carried on the user (worn ID counts — no forced hand ritual).
+	var/obj/item/card/id/id = user.GetIdCard()
+	if(id && id.check_access(req_access))
+		return TRUE
+	return swipe_granted_until > world.time
 
 /obj/structure/scp_914/proc/Activate(mob/user)
 	if(!CanOperate(user))
