@@ -3150,6 +3150,7 @@
 #include "code\modules\SCP\containment\amnestic_cures.dm"
 #include "code\modules\SCP\containment\containment_locker.dm"
 #include "code\modules\SCP\containment\containment_monitor.dm"
+#include "code\modules\SCP\containment\containment_zone_manager.dm"
 #include "code\modules\SCP\containment\containment_safe.dm"
 #include "code\modules\SCP\containment\containment_zone.dm"
 #include "code\modules\SCP\containment\floodlight.dm"
