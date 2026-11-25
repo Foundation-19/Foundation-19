@@ -49,6 +49,74 @@
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	data["security_level"] = security_state.current_security_level.name
 
+	// Structured crew manifest for the lobby's manifest app. Active flag is
+	// OOC-style (client present and not AFK 10+ minutes); inactive players
+	// are shown but dimmed. Empty pre-round lobby yields section headers
+	// with no rows — fine for a desktop app.
+	var/list/departments = list(
+		list("name" = "Command", "flag" = COM),
+		list("name" = "Command Support", "flag" = SPT),
+		list("name" = "Research", "flag" = SCI),
+		list("name" = "Security", "flag" = SEC),
+		list("name" = "Medical", "flag" = MED),
+		list("name" = "Engineering", "flag" = ENG),
+		list("name" = "Supply", "flag" = SUP),
+		list("name" = "Exploration", "flag" = EXP),
+		list("name" = "Service", "flag" = SRV),
+		list("name" = "Civilian", "flag" = CIV),
+		list("name" = "Miscellaneous", "flag" = MSC),
+	)
+	var/list/dept_rows = list()
+	for(var/list/department in departments)
+		dept_rows[department["name"]] = list()
+
+	var/list/misc = list()
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
+		var/entry_name = CR.get_name()
+		var/rank = CR.get_job()
+		var/active = FALSE
+		for(var/mob/M in GLOB.player_list)
+			if(sanitize(M.real_name) == entry_name && M.client && M.client.inactivity <= 10 MINUTES)
+				active = TRUE
+				break
+		var/entry = list(
+			"name" = entry_name,
+			"rank" = rank,
+			"active" = active,
+		)
+		var/datum/job/job = SSjobs.get_by_title(rank)
+		var/placed = FALSE
+		if(job)
+			for(var/list/department in departments)
+				if(job.department_flag & department["flag"])
+					dept_rows[department["name"]].Add(list(entry))
+					placed = TRUE
+					break
+		if(!placed)
+			misc.Add(list(entry))
+
+	// Synthetics have no records; pull them straight from the mob list.
+	for(var/mob/living/silicon/ai/ai in SSmobs.mob_list)
+		misc.Add(list(list("name" = ai.name, "rank" = "Artificially Intelligent Construct", "active" = TRUE)))
+	for(var/mob/living/silicon/robot/robot in SSmobs.mob_list)
+		if(robot.module && robot.module.hide_on_manifest)
+			continue
+		misc.Add(list(list("name" = robot.name, "rank" = "[robot.modtype] [robot.braintype]", "active" = TRUE)))
+
+	var/list/manifest = list()
+	for(var/list/department in departments)
+		var/list/rows = dept_rows[department["name"]]
+		if(!LAZYLEN(rows))
+			continue
+		manifest.Add(list(list(
+			"name" = department["name"],
+			"members" = rows,
+		)))
+	if(LAZYLEN(misc))
+		manifest.Add(list(list("name" = "Miscellaneous", "members" = misc)))
+	data["manifest"] = manifest
+	data["manifest_count"] = length(GLOB.player_list)
+
 	return data
 
 /datum/new_player_panel/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
