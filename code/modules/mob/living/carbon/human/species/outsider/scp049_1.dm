@@ -97,6 +97,15 @@
 		H.adjustToxLoss(-heal_rate)
 		return TRUE
 
+	// Fractures mend over time once the limb has regenerated past the
+	// re-break threshold — the cure itself (100 brute on completion) and
+	// combat leave 049-1s with broken bones that previously never healed,
+	// permanently crippling them. mend_fracture() handles the robotic and
+	// still-too-damaged cases internally, so this is just a probe per limb.
+	for(var/obj/item/organ/external/E in H.organs)
+		if((E.status & ORGAN_BROKEN) && E.mend_fracture())
+			to_chat(H, SPAN_NOTICE("You feel the shattered bones in your [E.name] knit together."))
+
 	H.handle_regular_hud_updates()
 	process_pestilence_hud(H)
 

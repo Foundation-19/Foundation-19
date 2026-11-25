@@ -103,7 +103,7 @@
 			strict_mode = TRUE,
 			fancy = user.client.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES,
 			assets = list(
-				get_asset_datum(/datum/asset/simple/tgui_v2),
+				get_asset_datum(/datum/asset/simple/tgui_v3),
 			))
 	else
 		window.send_message("ping")

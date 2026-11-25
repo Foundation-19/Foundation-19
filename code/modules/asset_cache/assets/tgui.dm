@@ -17,6 +17,17 @@
 		"tgui.acs.css" = file("html/acs.css"),
 	)
 
+// v3: clients were serving stale tgui2 bundles (pre close-handshake fixes),
+// which swallowed x-button suspends entirely. New filename forces a
+// re-download of the fixed bundle.
+/datum/asset/simple/tgui_v3
+	keep_local_name = TRUE
+	assets = list(
+		"tgui3.bundle.js" = file("tgui/public/tgui.bundle.js"),
+		"tgui3.bundle.css" = file("tgui/public/tgui.bundle.css"),
+		"tgui.acs.css" = file("html/acs.css"),
+	)
+
 /datum/asset/simple/tgui_panel
 	keep_local_name = TRUE
 	assets = list(
