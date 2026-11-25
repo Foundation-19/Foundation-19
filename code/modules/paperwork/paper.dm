@@ -390,6 +390,145 @@
 	html = replacetext(html, "href='byond://?src=\ref[src];write=end'", "href='byond://?src=\ref[src];write=end' data-paper-act='write' data-paper-field='end'")
 	return html
 
+// Checkbox/circle interaction helpers.
+//
+// The templates embed spans via the [check] and [circle] pencode tags:
+//   <span class="paper_check" data-paper-act='check' data-checked='N'>&#9744;</span>
+//   <span class="paper_circle" data-paper-act='circle' data-circled='N'>&#9675;</span>
+// N is 0 (unchecked) or 1 (checked/circled). The glyphs flip between
+// ballot-box/ballot-box-with-X and circle/fisheye respectively.
+// Every interactive span in the document is addressable by its 1-based
+// occurrence index, which the frontend sends back on click.
+
+#define PAPER_CHECK_UNCHECKED "&#9744;"
+#define PAPER_CHECK_CHECKED   "&#9745;"
+#define PAPER_CIRCLE_OFF      "&#9675;"
+#define PAPER_CIRCLE_ON       "&#9679;"
+
+// Toggles the index-th checkbox. Returns TRUE if the document changed.
+/obj/item/paper/proc/toggle_paper_checkbox(index)
+	var/needle = "data-paper-act='check'"
+	var/laststart = 1
+	var/count = 0
+	while(count < 200)
+		var/i = findtext(info, needle, laststart)
+		if(!i)
+			return FALSE
+		laststart = i + 1
+		count++
+		if(count == index)
+			var/dstart = findtext(info, "data-checked='", i)
+			if(!dstart)
+				return FALSE
+			var/dend = findtext(info, "'", dstart + length("data-checked='"))
+			if(!dend)
+				return FALSE
+			var/current = copytext(info, dstart + length("data-checked='"), dend)
+			var/newglyph = current == "1" ? PAPER_CHECK_UNCHECKED : PAPER_CHECK_CHECKED
+			var/newval = current == "1" ? "0" : "1"
+			// The glyph sits somewhere between this span's tag start and
+			// its closing tag; replace inside the occurrence slice.
+			var/gstart = findtext(info, "&#9744;", i)
+			var/galt = findtext(info, "&#9745;", i)
+			if(gstart && (!galt || gstart < galt))
+				info = copytext(info, 1, gstart) + newglyph + copytext(info, gstart + length("&#9744;"))
+			else if(galt)
+				info = copytext(info, 1, galt) + newglyph + copytext(info, galt + length("&#9745;"))
+			info = copytext(info, 1, dstart) + "data-checked='[newval]'" + copytext(info, dend + 1)
+			updateinfolinks()
+			return TRUE
+	return FALSE
+
+// Selects the index-th circle option, clearing any sibling option in the
+// same radio group (spans that share the nearest preceding group id, i.e.
+// options written between two group boundaries). Options without an
+// explicit group fall back to per-line grouping: any circled option whose
+// line differs clears on its own selection. Returns TRUE if changed.
+/obj/item/paper/proc/toggle_paper_circle(index)
+	var/needle = "data-paper-act='circle'"
+	var/laststart = 1
+	var/count = 0
+	var/target_start = 0
+	while(count < 200)
+		var/i = findtext(info, needle, laststart)
+		if(!i)
+			return FALSE
+		laststart = i + 1
+		count++
+		if(count == index)
+			target_start = i
+			break
+	if(!target_start)
+		return FALSE
+
+	// Determine the radio group: options on the same source line (between
+	// the <BR> boundaries surrounding the clicked option) belong together.
+	var/line_start = 1
+	for(var/p = target_start; p > 1; p--)
+		if(copytext(info, p, p + 4) == "<BR>" || copytext(info, p, p + 4) == "<br>")
+			line_start = p + 4
+			break
+	var/line_end = length(info) + 1
+	for(var/p = target_start; p <= length(info); p++)
+		if(copytext(info, p, p + 4) == "<BR>" || copytext(info, p, p + 4) == "<br>")
+			line_end = p
+			break
+
+	// Which option was clicked (already the index-th), and flip it on.
+	var/clear_to = index // radio semantics: clear the whole line, set this one
+	var/second_pass = 0
+	laststart = 1
+	count = 0
+	var/list/to_clear = list()
+	var/flip_index = 0
+	while(second_pass < 200)
+		var/i = findtext(info, needle, laststart)
+		if(!i)
+			break
+		second_pass++
+		laststart = i + 1
+		if(i >= line_start && i < line_end)
+			count++
+			if(count == index)
+				flip_index = i
+			else
+				to_clear += i
+	if(!flip_index)
+		return FALSE
+
+	// Clear siblings first (from highest offset to lowest so earlier edits
+	// don't shift later offsets).
+	for(var/n = to_clear.len; n >= 1; n--)
+		_set_circle_state(to_clear[n], FALSE)
+	_set_circle_state(flip_index, TRUE)
+	updateinfolinks()
+	return TRUE
+
+// Shared state writer for a circle span located at tag offset `i`.
+/obj/item/paper/proc/_set_circle_state(i, on)
+	var/dstart = findtext(info, "data-circled='", i)
+	if(!dstart)
+		return
+	var/dend = findtext(info, "'", dstart + length("data-circled='"))
+	if(!dend)
+		return
+	var/current = copytext(info, dstart + length("data-circled='"), dend)
+	var/want = on ? "1" : "0"
+	if(current == want)
+		return
+	var/newglyph = on ? PAPER_CIRCLE_ON : PAPER_CIRCLE_OFF
+	var/gstart = findtext(info, "&#9675;", i)
+	var/galt = findtext(info, "&#9679;", i)
+	if(gstart && (!galt || gstart < galt))
+		info = copytext(info, 1, gstart) + newglyph + copytext(info, gstart + length("&#9675;"))
+	else if(galt)
+		info = copytext(info, 1, galt) + newglyph + copytext(info, galt + length("&#9679;"))
+	info = copytext(info, 1, dstart) + "data-circled='[want]'" + copytext(info, dend + 1)
+
+#undef PAPER_CHECK_UNCHECKED
+#undef PAPER_CHECK_CHECKED
+#undef PAPER_CIRCLE_OFF
+#undef PAPER_CIRCLE_ON
 
 /obj/item/paper/proc/clearpaper()
 	info = null
@@ -477,6 +616,33 @@
 			tgui_editable = TRUE
 			choose_language(usr)
 			SStgui.update_uis(src)
+			return TRUE
+
+		if("check")
+			// Toggle a checkbox rendered by the [check] pencode tag. The
+			// payload carries the 1-based index of the checked element,
+			// counted over the whole rendered document.
+			var/index = text2num(params["index"])
+			if(!index || !tgui_editable)
+				return TRUE
+			if(src.loc != usr && !src.Adjacent(usr))
+				return TRUE
+			if(toggle_paper_checkbox(index))
+				playsound(src, pick('sounds/effects/pen1.ogg','sounds/effects/pen2.ogg'), 10)
+				last_modified_ckey = usr.ckey
+				SStgui.update_uis(src)
+			return TRUE
+
+		if("circle")
+			var/index = text2num(params["index"])
+			if(!index || !tgui_editable)
+				return TRUE
+			if(src.loc != usr && !src.Adjacent(usr))
+				return TRUE
+			if(toggle_paper_circle(index))
+				playsound(src, pick('sounds/effects/pen1.ogg','sounds/effects/pen2.ogg'), 10)
+				last_modified_ckey = usr.ckey
+				SStgui.update_uis(src)
 			return TRUE
 
 		if("write")

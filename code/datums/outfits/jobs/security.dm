@@ -12,7 +12,7 @@
 	suit = /obj/item/clothing/suit/armor/hos/coat
 	l_pocket = /obj/item/handcuffs
 	r_pocket = /obj/item/melee/telebaton
-	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1)
+	backpack_contents = list(/obj/item/clothing/head/helmet/scp/hczsecurityguard = 1, /obj/item/stamp/scp/guardcommander = 1)
 	belt = /obj/item/storage/belt/holster/security/fullmateba
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud/goggles
 	head = /obj/item/clothing/head/beret/sec/guardcom
