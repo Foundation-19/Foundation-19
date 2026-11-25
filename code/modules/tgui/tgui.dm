@@ -134,13 +134,16 @@
 		return
 	closing = TRUE
 	if(window)
-		// Windows you want to keep are usually blue screens of death
-		// and we want to keep them around, to allow user to read
-		// the error message properly.
-		window.release_lock()
-		window.close(can_be_suspended)
-		if(src_object)
-			src_object.tgui_close(user)
+		// Only tear the window down if this UI still owns it. A dead
+		// src_object (killed program, qdel'd host) leaves a zombie UI that
+		// closes up to a tick later — by then the pooled window may have
+		// been reclaimed by another UI (e.g. the main menu re-opened into
+		// it), and closing the window here would destroy THAT UI's page.
+		if(window.locked_by == src)
+			window.release_lock()
+			window.close(can_be_suspended)
+			if(src_object)
+				src_object.tgui_close(user)
 		SStgui.on_close(src)
 	state = null
 	qdel(src)

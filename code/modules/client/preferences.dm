@@ -140,13 +140,22 @@
 		for(var/datum/category_group/player_setup_category/PS in player_setup.categories)
 			tabs += PS.name
 		data["tabs"] = tabs
-		var/list/raw_data = player_setup.get_category_data(user)
-		var/list/flat_data = list()
-		for(var/cat_name in raw_data)
-			var/list/cat_items = raw_data[cat_name]
-			for(var/item_name in cat_items)
-				flat_data[item_name] = cat_items[item_name]
-		data["tab_data"] = flat_data
+		// Build ONLY the active tab's data. The frontend selects its tab via
+		// the 'CS.activeTab' shared state; each setSharedState already
+		// triggers an update, so switching tabs rebuilds just that tab. The
+		// shared state round-trips back inside every payload, keeping the
+		// frontend and backend in sync across suspend/resume.
+		var/active_tab_name = null
+		var/raw_tab = LAZYACCESS(tgui_shared_states, "CS.activeTab")
+		if(raw_tab)
+			active_tab_name = json_decode(raw_tab)
+		var/datum/category_group/player_setup_category/active_category = null
+		if(active_tab_name && player_setup.categories_by_name)
+			active_category = player_setup.categories_by_name[active_tab_name]
+		if(!active_category)
+			active_category = player_setup.selected_category || player_setup.categories[1]
+		data["selected_tab"] = active_category.name
+		data["tab_data"] = player_setup.get_single_category_data(active_category, user)
 
 	// Icon-based preview: render the character into a PNG, push it to the
 	// client's rsc cache, and let the frontend <img> it. No map elements,

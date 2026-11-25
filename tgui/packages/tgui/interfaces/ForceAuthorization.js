@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Flex, LabeledList, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const C = {
   bg: '#0a0a0c',
@@ -51,11 +52,12 @@ const GunRow = (props, context) => {
 };
 
 export const ForceAuthorization = (props, context) => {
-  const { data } = useBackend(context);
+  const { act, data } = useBackend(context);
   const { registered_guns = [], unregistered_guns = [] } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   return (
-    <Window theme="scp_terminal" width={560} height={640}>
+    <Window theme="scp_terminal" width={560} height={640} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: C.bg, minHeight: '100%', padding: '10px', fontFamily: C.mono, color: C.text }}>
           <Box style={{ borderBottom: '2px solid ' + C.borderRed, paddingBottom: '6px', marginBottom: '10px' }}>

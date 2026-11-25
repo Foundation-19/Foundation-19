@@ -24,6 +24,16 @@ Code is pretty much ripped verbatim from nano modules, but with un-needed stuff 
 	return host ? host.tgui_host() : src
 
 /datum/tgui_module/tgui_close(mob/user)
+	// If this module's UI is closed by the user while its program is still
+	// the computer's ACTIVE program, minimize the program (it would
+	// otherwise re-open its UI headless next tick). Identity-checked via
+	// active_program.TM so the main-menu switch close never triggers this.
+	var/obj/item/modular_computer/computer = host
+	if(istype(computer) && computer.active_program \
+		&& computer.active_program.TM == src \
+		&& computer.active_program.program_state == PROGRAM_STATE_ACTIVE && istype(user))
+		computer.minimize_program(user)
+		return
 	if(host)
 		host.tgui_close(user)
 

@@ -137,6 +137,18 @@ export class NumberInput extends Component {
     };
   }
 
+  componentWillUnmount() {
+    // Cancel an in-progress drag: if the control unmounts while dragging,
+    // the document never sees the mouseup and the interval/listeners would
+    // keep firing. Also restore pointer-events, which drag start disabled.
+    document.body.style['pointer-events'] = 'auto';
+    clearTimeout(this.timer);
+    clearInterval(this.dragInterval);
+    clearTimeout(this.flickerTimer);
+    document.removeEventListener('mousemove', this.handleDragMove);
+    document.removeEventListener('mouseup', this.handleDragEnd);
+  }
+
   render() {
     const {
       dragging,

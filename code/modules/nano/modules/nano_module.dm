@@ -74,6 +74,30 @@
 			return TRUE
 	return FALSE
 
+// If this module's UI is closed by the user while its program is still the
+// computer's ACTIVE program, minimize the program (it would otherwise re-open
+// its UI headless next tick). Identity-checked via active_program.NM so the
+// main-menu switch close (which closes the computer's own UI) never triggers
+// this. Machinery-hosted modules fall through to the default no-op.
+/datum/nano_module/tgui_close(mob/user)
+	var/obj/item/modular_computer/computer = nano_host()
+	if(istype(computer) && computer.active_program \
+		&& computer.active_program.NM == src \
+		&& computer.active_program.program_state == PROGRAM_STATE_ACTIVE && istype(user))
+		computer.minimize_program(user)
+		return
+	return ..()
+
+// Mirror of /datum/tgui_module/tgui_static_data: give every nano-module UI
+// the running computer's header data (PC_* fields). Frontends use
+// PC_showexitprogram to show the Exit/Minimize buttons only when the module
+// runs as a computer program; machinery-hosted consoles get no PC_* data.
+/datum/nano_module/tgui_static_data(mob/user)
+	. = ..()
+	var/obj/item/modular_computer/computer = nano_host()
+	if(istype(computer))
+		. += computer.get_header_data()
+
 /datum/nano_module/proc/get_host_z()
 	return get_z(nano_host())
 

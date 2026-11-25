@@ -147,9 +147,13 @@
 	addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 0.5 SECONDS)
 	// Detect whether the control is a browser
 	is_browser = winexists(client, id) == "BROWSER"
-	// Instruct the client to signal UI when the window is closed.
-	if(!is_browser)
-		winset(client, id, "on-close=\"uiclose [id]\"")
+	// Arm the native close notification UNCONDITIONALLY. 516 pooled windows
+	// are browser controls; without on-close the native titlebar x destroys
+	// the window without any message to the server, leaving the UI datum
+	// orphaned (still holding the pool lock) until relog — tgui_close() never
+	// runs, so close-reopen chains (e.g. lobby menu after the personnel file)
+	// never fire. uiclose hard-closes matching UIs properly instead.
+	winset(client, id, "on-close=\"uiclose [id]\"")
 
 /**
  * public
@@ -265,6 +269,12 @@
 		suspend_ownership = locked_by || suspend_ownership
 		needs_fresh_page = TRUE
 		send_message("suspend")
+		// Deterministic hide: the page's own ack (winset is-visible false)
+		// is a convenience, not a requirement. If the page is stale,
+		// throttled, or crashed mid-error, the echo is never processed and
+		// the window would sit visible forever. Hide it server-side;
+		// initialize() re-shows the window when a UI claims it again.
+		winset(client, id, "is-visible=false")
 		// The old page will process the suspend and hide the window
 		// (backendSuspendSuccess -> winset is-visible false). If its suspend
 		// interval keeps retrying, that hide can land AFTER initialize()
