@@ -37,6 +37,27 @@
 		M.add_chemical_effect(CE_SEDATE, 1)
 	M.add_chemical_effect(CE_PULSE, -1)
 
+// Simple animals have no metabolism, so sedatives only reach them through
+// the touch path (e.g. a chemdart payload dumped via trans_to_mob's
+// fallback). Weaken decays 1 per Life tick on simple animals.
+/datum/reagent/soporific/touch_mob(mob/living/L, amount)
+	if(istype(L, /mob/living/simple_animal/hostile/scp247))
+		L.Weaken(min(amount * 1.5, 45))
+		L.visible_message(SPAN_WARNING("\The [L] staggers, eyelids drooping!"))
+		remove_self(amount)
+
+/datum/reagent/vecuronium_bromide/touch_mob(mob/living/L, amount)
+	if(istype(L, /mob/living/simple_animal/hostile/scp247))
+		L.Weaken(min(amount * 1.5, 45))
+		L.visible_message(SPAN_WARNING("\The [L] wobbles as its muscles slacken!"))
+		remove_self(amount)
+
+/datum/reagent/chloral_hydrate/touch_mob(mob/living/L, amount)
+	if(istype(L, /mob/living/simple_animal/hostile/scp247))
+		L.Weaken(min(amount * 2, 60))
+		L.visible_message(SPAN_DANGER("\The [L] collapses into a dazed heap!"))
+		remove_self(amount)
+
 
 
 /datum/reagent/vecuronium_bromide
