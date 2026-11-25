@@ -836,13 +836,20 @@ About the new airlock wires panel:
 		if("electrify_permanently")
 			electrify(-1 * activate, 1)
 		if("open")
+			// AI/door toggle: semantics is "flip the door", driven purely by
+			// current density. The old activate-based branch deadlocked:
+			// Door State's "active" flag IS density, so the button always
+			// sent the value matching the current state (never changing it),
+			// and neither branch of activate&&density / !activate&&!density
+			// could ever be the opposite of reality. welded/locked still
+			// report over this path since AI/console control flows here.
 			if(welded)
 				to_chat(usr, "The airlock has been welded shut!")
 			else if(locked)
 				to_chat(usr, "The door bolts are down!")
-			else if(activate && density)
+			else if(density)
 				open()
-			else if(!activate && !density)
+			else
 				close()
 		if("safeties")
 			set_safeties(!activate, 1)

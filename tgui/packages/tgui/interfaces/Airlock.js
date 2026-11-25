@@ -45,6 +45,14 @@ export const Airlock = (props, context) => {
                   ml={1}
                   content={cmd.act ? (cmd.active ? 'Disable' : 'Enable') : (cmd.active ? 'Deactivate' : 'Activate')}
                   color={cmd.danger && !cmd.active ? 'bad' : 'default'}
+                  // Toggling semantics: for act commands, sending the NEXT
+                  // state makes sense (Enable sends 1). For state-flip
+                  // commands like "open" (Door State), the server flips on
+                  // the bit itself; what we send must be the state we want
+                  // AFTER the click. Door State: active=1 means Closed —
+                  // clicking "Activate" (on an open door) should CLOSE it,
+                  // and clicking "Deactivate" (on a closed door) should
+                  // OPEN it. So invert the current state as the target.
                   onClick={() => act(cmd.command, { activate: cmd.act ? (cmd.active ? 0 : 1) : (cmd.active ? 0 : 1) })} />
               </LabeledList.Item>
             </LabeledList>
