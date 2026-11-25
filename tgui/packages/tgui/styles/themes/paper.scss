@@ -152,6 +152,19 @@ $font-size: 24px;
     border-bottom: none;
   }
 
+  // Interactive checkboxes ([check] pencode tag). Cursor signals clickability.
+  .paper_check {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  // Circle/radio choices ([circle] pencode tag). Clicked options render the
+  // filled glyph (backend swaps the entity), which visually reads as circling.
+  .paper_circle {
+    cursor: pointer;
+    user-select: none;
+  }
+
   .paper-field {
     position: relative;
     display: inline-block;

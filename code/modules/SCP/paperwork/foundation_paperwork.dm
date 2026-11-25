@@ -9,16 +9,16 @@
 <b>Date:</b> [field]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Reporting Personnel:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br>
-<b>Department:</b> Security / Science / Medical / Engineering / Logistics / Other<br><hr>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br>
+<b>Department:</b> [circle]Security [circle]Science [circle]Medical [circle]Engineering [circle]Logistics [circle]Other<br><hr>
 <b>Incident Type:</b><br>
-[ ] Containment Breach<br>
-[ ] SCP Exposure / Contact<br>
-[ ] Personnel Injury / Fatality<br>
-[ ] Security Violation<br>
-[ ] Equipment Failure<br>
-[ ] Unexplained Phenomenon<br>
-[ ] Other: [field]<br><hr>
+[check] Containment Breach<br>
+[check] SCP Exposure / Contact<br>
+[check] Personnel Injury / Fatality<br>
+[check] Security Violation<br>
+[check] Equipment Failure<br>
+[check] Unexplained Phenomenon<br>
+[check] Other: [field]<br><hr>
 <b>SCP Designation (if applicable):</b> [field]<br>
 <b>Location of Incident:</b> [field]<br>
 <b>Time of Incident:</b> [field]<br><hr>
@@ -53,10 +53,10 @@
 <b>Request ID:</b> [field]<br>
 <b>Date:</b> [field]<br><hr>
 <b>Requesting Researcher:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>Department:</b> [field]<br><hr>
 <b>SCP Designation:</b> SCP-[field]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Current Containment Location:</b> [field]<br><hr>
 <b>Test Objective:</b><br>
 [field]<br>
@@ -72,7 +72,7 @@
 <b>Equipment Required:</b> [field]<br>
 <b>Estimated Duration:</b> [field]<br><hr>
 <b>Risk Assessment:</b><br>
-Low / Medium / High / Extreme<br><hr>
+[circle]Low [circle]Medium [circle]High [circle]Extreme<br><hr>
 <b>Safety Precautions:</b><br>
 [field]<br>
 [field]<br><hr>
@@ -93,18 +93,18 @@ Low / Medium / High / Extreme<br><hr>
 <b>Record ID:</b> [field]<br>
 <b>Date:</b> [field]<br><hr>
 <b>Administering Personnel:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br><hr>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
 <b>Subject Name:</b> [field]<br>
-<b>Subject Type:</b> Civilian / Foundation Personnel / D-Class / Other<br>
+<b>Subject Type:</b> [circle]Civilian [circle]Foundation Personnel [circle]D-Class [circle]Other<br>
 <b>Reason for Administration:</b><br>
-[ ] Unintended SCP Exposure<br>
-[ ] Security Leak<br>
-[ ] Information Compromise<br>
-[ ] Standard Protocol<br>
-[ ] Other: [field]<br><hr>
-<b>Amnestic Class:</b> A / B / C / E<br>
+[check] Unintended SCP Exposure<br>
+[check] Security Leak<br>
+[check] Information Compromise<br>
+[check] Standard Protocol<br>
+[check] Other: [field]<br><hr>
+<b>Amnestic Class:</b> [circle]A [circle]B [circle]C [circle]E<br>
 <b>Dosage:</b> [field]<br>
-<b>Method of Administration:</b> Oral / Intravenous / Inhalation / Topical<br><hr>
+<b>Method of Administration:</b> [circle]Oral [circle]Intravenous [circle]Inhalation [circle]Topical<br><hr>
 <b>Memories Targeted for Removal:</b><br>
 [field]<br>
 [field]<br><hr>
@@ -112,7 +112,7 @@ Low / Medium / High / Extreme<br><hr>
 [field]<br><hr>
 <b>Post-Administration Assessment:</b><br>
 [field]<br><hr>
-<b>Complications:</b> None / Describe: [field]<br><hr>
+<b>Complications:</b> [circle]None [circle]Describe: [field]<br><hr>
 <b>Administering Signature:</b> [field] <b>Date:</b> [field]<br>
 <b>Supervisor Approval:</b> [field] <b>Date:</b> [field]<br>
 <br><i>CLASSIFIED - LEVEL 3 CLEARANCE REQUIRED</i><br>"}
@@ -131,10 +131,10 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date of Breach:</b> [field]<br>
 <b>Time of Breach:</b> [field]<br><hr>
 <b>SCP Designation:</b> SCP-[field]<br>
-<b>Object Class:</b> Safe / Euclid / Keter<br>
-<b>Previous Containment Status:</b> Contained / Partial / Pending<br><hr>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter<br>
+<b>Previous Containment Status:</b> [circle]Contained [circle]Partial [circle]Pending<br><hr>
 <b>Breach Location:</b> [field]<br>
-<b>Breach Severity:</b> Minor / Moderate / Major / Catastrophic<br><hr>
+<b>Breach Severity:</b> [circle]Minor [circle]Moderate [circle]Major [circle]Catastrophic<br><hr>
 <b>Sequence of Events:</b><br>
 1. [field]<br>
 2. [field]<br>
@@ -145,18 +145,18 @@ Low / Medium / High / Extreme<br><hr>
 <b>D-Class Casualties:</b> [field]<br>
 <b>Personnel Injured:</b> [field]<br><hr>
 <b>Containment Failure Cause:</b><br>
-[ ] Equipment Malfunction<br>
-[ ] Human Error<br>
-[ ] Sabotage / External Action<br>
-[ ] SCP-Initiated<br>
-[ ] Structural Failure<br>
-[ ] Unknown<br>
-[ ] Other: [field]<br><hr>
+[check] Equipment Malfunction<br>
+[check] Human Error<br>
+[check] Sabotage / External Action<br>
+[check] SCP-Initiated<br>
+[check] Structural Failure<br>
+[check] Unknown<br>
+[check] Other: [field]<br><hr>
 <b>Recontainment Status:</b><br>
-[ ] Recontained - Time: [field]<br>
-[ ] In Progress<br>
-[ ] Pending MTF Deployment<br>
-[ ] Not Recontained<br><hr>
+[check] Recontained - Time: [field]<br>
+[check] In Progress<br>
+[check] Pending MTF Deployment<br>
+[check] Not Recontained<br><hr>
 <b>Preventive Measures Recommended:</b><br>
 [field]<br>
 [field]<br><hr>
@@ -181,14 +181,14 @@ Low / Medium / High / Extreme<br><hr>
 <b>Origin Facility:</b> [field]<br>
 <b>Destination:</b> Site-53<br><hr>
 <b>Assignment:</b><br>
-[ ] General Labor<br>
-[ ] Medical Testing<br>
-[ ] SCP Testing<br>
-[ ] Maintenance<br>
-[ ] Kitchen Duty<br>
-[ ] Mining Operations<br><hr>
-<b>Medical Clearance:</b> Cleared / Restricted - Notes: [field]<br>
-<b>Behavioral Assessment:</b> Compliant / Unstable / Hostile<br><hr>
+[check] General Labor<br>
+[check] Medical Testing<br>
+[check] SCP Testing<br>
+[check] Maintenance<br>
+[check] Kitchen Duty<br>
+[check] Mining Operations<br><hr>
+<b>Medical Clearance:</b> [circle]Cleared [circle]Restricted - Notes: [field]<br>
+<b>Behavioral Assessment:</b> [circle]Compliant [circle]Unstable [circle]Hostile<br><hr>
 <b>Special Notes:</b><br>
 [field]<br><hr>
 <b>Authorizing Officer:</b> [field] <b>Date:</b> [field]<br>"}
@@ -204,7 +204,7 @@ Low / Medium / High / Extreme<br><hr>
 	. = ..()
 	info = @{"<h2>SCP FOUNDATION - CLASSIFIED OBJECT FILE</h2><hr>
 <b>Item #:</b> SCP-[field]<br><hr>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon / Neutralized<br><hr>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon [circle]Neutralized<br><hr>
 <b>Special Containment Procedures:</b><br>
 [field]<br>
 [field]<br>
@@ -287,8 +287,8 @@ Low / Medium / High / Extreme<br><hr>
 <b>Request ID:</b> [field]<br>
 <b>Date:</b> [field]<br><hr>
 <b>Requesting Personnel:</b> [field]<br>
-<b>Department:</b> Command / Security / Science / Medical / Engineering / Logistics / Service<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br><hr>
+<b>Department:</b> [circle]Command [circle]Security [circle]Science [circle]Medical [circle]Engineering [circle]Logistics [circle]Service<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
 <b>Amount Requested (credits):</b> [field]<br>
 <b>Purpose:</b><br>
 [field]<br>
@@ -318,16 +318,16 @@ Low / Medium / High / Extreme<br><hr>
 <b>Report ID:</b> [field]<br>
 <b>Date:</b> [field]<br><hr>
 <b>Reporting Personnel:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br><hr>
-<b>Violation Severity:</b> Minor / Moderate / Major / Critical<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
+<b>Violation Severity:</b> [circle]Minor [circle]Moderate [circle]Major [circle]Critical<br>
 <b>Violation Type:</b><br>
-(_) Unnecessary D-Class Suffering<br>
-(_) Testing Without Approval<br>
-(_) Cruel and Unusual Procedures<br>
-(_) Withholding Medical Treatment<br>
-(_) Unauthorized Amnestic Use<br>
-(_) SCP Mistreatment<br>
-(_) Other: [field]<br><hr>
+[check] Unnecessary D-Class Suffering<br>
+[check] Testing Without Approval<br>
+[check] Cruel and Unusual Procedures<br>
+[check] Withholding Medical Treatment<br>
+[check] Unauthorized Amnestic Use<br>
+[check] SCP Mistreatment<br>
+[check] Other: [field]<br><hr>
 <b>SCP Designation (if applicable):</b> SCP-[field]<br>
 <b>Personnel Involved in Violation:</b><br>
 1. [field] (Role: [field])<br>
@@ -359,24 +359,24 @@ Low / Medium / High / Extreme<br><hr>
 <b>Subject Name:</b> [field]<br>
 <b>Subject Role:</b> [field]<br>
 <b>Evaluating Psychologist:</b> [field]<br><hr>
-<b>Evaluation Type:</b> Routine / Post-Incident / Pre-Employment / SCP Exposure Follow-up<br><hr>
-<b>Current Sanity Assessment:</b> Stable / Mild Distress / Moderate Distress / Severe Distress / Critical<br>
-<b>SCP Exposure Level:</b> None / Low / Moderate / Severe / Critical<br><hr>
+<b>Evaluation Type:</b> [circle]Routine [circle]Post-Incident [circle]Pre-Employment [circle]SCP Exposure Follow-up<br><hr>
+<b>Current Sanity Assessment:</b> [circle]Stable [circle]Mild Distress [circle]Moderate Distress [circle]Severe Distress [circle]Critical<br>
+<b>SCP Exposure Level:</b> [circle]None [circle]Low [circle]Moderate [circle]Severe [circle]Critical<br><hr>
 <b>Behavioral Observations:</b><br>
 [field]<br>
 [field]<br><hr>
-<b>Cognitive Function:</b> Intact / Mildly Impaired / Moderately Impaired / Severely Impaired<br>
-<b>Emotional State:</b> Stable / Anxious / Depressed / Agitated / Unstable<br>
-<b>Social Functioning:</b> Normal / Withdrawn / Hostile / Paranoid<br><hr>
+<b>Cognitive Function:</b> [circle]Intact [circle]Mildly Impaired [circle]Moderately Impaired [circle]Severely Impaired<br>
+<b>Emotional State:</b> [circle]Stable [circle]Anxious [circle]Depressed [circle]Agitated [circle]Unstable<br>
+<b>Social Functioning:</b> [circle]Normal [circle]Withdrawn [circle]Hostile [circle]Paranoid<br><hr>
 <b>Diagnosis:</b><br>
 [field]<br><hr>
 <b>Recommendations:</b><br>
-(_) No Action Required<br>
-(_) Counseling Sessions Recommended<br>
-(_) Amnestic Treatment Recommended (Class: [field])<br>
-(_) Temporary Duty Restriction<br>
-(_) Permanent Reassignment<br>
-(_) Medical Leave<br><hr>
+[check] No Action Required<br>
+[check] Counseling Sessions Recommended<br>
+[check] Amnestic Treatment Recommended (Class: [field])<br>
+[check] Temporary Duty Restriction<br>
+[check] Permanent Reassignment<br>
+[check] Medical Leave<br><hr>
 <b>Amnestic Recommendation Justification (if applicable):</b><br>
 [field]<br><hr>
 <b>Evaluating Psychologist Signature:</b> [field] <b>Date:</b> [field]<br>
@@ -396,9 +396,9 @@ Low / Medium / High / Extreme<br><hr>
 <b>Report ID:</b> [field]<br>
 <b>Date:</b> [field]<br><hr>
 <b>Investigating Agent:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br><hr>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
 <b>Case Name:</b> [field]<br>
-<b>Investigation Type:</b> Anomalous Evidence / SCP-Related / Personnel / Unknown Phenomenon<br><hr>
+<b>Investigation Type:</b> [circle]Anomalous Evidence [circle]SCP-Related [circle]Personnel [circle]Unknown Phenomenon<br><hr>
 <b>Location of Investigation:</b> [field]<br>
 <b>SCP Designation (if applicable):</b> SCP-[field]<br><hr>
 <b>Evidence Collected:</b><br>
@@ -430,9 +430,9 @@ Low / Medium / High / Extreme<br><hr>
 	info = @{"<h2>SCP FOUNDATION - INTELLIGENCE REPORT</h2><hr>
 <b>Report ID:</b> RAISA-[field]<br>
 <b>Date:</b> [field]<br>
-<b>Classification:</b> UNCLASSIFIED / CONFIDENTIAL / SECRET / TOP SECRET<br><hr>
+<b>Classification:</b> [circle]UNCLASSIFIED [circle]CONFIDENTIAL [circle]SECRET [circle]TOP SECRET<br><hr>
 <b>Analyst:</b> [field]<br>
-<b>Report Type:</b> Surveillance / Threat Assessment / GOI Activity / Information Security / Personnel<br><hr>
+<b>Report Type:</b> [circle]Surveillance [circle]Threat Assessment [circle]GOI Activity [circle]Information Security [circle]Personnel<br><hr>
 <b>Target/Subject:</b> [field]<br>
 <b>Threat Assessment (0-100):</b> [field]<br><hr>
 <b>Summary:</b><br>
@@ -460,9 +460,9 @@ Low / Medium / High / Extreme<br><hr>
 	info = @{"<h2>SCP FOUNDATION - GOI COMMUNIQUE</h2><hr>
 <b>Communique ID:</b> [field]<br>
 <b>Date:</b> [field]<br>
-<b>Classification:</b> CONFIDENTIAL / SECRET / TOP SECRET<br><hr>
+<b>Classification:</b> [circle]CONFIDENTIAL [circle]SECRET [circle]TOP SECRET<br><hr>
 <b>GOI Name:</b> [field]<br>
-<b>Current Standing:</b> Hostile / Unfriendly / Neutral / Friendly / Allied<br><hr>
+<b>Current Standing:</b> [circle]Hostile [circle]Unfriendly [circle]Neutral [circle]Friendly [circle]Allied<br><hr>
 <b>Foundation Representative:</b> [field]<br>
 <b>GOI Representative:</b> [field]<br>
 <b>Meeting Location:</b> [field]<br><hr>
@@ -474,7 +474,7 @@ Low / Medium / High / Extreme<br><hr>
 <b>Agreements Reached:</b><br>
 [field]<br><hr>
 <b>Standing Impact Assessment:</b><br>
-(_) No Change (_) Improved (_) Deteriorated<br><hr>
+[circle]No Change [circle]Improved [circle]Deteriorated<br><hr>
 <b>Follow-up Actions Required:</b><br>
 [field]<br><hr>
 <b>Foundation Representative Signature:</b> [field] <b>Date:</b> [field]<br>
@@ -495,26 +495,26 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date:</b> [field]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Requesting Researcher:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>Department:</b> [field]<br><hr>
 <b>SCP Designation:</b> SCP-[field]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Current Containment Location:</b> [field]<br><hr>
 <b>Test Type:</b><br>
-[ ] Observation<br>
-[ ] Physical Interaction<br>
-[ ] Stress Testing<br>
-[ ] Audio / Visual Exposure<br>
-[ ] Biological Sampling<br>
-[ ] Cognitive / Memetic Exposure<br>
-[ ] Chemical Analysis<br>
-[ ] Other: [field]<br><hr>
+[check] Observation<br>
+[check] Physical Interaction<br>
+[check] Stress Testing<br>
+[check] Audio / Visual Exposure<br>
+[check] Biological Sampling<br>
+[check] Cognitive / Memetic Exposure<br>
+[check] Chemical Analysis<br>
+[check] Other: [field]<br><hr>
 <b>Risk Assessment:</b><br>
-(_) Level 1 - Minimal Risk<br>
-(_) Level 2 - Low Risk<br>
-(_) Level 3 - Medium Risk (Ethics Review Required)<br>
-(_) Level 4 - High Risk (Ethics Review + Director Approval Required)<br>
-(_) Level 5 - Extreme Risk (O5 Consultation Required)<br><hr>
+[check] Level 1 - Minimal Risk<br>
+[check] Level 2 - Low Risk<br>
+[check] Level 3 - Medium Risk (Ethics Review Required)<br>
+[check] Level 4 - High Risk (Ethics Review + Director Approval Required)<br>
+[check] Level 5 - Extreme Risk (O5 Consultation Required)<br><hr>
 <b>D-Class Subject Designation:</b> D-[field]<br>
 <b>Number of Subjects Required:</b> [field]<br><hr>
 <b>Test Objective:</b><br>
@@ -531,7 +531,7 @@ Low / Medium / High / Extreme<br><hr>
 [field]<br><hr>
 <b>Contingency Plan (if test deviates):</b><br>
 [field]<br><hr>
-<b>Ethics Review Required:</b> Yes / No (mandatory if Risk >= 3)<br>
+<b>Ethics Review Required:</b> [circle]Yes [circle]No (mandatory if Risk >= 3)<br>
 <b>Ethics Committee Case #:</b> [field]<br><hr>
 <b>Researcher Signature:</b> [field] <b>Date:</b> [field]<br>
 <b>Senior Researcher Approval:</b> [field] <b>Date:</b> [field]<br>
@@ -561,26 +561,26 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Requesting Researcher:</b> [researcher_name]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>Department:</b> [project["research_field"] || "Research"]<br><hr>
 <b>SCP Designation:</b> SCP-[scp_target]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Current Containment Location:</b> [field]<br><hr>
 <b>Test Type:</b><br>
-[ ] Observation<br>
-[ ] Physical Interaction<br>
-[ ] Stress Testing<br>
-[ ] Audio / Visual Exposure<br>
-[ ] Biological Sampling<br>
-[ ] Cognitive / Memetic Exposure<br>
-[ ] Chemical Analysis<br>
-[ ] Other: [field]<br><hr>
+[check] Observation<br>
+[check] Physical Interaction<br>
+[check] Stress Testing<br>
+[check] Audio / Visual Exposure<br>
+[check] Biological Sampling<br>
+[check] Cognitive / Memetic Exposure<br>
+[check] Chemical Analysis<br>
+[check] Other: [field]<br><hr>
 <b>Risk Assessment:</b><br>
-(_) Level 1 - Minimal Risk<br>
-(_) Level 2 - Low Risk<br>
-(_) Level 3 - Medium Risk (Ethics Review Required)<br>
-(_) Level 4 - High Risk (Ethics Review + Director Approval Required)<br>
-(_) Level 5 - Extreme Risk (O5 Consultation Required)<br>
+[check] Level 1 - Minimal Risk<br>
+[check] Level 2 - Low Risk<br>
+[check] Level 3 - Medium Risk (Ethics Review Required)<br>
+[check] Level 4 - High Risk (Ethics Review + Director Approval Required)<br>
+[check] Level 5 - Extreme Risk (O5 Consultation Required)<br>
 <i>Assessed Risk: [risk_text]</i><br><hr>
 <b>D-Class Subject Designation:</b> D-[field]<br>
 <b>Number of Subjects Required:</b> [field]<br><hr>
@@ -625,18 +625,18 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Requesting Researcher:</b> [researcher_name]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br><hr>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
 <b>SCP Designation:</b> SCP-[scp_target]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Current Containment Location:</b> [field]<br><hr>
 <b>Test Type:</b> [test_type]<br>
 <b>D-Class Subject Designation:</b> [subject_name]<br><hr>
 <b>Risk Assessment:</b><br>
-(_) Level 1 - Minimal Risk<br>
-(_) Level 2 - Low Risk<br>
-(_) Level 3 - Medium Risk (Ethics Review Required)<br>
-(_) Level 4 - High Risk (Ethics Review + Director Approval Required)<br>
-(_) Level 5 - Extreme Risk (O5 Consultation Required)<br>
+[check] Level 1 - Minimal Risk<br>
+[check] Level 2 - Low Risk<br>
+[check] Level 3 - Medium Risk (Ethics Review Required)<br>
+[check] Level 4 - High Risk (Ethics Review + Director Approval Required)<br>
+[check] Level 5 - Extreme Risk (O5 Consultation Required)<br>
 <i>Assessed Risk: [risk_text]</i><br><hr>
 <b>Test Objective:</b><br>
 [description]<br><hr>
@@ -671,36 +671,36 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date Completed:</b> [field]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Researcher:</b> [field]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>SCP Designation:</b> SCP-[field]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Test Type:</b> [field]<br>
-<b>Risk Level:</b> 1 (Low) / 2 / 3 / 4 / 5 (Extreme)<br>
+<b>Risk Level:</b> [circle]1 (Low) [circle]2 [circle]3 [circle]4 [circle]5 (Extreme)<br>
 <b>D-Class Subject:</b> D-[field]<br><hr>
 <b>Test Outcome:</b><br>
-[ ] Successful - Objectives Met<br>
-[ ] Partial Success - Some Objectives Met<br>
-[ ] Failure - Objectives Not Met<br>
-[ ] Inconclusive - Insufficient Data<br>
-[ ] Aborted - Safety Concern<br><hr>
+[check] Successful - Objectives Met<br>
+[check] Partial Success - Some Objectives Met<br>
+[check] Failure - Objectives Not Met<br>
+[check] Inconclusive - Insufficient Data<br>
+[check] Aborted - Safety Concern<br><hr>
 <b>Summary of Results:</b><br>
 [field]<br>
 [field]<br>
 [field]<br>
 [field]<br><hr>
-<b>Danger Triggered:</b> Yes / No<br>
+<b>Danger Triggered:</b> [circle]Yes [circle]No<br>
 <b>Subject Status:</b><br>
-(_) Intact - No injuries sustained<br>
-(_) Injured - Minor / Moderate / Severe injuries<br>
-(_) Deceased - Cause: [field]<br>
-(_) Missing - Last seen: [field]<br><hr>
+[check] Intact - No injuries sustained<br>
+[check] Injured - Minor / Moderate / Severe injuries<br>
+[check] Deceased - Cause: [field]<br>
+[check] Missing - Last seen: [field]<br><hr>
 <b>Research Points Earned:</b> [field]<br><hr>
 <b>Notable Observations / Anomalous Effects:</b><br>
 [field]<br>
 [field]<br><hr>
-<b>Equipment Status:</b> Intact / Damaged / Destroyed<br>
-<b>Containment Integrity Affected:</b> Yes / No<br><hr>
-<b>Ethics Violation Filed:</b> Yes / No<br>
+<b>Equipment Status:</b> [circle]Intact [circle]Damaged [circle]Destroyed<br>
+<b>Containment Integrity Affected:</b> [circle]Yes [circle]No<br><hr>
+<b>Ethics Violation Filed:</b> [circle]Yes [circle]No<br>
 <b>Ethics Committee Case #:</b> [field]<br><hr>
 <b>Follow-up Actions Required:</b><br>
 [field]<br><hr>
@@ -725,36 +725,36 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date Completed:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Researcher:</b> [researcher_name]<br>
-<b>Clearance Level:</b> 1 / 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>SCP Designation:</b> SCP-[scp_target]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Test Type:</b> [field]<br>
 <b>Risk Level:</b> [risk_level] ([risk_level >= 4 ? "Extreme" : risk_level >= 3 ? "High" : risk_level >= 2 ? "Moderate" : "Low"])<br>
 <b>D-Class Subject:</b> D-[field]<br><hr>
 <b>Test Outcome:</b><br>
-[ ] Successful - Objectives Met<br>
-[ ] Partial Success - Some Objectives Met<br>
-[ ] Failure - Objectives Not Met<br>
-[ ] Inconclusive - Insufficient Data<br>
-[ ] Aborted - Safety Concern<br><hr>
+[check] Successful - Objectives Met<br>
+[check] Partial Success - Some Objectives Met<br>
+[check] Failure - Objectives Not Met<br>
+[check] Inconclusive - Insufficient Data<br>
+[check] Aborted - Safety Concern<br><hr>
 <b>Summary of Results:</b><br>
 [field]<br>
 [field]<br>
 [field]<br>
 [field]<br><hr>
-<b>Danger Triggered:</b> Yes / No<br>
+<b>Danger Triggered:</b> [circle]Yes [circle]No<br>
 <b>Subject Status:</b><br>
-(_) Intact - No injuries sustained<br>
-(_) Injured - Minor / Moderate / Severe injuries<br>
-(_) Deceased - Cause: [field]<br>
-(_) Missing - Last seen: [field]<br><hr>
+[check] Intact - No injuries sustained<br>
+[check] Injured - Minor / Moderate / Severe injuries<br>
+[check] Deceased - Cause: [field]<br>
+[check] Missing - Last seen: [field]<br><hr>
 <b>Research Points Earned:</b> [field]<br><hr>
 <b>Notable Observations / Anomalous Effects:</b><br>
 [field]<br>
 [field]<br><hr>
-<b>Equipment Status:</b> Intact / Damaged / Destroyed<br>
-<b>Containment Integrity Affected:</b> Yes / No<br><hr>
-<b>Ethics Violation Filed:</b> Yes / No<br>
+<b>Equipment Status:</b> [circle]Intact [circle]Damaged [circle]Destroyed<br>
+<b>Containment Integrity Affected:</b> [circle]Yes [circle]No<br><hr>
+<b>Ethics Violation Filed:</b> [circle]Yes [circle]No<br>
 <b>Ethics Committee Case #:</b> [field]<br><hr>
 <b>Follow-up Actions Required:</b><br>
 [field]<br><hr>
@@ -779,16 +779,16 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date:</b> [field]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Primary Researcher:</b> [field]<br>
-<b>Clearance Level:</b> 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>Research Team:</b> [field]<br><hr>
 <b>Interaction Type:</b><br>
-[ ] Proximity Effect<br>
-[ ] Active Cross-Contamination<br>
-[ ] Mutual Enhancement<br>
-[ ] Mutual Nullification<br>
-[ ] Synergistic Anomaly<br>
-[ ] Competitive Interaction<br>
-[ ] Other: [field]<br><hr>
+[check] Proximity Effect<br>
+[check] Active Cross-Contamination<br>
+[check] Mutual Enhancement<br>
+[check] Mutual Nullification<br>
+[check] Synergistic Anomaly<br>
+[check] Competitive Interaction<br>
+[check] Other: [field]<br><hr>
 <b>Participating Anomalies:</b><br>
 <b>SCP-[field]</b> (Class: [field]) → [field]<br>
 <b>SCP-[field]</b> (Class: [field]) → [field]<br><hr>
@@ -798,46 +798,46 @@ Low / Medium / High / Extreme<br><hr>
 [field]<br><hr>
 <b>Interaction Effects Observed:</b><br>
 <b>On SCP-[field]:</b><br>
-[ ] No Observable Effect<br>
-[ ] Enhancement of Anomalous Properties<br>
-[ ] Suppression of Anomalous Properties<br>
-[ ] Behavioral Change<br>
-[ ] Physical Transformation<br>
-[ ] Memetic/Cognitive Influence<br>
-[ ] Other: [field]<br>
+[check] No Observable Effect<br>
+[check] Enhancement of Anomalous Properties<br>
+[check] Suppression of Anomalous Properties<br>
+[check] Behavioral Change<br>
+[check] Physical Transformation<br>
+[check] Memetic/Cognitive Influence<br>
+[check] Other: [field]<br>
 <b>On SCP-[field]:</b><br>
-[ ] No Observable Effect<br>
-[ ] Enhancement of Anomalous Properties<br>
-[ ] Suppression of Anomalous Properties<br>
-[ ] Behavioral Change<br>
-[ ] Physical Transformation<br>
-[ ] Memetic/Cognitive Influence<br>
-[ ] Other: [field]<br><hr>
+[check] No Observable Effect<br>
+[check] Enhancement of Anomalous Properties<br>
+[check] Suppression of Anomalous Properties<br>
+[check] Behavioral Change<br>
+[check] Physical Transformation<br>
+[check] Memetic/Cognitive Influence<br>
+[check] Other: [field]<br><hr>
 <b>Environmental Effects:</b><br>
-[ ] None<br>
-[ ] Localized Reality Distortion<br>
-[ ] Spatial/Temporal Anomalies<br>
-[ ] Containment Integrity Compromised<br>
-[ ] Personnel Safety Risk<br>
-[ ] Other: [field]<br><hr>
+[check] None<br>
+[check] Localized Reality Distortion<br>
+[check] Spatial/Temporal Anomalies<br>
+[check] Containment Integrity Compromised<br>
+[check] Personnel Safety Risk<br>
+[check] Other: [field]<br><hr>
 <b>Research Data Collected:</b><br>
 <b>Sensor Readings:</b> [field]<br>
 <b>Anomalous Energy Signatures:</b> [field]<br>
 <b>Cognitive Impact Assessment:</b> [field]<br>
 <b>Containment Metrics:</b> [field]<br><hr>
 <b>Risk Assessment:</b><br>
-(_) Minimal Risk - Interaction poses no additional threat<br>
-(_) Low Risk - Minor additional containment requirements<br>
-(_) Medium Risk - Requires modified containment protocols<br>
-(_) High Risk - Potential for cascade containment failure<br>
-(_) Extreme Risk - Immediate threat to facility integrity<br><hr>
+[check] Minimal Risk - Interaction poses no additional threat<br>
+[check] Low Risk - Minor additional containment requirements<br>
+[check] Medium Risk - Requires modified containment protocols<br>
+[check] High Risk - Potential for cascade containment failure<br>
+[check] Extreme Risk - Immediate threat to facility integrity<br><hr>
 <b>Cross-Containment Recommendations:</b><br>
-[ ] Maintain Current Separation<br>
-[ ] Increase Minimum Distance to [field] meters<br>
-[ ] Implement Shielding Between Containments<br>
-[ ] Schedule Regular Interaction Monitoring<br>
-[ ] Prohibit Proximity Under Any Conditions<br>
-[ ] Other: [field]<br><hr>
+[check] Maintain Current Separation<br>
+[check] Increase Minimum Distance to [field] meters<br>
+[check] Implement Shielding Between Containments<br>
+[check] Schedule Regular Interaction Monitoring<br>
+[check] Prohibit Proximity Under Any Conditions<br>
+[check] Other: [field]<br><hr>
 <b>Follow-up Research Required:</b><br>
 [field]<br><hr>
 <b>Researcher Signature:</b> [field] <b>Date:</b> [field]<br>
@@ -865,16 +865,16 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Primary Researcher:</b> [researcher_name]<br>
-<b>Clearance Level:</b> 2 / 3 / 4 / 5<br>
+<b>Clearance Level:</b> [circle]2 [circle]3 [circle]4 [circle]5<br>
 <b>Research Team:</b> [field]<br><hr>
 <b>Interaction Type:</b> [interaction_type]<br>
-[ ] Proximity Effect<br>
-[ ] Active Cross-Contamination<br>
-[ ] Mutual Enhancement<br>
-[ ] Mutual Nullification<br>
-[ ] Synergistic Anomaly<br>
-[ ] Competitive Interaction<br>
-[ ] Other: [field]<br><hr>
+[check] Proximity Effect<br>
+[check] Active Cross-Contamination<br>
+[check] Mutual Enhancement<br>
+[check] Mutual Nullification<br>
+[check] Synergistic Anomaly<br>
+[check] Competitive Interaction<br>
+[check] Other: [field]<br><hr>
 <b>Participating Anomalies:</b><br>
 <b>SCP-[scp1]</b> (Class: [field]) → [field]<br>
 <b>SCP-[scp2]</b> (Class: [field]) → [field]<br><hr>
@@ -884,47 +884,47 @@ Low / Medium / High / Extreme<br><hr>
 [field]<br><hr>
 <b>Interaction Effects Observed:</b><br>
 <b>On SCP-[scp1]:</b><br>
-[ ] No Observable Effect<br>
-[ ] Enhancement of Anomalous Properties<br>
-[ ] Suppression of Anomalous Properties<br>
-[ ] Behavioral Change<br>
-[ ] Physical Transformation<br>
-[ ] Memetic/Cognitive Influence<br>
-[ ] Other: [field]<br>
+[check] No Observable Effect<br>
+[check] Enhancement of Anomalous Properties<br>
+[check] Suppression of Anomalous Properties<br>
+[check] Behavioral Change<br>
+[check] Physical Transformation<br>
+[check] Memetic/Cognitive Influence<br>
+[check] Other: [field]<br>
 <b>On SCP-[scp2]:</b><br>
-[ ] No Observable Effect<br>
-[ ] Enhancement of Anomalous Properties<br>
-[ ] Suppression of Anomalous Properties<br>
-[ ] Behavioral Change<br>
-[ ] Physical Transformation<br>
-[ ] Memetic/Cognitive Influence<br>
-[ ] Other: [field]<br><hr>
+[check] No Observable Effect<br>
+[check] Enhancement of Anomalous Properties<br>
+[check] Suppression of Anomalous Properties<br>
+[check] Behavioral Change<br>
+[check] Physical Transformation<br>
+[check] Memetic/Cognitive Influence<br>
+[check] Other: [field]<br><hr>
 <b>Environmental Effects:</b><br>
-[ ] None<br>
-[ ] Localized Reality Distortion<br>
-[ ] Spatial/Temporal Anomalies<br>
-[ ] Containment Integrity Compromised<br>
-[ ] Personnel Safety Risk<br>
-[ ] Other: [field]<br><hr>
+[check] None<br>
+[check] Localized Reality Distortion<br>
+[check] Spatial/Temporal Anomalies<br>
+[check] Containment Integrity Compromised<br>
+[check] Personnel Safety Risk<br>
+[check] Other: [field]<br><hr>
 <b>Research Data Collected:</b><br>
 <b>Sensor Readings:</b> [field]<br>
 <b>Anomalous Energy Signatures:</b> [field]<br>
 <b>Cognitive Impact Assessment:</b> [field]<br>
 <b>Containment Metrics:</b> [field]<br><hr>
 <b>Risk Assessment:</b><br>
-(_) Minimal Risk - Interaction poses no additional threat<br>
-(_) Low Risk - Minor additional containment requirements<br>
-(_) Medium Risk - Requires modified containment protocols<br>
-(_) High Risk - Potential for cascade containment failure<br>
-(_) Extreme Risk - Immediate threat to facility integrity<br>
+[check] Minimal Risk - Interaction poses no additional threat<br>
+[check] Low Risk - Minor additional containment requirements<br>
+[check] Medium Risk - Requires modified containment protocols<br>
+[check] High Risk - Potential for cascade containment failure<br>
+[check] Extreme Risk - Immediate threat to facility integrity<br>
 <i>Assessed Risk Level: [risk_level]</i><br><hr>
 <b>Cross-Containment Recommendations:</b><br>
-[ ] Maintain Current Separation<br>
-[ ] Increase Minimum Distance to [field] meters<br>
-[ ] Implement Shielding Between Containments<br>
-[ ] Schedule Regular Interaction Monitoring<br>
-[ ] Prohibit Proximity Under Any Conditions<br>
-[ ] Other: [field]<br><hr>
+[check] Maintain Current Separation<br>
+[check] Increase Minimum Distance to [field] meters<br>
+[check] Implement Shielding Between Containments<br>
+[check] Schedule Regular Interaction Monitoring<br>
+[check] Prohibit Proximity Under Any Conditions<br>
+[check] Other: [field]<br><hr>
 <b>Follow-up Research Required:</b><br>
 [field]<br><hr>
 <b>Researcher Signature:</b> [researcher_name] <b>Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
@@ -950,38 +950,38 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date Filed:</b> [field]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Ethics Liaison:</b> [field]<br>
-<b>Clearance Level:</b> 4 / 5<br>
+<b>Clearance Level:</b> [circle]4 [circle]5<br>
 <b>Committee Members Present:</b> [field]<br><hr>
 <b>Test Proposal Details:</b><br>
 <b>Test ID:</b> [field]<br>
 <b>Researcher:</b> [field]<br>
 <b>Department:</b> [field]<br>
 <b>SCP Designation:</b> SCP-[field]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Test Type:</b> [field]<br>
-<b>Risk Level:</b> 3 (Medium) / 4 (High) / 5 (Extreme)<br><hr>
+<b>Risk Level:</b> [circle]3 (Medium) [circle]4 (High) [circle]5 (Extreme)<br><hr>
 <b>Ethical Considerations:</b><br>
 <b>1. Subject Welfare:</b><br>
-[ ] D-Class Subject(s) - [field]<br>
-[ ] Non-Anomalous Human Subject(s)<br>
-[ ] Animal Subject(s)<br>
-[ ] No Direct Subjects<br>
-<b>Consent Status:</b> Voluntary / Coerced / Non-Consensual<br>
+[check] D-Class Subject(s) - [field]<br>
+[check] Non-Anomalous Human Subject(s)<br>
+[check] Animal Subject(s)<br>
+[check] No Direct Subjects<br>
+<b>Consent Status:</b> [circle]Voluntary [circle]Coerced [circle]Non-Consensual<br>
 <b>Risk/Benefit Analysis:</b> [field]<br><hr>
 <b>2. Containment Integrity:</b><br>
-[ ] Risk of Breach - Low / Medium / High<br>
-[ ] Potential for Cross-Contamination<br>
-[ ] Equipment Failure Risk<br>
-[ ] Environmental Hazard<br>
-<b>Contingency Plans Adequate:</b> Yes / No<br><hr>
+[check] Risk of Breach - Low / Medium / High<br>
+[check] Potential for Cross-Contamination<br>
+[check] Equipment Failure Risk<br>
+[check] Environmental Hazard<br>
+<b>Contingency Plans Adequate:</b> [circle]Yes [circle]No<br><hr>
 <b>3. Research Justification:</b><br>
-<b>Scientific Merit:</b> Low / Moderate / High / Critical<br>
-<b>Alternative Methods Considered:</b> Yes / No<br>
+<b>Scientific Merit:</b> [circle]Low [circle]Moderate [circle]High [circle]Critical<br>
+<b>Alternative Methods Considered:</b> [circle]Yes [circle]No<br>
 <b>Expected Knowledge Gain:</b> [field]<br><hr>
 <b>4. Researcher Qualifications:</b><br>
-<b>Researcher Experience Level:</b> Novice / Intermediate / Experienced / Expert<br>
-<b>Previous Ethics Record:</b> Clean / Minor Violations / Major Violations<br>
-<b>Supervision Level:</b> Unsupervised / Supervised / Direct Supervision<br><hr>
+<b>Researcher Experience Level:</b> [circle]Novice [circle]Intermediate [circle]Experienced [circle]Expert<br>
+<b>Previous Ethics Record:</b> [circle]Clean [circle]Minor Violations [circle]Major Violations<br>
+<b>Supervision Level:</b> [circle]Unsupervised [circle]Supervised [circle]Direct Supervision<br><hr>
 <b>Committee Review:</b><br>
 <b>Review Session Date:</b> [field]<br>
 <b>Duration:</b> [field] minutes<br>
@@ -989,18 +989,18 @@ Low / Medium / High / Extreme<br><hr>
 [field]<br>
 [field]<br><hr>
 <b>Expert Consultations:</b><br>
-[ ] Medical Ethics Specialist<br>
-[ ] Containment Engineering<br>
-[ ] Cognitive Research Specialist<br>
-[ ] Anomalous Biology Expert<br>
-[ ] Legal Counsel<br>
-[ ] Other: [field]<br><hr>
+[check] Medical Ethics Specialist<br>
+[check] Containment Engineering<br>
+[check] Cognitive Research Specialist<br>
+[check] Anomalous Biology Expert<br>
+[check] Legal Counsel<br>
+[check] Other: [field]<br><hr>
 <b>Committee Decision:</b><br>
-(_) APPROVED - Test may proceed as proposed<br>
-(_) APPROVED WITH MODIFICATIONS - See modifications section<br>
-(_) DEFERRED - Requires additional information<br>
-(_) DENIED - Ethical concerns cannot be mitigated<br>
-(_) REFERRED TO O5 COUNCIL - Exceeds committee authority<br><hr>
+[check] APPROVED - Test may proceed as proposed<br>
+[check] APPROVED WITH MODIFICATIONS - See modifications section<br>
+[check] DEFERRED - Requires additional information<br>
+[check] DENIED - Ethical concerns cannot be mitigated<br>
+[check] REFERRED TO O5 COUNCIL - Exceeds committee authority<br><hr>
 <b>Required Modifications (if applicable):</b><br>
 [field]<br>
 [field]<br><hr>
@@ -1009,9 +1009,9 @@ Low / Medium / High / Extreme<br><hr>
 2. [field]<br>
 3. [field]<br><hr>
 <b>Follow-up Requirements:</b><br>
-<b>Post-Test Debrief:</b> Required / Optional<br>
+<b>Post-Test Debrief:</b> [circle]Required [circle]Optional<br>
 <b>Subject Monitoring:</b> [field] hours/days<br>
-<b>Incident Reporting:</b> Immediate / 24-hour / Weekly<br><hr>
+<b>Incident Reporting:</b> [circle]Immediate [circle]24-hour [circle]Weekly<br><hr>
 <b>Ethics Liaison Signature:</b> [field] <b>Date:</b> [field]<br>
 <b>Committee Chair Signature:</b> [field] <b>Date:</b> [field]<br>
 <b>Researcher Acknowledgment:</b> [field] <b>Date:</b> [field]<br>
@@ -1045,38 +1045,38 @@ Low / Medium / High / Extreme<br><hr>
 <b>Date Filed:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Facility:</b> Site-53<br><hr>
 <b>Ethics Liaison:</b> [ethics_liaison]<br>
-<b>Clearance Level:</b> 4 / 5<br>
+<b>Clearance Level:</b> [circle]4 [circle]5<br>
 <b>Committee Members Present:</b> [field]<br><hr>
 <b>Test Proposal Details:</b><br>
 <b>Test ID:</b> [test_id]<br>
 <b>Researcher:</b> [researcher]<br>
 <b>Department:</b> [field]<br>
 <b>SCP Designation:</b> SCP-[scp_name]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
 <b>Test Type:</b> [field]<br>
 <b>Risk Level:</b> [risk_level] ([risk_level >= 4 ? "High" : "Medium"])<br><hr>
 <b>Ethical Considerations:</b><br>
 <b>1. Subject Welfare:</b><br>
-[ ] D-Class Subject(s) - [field]<br>
-[ ] Non-Anomalous Human Subject(s)<br>
-[ ] Animal Subject(s)<br>
-[ ] No Direct Subjects<br>
-<b>Consent Status:</b> Voluntary / Coerced / Non-Consensual<br>
+[check] D-Class Subject(s) - [field]<br>
+[check] Non-Anomalous Human Subject(s)<br>
+[check] Animal Subject(s)<br>
+[check] No Direct Subjects<br>
+<b>Consent Status:</b> [circle]Voluntary [circle]Coerced [circle]Non-Consensual<br>
 <b>Risk/Benefit Analysis:</b> [field]<br><hr>
 <b>2. Containment Integrity:</b><br>
-[ ] Risk of Breach - Low / Medium / High<br>
-[ ] Potential for Cross-Contamination<br>
-[ ] Equipment Failure Risk<br>
-[ ] Environmental Hazard<br>
-<b>Contingency Plans Adequate:</b> Yes / No<br><hr>
+[check] Risk of Breach - Low / Medium / High<br>
+[check] Potential for Cross-Contamination<br>
+[check] Equipment Failure Risk<br>
+[check] Environmental Hazard<br>
+<b>Contingency Plans Adequate:</b> [circle]Yes [circle]No<br><hr>
 <b>3. Research Justification:</b><br>
-<b>Scientific Merit:</b> Low / Moderate / High / Critical<br>
-<b>Alternative Methods Considered:</b> Yes / No<br>
+<b>Scientific Merit:</b> [circle]Low [circle]Moderate [circle]High [circle]Critical<br>
+<b>Alternative Methods Considered:</b> [circle]Yes [circle]No<br>
 <b>Expected Knowledge Gain:</b> [field]<br><hr>
 <b>4. Researcher Qualifications:</b><br>
-<b>Researcher Experience Level:</b> Novice / Intermediate / Experienced / Expert<br>
-<b>Previous Ethics Record:</b> Clean / Minor Violations / Major Violations<br>
-<b>Supervision Level:</b> Unsupervised / Supervised / Direct Supervision<br><hr>
+<b>Researcher Experience Level:</b> [circle]Novice [circle]Intermediate [circle]Experienced [circle]Expert<br>
+<b>Previous Ethics Record:</b> [circle]Clean [circle]Minor Violations [circle]Major Violations<br>
+<b>Supervision Level:</b> [circle]Unsupervised [circle]Supervised [circle]Direct Supervision<br><hr>
 <b>Committee Review:</b><br>
 <b>Review Session Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Duration:</b> [field] minutes<br>
@@ -1084,18 +1084,18 @@ Low / Medium / High / Extreme<br><hr>
 [field]<br>
 [field]<br><hr>
 <b>Expert Consultations:</b><br>
-[ ] Medical Ethics Specialist<br>
-[ ] Containment Engineering<br>
-[ ] Cognitive Research Specialist<br>
-[ ] Anomalous Biology Expert<br>
-[ ] Legal Counsel<br>
-[ ] Other: [field]<br><hr>
+[check] Medical Ethics Specialist<br>
+[check] Containment Engineering<br>
+[check] Cognitive Research Specialist<br>
+[check] Anomalous Biology Expert<br>
+[check] Legal Counsel<br>
+[check] Other: [field]<br><hr>
 <b>Committee Decision:</b><br>
-(_) APPROVED - Test may proceed as proposed<br>
-(_) APPROVED WITH MODIFICATIONS - See modifications section<br>
-(_) DEFERRED - Requires additional information<br>
-(_) DENIED - Ethical concerns cannot be mitigated<br>
-(_) REFERRED TO O5 COUNCIL - Exceeds committee authority<br>
+[check] APPROVED - Test may proceed as proposed<br>
+[check] APPROVED WITH MODIFICATIONS - See modifications section<br>
+[check] DEFERRED - Requires additional information<br>
+[check] DENIED - Ethical concerns cannot be mitigated<br>
+[check] REFERRED TO O5 COUNCIL - Exceeds committee authority<br>
 <i>Decision: [decision]</i><br><hr>
 <b>Required Modifications (if applicable):</b><br>
 [field]<br>
@@ -1105,9 +1105,9 @@ Low / Medium / High / Extreme<br><hr>
 2. [field]<br>
 3. [field]<br><hr>
 <b>Follow-up Requirements:</b><br>
-<b>Post-Test Debrief:</b> Required / Optional<br>
+<b>Post-Test Debrief:</b> [circle]Required [circle]Optional<br>
 <b>Subject Monitoring:</b> [field] hours/days<br>
-<b>Incident Reporting:</b> Immediate / 24-hour / Weekly<br><hr>
+<b>Incident Reporting:</b> [circle]Immediate [circle]24-hour [circle]Weekly<br><hr>
 <b>Ethics Liaison Signature:</b> [ethics_liaison] <b>Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Committee Chair Signature:</b> [field] <b>Date:</b> [field]<br>
 <b>Researcher Acknowledgment:</b> [field] <b>Date:</b> [field]<br>
@@ -1131,11 +1131,11 @@ Low / Medium / High / Extreme<br><hr>
 <b>Facility:</b> Site-53<br><hr>
 <b>Primary Researcher:</b> [field]<br>
 <b>Research Team:</b> [field]<br>
-<b>Clearance Level:</b> 2 / 3 / 4 / 5<br><hr>
+<b>Clearance Level:</b> [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
 <b>SCP Information:</b><br>
 <b>Designation:</b> SCP-[field]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
-<b>Containment Status:</b> Contained / Breached / Neutralized / Uncontained<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
+<b>Containment Status:</b> [circle]Contained [circle]Breached [circle]Neutralized [circle]Uncontained<br>
 <b>Containment Procedures:</b> [field]<br><hr>
 <b>Research Period:</b><br>
 <b>Start Date:</b> [field]<br>
@@ -1143,13 +1143,13 @@ Low / Medium / High / Extreme<br><hr>
 <b>Duration:</b> [field] days<br>
 <b>Research Focus:</b> [field]<br><hr>
 <b>Research Methodology:</b><br>
-[ ] Observational Study<br>
-[ ] Experimental Testing<br>
-[ ] Containment Analysis<br>
-[ ] Anomalous Property Study<br>
-[ ] Cross-SCP Interaction Research<br>
-[ ] Historical/Archival Research<br>
-[ ] Other: [field]<br><hr>
+[check] Observational Study<br>
+[check] Experimental Testing<br>
+[check] Containment Analysis<br>
+[check] Anomalous Property Study<br>
+[check] Cross-SCP Interaction Research<br>
+[check] Historical/Archival Research<br>
+[check] Other: [field]<br><hr>
 <b>Key Findings:</b><br>
 <b>1. Anomalous Properties:</b><br>
 [field]<br>
@@ -1171,19 +1171,19 @@ Low / Medium / High / Extreme<br><hr>
 <b>Completed Tests:</b> [field]<br>
 <b>Research Points Earned:</b> [field]<br><hr>
 <b>Notable Incidents:</b><br>
-[ ] None<br>
-[ ] Minor Containment Breach<br>
-[ ] Researcher Injury<br>
-[ ] D-Class Casualty<br>
-[ ] Equipment Damage<br>
-[ ] Ethics Violation<br>
+[check] None<br>
+[check] Minor Containment Breach<br>
+[check] Researcher Injury<br>
+[check] D-Class Casualty<br>
+[check] Equipment Damage<br>
+[check] Ethics Violation<br>
 <b>Incident Details:</b> [field]<br><hr>
 <b>Cross-SCP Interactions Observed:</b><br>
 <b>With SCP-[field]:</b> [field]<br>
 <b>With SCP-[field]:</b> [field]<br>
 <b>With SCP-[field]:</b> [field]<br><hr>
 <b>Research Conclusions:</b><br>
-<b>Primary Hypothesis Confirmed:</b> Yes / Partially / No<br>
+<b>Primary Hypothesis Confirmed:</b> [circle]Yes [circle]Partially [circle]No<br>
 <b>New Hypotheses Generated:</b> [field]<br>
 <b>Knowledge Gaps Identified:</b> [field]<br><hr>
 <b>Recommendations:</b><br>
@@ -1194,18 +1194,18 @@ Low / Medium / High / Extreme<br><hr>
 <b>3. Safety Protocol Updates:</b><br>
 [field]<br>
 <b>4. Classification Review:</b><br>
-[ ] Maintain Current Classification<br>
-[ ] Upgrade to [field] Class<br>
-[ ] Downgrade to [field] Class<br>
-[ ] Special Classification Consideration<br><hr>
+[check] Maintain Current Classification<br>
+[check] Upgrade to [field] Class<br>
+[check] Downgrade to [field] Class<br>
+[check] Special Classification Consideration<br><hr>
 <b>Attachments:</b><br>
-[ ] Test Authorization Forms<br>
-[ ] Test Result Reports<br>
-[ ] Cross-SCP Interaction Reports<br>
-[ ] Ethics Committee Oversight Forms<br>
-[ ] Incident Reports<br>
-[ ] Photographic Evidence<br>
-[ ] Sensor Data Logs<br><hr>
+[check] Test Authorization Forms<br>
+[check] Test Result Reports<br>
+[check] Cross-SCP Interaction Reports<br>
+[check] Ethics Committee Oversight Forms<br>
+[check] Incident Reports<br>
+[check] Photographic Evidence<br>
+[check] Sensor Data Logs<br><hr>
 <b>Researcher Signature:</b> [field] <b>Date:</b> [field]<br>
 <b>Research Director Review:</b> [field] <b>Date:</b> [field]<br>
 <b>Containment Specialist Review:</b> [field] <b>Date:</b> [field]<br>
@@ -1232,11 +1232,11 @@ Low / Medium / High / Extreme<br><hr>
 <b>Facility:</b> Site-53<br><hr>
 <b>Primary Researcher:</b> [researcher_name]<br>
 <b>Research Team:</b> [field]<br>
-<b>Clearance Level:</b> 2 / 3 / 4 / 5<br><hr>
+<b>Clearance Level:</b> [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
 <b>SCP Information:</b><br>
 <b>Designation:</b> SCP-[scp_id]<br>
-<b>Object Class:</b> Safe / Euclid / Keter / Thaumiel / Apollyon<br>
-<b>Containment Status:</b> Contained / Breached / Neutralized / Uncontained<br>
+<b>Object Class:</b> [circle]Safe [circle]Euclid [circle]Keter [circle]Thaumiel [circle]Apollyon<br>
+<b>Containment Status:</b> [circle]Contained [circle]Breached [circle]Neutralized [circle]Uncontained<br>
 <b>Containment Procedures:</b> [field]<br><hr>
 <b>Research Period:</b><br>
 <b>Start Date:</b> [field]<br>
@@ -1244,13 +1244,13 @@ Low / Medium / High / Extreme<br><hr>
 <b>Duration:</b> [field] days<br>
 <b>Research Focus:</b> [field]<br><hr>
 <b>Research Methodology:</b><br>
-[ ] Observational Study<br>
-[ ] Experimental Testing<br>
-[ ] Containment Analysis<br>
-[ ] Anomalous Property Study<br>
-[ ] Cross-SCP Interaction Research<br>
-[ ] Historical/Archival Research<br>
-[ ] Other: [field]<br><hr>
+[check] Observational Study<br>
+[check] Experimental Testing<br>
+[check] Containment Analysis<br>
+[check] Anomalous Property Study<br>
+[check] Cross-SCP Interaction Research<br>
+[check] Historical/Archival Research<br>
+[check] Other: [field]<br><hr>
 <b>Key Findings:</b><br>
 <b>1. Anomalous Properties:</b><br>
 [field]<br>
@@ -1272,19 +1272,19 @@ Low / Medium / High / Extreme<br><hr>
 <b>Completed Tests:</b> [field]<br>
 <b>Research Points Earned:</b> [field]<br><hr>
 <b>Notable Incidents:</b><br>
-[ ] None<br>
-[ ] Minor Containment Breach<br>
-[ ] Researcher Injury<br>
-[ ] D-Class Casualty<br>
-[ ] Equipment Damage<br>
-[ ] Ethics Violation<br>
+[check] None<br>
+[check] Minor Containment Breach<br>
+[check] Researcher Injury<br>
+[check] D-Class Casualty<br>
+[check] Equipment Damage<br>
+[check] Ethics Violation<br>
 <b>Incident Details:</b> [field]<br><hr>
 <b>Cross-SCP Interactions Observed:</b><br>
 <b>With SCP-[field]:</b> [field]<br>
 <b>With SCP-[field]:</b> [field]<br>
 <b>With SCP-[field]:</b> [field]<br><hr>
 <b>Research Conclusions:</b><br>
-<b>Primary Hypothesis Confirmed:</b> Yes / Partially / No<br>
+<b>Primary Hypothesis Confirmed:</b> [circle]Yes [circle]Partially [circle]No<br>
 <b>New Hypotheses Generated:</b> [field]<br>
 <b>Knowledge Gaps Identified:</b> [field]<br><hr>
 <b>Recommendations:</b><br>
@@ -1295,18 +1295,18 @@ Low / Medium / High / Extreme<br><hr>
 <b>3. Safety Protocol Updates:</b><br>
 [field]<br>
 <b>4. Classification Review:</b><br>
-[ ] Maintain Current Classification<br>
-[ ] Upgrade to [field] Class<br>
-[ ] Downgrade to [field] Class<br>
-[ ] Special Classification Consideration<br><hr>
+[check] Maintain Current Classification<br>
+[check] Upgrade to [field] Class<br>
+[check] Downgrade to [field] Class<br>
+[check] Special Classification Consideration<br><hr>
 <b>Attachments:</b><br>
-[ ] Test Authorization Forms<br>
-[ ] Test Result Reports<br>
-[ ] Cross-SCP Interaction Reports<br>
-[ ] Ethics Committee Oversight Forms<br>
-[ ] Incident Reports<br>
-[ ] Photographic Evidence<br>
-[ ] Sensor Data Logs<br><hr>
+[check] Test Authorization Forms<br>
+[check] Test Result Reports<br>
+[check] Cross-SCP Interaction Reports<br>
+[check] Ethics Committee Oversight Forms<br>
+[check] Incident Reports<br>
+[check] Photographic Evidence<br>
+[check] Sensor Data Logs<br><hr>
 <b>Researcher Signature:</b> [researcher_name] <b>Date:</b> [time2text(world.time, "MM/DD/YYYY")]<br>
 <b>Research Director Review:</b> [field] <b>Date:</b> [field]<br>
 <b>Containment Specialist Review:</b> [field] <b>Date:</b> [field]<br>
@@ -1315,5 +1315,131 @@ Low / Medium / High / Extreme<br><hr>
 	update_icon()
 	update_space(info)
 	updateinfolinks()
-	
+
 	name = "Research Summary - SCP-\[scp_id\]"
+
+// ===== ZONE VISITATION REQUEST =====
+// Printed by visitors or staff, approved (stamped) by the Site Director or
+// a Zone/Guard Commander, then presented at a checkpoint for legal entry
+// into a Containment Zone for observation purposes only.
+/obj/item/paper/foundation/visitation_request
+	name = "Zone Visitation Request"
+	desc = "A Foundation form requesting permission to enter and observe a Containment Zone."
+
+/obj/item/paper/foundation/visitation_request/Initialize(mapload)
+	. = ..()
+	info = @{"<h2>SCP FOUNDATION - ZONE VISITATION REQUEST</h2><hr>
+<b>Request ID:</b> [field]<br>
+<b>Date Filed:</b> [field]<br><hr>
+<b>Requester Name:</b> [field]<br>
+<b>Requester Role/Department:</b> [field]<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
+<b>Requested Zone:</b> [circle]LCZ [circle]HCZ [circle]EZ [circle]Offsite<br>
+<b>Specific SCP(s) to Observe:</b><br>
+[field]<br><hr>
+<b>Purpose of Visit:</b><br>
+[field]<br><hr>
+<b>Requested Visit Date:</b> [field]<br>
+<b>Requested Visit Duration:</b> [field]<br>
+<b>Escort Required:</b> [circle]Yes [circle]No [circle]Escort Provided (name: [field])<br><hr>
+<b>REQUESTER ACKNOWLEDGEMENT:</b><br>
+By signing below, I acknowledge that this visitation is FOR OBSERVATION ONLY. I will make NO CONTACT with, interfere with, or interact with any SCP, its containment unit, or assigned personnel beyond routine verbal greetings, unless explicitly authorized by the supervising escort. I understand that violating these conditions is a Level 3 security violation and may result in detainment, amnesticization, or termination of employment.<br><hr>
+<b>Requester Signature:</b> [field] <b>Date:</b> [field]<br><hr>
+<b>APPROVAL SECTION (Site Director or Zone/Guard Commander):</b><br>
+[circle]Approved [circle]Denied [circle]Deferred<br>
+<b>Approving Officer:</b> [field] <b>Title:</b> [field]<br>
+<b>Conditions/Notes:</b><br>
+[field]<br>
+<b>Approving Officer Signature:</b> [field] <b>Date:</b> [field]<br>
+<br><i>PRESENT THIS FORM AND PHOTO ID AT CHECKPOINT. NO CONTACT - OBSERVATION ONLY.</i><br>"}
+	update_icon()
+	update_space(info)
+	updateinfolinks()
+
+// ===== AREA ENTRY PERMIT =====
+// Issued by checkpoint guards. Carried as temporary authorization to be in
+// the Area; surrendered at the checkpoint when leaving.
+/obj/item/paper/foundation/entry_permit
+	name = "Area Entry Permit"
+	desc = "A checkpoint-issued permit authorizing temporary presence in a restricted Area."
+
+/obj/item/paper/foundation/entry_permit/Initialize(mapload)
+	. = ..()
+	info = @{"<h2>SCP FOUNDATION - AREA ENTRY PERMIT</h2><hr>
+<b>Permit No:</b> [field]<br>
+<b>Issued:</b> [field] <b>Valid Until:</b> [field]<br><hr>
+<b>Permit Holder:</b> [field]<br>
+<b>Role/Department:</b> [field]<br>
+<b>Employee ID:</b> [field]<br><hr>
+<b>Authorized Area(s):</b> [circle]LCZ [circle]HCZ [circle]EZ [circle]Office Wing [circle]Logistics<br>
+<b>Purpose of Entry:</b><br>
+[field]<br><hr>
+<b>Restrictions:</b><br>
+[check] Must remain escorted at all times<br>
+[check] No entry to SCP containment chambers<br>
+[check] No photography or recording<br>
+[check] Must report to checkpoint upon departure<br>
+[check] Other: [field]<br><hr>
+<b>ISSUING GUARD:</b><br>
+<b>Guard Name:</b> [field] <b>Badge No:</b> [field]<br>
+<b>Guard Signature:</b> [field]<br><hr>
+<b>PERMIT CONDITIONS:</b><br>
+This permit is the holder's authorization to be present in the listed Area(s). It must be presented to any Guard on demand. This permit does NOT confer clearance to interact with SCPs or access restricted systems. Unauthorized distribution, forgery, or failure to surrender this permit upon departure are security violations.<br><hr>
+<b>SURRENDER RECORD (checkpoint use only):</b><br>
+<b>Returned:</b> [field] <b>Receiving Guard:</b> [field]<br>
+<b>Holder Verified On Exit:</b> [circle]Yes [circle]No<br>
+<br><i>HOLD ONTO THIS PERMIT. SURRENDER AT CHECKPOINT WHEN LEAVING THE AREA.</i><br>"}
+	update_icon()
+	update_space(info)
+	updateinfolinks()
+
+// ===== ARREST / DETAINMENT REPORT =====
+// Filed by the arresting officer(s); documents charges, evidence, and
+// punishment, and is routed to the Guard Commander for review.
+/obj/item/paper/foundation/arrest_report
+	name = "Arrest and Detainment Report"
+	desc = "A Foundation form documenting an arrest, the charges, and disciplinary action."
+
+/obj/item/paper/foundation/arrest_report/Initialize(mapload)
+	. = ..()
+	info = @{"<h2>SCP FOUNDATION - ARREST AND DETAINMENT REPORT</h2><hr>
+<b>Report ID:</b> [field]<br>
+<b>Date/Time of Arrest:</b> [field]<br><hr>
+<b>ARRESTEE:</b><br>
+<b>Name:</b> [field]<br>
+<b>Role/Department:</b> [field]<br>
+<b>Employee ID:</b> [field]<br>
+<b>Clearance Level:</b> [circle]1 [circle]2 [circle]3 [circle]4 [circle]5<br><hr>
+<b>ARREST DETAILS:</b><br>
+<b>Location of Arrest:</b> [field]<br>
+<b>Arresting Officer(s):</b> [field]<br>
+<b>Badge No(s):</b> [field]<br><hr>
+<b>CHARGES:</b><br>
+[check] Trespassing - Unauthorized entry into restricted Area<br>
+[check] Failure to Display Entry Permit<br>
+[check] Unauthorized Contact with SCP<br>
+[check] Refusal to Comply with Security Orders<br>
+[check] Assault on Personnel<br>
+[check] Theft of Foundation Property<br>
+[check] Information Leak / Security Breach<br>
+[check] Possession of Unauthorized Equipment<br>
+[check] Other: [field]<br><hr>
+<b>INCIDENT SUMMARY:</b><br>
+[field]<br>
+[field]<br><hr>
+<b>EVIDENCE COLLECTED:</b><br>
+[check] Witness Statements (attached)<br>
+[check] Camera Footage (archived, ref: [field])<br>
+[check] Physical Evidence (logged, ref: [field])<br>
+[check] None<br><hr>
+<b>DETAINMENT:</b><br>
+<b>Detainment Location:</b> [circle]LCZ Brig [circle]HCZ Brig [circle]Holding Cell [circle]Released Pending Review<br>
+<b>Disposition:</b> [circle]Awaiting Disciplinary Review [circle]Counseling [circle]Demotion [circle]Termination [circle]Amnesticization [circle]Referred to Tribunal<br>
+<b>Punishment/Discipline Imposed:</b><br>
+[field]<br><hr>
+<b>ARRESTING OFFICER SIGNATURE:</b> [field] <b>Date:</b> [field]<br>
+<b>Guard Commander Review:</b> [field] <b>Date:</b> [field]<br>
+<br><i>SECURITY EYES ONLY - ROUTE TO GUARD COMMANDER</i><br>"}
+	update_icon()
+	update_space(info)
+	updateinfolinks()

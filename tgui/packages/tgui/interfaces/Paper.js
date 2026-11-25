@@ -22,14 +22,40 @@ const findPaperLink = (target) => {
   return null;
 };
 
+// Computes the 1-based occurrence index of `link` among all spans sharing
+// its data-paper-act value, walking the full document in DOM order. The
+// backend uses this index to find the same span inside the raw HTML string.
+const computeInteractiveIndex = (link) => {
+  const act = link.getAttribute('data-paper-act');
+  const selector = `[data-paper-act='${act}']`;
+  const all = document.querySelectorAll(selector);
+  for (let i = 0; i < all.length; i++) {
+    if (all[i] === link) {
+      return i + 1;
+    }
+  }
+  return null;
+};
+
 const handlePaperClick = (act, event) => {
   const link = findPaperLink(event.target);
   if (!link) {
     return;
   }
   event.preventDefault();
-  if (link.getAttribute('data-paper-act') === 'write') {
+  const linkAct = link.getAttribute('data-paper-act');
+  if (linkAct === 'write') {
     act('write', { field: link.getAttribute('data-paper-field') });
+  } else if (linkAct === 'check') {
+    const index = computeInteractiveIndex(link);
+    if (index) {
+      act('check', { index });
+    }
+  } else if (linkAct === 'circle') {
+    const index = computeInteractiveIndex(link);
+    if (index) {
+      act('circle', { index });
+    }
   }
 };
 
