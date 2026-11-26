@@ -264,7 +264,9 @@
  * optional can_be_suspended bool
  */
 /datum/tgui_window/proc/close(can_be_suspended = TRUE)
-	if(!client)
+	// The client can be qdel'd between close_user_uis and this call
+	// (logout/inactivity kick) — every use below must re-check.
+	if(!client || QDELETED(client))
 		return
 	if(mouse_event_macro_set)
 		remove_mouse_macro()
@@ -282,7 +284,7 @@
 		// the window would sit visible forever. Hide it server-side;
 		// initialize() re-shows the window when a UI claims it again.
 		// Client can vanish mid-close (logout racing this call).
-		if(client)
+		if(client && !QDELETED(client))
 			winset(client, id, "is-visible=false")
 			addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 3 SECONDS)
 		return
@@ -299,7 +301,7 @@
 	message_queue = null
 	// Do not close the window to give user some time
 	// to read the error message.
-	if(!fatally_errored)
+	if(!fatally_errored && client && !QDELETED(client))
 		client << browse(null, "window=[id]")
 
 /**

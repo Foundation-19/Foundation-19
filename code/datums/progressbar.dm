@@ -85,34 +85,36 @@
 
 
 /datum/progressbar/Destroy()
-	if(user)
-		for(var/pb in user.progressbars[target])
-			var/datum/progressbar/progress_bar = pb
-			if(progress_bar == src || progress_bar.client_listindex <= client_listindex)
-				continue
-			progress_bar.client_listindex--
-
-			progress_bar.bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.client_listindex - 1))
-			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.client_listindex - 1)) - PROGRESSBAR_HEIGHT
-			animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
-
-		LAZYREMOVEASSOC(user.progressbars, target, src)
-
-		if(show_target && (target != user))
-			for(var/pb in target.progressbars_recipient[user])
+	// Target-side cleanup runs FIRST: the target's list is keyed by user,
+	// so we must not have nulled user yet. The original code used `target`
+	// as the key here (wrong — bars were added under `user`), leaving stale
+	// entries behind that crashed mob/Destroy's tripwire later.
+	if(show_target && target && (target != user) && !QDELETED(target) && islist(target.progressbars_recipient))
+		var/list/targ_bars = target.progressbars_recipient[user]
+		if(islist(targ_bars))
+			for(var/pb in targ_bars)
 				var/datum/progressbar/progress_bar = pb
-				if(progress_bar == src || progress_bar.target_listindex <= target_listindex)
+				if(!istype(progress_bar) || progress_bar == src || progress_bar.target_listindex <= target_listindex)
 					continue
 				progress_bar.target_listindex--
+				if(progress_bar.targetbar)
+					progress_bar.targetbar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1))
+					var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1)) - PROGRESSBAR_HEIGHT
+					animate(progress_bar.targetbar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+			LAZYREMOVEASSOC(target.progressbars_recipient, user, src)
 
-				progress_bar.targetbar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1))
-				var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.target_listindex - 1)) - PROGRESSBAR_HEIGHT
-				animate(progress_bar.targetbar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+	if(user && !QDELETED(user) && islist(user.progressbars))
+		for(var/pb in user.progressbars[target])
+			var/datum/progressbar/progress_bar = pb
+			if(!istype(progress_bar) || progress_bar == src || progress_bar.client_listindex <= client_listindex)
+				continue
+			progress_bar.client_listindex--
+			if(progress_bar.bar)
+				progress_bar.bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.client_listindex - 1))
+				var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.client_listindex - 1)) - PROGRESSBAR_HEIGHT
+				animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-			LAZYREMOVEASSOC(target.progressbars_recipient, target, src)
-			target = null
-
-		user = null
+		LAZYREMOVEASSOC(user.progressbars, target, src)
 
 	if(user_client)
 		clean_user_client()
@@ -121,6 +123,7 @@
 		clean_target_client()
 
 	target = null
+	user = null
 
 	if(bar)
 		QDEL_NULL(bar)
@@ -133,6 +136,10 @@
 /datum/progressbar/proc/on_user_delete(datum/source)
 	SIGNAL_HANDLER
 
+	// Clear the target's assoc entry ourselves — Destroy runs later and
+	// by then `user` (the assoc key) is already null.
+	if(show_target && target && !QDELETED(target) && islist(target.progressbars_recipient))
+		LAZYREMOVEASSOC(target.progressbars_recipient, user, src)
 	user.progressbars = null //We can simply nuke the list and stop worrying about updating other prog bars if the user itself is gone.
 	user = null
 	qdel(src)
@@ -163,8 +170,12 @@
 /datum/progressbar/proc/on_target_delete(datum/source)
 	SIGNAL_HANDLER
 
+	// Clear the user's assoc entry ourselves — Destroy runs later and by
+	// then the target (the assoc key) is already gone.
+	if(user && !QDELETED(user) && islist(user.progressbars))
+		LAZYREMOVEASSOC(user.progressbars, target, src)
 	target.progressbars_recipient = null //We can simply nuke the list and stop worrying about updating other prog bars if the user itself is gone.
-	user = null
+	target = null
 	qdel(src)
 
 ///Removes the progress bar image from the target_client and nulls the variable, if it exists.
@@ -200,8 +211,8 @@
 /datum/progressbar/proc/add_prog_bar_image_to_target()
 	targetbar.pixel_y = 0
 	targetbar.alpha = 0
-	target_client.images += bar
-	animate(targetbar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (client_listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+	target_client.images += targetbar
+	animate(targetbar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (target_listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 ///Updates the progress bar image visually.
 /datum/progressbar/proc/update(progress)
