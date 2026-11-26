@@ -21,7 +21,32 @@
 	skillset = null
 	. = ..()
 
-/datum/nano_module/skill_ui/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.self_tgui_state)
+// self_state compares src_object == user, but src_object here is this
+// NM datum, never the mob — "Show Own Skills" closed instantly and the
+// admin variant silently degraded. This state checks the skillset OWNER.
+/datum/tgui_state/skill_ui_owner
+	var/admin_only = FALSE
+
+/datum/tgui_state/skill_ui_owner/can_use_tgui_topic(src_object, mob/user)
+	var/datum/nano_module/skill_ui/NM = src_object
+	if(!istype(NM) || !NM.skillset)
+		return UI_CLOSE
+	if(user == NM.skillset.owner)
+		return user.shared_ui_interaction(src_object)
+	if(admin_only && check_rights(R_ADMIN|R_MOD, FALSE, user.client))
+		return UI_INTERACTIVE
+	if(!admin_only && check_rights(R_ADMIN|R_MOD, FALSE, user.client))
+		// Admins can view/act on anyone's panel through the owner state.
+		return UI_INTERACTIVE
+	return UI_UPDATE
+
+GLOBAL_DATUM_INIT(skill_ui_owner_state, /datum/tgui_state/skill_ui_owner, new)
+GLOBAL_DATUM_INIT(skill_ui_admin_state, /datum/tgui_state/skill_ui_owner/admin, new)
+
+/datum/tgui_state/skill_ui_owner/admin
+	admin_only = TRUE
+
+/datum/nano_module/skill_ui/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.skill_ui_owner_state)
 	if(!skillset)
 		return
 
@@ -249,8 +274,11 @@ Admin version, with debugging options.
 	. = ..()
 	.["antag_buff"] = length(skillset.owner.fetch_buffs_of_type(/datum/skill_buff/antag))
 	.["antag"] = skillset.owner && skillset.owner.mind && player_is_antag(skillset.owner.mind)
+	// Admin rows are never prereq-gated: admins can set any skill on
+	// anyone regardless of the target's current prerequisite chain.
+	.["admin_mode"] = TRUE
 
-/datum/nano_module/skill_ui/admin/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.admin_tgui_state)
+/datum/nano_module/skill_ui/admin/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.skill_ui_admin_state)
 	..()
 
 /datum/nano_module/skill_ui/admin/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)

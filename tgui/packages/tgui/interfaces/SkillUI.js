@@ -13,6 +13,7 @@ export const SkillUI = (props, context) => {
     selection_data,
     antag_buff,
     antag,
+    admin_mode,
   } = data;
   return (
     <Window width={600} height={600}>
@@ -58,7 +59,7 @@ export const SkillUI = (props, context) => {
                     key={k}
                     ml={1}
                     selected={level.selected}
-                    disabled={level.blank || !level.available}
+                    disabled={level.blank || (!level.available && !admin_mode)}
                     onClick={() => act('value_hit', { skill: skill.ref, value_hit: level.val })}
                   >
                     {level.name || level.val}
