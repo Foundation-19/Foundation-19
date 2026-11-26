@@ -150,7 +150,7 @@
 /proc/log_tgui(user, message, context,
 		datum/tgui_window/window,
 		datum/src_object)
-	var/entry = ""
+	var/entry = "\[[world.time]\]"
 	// Insert user info
 	if(!user)
 		entry += "<nobody>"

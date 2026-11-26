@@ -37,6 +37,9 @@
 	var/mouse_hooked = FALSE
 	/// Rate limit client refreshes to prevent DoS.
 	COOLDOWN_DECLARE(refresh_cooldown)
+	/// Rate limit partial updates (act bursts coalesce into one trailing
+	/// update; see TGUI_SEND_UPDATE_COOLDOWN).
+	COOLDOWN_DECLARE(send_cooldown)
 
 /**
  * public
@@ -236,10 +239,22 @@
 		return
 	if(!initialized || closing)
 		return
+	// Coalesce act bursts: while the cooldown is active, remember that a
+	// fresher update is pending and schedule exactly one trailing send so
+	// the UI always converges on the latest state. Without this, every
+	// click in a burst triggers a full tgui_data rebuild + JSON encode +
+	// round trip, which makes each click feel dead and invites re-clicks.
+	if(!force && !COOLDOWN_FINISHED(src, send_cooldown))
+		if(!refreshing)
+			refreshing = TRUE
+			addtimer(CALLBACK(src, PROC_REF(send_update)), TGUI_SEND_UPDATE_COOLDOWN, TIMER_UNIQUE)
+		return
+	refreshing = FALSE
 	var/should_update_data = force || status >= UI_UPDATE
 	window.send_message("update", get_payload(
 		custom_data,
 		with_data = should_update_data))
+	COOLDOWN_START(src, send_cooldown, TGUI_SEND_UPDATE_COOLDOWN)
 
 /**
  * private
@@ -300,7 +315,12 @@
 		close(can_be_suspended = FALSE)
 		return
 	// Validate ping
-	if(!initialized && world.time - opened_at > TGUI_PING_TIMEOUT)
+	// The zombie margin is doubled for windows on their first ready after
+	// re-initialization: 516 Chromium starts throttled-ish right after a
+	// suspended page was hidden, and 4s can expire before a live page
+	// manages to send 'ready' (observed in tgui.log: CharacterSetup killed
+	// as a zombie right after two logged acts).
+	if(!initialized && world.time - opened_at > TGUI_PING_TIMEOUT * 2)
 		log_tgui(user, "Error: Zombie window detected, closing.",
 			window = window,
 			src_object = src_object)
