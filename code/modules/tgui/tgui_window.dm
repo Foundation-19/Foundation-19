@@ -136,6 +136,13 @@
 		inline_css = "<style>\n[isfile(inline_css) ? file2text(inline_css) : inline_css]\n</style>"
 		html = replacetextEx(html, "<!-- tgui:inline-css -->", inline_css)
 	// Open the window
+	// Re-show BEFORE browsing: a pooled window suspended since its last use
+	// is hidden server-side ('is-visible' false). BYOND 516 Chromium
+	// throttles JS in hidden browser controls, so a page loading into a
+	// hidden window either never runs or takes seconds to send 'ready' —
+	// the zombie check then kills it. Making the window visible first
+	// guarantees the fresh page runs at full speed from the start.
+	winset(client, id, "is-visible=true")
 	client << browse(HTML_SKELETON(html), "window=[id];[options]")
 	// If this window was previously suspended, the JS layer hid it
 	// ('is-visible' false). BYOND 516 Chromium throttles JS in hidden browser
