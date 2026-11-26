@@ -3,7 +3,6 @@ import { Box, Button, Flex, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 import { ProgramExitButtons } from './common/ProgramExitButtons';
 import { resolveAsset } from '../assets';
-import { useRef } from 'inferno';
 
 const statColor = (stat) => {
   if (stat === 0) return '#44ff44';
@@ -38,7 +37,10 @@ const CrewMap = (props, context) => {
 
   const [zoom, setZoom] = useLocalState(context, 'cm.zoom', 1);
   const [pan, setPan] = useLocalState(context, 'cm.pan_' + z, { x: 0, y: 0 });
-  const drag = useRef(null);
+  // Drag handle: mutable per-drag state kept in client-local redux (this
+  // inferno build does not export useRef — that crash killed the whole
+  // crew monitor page in production).
+  const [drag, setDrag] = useLocalState(context, 'cm.drag', null);
 
   // Keep the viewport filled at zoom 1: pan cannot push the map edge inward.
   const clampPan = (p, zl) => {
@@ -73,12 +75,12 @@ const CrewMap = (props, context) => {
     if (e.button !== 0) {
       return;
     }
-    drag.current = { sx: e.clientX, sy: e.clientY, ox: pan.x, oy: pan.y };
+    setDrag({ sx: e.clientX, sy: e.clientY, ox: pan.x, oy: pan.y });
     e.preventDefault();
   };
 
   const handleMouseMove = (e) => {
-    if (!drag.current) {
+    if (!drag) {
       return;
     }
     const rect = e.currentTarget.getBoundingClientRect();
@@ -86,19 +88,19 @@ const CrewMap = (props, context) => {
     // the visual scale of the map at the current zoom.
     const scale = (MAP_PX * zoom) / rect.width;
     setPan(clampPan({
-      x: drag.current.ox - (e.clientX - drag.current.sx) * scale,
-      y: drag.current.oy - (e.clientY - drag.current.sy) * scale,
+      x: drag.ox - (e.clientX - drag.sx) * scale,
+      y: drag.oy - (e.clientY - drag.sy) * scale,
     }, zoom));
   };
 
   const handleMouseUp = () => {
-    drag.current = null;
+    setDrag(null);
   };
 
   // Reset view when switching levels (fresh pan per level, zoom kept).
-  const prevZ = useRef(z);
-  if (prevZ.current !== z) {
-    prevZ.current = z;
+  const [prevZ, setPrevZ] = useLocalState(context, 'cm.prevz', z);
+  if (prevZ !== z) {
+    setPrevZ(z);
     setPan({ x: 0, y: 0 });
   }
 
