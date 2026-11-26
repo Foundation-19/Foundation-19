@@ -20,6 +20,12 @@
 	if(!ui)
 		ui = new(user, src, "LobbyMenu", "SCiPNET-OS", 640, 520)
 		ui.open()
+	if(ui)
+		// tgui_data rebuilds the full crew manifest (records x players) —
+		// doing that every 0.9s per lobby player is the single biggest
+		// background cost in the lobby. Refresh on acts (tab switch /
+		// refresh button) and initial open only.
+		ui.set_autoupdate(FALSE)
 
 /datum/new_player_panel/tgui_data(mob/user)
 	var/list/data = list()

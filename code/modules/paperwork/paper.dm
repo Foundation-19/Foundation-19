@@ -188,6 +188,12 @@
 	if (!ui)
 		ui = new(user, src, "Paper", name)
 		ui.open()
+	if (ui)
+		// Paper content only changes through acts (write/stamp/etc.),
+		// which push an immediate update. Rebuilding the full document
+		// HTML every background tick and re-rendering it client-side is
+		// the main reason long papers felt sluggish.
+		ui.set_autoupdate(FALSE)
 
 /obj/item/paper/tgui_state(mob/user)
 	if (tgui_force)
