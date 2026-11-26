@@ -17,7 +17,10 @@
 
 /obj/item/organ/internal/stomach/Initialize()
 	. = ..()
-	ingested = new/datum/reagents/metabolism(240, owner, CHEM_INGEST)
+	// Organ printers (and mannequin setups) can create stomachs with no
+	// owner; the metabolism datum requires a holder atom, so fall back to
+	// self instead of crashing reagents/New.
+	ingested = new/datum/reagents/metabolism(240, owner || src, CHEM_INGEST)
 	if(!ingested.my_atom)
 		ingested.my_atom = src
 	if(species.gluttonous)
