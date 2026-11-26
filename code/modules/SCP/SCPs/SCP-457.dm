@@ -200,7 +200,9 @@
 			set_light(1.0, 0.5, 6, l_color = "#6699FF")
 		if(75 to INFINITY)
 			color = "#FFFFFF"
-			set_light(1.3, 0.6, 7, l_color = "#BBCCFF")
+			// 1.3 was invalid (light_max_bright must be 0-1; the lighting
+			// system CRASHed on every Life tick above the white tier).
+			set_light(1.0, 0.6, 7, l_color = "#BBCCFF")
 
 // ===========================================================================
 // LIVING FLAMES — the spread mechanic

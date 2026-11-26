@@ -107,6 +107,8 @@
 
 /datum/tgui_list_input/tgui_static_data(mob/user)
 	var/list/data = list()
+	// See tgui_input_text — unique per instance for frontend local state.
+	data["modal_id"] = "[REF(src)]"
 	data["init_value"] = default || items[1]
 	data["items"] = items
 	data["message"] = message
@@ -121,13 +123,19 @@
 		data["timeout"] = clamp((timeout - (world.time - start_time) - 1 SECONDS) / (timeout - 1 SECONDS), 0, 1)
 	return data
 
-/datum/tgui_list_input/tgui_act(action, list/params)
+/datum/tgui_list_input/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	. = ..()
 	if (.)
 		return
+	var/mob/user = ui?.user || usr
 	switch(action)
 		if("submit")
 			if (!(params["entry"] in items))
+				// Mismatched entries used to be swallowed silently, which
+				// looked exactly like "Submit does nothing" to the player.
+				// Log it visibly and tell them so it can be diagnosed.
+				log_tgui(user, "ListInput submit rejected: '[params["entry"]]' not in items (items: [items.len])", src_object = src)
+				to_chat(user, SPAN_WARNING("That selection is no longer valid. Try again."))
 				return
 			set_choice(items_map[params["entry"]])
 			closed = TRUE

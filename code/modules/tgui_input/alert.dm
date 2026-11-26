@@ -98,6 +98,8 @@
 
 /datum/tgui_alert/tgui_static_data(mob/user)
 	var/list/data = list()
+	// See tgui_input_text — unique per instance for frontend local state.
+	data["modal_id"] = "[REF(src)]"
 	data["autofocus"] = autofocus
 	data["buttons"] = buttons
 	data["message"] = message

@@ -113,6 +113,10 @@
 
 /datum/tgui_input_text/tgui_static_data(mob/user)
 	var/list/data = list()
+	// Unique per modal instance: the frontend keys its useLocalState
+	// with this so reused pooled windows don't carry a previous modal's
+	// input/selection into the new one.
+	data["modal_id"] = "[REF(src)]"
 	data["large_buttons"] = (user.client.get_preference_value(/datum/client_preference/large_tgui_inputs) == GLOB.PREF_YES)
 	data["max_length"] = max_length
 	data["message"] = message

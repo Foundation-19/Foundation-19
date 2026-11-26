@@ -20,10 +20,10 @@
 		CRASH("adjust_timed_status_effect: called with an invalid effect type. (Got: [effect])")
 
 	// If we have a max duration set, we need to check our duration does not exceed it
-	if(isnum(max_duration))
-		if(max_duration <= 0)
-			CRASH("adjust_timed_status_effect: Called with an invalid max_duration. (Got: [max_duration])")
-
+	// A max_duration of 0 is LEGITIMATE for negative adjustments ("reduce
+	// down to nothing") — e.g. SCP-999's morale aura calls
+	// adjust_dizzy_up_to(-5 SECONDS, 0). Only positive maxes clamp.
+	if(isnum(max_duration) && max_duration > 0)
 		if(duration >= max_duration)
 			duration = max_duration
 

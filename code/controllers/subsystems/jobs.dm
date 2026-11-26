@@ -447,7 +447,13 @@ SUBSYSTEM_DEF(jobs)
 			if (H.client.prefs.email_pass)
 				pass = H.client.prefs.email_pass
 
-			ntnet_global.create_email(H, addr, "site53.foundation", rank, pass, job.department_flag)
+			// create_email(user, name, domain, password, department_flags)
+			// — the extra `rank` arg here previously shifted everything:
+			// password got the rank, department_flags got the password
+			// (string "12345") and the real flag was silently dropped,
+			// runtime-ing every broadcaster receive_mail with
+			// `type mismatch: 32 & "12345"`.
+			ntnet_global.create_email(H, addr, "site53.foundation", pass, job.department_flag)
 		// END EMAIL GENERATION
 
 		job.equip(H, H.mind ? H.mind.role_alt_title : "")

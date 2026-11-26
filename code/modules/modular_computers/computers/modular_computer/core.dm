@@ -231,10 +231,15 @@
 	return 1
 
 /obj/item/modular_computer/proc/update_uis()
-	if(active_program) //Should we update program ui or computer ui?
+	// active_program can be set while the program datum is being torn
+	// down (killed program racing this Process tick) — guard NM.
+	if(active_program && !QDELETED(active_program)) //Should we update program ui or computer ui?
 		SStgui.update_uis(active_program)
 		if(active_program.NM)
 			SStgui.update_uis(active_program.NM)
+	else if(QDELETED(active_program))
+		active_program = null
+		SStgui.update_uis(src)
 	else
 		SStgui.update_uis(src)
 

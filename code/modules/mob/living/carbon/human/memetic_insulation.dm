@@ -24,6 +24,11 @@ Made by TheDarkElites
 		if(A_INSL_IMPERFECT) hearable_range = range_override ? range_override : AUDIBLE_RANGE_DECREASED
 		if(A_INSL_NONE) hearable_range = range_override ? range_override : AUDIBLE_RANGE_FULL
 
+	// Spawn-queue/mannequin mobs can lack a turf entirely; distance math
+	// below would deref null.x/.y (memetic_spasm scans GLOB lists).
+	if(!isturf(loc) && !isturf(get_turf(src)))
+		return return_granulated ? 0 : FALSE
+
 	if(!origin)
 		if(hearable_range == AUDIBLE_RANGE_NONE)
 			if(return_granulated)
@@ -45,13 +50,15 @@ Made by TheDarkElites
 		else if(hearable_range == AUDIBLE_RANGE_DECREASED)
 			cut_off -= 1
 		var/distance_from_origin = range_override ? range_override : get_dist(src, origin)
-		if(hearable_range == AUDIBLE_RANGE_NONE || AUDIBLE_RANGE_FULL < get_dist_euclidian(get_turf(src), get_turf(origin)))
+		var/origin_turf_dist = get_turf(origin) ? get_dist_euclidian(get_turf(src), get_turf(origin)) : AUDIBLE_RANGE_FULL + 1
+		if(hearable_range == AUDIBLE_RANGE_NONE || AUDIBLE_RANGE_FULL < origin_turf_dist)
 			return 0
 		if(distance_from_origin <= cut_off)
 			return 100
 		return clamp((((AUDIBLE_RANGE_FULL - clamp((distance_from_origin - cut_off)**2, 0, AUDIBLE_RANGE_FULL))/AUDIBLE_RANGE_FULL)  * 100), 0, 100)
 	else
-		if(hearable_range >= get_dist_euclidian(get_turf(src), get_turf(origin)))
+		var/origin_turf_dist = get_turf(origin) ? get_dist_euclidian(get_turf(src), get_turf(origin)) : AUDIBLE_RANGE_FULL + 1
+		if(hearable_range >= origin_turf_dist)
 			return TRUE
 		else
 			return FALSE
