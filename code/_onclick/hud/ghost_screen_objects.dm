@@ -35,7 +35,9 @@
 
 /atom/movable/screen/ghost/reenter_corpse/Click()
 	var/mob/observer/ghost/G = usr
-	if(G.can_reenter_corpse)
+	// The button renders while observing (also for living mobs looking at
+	// ghosts HUD edge cases) — only a real ghost with a corpse may use it.
+	if(istype(G) && G.can_reenter_corpse)
 		G.reenter_corpse()
 	else
 		to_chat(G, SPAN_WARNING("You can't re-enter your corpse!"))

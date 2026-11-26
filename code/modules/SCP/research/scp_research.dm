@@ -171,7 +171,9 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 		var/area/A = parent ? get_area(parent.parent) : null
 		GLOB.scp_research_tracker.log_breach(parent, A)
 		SEND_SIGNAL(parent, COMSIG_CONTAINMENT_BREACH, src, parent)
-		hook_scp_breach(designation, parent)
+		// The hook expects the SCP ATOM (it reads atom.SCP for the
+		// classification); parent is the /datum/scp — pass parent.parent.
+		hook_scp_breach(designation, parent?.parent)
 		update_containment_rating()
 	else if(new_status == SCP_CONTAINED && old_status == SCP_BREACHED)
 		last_contained_time = world.time

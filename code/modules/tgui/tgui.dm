@@ -110,6 +110,10 @@
 			))
 	else
 		window.send_message("ping")
+	// Each send_asset can outlive the window (suspend Topic racing the
+	// asset loop) — bail cleanly instead of runtime on a nulled window.
+	if(!window || !window.client || QDELETED(window.client))
+		return FALSE
 	var/flush_queue = window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
 	flush_queue |= window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/tgfont))
 	for(var/datum/asset/asset in src_object.tgui_assets(user))
