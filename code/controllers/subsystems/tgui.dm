@@ -12,7 +12,11 @@
 
 SUBSYSTEM_DEF(tgui)
 	name = "TGUI"
-	wait = 9
+	// 2.0s background refresh cadence (was 0.9s). Click feedback is
+	// unaffected — acts push updates immediately; this only slows the
+	// passive auto-rebuild of open UIs, halving background churn with
+	// no perceivable difference (TG-standard cadence).
+	wait = 20
 	flags = SS_NO_INIT|SS_NEEDS_SHUTDOWN
 	priority = SS_PRIORITY_TGUI
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
