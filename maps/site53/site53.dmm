@@ -22446,7 +22446,10 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 1
 	},
-/obj/structure/table/standard,
+/obj/structure/hygiene/sink{
+	dir = 1;
+	pixel_y = 16
+	},
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/disectlab)
 "eFZ" = (
@@ -70346,6 +70349,11 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 4
 	},
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/surgicalapron,
+/obj/item/clothing/suit/surgicalapron,
+/obj/item/clothing/suit/surgicalapron,
+/obj/item/clothing/suit/surgicalapron,
 /turf/simulated/floor/tiled/white,
 /area/site53/reswing/disectlab)
 "oAV" = (
@@ -89680,7 +89688,7 @@
 	c_tag = "Dissection Laboratory";
 	dir = 4
 	},
-/area/site53/reswing/disectlab,
+/turf/simulated/floor/tiled/white,
 /area/site53/reswing/disectlab)
 "ssS" = (
 /obj/machinery/camera/network/entrance{
