@@ -15,8 +15,13 @@
 
 /obj/item/trash/Initialize()
 	. = ..()
+	// Dropped/unclaimed trash persists across rounds and decays with age
+	// (Baystation12 persistent filth). Map-spawned trash starts ageless
+	// and is tracked too — janitors clearing it keeps the payload sane.
+	SSpersistence.track_value(src, /datum/persistent/filth/trash)
 
 /obj/item/trash/Destroy()
+	SSpersistence.forget_value(src, /datum/persistent/filth/trash)
 	. = ..()
 
 /obj/item/trash/raisins

@@ -537,6 +537,16 @@ window.replaceHtml = function (inline_html) {
 </script>
 
 <style>
+/* Critical paint: the BYOND browser control's default background is
+   white; until the theme CSS asset finishes loading, every window shows
+   a white flash (or a fully white pane if loadCss stalls). Painting the
+   body dark up front matches the default scp_terminal theme so the
+   flash becomes an invisible dark-to-dark transition. */
+html,
+body,
+#react-root {
+  background-color: #0a0a0c;
+}
 /* Blink polyfill, originally authored on /tg/ by @iamgoofball */
 blink {
   animation: 1s linear infinite condemned-blink-effect;

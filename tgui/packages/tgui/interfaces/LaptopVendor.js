@@ -71,6 +71,9 @@ export const LaptopVendor = (props, context) => {
                   <Button fluid icon="tablet-alt" content="TABLET — Portable tablet computer" textAlign="center" onClick={() => act('pick_device', { pick_device: 2 })} />
                 </Flex.Item>
               </Flex>
+              <Box mt={2}>
+                <Button icon="sync" content="Force Reset Vendor" tooltip="Clears any half-finished order left by a previous user" onClick={() => act('clean_order')} />
+              </Box>
             </Section>
           ) : null}
 

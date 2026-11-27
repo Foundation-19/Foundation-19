@@ -131,7 +131,7 @@ const CrewMap = (props, context) => {
           border: '1px solid ' + C.border,
           overflow: 'hidden',
           background: '#050505',
-          cursor: drag.current ? 'grabbing' : 'grab',
+          cursor: drag ? 'grabbing' : 'grab',
           userSelect: 'none',
         }}
         onWheel={handleWheel}

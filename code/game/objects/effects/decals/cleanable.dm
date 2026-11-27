@@ -26,9 +26,13 @@
 		age = _age
 	if(random_icon_states && length(src.random_icon_states) > 0)
 		src.icon_state = pick(src.random_icon_states)
+	if(persistent)
+		SSpersistence.track_value(src, /datum/persistent/filth)
 	. = ..()
 
 /obj/effect/decal/cleanable/Destroy()
+	if(persistent)
+		SSpersistence.forget_value(src, /datum/persistent/filth)
 	. = ..()
 
 /obj/effect/decal/cleanable/water_act(depth)

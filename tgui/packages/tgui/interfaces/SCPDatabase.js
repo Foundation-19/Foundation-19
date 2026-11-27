@@ -253,8 +253,28 @@ const ProjectsTab = (props, context) => {
                   {project.contributed_points} / {project.required_points}
                 </ProgressBar>
               </LabeledList.Item>
+              <LabeledList.Item label="Contributors">
+                {(project.contributors && project.contributors.length)
+                  ? project.contributors.join(', ')
+                  : 'None yet'}
+              </LabeledList.Item>
             </LabeledList>
             <Box mt={1}>
+              {/* Join/leave: open to ALL researchers on open projects */}
+              {(project.status === 'proposed' || project.status === 'active') ? (
+                (project.contributors_raw || []).includes(data.user_ckey || data.ckey) ? (
+                  <Button
+                    icon="sign-out"
+                    content="Leave Project"
+                    onClick={() => act('PRG_leave_project', { project_id: String(project.id) })} />
+                ) : (
+                  <Button
+                    icon="sign-in"
+                    content="Join Project"
+                    color="good"
+                    onClick={() => act('PRG_join_project', { project_id: String(project.id) })} />
+                )
+              ) : null}
               {project.status === 'proposed' ? (
                 <Box>
                   <Button

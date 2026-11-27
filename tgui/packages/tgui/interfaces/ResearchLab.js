@@ -229,6 +229,7 @@ const TreeTab = (props, context) => {
 const ProjectsTab = (props, context) => {
   const { act, data } = useBackend(context);
   const director = data.director || {};
+  const currentCkey = data.user_ckey || data.ckey || null;
 
   if (!director.tech_nodes) {
     return <ResearchOffline />;
@@ -296,8 +297,30 @@ const ProjectsTab = (props, context) => {
                   {project.contributed_points} / {project.required_points}
                 </ProgressBar>
               </LabeledList.Item>
+              <LabeledList.Item label="CONTRIBUTORS">
+                {(project.contributors && project.contributors.length)
+                  ? project.contributors.join(', ')
+                  : 'None yet'}
+              </LabeledList.Item>
             </LabeledList>
             <Box mt={1}>
+              {/* Join/leave: open to ALL researchers on open projects */}
+              {(project.status === 'proposed' || project.status === 'active') ? (
+                (project.contributors_raw || []).includes(currentCkey) ? (
+                  <Button
+                    icon="sign-out"
+                    content="Leave Project"
+                    mr={0.5}
+                    onClick={() => act('PRG_leave_project', { project_id: String(project.id) })} />
+                ) : (
+                  <Button
+                    icon="sign-in"
+                    content="Join Project"
+                    color="good"
+                    mr={0.5}
+                    onClick={() => act('PRG_join_project', { project_id: String(project.id) })} />
+                )
+              ) : null}
               {project.status === 'proposed' ? (
                 <Box>
                   <Button

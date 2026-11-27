@@ -224,8 +224,12 @@
 
 /mob/living/observer/scp035_controller/say(message)
 	if(!mask_ref || !mask_ref.host_body)
-		to_chat(src, SPAN_WARNING("You need a host to speak."))
+		to_chat(src, SPAN_WARNING("You need a host to speak. Whisper into the minds of those near your mask instead."))
 		return
+	if(!message || !length(trim(message)))
+		return
+	// Forward through the host's full say pipeline (language parsing,
+	// radio prefixes, emote prefixes all behave as if the host typed it).
 	mask_ref.host_body.say(message)
 
 /mob/living/observer/scp035_controller/custom_emote(var/type, var/message)

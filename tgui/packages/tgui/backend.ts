@@ -118,6 +118,11 @@ export const backendReducer = (state = initialState, action) => {
 export const backendMiddleware = (store) => {
   let fancyState;
   let suspendInterval;
+  // Suspend retries that never got a server ack: world.Topic throttling
+  // can drop suspend messages for seconds at a time (burst window), and
+  // the user just wants the window GONE. After this many failed retries
+  // we stop trusting the handshake and self-suspend locally.
+  let suspendRetries = 0;
 
   return (next) => (action) => {
     const { suspended } = selectBackend(store.getState());
@@ -183,8 +188,22 @@ export const backendMiddleware = (store) => {
       // net for drops (topic rate limiting). Waiting for the interval made
       // the x button appear dead, since the retry was always cleared by
       // the next auto-update before it could fire.
+      suspendRetries = 0;
       suspendFn();
-      suspendInterval = setInterval(suspendFn, 2000);
+      suspendInterval = setInterval(() => {
+        // Self-suspend fallback: the server ack may be stuck behind topic
+        // throttling. Hide the window ourselves; the server-side close is
+        // idempotent and completes whenever a retry finally lands.
+        suspendRetries++;
+        if (suspendRetries >= 3) {
+          clearInterval(suspendInterval);
+          suspendInterval = undefined;
+          logger.log(`suspend ack timeout, self-suspending (${Byond.windowId})`);
+          store.dispatch(backendSuspendSuccess());
+          return;
+        }
+        suspendFn();
+      }, 2000);
     }
 
     if (type === 'backend/suspendSuccess') {
