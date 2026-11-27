@@ -103,11 +103,20 @@
 
 	return tgui_interact(user)
 
-/obj/item/device/radio/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
+/obj/item/device/radio/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Radio", "[name]", 400, 430, state = state)
 		ui.open()
+
+// Held/worn radios (walkie, headset) are personal UIs; a radio on the
+// ground is a distance-gated physical UI. The default state's view()
+// check does not account for carried items — paper, aicard and uplink
+// route around it the same way.
+/obj/item/device/radio/tgui_state(mob/user)
+	if(user && user.contains(src))
+		return GLOB.inventory_tgui_state
+	return GLOB.physical_tgui_state
 
 /obj/item/device/radio/tgui_data(mob/user)
 	var/data[0]
@@ -145,7 +154,7 @@
 		var/chan_stat = channels[ch_name]
 		var/listening = !!(chan_stat & FREQ_LISTENING) != 0
 
-		dat.Add(list(list("chan" = ch_name, "display_name" = ch_name, "secure_channel" = 1, "sec_channel_listen" = !listening, "chan_span" = frequency_span_class(radiochannels[ch_name]))))
+		dat.Add(list(list("chan" = ch_name, "display_name" = ch_name, "secure_channel" = 1, "listening" = listening, "chan_span" = frequency_span_class(radiochannels[ch_name]))))
 
 	return dat
 
@@ -153,7 +162,7 @@
 	var/dat[0]
 	for(var/internal_chan in internal_channels)
 		if(has_channel_access(user, internal_chan))
-			dat.Add(list(list("chan" = internal_chan, "display_name" = get_frequency_default_name(text2num(internal_chan)), "chan_span" = frequency_span_class(text2num(internal_chan)))))
+			dat.Add(list(list("chan" = internal_chan, "display_name" = get_frequency_default_name(text2num(internal_chan)), "internal_channel" = 1, "listening" = (num2text(frequency) == internal_chan), "chan_span" = frequency_span_class(text2num(internal_chan)))))
 
 	return dat
 
@@ -254,7 +263,13 @@
 		var/chan_name = params["ch_name"]
 		if (!chan_name)
 			ToggleReception()
-		else
+		else if (chan_name in internal_channels)
+			// Internal channels are frequency strings; clicking one tunes
+			// the radio to it (the old channel-list toggle was written for
+			// secure channels only and just created garbage keys here).
+			if(has_channel_access(usr, chan_name))
+				set_frequency(text2num(chan_name))
+		else if (chan_name in channels)
 			if (channels[chan_name] & FREQ_LISTENING)
 				channels[chan_name] &= ~FREQ_LISTENING
 			else
@@ -801,6 +816,12 @@
 	if(!ui)
 		ui = new(user, src, "Radio", "[name]", 400, 430)
 		ui.open()
+
+// The borg radio lives inside the borg's equipment (contains() true but
+// not direct contents), so the base's inventory-state routing would close
+// it. Borgs can interact with anything they see — keep the default state.
+/obj/item/device/radio/borg/tgui_state(mob/user)
+	return GLOB.default_tgui_state
 
 /obj/item/device/radio/borg/tgui_data(mob/user)
 	var/data[0]

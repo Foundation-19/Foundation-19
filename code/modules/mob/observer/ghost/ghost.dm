@@ -601,35 +601,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!MayRespawn(TRUE, SCP_SPAWN_DELAY))
 		return
 
-	var/list/scp_type_ref_list = list()
-
+	var/list/available = list()
 	for(var/atom/PossibleSCP in GLOB.SCP_list)
-		if(!canBecomeSCP(PossibleSCP))
-			continue
-		var/datum/scp/PSCP = PossibleSCP.SCP
-		var/select_string = "SCP-[PSCP.designation] | [PSCP.classification][(PSCP.metaFlags & SCP_ROLEPLAY) ? " | Roleplay" : ""]"
+		if(canBecomeSCP(PossibleSCP))
+			available += PossibleSCP
 
-		var/new_select_string = select_string
-		var/count = 1
-		while(scp_type_ref_list[new_select_string])
-			new_select_string = "[select_string] ([count])"
-			count++
-
-		scp_type_ref_list[new_select_string] = PossibleSCP
-
-	if(LAZYLEN(scp_type_ref_list))
-		var/selected_scp_string = tgui_input_list(src, "Which SCP do you want to take control of?", "SCP Select", scp_type_ref_list)
-		if(!LAZYLEN(selected_scp_string))
-			return
-
-		var/atom/selected_scp = scp_type_ref_list[selected_scp_string]
-		var/agreement = tgui_alert(src, "Warning! SCPs are likley to spend a long amount of time within their containment chamber and are not guaranteed to be let out![(selected_scp.SCP.metaFlags & SCP_ROLEPLAY) ? " Additionally, this is a roleplay oriented SCP. That means you are expected to behave like the SCP would in lore, and failing to do so would result in ban from playing roleplay SCPs." : ""]", "Are you sure?", list("Yes","No"))
-		if(!LAZYLEN(agreement) || (agreement == "No"))
-			return
-		if(!canBecomeSCP(selected_scp))
-			to_chat(src, SPAN_WARNING("SCP-[selected_scp.SCP.designation] is no longer avalible!"))
-			return
-		selected_scp.do_possession(src)
+	if(LAZYLEN(available))
+		scp_select_menu()
 	else
 		to_chat(src, SPAN_WARNING("There are no SCPs avalible yet! Keep in mind that not all SCPs are avalible round start and more may become avalible as the round goes on!"))
 
