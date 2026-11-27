@@ -4,16 +4,23 @@
 // same channel. The channel is resolved by Discord channel ID (TGS
 // exposes it as the chat channel's internal id), so no TGS tag setup
 // is required.
+//
+// Implemented as a subsystem so signal registration happens in
+// Initialize() — a GLOBAL_DATUM_INIT constructor runs before SSdcs /
+// SSticker exist and RegisterSignal silently no-ops on null.
 
 #define DISCORD_ROUNDEND_CHANNEL_ID "1005541607388491826"
 #define DISCORD_ROUND_PING_ROLE "<@&899514330461126656>"
 
-GLOBAL_DATUM_INIT(round_discord_notifier, /datum/round_discord_notifications, new)
+SUBSYSTEM_DEF(round_discord_notifications)
+	name = "Round Discord Notifications"
+	init_order = SS_INIT_MISC_LATE
+	flags = SS_NO_FIRE
 
-/datum/round_discord_notifications
 	var/round_started_at = 0
 	var/cached_channel = null
 	var/channel_resolved = FALSE
+	var/last_resolution_error = null
 
 	var/list/end_flavor = list(
 		"Secure. Contain. Protect. Another shift safely concluded.",
@@ -41,39 +48,50 @@ GLOBAL_DATUM_INIT(round_discord_notifier, /datum/round_discord_notifications, ne
 		"Dr. ██████ wishes everyone a productive and uneventful shift.",
 	)
 
-/datum/round_discord_notifications/New()
+/datum/controller/subsystem/round_discord_notifications/Initialize()
 	RegisterSignal(SSdcs, COMSIG_ROUND_ENDED, PROC_REF(on_round_ended))
 	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, PROC_REF(on_round_started))
+	return ..()
 
 // Resolve (and cache) the target chat channel by its Discord channel id.
-/datum/round_discord_notifications/proc/get_channel()
+/datum/controller/subsystem/round_discord_notifications/proc/get_channel()
 	if(channel_resolved)
 		return cached_channel
 	channel_resolved = TRUE
 	if(!world.TgsAvailable())
+		last_resolution_error = "TGS not available"
+		log_game("round_discord: TGS not available; notifications disabled.")
 		return null
 	var/list/channels = world.TgsChatChannelInfo()
 	if(!channels)
+		last_resolution_error = "TgsChatChannelInfo() returned null"
+		log_game("round_discord: TgsChatChannelInfo() returned null.")
 		return null
+	var/list/known_ids = list()
 	for(var/I in channels)
 		var/datum/tgs_chat_channel/channel = I
+		known_ids += "[channel.id]"
 		if("[channel.id]" == DISCORD_ROUNDEND_CHANNEL_ID)
 			cached_channel = channel
+			last_resolution_error = null
+			log_game("round_discord: resolved channel [channel.friendly_name].")
 			return cached_channel
+	last_resolution_error = "channel [DISCORD_ROUNDEND_CHANNEL_ID] not in TGS channels ([english_list(known_ids)])"
+	log_game("round_discord: [last_resolution_error]")
 	return null
 
-/datum/round_discord_notifications/proc/on_round_started()
+/datum/controller/subsystem/round_discord_notifications/proc/on_round_started()
 	SIGNAL_HANDLER
 	round_started_at = world.time
 	spawn(0)
 		send_round_start()
 
-/datum/round_discord_notifications/proc/on_round_ended()
+/datum/controller/subsystem/round_discord_notifications/proc/on_round_ended()
 	SIGNAL_HANDLER
 	spawn(0)
 		send_round_end()
 
-/datum/round_discord_notifications/proc/send_round_start()
+/datum/controller/subsystem/round_discord_notifications/proc/send_round_start()
 	var/channel = get_channel()
 	if(!channel)
 		return
@@ -84,7 +102,7 @@ GLOBAL_DATUM_INIT(round_discord_notifier, /datum/round_discord_notifications, ne
 	var/text = "[DISCORD_ROUND_PING_ROLE] A new round has started — [gamemode]. [flavor]"
 	world.TgsChatBroadcast(new /datum/tgs_message_content(text), list(channel))
 
-/datum/round_discord_notifications/proc/send_round_end()
+/datum/controller/subsystem/round_discord_notifications/proc/send_round_end()
 	var/channel = get_channel()
 	if(!channel)
 		return
@@ -138,6 +156,29 @@ GLOBAL_DATUM_INIT(round_discord_notifier, /datum/round_discord_notifications, ne
 	var/datum/tgs_message_content/message = new(message_text)
 	message.embed = embed
 	world.TgsChatBroadcast(message, list(channel))
+
+/// Admin chat command: sends a test message + a test round-start ping to
+/// the configured channel. Verifies the TGS wiring without waiting for a
+/// round transition. Also re-runs channel resolution.
+/datum/tgs_chat_command/discordtest
+	name = "discordtest"
+	help_text = "Sends a test round-start ping and a test round-end embed to the configured Discord channel."
+	admin_only = TRUE
+
+/datum/tgs_chat_command/discordtest/Run(datum/tgs_chat_user/sender, params)
+	var/datum/controller/subsystem/round_discord_notifications/SS = SSround_discord_notifications
+	if(!SS)
+		return new /datum/tgs_message_content("round_discord_notifications subsystem not initialized.")
+	// Force a fresh channel lookup so config changes are picked up.
+	SS.channel_resolved = FALSE
+	SS.cached_channel = null
+	var/datum/tgs_chat_channel/channel = SS.get_channel()
+	if(!channel)
+		return new /datum/tgs_message_content("Channel not found: [SS.last_resolution_error || "unknown error"].")
+	SS.send_round_start()
+	var/datum/tgs_message_content/ack = new("Test sent to [channel.friendly_name] ([channel.id]). Round-end embed follows.")
+	SS.send_round_end()
+	return ack
 
 #undef DISCORD_ROUNDEND_CHANNEL_ID
 #undef DISCORD_ROUND_PING_ROLE
