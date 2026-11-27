@@ -33,6 +33,17 @@ const TASKBAR_H = 28;
 
 // Applications that can be opened on the desktop.
 const APPS = {
+  terminal: {
+    title: 'TERMINAL',
+    sub: 'SCP FOUNDATION — COMMAND INTERFACE',
+    sub2: 'SCiPNET-OS v5.0 | SESSION LOGGED | TYPE HELP',
+    label: 'Terminal',
+    icon: '>_',
+    iconSize: '16px',
+    left: 106,
+    top: 26,
+    width: 470,
+  },
   personnel: {
     title: 'PERSONNEL FILE',
     sub: 'SCP FOUNDATION — PERSONNEL CONFIGURATION',
@@ -40,7 +51,7 @@ const APPS = {
     label: 'Personnel',
     icon: '▣',
     left: 128,
-    top: 18,
+    top: 34,
     width: 360,
   },
   manifest: {
@@ -50,7 +61,7 @@ const APPS = {
     label: 'Manifest',
     icon: '▤',
     left: 112,
-    top: 30,
+    top: 40,
     width: 450,
   },
   status: {
@@ -60,11 +71,11 @@ const APPS = {
     label: 'Status',
     icon: '◈',
     left: 140,
-    top: 50,
+    top: 56,
     width: 340,
   },
 };
-const APP_IDS = ['personnel', 'manifest', 'status'];
+const APP_IDS = ['terminal', 'personnel', 'manifest', 'status'];
 
 // Title bar gradient shared by windows, boot screen and start menu.
 const TITLE_BG = 'linear-gradient(180deg, ' + C.red + ', ' + C.redDark + ')';
@@ -161,7 +172,7 @@ const DesktopIcon = (props) => (
       height: '36px',
       lineHeight: '34px',
       margin: '0 auto 4px',
-      fontSize: '24px',
+      fontSize: props.iconSize || '24px',
       color: C.amber,
       background: 'linear-gradient(180deg, ' + C.panelAlt + ', ' + C.panel + ')',
       border: '1px solid ' + C.border,
@@ -206,15 +217,13 @@ const AppWindow = (props) => {
         left: app.left + 'px',
         top: app.top + 'px',
         width: app.width + 'px',
-        maxHeight: SCREEN_H - app.top - 8 + 'px',
-        display: 'flex',
-        flexDirection: 'column',
         zIndex: zIndex,
         background: C.panel,
         border: '1px solid ' + (focused ? C.redBright : C.border),
         boxShadow: '0 6px 18px rgba(0,0,0,0.75)',
         fontFamily: C.mono,
         color: C.text,
+        textShadow: '0 0 3px rgba(201,201,207,0.15)',
       }}>
       <Box style={{
         display: 'flex',
@@ -250,16 +259,210 @@ const AppWindow = (props) => {
           {app.sub2}
         </Box>
       </Box>
-      <Box style={{
-        padding: '10px',
-        // Windows are height-capped to the screen; the body area becomes the
-        // flex leftover and scrolls its own content (manifest rows).
-        flex: 1,
-        minHeight: 0,
-        overflowY: 'auto',
-      }}>
+      <Box style={{ padding: '10px' }}>
         {props.children}
       </Box>
+    </Box>
+  );
+};
+
+// Manifest app body: departmental table.
+const ManifestBody = (props) => {
+  const { manifest, manifest_count } = props.data;
+  const deptColor = {
+    'Command': C.amber,
+    'Security': '#d46a6a',
+    'Research': '#7ab8d4',
+    'Medical': '#d4a0a0',
+    'Engineering': '#d4b87a',
+  };
+  if (!manifest || !manifest.length) {
+    return (
+      <Box style={{ color: C.textDim, fontSize: '11px' }}>
+        NO CREW RECORDS ON FILE.<br />
+        Manifest populates once the crew is assigned and spawned.
+      </Box>
+    );
+  }
+  return (
+    <Box>
+      <SectionLabel>Active personnel — {manifest_count}</SectionLabel>
+      <Box style={{ maxHeight: '190px', overflowY: 'auto', border: '1px solid ' + C.border, padding: '6px' }}>
+        {manifest.map((dept, di) => (
+          <Box key={di} mb={2}>
+            <Box style={{
+              color: deptColor[dept.name] || C.textDim,
+              fontSize: '10px',
+              letterSpacing: '0.1em',
+              borderBottom: '1px solid ' + C.redLine,
+              marginBottom: '3px',
+              paddingBottom: '1px',
+            }}>
+              {dept.name.toUpperCase()}
+            </Box>
+            {dept.members.map((member, mi) => (
+              <Box key={mi} style={{
+                display: 'flex',
+                fontSize: '11px',
+                padding: '1px 4px',
+                background: mi % 2 ? 'rgba(255,255,255,0.025)' : 'transparent',
+                color: member.active ? C.text : C.textDim,
+              }}>
+                <Box style={{ width: '46%', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+                  {member.name}
+                </Box>
+                <Box style={{ width: '40%', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', color: C.textDim }}>
+                  {member.rank}
+                </Box>
+                <Box style={{ width: '14%', textAlign: 'right', color: member.active ? C.good : C.textDim, fontSize: '10px' }}>
+                  {member.active ? '●' : '○'}
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        ))}
+      </Box>
+      <Box style={{ color: C.textDim, fontSize: '9px', marginTop: '4px' }}>
+        ● ACTIVE &nbsp; ○ INACTIVE
+      </Box>
+    </Box>
+  );
+};
+
+// ---------------------------------------------------------------------------
+// Interactive terminal
+// ---------------------------------------------------------------------------
+const TERM_MAX_LINES = 80;
+const L = (t, c) => ({ t: t, c: c });
+const trimLines = (a) => (a.length > TERM_MAX_LINES
+  ? a.slice(a.length - TERM_MAX_LINES)
+  : a);
+
+const makeBanner = (ckey) => [
+  L(' ___   ___  ___ ', C.redBright),
+  L('/ __| / __|| _ \\', C.redBright),
+  L('\\__ \\| (__ |  _/', C.redBright),
+  L('|___/ \\___||_|  ', C.redBright),
+  L(''),
+  L('SCiPNET-OS v5.0 — SECURE NETWORK TERMINAL', C.amber),
+  L('SCP FOUNDATION — SITE-53 | CLASSIFIED | AES-512', C.textDim),
+  L('Session opened for ' + (ckey ? String(ckey).toUpperCase() : 'GUEST')
+    + '. All activity is logged.', C.textDim),
+  L("Type 'help' for a list of commands."),
+  L(''),
+];
+
+// The one live <input>. Kept in a module variable so clicking anywhere in the
+// terminal can focus it.
+let termInputEl = null;
+const bindTermInput = (el) => {
+  if (el && el !== termInputEl) {
+    termInputEl = el;
+    el.focus();
+  }
+};
+const focusTermInput = () => {
+  if (termInputEl) {
+    termInputEl.focus();
+  }
+};
+
+// Scrollback that sticks to the bottom as lines are added.
+class TermOutput extends Component {
+  constructor(props) {
+    super(props);
+    this.setEl = (el) => {
+      this.el = el;
+    };
+  }
+
+  componentDidMount() {
+    this.scroll();
+  }
+
+  componentDidUpdate() {
+    this.scroll();
+  }
+
+  scroll() {
+    if (this.el) {
+      this.el.scrollTop = this.el.scrollHeight;
+    }
+  }
+
+  render() {
+    const { lines } = this.props;
+    return (
+      <div
+        ref={this.setEl}
+        onClick={focusTermInput}
+        style={{
+          height: '190px',
+          overflowY: 'auto',
+          padding: '6px 8px',
+          background: 'rgba(0,0,0,0.35)',
+          border: '1px solid ' + C.border,
+          fontSize: '11px',
+          lineHeight: '1.5',
+          textShadow: '0 0 4px rgba(224,160,48,0.18)',
+        }}>
+        {lines.map((l, i) => (
+          <div key={i} style={{ whiteSpace: 'pre-wrap', color: l.c || C.text }}>
+            {l.t === '' ? '\u00a0' : l.t}
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
+
+const TerminalBody = (props) => {
+  const { lines, prompt, value, onInput, onSubmit, onHistory } = props;
+  return (
+    <Box>
+      <TermOutput lines={lines} />
+      <div
+        onClick={focusTermInput}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginTop: '4px',
+          paddingTop: '5px',
+          borderTop: '1px solid ' + C.redLine,
+          fontSize: '11px',
+        }}>
+        <span style={{ color: C.amber, whiteSpace: 'nowrap', marginRight: '6px' }}>
+          {prompt}
+        </span>
+        <input
+          ref={bindTermInput}
+          type="text"
+          value={value}
+          autocomplete="off"
+          onInput={(e) => onInput(e.target.value)}
+          onKeyDown={(e) => {
+            const k = e.keyCode || e.which;
+            if (k === 13) {
+              e.preventDefault();
+              onSubmit();
+            } else if (k === 38) {
+              e.preventDefault();
+              onHistory();
+            }
+          }}
+          style={{
+            flex: '1 1 auto',
+            minWidth: 0,
+            background: 'transparent',
+            border: 'none',
+            outline: 'none',
+            padding: 0,
+            color: C.textHi,
+            caretColor: C.amber,
+            fontFamily: C.mono,
+            fontSize: '11px',
+          }} />
+      </div>
     </Box>
   );
 };
@@ -398,14 +601,16 @@ export const LobbyMenu = (props, context) => {
     player_count,
     server_time,
     security_level,
-    manifest_count,
   } = data;
 
   const [booting, setBooting] = useLocalState(context, 'os.booting', true);
   // `open` doubles as the z-order: last entry is the front-most window.
-  const [open, setOpen] = useLocalState(context, 'os.open', ['personnel']);
+  const [open, setOpen] = useLocalState(context, 'os.open', ['terminal']);
   const [minimized, setMinimized] = useLocalState(context, 'os.minimized', []);
   const [menuOpen, setMenuOpen] = useLocalState(context, 'os.menu', false);
+  const [termLines, setTermLines] = useLocalState(context, 'os.termLines', makeBanner(ckey));
+  const [termInput, setTermInput] = useLocalState(context, 'os.termInput', '');
+  const [termHist, setTermHist] = useLocalState(context, 'os.termHist', []);
 
   if (booting) {
     return (
@@ -449,7 +654,136 @@ export const LobbyMenu = (props, context) => {
     }
   };
 
+  const termPrompt = (ckey ? String(ckey).toLowerCase() : 'guest') + '@site-53:~$';
+
+  const runCommand = () => {
+    const raw = termInput.trim();
+    const echo = L(termPrompt + ' ' + termInput, C.textDim);
+    if (!raw) {
+      setTermLines(trimLines(termLines.concat([echo])));
+      setTermInput('');
+      return;
+    }
+    setTermHist(termHist.concat([raw]).slice(-20));
+    const parts = raw.split(/\s+/);
+    const cmd = parts[0].toLowerCase();
+    const arg = parts[1] ? parts[1].toLowerCase() : '';
+    let out = [];
+    let clear = false;
+
+    if (cmd === 'help' || cmd === '?') {
+      out = [
+        L('AVAILABLE COMMANDS', C.amber),
+        L('  help            this list'),
+        L('  whoami          show session identity'),
+        L('  status          site and round status'),
+        L('  time            server time'),
+        L('  manifest        print the crew roster'),
+        L('  ls              list programs'),
+        L('  open <app>      open a program (personnel, manifest, status)'),
+        L('  setup           open character setup'),
+        L('  ready / unready toggle round readiness'),
+        L('  join            join the round in progress'),
+        L('  observe         observe the round'),
+        L('  clear           clear the screen'),
+        L('  ver             system version'),
+      ];
+    } else if (cmd === 'whoami') {
+      out = [
+        L('OPERATOR     ' + (ckey || 'guest')),
+        L('DESIGNATION  ' + (character_name || 'UNASSIGNED'), C.amber),
+        L('CLEARANCE    LEVEL 2 — PROVISIONAL'),
+      ];
+    } else if (cmd === 'status') {
+      out = [
+        L('SERVER TIME    ' + (server_time || '--:--')),
+        L('PLAYERS ONLINE ' + player_count),
+        L('SECURITY LEVEL ' + security_level, C.amber),
+        L('ROUND STATUS   ' + (round_started
+          ? 'IN PROGRESS — ' + (round_duration || '')
+          : 'LOBBY — PREGAME')),
+      ];
+    } else if (cmd === 'time' || cmd === 'date') {
+      out = [L(String(server_time || '--:--'))];
+    } else if (cmd === 'ver' || cmd === 'version') {
+      out = [L('SCiPNET-OS v5.0 (Mk-V terminal)'), L('Cognitohazard screening: ACTIVE', C.good)];
+    } else if (cmd === 'ls' || cmd === 'dir') {
+      out = [
+        L('terminal        TERMINAL'),
+        L('personnel       PERSONNEL FILE'),
+        L('manifest        CREW MANIFEST'),
+        L('status          SYSTEM STATUS'),
+      ];
+    } else if (cmd === 'manifest') {
+      if (!data.manifest || !data.manifest.length) {
+        out = [L('NO CREW RECORDS ON FILE.', C.textDim)];
+      } else {
+        out = [L('SITE-53 PERSONNEL ROSTER — ' + data.manifest_count + ' ACTIVE', C.amber)];
+        data.manifest.forEach((dept) => {
+          out.push(L('[' + String(dept.name).toUpperCase() + ']', C.redBright));
+          dept.members.forEach((m) => {
+            out.push(L('  ' + (m.active ? '●' : '○') + ' ' + m.name + ' — ' + m.rank,
+              m.active ? C.text : C.textDim));
+          });
+        });
+      }
+    } else if (cmd === 'open') {
+      if (arg && APPS[arg]) {
+        openApp(arg);
+        out = [L('Launching ' + APPS[arg].title + '...', C.good)];
+      } else {
+        out = [L("Usage: open <app>. Type 'ls' for programs.", C.redBright)];
+      }
+    } else if (cmd === 'setup') {
+      act('character_setup');
+      out = [L('Opening character setup...', C.good)];
+    } else if (cmd === 'ready' || cmd === 'unready') {
+      if (round_started) {
+        out = [L('Round already in progress. Use: join / observe', C.redBright)];
+      } else {
+        act('ready', { value: cmd === 'ready' ? 1 : 0 });
+        out = [cmd === 'ready'
+          ? L('Readiness confirmed. Standing by.', C.good)
+          : L('Readiness withdrawn.', C.amber)];
+      }
+    } else if (cmd === 'join') {
+      if (round_started) {
+        act('late_join');
+        out = [L('Requesting site entry...', C.good)];
+      } else {
+        out = [L('Round has not started. Use: ready', C.redBright)];
+      }
+    } else if (cmd === 'observe') {
+      act('observe');
+      out = [L('Switching to observer feed...', C.good)];
+    } else if (cmd === 'clear' || cmd === 'cls') {
+      clear = true;
+    } else {
+      out = [L("command not found: " + parts[0] + " (type 'help')", C.redBright)];
+    }
+
+    setTermLines(clear ? [] : trimLines(termLines.concat([echo], out)));
+    setTermInput('');
+  };
+
+  const recallLastCommand = () => {
+    if (termHist.length) {
+      setTermInput(termHist[termHist.length - 1]);
+    }
+  };
+
   const renderBody = (id) => {
+    if (id === 'terminal') {
+      return (
+        <TerminalBody
+          lines={termLines}
+          prompt={termPrompt}
+          value={termInput}
+          onInput={setTermInput}
+          onSubmit={runCommand}
+          onHistory={recallLastCommand} />
+      );
+    }
     if (id === 'personnel') {
       return (
         <Box>
@@ -468,29 +802,7 @@ export const LobbyMenu = (props, context) => {
       );
     }
     if (id === 'manifest') {
-      // Opens a separate Crew Manifest window (real scroll room) instead
-      // of rendering rows inside the small desktop window.
-      return (
-        <Box>
-          <SectionLabel>Crew manifest</SectionLabel>
-          <Box style={{ fontSize: '11px', color: C.text, lineHeight: '1.5' }}>
-            View the Site-53 personnel roster in a full-size window.
-            <Box mt={2}>
-              <Button
-                icon="users"
-                content="Open Crew Manifest"
-                color="good"
-                onClick={() => act('manifest_window')}
-              />
-            </Box>
-            {typeof manifest_count === 'number' ? (
-              <Box mt={2} style={{ color: C.textDim, fontSize: '10px' }}>
-                {manifest_count} personnel currently on the roster.
-              </Box>
-            ) : null}
-          </Box>
-        </Box>
-      );
+      return <ManifestBody data={data} />;
     }
     return (
       <Box>
@@ -560,10 +872,40 @@ export const LobbyMenu = (props, context) => {
             </Box>
           </Box>
 
+          {/* Top status line, like a terminal header */}
+          <Box style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0,
+            height: '18px',
+            zIndex: 65,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0 8px',
+            background: 'linear-gradient(180deg, ' + C.panelAlt + ', ' + C.room + ')',
+            borderBottom: '1px solid ' + C.redLine,
+            fontFamily: C.mono,
+            fontSize: '9px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: C.textDim,
+          }}>
+            <Box>
+              <span style={{ color: C.redBright }}>◉</span> SCiPNET-OS v5.0 ▸ SITE-53
+            </Box>
+            <Box>
+              USER: <span style={{ color: C.amber }}>{ckey ? String(ckey) : 'guest'}</span>
+            </Box>
+            <Box>
+              SEC: <span style={{ color: C.amber }}>{security_level}</span>
+              {' | '}PLAYERS: {player_count}
+            </Box>
+          </Box>
+
           {/* Desktop icons, one column down the left edge */}
           <Box style={{
             position: 'absolute',
-            top: '10px',
+            top: '26px',
             left: '8px',
             zIndex: 2,
           }}>
@@ -571,6 +913,7 @@ export const LobbyMenu = (props, context) => {
               <DesktopIcon
                 key={id}
                 icon={APPS[id].icon}
+                iconSize={APPS[id].iconSize}
                 label={APPS[id].label}
                 selected={open.indexOf(id) !== -1}
                 onClick={() => openApp(id)}
