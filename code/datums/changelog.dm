@@ -2,7 +2,9 @@
 	var/static/list/changelog_items = list()
 
 /datum/changelog/tgui_state()
-	return GLOB.always_tgui_state
+	// Personal read-only doc; its get_month fetch is harmless for ghosts
+	// (blocked by the always_state ghost gate previously).
+	return GLOB.input_modal_tgui_state
 
 /datum/changelog/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

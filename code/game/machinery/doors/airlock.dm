@@ -827,10 +827,20 @@ About the new airlock wires panel:
 		if("bolts")
 			if(isWireCut(WIRE_DOOR_BOLTS))
 				to_chat(usr, "The door bolt control wire is cut - Door bolts permanently dropped.")
-			else if(activate && lock())
-				to_chat(usr, "The door bolts have been dropped.")
-			else if(!activate && unlock())
-				to_chat(usr, "The door bolts have been raised.")
+			else
+				// Click = toggle. The UI's "active" flag is the INVERSE of
+				// the server's bolt state (UI: raised = active; server:
+				// locked = engaged), so acting on the sent value could
+				// never do anything but no-op. Flip server-side.
+				var/was_locked = locked
+				if(toggle_lock())
+					to_chat(usr, was_locked ? "The door bolts have been raised." : "The door bolts have been dropped.")
+				else if(!was_locked)
+					to_chat(usr, SPAN_WARNING(arePowerSystemsOn() ? "The bolts cannot be raised right now." : "The bolts cannot be raised without power."))
+				else if(lock_cut_state == BOLTS_CUT)
+					to_chat(usr, SPAN_WARNING("The bolts have been cut - they cannot be dropped."))
+				else
+					to_chat(usr, SPAN_WARNING("The bolts cannot be dropped right now."))
 		if("electrify_temporary")
 			electrify(30 * activate, 1)
 		if("electrify_permanently")
@@ -852,14 +862,21 @@ About the new airlock wires panel:
 			else
 				close()
 		if("safeties")
-			set_safeties(!activate, 1)
+			// Click = toggle (see "bolts" — the double inversion in
+			// set_safeties(!activate) made every click a no-op).
+			if(isWireCut(WIRE_SAFETY) && !safe)
+				to_chat(usr, "The safety wire is cut - Cannot enable safeties.")
+			else
+				safe = !safe
+				to_chat(usr, safe ? "Airlock safeties restored to nominal." : "Airlock safeties overridden - use caution, the door will not pause for obstructions.")
 		if("timing")
+			// Click = toggle (see "bolts" — the old activate-based
+			// branches could never fire given the UI's sent values).
 			if(isWireCut(WIRE_SPEED))
 				to_chat(usr, "The timing wire is cut - Cannot alter timing.")
-			else if(activate && normalspeed)
-				normalspeed = 0
-			else if(!activate && !normalspeed)
-				normalspeed = 1
+			else
+				normalspeed = !normalspeed
+				to_chat(usr, normalspeed ? "Door timing restored to nominal." : "Door timing mechanism overridden.")
 		if("lights")
 			if(isWireCut(WIRE_BOLT_LIGHT))
 				to_chat(usr, "The lights wire is cut - The door lights are permanently disabled.")
@@ -1327,11 +1344,11 @@ About the new airlock wires panel:
 
 /obj/machinery/door/airlock/proc/unlock(forced=0)
 	if(!src.locked)
-		return
+		return FALSE
 
 	if (!forced)
 		if(operating || !src.arePowerSystemsOn() || isWireCut(WIRE_DOOR_BOLTS))
-			return
+			return FALSE
 
 	src.locked = 0
 	playsound(src, bolts_rising, 30, 0, -6)
