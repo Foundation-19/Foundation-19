@@ -10,7 +10,7 @@
 // SSticker exist and RegisterSignal silently no-ops on null.
 
 #define DISCORD_ROUNDEND_CHANNEL_ID "1005541607388491826"
-#define DISCORD_ROUND_CHANNEL_TAG "roundping"
+#define DISCORD_ROUND_CHANNEL_TAG "New Round Ping"
 #define DISCORD_ROUND_PING_ROLE "<@&899514330461126656>"
 
 SUBSYSTEM_DEF(round_discord_notifications)
@@ -68,12 +68,14 @@ SUBSYSTEM_DEF(round_discord_notifications)
 		log_game("round_discord: boot audit FAILED — [last_resolution_error]")
 
 // Resolve (and retryable) target chat channel. Match order:
-// 1. TGS internal channel id equal to the Discord snowflake (works on
+// 1. Channel tagged "New Round Ping" in TGS (authoritative — the user's
+//    channel setup; tag matching is comma-split like send2chat).
+// 2. TGS internal channel id equal to the Discord snowflake (fallback for
 //    TGS builds that expose raw Discord ids).
-// 2. Channel tagged "roundping" in TGS (the Hail-Mary approach; tag is
-//    comma-split like send2chat).
 // A failed lookup is NOT cached — the bridge may not have pushed channel
 // data yet (e.g. at round start), so each send re-attempts resolution.
+// If nothing matches, messages are NOT broadcast site-wide: they're
+// dropped with a log so pings never spam general/admin channels.
 /datum/controller/subsystem/round_discord_notifications/proc/get_channel()
 	if(channel_resolved)
 		return cached_channel
@@ -87,15 +89,10 @@ SUBSYSTEM_DEF(round_discord_notifications)
 		log_game("round_discord: [last_resolution_error].")
 		return null
 	var/list/dump = list()
+	var/list/tags_dump = list()
 	for(var/I in channels)
 		var/datum/tgs_chat_channel/channel = I
 		dump += "'[channel.friendly_name]' id=[channel.id] tag=[channel.custom_tag || "none"]"
-		if("[channel.id]" == DISCORD_ROUNDEND_CHANNEL_ID)
-			cached_channel = channel
-			channel_resolved = TRUE
-			last_resolution_error = null
-			log_game("round_discord: resolved by id — channel [channel.friendly_name].")
-			return cached_channel
 		var/list/tags = splittext(channel.custom_tag || "", ",")
 		if(DISCORD_ROUND_CHANNEL_TAG in tags)
 			cached_channel = channel
@@ -103,20 +100,27 @@ SUBSYSTEM_DEF(round_discord_notifications)
 			last_resolution_error = null
 			log_game("round_discord: resolved by tag '[DISCORD_ROUND_CHANNEL_TAG]' — channel [channel.friendly_name].")
 			return cached_channel
-	last_resolution_error = "no channel with id [DISCORD_ROUNDEND_CHANNEL_ID] or tag '[DISCORD_ROUND_CHANNEL_TAG]'. TGS channels: [english_list(dump)]"
+		if("[channel.id]" == DISCORD_ROUNDEND_CHANNEL_ID)
+			cached_channel = channel
+			channel_resolved = TRUE
+			last_resolution_error = null
+			log_game("round_discord: resolved by id — channel [channel.friendly_name].")
+			return cached_channel
+	tags_dump.Cut()
+	last_resolution_error = "no channel tagged '[DISCORD_ROUND_CHANNEL_TAG]' (or id [DISCORD_ROUNDEND_CHANNEL_ID]). TGS channels: [english_list(dump)]"
 	log_game("round_discord: [last_resolution_error]")
 	return null
 
-// Never-silent fallback: if resolution fails, broadcast to all non-admin
-// game channels (visible everywhere, including the target) and log loudly.
+// Delivery: only to the resolved target channel. If resolution fails,
+// the message is DROPPED (never broadcast site-wide — a round ping must
+// not spam general/admin channels) and the reason is logged.
 /datum/controller/subsystem/round_discord_notifications/proc/deliver(message)
 	var/datum/tgs_chat_channel/channel = get_channel()
-	if(channel)
-		world.TgsChatBroadcast(message, list(channel))
-		return TRUE
-	log_game("round_discord: FALLBACK — broadcasting to all game channels. [last_resolution_error]")
-	world.TgsChatBroadcast(message)
-	return FALSE
+	if(!channel)
+		log_game("round_discord: message dropped. [last_resolution_error]")
+		return FALSE
+	world.TgsChatBroadcast(message, list(channel))
+	return TRUE
 
 /datum/controller/subsystem/round_discord_notifications/proc/on_round_started()
 	SIGNAL_HANDLER
