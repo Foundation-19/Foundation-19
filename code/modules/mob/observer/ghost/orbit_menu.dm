@@ -108,10 +108,15 @@
 	return data
 
 /datum/orbit_menu/proc/build_entry(mob/target, display_name, status)
+	var/icon_html = null
+	if(owner)
+		// Humans wear their clothes as overlays; plain icon2html would show
+		// the bare body sprite. getFlatIcon composites the full appearance.
+		icon_html = costly_icon2html(target, owner)
 	return list(
 		"name" = display_name || target.name,
 		"ref" = "[REF(target)]",
-		"icon" = owner ? icon2html(target, owner) : null,
+		"icon" = icon_html,
 		"status" = status || null,
 	)
 

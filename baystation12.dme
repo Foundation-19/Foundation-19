@@ -2558,6 +2558,7 @@
 #include "code\modules\mob\observer\ghost\follow.dm"
 #include "code\modules\mob\observer\ghost\ghost.dm"
 #include "code\modules\mob\observer\ghost\orbit_menu.dm"
+#include "code\modules\mob\observer\ghost\scp_select_menu.dm"
 #include "code\modules\mob\observer\ghost\login.dm"
 #include "code\modules\mob\observer\ghost\logout.dm"
 #include "code\modules\mob\observer\ghost\say.dm"

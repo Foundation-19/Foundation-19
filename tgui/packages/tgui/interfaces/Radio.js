@@ -69,20 +69,12 @@ export const Radio = (props, context) => {
           <Section title="Channels">
             {chan_list.map((ch, i) => (
               <Box key={i} mb={1}>
-                {!!ch.sec_channel_listen ? (
-                  <Button onClick={() => act('listen', { ch_name: ch.chan })}>
-                    {ch.chan} {ch.sec_channel_listen ? "[Locked]" : ""}
-                  </Button>
-                ) : (
-                  <Button selected={!ch.sec_channel_listen} onClick={() => act('listen', { ch_name: ch.chan })}>
-                    {ch.chan}
-                  </Button>
-                )}
-                {!!ch.sec_channel && (
-                  <Button ml={1} icon={ch.sec_channel_listen ? "lock" : "unlock"} onClick={() => act('listen', { ch_name: ch.chan })}>
-                    Listen
-                  </Button>
-                )}
+                <Button
+                  selected={!!ch.listening}
+                  onClick={() => act('listen', { ch_name: ch.chan })}>
+                  {ch.display_name || ch.chan}
+                  {ch.internal_channel ? ' (tune)' : ''}
+                </Button>
               </Box>
             ))}
           </Section>

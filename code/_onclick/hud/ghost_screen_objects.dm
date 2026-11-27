@@ -19,7 +19,16 @@
 	var/mob/observer/ghost/G = usr
 	if(!istype(G))
 		return
-	G?.become_scp()
+	if(!G.MayRespawn(TRUE, SCP_SPAWN_DELAY))
+		return
+	var/list/available = list()
+	for(var/atom/PossibleSCP in GLOB.SCP_list)
+		if(G.canBecomeSCP(PossibleSCP))
+			available += PossibleSCP
+	if(!LAZYLEN(available))
+		to_chat(G, SPAN_WARNING("There are no SCPs avalible yet! Keep in mind that not all SCPs are avalible round start and more may become avalible as the round goes on!"))
+		return
+	G?.scp_select_menu()
 
 /atom/movable/screen/ghost/reenter_corpse
 	name = "Reenter corpse"
