@@ -11611,7 +11611,8 @@
 /obj/machinery/status_display{
 	pixel_y = 30
 	},
-/obj/structure/handrail,
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/tram/maintrain)
 "DC" = (

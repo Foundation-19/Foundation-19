@@ -1651,6 +1651,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 5
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/corner{
 	dir = 4
 	},
@@ -4799,6 +4801,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 6
 	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/corner{
 	dir = 1
 	},
@@ -9422,6 +9426,17 @@
 /obj/item/folder/blue,
 /turf/simulated/floor/tiled/white/vertical,
 /area/site53/upper_surface/commstower)
+"bXG" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/hallways)
 "bXK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
@@ -13369,6 +13384,12 @@
 	},
 /turf/simulated/floor/blackgrid,
 /area/site53/engineering/selfdestruct)
+"cNf" = (
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/lhcz/hczguardgear)
 "cNh" = (
 /obj/structure/table/standard,
 /obj/item/stack/cable_coil,
@@ -14464,6 +14485,17 @@
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/llcz/dclass/luxuryhall)
+"cXT" = (
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/white/horizontal,
+/area/site53/medical/infirmary)
 "cXU" = (
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -19873,6 +19905,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/site53/uhcz/hallways)
+"ech" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/lhcz/hallway)
 "eco" = (
 /obj/structure/table/standard,
 /obj/item/stamp/approved,
@@ -36278,6 +36316,8 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/commandpanicbunker)
 "htb" = (
@@ -44416,6 +44456,12 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp173)
+"jgn" = (
+/obj/effect/floor_decal/corner/red/border,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uhcz/hallways)
 "jgp" = (
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine,
@@ -48248,6 +48294,8 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/uez/hallway)
 "jTH" = (
@@ -48554,6 +48602,8 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 9
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/corner{
 	dir = 8
 	},
@@ -49788,6 +49838,12 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/site53/reswing/xenobiology)
+"kju" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/effect/floor_decal/corner/orange/mono,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/monotile,
+/area/site53/upper_surface/commstower)
 "kjD" = (
 /obj/effect/floor_decal/corner/green/border{
 	dir = 1
@@ -52242,6 +52298,14 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/site53/engineering/selfdestruct)
+"kIg" = (
+/obj/effect/floor_decal/corner/keter/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/horizontal,
+/area/site53/uhcz/scp106containment)
 "kIk" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -53707,10 +53771,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/site53/science/aicobservation)
 "kXp" = (
-/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/recharge_station,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/site53/lowertrams/restaurantkitchenarea)
 "kXx" = (
@@ -70556,6 +70621,17 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/scp151)
+"oEx" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/dark/vertical,
+/area/site53/uhcz/hallways)
 "oEy" = (
 /obj/effect/floor_decal/spline/plain/white{
 	dir = 9
@@ -74382,6 +74458,18 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/reswing/roboticsupr)
+"prc" = (
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/euclid/bordercorner,
+/obj/structure/sign/scp/euclid_scp{
+	pixel_x = 32
+	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/dark/horizontal,
+/area/site53/uhcz/hallways)
 "prf" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "SCP-049 Checkpoint Office";
@@ -74684,11 +74772,12 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
 	},
-/obj/structure/flora/pottedplant/floorleaf,
+/obj/machinery/recharge_station,
 /obj/machinery/camera/network/entrance{
 	c_tag = "Medical Treatment Center Southwest";
 	dir = 1
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/corner,
 /area/site53/medical/exam_room)
 "pvi" = (
@@ -78492,6 +78581,11 @@
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled/white/monotile,
 /area/site53/ulcz/hallways)
+"qix" = (
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/site53/uez/hallway)
 "qiC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -81221,6 +81315,8 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 1
 	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/horizontal,
 /area/site53/surface/cryogenicsprimary)
 "qNG" = (
@@ -92933,6 +93029,14 @@
 /obj/machinery/chemical_dispenser/bar_coffee/full,
 /turf/simulated/floor/tiled/white,
 /area/site53/medical/equipstorage)
+"taM" = (
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 5
+	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/white/monotile,
+/area/site53/ulcz/hallways)
 "taN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
@@ -93719,7 +93823,8 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/green/mono,
-/obj/structure/flora/pottedplant/floorleaf,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/upper_surface/breachshelter)
 "thW" = (
@@ -105767,6 +105872,8 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/corner,
 /area/site53/uhcz/securitypost)
 "vKw" = (
@@ -106429,6 +106536,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/monotile,
 /area/site53/entrancezone/hallway)
 "vRz" = (
@@ -112464,6 +112573,14 @@
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/white,
 /area/site53/ulcz/scp082/kitchen)
+"xgv" = (
+/obj/effect/floor_decal/corner/yellow{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/dark,
+/area/site53/engineering/primaryhallway)
 "xgz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/effect/floor_decal/corner/white{
@@ -114732,6 +114849,19 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/site53/llcz/scp294)
+"xEq" = (
+/obj/effect/floor_decal/corner/yellow{
+	dir = 9
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/dark,
+/area/site53/engineering/primaryhallway)
 "xEr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -116309,6 +116439,8 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
 	},
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/corner{
 	dir = 8
 	},
@@ -166622,7 +166754,7 @@ nID
 dUF
 ldd
 ieQ
-xNo
+kIg
 hsx
 rmp
 ieQ
@@ -169689,7 +169821,7 @@ iWZ
 aHO
 bQh
 bQh
-iiR
+ech
 hio
 ieQ
 pfQ
@@ -188753,7 +188885,7 @@ ugj
 pOV
 qAR
 qyl
-rTC
+bXG
 vei
 yaU
 gqd
@@ -193107,7 +193239,7 @@ liW
 oZv
 nkn
 nkn
-mJf
+taM
 cOe
 pIE
 jSK
@@ -201794,11 +201926,11 @@ sRw
 sRw
 sRw
 hyw
-sRw
+xEq
 sRw
 ieT
 aTx
-aTx
+xgv
 aTx
 aTx
 aTx
@@ -223713,7 +223845,7 @@ mpg
 mpg
 rav
 iJr
-wwH
+cNf
 ioU
 rav
 qHO
@@ -232168,7 +232300,7 @@ uXO
 taX
 azR
 azR
-tNd
+jgn
 kOp
 mpg
 mpg
@@ -235528,7 +235660,7 @@ hvo
 tjA
 vVX
 kOp
-hTA
+oEx
 wiA
 azR
 fEw
@@ -236571,7 +236703,7 @@ lNb
 pal
 wJl
 wJl
-jnk
+prc
 ydc
 sNF
 kOp
@@ -276147,7 +276279,7 @@ cnc
 iTJ
 jjp
 jjp
-bau
+kju
 ldB
 sax
 ibI
@@ -283773,7 +283905,7 @@ pPZ
 pPZ
 pPZ
 pPZ
-jQA
+cXT
 lSh
 gck
 cCU
@@ -347756,7 +347888,7 @@ sYX
 cMX
 mOG
 ltF
-mOG
+qix
 ttC
 ltF
 mOG
