@@ -432,7 +432,7 @@ const SafetyTab = (props, context) => {
 
 const OverviewTab = (props, context) => {
   const { act, data } = useBackend(context);
-  const { scp_list = [], active_breaches = [], total_breaches = 0 } = data;
+  const { scp_list = [], active_breaches = [], total_breaches = 0, dclass_requests = [] } = data;
 
   const statusColor = (status) => {
     switch (status) {
