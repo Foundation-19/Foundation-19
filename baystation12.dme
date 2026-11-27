@@ -1879,6 +1879,7 @@
 #include "code\modules\detectivework\tools\swabs.dm"
 #include "code\modules\detectivework\tools\uvlight.dm"
 #include "code\modules\discord\tgs_commands.dm"
+#include "code\modules\discord\round_notifications.dm"
 #include "code\modules\economy\_economy_misc.dm"
 #include "code\modules\economy\Accounts.dm"
 #include "code\modules\economy\Accounts_DB.dm"
