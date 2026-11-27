@@ -119,6 +119,32 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 /datum/scp_research/proc/perform_test(mob/tester, test_type, risk_level)
 	if(!can_test())
 		return FALSE
+	// Anti-abuse: a test is a physical act. The researcher must actually
+	// be present in the SCP's containment area — no point-farming from an
+	// office terminal on the other side of the site.
+	var/atom/scp_atom = parent
+	if(!scp_atom || QDELETED(scp_atom))
+		return FALSE
+	if(!istype(tester) || tester.stat == DEAD)
+		return FALSE
+	var/area/area_user = get_area(tester)
+	var/area/area_scp = get_area(scp_atom)
+	if(!area_scp || area_user != area_scp)
+		to_chat(tester, SPAN_WARNING("You must be physically inside SCP-[designation]'s containment area to conduct a test."))
+		return FALSE
+	// D-class tests consume a request whose subject has actually arrived.
+	if(test_type == "dclass")
+		var/datum/dclass_request/request = null
+		for(var/datum/dclass_request/R in GLOB.dclass_requests)
+			if(R.scp_designation == designation && R.status == DCLASS_REQUEST_ARRIVED)
+				request = R
+				break
+		if(!request)
+			to_chat(tester, SPAN_WARNING("No Class-D subject is present in the chamber. File a request and wait for security to escort one before running a D-Class test."))
+			return FALSE
+		request.complete(tester)
+		if(QDELETED(tester) || tester.stat == DEAD)
+			return FALSE
 	last_test_time = world.time
 	var/point_multiplier = 1
 	switch(test_type)
@@ -143,7 +169,7 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 			point_multiplier *= 3
 	var/points = round(25 * point_multiplier)
 	add_research_points(points, "test_[test_type]")
-	GLOB.scp_research_tracker.log_test(parent, tester, test_type, "+[points] points ([risk_level] risk)")
+	GLOB.scp_research_tracker.log_test(parent, tester, test_type, "+[points] points ([risk_level] risk) in [area_scp.name]")
 	// Codex: tests advance personal knowledge to detailed.
 	codex_on_test(designation, tester, CODEX_DETAILED)
 	// Cross-SCP interactions: testing an SCP may discover a hidden pairing.
