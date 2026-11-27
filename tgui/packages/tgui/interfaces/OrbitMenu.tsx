@@ -32,6 +32,11 @@ export const OrbitMenu = (props, context) => {
   const { act, data } = useBackend<OrbitData>(context);
   const { categories = [], following = null } = data;
   const [search, setSearch] = useLocalState<string>(context, 'orbit_search', '');
+  const [collapsed, setCollapsed] = useLocalState<Record<string, boolean>>(
+    context,
+    'orbit_collapsed',
+    {}
+  );
   const needle = search.toLowerCase().trim();
 
   const filtered = categories
@@ -50,6 +55,21 @@ export const OrbitMenu = (props, context) => {
     0
   );
 
+  const toggleCollapsed = (name: string) => {
+    setCollapsed({ ...collapsed, [name]: !collapsed[name] });
+  };
+
+  const allCollapsed =
+    filtered.length > 0 && filtered.every((cat) => collapsed[cat.name]);
+
+  const setAll = (value: boolean) => {
+    const next: Record<string, boolean> = {};
+    for (const cat of filtered) {
+      next[cat.name] = value;
+    }
+    setCollapsed({ ...collapsed, ...next });
+  };
+
   return (
     <Window width={430} height={620}>
       <Window.Content scrollable>
@@ -64,6 +84,12 @@ export const OrbitMenu = (props, context) => {
                   placeholder="Search..."
                   onInput={(e, value) => setSearch(value || '')}
                   alignSelf="center"
+                />
+                <Button
+                  icon={allCollapsed ? 'expand' : 'compress'}
+                  content={allCollapsed ? 'Expand' : 'Collapse'}
+                  tooltip="Collapse or expand all categories"
+                  onClick={() => setAll(!allCollapsed)}
                 />
                 <Button
                   icon="sync"
@@ -89,47 +115,60 @@ export const OrbitMenu = (props, context) => {
                 Use Refresh to rebuild the list.
               </Box>
             )}
-            {filtered.map((cat) => (
-              <Box key={cat.name} mb={1}>
-                <Box
-                  bold
-                  mb={0.5}
-                  color={
-                    CATEGORY_COLOR[cat.name] || 'label'
-                  }
-                >
-                  {cat.name} ({cat.entries.length})
-                </Box>
-                {cat.entries.map((entry) => (
+            {filtered.map((cat) => {
+              const isCollapsed = !!collapsed[cat.name];
+              return (
+                <Box key={cat.name} mb={1}>
                   <Button
-                    key={entry.ref}
                     fluid
-                    selected={following === entry.ref}
-                    onClick={() => act('orbit', { atom: entry.ref })}
-                    style={{ textAlign: 'left' }}
+                    icon={isCollapsed ? 'chevron-right' : 'chevron-down'}
+                    onClick={() => toggleCollapsed(cat.name)}
+                    style={{
+                      textAlign: 'left',
+                      color: CATEGORY_COLOR[cat.name] || 'rgba(200,200,200,0.9)',
+                      fontWeight: 'bold',
+                      background: 'rgba(255,255,255,0.04)',
+                    }}
                   >
-                    <Box
-                      component="span"
-                      dangerouslySetInnerHTML={{ __html: entry.icon || '' }}
-                      style={{ marginRight: '4px' }}
-                    />
-                    {entry.name}
-                    {entry.status ? (
-                      <Box
-                        component="span"
-                        color="label"
-                        style={{ marginLeft: '4px' }}
-                      >
-                        [{entry.status}]
-                      </Box>
-                    ) : null}
+                    {cat.name} ({cat.entries.length})
                   </Button>
-                ))}
-              </Box>
-            ))}
+                  {!isCollapsed &&
+                    cat.entries.map((entry) => (
+                      <Button
+                        key={entry.ref}
+                        fluid
+                        selected={following === entry.ref}
+                        onClick={() => act('orbit', { atom: entry.ref })}
+                        style={{
+                          textAlign: 'left',
+                          paddingLeft: '14px',
+                          background: 'rgba(255,255,255,0.02)',
+                        }}
+                      >
+                        <Box
+                          component="span"
+                          dangerouslySetInnerHTML={{ __html: entry.icon || '' }}
+                          style={{ marginRight: '4px' }}
+                        />
+                        {entry.name}
+                        {entry.status ? (
+                          <Box
+                            component="span"
+                            color="label"
+                            style={{ marginLeft: '4px' }}
+                          >
+                            [{entry.status}]
+                          </Box>
+                        ) : null}
+                      </Button>
+                    ))}
+                </Box>
+              );
+            })}
           </Section>
         </Box>
       </Window.Content>
     </Window>
   );
 };
+
