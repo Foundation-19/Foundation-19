@@ -94,7 +94,9 @@
 	closed = TRUE
 
 /datum/tgui_alert/tgui_state(mob/user)
-	return GLOB.always_tgui_state
+	// Personal prompt — must stay interactive for ghosts (see
+	// input_modal_state; always_state's ghost gate broke these).
+	return GLOB.input_modal_tgui_state
 
 /datum/tgui_alert/tgui_static_data(mob/user)
 	var/list/data = list()

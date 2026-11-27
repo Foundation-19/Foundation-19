@@ -21,3 +21,18 @@ GLOBAL_DATUM_INIT(always_tgui_state, /datum/tgui_state/always_state, new)
 	if(isobserver(user) && !user.can_admin_interact())
 		return UI_UPDATE
 	return UI_INTERACTIVE
+
+/**
+ * tgui state: input_modal_state
+ *
+ * UI_INTERACTIVE for everyone, ghosts included. Used by the tgui_input
+ * prompt datums (alert / list / text / number): these are personal
+ * windows that exist solely to collect the user's own response, so the
+ * always_state ghost gate (which fixed ghost radio-channel toggling)
+ * also killed every prompt for regular ghosts — orange eye, dead
+ * submit/cancel.
+ */
+GLOBAL_DATUM_INIT(input_modal_tgui_state, /datum/tgui_state/input_modal_state, new)
+
+/datum/tgui_state/input_modal_state/can_use_tgui_topic(src_object, mob/user)
+	return UI_INTERACTIVE
