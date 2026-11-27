@@ -1,9 +1,9 @@
 /mob/living/simple_animal/hostile/scp939
 	name = "red predator"
 	desc = "An eyeless, limbless predator with red, translucent skin. Its mouth is filled with needle-like teeth."
-	icon = 'icons/SCP/scp-939.dmi'
-	icon_state = "scp939"
-	icon_dead = "scp939_dead"
+	icon = 'icons/SCP/scp-939-zion.dmi'
+	icon_state = "scp_939_1"
+	icon_dead = "scp_939_1_down"
 	status_flags = NO_ANTAG
 
 	see_invisible = SEE_INVISIBLE_NOLIGHTING

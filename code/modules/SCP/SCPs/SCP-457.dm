@@ -14,6 +14,14 @@
 #define SCP457_DOOR_MELT_TIME		5 SECONDS
 #define SCP457_BLAST_MELT_TIME		16 SECONDS
 
+// Flame economy tuning. SSmobs fires every 2s and the spread loop is
+// gated to once per 10s — the original chance/duration values combined
+// into "flames basically never appear and do nothing when they do".
+#define SCP457_FLAME_SPREAD_INTERVAL	6 SECONDS
+#define SCP457_FLAME_TRAIL_CHANCE		40	// per spread tick, above basic heat
+#define SCP457_FLAME_SPREAD_CHANCE		25	// per existing flame per tick
+#define SCP457_FLAME_STARTING_HEAT		35	// spawns already past basic threshold
+
 /mob/living/simple_animal/hostile/scp457
 	name = "humanoid flame"
 	desc = "A horrible band of fire, it somehow keeps a humanoid shape. The heat radiating from it is unnatural."
@@ -48,7 +56,7 @@
 	var/area/spawn_area
 
 	// --- Heat economy (the core of the overhaul) ---
-	var/current_heat = 20
+	var/current_heat = SCP457_FLAME_STARTING_HEAT
 	var/max_heat = SCP457_MAX_HEAT
 	var/last_heat_update = 0
 	// Suppression counterplay: standing in low-pressure/cold/empty air bleeds heat.
@@ -209,7 +217,7 @@
 // ===========================================================================
 
 /mob/living/simple_animal/hostile/scp457/proc/ProcessFireSpreading()
-	if(world.time < spread_cooldown_track + 10 SECONDS)
+	if(world.time < spread_cooldown_track + SCP457_FLAME_SPREAD_INTERVAL)
 		return
 	spread_cooldown_track = world.time
 	// Spread chance scales with heat; below basic threshold, no spread.
@@ -219,13 +227,14 @@
 	// Trail: leave fire where we walk (above basic heat).
 	var/turf/here = get_turf(src)
 	if(here && !(locate(/obj/effect/scp457_fire) in here) && active_fires.len < max_active_fires)
-		CreateFireAtTurf(here)
+		if(prob(SCP457_FLAME_TRAIL_CHANCE))
+			CreateFireAtTurf(here)
 	// Existing flames propagate.
 	for(var/obj/effect/scp457_fire/fire in active_fires)
 		if(!fire || QDELETED(fire) || !get_turf(fire))
 			active_fires -= fire
 			continue
-		if(prob(spread_chance * 0.3))
+		if(prob(max(SCP457_FLAME_SPREAD_CHANCE, spread_chance * 0.5)))
 			AttemptFireSpread(fire)
 
 /mob/living/simple_animal/hostile/scp457/proc/AttemptFireSpread(obj/effect/scp457_fire/source_fire)
@@ -583,9 +592,15 @@
 		seed.fire_type = GetFireType()
 		seed.owner = src
 		seed.setup_fire_properties()
-		active_fires = list(seed) // drop the old flames, keep only the seed
-		CleanupFires()
+		// Drop every OLD flame first, then keep only the seed. The
+		// previous order (assign list, CleanupFires, reassign) qdel'd
+		// the seed itself and left a deleted ref in active_fires, so
+		// the reform timer always fell back to the spawn room.
+		var/list/old_fires = active_fires.Copy()
 		active_fires = list(seed)
+		for(var/obj/effect/scp457_fire/fire in old_fires)
+			if(fire && fire != seed && !QDELETED(fire))
+				qdel(fire)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/simple_animal/hostile/scp457, respawn)), 5 MINUTES)
 	to_chat(src, SPAN_NOTICE(SPAN_BOLD("You will reform in five minutes, avoid leaving your body.")))
 	return ..()
@@ -603,8 +618,9 @@
 		best_turf = get_turf(spawn_area ? spawn_area : src)
 	visible_message(SPAN_DANGER("One single flame grows and reforms into a humanoid shape!"))
 	convertatom2type(src, /mob/living/simple_animal/hostile/scp457, force_mind = TRUE)
-	// Reforming resets heat — a fresh fire must rebuild.
-	current_heat = 20
+	// Reforming resets heat — a fresh fire must rebuild (starts past the
+	// basic threshold so flames flow again immediately).
+	current_heat = SCP457_FLAME_STARTING_HEAT
 	active_fires = list()
 	breach_announced = FALSE
 	if(best_turf)
@@ -900,13 +916,23 @@
 			light_color = "#BBCCFF"
 
 /obj/effect/scp457_fire/proc/apply_damage()
-	for(var/mob/living/L in range(0, get_turf(src)))
+	// Burn mobs standing ON the flame (contact) — feedback matters: a
+	// silent 5-damage tick was indistinguishable from nothing.
+	for(var/mob/living/L in get_turf(src))
 		if(L == owner || L.SCP || L.stat == DEAD)
 			continue
 		var/damage = get_damage_amount()
 		L.apply_damage(damage, BURN)
 		L.adjust_fire_stacks(1)
-		L.IgniteMob()
+		if(L.IgniteMob())
+			L.visible_message(SPAN_DANGER("[L] catches fire from the living flame!"), SPAN_USERDANGER("You are burned by the living flame!"))
+	// Intense flames and up also scorch anyone standing NEXT to them.
+	if(fire_type != "basic")
+		for(var/mob/living/L in range(1, get_turf(src)))
+			if(L == owner || L.SCP || L.stat == DEAD)
+				continue
+			L.adjust_fire_stacks(1)
+			L.apply_damage(get_damage_amount() / 3, BURN)
 
 /obj/effect/scp457_fire/proc/get_damage_amount()
 	switch(fire_type)
@@ -929,3 +955,7 @@
 #undef SCP457_HEAT_DECAY_RATE
 #undef SCP457_DOOR_MELT_TIME
 #undef SCP457_BLAST_MELT_TIME
+#undef SCP457_FLAME_SPREAD_INTERVAL
+#undef SCP457_FLAME_TRAIL_CHANCE
+#undef SCP457_FLAME_SPREAD_CHANCE
+#undef SCP457_FLAME_STARTING_HEAT
