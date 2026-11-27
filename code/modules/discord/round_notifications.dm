@@ -10,6 +10,7 @@
 // SSticker exist and RegisterSignal silently no-ops on null.
 
 #define DISCORD_ROUNDEND_CHANNEL_ID "1005541607388491826"
+#define DISCORD_ROUND_CHANNEL_TAG "roundping"
 #define DISCORD_ROUND_PING_ROLE "<@&899514330461126656>"
 
 SUBSYSTEM_DEF(round_discord_notifications)
@@ -51,40 +52,80 @@ SUBSYSTEM_DEF(round_discord_notifications)
 /datum/controller/subsystem/round_discord_notifications/Initialize()
 	RegisterSignal(SSdcs, COMSIG_ROUND_ENDED, PROC_REF(on_round_ended))
 	RegisterSignal(SSticker, COMSIG_TICKER_STARTED, PROC_REF(on_round_started))
+	// One-time boot audit: gives the server log a definitive answer about
+	// whether the target channel resolves, ~30s after startup so the
+	// bridge handshake has settled.
+	addtimer(CALLBACK(src, PROC_REF(audit_channels)), 30 SECONDS, TIMER_STOPPABLE)
 	return ..()
 
-// Resolve (and cache) the target chat channel by its Discord channel id.
+/datum/controller/subsystem/round_discord_notifications/proc/audit_channels()
+	channel_resolved = FALSE
+	cached_channel = null
+	var/datum/tgs_chat_channel/channel = get_channel()
+	if(channel)
+		log_game("round_discord: boot audit OK — using channel [channel.friendly_name] ([channel.id]).")
+	else
+		log_game("round_discord: boot audit FAILED — [last_resolution_error]")
+
+// Resolve (and retryable) target chat channel. Match order:
+// 1. TGS internal channel id equal to the Discord snowflake (works on
+//    TGS builds that expose raw Discord ids).
+// 2. Channel tagged "roundping" in TGS (the Hail-Mary approach; tag is
+//    comma-split like send2chat).
+// A failed lookup is NOT cached — the bridge may not have pushed channel
+// data yet (e.g. at round start), so each send re-attempts resolution.
 /datum/controller/subsystem/round_discord_notifications/proc/get_channel()
 	if(channel_resolved)
 		return cached_channel
-	channel_resolved = TRUE
 	if(!world.TgsAvailable())
 		last_resolution_error = "TGS not available"
 		log_game("round_discord: TGS not available; notifications disabled.")
 		return null
 	var/list/channels = world.TgsChatChannelInfo()
-	if(!channels)
-		last_resolution_error = "TgsChatChannelInfo() returned null"
-		log_game("round_discord: TgsChatChannelInfo() returned null.")
+	if(!channels || !length(channels))
+		last_resolution_error = "TgsChatChannelInfo() returned no channels (bridge may still be connecting)"
+		log_game("round_discord: [last_resolution_error].")
 		return null
-	var/list/known_ids = list()
+	var/list/dump = list()
 	for(var/I in channels)
 		var/datum/tgs_chat_channel/channel = I
-		known_ids += "[channel.id]"
+		dump += "'[channel.friendly_name]' id=[channel.id] tag=[channel.custom_tag || "none"]"
 		if("[channel.id]" == DISCORD_ROUNDEND_CHANNEL_ID)
 			cached_channel = channel
+			channel_resolved = TRUE
 			last_resolution_error = null
-			log_game("round_discord: resolved channel [channel.friendly_name].")
+			log_game("round_discord: resolved by id — channel [channel.friendly_name].")
 			return cached_channel
-	last_resolution_error = "channel [DISCORD_ROUNDEND_CHANNEL_ID] not in TGS channels ([english_list(known_ids)])"
+		var/list/tags = splittext(channel.custom_tag || "", ",")
+		if(DISCORD_ROUND_CHANNEL_TAG in tags)
+			cached_channel = channel
+			channel_resolved = TRUE
+			last_resolution_error = null
+			log_game("round_discord: resolved by tag '[DISCORD_ROUND_CHANNEL_TAG]' — channel [channel.friendly_name].")
+			return cached_channel
+	last_resolution_error = "no channel with id [DISCORD_ROUNDEND_CHANNEL_ID] or tag '[DISCORD_ROUND_CHANNEL_TAG]'. TGS channels: [english_list(dump)]"
 	log_game("round_discord: [last_resolution_error]")
 	return null
+
+// Never-silent fallback: if resolution fails, broadcast to all non-admin
+// game channels (visible everywhere, including the target) and log loudly.
+/datum/controller/subsystem/round_discord_notifications/proc/deliver(message)
+	var/datum/tgs_chat_channel/channel = get_channel()
+	if(channel)
+		world.TgsChatBroadcast(message, list(channel))
+		return TRUE
+	log_game("round_discord: FALLBACK — broadcasting to all game channels. [last_resolution_error]")
+	world.TgsChatBroadcast(message)
+	return FALSE
 
 /datum/controller/subsystem/round_discord_notifications/proc/on_round_started()
 	SIGNAL_HANDLER
 	round_started_at = world.time
 	spawn(0)
 		send_round_start()
+		// If the bridge hadn't pushed channel data yet, try once more.
+		if(!channel_resolved)
+			addtimer(CALLBACK(src, PROC_REF(send_round_start)), 30 SECONDS, TIMER_STOPPABLE)
 
 /datum/controller/subsystem/round_discord_notifications/proc/on_round_ended()
 	SIGNAL_HANDLER
@@ -92,21 +133,14 @@ SUBSYSTEM_DEF(round_discord_notifications)
 		send_round_end()
 
 /datum/controller/subsystem/round_discord_notifications/proc/send_round_start()
-	var/channel = get_channel()
-	if(!channel)
-		return
 	var/gamemode = SSticker.master_mode
 	if(SSticker.mode)
 		gamemode = SSticker.mode.name
 	var/flavor = pick(start_flavor)
 	var/text = "[DISCORD_ROUND_PING_ROLE] A new round has started — [gamemode]. [flavor]"
-	world.TgsChatBroadcast(new /datum/tgs_message_content(text), list(channel))
+	deliver(new /datum/tgs_message_content(text))
 
 /datum/controller/subsystem/round_discord_notifications/proc/send_round_end()
-	var/channel = get_channel()
-	if(!channel)
-		return
-
 	var/gamemode = SSticker.master_mode
 	if(SSticker.mode)
 		gamemode = SSticker.mode.name
@@ -155,30 +189,41 @@ SUBSYSTEM_DEF(round_discord_notifications)
 	var/message_text = "A round of [gamemode] has ended. [flavor]"
 	var/datum/tgs_message_content/message = new(message_text)
 	message.embed = embed
-	world.TgsChatBroadcast(message, list(channel))
+	deliver(message)
 
-/// Admin chat command: sends a test message + a test round-start ping to
-/// the configured channel. Verifies the TGS wiring without waiting for a
-/// round transition. Also re-runs channel resolution.
+/// Admin chat command: lists every channel TGS reports (id/tag/name) and
+/// sends a test round-start ping + test round-end embed through the normal
+/// delivery path (tag/id match, all-channel fallback if neither matches).
 /datum/tgs_chat_command/discordtest
 	name = "discordtest"
-	help_text = "Sends a test round-start ping and a test round-end embed to the configured Discord channel."
+	help_text = "Dumps the TGS channel list and sends a test round-start ping and round-end embed."
 	admin_only = TRUE
 
 /datum/tgs_chat_command/discordtest/Run(datum/tgs_chat_user/sender, params)
 	var/datum/controller/subsystem/round_discord_notifications/SS = SSround_discord_notifications
 	if(!SS)
 		return new /datum/tgs_message_content("round_discord_notifications subsystem not initialized.")
-	// Force a fresh channel lookup so config changes are picked up.
+	var/dump = "Channels visible to the game: "
+	if(world.TgsAvailable())
+		var/list/channels = world.TgsChatChannelInfo()
+		if(channels && length(channels))
+			var/list/parts = list()
+			for(var/I in channels)
+				var/datum/tgs_chat_channel/channel = I
+				parts += "'[channel.friendly_name]' id=[channel.id] tag=[channel.custom_tag || "none"]"
+			dump += english_list(parts)
+		else
+			dump += "NONE (bridge not connected or no designated game channels)"
+	else
+		dump += "TGS unavailable"
+	// Force fresh resolution so config/tag changes are picked up.
 	SS.channel_resolved = FALSE
 	SS.cached_channel = null
-	var/datum/tgs_chat_channel/channel = SS.get_channel()
-	if(!channel)
-		return new /datum/tgs_message_content("Channel not found: [SS.last_resolution_error || "unknown error"].")
 	SS.send_round_start()
-	var/datum/tgs_message_content/ack = new("Test sent to [channel.friendly_name] ([channel.id]). Round-end embed follows.")
+	var/datum/tgs_message_content/ack = new(dump + " — test ping sent, round-end embed follows.")
 	SS.send_round_end()
 	return ack
 
 #undef DISCORD_ROUNDEND_CHANNEL_ID
+#undef DISCORD_ROUND_CHANNEL_TAG
 #undef DISCORD_ROUND_PING_ROLE
