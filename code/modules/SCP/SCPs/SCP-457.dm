@@ -249,6 +249,16 @@
 /mob/living/simple_animal/hostile/scp457/proc/CanSpreadToTurf(turf/T)
 	if(!T || T.density)
 		return FALSE
+	// Dense structures on the turf (windows, grilles, closed doors,
+	// glass panes) block fire spread — no flames "dashing through"
+	// windows into the next room.
+	for(var/obj/structure/S in T)
+		if(S.density)
+			return FALSE
+	// Closed machinery doors block too.
+	for(var/obj/machinery/door/D in T)
+		if(D.density)
+			return FALSE
 	if(locate(/obj/effect/scp457_fire) in T)
 		return FALSE
 	if(istype(T, /turf/simulated/open) || istype(T, /turf/unsimulated))
@@ -768,9 +778,19 @@
 	playsound(S, 'sounds/effects/explosion1.ogg', 60, 1)
 	for(var/i in 1 to 4)
 		var/turf/next = get_step(S, S.dir)
-		// Fire can't pass through solid walls or dense obstacles
-		// (windows, closed doors, machines, tables...).
-		if(!next || next.density || next.contains_dense_objects())
+		// Fire can't pass through solid walls or dense obstacles.
+		// NOTE: contains_dense_objects() excludes ATOM_FLAG_CHECKS_BORDER
+		// atoms — and windows carry that flag, which let the dash slip
+		// straight through 457's phoronreinforced windows. Check density
+		// on every structure instead.
+		if(!next || next.density)
+			break
+		var/blocked = FALSE
+		for(var/atom/A in next)
+			if(A.density && A != S)
+				blocked = TRUE
+				break
+		if(blocked)
 			break
 		S.CreateFireAtTurf(get_turf(S))
 		S.forceMove(next)
