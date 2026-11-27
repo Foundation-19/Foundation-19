@@ -45,6 +45,8 @@
 			data["can_test"] = research.can_test()
 			data["test_cooldown_remaining"] = research.can_test() ? 0 : round((research.last_test_time + research.test_cooldown - world.time) / 10, 1)
 			data["open_request"] = get_open_dclass_request(selected_scp) ? get_open_dclass_request(selected_scp).get_data() : null
+			var/datum/dclass_request/console_open_request = get_open_dclass_request(selected_scp)
+			data["dclass_arrived"] = console_open_request ? (console_open_request.status == DCLASS_REQUEST_ARRIVED) : FALSE
 			data["personality_traits"] = SSscp_personality ? SSscp_personality.get_traits_data(selected_scp) : list()
 			var/datum/containment_zone/zone = null
 			for(var/datum/containment_zone/CZ in GLOB.containment_zones)

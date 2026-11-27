@@ -570,6 +570,7 @@ const DetailTab = (props, context) => {
                 icon="user"
                 content="D-Class Test"
                 color="warning"
+                disabled={!open_request || open_request.status !== 'Subject ready'}
                 onClick={() => act('PRG_log_test', { test_type: 'dclass', risk: 'high' })} />
             </Flex.Item>
             <Flex.Item m={1}>
