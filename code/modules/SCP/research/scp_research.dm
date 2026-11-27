@@ -127,10 +127,16 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 		return FALSE
 	if(!istype(tester) || tester.stat == DEAD)
 		return FALSE
-	var/area/area_user = get_area(tester)
-	var/area/area_scp = get_area(scp_atom)
-	if(!area_scp || area_user != area_scp)
-		to_chat(tester, SPAN_WARNING("You must be physically inside SCP-[designation]'s containment area to conduct a test."))
+	var/turf/turf_user = get_turf(tester)
+	var/turf/turf_scp = get_turf(scp_atom)
+	var/area/area_user = get_area(turf_user)
+	var/area/area_scp = get_area(turf_scp)
+	// Same area OR physically near the anomaly (same z-level). Chambers
+	// commonly span multiple areas (cells + airlocks + observation), so
+	// strict area equality wrongly rejects researchers standing inside
+	// the chamber complex.
+	if(!turf_scp || (area_user != area_scp && (turf_user.z != turf_scp.z || get_dist(turf_user, turf_scp) > 8)))
+		to_chat(tester, SPAN_WARNING("You must be physically inside SCP-[designation]'s containment chamber to conduct a test."))
 		return FALSE
 	// D-class tests consume a request whose subject has actually arrived.
 	if(test_type == "dclass")

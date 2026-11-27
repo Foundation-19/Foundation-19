@@ -38,14 +38,16 @@
 
 // Removes all traces of old order and allows you to begin configuration from scratch.
 /obj/machinery/lapvend/proc/reset_order()
-	state = 0
-	devtype = 0
-	if(fabricated_laptop)
+	if(fabricated_laptop && fabricated_laptop.loc == src)
 		qdel(fabricated_laptop)
+	if(fabricated_tablet && fabricated_tablet.loc == src)
+		qdel(fabricated_tablet)
+	if(fabricated_laptop)
 		fabricated_laptop = null
 	if(fabricated_tablet)
-		qdel(fabricated_tablet)
 		fabricated_tablet = null
+	state = 0
+	devtype = 0
 	dev_cpu = 1
 	dev_battery = 1
 	dev_disk = 1
@@ -188,8 +190,11 @@
 
 	if(action == "pick_device")
 		if(src.state)
+			to_chat(usr, SPAN_WARNING("The vendor is already processing an order. Use Reset to start over."))
 			return 0
-		devtype = text2num(params["pick_device"])
+		devtype = clamp(text2num(params["pick_device"]) || 0, 0, 2)
+		if(!devtype)
+			return 0
 		state = 1
 		fabricate_and_recalc_price(0)
 		return 1
@@ -203,37 +208,38 @@
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_cpu")
-		dev_cpu = text2num(params["hw_cpu"])
+		dev_cpu = clamp(text2num(params["hw_cpu"]) || dev_cpu, 1, 2)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_battery")
-		dev_battery = text2num(params["hw_battery"])
+		dev_battery = clamp(text2num(params["hw_battery"]) || dev_battery, 1, 3)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_disk")
-		dev_disk = text2num(params["hw_disk"])
+		dev_disk = clamp(text2num(params["hw_disk"]) || dev_disk, 1, 3)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_netcard")
-		dev_netcard = text2num(params["hw_netcard"])
+		dev_netcard = clamp(text2num(params["hw_netcard"]) || 0, 0, 2)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_tesla")
-		dev_tesla = text2num(params["hw_tesla"])
+		dev_tesla = clamp(text2num(params["hw_tesla"]) || 0, 0, 1)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_nanoprint")
-		dev_nanoprint = text2num(params["hw_nanoprint"])
+		dev_nanoprint = clamp(text2num(params["hw_nanoprint"]) || 0, 0, 1)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_card")
-		dev_card = text2num(params["hw_card"])
+		dev_card = clamp(text2num(params["hw_card"]) || 0, 0, 1)
 		fabricate_and_recalc_price(0)
 		return 1
 	if(action == "hw_aislot")
-		dev_aislot = text2num(params["hw_aislot"])
+		dev_aislot = clamp(text2num(params["hw_aislot"]) || 0, 0, 1)
 		fabricate_and_recalc_price(0)
 		return 1
+	log_tgui(usr, "lapvend: unhandled act '[action]' (state [state], devtype [devtype]).", src_object = src)
 	return 0
 
 /obj/machinery/lapvend/interface_interact(mob/user)

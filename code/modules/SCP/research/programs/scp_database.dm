@@ -16,6 +16,7 @@
 /datum/computer_file/program/scp_database/tgui_data(mob/user)
 	var/list/data = get_header_data()
 	data["tab"] = current_tab
+	data["user_ckey"] = user?.ckey
 	data["selected_scp"] = selected_scp
 	data["scp_list"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.get_all_scp_data() : list()
 	data["breach_log"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.breach_log : list()

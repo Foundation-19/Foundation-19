@@ -200,6 +200,7 @@ var/list/admin_verbs_debug = list(
 	/turf/proc/view_chunk,
 	/turf/proc/update_chunk,
 	/datum/admins/proc/capture_map,
+	/datum/admins/proc/export_holomaps,
 	/datum/admins/proc/view_runtimes,
 	/client/proc/cmd_analyse_health_context,
 	/client/proc/cmd_analyse_health_panel,

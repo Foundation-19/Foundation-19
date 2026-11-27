@@ -264,73 +264,6 @@ const AppWindow = (props) => {
   );
 };
 
-// Manifest app body: departmental table.
-const ManifestBody = (props) => {
-  const { manifest, manifest_count } = props.data;
-  const deptColor = {
-    'Command': C.amber,
-    'Security': '#d46a6a',
-    'Research': '#7ab8d4',
-    'Medical': '#d4a0a0',
-    'Engineering': '#d4b87a',
-  };
-  if (!manifest || !manifest.length) {
-    return (
-      <Box style={{ color: C.textDim, fontSize: '11px' }}>
-        NO CREW RECORDS ON FILE.<br />
-        Manifest populates once the crew is assigned and spawned.
-      </Box>
-    );
-  }
-  return (
-    <Box>
-      <SectionLabel>Active personnel — {manifest_count}</SectionLabel>
-      {/* Full manifest list inside the scrollable window body — the window
-          itself is height-capped and scrollable, so an inner maxHeight here
-          created a dead zone: the inner box had no height cap context and
-          the outer window clipped everything past the monitor edge. */}
-      <Box>
-        {manifest.map((dept, di) => (
-          <Box key={di} mb={2}>
-            <Box style={{
-              color: deptColor[dept.name] || C.textDim,
-              fontSize: '10px',
-              letterSpacing: '0.1em',
-              borderBottom: '1px solid ' + C.redLine,
-              marginBottom: '3px',
-              paddingBottom: '1px',
-            }}>
-              {dept.name.toUpperCase()}
-            </Box>
-            {dept.members.map((member, mi) => (
-              <Box key={mi} style={{
-                display: 'flex',
-                fontSize: '11px',
-                padding: '1px 4px',
-                background: mi % 2 ? 'rgba(255,255,255,0.025)' : 'transparent',
-                color: member.active ? C.text : C.textDim,
-              }}>
-                <Box style={{ width: '46%', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-                  {member.name}
-                </Box>
-                <Box style={{ width: '40%', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', color: C.textDim }}>
-                  {member.rank}
-                </Box>
-                <Box style={{ width: '14%', textAlign: 'right', color: member.active ? C.good : C.textDim, fontSize: '10px' }}>
-                  {member.active ? '●' : '○'}
-                </Box>
-              </Box>
-            ))}
-          </Box>
-        ))}
-      </Box>
-      <Box style={{ color: C.textDim, fontSize: '9px', marginTop: '4px' }}>
-        ● ACTIVE &nbsp; ○ INACTIVE
-      </Box>
-    </Box>
-  );
-};
-
 // Animated boot sequence. Each check line appears, then resolves to [ OK ];
 // a progress bar fills, then the prompt blinks. A click at any point skips.
 const BOOT_LINES = [
@@ -465,6 +398,7 @@ export const LobbyMenu = (props, context) => {
     player_count,
     server_time,
     security_level,
+    manifest_count,
   } = data;
 
   const [booting, setBooting] = useLocalState(context, 'os.booting', true);
@@ -534,7 +468,29 @@ export const LobbyMenu = (props, context) => {
       );
     }
     if (id === 'manifest') {
-      return <ManifestBody data={data} />;
+      // Opens a separate Crew Manifest window (real scroll room) instead
+      // of rendering rows inside the small desktop window.
+      return (
+        <Box>
+          <SectionLabel>Crew manifest</SectionLabel>
+          <Box style={{ fontSize: '11px', color: C.text, lineHeight: '1.5' }}>
+            View the Site-53 personnel roster in a full-size window.
+            <Box mt={2}>
+              <Button
+                icon="users"
+                content="Open Crew Manifest"
+                color="good"
+                onClick={() => act('manifest_window')}
+              />
+            </Box>
+            {typeof manifest_count === 'number' ? (
+              <Box mt={2} style={{ color: C.textDim, fontSize: '10px' }}>
+                {manifest_count} personnel currently on the roster.
+              </Box>
+            ) : null}
+          </Box>
+        </Box>
+      );
     }
     return (
       <Box>

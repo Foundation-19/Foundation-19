@@ -4,6 +4,10 @@
 /datum/new_player_panel
 	var/mob/new_player/parent
 	var/active_tab = NPP_TAB_MAIN
+	// When TRUE, tgui_interact opens the standalone Crew Manifest window
+	// instead of the lobby desktop. The lobby desktop passes its manifest
+	// rows through to this window via the "manifest_window" act.
+	var/manifest_mode = FALSE
 
 /datum/new_player_panel/New(parent)
 	src.parent = parent
@@ -18,7 +22,7 @@
 /datum/new_player_panel/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "LobbyMenu", "SCiPNET-OS", 640, 520)
+		ui = new(user, src, manifest_mode ? "LobbyManifest" : "LobbyMenu", manifest_mode ? "Crew Manifest" : "SCiPNET-OS", manifest_mode ? 500 : 640, manifest_mode ? 600 : 520)
 		ui.open()
 	if(ui)
 		// tgui_data rebuilds the full crew manifest (records x players) —
@@ -166,6 +170,20 @@
 		return TRUE
 
 	if(action == "refresh")
+		return TRUE
+
+	if(action == "manifest_window")
+		manifest_mode = TRUE
+		if(ui)
+			ui.close()
+		tgui_interact(parent)
+		return TRUE
+
+	if(action == "manifest_window_close")
+		manifest_mode = FALSE
+		if(ui)
+			ui.close()
+		tgui_interact(parent)
 		return TRUE
 
 	return FALSE
