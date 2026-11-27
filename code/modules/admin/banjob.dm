@@ -427,7 +427,10 @@ WARNING!*/
 	jobs += "</tr></table>"
 
 	// Finalize and display.
-	body = "<body>[jobs]</body>"
-	dat = "<tt>[header][body]</tt>"
+	// Structure matters: <head> must precede <body>, and no wrapper tag
+	// around both (a <tt> around <head> made browsers fall back to plain
+	// text rendering — the panel displayed as raw HTML).
+	body = "<body><tt>[jobs]</tt></body>"
+	dat = "<!DOCTYPE html><html>[header][body]</html>"
 	show_browser(usr, dat, "window=jobban2;size=800x490")
 	return
