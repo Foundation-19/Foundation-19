@@ -42,13 +42,15 @@
 			progress = 0
 			removeFromQueue(1)
 			if(linked_console)
-				linked_console.updateUsrDialog()
+				SStgui.update_uis(linked_console)
 		update_icon()
 	else
 		if(busy)
 			visible_message(SPAN_NOTICE("[icon2html(src, viewers(get_turf(src)))] [src] flashes: insufficient materials: [getLackingMaterials(D)]."))
 			busy = 0
 			update_icon()
+			if(linked_console)
+				SStgui.update_uis(linked_console)
 
 /obj/machinery/r_n_d/protolathe/RefreshParts()
 	var/T = 0

@@ -104,6 +104,18 @@
 /datum/nano_module/program/card_mod/proc/get_accesses(is_centcom = 0)
 	return null
 
+// The UI's src_object is this nano module (program.tgui_interact routes
+// through NM.tgui_interact), so acts land here first. card_mod's real
+// action handling lives on the program datum; forward unhandled acts to
+// it. PC_* already returned above in the nano_module base.
+/datum/nano_module/program/card_mod/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	var/datum/computer_file/program/card_mod/P = program
+	if(!istype(P))
+		return FALSE
+	return P.tgui_act(action, params, ui, state)
+
 
 /datum/computer_file/program/card_mod/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
@@ -113,7 +125,11 @@
 	var/obj/item/card/id/id_card = computer?.card_slot?.stored_card
 	var/datum/nano_module/program/card_mod/module = NM
 
-	if (!user_id_card || !id_card || !module)
+	// eject doubles as card insert, so it must work with an empty slot;
+	// everything else requires both the operator's ID and a card to modify.
+	if (!module)
+		return
+	if (action != "eject" && (!user_id_card || !id_card))
 		return
 
 	switch(action)

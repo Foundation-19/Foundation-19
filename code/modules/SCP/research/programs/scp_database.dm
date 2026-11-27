@@ -22,6 +22,10 @@
 	data["test_log"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.test_log : list()
 	data["active_breaches"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.get_active_breaches() : list()
 	data["total_breaches"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.total_breaches_this_round : 0
+	data["dclass_requests"] = list()
+	for(var/datum/dclass_request/R in GLOB.dclass_requests)
+		if(R.status == DCLASS_REQUEST_OPEN || R.status == DCLASS_REQUEST_ARRIVED)
+			data["dclass_requests"] += list(R.get_data())
 	if(selected_scp)
 		var/datum/scp_research/research = GLOB.scp_research_tracker.get_research(selected_scp)
 		if(research)
