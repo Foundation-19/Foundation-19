@@ -64,6 +64,14 @@
 
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, PROC_REF(OnExamine))
 	research = GLOB.scp_research_tracker.register_scp(src)
+	// Containment activity system: living entities get a chamber-upkeep
+	// datum (resources, integrity, interactions).
+	if(ismob(parent) && (metaFlags & SCP_PLAYABLE))
+		var/mob/living/pMob2 = parent
+		pMob2.setup_containment_system()
+		// Forensic holder: SCPs leave anomalous evidence traces for
+		// scanner-wielding researchers.
+		pMob2.add_forensic_anomaly("scp_" + (LAZYLEN(designation) ? "[designation]" : "unknown"), 50, "[designation]")
 	if(LAZYLEN(designation))
 		for(var/datum/containment_zone/CZ in GLOB.containment_zones)
 			if(!CZ.linked_scp && CZ.scp_designation == designation)

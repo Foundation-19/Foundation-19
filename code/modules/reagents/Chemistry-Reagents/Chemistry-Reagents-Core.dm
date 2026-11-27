@@ -204,6 +204,26 @@
 		TF.AddPower(-volume)
 		if(TF.fire_power <= 0)
 			qdel(TF)
+	// Living flames (SCP-457): water cuts their remaining lifetime.
+	// Small/basic flames are quenched outright by a solid spray; bigger
+	// fire tiers take several extinguisher hits (each unit of water
+	// shaves 2 seconds off the remaining burn time).
+	if(istype(O, /obj/effect/scp457_fire))
+		var/obj/effect/scp457_fire/FL = O
+		var/turf/simulated/T = get_turf(FL)
+		if(istype(T) && T.wet)
+			volume *= 2 // already-wet ground: double quenching power
+		var/lifetime_left = (FL.creation_time + FL.fire_duration) - world.time
+		if(lifetime_left <= volume * 2)
+			FL.visible_message(SPAN_DANGER("[FL] gutters and dies with a hiss!"))
+			playsound(FL, 'sounds/effects/extinguish.ogg', 50, 1)
+			qdel(FL)
+		else
+			FL.fire_duration -= volume * 2
+			FL.visible_message(SPAN_WARNING("Water hisses against [FL], weakening it!"))
+			playsound(FL, 'sounds/effects/extinguish.ogg', 50, 1)
+		remove_self(volume)
+		return
 
 /datum/reagent/water/touch_mob(mob/living/L, amount)
 	var/mob/living/carbon/human/H = L
@@ -216,6 +236,11 @@
 
 	if(istype(L, /mob/living/simple_animal/hostile/scp457))
 		L.adjustBruteLoss(amount * 2)
+		// Water saps the entity's heat directly — sustained extinguisher
+		// use douses the flames (suppression counterplay).
+		if(istype(L, /mob/living/simple_animal/hostile/scp457))
+			var/mob/living/simple_animal/hostile/scp457/S = L
+			S.ConsumeHeat(amount * 0.05)
 		L.visible_message(SPAN_DANGER("The [L]'s flame sizzles and flickers where the water touches it"), SPAN_DANGER("You are weakend by the water!"))
 		remove_self(amount)
 
