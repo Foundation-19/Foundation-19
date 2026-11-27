@@ -194,6 +194,8 @@
 	density = FALSE
 	see_in_dark = 7
 	see_invisible = SEE_INVISIBLE_LIVING
+	universal_speak = TRUE
+	universal_understand = TRUE
 	var/obj/item/clothing/mask/scp035/mask_ref
 
 /mob/living/observer/scp035_controller/Destroy()
@@ -234,8 +236,17 @@
 
 /mob/living/observer/scp035_controller/custom_emote(var/type, var/message)
 	if(!mask_ref || !mask_ref.host_body)
+		to_chat(src, SPAN_WARNING("You need a host to emote."))
 		return
 	mask_ref.host_body.custom_emote(type, message)
+
+/mob/living/observer/scp035_controller/emote(act, m_type, message)
+	if(!mask_ref || !mask_ref.host_body)
+		to_chat(src, SPAN_WARNING("You need a host to emote."))
+		return
+	// Usable-emote table lives on living mobs; run the chosen emote as
+	// the host so pose/custom emotes render from the body.
+	mask_ref.host_body.emote(act, m_type, message)
 
 /mob/living/observer/scp035_controller/relaymove(mob/user, direction)
 	if(mask_ref && mask_ref.host_body)
