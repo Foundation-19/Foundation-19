@@ -1,7 +1,4 @@
-// SCP-457 — The Burning Man. Overhauled: heat economy, living flames,
-// fuel consumption, abilities, breach path, suppression counterplay.
-// Adapted from daedalusdock SCP-457 to Foundation-19 simple_animal host.
-
+// SCP-457 — The Burning Man.
 // Heat thresholds: type of flame rises with heat.
 #define SCP457_HEAT_THRESHOLD_BASIC		30
 #define SCP457_HEAT_THRESHOLD_INTENSE	60
@@ -59,7 +56,6 @@
 	var/current_heat = SCP457_FLAME_STARTING_HEAT
 	var/max_heat = SCP457_MAX_HEAT
 	var/last_heat_update = 0
-	// Suppression counterplay: standing in low-pressure/cold/empty air bleeds heat.
 	var/suppression_factor = 0 // 0..1 — how hard the environment is killing our heat
 
 	// --- Living flames (children of 457's body) ---
@@ -246,12 +242,9 @@
 		CreateFireAtTurf(pick(adjacent_turfs))
 		ConsumeHeat(2)
 
-/mob/living/simple_animal/hostile/scp457/proc/CanSpreadToTurf(turf/T)
+/mob/living/simple_animal/hostile/scp457/proc/CanSpreadToTurf(turf/simulated/T)
 	if(!T || T.density)
 		return FALSE
-	// Dense structures on the turf (windows, grilles, closed doors,
-	// glass panes) block fire spread — no flames "dashing through"
-	// windows into the next room.
 	for(var/obj/structure/S in T)
 		if(S.density)
 			return FALSE
@@ -259,6 +252,8 @@
 	for(var/obj/machinery/door/D in T)
 		if(D.density)
 			return FALSE
+	if(istype(T, /turf/simulated) && T.wet)
+		return FALSE
 	if(locate(/obj/effect/scp457_fire) in T)
 		return FALSE
 	if(istype(T, /turf/simulated/open) || istype(T, /turf/unsimulated))
