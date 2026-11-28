@@ -56,21 +56,13 @@ var/list/limb_icon_cache = list()
 		addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob/living/carbon/human, update_hair)), 1, TIMER_UNIQUE)
 	..()
 
-	var/list/sorted = list()
-	for(var/E in markings)
-		var/datum/sprite_accessory/marking/M = E
-		if (M.draw_target == MARKING_TARGET_SKIN)
-			var/color = markings[E]
-			var/icon/I = icon(M.icon, "[M.icon_state]-[organ_tag]")
-			I.Blend(color, M.blend)
-			icon_cache_key += "[M.name][color]"
-			ADD_SORTED(sorted, list(list(M.draw_order, I, M)), GLOBAL_PROC_REF(cmp_marking_order))
-	for (var/entry in sorted)
-		add_overlay(entry[2])
-		mob_icon.Blend(entry[2], entry[3]["layer_blend"])
-
 /obj/item/organ/external/var/icon_cache_key
 /obj/item/organ/external/on_update_icon(regenerate = 0)
+	// Species can be transiently null (organs torn from a body mid-mutation,
+	// factory-created limbs before set_dna, etc). Fall back to human rather
+	// than runtime — this proc runs every Life tick for the HUD damage icons.
+	if(!species)
+		species = all_species[SPECIES_HUMAN]
 	var/gender = "_m"
 	if(!(limb_flags & ORGAN_FLAG_GENDERED_ICON))
 		gender = null
@@ -110,8 +102,9 @@ var/list/limb_icon_cache = list()
 			icon_cache_key += "[M.name][color]"
 			ADD_SORTED(sorted, list(list(M.draw_order, I, M)), GLOBAL_PROC_REF(cmp_marking_order))
 	for (var/entry in sorted)
+		var/datum/sprite_accessory/marking/M = entry[3]
 		add_overlay(entry[2])
-		mob_icon.Blend(entry[2], entry[3]["layer_blend"])
+		mob_icon.Blend(entry[2], M.layer_blend)
 
 	if(body_hair && islist(h_col) && h_col.len >= 3)
 		var/cache_key = "[body_hair]-[icon_name]-[h_col[1]][h_col[2]][h_col[3]]"
@@ -154,8 +147,9 @@ var/list/robot_hud_colours = list("#ffffff","#cccccc","#aaaaaa","#888888","#6666
 			var/g = 0.59 * species.health_hud_intensity
 			var/b = 0.11 * species.health_hud_intensity
 			temp.color = list(r, r, r, g, g, g, b, b, b)
-		temp.pixel_x = owner.default_pixel_x
-		temp.pixel_y = owner.default_pixel_y
+		if(owner)
+			temp.pixel_x = owner.default_pixel_x
+			temp.pixel_y = owner.default_pixel_y
 		hud_damage_image = image(null)
 		hud_damage_image.add_overlay(temp)
 

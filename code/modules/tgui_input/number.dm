@@ -108,10 +108,13 @@
 	closed = TRUE
 
 /datum/tgui_input_number/tgui_state(mob/user)
-	return GLOB.always_tgui_state
+	// Personal prompt — must stay interactive for ghosts.
+	return GLOB.input_modal_tgui_state
 
 /datum/tgui_input_number/tgui_static_data(mob/user)
 	var/list/data = list()
+	// See tgui_input_text — unique per instance for frontend local state.
+	data["modal_id"] = "[REF(src)]"
 	data["init_value"] = default // Default is a reserved keyword
 	data["large_buttons"] = (user.client.get_preference_value(/datum/client_preference/large_tgui_inputs) == GLOB.PREF_YES)
 	data["max_value"] = max_value

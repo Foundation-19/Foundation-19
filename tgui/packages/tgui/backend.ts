@@ -118,12 +118,31 @@ export const backendReducer = (state = initialState, action) => {
 export const backendMiddleware = (store) => {
   let fancyState;
   let suspendInterval;
+  // Suspend retries that never got a server ack: world.Topic throttling
+  // can drop suspend messages for seconds at a time (burst window), and
+  // the user just wants the window GONE. After this many failed retries
+  // we stop trusting the handshake and self-suspend locally.
+  let suspendRetries = 0;
 
   return (next) => (action) => {
     const { suspended } = selectBackend(store.getState());
     const { type, payload } = action;
+    // Retries the suspend handshake until the server acknowledges it. Used
+    // by both title-bar closes and server-initiated suspends. Declared here
+    // so the 'suspend' handler below can reach it regardless of order.
+    const suspendFn = () => Byond.sendMessage('suspend');
 
     if (type === 'update') {
+      // While a close is in flight (suspending), updates are poison: they
+      // would clear the suspend retry interval below and re-show the
+      // window we are trying to hide. This is what made the title-bar x
+      // button dead on every auto-updating UI — the retry interval armed
+      // by the x click was always cleared by the next 0.9s update before
+      // it could fire.
+      const { suspending } = selectBackend(store.getState());
+      if (suspending) {
+        return;
+      }
       // A live 'update' means THIS page instance is the active one. If a
       // stale suspend interval survived a page replacement (the control's
       // JS context persists across re-browse in BYOND 516), kill it and
@@ -141,14 +160,12 @@ export const backendMiddleware = (store) => {
     }
 
     if (type === 'suspend') {
-      // Only honor the suspend if we actually requested one ourselves.
-      // Stale echoes from a previous page's interval arrive here too; the
-      // server-side ownership guard already filters most, but a fresh page
-      // receiving a leftover interval tick must NOT hide itself.
-      if (suspendInterval) {
-        store.dispatch(backendSuspendSuccess());
-        return;
-      }
+      // Server-initiated suspend (ui.close() from close_user_uis, modal
+      // submit/cancel, machine shutdown, spawn transfer...). Acknowledge it
+      // immediately: suspendRenderer + hide the window. Retrying (arming the
+      // interval) is only needed for CLIENT-initiated closes, where the
+      // initial suspend message can be dropped by topic rate limiting.
+      store.dispatch(backendSuspendSuccess());
       return;
     }
 
@@ -167,11 +184,26 @@ export const backendMiddleware = (store) => {
 
     if (type === 'backend/suspendStart' && !suspendInterval) {
       logger.log(`suspending (${Byond.windowId})`);
-      // Keep sending suspend messages until it succeeds.
-      // It may fail multiple times due to topic rate limiting.
-      const suspendFn = () => Byond.sendMessage('suspend');
+      // Send the first suspend IMMEDIATELY — the interval is only a retry
+      // net for drops (topic rate limiting). Waiting for the interval made
+      // the x button appear dead, since the retry was always cleared by
+      // the next auto-update before it could fire.
+      suspendRetries = 0;
       suspendFn();
-      suspendInterval = setInterval(suspendFn, 2000);
+      suspendInterval = setInterval(() => {
+        // Self-suspend fallback: the server ack may be stuck behind topic
+        // throttling. Hide the window ourselves; the server-side close is
+        // idempotent and completes whenever a retry finally lands.
+        suspendRetries++;
+        if (suspendRetries >= 3) {
+          clearInterval(suspendInterval);
+          suspendInterval = undefined;
+          logger.log(`suspend ack timeout, self-suspending (${Byond.windowId})`);
+          store.dispatch(backendSuspendSuccess());
+          return;
+        }
+        suspendFn();
+      }, 2000);
     }
 
     if (type === 'backend/suspendSuccess') {

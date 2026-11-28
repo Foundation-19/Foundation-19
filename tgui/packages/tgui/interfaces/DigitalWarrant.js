@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Flex, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const WarrantRow = (props, context) => {
   const { act } = useBackend(context);
@@ -35,11 +36,12 @@ export const DigitalWarrant = (props, context) => {
     searchwarrants = [],
     archivedwarrants = [],
   } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   const editing = warrantname !== undefined;
 
   return (
-    <Window theme="scp_terminal" width={640} height={660}>
+    <Window theme="scp_terminal" width={640} height={660} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: '#0a0a0c', minHeight: '100%', padding: '10px', fontFamily: '"Consolas", monospace', color: '#c8c8c8' }}>
           <Box style={{ borderBottom: '2px solid #6b0000', paddingBottom: '6px', marginBottom: '10px' }}>

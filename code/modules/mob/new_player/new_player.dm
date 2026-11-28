@@ -16,6 +16,11 @@
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
 	var/datum/new_player_panel/npp = null
+	/// One-time lobby intro (title music, alert level notice) already played by deferred_login
+	var/deferred_login_intro_done = FALSE
+	/// The lobby menu UI has successfully opened at least once. Prevents the
+	/// SScharacter_setup retry loop from force-reopening a menu the player closed.
+	var/lobby_menu_opened = FALSE
 
 /mob/new_player/Initialize()
 	add_verb(src, /mob/proc/toggle_antag_pool)
@@ -252,6 +257,9 @@
 
 		AnnounceCyborg(character, job.title, "has been downloaded to the empty core in \the [character.loc.loc]")
 		SSticker.mode.handle_latejoin(character)
+		// AIC late joiner counts as a round participant.
+		if(!(character in GLOB.round_player_list))
+			GLOB.round_player_list += character
 
 		qdel(C)
 		qdel(src)
@@ -259,6 +267,9 @@
 
 	SSticker.mode.handle_latejoin(character)
 	GLOB.universe.OnPlayerLatejoin(character)
+	// Late joiner counts as a round participant for population checks.
+	if(!(character in GLOB.round_player_list))
+		GLOB.round_player_list += character
 	spawnpoint.after_join(character)
 	character.client.init_verbs()
 	if(job.create_record)
@@ -345,6 +356,10 @@
 
 	new_character.key = key		//Manually transfer the key to log them in
 	new_character.client.init_verbs()
+	// Record as an actual round participant (population checks, e.g. the
+	// SCP spawn menu, count joined players — not lobby connections).
+	if(!(new_character in GLOB.round_player_list))
+		GLOB.round_player_list += new_character
 	return new_character
 
 /mob/new_player/proc/ViewManifest()

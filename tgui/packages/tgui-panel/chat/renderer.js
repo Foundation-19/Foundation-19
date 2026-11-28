@@ -476,13 +476,51 @@ class ChatRenderer {
   }
 
   pruneMessagesTo(max_visible_messages) {
+    // Special case: explicit clear works regardless of scroll tracking.
+    if (max_visible_messages <= 0 && this.isReady()) {
+      for (let message of this.visibleMessages) {
+        if (message.node && message.node !== 'pruned') {
+          this.rootNode.removeChild(message.node);
+        }
+      }
+      this.visibleMessages = [];
+      this.messages = [];
+      return;
+    }
     if (!this.isReady()) {
       return;
     }
-    // Delay pruning because user is currently interacting
-    // with chat history
+    // User is scrolled up and reading chat history: we must not remove
+    // anything they can currently see. Instead of skipping pruning
+    // entirely (which let the retained history grow without bound), we
+    // cap the STORED history here, and only trim the DOM once it grows
+    // far beyond the cap — removing newest nodes, which are below the
+    // viewport while scrolled up.
     if (!this.scrollTracking) {
-      logger.debug('pruning delayed');
+      const storedCap = max_visible_messages * 2;
+      const fromIndex = Math.max(0, this.messages.length - storedCap);
+      if (fromIndex > 0) {
+        this.messages = this.messages.slice(fromIndex);
+      }
+      // Hard cap on visible DOM growth: remove the newest messages
+      // (bottom of the log, off-screen while scrolled up). This only
+      // kicks in after a lot of unread traffic, and the few lost
+      // messages are a fair trade for keeping the tab alive.
+      const visibleCap = max_visible_messages * 3;
+      const overflow = this.visibleMessages.length - visibleCap;
+      if (overflow > 0) {
+        for (let i = 0; i < overflow; i++) {
+          const message = this.visibleMessages.pop();
+          if (message.node && message.node !== 'pruned') {
+            this.rootNode.removeChild(message.node);
+            message.node = 'pruned';
+          }
+        }
+        // Drop pruned entries from the stored history too.
+        this.messages = this.messages.filter(
+          (message) => message.node !== 'pruned'
+        );
+      }
       return;
     }
     // Visible messages

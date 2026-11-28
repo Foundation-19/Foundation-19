@@ -65,6 +65,18 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/sync = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_analyze = TRUE //If the console is allowed to use destructive analyzers
 
+	// tgui speed phase 2: tgui_data rebuilds are expensive (full design
+	// sweeps with canBuild + cost strings per refresh). Caches keyed on
+	// cheap fingerprints; rebuilt only when the underlying state changes.
+	var/cached_techs_fp = null
+	var/list/cached_techs = null
+	var/list/cached_copyable_techs = null
+	var/cached_designs_fp = null
+	var/list/cached_known_designs = null
+	var/list/cached_copyable_designs = null
+	var/list/cached_buildables = null	// "lathe"/"imprinter" -> built list
+	var/list/cached_build_fp = null		// "lathe"/"imprinter" -> fingerprint
+
 /obj/machinery/computer/rdconsole/proc/CallMaterialName(ID)
 	var/return_name = ID
 	switch(return_name)
@@ -119,8 +131,11 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			break
 
 /obj/machinery/computer/rdconsole/Initialize()
-	SyncRDevices()
 	. = ..()
+	// Device Initialize order within the same map-load pass is not
+	// guaranteed — the console can run before the lathe/analyzer/imprinter
+	// exist. Sync once everything has initialized.
+	addtimer(CALLBACK(src, PROC_REF(SyncRDevices)), 1)
 
 /obj/machinery/computer/rdconsole/attackby(obj/item/D as obj, mob/user as mob)
 	//Loading a disk into it.
@@ -521,7 +536,84 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "RDConsole", name)
+		// Data changes are pushed (SStgui.update_uis from the linked
+		// machines) or act-driven; no periodic refresh needed.
+		ui.set_autoupdate(FALSE)
 		ui.open()
+
+// Cheap fingerprint of the tech set: count + summed levels catches both
+// new techs and level-ups. Costs one pass over ~30 datums.
+/obj/machinery/computer/rdconsole/proc/get_techs_fingerprint()
+	var/fp = files.known_tech.len
+	for(var/datum/tech/T in files.known_tech)
+		fp += T.level
+	return fp
+
+/obj/machinery/computer/rdconsole/proc/get_cached_tech_lists()
+	var/fp = get_techs_fingerprint()
+	if(cached_techs_fp == fp && cached_techs)
+		return
+	var/list/techs = list()
+	var/list/copyable = list()
+	for(var/datum/tech/T in files.known_tech)
+		if(T.level >= 1)
+			techs += list(list("name" = T.name, "level" = T.level, "desc" = T.desc))
+		copyable += list(list("name" = T.name, "id" = T.id))
+	cached_techs = techs
+	cached_copyable_techs = copyable
+	cached_techs_fp = fp
+
+// Designs are only ever added (build_path never changes per design), so
+// a count of buildable designs is a sound fingerprint.
+/obj/machinery/computer/rdconsole/proc/get_designs_fingerprint()
+	var/fp = 0
+	for(var/datum/design/D in files.known_designs)
+		if(D.build_path)
+			fp++
+	return fp
+
+/obj/machinery/computer/rdconsole/proc/get_cached_design_lists()
+	var/fp = get_designs_fingerprint()
+	if(cached_designs_fp == fp && cached_known_designs)
+		return
+	var/list/known = list()
+	var/list/copyable = list()
+	for(var/datum/design/D in files.known_designs)
+		if(D.build_path)
+			known += list(list("name" = D.name, "desc" = D.desc))
+			copyable += list(list("name" = D.name, "id" = D.id))
+	cached_known_designs = known
+	cached_copyable_designs = copyable
+	cached_designs_fp = fp
+
+// Sound fingerprint for buildable lists: per-material amounts, per-reagent
+// volumes, queue/busy, imprinter efficiency and the design set for this
+// machine type. Replaces 2x full design sweeps + canBuild calls with ~20
+// cheap iterations when nothing changed.
+/obj/machinery/computer/rdconsole/proc/machine_build_fingerprint(obj/machinery/r_n_d/machine, is_lathe)
+	var/fp = ""
+	for(var/M in machine.materials)
+		fp += "[M][machine.materials[M]]"
+	for(var/datum/reagent/R in machine.reagents.reagent_list)
+		fp += "[R.type][R.volume]"
+	var/queue_len = 0
+	if(is_lathe)
+		var/obj/machinery/r_n_d/protolathe/PL = machine
+		queue_len = PL.queue.len
+	else
+		var/obj/machinery/r_n_d/circuit_imprinter/CI = machine
+		queue_len = CI.queue.len
+	fp += "|[queue_len][machine.busy]"
+	if(!is_lathe)
+		var/obj/machinery/r_n_d/circuit_imprinter/CI = machine
+		fp += "|[CI.mat_efficiency]"
+	var/flag = is_lathe ? PROTOLATHE : IMPRINTER
+	var/dcount = 0
+	for(var/datum/design/D in files.known_designs)
+		if(D.build_path && (D.build_type & flag))
+			dcount++
+	fp += "|[dcount]"
+	return fp
 
 /obj/machinery/computer/rdconsole/tgui_data(mob/user)
 	var/list/data = list()
@@ -558,29 +650,15 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		data["design_disk"] = design_info
 
 	// Screen 1.1 — research levels
-	var/list/techs = list()
-	for(var/datum/tech/T in files.known_tech)
-		if(T.level < 1)
-			continue
-		techs += list(list("name" = T.name, "level" = T.level, "desc" = T.desc))
-	data["techs"] = techs
+	get_cached_tech_lists()
+	data["techs"] = cached_techs
 	// Screen 5.0 — known designs
-	var/list/designs_known = list()
-	for(var/datum/design/D in files.known_designs)
-		if(D.build_path)
-			designs_known += list(list("name" = D.name, "desc" = D.desc))
-	data["known_designs"] = designs_known
+	get_cached_design_lists()
+	data["known_designs"] = cached_known_designs
 
 	// Copy-to-disk source lists (screens 1.3 / 1.5)
-	var/list/copyable_techs = list()
-	for(var/datum/tech/T in files.known_tech)
-		copyable_techs += list(list("name" = T.name, "id" = T.id))
-	data["copyable_techs"] = copyable_techs
-	var/list/copyable_designs = list()
-	for(var/datum/design/D in files.known_designs)
-		if(D.build_path)
-			copyable_designs += list(list("name" = D.name, "id" = D.id))
-	data["copyable_designs"] = copyable_designs
+	data["copyable_techs"] = cached_copyable_techs
+	data["copyable_designs"] = cached_copyable_designs
 
 	// Destructive analyzer screens
 	if(linked_destroy)
@@ -610,6 +688,12 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	return data
 
 /obj/machinery/computer/rdconsole/proc/build_lathe_imprinter_data(obj/machinery/r_n_d/machine, is_lathe)
+	var/key = is_lathe ? "lathe" : "imprinter"
+	LAZYINITLIST(cached_buildables)
+	LAZYINITLIST(cached_build_fp)
+	var/fp = machine_build_fingerprint(machine, is_lathe)
+	if(cached_build_fp[key] == fp && cached_buildables[key])
+		return cached_buildables[key]
 	var/list/out = list()
 	out["materials"] = machine.TotalMaterials()
 	out["chem_volume"] = machine.reagents.total_volume
@@ -678,6 +762,8 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			"can_build" = can_build
 		))
 	out["buildables"] = buildables
+	cached_buildables[key] = out
+	cached_build_fp[key] = fp
 	return out
 
 

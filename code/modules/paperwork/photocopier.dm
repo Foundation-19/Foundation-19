@@ -35,6 +35,9 @@
 		"Intelligence Report"				= /obj/item/paper/foundation/intel_report,
 		"GOI Communique"					= /obj/item/paper/foundation/goi_communique,
 		"Research Summary"					= /obj/item/paper/foundation/research_summary,
+		"Zone Visitation Request"			= /obj/item/paper/foundation/visitation_request,
+		"Area Entry Permit"					= /obj/item/paper/foundation/entry_permit,
+		"Arrest and Detainment Report"		= /obj/item/paper/foundation/arrest_report,
 	)
 
 /obj/machinery/photocopier/interface_interact(mob/user)

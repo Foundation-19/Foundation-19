@@ -81,8 +81,12 @@ Note: Must be placed within 3 tiles of the R&D Console
 		loaded_item = O
 		to_chat(user, SPAN_NOTICE("You add \the [O] to \the [src]."))
 		flick("d_analyzer_la", src)
+		if(linked_console)
+			SStgui.update_uis(linked_console)
 		spawn(10)
 			update_icon()
 			busy = 0
+			if(linked_console)
+				SStgui.update_uis(linked_console)
 		return 1
 	return

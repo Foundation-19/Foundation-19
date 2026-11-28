@@ -73,8 +73,8 @@
 	. = ..()
 
 /datum/mind/proc/transfer_to(mob/living/new_character)
-	if(!istype(new_character))
-		to_world_log("## DEBUG: transfer_to(): Some idiot has tried to transfer_to() a non mob/living mob. Please inform Carn.")
+	if(!new_character)
+		return
 	if(current)					//remove ourself from our old body's mind variable
 		if(changeling)
 			remove_verb(current, /datum/changeling/proc/EvolutionMenu)
@@ -136,6 +136,10 @@
 
 	var/is_admin =   FALSE
 	is_admin = check_rights(R_ADMIN, FALSE)
+
+	// Only the mind's owner (or an admin) may act on their own memories.
+	if(!is_admin && (!usr || !current || usr != current))
+		return FALSE
 
 	if(href_list["remove_memory"])
 		var/memory = locate(href_list["remove_memory"]) in memories

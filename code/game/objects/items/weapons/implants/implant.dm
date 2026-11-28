@@ -1,6 +1,9 @@
 #define MALFUNCTION_TEMPORARY 1
 #define MALFUNCTION_PERMANENT 2
 
+/// Every implant currently existing in the world. Lets consoles and scanners
+/// iterate a short registry instead of scanning all of world.
+GLOBAL_LIST_EMPTY(all_implants)
 
 /obj/item/implant
 	name = "implant"
@@ -14,6 +17,10 @@
 	var/malfunction = 0
 	var/known //if advanced scanners would name these in results
 	var/hidden //if scanners will locate this implant at all
+
+/obj/item/implant/New(loc)
+	GLOB.all_implants += src
+	return ..()
 
 /obj/item/implant/proc/trigger(emote, source)
 	return
@@ -120,4 +127,5 @@
 /obj/item/implant/Destroy()
 	if(part)
 		part.implants.Remove(src)
+	GLOB.all_implants -= src
 	return ..()

@@ -16,6 +16,10 @@
 #define TGUI_PING_TIMEOUT (4 SECONDS)
 /// Used for rate-limiting to prevent DoS by excessively refreshing a TGUI window
 #define TGUI_REFRESH_FULL_UPDATE_COOLDOWN (5 SECONDS)
+/// Rate limit for partial updates. Acts trigger full data rebuilds per
+/// click; a burst of clicks (or spam) previously rebuilt + sent one update
+/// per act. This coalesces bursts into a single trailing update.
+#define TGUI_SEND_UPDATE_COOLDOWN (0.3 SECONDS)
 
 /// Window does not exist
 #define TGUI_WINDOW_CLOSED 0

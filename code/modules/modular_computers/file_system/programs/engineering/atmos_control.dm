@@ -43,8 +43,8 @@
 		if(ui_ref)
 			var/obj/machinery/alarm/alarm = locate(params["alarm"]) in (monitored_alarms.len ? monitored_alarms : SSmachines.machinery)
 			if(alarm)
-				var/datum/topic_state/TS = generate_state(alarm)
-				alarm.ui_interact(usr, master_ui = ui_ref, state = TS)
+				var/datum/tgui_state/TS = generate_state(alarm)
+				alarm.tgui_interact(usr, null, TS)
 		return 1
 
 /datum/nano_module/atmos_control/tgui_interact(mob/user, datum/tgui/ui)
@@ -79,26 +79,21 @@
 	return data
 
 /datum/nano_module/atmos_control/proc/generate_state(air_alarm)
-	var/datum/topic_state/air_alarm/state = new()
+	var/datum/tgui_state/air_alarm_remote/state = new()
 	state.atmos_control = src
 	state.air_alarm = air_alarm
 	return state
 
-/datum/topic_state/air_alarm
-	var/datum/nano_module/atmos_control/atmos_control	= null
-	var/obj/machinery/alarm/air_alarm					= null
+/datum/tgui_state/air_alarm_remote
+	var/datum/nano_module/atmos_control/atmos_control = null
+	var/obj/machinery/alarm/air_alarm = null
 
-/datum/topic_state/air_alarm/can_use_topic(src_object, mob/user)
+/datum/tgui_state/air_alarm_remote/can_use_tgui_topic(src_object, mob/user)
+	if(isnull(atmos_control) || isnull(air_alarm))
+		return UI_CLOSE
 	if(alarm_has_access(user))
-		return STATUS_INTERACTIVE
-	return STATUS_UPDATE
+		return UI_INTERACTIVE
+	return UI_UPDATE
 
-/datum/topic_state/air_alarm/href_list(mob/user)
-	var/list/extra_href = list()
-	extra_href["remote_connection"] = 1
-	extra_href["remote_access"] = alarm_has_access(user)
-
-	return extra_href
-
-/datum/topic_state/air_alarm/proc/alarm_has_access(mob/user)
+/datum/tgui_state/air_alarm_remote/proc/alarm_has_access(mob/user)
 	return user && (isAI(user) || atmos_control.access.allowed(user) || atmos_control.emagged || air_alarm.rcon_setting == RCON_YES || (air_alarm.alarm_area.atmosalm && air_alarm.rcon_setting == RCON_AUTO))

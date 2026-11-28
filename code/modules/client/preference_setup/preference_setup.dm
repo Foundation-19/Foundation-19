@@ -106,6 +106,20 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 		data[PS.name] = PS.get_category_data(user)
 	return data
 
+/// Builds setup data for a SINGLE category. The tgui CharacterSetup frontend
+/// renders one tab at a time and only reads the items of the active tab, so
+/// building every tab's data on every update cycle wasted a large chunk of
+/// MC time (the Occupation tab alone loops every job with access checks).
+/datum/category_collection/player_setup_collection/proc/get_single_category_data(datum/category_group/player_setup_category/category, mob/user)
+	var/list/data = list()
+	if(!category)
+		return data
+	for(var/datum/category_item/player_setup_item/PI in category.items)
+		var/list/item_data = PI.get_setup_data(user)
+		if(length(item_data))
+			data[PI.name] = item_data
+	return data
+
 /datum/category_collection/player_setup_collection/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE

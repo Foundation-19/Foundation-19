@@ -22,14 +22,40 @@ const findPaperLink = (target) => {
   return null;
 };
 
+// Computes the 1-based occurrence index of `link` among all spans sharing
+// its data-paper-act value, walking the full document in DOM order. The
+// backend uses this index to find the same span inside the raw HTML string.
+const computeInteractiveIndex = (link) => {
+  const act = link.getAttribute('data-paper-act');
+  const selector = `[data-paper-act='${act}']`;
+  const all = document.querySelectorAll(selector);
+  for (let i = 0; i < all.length; i++) {
+    if (all[i] === link) {
+      return i + 1;
+    }
+  }
+  return null;
+};
+
 const handlePaperClick = (act, event) => {
   const link = findPaperLink(event.target);
   if (!link) {
     return;
   }
   event.preventDefault();
-  if (link.getAttribute('data-paper-act') === 'write') {
+  const linkAct = link.getAttribute('data-paper-act');
+  if (linkAct === 'write') {
     act('write', { field: link.getAttribute('data-paper-field') });
+  } else if (linkAct === 'check') {
+    const index = computeInteractiveIndex(link);
+    if (index) {
+      act('check', { index });
+    }
+  } else if (linkAct === 'circle') {
+    const index = computeInteractiveIndex(link);
+    if (index) {
+      act('circle', { index });
+    }
   }
 };
 
@@ -115,6 +141,22 @@ export const Paper = (props, context) => {
             onClick={(event) => handlePaperClick(act, event)}
             style={{ fontSize: '15px', lineHeight: '1.55', wordBreak: 'break-word' }}>
             <div dangerouslySetInnerHTML={{ __html: content_html || info_links || '' }} />
+            {editable && !unknown_language && !has_content ? (
+              // Blank sheet: give an explicit, visible click target that
+              // appends to the end of the page. The tiny generated "write"
+              // link is easy to miss on an otherwise empty page.
+              <div
+                data-paper-act="write"
+                data-paper-field="end"
+                style={{
+                  marginTop: '10px',
+                  cursor: 'pointer',
+                  color: P.dim,
+                  fontStyle: 'italic',
+                }}>
+                __ Click here to begin writing __
+              </div>
+            ) : null}
           </Box>
 
           {stamps ? (

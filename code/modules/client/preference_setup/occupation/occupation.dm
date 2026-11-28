@@ -128,7 +128,9 @@
 				"color" = job.selection_color,
 				"available_by_default" = job.available_by_default,
 				"alt_title" = pref.GetPlayerAltTitle(job),
-				"has_alt_titles" = length(job.alt_titles) > 0
+				"has_alt_titles" = length(job.alt_titles) > 0,
+				"alt_titles" = length(job.alt_titles) ? job.alt_titles : list(),
+				"job_ref" = "\ref[job]"
 			)
 			if(pref.points_by_job[job] && (!job.available_by_default || current_level != JOB_LEVEL_NEVER))
 				job_entry["has_skills"] = TRUE
@@ -167,7 +169,15 @@
 		var/datum/job/job = locate(params["job_ref"])
 		if(job)
 			var/choices = list(job.title) + job.alt_titles
-			var/choice = tgui_input_list(user, "Choose a title for [job.title].", "Choose Title", choices, pref.GetPlayerAltTitle(job))
+			var/choice = params["choice"]
+			// Compact path: the frontend dropdown sends the picked title directly.
+			if(choice && (choice in choices))
+				if(CanUseTopic(user))
+					SetPlayerAltTitle(job, choice)
+					return TRUE
+				return FALSE
+			// Fallback: popup selection (legacy href path).
+			choice = tgui_input_list(user, "Choose a title for [job.title].", "Choose Title", choices, pref.GetPlayerAltTitle(job))
 			if(choice && CanUseTopic(user))
 				SetPlayerAltTitle(job, choice)
 				return TRUE

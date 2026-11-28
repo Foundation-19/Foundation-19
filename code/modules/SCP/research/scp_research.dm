@@ -119,6 +119,38 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 /datum/scp_research/proc/perform_test(mob/tester, test_type, risk_level)
 	if(!can_test())
 		return FALSE
+	// Anti-abuse: a test is a physical act. The researcher must actually
+	// be present in the SCP's containment area — no point-farming from an
+	// office terminal on the other side of the site.
+	var/atom/scp_atom = parent
+	if(!scp_atom || QDELETED(scp_atom))
+		return FALSE
+	if(!istype(tester) || tester.stat == DEAD)
+		return FALSE
+	var/turf/turf_user = get_turf(tester)
+	var/turf/turf_scp = get_turf(scp_atom)
+	var/area/area_user = get_area(turf_user)
+	var/area/area_scp = get_area(turf_scp)
+	// Same area OR physically near the anomaly (same z-level). Chambers
+	// commonly span multiple areas (cells + airlocks + observation), so
+	// strict area equality wrongly rejects researchers standing inside
+	// the chamber complex.
+	if(!turf_scp || (area_user != area_scp && (turf_user.z != turf_scp.z || get_dist(turf_user, turf_scp) > 8)))
+		to_chat(tester, SPAN_WARNING("You must be physically inside SCP-[designation]'s containment chamber to conduct a test."))
+		return FALSE
+	// D-class tests consume a request whose subject has actually arrived.
+	if(test_type == "dclass")
+		var/datum/dclass_request/request = null
+		for(var/datum/dclass_request/R in GLOB.dclass_requests)
+			if(R.scp_designation == designation && R.status == DCLASS_REQUEST_ARRIVED)
+				request = R
+				break
+		if(!request)
+			to_chat(tester, SPAN_WARNING("No Class-D subject is present in the chamber. File a request and wait for security to escort one before running a D-Class test."))
+			return FALSE
+		request.complete(tester)
+		if(QDELETED(tester) || tester.stat == DEAD)
+			return FALSE
 	last_test_time = world.time
 	var/point_multiplier = 1
 	switch(test_type)
@@ -143,7 +175,7 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 			point_multiplier *= 3
 	var/points = round(25 * point_multiplier)
 	add_research_points(points, "test_[test_type]")
-	GLOB.scp_research_tracker.log_test(parent, tester, test_type, "+[points] points ([risk_level] risk)")
+	GLOB.scp_research_tracker.log_test(parent, tester, test_type, "+[points] points ([risk_level] risk) in [area_scp.name]")
 	// Codex: tests advance personal knowledge to detailed.
 	codex_on_test(designation, tester, CODEX_DETAILED)
 	// Cross-SCP interactions: testing an SCP may discover a hidden pairing.
@@ -171,7 +203,9 @@ GLOBAL_DATUM_INIT(scp_research_tracker, /datum/scp_research_tracker, new)
 		var/area/A = parent ? get_area(parent.parent) : null
 		GLOB.scp_research_tracker.log_breach(parent, A)
 		SEND_SIGNAL(parent, COMSIG_CONTAINMENT_BREACH, src, parent)
-		hook_scp_breach(designation, parent)
+		// The hook expects the SCP ATOM (it reads atom.SCP for the
+		// classification); parent is the /datum/scp — pass parent.parent.
+		hook_scp_breach(designation, parent?.parent)
 		update_containment_rating()
 	else if(new_status == SCP_CONTAINED && old_status == SCP_BREACHED)
 		last_contained_time = world.time

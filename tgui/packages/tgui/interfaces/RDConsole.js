@@ -375,9 +375,10 @@ export const RDConsole = (props, context) => {
     body = <Section title="Imprinting"><Box style={{ color: C.amber }}>Imprinting Circuit. Please Wait...</Box></Section>;
   } else if (screen === '0.5') {
     body = <Section title="Printing"><Box style={{ color: C.amber }}>Printing. Please Wait...</Box></Section>;
-  } else if (screen === '1') {
-    body = <Section title="Device Missing"><Box style={{ color: C.bad }}>LINKED DEVICE MISSING — RETURNING TO MAIN MENU</Box><Button content="Main Menu" onClick={() => act('menu', { menu: '1.0' })} /></Section>;
-  } else if (screen === '1.0') {
+  } else if (screen === '1' || screen === '1.0') {
+    // Screen '1' is the legacy "device missing" state from the CHECK_
+    // macros; it falls through to the main menu, which is what the legacy
+    // console did after a failed linkage.
     body = <MainMenu data={data} />;
   } else if (screen === '1.1') {
     body = (

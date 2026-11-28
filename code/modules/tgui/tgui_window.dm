@@ -78,6 +78,19 @@
 		window = src)
 	if(!client)
 		return
+	// OneDrive / cloud-placeholder trap: inline_html/js/css may be passed as
+	// /file references whose backing content is an online-only stub. An empty
+	// page silently produces a window with no JS — it never sends 'ready'
+	// and never works. Loudly log if any inline file is unusable.
+	if(isfile(inline_html) && !length(file2text(inline_html)))
+		log_tgui(client, "Error: [id] inline_html is EMPTY (cloud placeholder or unreadable file). The page will not function.",
+			window = src)
+	if(isfile(inline_js) && !length(file2text(inline_js)))
+		log_tgui(client, "Error: [id] inline_js is EMPTY (cloud placeholder or unreadable file). The page will not function.",
+			window = src)
+	if(isfile(inline_css) && !length(file2text(inline_css)))
+		log_tgui(client, "Error: [id] inline_css is EMPTY (cloud placeholder or unreadable file). The page will not function.",
+			window = src)
 	src.initial_fancy = fancy
 	src.initial_assets = assets
 	src.initial_inline_html = inline_html
@@ -85,7 +98,6 @@
 	src.initial_inline_css = inline_css
 	status = TGUI_WINDOW_LOADING
 	fatally_errored = FALSE
-	world.log << "TGUI-TRACE initialize [id] (re-browse)"
 	// Build window options
 	var/options = "file=[id].html;can_minimize=0;auto_format=0;"
 	// Remove titlebar and resize handles for a fancy window
@@ -124,6 +136,13 @@
 		inline_css = "<style>\n[isfile(inline_css) ? file2text(inline_css) : inline_css]\n</style>"
 		html = replacetextEx(html, "<!-- tgui:inline-css -->", inline_css)
 	// Open the window
+	// Re-show BEFORE browsing: a pooled window suspended since its last use
+	// is hidden server-side ('is-visible' false). BYOND 516 Chromium
+	// throttles JS in hidden browser controls, so a page loading into a
+	// hidden window either never runs or takes seconds to send 'ready' —
+	// the zombie check then kills it. Making the window visible first
+	// guarantees the fresh page runs at full speed from the start.
+	winset(client, id, "is-visible=true")
 	client << browse(HTML_SKELETON(html), "window=[id];[options]")
 	// If this window was previously suspended, the JS layer hid it
 	// ('is-visible' false). BYOND 516 Chromium throttles JS in hidden browser
@@ -135,9 +154,13 @@
 	addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 0.5 SECONDS)
 	// Detect whether the control is a browser
 	is_browser = winexists(client, id) == "BROWSER"
-	// Instruct the client to signal UI when the window is closed.
-	if(!is_browser)
-		winset(client, id, "on-close=\"uiclose [id]\"")
+	// Arm the native close notification UNCONDITIONALLY. 516 pooled windows
+	// are browser controls; without on-close the native titlebar x destroys
+	// the window without any message to the server, leaving the UI datum
+	// orphaned (still holding the pool lock) until relog — tgui_close() never
+	// runs, so close-reopen chains (e.g. lobby menu after the personnel file)
+	// never fire. uiclose hard-closes matching UIs properly instead.
+	winset(client, id, "on-close=\"uiclose [id]\"")
 
 /**
  * public
@@ -241,7 +264,9 @@
  * optional can_be_suspended bool
  */
 /datum/tgui_window/proc/close(can_be_suspended = TRUE)
-	if(!client)
+	// The client can be qdel'd between close_user_uis and this call
+	// (logout/inactivity kick) — every use below must re-check.
+	if(!client || QDELETED(client))
 		return
 	if(mouse_event_macro_set)
 		remove_mouse_macro()
@@ -253,12 +278,15 @@
 		suspend_ownership = locked_by || suspend_ownership
 		needs_fresh_page = TRUE
 		send_message("suspend")
-		// The old page will process the suspend and hide the window
-		// (backendSuspendSuccess -> winset is-visible false). If its suspend
-		// interval keeps retrying, that hide can land AFTER initialize()
-		// re-shows the window for the next UI — leaving a fresh, live page
-		// trapped in an invisible window. Schedule a re-show that wins.
-		addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 3 SECONDS)
+		// Deterministic hide: the page's own ack (winset is-visible false)
+		// is a convenience, not a requirement. If the page is stale,
+		// throttled, or crashed mid-error, the echo is never processed and
+		// the window would sit visible forever. Hide it server-side;
+		// initialize() re-shows the window when a UI claims it again.
+		// Client can vanish mid-close (logout racing this call).
+		if(client && !QDELETED(client))
+			winset(client, id, "is-visible=false")
+			addtimer(CALLBACK(src, PROC_REF(ensure_visible), client), 3 SECONDS)
 		return
 	log_tgui(client,
 		context = "[id]/close",
@@ -273,7 +301,7 @@
 	message_queue = null
 	// Do not close the window to give user some time
 	// to read the error message.
-	if(!fatally_errored)
+	if(!fatally_errored && client && !QDELETED(client))
 		client << browse(null, "window=[id]")
 
 /**
@@ -371,7 +399,6 @@
  * Callback for handling incoming tgui messages.
  */
 /datum/tgui_window/proc/on_message(type, payload, href_list)
-	world.log << "TGUI-TRACE msg [id] type=[type] locked=[locked ? locked_by : "null"]"
 	// BYOND 516 race: winexists() may run before the browser control finishes
 	// creating, misdetecting runtime browse() windows as non-browser and
 	// routing every output to a control that doesn't exist. Re-check the
@@ -380,8 +407,6 @@
 		is_browser = TRUE
 	// Status can be READY if user has refreshed the window.
 	if(type == "ready" && status == TGUI_WINDOW_READY)
-		// A fresh page is alive; any pending stale-suspend ownership is moot.
-		suspend_ownership = null
 		// Resend the assets
 		for(var/asset in sent_assets)
 			send_asset(asset)
@@ -394,11 +419,17 @@
 		status = TGUI_WINDOW_READY
 		flush_message_queue()
 	needs_fresh_page = FALSE
-	// If this is the first time we see the page alive and the output control
-	// was just corrected (516 winexists race), push a fresh full update so the
-	// UI renders even if the original payload went to a dead control.
-	if(type == "ready" && locked_by && !locked_by.initialized)
-		locked_by.send_update(force = TRUE)
+	// A 'ready' proves the CURRENT page is the live one; any stale-suspend
+	// ownership left over from the previous page is moot from here on, and
+	// suspends arriving after this are genuine (user closed the window).
+	if(type == "ready")
+		suspend_ownership = null
+		// If this is the first time we see the page alive and the output
+		// control was just corrected (516 winexists race), push a fresh full
+		// update so the UI renders even if the original payload went to a
+		// dead control.
+		if(locked_by && !locked_by.initialized)
+			locked_by.send_update(force = TRUE)
 	// Pass message to UI that requested the lock
 	if(locked && locked_by)
 		var/prevent_default = locked_by.on_message(type, payload, href_list)
@@ -416,16 +447,16 @@
 		if("ping")
 			send_message("ping/reply", payload)
 		if("suspend")
-			// Stale-suspend guard: any page we close (hard or suspend) keeps
-			// emitting 'suspend' for up to 2s from its unload handler. If a NEW
-			// ui has claimed the window since (lock owner differs from the
-			// suspend originator), the echo belongs to the DEAD page — ignore
-			// it, otherwise it would suspend/close the fresh UI. The dead
-			// page's suspend handler ALSO re-hides the window (winset
-			// is-visible false lands after initialize re-showed it), which
-			// traps the live new page invisible. Reclaim visibility.
-			if(locked_by && locked_by != suspend_ownership)
+			// Stale-suspend guard: a page we closed (hard or suspend) keeps
+			// emitting 'suspend' for up to 2s from its unload handler. If a
+			// NEW ui has claimed the window since, the echo belongs to the
+			// DEAD page — ignore it, otherwise it would suspend/close the
+			// fresh UI. suspend_ownership is only set by close()/release_lock
+			// (i.e. a dead owner) and is cleared on 'ready', so a NULL value
+			// means the live page is talking to us: honor the suspend.
+			if(locked_by && suspend_ownership && locked_by != suspend_ownership)
 				winset(client, id, "is-visible=true")
+				suspend_ownership = null
 				return
 			suspend_ownership = null
 			close(can_be_suspended = TRUE)

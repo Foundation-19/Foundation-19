@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Input, LabeledList, NoticeBox, Section } from '../components';
+import { Box, Button, Flex, Input, LabeledList, NoticeBox, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 export const CommConsole = (props, context) => {
   const { act, data } = useBackend(context);
@@ -19,10 +20,13 @@ export const CommConsole = (props, context) => {
     cannot_change_security_level,
     security_levels = [],
     evac_options = [],
+    comms_channels = [],
+    comms_hazard_active,
   } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   return (
-    <Window theme="scp_terminal" width={620} height={660}>
+    <Window theme="scp_terminal" width={620} height={660} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: '#0a0a0c', minHeight: '100%', padding: '10px', fontFamily: '"Consolas", monospace', color: '#c8c8c8' }}>
           <Box style={{ borderBottom: '2px solid #6b0000', paddingBottom: '6px', marginBottom: '10px' }}>
@@ -66,7 +70,7 @@ export const CommConsole = (props, context) => {
                       selected={lvl.title === current_security_level_title}
                       color={lvl.title === 'Delta' ? 'bad' : undefined}
                       disabled={!authenticated || !net_syscont}
-                      onClick={() => act('setalert', { setalert: lvl.ref })}
+                      onClick={() => act('setalert', { target: lvl.ref })}
                     />
                   </Flex.Item>
                 ))}
@@ -88,6 +92,45 @@ export const CommConsole = (props, context) => {
                 <Button icon="door-closed" content="Bolt Doors" onClick={() => act('bolt_doors')} />
                 <Button icon="door-open" content="Unbolt Doors" onClick={() => act('unbolt_doors')} />
               </Box>
+            </Section>
+          ) : null}
+
+          {comms_channels.length > 0 ? (
+            <Section title="Relay Integrity Board">
+              {comms_hazard_active ? (
+                <NoticeBox danger mb={1}>
+                  ANOMALOUS SIGNAL CONTAMINATION DETECTED ON COMMAND CHANNEL.
+                  <Button
+                    ml={1}
+                    color="bad"
+                    content="CUT RELAY"
+                    onClick={() => act('cut_hazard')} />
+                </NoticeBox>
+              ) : null}
+              <LabeledList>
+                {comms_channels.map((ch) => (
+                  <LabeledList.Item
+                    key={ch.name}
+                    label={ch.name}
+                    color={ch.degraded ? 'bad' : (ch.rebooting ? 'average' : undefined)}>
+                    <Box style={{ display: 'inline-block', width: '45%', verticalAlign: 'middle' }}>
+                      <ProgressBar
+                        value={ch.rebooting ? 0 : ch.integrity}
+                        minValue={0}
+                        maxValue={100}
+                        color={ch.degraded ? 'bad' : (ch.rebooting ? 'average' : 'good')}>
+                        {ch.rebooting ? 'REBOOTING' : ch.integrity + '%'}
+                      </ProgressBar>
+                    </Box>
+                    <Button
+                      inline
+                      ml={1}
+                      content="Reboot"
+                      disabled={!authenticated || ch.rebooting || ch.integrity >= 100}
+                      onClick={() => act('reboot_channel', { channel: ch.name })} />
+                  </LabeledList.Item>
+                ))}
+              </LabeledList>
             </Section>
           ) : null}
 

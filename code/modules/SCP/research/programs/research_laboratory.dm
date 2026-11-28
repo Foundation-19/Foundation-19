@@ -19,6 +19,7 @@
 /datum/computer_file/program/research_laboratory/tgui_data(mob/user)
 	var/list/data = get_header_data()
 	data["selected_scp"] = selected_scp
+	data["user_ckey"] = user?.ckey
 	data["scp_list"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.get_all_scp_data() : list()
 	var/list/director_data = list()
 	if(GLOB.scp_research_director)
@@ -69,9 +70,12 @@
 			data["scp_detail"] = research.get_data()
 	return data
 
-/datum/computer_file/program/research_laboratory/tgui_act(act, params, mob/user)
+/datum/computer_file/program/research_laboratory/tgui_act(act, params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
+	// The third tgui_act arg is the UI datum, not the mob — pull the real
+	// user from ui.user (or usr as fallback).
+	var/mob/user = ui?.user || usr
 	// Program access: level 3 science required for management actions.
 	var/can_manage = program_has_access(user, 0, ACCESS_SCIENCE_LVL3)
 	switch(act)
@@ -85,9 +89,8 @@
 			GLOB.scp_research_director.try_unlock_node(params["node_id"], user)
 			return TRUE
 		if("PRG_create_project")
-			if(!can_manage)
-				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
-				return TRUE
+			// Any researcher may file a project; approval remains a
+			// Level 3/management action.
 			var/title = tgui_input_text(user, "Project title:", "New Research Project", "SCP Study", MAX_NAME_LEN)
 			if(!title)
 				return TRUE
@@ -101,7 +104,26 @@
 			var/desc = tgui_input_text(user, "Description (optional):", "New Research Project", "", 200)
 			var/datum/scp_research_project/project = GLOB.scp_research_director.create_project(title, desc || "", targets, required, user)
 			if(project)
-				to_chat(user, SPAN_NOTICE("Research project '[title]' filed for approval."))
+				GLOB.scp_research_director.join_project(project, user)
+				to_chat(user, SPAN_NOTICE("Research project '[title]' filed for approval. You are recorded as a contributor."))
+			return TRUE
+		if("PRG_join_project")
+			var/wanted = text2num(params["project_id"])
+			for(var/datum/scp_research_project/project in GLOB.scp_research_director.projects)
+				if(project.id == wanted)
+					if(GLOB.scp_research_director.join_project(project, user))
+						to_chat(user, SPAN_NOTICE("You joined project '[project.title]'."))
+					else
+						to_chat(user, SPAN_WARNING("You are already on that project, or it is closed."))
+					return TRUE
+			return TRUE
+		if("PRG_leave_project")
+			var/wanted = text2num(params["project_id"])
+			for(var/datum/scp_research_project/project in GLOB.scp_research_director.projects)
+				if(project.id == wanted)
+					if(GLOB.scp_research_director.leave_project(project, user))
+						to_chat(user, SPAN_NOTICE("You left project '[project.title]'."))
+					return TRUE
 			return TRUE
 		if("PRG_approve_project")
 			if(!can_manage)

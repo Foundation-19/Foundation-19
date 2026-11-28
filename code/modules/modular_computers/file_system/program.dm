@@ -223,7 +223,14 @@
 	program_state = PROGRAM_STATE_KILLED
 	if(requires_ntnet && network_destination)
 		generate_network_log("Connection to [network_destination] closed.")
-	QDEL_NULL(NM)
+	if(NM)
+		// Close the module's UIs BEFORE qdel (mirrors the TM path below).
+		// Otherwise the UI survives pointing at a dead src_object, and the
+		// zombie hard-closes (browse(null)) the pooled window up to a tick
+		// later — possibly AFTER the main menu re-opened into it, tearing
+		// down the fresh UI instead.
+		SStgui.close_uis(NM)
+		QDEL_NULL(NM)
 	if(TM)
 		SStgui.close_uis(TM)
 		qdel(TM)
@@ -248,6 +255,19 @@
 		ui = new(user, src, tgui_id, filedesc)
 		ui.open()
 	return 1
+
+// Called when a UI owned by this program is closed by the user (window x,
+// or any UI without exit buttons). If the program is still ACTIVE and still
+// this computer's active program, minimize it — otherwise it would sit
+// running headless and re-open its UI next Process tick. Deliberate closes
+// are safe: kill_program()/minimize_program() both flip state before their
+// UIs close, and the main-menu UI (src_object = computer) never routes here.
+/datum/computer_file/program/tgui_close(mob/user)
+	if(computer && computer.active_program == src \
+		&& program_state == PROGRAM_STATE_ACTIVE && istype(user))
+		computer.minimize_program(user)
+		return
+	return ..()
 
 // CONVENTIONS, READ THIS WHEN CREATING NEW PROGRAM AND OVERRIDING THIS PROC:
 // Topic calls are automagically forwarded from NanoModule this program contains.

@@ -12,7 +12,11 @@
 
 SUBSYSTEM_DEF(tgui)
 	name = "TGUI"
-	wait = 9
+	// 2.0s background refresh cadence (was 0.9s). Click feedback is
+	// unaffected — acts push updates immediately; this only slows the
+	// passive auto-rebuild of open UIs, halving background churn with
+	// no perceivable difference (TG-standard cadence).
+	wait = 20
 	flags = SS_NO_INIT|SS_NEEDS_SHUTDOWN
 	priority = SS_PRIORITY_TGUI
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
@@ -124,6 +128,11 @@ SUBSYSTEM_DEF(tgui)
 		for(var/i in 1 to TGUI_WINDOW_HARD_LIMIT)
 			var/window_id = TGUI_WINDOW_ID(i)
 			user << browse(null, "window=[window_id]")
+		// Also tear down the stat panel and chat panel windows — clients that
+		// reconnected through a round restart still hold the previous round's
+		// live pages in these controls, whose JS races the new round.
+		user << browse(null, "window=statbrowser")
+		user << browse(null, "window=browseroutput")
 
 /**
  * public
@@ -306,6 +315,8 @@ SUBSYSTEM_DEF(tgui)
  * required ui datum/tgui The UI to be added.
  */
 /datum/controller/subsystem/tgui/proc/on_open(datum/tgui/ui)
+	if(!ui.user)
+		return
 	var/key = ref(ui.src_object)
 	if(isnull(open_uis_by_src[key]) || !istype(open_uis_by_src[key], /list))
 		open_uis_by_src[key] = list()
@@ -325,17 +336,16 @@ SUBSYSTEM_DEF(tgui)
  */
 /datum/controller/subsystem/tgui/proc/on_close(datum/tgui/ui)
 	var/key = ref(ui.src_object)
-	if(isnull(open_uis_by_src[key]) || !istype(open_uis_by_src[key], /list))
-		return FALSE
 	// Remove it from the list of processing UIs.
 	open_uis.Remove(ui)
 	// If the user exists, remove it from them too.
 	if(ui.user)
 		ui.user.tgui_open_uis.Remove(ui)
 	var/list/uis = open_uis_by_src[key]
-	uis.Remove(ui)
-	if(length(uis) == 0)
-		open_uis_by_src.Remove(key)
+	if(islist(uis))
+		uis.Remove(ui)
+		if(length(uis) == 0)
+			open_uis_by_src.Remove(key)
 	return TRUE
 
 /**

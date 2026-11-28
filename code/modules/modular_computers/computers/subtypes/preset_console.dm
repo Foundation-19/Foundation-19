@@ -18,6 +18,7 @@
 /obj/item/modular_computer/console/preset/cardslot/install_default_hardware()
 	..()
 	card_slot = new /obj/item/stock_parts/computer/card_slot(src)
+	nano_printer = new /obj/item/stock_parts/computer/nano_printer(src)
 
 /obj/item/modular_computer/console/preset/engineering/install_default_programs()
 	..()
@@ -60,6 +61,7 @@
 
 /obj/item/modular_computer/console/preset/cardslot/command/install_default_programs()
 	..()
+	hard_drive.store_file(new /datum/computer_file/program/card_mod())
 	hard_drive.store_file(new /datum/computer_file/program/comm())
 	hard_drive.store_file(new /datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())
@@ -68,6 +70,7 @@
 
 /obj/item/modular_computer/console/preset/cardslot/command_sec/install_default_programs()
 	..()
+	hard_drive.store_file(new /datum/computer_file/program/card_mod())
 	hard_drive.store_file(new /datum/computer_file/program/comm())
 	hard_drive.store_file(new /datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())

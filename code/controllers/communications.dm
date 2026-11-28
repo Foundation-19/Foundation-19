@@ -211,6 +211,12 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ,
 #define TRANSMISSION_RADIO	1
 
 /proc/frequency_span_class(frequency)
+	// Headsets/radios can hand us null (a channel name missing from
+	// radiochannels) or non-numeric values — bail to the generic class
+	// instead of runtime-ing on every radio open (this was the single
+	// biggest runtime spam source in live rounds).
+	if (isnull(frequency) || !isnum(frequency))
+		return "radio"
 	// Antags!
 	if (frequency in ANTAG_FREQS)
 		return "syndradio"
@@ -254,7 +260,8 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, SEC_ECZ_FREQ,
 
 	// Away site channels
 	for (var/channel in AWAY_FREQS_ASSIGNED)
-		if (AWAY_FREQS_ASSIGNED[channel] == frequency)
+		var/assigned_freq = AWAY_FREQS_ASSIGNED[channel]
+		if (isnum(assigned_freq) && assigned_freq == frequency)
 			return "[lowertext(channel)]radio"
 
 	return "radio"

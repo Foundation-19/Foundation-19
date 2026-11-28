@@ -90,6 +90,10 @@
 				balloon_alert(user, "access denied!")
 			else
 				locked = !locked
+				if(!locked)
+					coverlocked = FALSE
+				else
+					coverlocked = TRUE
 				balloon_alert(user, "APC [locked ? "" : "un"]locked")
 				update_icon()
 		return TRUE

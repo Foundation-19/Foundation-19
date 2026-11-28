@@ -64,6 +64,14 @@
 
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINED, PROC_REF(OnExamine))
 	research = GLOB.scp_research_tracker.register_scp(src)
+	// Containment activity system: living entities get a chamber-upkeep
+	// datum (resources, integrity, interactions).
+	if(ismob(parent) && (metaFlags & SCP_PLAYABLE))
+		var/mob/living/pMob2 = parent
+		pMob2.setup_containment_system()
+		// Forensic holder: SCPs leave anomalous evidence traces for
+		// scanner-wielding researchers.
+		pMob2.add_forensic_anomaly("scp_" + (LAZYLEN(designation) ? "[designation]" : "unknown"), 50, "[designation]")
 	if(LAZYLEN(designation))
 		for(var/datum/containment_zone/CZ in GLOB.containment_zones)
 			if(!CZ.linked_scp && CZ.scp_designation == designation)
@@ -119,7 +127,17 @@
 		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
 
 /datum/scp/proc/has_minimum_players()
-	return length(GLOB.clients) >= min_playercount
+	// Count players who have actually JOINED the round this round —
+	// not lobby connections. Lobby sitters shouldn't satisfy the
+	// population requirement for spawning SCPs.
+	return length(GLOB.round_player_list) >= min_playercount
+
+/datum/scp/proc/record_possession_join(mob/observer/ghost/possessor)
+	// A ghost possessing an SCP becomes a round participant.
+	if(!possessor?.ckey)
+		return
+	if(!(possessor in GLOB.round_player_list))
+		GLOB.round_player_list += possessor
 
 /datum/scp/proc/onGain()
 

@@ -37,6 +37,9 @@
 	var/mouse_hooked = FALSE
 	/// Rate limit client refreshes to prevent DoS.
 	COOLDOWN_DECLARE(refresh_cooldown)
+	/// Rate limit partial updates (act bursts coalesce into one trailing
+	/// update; see TGUI_SEND_UPDATE_COOLDOWN).
+	COOLDOWN_DECLARE(send_cooldown)
 
 /**
  * public
@@ -49,10 +52,11 @@
  * optional title string The title of the UI.
  * optional ui_x int Deprecated: Window width.
  * optional ui_y int Deprecated: Window height.
+ * optional state datum/tgui_state The topic state to use, falls back to src_object.tgui_state().
  *
  * return datum/tgui The requested UI.
  */
-/datum/tgui/New(mob/user, datum/src_object, interface, title)
+/datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y, datum/tgui_state/state)
 	log_tgui(user,
 		"new [interface] fancy [user?.client?.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES]",
 		src_object = src_object)
@@ -62,9 +66,17 @@
 	src.interface = interface
 	if(title)
 		src.title = title
-	src.state = src_object.tgui_state(user)
+	src.state = state || src_object.tgui_state(user)
 
 /datum/tgui/Destroy()
+	SStgui.on_close(src)
+	if(window)
+		if(window.locked_by == src)
+			window.release_lock()
+		if(window.subscriber_object == src)
+			window.unsubscribe(src)
+		window = null
+	state = null
 	user = null
 	src_object = null
 	return ..()
@@ -77,7 +89,7 @@
  * return bool - TRUE if a new pooled window is opened, FALSE in all other situations including if a new pooled window didn't open because one already exists.
  */
 /datum/tgui/proc/open()
-	if(!user.client)
+	if(!user || !user.client || !src_object)
 		return FALSE
 	if(window)
 		return FALSE
@@ -94,16 +106,26 @@
 			strict_mode = TRUE,
 			fancy = user.client.get_preference_value(/datum/client_preference/fancy_tgui) == GLOB.PREF_YES,
 			assets = list(
-				get_asset_datum(/datum/asset/simple/tgui_v2),
+				get_asset_datum(/datum/asset/simple/tgui_v3),
 			))
 	else
 		window.send_message("ping")
+	// Each send_asset can outlive the window (suspend Topic racing the
+	// asset loop) — bail cleanly instead of runtime on a nulled window.
+	if(!window || !window.client || QDELETED(window.client))
+		return FALSE
 	var/flush_queue = window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
 	flush_queue |= window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/tgfont))
 	for(var/datum/asset/asset in src_object.tgui_assets(user))
 		flush_queue |= window.send_asset(asset)
 	if (flush_queue)
+		// browse_queue_flush blocks up to 50 ticks waiting for the client's
+		// asset-verify page to confirm. During that window the user can
+		// close the UI (or log out), qdel'ing this datum — its Destroy
+		// nulls `window`. Re-validate before using it again.
 		user.client.browse_queue_flush()
+		if(!window || closing || !user.client)
+			return FALSE
 	window.send_message("update", get_payload(
 		with_data = TRUE,
 		with_static_data = TRUE))
@@ -125,12 +147,16 @@
 		return
 	closing = TRUE
 	if(window)
-		// Windows you want to keep are usually blue screens of death
-		// and we want to keep them around, to allow user to read
-		// the error message properly.
-		window.release_lock()
-		window.close(can_be_suspended)
-		src_object.tgui_close(user)
+		// Only tear the window down if this UI still owns it. A dead
+		// src_object (killed program, qdel'd host) leaves a zombie UI that
+		// closes up to a tick later — by then the pooled window may have
+		// been reclaimed by another UI (e.g. the main menu re-opened into
+		// it), and closing the window here would destroy THAT UI's page.
+		if(window.locked_by == src)
+			window.release_lock()
+			window.close(can_be_suspended)
+			if(src_object)
+				src_object.tgui_close(user)
 		SStgui.on_close(src)
 	state = null
 	qdel(src)
@@ -217,10 +243,22 @@
 		return
 	if(!initialized || closing)
 		return
+	// Coalesce act bursts: while the cooldown is active, remember that a
+	// fresher update is pending and schedule exactly one trailing send so
+	// the UI always converges on the latest state. Without this, every
+	// click in a burst triggers a full tgui_data rebuild + JSON encode +
+	// round trip, which makes each click feel dead and invites re-clicks.
+	if(!force && !COOLDOWN_FINISHED(src, send_cooldown))
+		if(!refreshing)
+			refreshing = TRUE
+			addtimer(CALLBACK(src, PROC_REF(send_update)), TGUI_SEND_UPDATE_COOLDOWN, TIMER_UNIQUE)
+		return
+	refreshing = FALSE
 	var/should_update_data = force || status >= UI_UPDATE
 	window.send_message("update", get_payload(
 		custom_data,
 		with_data = should_update_data))
+	COOLDOWN_START(src, send_cooldown, TGUI_SEND_UPDATE_COOLDOWN)
 
 /**
  * private
@@ -230,6 +268,8 @@
  * return list
  */
 /datum/tgui/proc/get_payload(custom_data, with_data, with_static_data)
+	if(!user || !user.client)
+		return
 	var/list/json_data = list()
 	json_data["config"] = list(
 		"title" = title,
@@ -270,13 +310,21 @@
 /datum/tgui/Process(delta_time, force = FALSE)
 	if(closing)
 		return
-	var/datum/host = src_object.tgui_host(user)
 	// If the object or user died (or something else), abort.
-	if(QDELETED(src_object) || QDELETED(host) || QDELETED(user) || QDELETED(window))
+	if(QDELETED(src_object) || QDELETED(user) || QDELETED(window))
+		close(can_be_suspended = FALSE)
+		return
+	var/datum/host = src_object.tgui_host(user)
+	if(QDELETED(host))
 		close(can_be_suspended = FALSE)
 		return
 	// Validate ping
-	if(!initialized && world.time - opened_at > TGUI_PING_TIMEOUT)
+	// The zombie margin is doubled for windows on their first ready after
+	// re-initialization: 516 Chromium starts throttled-ish right after a
+	// suspended page was hidden, and 4s can expire before a live page
+	// manages to send 'ready' (observed in tgui.log: CharacterSetup killed
+	// as a zombie right after two logged acts).
+	if(!initialized && world.time - opened_at > TGUI_PING_TIMEOUT * 2)
 		log_tgui(user, "Error: Zombie window detected, closing.",
 			window = window,
 			src_object = src_object)
@@ -315,6 +363,8 @@
 		log_tgui(user, "Action: [act_type] [href_list["payload"]]",
 			window = window,
 			src_object = src_object)
+		if(!src_object)
+			return FALSE
 		process_status()
 		if(!user || !user.client)
 			return FALSE
@@ -338,7 +388,7 @@
 			if(href_list["fatal"])
 				close(can_be_suspended = FALSE)
 		if("setSharedState")
-			if(status != UI_INTERACTIVE)
+			if(status != UI_INTERACTIVE || !src_object)
 				return
 			LAZYINITLIST(src_object.tgui_shared_states)
 			src_object.tgui_shared_states[href_list["key"]] = href_list["value"]

@@ -9,6 +9,7 @@ type TextInputData = {
   large_buttons: boolean;
   max_length: number;
   message: string;
+  modal_id: string;
   multiline: boolean;
   placeholder: string;
   timeout: number;
@@ -21,6 +22,7 @@ export const TextInputModal = (props, context) => {
     large_buttons,
     max_length,
     message = '',
+    modal_id,
     multiline,
     placeholder,
     timeout,
@@ -28,7 +30,7 @@ export const TextInputModal = (props, context) => {
   } = data;
   const [input, setInput] = useLocalState<string>(
     context,
-    'input',
+    `${modal_id || 'modal'}_input`,
     placeholder || '',
   );
   const onType = (value: string) => {

@@ -253,8 +253,28 @@ const ProjectsTab = (props, context) => {
                   {project.contributed_points} / {project.required_points}
                 </ProgressBar>
               </LabeledList.Item>
+              <LabeledList.Item label="Contributors">
+                {(project.contributors && project.contributors.length)
+                  ? project.contributors.join(', ')
+                  : 'None yet'}
+              </LabeledList.Item>
             </LabeledList>
             <Box mt={1}>
+              {/* Join/leave: open to ALL researchers on open projects */}
+              {(project.status === 'proposed' || project.status === 'active') ? (
+                (project.contributors_raw || []).includes(data.user_ckey || data.ckey) ? (
+                  <Button
+                    icon="sign-out"
+                    content="Leave Project"
+                    onClick={() => act('PRG_leave_project', { project_id: String(project.id) })} />
+                ) : (
+                  <Button
+                    icon="sign-in"
+                    content="Join Project"
+                    color="good"
+                    onClick={() => act('PRG_join_project', { project_id: String(project.id) })} />
+                )
+              ) : null}
               {project.status === 'proposed' ? (
                 <Box>
                   <Button
@@ -310,8 +330,9 @@ const TeamsTab = (props, context) => {
       ) : (
         teams.map((team) => {
           const members = team.members || [];
+          const membersRaw = team.members_raw || [];
           const joinRequests = team.join_requests || [];
-          const isMember = currentCkey ? members.includes(currentCkey) : false;
+          const isMember = currentCkey ? membersRaw.includes(currentCkey) : false;
           return (
             <Box key={team.id} mb={1} p={1} style={{ border: '1px solid #444' }}>
               <Flex>
@@ -329,21 +350,21 @@ const TeamsTab = (props, context) => {
               {joinRequests.length > 0 ? (
                 <Box mt={1}>
                   <Box bold color="label" mb={0.5}>Join Requests</Box>
-                  {joinRequests.map((ckey) => (
-                    <Flex key={ckey} mb={0.5} align="center">
-                      <Flex.Item grow={1}>{ckey}</Flex.Item>
+                  {joinRequests.map((name, idx) => (
+                    <Flex key={name} mb={0.5} align="center">
+                      <Flex.Item grow={1}>{name}</Flex.Item>
                       <Flex.Item>
                         <Button
                           icon="check"
                           content="Approve"
                           color="good"
-                          onClick={() => act('PRG_approve_join', { team_id: team.id, ckey })} />
+                          onClick={() => act('PRG_approve_join', { team_id: team.id, ckey: (team.join_requests_raw || [])[idx] })} />
                         <Button
                           icon="times"
                           content="Deny"
                           color="bad"
                           ml={0.5}
-                          onClick={() => act('PRG_deny_join', { team_id: team.id, ckey })} />
+                          onClick={() => act('PRG_deny_join', { team_id: team.id, ckey: (team.join_requests_raw || [])[idx] })} />
                       </Flex.Item>
                     </Flex>
                   ))}
@@ -431,7 +452,7 @@ const SafetyTab = (props, context) => {
 
 const OverviewTab = (props, context) => {
   const { act, data } = useBackend(context);
-  const { scp_list = [], active_breaches = [], total_breaches = 0 } = data;
+  const { scp_list = [], active_breaches = [], total_breaches = 0, dclass_requests = [] } = data;
 
   const statusColor = (status) => {
     switch (status) {
@@ -569,6 +590,7 @@ const DetailTab = (props, context) => {
                 icon="user"
                 content="D-Class Test"
                 color="warning"
+                disabled={!open_request || open_request.status !== 'Subject ready'}
                 onClick={() => act('PRG_log_test', { test_type: 'dclass', risk: 'high' })} />
             </Flex.Item>
             <Flex.Item m={1}>

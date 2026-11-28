@@ -25,7 +25,7 @@
 	if(num)
 		return SStrade.traders[num]
 
-/datum/nano_module/program/merchant/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/datum/nano_module/program/merchant/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new(user, src, "MerchantProgram", "Merchant List", 575, 700, state = state)

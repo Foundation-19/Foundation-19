@@ -9,6 +9,9 @@
 	var/obj/effect/client_image_holder/progressbar_trap/trap
 	/// How long it takes for focuses to re-appear after being clicked.
 	var/focus_frequency
+	/// Pending fadein timer id — must be killed on Destroy or the timer
+	/// keeps the manager referenced past qdel (GC failures).
+	var/fadein_timer_id
 
 /datum/progbar_booster_manager/New(datum/progressbar/_linked_bar, bonus_percentage, _focus_frequency, focus_sound, focus_fail_sound)
 	linked_bar = _linked_bar
@@ -33,11 +36,16 @@
 	. = ..()
 
 /datum/progbar_booster_manager/Destroy(force)
+	if(fadein_timer_id)
+		deltimer(fadein_timer_id)
+		fadein_timer_id = null
 	QDEL_NULL(booster)
 	QDEL_NULL(trap)
 	. = ..()
 
 /datum/progbar_booster_manager/proc/randomize_location()
+	if(!booster || !trap)
+		return
 	var/x = rand(-12,12)
 	var/y = rand(-12,12)
 
@@ -53,7 +61,7 @@
 	booster.regenerate_image()
 	trap.regenerate_image()
 
-	addtimer(CALLBACK(src, PROC_REF(handle_fadein)), focus_frequency)
+	fadein_timer_id = addtimer(CALLBACK(src, PROC_REF(handle_fadein)), focus_frequency)
 
 /datum/progbar_booster_manager/proc/handle_fadein()
 	if(booster)
@@ -88,6 +96,10 @@
 
 /obj/effect/client_image_holder/progressbar_booster/Click(location, control, params)
 	. = ..()
+	// The manager/bar can be qdel'd mid-click (progress ended, target
+	// moved). Guard so a race doesn't runtime.
+	if(!manager || QDELETED(manager) || !manager.linked_bar || QDELETED(manager.linked_bar))
+		return
 	sound_to(manager.linked_bar.user, focus_sound)
 	manager.linked_bar.boost_progress(time_per_success)
 	manager.randomize_location()
@@ -118,6 +130,8 @@
 
 /obj/effect/client_image_holder/progressbar_trap/Click(location, control, params)
 	. = ..()
+	if(!manager || QDELETED(manager) || !manager.linked_bar || QDELETED(manager.linked_bar))
+		return
 	sound_to(manager.linked_bar.user, focus_fail_sound)
 	manager.linked_bar.boost_progress(time_per_failure)
 

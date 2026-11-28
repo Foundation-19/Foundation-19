@@ -45,9 +45,6 @@
 /decl/plantgene/fruit
 	gene_tag = GENE_FRUIT
 
-/decl/plantgene/special
-	gene_tag = GENE_SPECIAL
-
 /decl/plantgene/proc/mutate(datum/seed/S)
 	return
 
@@ -127,7 +124,3 @@
 		S.set_trait(TRAIT_EXPLOSIVE, !S.get_trait(TRAIT_EXPLOSIVE))
 	if(prob(65))
 		S.set_trait(TRAIT_JUICY, !S.get_trait(TRAIT_JUICY))
-
-/decl/plantgene/special/mutate(datum/seed/S)
-	if(prob(65))
-		S.set_trait(TRAIT_TELEPORTING, !S.get_trait(TRAIT_TELEPORTING))

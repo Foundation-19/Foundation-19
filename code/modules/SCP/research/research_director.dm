@@ -250,6 +250,29 @@ GLOBAL_DATUM_INIT(scp_research_director, /datum/scp_research_director, new)
 		out += list(project.get_data())
 	return out
 
+// Project membership: any researcher can join/leave an active or
+// proposed project. Contributors are credited in the project record so
+// teams get visibility of who worked on what.
+/datum/scp_research_director/proc/join_project(datum/scp_research_project/project, mob/user)
+	if(!project || !user?.ckey)
+		return FALSE
+	if(project.status != PROJECT_PROPOSED && project.status != PROJECT_ACTIVE)
+		return FALSE
+	if(user.ckey in project.contributors)
+		return FALSE
+	project.contributors += user.ckey
+	add_research_log("PROJECT", "[key_name(user)] joined project '[project.title]' ([length(project.contributors)] contributor(s)).")
+	return TRUE
+
+/datum/scp_research_director/proc/leave_project(datum/scp_research_project/project, mob/user)
+	if(!project || !user?.ckey)
+		return FALSE
+	if(!(user.ckey in project.contributors))
+		return FALSE
+	project.contributors -= user.ckey
+	add_research_log("PROJECT", "[key_name(user)] left project '[project.title]'.")
+	return TRUE
+
 /datum/scp_research_director/proc/get_teams_data()
 	var/list/out = list()
 	for(var/datum/scp_research_team/team in teams)
@@ -311,9 +334,13 @@ GLOBAL_DATUM_INIT(scp_research_director, /datum/scp_research_director, new)
 	var/approval_time
 	var/completion_time
 	var/team_id
+	var/list/contributors = list()  // ckeys of researchers who joined
 	var/list/contribution_log = list()
 
 /datum/scp_research_project/proc/get_data()
+	var/list/contributor_names = list()
+	for(var/ckey in contributors)
+		contributor_names += resolve_ckey_to_character(ckey)
 	return list(
 		"id" = id,
 		"title" = title,
@@ -325,6 +352,8 @@ GLOBAL_DATUM_INIT(scp_research_director, /datum/scp_research_director, new)
 		"proposed_by" = proposed_by,
 		"approved_by" = approved_by,
 		"team_id" = team_id,
+		"contributors" = contributor_names,
+		"contributors_raw" = contributors,
 	)
 
 
@@ -340,10 +369,29 @@ GLOBAL_DATUM_INIT(scp_research_director, /datum/scp_research_director, new)
 	var/list/join_requests = list() // ckeys
 
 /datum/scp_research_team/proc/get_data()
+	// Display: character names where the player is in the round, ckeys for
+	// offline/disconnected players (e.g. "Jason Ryder" instead of jasonryder).
+	var/list/member_names = list()
+	for(var/ckey in members)
+		member_names += resolve_ckey_to_character(ckey)
+	var/list/requester_names = list()
+	for(var/ckey in join_requests)
+		requester_names += resolve_ckey_to_character(ckey)
 	return list(
 		"id" = id,
 		"name" = name,
-		"members" = members,
-		"leader" = leader_ckey,
-		"join_requests" = join_requests,
+		"members" = member_names,
+		"members_raw" = members,
+		"leader" = leader_ckey ? resolve_ckey_to_character(leader_ckey) : null,
+		"leader_ckey" = leader_ckey,
+		"join_requests" = requester_names,
+		"join_requests_raw" = join_requests,
 	)
+
+// Resolves a ckey to a character name if that player is connected, else to
+// the ckey itself.
+/proc/resolve_ckey_to_character(the_ckey)
+	var/client/C = GLOB.ckey_directory[the_ckey]
+	if(C && C.mob && C.mob.real_name)
+		return C.mob.real_name
+	return the_ckey

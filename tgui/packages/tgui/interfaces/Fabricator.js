@@ -43,7 +43,12 @@ export const Fabricator = (props, context) => {
               </Section>
               <Section title="Build Queue" level={2}>
                 {(build_queue || []).map((order, i) => (
-                  <Box key={i}>{order.name} {order.multiplier !== "-" ? `x${order.multiplier}` : ""}</Box>
+                  <Box key={i} mb={0.5}>
+                    {order.name} {order.multiplier !== "-" ? `x${order.multiplier}` : ""}
+                    {!!order.reference && (
+                      <Button ml={1} icon="times" content="Cancel" onClick={() => act('cancel', { reference: order.reference })} />
+                    )}
+                  </Box>
                 ))}
               </Section>
               <Section title="Build Options" level={2}>

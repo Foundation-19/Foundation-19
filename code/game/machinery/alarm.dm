@@ -494,11 +494,19 @@
 	tgui_interact(user)
 	return TRUE
 
-/obj/machinery/alarm/tgui_interact(mob/user, datum/tgui/ui)
-	ui = SStgui.try_update_ui(user, src, ui)
+// state param: when opened remotely (e.g. Atmos Control program), the
+// caller passes a datum/tgui_state governing remote access; direct use
+// leaves it null and the datum's own tgui_state applies. A UI already
+// open on the same (user, alarm) pair keeps its original state.
+/obj/machinery/alarm/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state)
 	if(!ui)
-		ui = new(user, src, "AirAlarm", name)
+		ui = SStgui.get_open_ui(user, src)
+	if(!ui)
+		ui = new(user, src, "AirAlarm", name, null, null, state)
 		ui.open()
+	else
+		ui.process_status()
+		ui.send_update()
 
 /obj/machinery/alarm/tgui_data(mob/user)
 	var/list/data = list()
@@ -667,7 +675,12 @@
 				target_temperature = input_temperature + T0C
 		return TRUE
 
-	if(!locked || issilicon(usr))
+	// Remote access (via Atmos Control program): the passed state
+	// authorizes the user if they hold access or the alarm's RCON
+	// permits it — that authorization also bypasses the local ID lock.
+	var/remote_authorized = istype(state, /datum/tgui_state/air_alarm_remote) \
+		&& state:alarm_has_access(usr)
+	if(!locked || issilicon(usr) || remote_authorized)
 		if(action == "command")
 			var/device_id = params["id_tag"]
 			var/command = params["command"]

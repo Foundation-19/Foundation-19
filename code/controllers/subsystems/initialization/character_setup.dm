@@ -17,11 +17,12 @@ SUBSYSTEM_DEF(character_setup)
 		var/datum/preferences/prefs = prefs_awaiting_setup[prefs_awaiting_setup.len]
 		prefs_awaiting_setup.len--
 		prefs.setup()
-	while(newplayers_requiring_init.len)
-		var/mob/new_player/new_player = newplayers_requiring_init[newplayers_requiring_init.len]
-		newplayers_requiring_init.len--
-		if(!QDELETED(new_player))
-			new_player.deferred_login()
+	// Do NOT flush newplayers_requiring_init here. Clients that connected
+	// during world startup re-login mid-initialization; a deferred_login
+	// issued now lands on a client whose browse channel isn't live yet and
+	// is silently dropped, and consuming the queue entry here would leave
+	// them with no lobby and no retries. Leave them queued — fire() (once
+	// the MC starts ticking) retries until their LobbyMenu window is live.
 	. = ..()
 
 /datum/controller/subsystem/character_setup/fire(resumed = FALSE)
@@ -29,11 +30,27 @@ SUBSYSTEM_DEF(character_setup)
 	// (e.g. users who stayed connected through a server restart). Their
 	// deferred_login can silently fail while the client handshake is still
 	// settling, leaving them stuck at a black lobby with no menu.
-	while(newplayers_requiring_init.len)
-		var/mob/new_player/new_player = newplayers_requiring_init[newplayers_requiring_init.len]
-		newplayers_requiring_init.len--
-		if(!QDELETED(new_player) && new_player.client)
+	//
+	// A player stays queued only until the lobby menu has successfully
+	// opened ONCE — after that, closing the menu must stick instead of
+	// being force-reopened every second (each reopen re-browses the window
+	// and rebuilds the HUD, which was spiking tgui MC tick cost).
+	if(length(newplayers_requiring_init))
+		for(var/mob/new_player/new_player in newplayers_requiring_init.Copy())
+			if(QDELETED(new_player) || !new_player.client)
+				newplayers_requiring_init -= new_player
+				continue
+			// They're in the game now — no lobby to open.
+			if(new_player.spawning)
+				newplayers_requiring_init -= new_player
+				continue
+			if(new_player.lobby_menu_opened)
+				// Menu opened at least once; the player is on their own now.
+				newplayers_requiring_init -= new_player
+				continue
+			// No lobby window yet: (re)attempt the login.
 			new_player.deferred_login()
+			// Leave them queued; next tick retries until the window lives.
 
 	while(save_queue.len)
 		var/datum/preferences/prefs = save_queue[save_queue.len]

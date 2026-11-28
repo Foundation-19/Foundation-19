@@ -111,6 +111,9 @@
 	if(SCP && SCP.research)
 		SCP.research.set_containment_status(SCP_BREACHED)
 	announce_possession(H)
+	// The mask bleeds its influence into the Command channel: whispers ride
+	// the site comms until the Communications Officer cuts the relay.
+	SScomms_integrity.begin_035_hazard(src)
 
 /obj/item/clothing/mask/scp035/proc/release_host()
 	if(!host_body)
@@ -126,6 +129,7 @@
 			to_chat(old_host, SPAN_WARNING("Your mind is your own again... but the memories of what the mask did linger."))
 	if(SCP && SCP.research && SCP.research.containment_status == SCP_BREACHED)
 		SCP.research.set_containment_status(SCP_CONTAINED)
+	SScomms_integrity.end_035_hazard()
 
 /obj/item/clothing/mask/scp035/proc/announce_possession(mob/living/carbon/human/H)
 	var/area/A = get_area(H)
@@ -190,6 +194,8 @@
 	density = FALSE
 	see_in_dark = 7
 	see_invisible = SEE_INVISIBLE_LIVING
+	universal_speak = TRUE
+	universal_understand = TRUE
 	var/obj/item/clothing/mask/scp035/mask_ref
 
 /mob/living/observer/scp035_controller/Destroy()
@@ -220,14 +226,27 @@
 
 /mob/living/observer/scp035_controller/say(message)
 	if(!mask_ref || !mask_ref.host_body)
-		to_chat(src, SPAN_WARNING("You need a host to speak."))
+		to_chat(src, SPAN_WARNING("You need a host to speak. Whisper into the minds of those near your mask instead."))
 		return
+	if(!message || !length(trim(message)))
+		return
+	// Forward through the host's full say pipeline (language parsing,
+	// radio prefixes, emote prefixes all behave as if the host typed it).
 	mask_ref.host_body.say(message)
 
 /mob/living/observer/scp035_controller/custom_emote(var/type, var/message)
 	if(!mask_ref || !mask_ref.host_body)
+		to_chat(src, SPAN_WARNING("You need a host to emote."))
 		return
 	mask_ref.host_body.custom_emote(type, message)
+
+/mob/living/observer/scp035_controller/emote(act, m_type, message)
+	if(!mask_ref || !mask_ref.host_body)
+		to_chat(src, SPAN_WARNING("You need a host to emote."))
+		return
+	// Usable-emote table lives on living mobs; run the chosen emote as
+	// the host so pose/custom emotes render from the body.
+	mask_ref.host_body.emote(act, m_type, message)
 
 /mob/living/observer/scp035_controller/relaymove(mob/user, direction)
 	if(mask_ref && mask_ref.host_body)

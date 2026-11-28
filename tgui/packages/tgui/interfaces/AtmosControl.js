@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Flex, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const AlarmRow = (props, context) => {
   const { act } = useBackend(context);
@@ -18,11 +19,12 @@ const AlarmRow = (props, context) => {
 };
 
 export const AtmosControl = (props, context) => {
-  const { data } = useBackend(context);
+  const { act, data } = useBackend(context);
   const { alarms = [], alarmsAlert = [], alarmsDanger = [] } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   return (
-    <Window theme="scp_terminal" width={640} height={680}>
+    <Window theme="scp_terminal" width={640} height={680} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: '#0a0a0c', minHeight: '100%', padding: '10px', fontFamily: '"Consolas", monospace', color: '#c8c8c8' }}>
           <Box style={{ borderBottom: '2px solid #6b0000', paddingBottom: '6px', marginBottom: '10px' }}>

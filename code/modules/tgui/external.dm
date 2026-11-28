@@ -86,8 +86,15 @@
  */
 /datum/proc/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	SHOULD_CALL_PARENT(TRUE)
-	// If UI is not interactive or usr calling Topic is not the UI user, bail.
-	if(!ui || ui.status != UI_INTERACTIVE)
+	// If UI is not interactive, bail. MUST log: a silent TRUE here looks
+	// exactly like a dead button to the player (airlock bolts at 2 tiles,
+	// look-only machines). The caller's own status gate will still block
+	// unprivileged acts; this is for diagnosing the UI_UPDATE dead zone.
+	if(!ui)
+		log_tgui(usr, "Act '[action]' arrived with no UI datum.", src_object = src)
+		return TRUE
+	if(ui.status != UI_INTERACTIVE)
+		log_tgui(usr, "Act '[action]' blocked by UI status [ui.status] (not INTERACTIVE).", src_object = src)
 		return TRUE
 
 /**

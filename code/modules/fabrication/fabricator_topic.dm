@@ -15,6 +15,23 @@
 		try_dump_material(href_list["eject_mat"])
 		. = TOPIC_REFRESH
 
+// tgui bridge: the tgui frontend sends 'build'/'eject'/'cancel' acts;
+// route them through the same procs the legacy topic path uses.
+/obj/machinery/fabricator/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	if(..())
+		return TRUE
+	switch(action)
+		if("build")
+			try_queue_build(locate(params["reference"]), text2num(params["multiplier"]))
+			return TRUE
+		if("cancel")
+			try_cancel_build(locate(params["reference"]))
+			return TRUE
+		if("eject")
+			try_dump_material(params["eject_key"])
+			return TRUE
+	return FALSE
+
 /obj/machinery/fabricator/proc/try_cancel_build(datum/fabricator_build_order/order)
 	if(istype(order) && currently_building != order && is_functioning())
 		if(order in queued_orders)

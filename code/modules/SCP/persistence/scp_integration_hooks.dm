@@ -28,6 +28,10 @@ var/list/scp_breach_cooldown = list()
 
 	log_game("SCP Breach: [designation] at [scp_atom ? get_area_name(scp_atom) : "unknown"]")
 
+	// Breach aftermath record (repair/decon/debrief loop)
+	if(SSbreach_aftermath)
+		SSbreach_aftermath.on_breach(designation, breach_zone)
+
 	// Persistence bookkeeping
 	if(SSscp_persistence && SSscp_persistence.manager)
 		var/datum/scp_instance/instance = SSscp_persistence.manager.get_instance(designation)
@@ -42,15 +46,21 @@ var/list/scp_breach_cooldown = list()
 		SSscp_persistence.manager.active_breaches++
 		SSscp_persistence.manager.global_containment_stability = max(0, SSscp_persistence.manager.global_containment_stability - 10)
 
-	// Site-wide announcement
+	// Site-wide announcement — Safe-class containment drift is routine
+	// business for the Foundation, so those get logged, not sirened.
+	// Keter/Euclid still announce site-wide; Safe appears in research
+	// records and on monitors only.
 	var/is_keter = FALSE
+	var/is_safe = FALSE
 	if(scp_atom && scp_atom.SCP)
 		is_keter = (scp_atom.SCP.classification == SCP_KETER)
-	priority_announcement.Announce(
-		"Containment breach detected in [breach_zone]. SCP-[designation][is_keter ? " (Keter-class)" : ""] is no longer in its designated containment zone. All personnel are advised to exercise caution.",
-		"SCP-[designation] Containment Breach Alert",
-		'sounds/effects/siren.ogg'
-	)
+		is_safe = (scp_atom.SCP.classification == SCP_SAFE)
+	if(!is_safe)
+		priority_announcement.Announce(
+			"Containment breach detected in [breach_zone]. SCP-[designation][is_keter ? " (Keter-class)" : ""] is no longer in its designated containment zone. All personnel are advised to exercise caution.",
+			"SCP-[designation] Containment Breach Alert",
+			'sounds/effects/siren.ogg'
+		)
 
 	// Codex: anyone nearby records the breach observation.
 	if(scp_atom)
@@ -73,6 +83,8 @@ var/list/scp_breach_cooldown = list()
 			SSscp_persistence.manager.calculate_global_metrics()
 			SSscp_persistence.manager.save_scp_data()
 	log_game("SCP Recontained: [designation]")
+	if(SSbreach_aftermath)
+		SSbreach_aftermath.on_recontained(designation)
 	priority_announcement.Announce(
 		"SCP-[designation] has been successfully returned to containment. Site personnel stand down to standard alert posture.",
 		"SCP-[designation] Recontainment Confirmed"

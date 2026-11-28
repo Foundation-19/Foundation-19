@@ -1,6 +1,7 @@
 import { useBackend } from '../backend';
 import { Box, Button, Flex, Section } from '../components';
 import { Window } from '../layouts';
+import { ProgramExitButtons } from './common/ProgramExitButtons';
 
 const C = {
   bg: '#0a0a0c',
@@ -21,9 +22,10 @@ export const Reports = (props, context) => {
     reports = [],
     report_fields = [],
   } = data;
+  const showExit = data && data.PC_showexitprogram;
 
   return (
-    <Window theme="scp_terminal" width={640} height={660}>
+    <Window theme="scp_terminal" width={640} height={660} buttons={showExit ? <ProgramExitButtons act={act} /> : undefined}>
       <Window.Content scrollable>
         <Box style={{ background: C.bg, minHeight: '100%', padding: '10px', fontFamily: C.mono, color: '#c8c8c8' }}>
           <Box style={{ borderBottom: '2px solid ' + C.borderRed, paddingBottom: '6px', marginBottom: '10px' }}>

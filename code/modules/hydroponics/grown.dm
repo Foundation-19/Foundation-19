@@ -109,8 +109,6 @@
 			descriptors |= "juicy"
 		if(seed.get_trait(TRAIT_STINGS))
 			descriptors |= "stinging"
-		if(seed.get_trait(TRAIT_TELEPORTING))
-			descriptors |= "glowing"
 		if(seed.get_trait(TRAIT_EXPLOSIVE))
 			descriptors |= "bulbous"
 

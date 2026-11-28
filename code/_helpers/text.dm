@@ -432,6 +432,12 @@
 	t = replacetext(t, "\[large\]", "<font size=\"4\">")
 	t = replacetext(t, "\[/large\]", "</font>")
 	t = replacetext(t, "\[field\]", "<span class=\"paper_field\"></span>")
+	// Checkbox: [check] renders an empty box; clicking toggles it filled.
+	t = replacetext(t, "\[check\]", "<span class=\"paper_check\" data-paper-act='check' data-checked='0'>&#9744;</span>")
+	// Circle/radio choice: [circle] renders the next choice word circleable —
+	// a plain word (or the underscore form from old templates) that when
+	// clicked marks itself as circled within its group.
+	t = replacetext(t, "\[circle\]", "<span class=\"paper_circle\" data-paper-act='circle' data-circled='0'>&#9675;</span>")
 	t = replacetext(t, "\[h1\]", "<H1>")
 	t = replacetext(t, "\[/h1\]", "</H1>")
 	t = replacetext(t, "\[h2\]", "<H2>")
@@ -657,6 +663,8 @@
 	t = replacetext(t, "<img src = sh.png>", "\[shlogo\]")
 	t = replacetext(t, "<img src = cotbg.png>", "\[cotbglogo\]")
 	t = replacetext(t, "<span class=\"paper_field\"></span>", "\[field\]")
+	t = replacetext(t, "<span class=\"paper_check\" data-paper-act='check' data-checked='0'>&#9744;</span>", "\[check\]")
+	t = replacetext(t, "<span class=\"paper_circle\" data-paper-act='circle' data-circled='0'>&#9675;</span>", "\[circle\]")
 	t = replacetext(t, "<span class=\"redacted\">R E D A C T E D</span>", "\[redacted\]")
 	t = strip_html_properly(t)
 	return t

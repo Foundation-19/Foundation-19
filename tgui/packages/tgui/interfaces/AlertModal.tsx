@@ -16,6 +16,7 @@ type AlertModalData = {
   buttons: string[];
   large_buttons: boolean;
   message: string;
+  modal_id: string;
   swapped_buttons: boolean;
   timeout: number;
   title: string;
@@ -31,10 +32,16 @@ export const AlertModal = (props, context) => {
     buttons = [],
     large_buttons,
     message = '',
+    modal_id,
     timeout,
     title,
   } = data;
-  const [selected, setSelected] = useLocalState<number>(context, 'selected', 0);
+  // Keyed per instance — see ListInputModal's stateKey comment.
+  const [selected, setSelected] = useLocalState<number>(
+    context,
+    `${modal_id || 'modal'}_selected`,
+    0,
+  );
   // Dynamically sets window dimensions
   const windowHeight =
     115 +

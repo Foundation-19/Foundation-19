@@ -17,6 +17,7 @@ type ListInputData = {
   items: string[];
   large_buttons: boolean;
   message: string;
+  modal_id: string;
   timeout: number;
   title: string;
 };
@@ -28,22 +29,29 @@ export const ListInputModal = (props, context) => {
     message = '',
     init_value,
     large_buttons,
+    modal_id,
     timeout,
     title,
   } = data;
+  // modal_id is unique per modal instance (server REF): without it the
+  // selected index / search query of a PREVIOUS modal persists in this
+  // pooled window's store — the user clicks a row but the stale index
+  // submits a different (or undefined) entry and the server silently
+  // rejects it: "click an SCP, hit Submit, nothing happens".
+  const stateKey = (key: string) => `${modal_id || 'modal'}_${key}`;
   const [selected, setSelected] = useLocalState<number>(
     context,
-    'selected',
+    stateKey('selected'),
     items.indexOf(init_value),
   );
   const [searchBarVisible, setSearchBarVisible] = useLocalState<boolean>(
     context,
-    'searchBarVisible',
+    stateKey('searchBarVisible'),
     items.length > 9,
   );
   const [searchQuery, setSearchQuery] = useLocalState<string>(
     context,
-    'searchQuery',
+    stateKey('searchQuery'),
     '',
   );
   // User presses up or down on keyboard

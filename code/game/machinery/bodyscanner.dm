@@ -68,6 +68,28 @@
 	usr.client.perspective = EYE_PERSPECTIVE
 	usr.client.eye = src
 
+// Clicking the scanner directly climbs inside — the Object-tab verb is
+// effectively invisible to most players, which read as "the scanner is
+// broken". Also handles grabbing someone and clicking them in.
+/obj/machinery/bodyscanner/physical_attack_hand(mob/user)
+	if(occupant == user)
+		go_out()
+		user.visible_message(
+			SPAN_NOTICE("\The [user] steps out of \the [src]."),
+			SPAN_NOTICE("You step out of \the [src].")
+		)
+		return TRUE
+	if(!user_can_move_target_inside(user, user))
+		return TRUE
+	user.visible_message(
+		SPAN_NOTICE("\The [user] climbs into \the [src]."),
+		SPAN_NOTICE("You climb into \the [src]."),
+		SPAN_ITALIC("You hear footsteps on metal, cloth rustling, and then a pressurized hiss.")
+	)
+	move_target_inside(user, user)
+	user.pulling = null
+	return TRUE
+
 /obj/machinery/bodyscanner/proc/drop_contents()
 	for(var/obj/O in (contents - component_parts))
 		O.dropInto(loc)

@@ -11,14 +11,26 @@ type NumberInputData = {
   max_value: number | null;
   message: string;
   min_value: number | null;
+  modal_id: string;
   timeout: number;
   title: string;
 };
 
 export const NumberInputModal = (props, context) => {
   const { act, data } = useBackend<NumberInputData>(context);
-  const { init_value, large_buttons, message = '', timeout, title } = data;
-  const [input, setInput] = useLocalState(context, 'input', init_value);
+  const {
+    init_value,
+    large_buttons,
+    message = '',
+    modal_id,
+    timeout,
+    title,
+  } = data;
+  const [input, setInput] = useLocalState(
+    context,
+    `${modal_id || 'modal'}_input`,
+    init_value,
+  );
   const onChange = (value: number) => {
     if (value === input) {
       return;

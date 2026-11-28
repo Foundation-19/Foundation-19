@@ -688,7 +688,8 @@ GLOBAL_LIST_EMPTY(femur_breakers)
 
 /mob/observer/eye/scp106/EyeMove(direct)
 	var/turf/step = get_turf(get_step(src, direct))
-	if(istype(step, /turf/unsimulated)) // Mostly to prevent people from moving into/through mineral rocks
+	// get_step off the map edge returns null.
+	if(!step || istype(step, /turf/unsimulated)) // Mostly to prevent people from moving into/through mineral rocks
 		return
 	if(!step.is_phasable())
 		return FALSE

@@ -27,7 +27,7 @@
 /datum/build_mode/atmosphere/Help()
 	to_chat(user, SPAN_NOTICE(help_text))
 
-/datum/build_mode/atmosphere/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_state)
+/datum/build_mode/atmosphere/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/state = GLOB.default_tgui_state)
 	. = ..()
 
 	ui = SStgui.try_update_ui(user, src, ui)

@@ -24,6 +24,7 @@
 /obj/machinery/scp_research_console/tgui_data(mob/user)
 	var/list/data = list()
 	data["tab"] = current_tab
+	data["user_ckey"] = user?.ckey
 	data["selected_scp"] = selected_scp
 	data["scp_list"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.get_all_scp_data() : list()
 	data["breach_log"] = GLOB.scp_research_tracker ? GLOB.scp_research_tracker.breach_log : list()
@@ -45,6 +46,8 @@
 			data["can_test"] = research.can_test()
 			data["test_cooldown_remaining"] = research.can_test() ? 0 : round((research.last_test_time + research.test_cooldown - world.time) / 10, 1)
 			data["open_request"] = get_open_dclass_request(selected_scp) ? get_open_dclass_request(selected_scp).get_data() : null
+			var/datum/dclass_request/console_open_request = get_open_dclass_request(selected_scp)
+			data["dclass_arrived"] = console_open_request ? (console_open_request.status == DCLASS_REQUEST_ARRIVED) : FALSE
 			data["personality_traits"] = SSscp_personality ? SSscp_personality.get_traits_data(selected_scp) : list()
 			var/datum/containment_zone/zone = null
 			for(var/datum/containment_zone/CZ in GLOB.containment_zones)
@@ -106,9 +109,10 @@
 	data["total_count"] = interaction_list.len
 	return data
 
-/obj/machinery/scp_research_console/tgui_act(act, params, mob/user)
+/obj/machinery/scp_research_console/tgui_act(act, params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
+	var/mob/user = ui?.user || usr
 	if(stat & (BROKEN|NOPOWER))
 		return
 	switch(act)
@@ -244,9 +248,8 @@
 			GLOB.scp_research_director.try_unlock_node(params["node_id"], user)
 			return TRUE
 		if("PRG_create_project")
-			if(!allowed(user))
-				to_chat(user, SPAN_WARNING("Access denied. Level 3 science clearance required."))
-				return
+			// Any researcher may file a project; approval remains a
+			// Level 3/management action.
 			var/title = tgui_input_text(user, "Project title:", "New Research Project", "SCP Study", MAX_NAME_LEN)
 			if(!title)
 				return
@@ -260,7 +263,26 @@
 			var/desc = tgui_input_text(user, "Description (optional):", "New Research Project", "", 200)
 			var/datum/scp_research_project/project = GLOB.scp_research_director.create_project(title, desc || "", targets, required, user)
 			if(project)
-				to_chat(user, SPAN_NOTICE("Research project '[title]' filed for approval ([required] points, target: [targets.len ? "SCP-[selected_scp]" : "any SCP"])."))
+				GLOB.scp_research_director.join_project(project, user)
+				to_chat(user, SPAN_NOTICE("Research project '[title]' filed for approval ([required] points, target: [targets.len ? "SCP-[selected_scp]" : "any SCP"]). You are recorded as a contributor."))
+			return TRUE
+		if("PRG_join_project")
+			var/wanted = text2num(params["project_id"])
+			for(var/datum/scp_research_project/project in GLOB.scp_research_director.projects)
+				if(project.id == wanted)
+					if(GLOB.scp_research_director.join_project(project, user))
+						to_chat(user, SPAN_NOTICE("You joined project '[project.title]'."))
+					else
+						to_chat(user, SPAN_WARNING("You are already on that project, or it is closed."))
+					return TRUE
+			return TRUE
+		if("PRG_leave_project")
+			var/wanted = text2num(params["project_id"])
+			for(var/datum/scp_research_project/project in GLOB.scp_research_director.projects)
+				if(project.id == wanted)
+					if(GLOB.scp_research_director.leave_project(project, user))
+						to_chat(user, SPAN_NOTICE("You left project '[project.title]'."))
+					return TRUE
 			return TRUE
 		if("PRG_approve_project")
 			if(!allowed(user))

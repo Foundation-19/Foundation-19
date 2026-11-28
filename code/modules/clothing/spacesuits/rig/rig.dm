@@ -472,7 +472,7 @@
 	cell.use(cost * CELLRATE)
 	return 1
 
-/obj/item/rig/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/nano_state = GLOB.inventory_state)
+/obj/item/rig/tgui_interact(mob/user, datum/tgui/ui, datum/tgui_state/nano_state = GLOB.inventory_tgui_state)
 	if(!user)
 		return
 

@@ -115,5 +115,7 @@
 				SPAN_NOTICE("You hear metal clanking."))
 		add_fingerprint(user)
 
-	M.clear_alert(ALERT_BUCKLED)
+	// unbuckle_mob() can return null (nothing buckled) — guard.
+	if(M)
+		M.clear_alert(ALERT_BUCKLED)
 	return M

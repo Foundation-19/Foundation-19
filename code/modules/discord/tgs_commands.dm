@@ -17,7 +17,7 @@
 			active_players -= 1
 	var/check = "Current Players: [GLOB.clients.len], Active Players: [active_players]. "
 	check += "\nGamemode: [SSticker.master_mode], Round Time: [DisplayTimeText(world.time - SSticker.round_start_time)]."
-	return check
+	return new /datum/tgs_message_content(check)
 
 /// Displays player count, REAL gamemode and ckeys of admins online.
 /datum/tgs_chat_command/status
@@ -49,4 +49,4 @@
 	else
 		gamemode = SSticker.mode.name
 	status += "\nGamemode: [gamemode]. Round Time: [DisplayTimeText(world.time - SSticker.round_start_time)]."
-	return status
+	return new /datum/tgs_message_content(status)

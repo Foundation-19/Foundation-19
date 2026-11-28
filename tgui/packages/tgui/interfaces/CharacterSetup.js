@@ -313,16 +313,41 @@ const OccupationPage = (props, context) => {
           </Box>
           {!mapData.hidden && mapData.jobs && mapData.jobs.map((job, ji) => (
             <Box key={ji} style={{ marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: `1px solid ${C.border}`, paddingBottom: '4px' }}>
-              <Box style={{ flex: 1, fontFamily: C.mono, fontSize: '10px', color: job.bad_message ? C.textDim : C.text }}>
-                {job.bad_message ? <del>{job.title}</del> : job.alt_title || job.title}
-              </Box>
+              {job.bad_message ? (
+                <Box style={{ flex: 1, minWidth: 0, fontFamily: C.mono, fontSize: '10px', color: C.textDim, padding: '0 0.5em' }}>
+                  <del>{job.title}</del>
+                </Box>
+              ) : job.has_alt_titles ? (
+                // Alt-title jobs: the title is a dropdown spanning the same
+                // flex area as plain titles. NOTE: flex lives on the OUTER
+                // wrapper div (dropdownStyle) — the inner control only
+                // honors the width prop. The inner control must also fill
+                // that wrapper (width="100%") or the wrapper collapses to
+                // its content and the row squishes.
+                <Dropdown
+                  width="100%"
+                  openWidth="240px"
+                  displayText={job.alt_title || job.title}
+                  options={(job.alt_titles || []).length ? job.alt_titles : [job.title]}
+                  onSelected={(choice) => act('select_alt_title', { job_ref: job.job_ref, choice })}
+                  dropdownStyle={{ flex: 1, minWidth: 0, fontFamily: C.mono, fontSize: '12px', color: C.text }}
+                />
+              ) : (
+                <Box style={{ flex: 1, minWidth: 0, fontFamily: C.mono, fontSize: '10px', color: C.text, padding: '0 0.5em' }}>
+                  {job.title}
+                </Box>
+              )}
               {job.bad_message ? (
                 <Box style={{ fontFamily: C.mono, fontSize: '10px', color: C.redBright }}>{job.bad_message}</Box>
               ) : (
                 <Box style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <PriorityButtons job={job.title} level={job.level} act={act} />
                   {job.level > 0 ? (
-                    <TermButton onClick={() => act('set_skills', { rank: job.title })}>SKILLS</TermButton>
+                    <TermButton
+                      color={job.has_skills ? 'green' : undefined}
+                      onClick={() => act('set_skills', { rank: job.title })}>
+                      {job.has_skills ? 'SET SKILLS' : 'VIEW SKILLS'}
+                    </TermButton>
                   ) : null}
                 </Box>
               )}
@@ -419,11 +444,19 @@ const LoadoutPage = (props, context) => {
                 <TermButton selected={gear.selected} onClick={() => act('toggle_gear', { gear_ref: gear.ref })}>{gear.name}</TermButton>
                 <TermValue color={C.textDim}>{gear.cost}pt</TermValue>
               </Box>
-              {gear.selected && gear.tweaks && gear.tweaks.map((tweak, ti) => (
+              {!!gear.selected && gear.tweaks && gear.tweaks.map((tweak, ti) => (
                 <Box key={ti} style={{ marginBottom: '4px', marginLeft: '16px' }}>
                   {tweak.options ? (
                     <Box>
-                      <Box style={{ fontSize: '10px', color: C.textDim, marginBottom: '2px' }}>{tweak.contents}</Box>
+                      <Box style={{ fontSize: '10px', color: C.textDim, marginBottom: '2px' }}>
+                        {/color$/.test(tweak.tweak_type || '') ? (
+                          <Box inline
+                            width="10px"
+                            height="10px"
+                            style={{ background: tweak.current, border: '1px solid #555', marginRight: '4px', verticalAlign: 'middle' }} />
+                        ) : null}
+                        {tweak.contents}
+                      </Box>
                       <Dropdown
                         width="100%"
                         displayText={tweak.current || 'SELECT'}
@@ -432,10 +465,21 @@ const LoadoutPage = (props, context) => {
                       />
                     </Box>
                   ) : (
-                    <Box style={{ fontSize: '10px', color: C.textDim }}>{tweak.contents}</Box>
+                    <Box style={{ fontSize: '10px', color: C.textDim }}>
+                      <Button
+                        content={tweak.contents}
+                        disabled={!gear.selected}
+                        onClick={() => act('gear_tweak', { gear_ref: gear.ref, tweak_ref: tweak.ref })}
+                        style={{ fontSize: '10px', padding: '0 4px' }} />
+                    </Box>
                   )}
                 </Box>
               ))}
+              {gear.selected && gear.allowed_jobs && gear.allowed_jobs.length > 0 ? (
+                <Box style={{ fontSize: '9px', color: C.textDim, marginLeft: '16px', fontStyle: 'italic' }}>
+                  RESTRICTED TO: {gear.allowed_jobs.join(', ')}
+                </Box>
+              ) : null}
             </Box>
           ))}
         </TermBox>
