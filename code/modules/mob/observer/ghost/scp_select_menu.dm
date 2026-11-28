@@ -121,4 +121,8 @@
 	if(!canBecomeSCP(selected_scp))
 		to_chat(src, SPAN_WARNING("SCP-[selected_scp.SCP.designation] is no longer available!"))
 		return
+	// Count as a round participant for population checks. Recorded
+	// before do_possession because the ghost datum is consumed by the
+	// ckey transfer (and several overrides don't return success).
+	selected_scp.SCP.record_possession_join(src)
 	selected_scp.do_possession(src)

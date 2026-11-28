@@ -127,7 +127,17 @@
 		to_chat(examinee, SPAN_CLASS("scp", "You know this is SCP-[designation]!"))
 
 /datum/scp/proc/has_minimum_players()
-	return length(GLOB.clients) >= min_playercount
+	// Count players who have actually JOINED the round this round —
+	// not lobby connections. Lobby sitters shouldn't satisfy the
+	// population requirement for spawning SCPs.
+	return length(GLOB.round_player_list) >= min_playercount
+
+/datum/scp/proc/record_possession_join(mob/observer/ghost/possessor)
+	// A ghost possessing an SCP becomes a round participant.
+	if(!possessor?.ckey)
+		return
+	if(!(possessor in GLOB.round_player_list))
+		GLOB.round_player_list += possessor
 
 /datum/scp/proc/onGain()
 
