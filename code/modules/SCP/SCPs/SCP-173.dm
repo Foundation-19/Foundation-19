@@ -60,8 +60,8 @@
 	var/list/next_blinks_join_time = list()
 	/// Current attack cooldown
 	var/snap_cooldown
-	/// Human selected by the player for an automatic snap
-	var/mob/living/carbon/human/marked_target
+	/// Humans selected by the player for automatic snaps
+	var/list/marked_targets = list()
 	/// True while the default click handler is processing a plain left-click on a human
 	var/marking_target_click = FALSE
 	/// Target selected during the current click, used to trigger an immediate melee snap
@@ -113,7 +113,7 @@
 		H.disable_blink(src)
 	next_blinks = null
 	next_blinks_join_time = null
-	marked_target = null
+	marked_targets = null
 	clear_target()
 
 	return ..()
@@ -129,8 +129,8 @@
 	marking_target_click = FALSE
 	var/mob/living/carbon/human/H = target_marked_by_click
 	target_marked_by_click = null
-	if(H && marked_target == H)
-		TrySnapMarkedTarget()
+	if(H && (H in marked_targets))
+		TrySnapMarkedTarget(H)
 	return .
 
 /mob/living/scp173/say(message)
@@ -141,7 +141,7 @@
 		return FALSE
 	. = ..()
 	if(.)
-		TrySnapMarkedTarget()
+		TrySnapMarkedTargets()
 	return .
 
 /mob/living/scp173/face_atom(atom/A)
@@ -174,8 +174,7 @@
 		playsound(loc, pick('sounds/scp/spook/NeckSnap1.ogg', 'sounds/scp/spook/NeckSnap3.ogg'), 50, 1)
 		show_sound_effect(loc, src)
 		H.death()
-		if(marked_target == H)
-			marked_target = null
+		marked_targets -= H
 		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
@@ -228,7 +227,6 @@
 	return ..()
 
 /mob/living/scp173/proc/MarkTarget(mob/living/carbon/human/H)
-	marked_target = null
 	if(!H || QDELETED(H))
 		return FALSE
 	if(H.SCP)
@@ -238,22 +236,35 @@
 		to_chat(src, SPAN_WARNING("<I>[H] is already dead!</I>"))
 		return FALSE
 
-	marked_target = H
+	if(H in marked_targets)
+		marked_targets -= H
+		to_chat(src, SPAN_NOTICE("You unmark [H]."))
+		return FALSE
+
+	marked_targets |= H
 	if(marking_target_click)
 		target_marked_by_click = H
 	to_chat(src, SPAN_NOTICE("You mark [H] as your target."))
 	return TRUE
 
-/mob/living/scp173/proc/TrySnapMarkedTarget()
-	if(!marked_target)
+/mob/living/scp173/proc/TrySnapMarkedTarget(mob/living/carbon/human/H)
+	if(!H || !(H in marked_targets))
 		return FALSE
-	if(QDELETED(marked_target) || marked_target.stat == DEAD || marked_target.SCP)
-		marked_target = null
+	if(QDELETED(H) || H.stat == DEAD || H.SCP)
+		marked_targets -= H
 		return FALSE
-	if(!Adjacent(marked_target) || IsBeingWatched() || incapacitated() || snap_cooldown > world.time)
+	if(!Adjacent(H) || IsBeingWatched() || incapacitated() || snap_cooldown > world.time)
 		return FALSE
-	UnarmedAttack(marked_target)
+	UnarmedAttack(H)
 	return TRUE
+
+/mob/living/scp173/proc/TrySnapMarkedTargets()
+	if(!LAZYLEN(marked_targets))
+		return FALSE
+	for(var/mob/living/carbon/human/H in marked_targets.Copy())
+		if(TrySnapMarkedTarget(H))
+			return TRUE
+	return FALSE
 
 /mob/living/scp173/Life()
 	. = ..()
@@ -271,7 +282,7 @@
 		return
 	if(world.time > defecation_cooldown)
 		Defecate()
-	TrySnapMarkedTarget()
+	TrySnapMarkedTargets()
 	if(IsBeingWatched() || client) // AI controls from here
 		return
 	handle_AI()
@@ -301,8 +312,8 @@
 	. = ..()
 	if(bump_attack && ishuman(A))
 		UnarmedAttack(A)
-	if(A == marked_target)
-		TrySnapMarkedTarget()
+	if(A in marked_targets)
+		TrySnapMarkedTarget(A)
 
 // Someone decided to put 173 into it? Good lord, it's over!
 // P.S. Only humans can activate 914, so no powergaming here
