@@ -204,6 +204,24 @@
 	allowed_directions = UP|DOWN
 	icon_state = "ladder11"
 
+/obj/structure/ladder/vesselevent
+	allowed_directions = UP
+	icon_state = "ladder10"
+
+/obj/structure/ladder/vesselevent/getTargetLadder(mob/M)
+	if(!target_up)
+		target_up = locate(/obj/structure/ladder/vesselevent2)
+	return target_up
+
+/obj/structure/ladder/vesselevent2
+	allowed_directions = UP
+	icon_state = "ladder10"
+
+/obj/structure/ladder/vesselevent2/getTargetLadder(mob/M)
+	if(!target_up)
+		target_up = locate(/obj/structure/ladder/vesselevent)
+	return target_up
+
 /obj/structure/stairs
 	name = "stairs"
 	desc = "Stairs leading to another deck.  Not too useful if the gravity goes out."

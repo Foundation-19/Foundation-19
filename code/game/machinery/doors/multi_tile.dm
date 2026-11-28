@@ -174,8 +174,8 @@
 	stripe_color = COLOR_SKY_BLUE
 
 /obj/machinery/door/airlock/multi_tile/glass/security
-	door_color = COLOR_NT_RED
-	stripe_color = COLOR_ORANGE
+	door_color = "#333333"
+	stripe_color = "#a8b2b6"
 
 /obj/machinery/door/airlock/multi_tile/glass/engineering
 	door_color = COLOR_AMBER
