@@ -81,6 +81,5 @@ GLOBAL_LIST_INIT(containment_zone_areas, list(
 	"895" = /area/site53/lhcz/scp895,
 	"912" = /area/site53/ulcz/scp912,
 	"914" = /area/site53/ulcz/scp914,
-	"939" = /area/site53/uhcz/generalpurpose3,
 	"999" = /area/site53/ulcz/scp999,
 ))

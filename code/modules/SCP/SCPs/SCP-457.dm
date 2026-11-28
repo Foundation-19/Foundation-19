@@ -328,7 +328,7 @@
 		if(SCP && SCP.research && SCP.research.containment_status == SCP_BREACHED)
 			SCP.research.set_containment_status(SCP_CONTAINED)
 			priority_announcement.Announce(
-				"All anomalous fires associated with SCP-457 have been extinguished. SCP-457 recontainment confirmed.",
+				"All anomalous fires associated with SCP-457 have been extinguished.  SCP-457 recontainment confirmed.",
 				"SCP-457 Recontainment Confirmed"
 			)
 
