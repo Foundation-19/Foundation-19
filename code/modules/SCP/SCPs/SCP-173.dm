@@ -60,12 +60,20 @@
 	var/list/next_blinks_join_time = list()
 	/// Current attack cooldown
 	var/snap_cooldown
+	/// Human selected by the player for an automatic snap
+	var/mob/living/carbon/human/marked_target
+	/// True while the default click handler is processing a plain left-click on a human
+	var/marking_target_click = FALSE
+	/// Target selected during the current click, used to trigger an immediate melee snap
+	var/mob/living/carbon/human/target_marked_by_click
 	/// Current light break cooldown
 	var/light_break_cooldown
 	/// Cooldown for defecation...
 	var/defecation_cooldown
 	/// Simple cooldown for warning message for passive breach
 	var/warning_cooldown
+	/// Number of acidic degradation warnings announced during the current buildup
+	var/warning_announcement_count = 0
 	/// Same, but for breaching effect
 	var/breach_cooldown
 	/// This one to avoid sound spam when opening doors
@@ -105,9 +113,25 @@
 		H.disable_blink(src)
 	next_blinks = null
 	next_blinks_join_time = null
+	marked_target = null
 	clear_target()
 
 	return ..()
+
+/mob/living/scp173/ClickOn(atom/A, params)
+	var/list/modifiers = params2list(params)
+	if(!ishuman(A) || modifiers["right"] || modifiers["middle"] || modifiers["shift"] || modifiers["alt"] || modifiers["ctrl"])
+		return ..()
+
+	target_marked_by_click = null
+	marking_target_click = TRUE
+	. = ..()
+	marking_target_click = FALSE
+	var/mob/living/carbon/human/H = target_marked_by_click
+	target_marked_by_click = null
+	if(H && marked_target == H)
+		TrySnapMarkedTarget()
+	return .
 
 /mob/living/scp173/say(message)
 	return // lol you can't talk
@@ -115,7 +139,10 @@
 /mob/living/scp173/Move(a,b,f)
 	if(IsBeingWatched())
 		return FALSE
-	return ..()
+	. = ..()
+	if(.)
+		TrySnapMarkedTarget()
+	return .
 
 /mob/living/scp173/face_atom(atom/A)
 	if(IsBeingWatched())
@@ -126,6 +153,9 @@
 	return -5
 
 /mob/living/scp173/UnarmedAttack(atom/A)
+	if(marking_target_click && ishuman(A))
+		MarkTarget(A)
+		return
 	if(IsBeingWatched() || incapacitated())// We can't do anything while being watched
 		return
 	if(ishuman(A))
@@ -144,6 +174,8 @@
 		playsound(loc, pick('sounds/scp/spook/NeckSnap1.ogg', 'sounds/scp/spook/NeckSnap3.ogg'), 50, 1)
 		show_sound_effect(loc, src)
 		H.death()
+		if(marked_target == H)
+			marked_target = null
 		return
 	if(istype(A, /obj/machinery/door))
 		OpenDoor(A)
@@ -189,6 +221,40 @@
 		QDEL_NULL(C)
 	return
 
+/mob/living/scp173/RangedAttack(atom/A, params)
+	if(marking_target_click && ishuman(A))
+		MarkTarget(A)
+		return
+	return ..()
+
+/mob/living/scp173/proc/MarkTarget(mob/living/carbon/human/H)
+	marked_target = null
+	if(!H || QDELETED(H))
+		return FALSE
+	if(H.SCP)
+		to_chat(src, SPAN_WARNING("<I>[H] is a fellow SCP!</I>"))
+		return FALSE
+	if(H.stat == DEAD)
+		to_chat(src, SPAN_WARNING("<I>[H] is already dead!</I>"))
+		return FALSE
+
+	marked_target = H
+	if(marking_target_click)
+		target_marked_by_click = H
+	to_chat(src, SPAN_NOTICE("You mark [H] as your target."))
+	return TRUE
+
+/mob/living/scp173/proc/TrySnapMarkedTarget()
+	if(!marked_target)
+		return FALSE
+	if(QDELETED(marked_target) || marked_target.stat == DEAD || marked_target.SCP)
+		marked_target = null
+		return FALSE
+	if(!Adjacent(marked_target) || IsBeingWatched() || incapacitated() || snap_cooldown > world.time)
+		return FALSE
+	UnarmedAttack(marked_target)
+	return TRUE
+
 /mob/living/scp173/Life()
 	. = ..()
 	var/list/our_view = dview(9, istype(loc, /obj/structure/scp173_cage) ? loc : src) //In case we are caged, we must see if our cage is being looked at rather than us
@@ -205,6 +271,7 @@
 		return
 	if(world.time > defecation_cooldown)
 		Defecate()
+	TrySnapMarkedTarget()
 	if(IsBeingWatched() || client) // AI controls from here
 		return
 	handle_AI()
@@ -234,6 +301,8 @@
 	. = ..()
 	if(bump_attack && ishuman(A))
 		UnarmedAttack(A)
+	if(A == marked_target)
+		TrySnapMarkedTarget()
 
 // Someone decided to put 173 into it? Good lord, it's over!
 // P.S. Only humans can activate 914, so no powergaming here
@@ -349,9 +418,14 @@
 		warning_cooldown = world.time + 5 MINUTES // Just in case 173 doesn't immediately leave the area
 		priority_announcement.Announce("ALERT! SCP-173's containment zone security measures have shut down due to severe acidic degradation. Security personnel are to report to the location and secure the threat as soon as possible.", "Containment Failure", 'sounds/AI/173.ogg')
 		BreachEffect()
-	else if((feces_amount >= 40) && world.time > warning_cooldown) // Warning, after ~20 minutes
-		warning_cooldown = world.time + 2 MINUTES
-		priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sounds/AI/acidic_degredation.ogg')
+	else if(feces_amount >= 40)
+		if(warning_announcement_count < 3 && world.time > warning_cooldown) // Warn at 15 minutes from breach, then repeat twice
+			warning_cooldown = world.time + 5 MINUTES
+			warning_announcement_count++
+			priority_announcement.Announce("ATTENTION! SCP-173's containment zone is suffering from mild acidic degradation. Janitorial services involvement is required.", "Acidic Degredation", 'sounds/AI/acidic_degredation.ogg')
+	else
+		warning_announcement_count = 0
+		warning_cooldown = 0
 
 /mob/living/scp173/proc/CheckFeces(containment_zone = TRUE) // Proc that returns amount of 173 feces in the area
 	var/area/A = get_area(src)
