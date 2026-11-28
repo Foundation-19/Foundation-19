@@ -929,7 +929,8 @@
 		/obj/item/stack/medical/advanced/bruise_pack = 10,
 		/obj/item/stack/medical/advanced/ointment = 10,
 		/obj/item/stack/medical/splint = 5,
-		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15
+		/obj/item/reagent_containers/hypospray/autoinjector/pain = 15, // tramadol auto-injector
+		/obj/item/storage/box/bodybags = 4
 	)
 
 	contraband = list(
@@ -937,7 +938,7 @@
 		/obj/item/reagent_containers/pill/tox = 3,
 		/obj/item/reagent_containers/pill/stox = 4,
 		/obj/item/reagent_containers/glass/bottle/toxin = 4,
-		/obj/item/reagent_containers/hypospray/autoinjector/combatpain = 2
+		/obj/item/reagent_containers/hypospray/autoinjector/combatpain = 2 // oxycodone auto-injector
 	)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
@@ -953,7 +954,7 @@
 
 /obj/machinery/vending/wallmed1
 	name = "\improper NanoMed"
-	desc = "A wall-mounted version of the NanoMed."
+	desc = "A wall-mounted version of the NanoMed, stocked with the equipment necessary for stabilization and much more."
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
@@ -961,20 +962,22 @@
 	base_type = /obj/machinery/vending/wallmed1
 	density = FALSE //It is wall-mounted, and thus, not dense. --Superxpdude
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 3,
-		/obj/item/stack/medical/ointment = 3,
-		/obj/item/reagent_containers/pill/paracetamol = 4,
-		/obj/item/storage/med_pouch/trauma,
-		/obj/item/storage/med_pouch/burn,
-		/obj/item/storage/med_pouch/oxyloss,
-		/obj/item/storage/med_pouch/toxin
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/advanced/bruise_pack = 4,
+		/obj/item/stack/medical/ointment = 6,
+		/obj/item/reagent_containers/pill/paracetamol = 8,
+		/obj/item/storage/med_pouch/trauma = 2,
+		/obj/item/storage/med_pouch/burn = 2,
+		/obj/item/storage/med_pouch/oxyloss = 2,
+		/obj/item/storage/med_pouch/toxin = 2,
+		/obj/item/storage/med_pouch/radiation = 2
 		)
 	contraband = list(/obj/item/reagent_containers/syringe/antitoxin = 4,/obj/item/reagent_containers/syringe/antiviral = 4,/obj/item/reagent_containers/pill/tox = 1)
 
 /obj/machinery/vending/wallmed2
 	name = "\improper NanoMed Mini"
 	desc = "A wall-mounted version of the NanoMed, containing only vital first aid equipment."
-	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
+	product_ads = "Go save some lives!;The best stuff for you!;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
 	icon_vend = "wallmed-vend"
