@@ -1176,7 +1176,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/site53/reswing/xenobiology
-	name = "\improper Xenobiology Laboratory"
+	name = "\improper Testing Laboratory"
+	icon_state = "research"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/site53/reswing/disectlab
+	name = "\improper Dissection Laboratory"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -1292,8 +1297,8 @@
 	requires_power = 0
 	dynamic_lighting = 1
 
-/area/site53/uhcz/generalpurpose3
-	name = "\improper Third General Purpose Testing Laboratory"
+/area/site53/uhcz/scp939
+	name = "\improper SCP-939 Containment Chamber"
 	icon_state = "research"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
